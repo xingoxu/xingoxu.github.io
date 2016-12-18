@@ -1,7 +1,7 @@
 # Paper White - A Hexo Theme
 ================
 
-[![](https://dn-xingoxu.qbox.me/github/Paper-White/Showcase-Template-Flat-Presentation.png)](https://github.com/xingoxu/hexo-theme-paper-white/archive/master.zip)
+[![](https://od8634671.qnssl.com/github/Paper-White/Showcase-Template-Flat-Presentation.png)](https://github.com/xingoxu/hexo-theme-paper-white/archive/master.zip)
 
 ## Update v0.9:  
 > 2016.10.28 - {
