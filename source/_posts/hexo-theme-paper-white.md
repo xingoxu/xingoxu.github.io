@@ -8,7 +8,7 @@ categories:
 
 欢迎有爱自取啦
 
-最后更新： 2016.3.13
+最后更新： 2016.12.18
 
 <!-- more -->
 
@@ -18,6 +18,14 @@ categories:
 [![](https://dn-xingoxu.qbox.me/github/Paper-White/Showcase-Template-Flat-Presentation.png)](https://github.com/xingoxu/hexo-theme-just-use-chrome-to-debug/archive/master.zip)
 
 ## Update v0.9:  
+
+> 2016.12.18 - {
+  1. 修正highlight的height
+}
+
+> 2016.10.28 - {
+  1. 添加/修正微量动画
+}
 
 > 2016.03.13 - {
   1. 加入搜索框
@@ -64,6 +72,7 @@ categories:
   
 如果你想体验手机浏览效果，可以扫一下二维码：  
 ![xingoxu-qrcode](https://blog-xingoxu.duoshuo.com/api/qrcode/getImage.png?size=240&text=https://blog.xingoxu.com/)
+[图看不到点这里！](https://blog-xingoxu.duoshuo.com/api/qrcode/getImage.png?size=240&text=https://blog.xingoxu.com/)
 
 —————————————————————
 
