@@ -3,6 +3,8 @@
 
 [![](https://od8634671.qnssl.com/github/Paper-White/Showcase-Template-Flat-Presentation.png)](https://github.com/xingoxu/hexo-theme-paper-white/archive/master.zip)
 
+[图看不到点这里~~~~(>_<)~~~~](https://od8634671.qnssl.com/github/Paper-White/Showcase-Template-Flat-Presentation.png)
+
 ## Update v0.9:  
 > 2016.10.28 - {
   1. 添加/修正微量动画
