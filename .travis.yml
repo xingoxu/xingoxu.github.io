@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - '6'
+before_install:
+  - export TZ='Asia/Shanghai'
+  - npm install hexo-cli -g
+install:
+  - npm install
+script:
+  - hexo clean && hexo g
+after_script:
+  - git config --global user.name "xingoxu"
+  - git config --global user.email "xingoxu@gmail.com"
+  - sed -i'' "s~${GH_REF}~${GH_TOKEN}:x-oauth-basic@${GH_REF}~" _config.yml
+  - hexo d
+branches:
+  only:
+  - source
+env:
+  global:
+  - GH_REF: github.com/xingoxu/xingoxu.github.io.git
+  - secure: o10OAo0bZbvOsJA7Qy52Oi9QL1Fj9GsFMuAAe52u/Hkp+He1aZzSCx9QQe04Z7HBnF0aTnYghOvVLZm+2EZ6gm3FTLGanBx1wn2UWvt/UnTvVGIOgKx5AWssvFMit3uY/iYgFicvfkFAJ8B2ptmEMcgF8Mfb5cVjr+zxJrTaaPE=
