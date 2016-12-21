@@ -19,4 +19,4 @@ branches:
 env:
   global:
   - GH_REF: github.com/xingoxu/xingoxu.github.io.git
-  - secure: o10OAo0bZbvOsJA7Qy52Oi9QL1Fj9GsFMuAAe52u/Hkp+He1aZzSCx9QQe04Z7HBnF0aTnYghOvVLZm+2EZ6gm3FTLGanBx1wn2UWvt/UnTvVGIOgKx5AWssvFMit3uY/iYgFicvfkFAJ8B2ptmEMcgF8Mfb5cVjr+zxJrTaaPE=
+
