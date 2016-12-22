@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#325899">
+  <script type="text/javascript">
+        var host = "blog.xingoxu.com";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
+  </script>
+  
+  <title>WNDR4300救砖（openwrt） | xingo&#39;s private plot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WNDR4300救砖（openwrt）">
+<meta property="og:url" content="https://blog.xingoxu.com/2015/09/router-rebuild-2015/index.html">
+<meta property="og:site_name" content="xingo's private plot">
+<meta property="og:description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
+<meta property="og:image" content="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif">
+<meta property="og:updated_time" content="2016-12-22T14:46:08.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WNDR4300救砖（openwrt）">
+<meta name="twitter:description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
+<meta name="twitter:image" content="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.lug.ustc.edu.cn/css?family=Roboto">
+</head>
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一个在成长的男孩</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="/works">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-router-rebuild-2015" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/router-rebuild-2015/" class="article-date">
+  	<time datetime="2015-09-15T12:19:41.000Z" itemprop="datePublished">2015-09-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WNDR4300救砖（openwrt）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/maintaince/">maintaince</a><a class="article-category-link" href="/categories/maintaince/router-config/">router-config</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记一次作死把路由如何弄砖，又是如何救回来的过程</p>
+<a id="more"></a>
+<h1 id="本教程适用于："><a href="#本教程适用于：" class="headerlink" title="本教程适用于："></a>本教程适用于：</h1><ol>
+<li>砖前为openwrt</li>
+<li>救后为openwrt</li>
+<li>因为刷了sysupgrade变砖的</li>
+</ol>
+<p>其他情况本救砖方法不一定有效，请三思而尝试</p>
+<h1 id="怎么变砖"><a href="#怎么变砖" class="headerlink" title="怎么变砖"></a>怎么变砖</h1><p>14.07大容量固件下用15.05官方升级包升级，变砖</p>
+<p>尼玛，这个大容量固件是你们自己官方出的好伐！！！</p>
+<p>下次再也不敢盲目尝鲜了！ <img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif" alt="新浪表情-再见"></p>
+<h1 id="救砖方法"><a href="#救砖方法" class="headerlink" title="救砖方法"></a>救砖方法</h1><blockquote>
+<p>救砖方法参考：<a href="http://blog.csdn.net/zhiyuan411/article/details/41399273" target="_blank" rel="external">http://blog.csdn.net/zhiyuan411/article/details/41399273</a></p>
+</blockquote>
+<ol>
+<li>下载OpenWrt刷机包（要完整镜像，img的那种）：<a href="http://downloads.openwrt.org/" target="_blank" rel="external">http://downloads.openwrt.org/</a> </li>
+<li>下载TFTP软件：<a href="http://www.wayos.cn/down/other/tftp.rar" target="_blank" rel="external">http://www.wayos.cn/down/other/tftp.rar</a></li>
+<li>把电脑用网线连在路由器，电脑改为固定IP：192.168.1.2，子网掩码：255.255.255.0，ip网关：192.168.1.1</li>
+<li>WNDR4300用电源键断电</li>
+<li>用细针等物件按住reset键不放（reset键在4300的底部，序列号的的最左侧，是个小圆孔，标有：restore factory settings）</li>
+<li>按下4300电源键，通电</li>
+<li>直到电源灯由黄色闪烁到绿色闪烁，松开reset</li>
+<li>使用TFTP软件上传固件：路由器IP填192.168.1.1，密码留空，固件文件选择刚刚下载的OpenWrt刷机包那个img文件，点击“刷新固件”</li>
+<li>等待TFTP软件显示绿色圆点，表示刷机成功。再等待几分钟，就可以看到电源键变绿，4300起来了。</li>
+<li>此时，局域网已经支持DHCP，并可以通过 <a href="http://192.168.1.1" target="_blank" rel="external">http://192.168.1.1</a> 来进入luci管理平台，广域网口插入网线，设置后可以上网。</li>
+</ol>
+<p><br></p>
+<p>注：恢复后没有5G的配置项，解决办法：已经正常运行时，把4300断电，然后插电重启。就会看到5G的配置项。</p>
+<h1 id="最后再记"><a href="#最后再记" class="headerlink" title="最后再记"></a>最后再记</h1><p>恢复后什么都没有了，要重头配置，在配置的过程中还发现了自己以前记录的一些问题</p>
+<ol>
+<li>除了要安装那些包外，还要安装ip iptables-mod-tproxy这两个包</li>
+<li>ss包从luci开发者的github界面进入，不要从其他地方进入，傲娇的很luci。。。记得选择spec优化版本（？）</li>
+<li>ss更新过后luci界面开发者就将地址只支持数字ip了，不再支持域名了（明明人家windows客户端优秀的不行</li>
+<li>尽管是2.3.2，但是新安装的（还是15.05的openwrt上）并没有看到UDP中继，然而ignore.list倒是要自己下载。。。</li>
+<li>ignore.list下载方式在最下面<br><br></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -O- &apos;http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest&apos; | awk -F\| &apos;/CN\|ipv4/ &#123; printf(&quot;%s/%d\n&quot;, $4, 32-log($5)/log(2)) &#125;&apos; &gt; /etc/ignore.list</div></pre></td></tr></table></figure>
+<blockquote>
+<p>luci-ss界面关于不支持域名的issue：<a href="https://github.com/shadowsocks/openwrt-shadowsocks/issues/124" target="_blank" rel="external">https://github.com/shadowsocks/openwrt-shadowsocks/issues/124</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/java-learningNotes-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Java学习笔记1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/cpp-inherit/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2015.05.12 C++继承</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+  
+  
+  
+    <div data-url="https://blog.xingoxu.com/2015/09/router-rebuild-2015/" data-title="「WNDR4300救砖（openwrt）」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+</div>
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="router-rebuild-2015" data-title="WNDR4300救砖（openwrt）" data-url="https://blog.xingoxu.com/2015/09/router-rebuild-2015/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blog-xingoxu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//dn-xingoxu.qbox.me/blog/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 xingo Hosted on <a href="https://github.com/" target="_blank">Github</a>
+    	</div>
+      	<div class="footer-right">
+      		Powered By <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-just-use-chrome-to-debug" target="_blank">Paper White</a> by xingo
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="/" class="profilepic">
+			
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/">xingo</a></h1>
+				
+					<p class="header-subtitle">一个在成长的男孩</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>导航</li>
+						
+						
+						<li>文章目录</li>
+						
+						
+						<li>朋友们</li>
+						
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+							<li><a href="/works">作品</a></li>
+				        
+				        
+				        <li>
+				        	<form class="search-box" action="//google.com/search" method="get" target="_blank" accept-charset="utf-8">
+				        		<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+				        		<label class="search-icon" for="search">
+				        			<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+				        		<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+				        		</label>
+				        	</form>
+				        </li>
+				        <li id="totop" title="回顶部"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#本教程适用于："><span class="toc-number">1.</span> <span class="toc-text">本教程适用于：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么变砖"><span class="toc-number">2.</span> <span class="toc-text">怎么变砖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#救砖方法"><span class="toc-number">3.</span> <span class="toc-text">救砖方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后再记"><span class="toc-number">4.</span> <span class="toc-text">最后再记</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			          		<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			        	
+			          		<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			        	
+			        	</div>
+					</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#本教程适用于："><span class="toc-text">本教程适用于：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么变砖"><span class="toc-text">怎么变砖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#救砖方法"><span class="toc-text">救砖方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后再记"><span class="toc-text">最后再记</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">导航</span>
+				<div class="viewer-div">
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+						<li><a href="/works">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">朋友们</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</body>
+</html>

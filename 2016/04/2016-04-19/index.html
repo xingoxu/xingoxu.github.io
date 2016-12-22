@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#325899">
+  <script type="text/javascript">
+        var host = "blog.xingoxu.com";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
+  </script>
+  
+  <title>近期学习小结 | xingo&#39;s private plot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践">
+<meta property="og:type" content="article">
+<meta property="og:title" content="近期学习小结">
+<meta property="og:url" content="https://blog.xingoxu.com/2016/04/2016-04-19/index.html">
+<meta property="og:site_name" content="xingo's private plot">
+<meta property="og:description" content="又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践">
+<meta property="og:updated_time" content="2016-12-22T14:46:08.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="近期学习小结">
+<meta name="twitter:description" content="又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.lug.ustc.edu.cn/css?family=Roboto">
+</head>
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一个在成长的男孩</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="/works">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2016-04-19" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/2016-04-19/" class="article-date">
+  	<time datetime="2016-04-18T16:48:42.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      近期学习小结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践</p>
+<a id="more"></a>
+<h1 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h1><p>nodejs的学习我是跟着《了不起的Node.js》这本书来入门的，其中书后面的connect，express等部分可能有点过时了（api之类的），但是其实这些框架学习了前面的知识后，稍微看一下这本书讲的理念，完全可以去看文档便能灵活掌握使用方法了，就nodejs这一块我感觉坑其实不多不深。<br>另外我觉得这本书不错<del>（我不是书商啊大家不要随便轻信我的话）</del>，是因为他让我对现在web后端的一些新的概念，新的理念，一些实际应用中的是如何实现有了一点概念，比如session（之前我还读season233），mongodb这些的，总算是感觉自己离这些看起来很高大上的东西其实只有几行代码的距离。在nodejs中，如果需要处理一些复杂的逻辑，回调函数用的多的话，那么Promise就有了用武之地，包括维护代码整洁，代码分层（？）这个样子是非常有帮助的，而且nodejs稳步实现ES6嘛所以Promise是原生对象（奇怪WebStorm为什么没有提示）。</p>
+<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p><a href="http://liubin.org/promises-book/" target="_blank" rel="external">JavaScript Promise迷你书</a></p>
+<h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><p>整个Angularjs的学习过程我觉得是非常陡峭的，学的时候我并没有买书看，我先去看的视频，视频其实没有多少，然而反复看了三个礼拜（老忘），上手写了几段，而且视频看到最后说是声明式ui，恍然大悟（？），才算是感觉好像入门了。。。。<del>（唉我说google的文档啊你能不能好好写啊，找着看真累）</del></p>
+<h2 id="双向绑定的’-scope’"><a href="#双向绑定的’-scope’" class="headerlink" title="双向绑定的’$scope’"></a>双向绑定的’$scope’</h2><p>用Angularjs来实现的前端的web应用（？），在其ngApp下的作用域的每一个DOM节点上都会有$scope，$scope是双向绑定的灵魂所在。这个\$scope是以原型链的方式来继承上一级节点的\$scope的，因此在实现逻辑复用的时候，是不应该将函数啊什么的全部都往scope上来附，感觉就相当于全局变量污染（？），可读性和扩展性会比较差。</p>
+<h2 id="controller与directive"><a href="#controller与directive" class="headerlink" title="controller与directive"></a>controller与directive</h2><p>刚学习Angularjs的时候我对controller和directive很懊恼，玛德，怎么前面这个东西是个controller，后面这个东西怎么也有controller，后面这个东西还能依赖啊，那么多config项，什么compile啊什么link啊，然后当写了一点，体验了一些过后，controller这个东西，就是mvc中的controller，你可以在controller范围内的节点上声明ngClick调用controller，那就是mvc的结构咯，v-&gt;c,c-&gt;m,m-&gt;v，而directive这个东西其实是angularjs最后偏向的mvw的what，因为他什么都可以当，我现在比较喜欢拿directive当presenter，当我一直在考虑如何将代码的逻辑理顺，把代码结构分清，而且各司其职，我发现原来我更倾向于mvp这个模式。</p>
+<blockquote>
+<p>按需加载 AngularJS 的 Controller<br><a href="http://www.cnblogs.com/zhrj000/p/3383898.html" target="_blank" rel="external">http://www.cnblogs.com/zhrj000/p/3383898.html</a><br><a href="http://beginor.github.io/2014/12/20/angularjs-controller-load-on-demand.html" target="_blank" rel="external">http://beginor.github.io/2014/12/20/angularjs-controller-load-on-demand.html</a></p>
+<p>angularjs controller之间如何通信<br><a href="https://segmentfault.com/a/1190000000639592" target="_blank" rel="external">https://segmentfault.com/a/1190000000639592</a></p>
+<p>angularjs手动触发dirty check<br><a href="https://segmentfault.com/q/1010000003796580" target="_blank" rel="external">https://segmentfault.com/q/1010000003796580</a></p>
+</blockquote>
+<h2 id="angularjs的一些坑（？）"><a href="#angularjs的一些坑（？）" class="headerlink" title="angularjs的一些坑（？）"></a>angularjs的一些坑（？）</h2><p>在angularjs 中 jquery on是bind？我似乎在link中用jquery绑定的on并没有live的效果，最后还是用了directive来绑定link，感觉是不是小题大做了？</p>
+<blockquote>
+<p>还发现了 input[type=text] 设置display:block的时候，发现其并没有像个div占满一整行，反而像inline-block，觉得比较奇怪。。。</p>
+</blockquote>
+<h1 id="近期做的nodejs-express-AngularJS-BootStrap-Promise的实现"><a href="#近期做的nodejs-express-AngularJS-BootStrap-Promise的实现" class="headerlink" title="近期做的nodejs+express+AngularJS+BootStrap+Promise的实现"></a>近期做的nodejs+express+AngularJS+BootStrap+Promise的实现</h1><p>一个简单的实现，用户的增删改查，用户权限对模块的自由控制<br><code>https://dev点xingoxu.cn</code><br>用户名与密码都是12345678901，增加的用户学号是11位的，错误没有做太多的处理只是在主界面上禁用了所有交互并显示错误（没有花特别特别多的时间在这个上面）</p>
+<p>不要玩坏了噻，总感觉自己做出来的东西特别容易塌。。。。。</p>
+<p>前端：<br><a href="https://github.com/xingoxu/dashboard-with-angularjs" target="_blank" rel="external">https://github.com/xingoxu/dashboard-with-angularjs</a></p>
+<p>后端：<br><a href="https://github.com/xingoxu/crud-with-nodejs-mysql" target="_blank" rel="external">https://github.com/xingoxu/crud-with-nodejs-mysql</a></p>
+<p>改进点有很多了吧：</p>
+<h2 id="password"><a href="#password" class="headerlink" title="password"></a>password</h2><p>因为没有实际对它的处理经验，我感觉有两种处理方式，1是上https，随便怎么传（x），2是把密码用客户端一个会变的东西来进行加密，然后把这个会变的东西固定处理后发送到服务器，再进行解密，感觉2似乎还是有点不可靠？</p>
+<h2 id="合并http请求"><a href="#合并http请求" class="headerlink" title="合并http请求"></a>合并http请求</h2><p>现在的add,delete,update操作完成后还需要再refresh一次，其实可以把他们都合并到一个http请求里</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>界面可以完善的更好</p>
+<h2 id="后端还有很多逻辑可以复用"><a href="#后端还有很多逻辑可以复用" class="headerlink" title="后端还有很多逻辑可以复用"></a>后端还有很多逻辑可以复用</h2><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>angularjs到此放一放，包括provider，包括实现原理等，可能需要等很以后有需要才能继续拾起来啦，接下来会细看一下html5+css3，js忍者秘籍和ES6</p>
+<p>感谢肉排桑和监督桑在这一年来学习上的督促与教导，感谢他们我才能系统学习了这么多知识！真是非常感谢！</p>
+<p>另外一些其他的存档：</p>
+<blockquote>
+<p><a href="http://www.yuzhewo.com/2015/11/03/%E4%BF%AE%E6%94%B9gitlab%E4%BD%BF%E7%94%A8%E7%8E%B0%E6%9C%89nginx%E6%9C%8D%E5%8A%A1%E5%8F%8A502%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_blank" rel="external">gitlab vhost配置 502</a><br><a href="https://www.fancycoding.com/centos7-mail-server-with-dovecot-postfix-ssl/" target="_blank" rel="external">centos7配置邮件服务器</a><br><a href="http://blog.sina.com.cn/s/blog_93a6a0c30101fshd.html" target="_blank" rel="external">z-index不生效</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/2016-06-16/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          近况
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/gulpjs-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gulp.js初体验 - 自动编译/刷新/Release</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+  
+  
+  
+    <div data-url="https://blog.xingoxu.com/2016/04/2016-04-19/" data-title="「近期学习小结」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+</div>
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-04-19" data-title="近期学习小结" data-url="https://blog.xingoxu.com/2016/04/2016-04-19/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blog-xingoxu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//dn-xingoxu.qbox.me/blog/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 xingo Hosted on <a href="https://github.com/" target="_blank">Github</a>
+    	</div>
+      	<div class="footer-right">
+      		Powered By <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-just-use-chrome-to-debug" target="_blank">Paper White</a> by xingo
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="/" class="profilepic">
+			
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/">xingo</a></h1>
+				
+					<p class="header-subtitle">一个在成长的男孩</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>导航</li>
+						
+						
+						<li>文章目录</li>
+						
+						
+						<li>朋友们</li>
+						
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+							<li><a href="/works">作品</a></li>
+				        
+				        
+				        <li>
+				        	<form class="search-box" action="//google.com/search" method="get" target="_blank" accept-charset="utf-8">
+				        		<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+				        		<label class="search-icon" for="search">
+				        			<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+				        		<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+				        		</label>
+				        	</form>
+				        </li>
+				        <li id="totop" title="回顶部"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nodejs"><span class="toc-number">1.</span> <span class="toc-text">nodejs</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Promise"><span class="toc-number">2.</span> <span class="toc-text">Promise</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS"><span class="toc-number">3.</span> <span class="toc-text">AngularJS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#双向绑定的’-scope’"><span class="toc-number">3.1.</span> <span class="toc-text">双向绑定的’$scope’</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#controller与directive"><span class="toc-number">3.2.</span> <span class="toc-text">controller与directive</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#angularjs的一些坑（？）"><span class="toc-number">3.3.</span> <span class="toc-text">angularjs的一些坑（？）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#近期做的nodejs-express-AngularJS-BootStrap-Promise的实现"><span class="toc-number">4.</span> <span class="toc-text">近期做的nodejs+express+AngularJS+BootStrap+Promise的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#password"><span class="toc-number">4.1.</span> <span class="toc-text">password</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合并http请求"><span class="toc-number">4.2.</span> <span class="toc-text">合并http请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常处理"><span class="toc-number">4.3.</span> <span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后端还有很多逻辑可以复用"><span class="toc-number">4.4.</span> <span class="toc-text">后端还有很多逻辑可以复用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后"><span class="toc-number">5.</span> <span class="toc-text">最后</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			          		<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			        	
+			          		<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			        	
+			        	</div>
+					</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nodejs"><span class="toc-text">nodejs</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Promise"><span class="toc-text">Promise</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS"><span class="toc-text">AngularJS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#双向绑定的’-scope’"><span class="toc-text">双向绑定的’$scope’</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#controller与directive"><span class="toc-text">controller与directive</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#angularjs的一些坑（？）"><span class="toc-text">angularjs的一些坑（？）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#近期做的nodejs-express-AngularJS-BootStrap-Promise的实现"><span class="toc-text">近期做的nodejs+express+AngularJS+BootStrap+Promise的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#password"><span class="toc-text">password</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合并http请求"><span class="toc-text">合并http请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后端还有很多逻辑可以复用"><span class="toc-text">后端还有很多逻辑可以复用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">导航</span>
+				<div class="viewer-div">
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+						<li><a href="/works">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">朋友们</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</body>
+</html>
