@@ -16,7 +16,8 @@ after_script:
   - git checkout master
   - cd ../
   - sed -i'' "s~${GH_REF}~${GH_TOKEN}:x-oauth-basic@${GH_REF}~" _config.yml
-  - hexo d
+  - hexo d > log.txt 2>&1
+  - cat log.txt | sed "s~${GH_TOKEN}~TOKEN~g"
 branches:
   only:
   - source
