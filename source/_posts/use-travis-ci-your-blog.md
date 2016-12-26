@@ -56,7 +56,8 @@ after_script:
   - git checkout master
   - cd ../
   - sed -i'' "s~${GH_REF}~${GH_TOKEN}:x-oauth-basic@${GH_REF}~" _config.yml
-  - hexo d
+  - hexo d > log.txt 2>&1
+  - cat log.txt | sed "s~${GH_TOKEN}~TOKEN~g"
 branches:
   only:
   - source
@@ -125,6 +126,23 @@ cd ../
 其实是很简单的git操作，就是需要注意一下
 
 最后注意下主题文件夹如果是git文件夹的问题，不过这个应该不算是持续集成的问题
+
+## 解决hexo d显示出私钥的问题
+
+travis ci的build log是可以被大家看到的，但是，在添加变量那边关掉后 就不会显示出来了，然而，这也仅限于使用`${}`来引用他的地方，git push时，会把此地址再显示一遍，这样你的私人密钥又会被显示了
+
+于是乎我把hexo d的命令改成了这两行
+
+```bash
+hexo d > log.txt 2>&1
+cat log.txt | sed "s~${GH_TOKEN}~TOKEN~g"
+```
+
+将hexo d的输出，包括标准与非标准，全部输入到log.txt，再cat出来的时候，使用sed对里边含有GH_TOKEN统统替换成TOKEN字符串
+
+我对linux命令不怎么样熟悉，只能写成这样，如果您有更好的，不输出到log.txt的方法，可以在评论里指点一下
+
+当然这样也有“缺点”，其实这个缺点在这里不成立，缺点就是把错误吞了，但不成立的原因是，after script的错误不错误不会影响到ci的过程
 
 # 好处
 
