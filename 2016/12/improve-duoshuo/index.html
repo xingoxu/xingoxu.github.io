@@ -9,14 +9,24 @@
             window.location.protocol = "https";
   </script>
   
-  <title>Category: Front-End-Dev | xingo&#39;s private plot</title>
+  <title>改进多说 | xingo&#39;s private plot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xingo's private plot">
-<meta property="og:url" content="https://blog.xingoxu.com/categories/dev/Front-End-Dev/index.html">
+  <meta name="description" content="增加用户尾巴
+头像/表情转换成https">
+<meta property="og:type" content="article">
+<meta property="og:title" content="改进多说">
+<meta property="og:url" content="https://blog.xingoxu.com/2016/12/improve-duoshuo/index.html">
 <meta property="og:site_name" content="xingo's private plot">
+<meta property="og:description" content="增加用户尾巴
+头像/表情转换成https">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/12/27/586228e6c8f9e.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/12/27/586229a1c0dae.png">
+<meta property="og:updated_time" content="2016-12-27T09:33:38.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xingo's private plot">
+<meta name="twitter:title" content="改进多说">
+<meta name="twitter:description" content="增加用户尾巴
+头像/表情转换成https">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2016/12/27/586228e6c8f9e.png">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -94,177 +104,134 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-improve-duoshuo" class="article article-type-post article-page" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/12/improve-duoshuo/" class="article-date">
+  	<time datetime="2016-12-27T07:34:24.000Z" itemprop="datePublished">2016-12-27</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      改进多说
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/improve-duoshuo/" class="archive-article-date">
-  	<time datetime="2016-12-27T07:34:24.000Z" itemprop="datePublished">12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/improve-duoshuo/">改进多说</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>增加用户尾巴</li>
+<li>头像/表情转换成https</li>
+</ul>
+<a id="more"></a>
+<h1 id="多说现有问题"><a href="#多说现有问题" class="headerlink" title="多说现有问题"></a>多说现有问题</h1><ol>
+<li>稳定版不能切换表情</li>
+<li>dev版不能收起表情框</li>
+<li>新浪头像/QQ头像/新浪表情 国内已经支持https了，多说没有及时跟进</li>
+</ol>
+<p>另外多说记录了ua，在用户返回的数据里也给到了发评论的ua，想利用这个ua，展现我们睾贵的操作系统/浏览器/硬件等</p>
+<p>相比不能切换表情，不能收起表情框稍微好那么一点，于是我决定将多说替换成开发版，而且对标准版增加UA以及https的教程网上也有很多，我也进行了参考，我自修改的<a href="https://github.com/xingoxu/improve-duoshuo/blob/b3985130b8fe565e5d47185edcc12c5efc4022ac/embed.js" target="_blank" rel="external">0.32版improve-duoshuo</a>就是使用标准版的多说进行了显示UA，只是没有替换https，如果你需要对标准版进行动手术，欢迎你参考我的这份，也欢迎你参考本篇blog的Reference</p>
+<p><strong>以下内容使用多说dev版进行</strong></p>
+<p>首先格式化多说，使其稍微好看一点</p>
+<h1 id="添加https"><a href="#添加https" class="headerlink" title="添加https"></a>添加https</h1><h2 id="用户头像https"><a href="#用户头像https" class="headerlink" title="用户头像https"></a>用户头像https</h2><p>参考<a href="https://blog.nofile.cc/posts/2016/11/26/note-duoshuo-https.html" target="_blank" rel="external">多说插件支持站点 https</a>，在<a href="https://github.com/xingoxu/improve-duoshuo/commit/0c4a3456784e98f5a47ef0a46f5a5f4e3165f66a" target="_blank" rel="external">第2634行</a>替换a字符串</p>
+<h2 id="替换表情https"><a href="#替换表情https" class="headerlink" title="替换表情https"></a>替换表情https</h2><p>点击表情后，Network中出现</p>
+<p><img src="https://ooo.0o0.ooo/2016/12/27/586228e6c8f9e.png" alt="点击表情后，DevTools-Network"></p>
+<p>格式化后发现</p>
+<p><img src="https://ooo.0o0.ooo/2016/12/27/586229a1c0dae.png" alt="格式化jsonp"></p>
+<p>证明前缀写死在js中，搜索一下<a href="http://，发现和新浪有关的只有[第3333行](https://github.com/xingoxu/improve-duoshuo/commit/0c4a3456784e98f5a47ef0a46f5a5f4e3165f66a)，修改成https后，问题解决" target="_blank" rel="external">http://，发现和新浪有关的只有[第3333行](https://github.com/xingoxu/improve-duoshuo/commit/0c4a3456784e98f5a47ef0a46f5a5f4e3165f66a)，修改成https后，问题解决</a></p>
+<h1 id="增加ua"><a href="#增加ua" class="headerlink" title="增加ua"></a>增加ua</h1><p>dev版多说格式化后找到<code>ds-comment-header</code> <code>ds-user-name</code> 附近，发现全部改成了react风格的绑定</p>
+<p>尝试旧逻辑不变，直接插入<code>{ userTail.showAdmin(author) }</code>和 <code>{ userTail.showUA(comment) }</code> </p>
+<blockquote>
+<p>userTail是之前0.32的全局helper</p>
+</blockquote>
+<p>发现逻辑正常，证明模板可以读取全局变量，但输出字符被escape了</p>
+<p>那就只能老老实实的改成模板形式了</p>
+<p>代码参见<a href="https://github.com/xingoxu/improve-duoshuo/commit/81106ba23d110f0e866e627799fc95d6bec6bc76" target="_blank" rel="external">旧2869行/新2847行</a>，没啥技术含量</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
+<p><a href="https://blog.nofile.cc/posts/2016/11/26/note-duoshuo-https.html" target="_blank" rel="external">多说插件支持站点 https</a></p>
+<p><a href="http://ssk.91txh.com/209" target="_blank" rel="external">多说回复后显示浏览器及操作系统信息（Useragent）</a></p>
+</blockquote>
+<h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>多说这几个礼拜天天炸，时不时500，看来是要跑路啊，赶紧趁跑路前上一波https装个逼（雾</p>
+<p>也欢迎对我的<a href="https://github.com/xingoxu/improve-duoshuo" target="_blank" rel="external">improve-duoshuo</a>提issue提pr</p>
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/use-travis-ci-your-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Travis Ci使hexo自动生成并部署</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+  
+  
+  
+    <div data-url="https://blog.xingoxu.com/2016/12/improve-duoshuo/" data-title="「改进多说」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+</div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/2016-10-27/" class="archive-article-date">
-  	<time datetime="2016-10-27T15:58:37.000Z" itemprop="datePublished">10-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/2016-10-27/">最近遇到的小坑</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/2016-04-19/" class="archive-article-date">
-  	<time datetime="2016-04-18T16:48:42.000Z" itemprop="datePublished">04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/2016-04-19/">近期学习小结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/gulpjs-1/" class="archive-article-date">
-  	<time datetime="2016-03-25T12:34:33.000Z" itemprop="datePublished">03-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/gulpjs-1/">gulp.js初体验 - 自动编译/刷新/Release</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="improve-duoshuo" data-title="改进多说" data-url="https://blog.xingoxu.com/2016/12/improve-duoshuo/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blog-xingoxu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//od8634671.qnssl.com/blog/duoshuo_embed_beta.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/2016-03-20/" class="archive-article-date">
-  	<time datetime="2016-03-20T15:36:32.000Z" itemprop="datePublished">03-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/2016-03-20/">近期学习小结</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 </div>
       <footer id="footer">
@@ -335,6 +302,10 @@
 						</div>
 						
 						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
 						
 						<div class="icon-wrap icon-link hide" data-idx="3">
 							<div class="loopback_l"></div>
@@ -350,6 +321,8 @@
 					<ul class="tips-inner">
 						<li>导航</li>
 						
+						
+						<li>文章目录</li>
 						
 						
 						<li>朋友们</li>
@@ -374,14 +347,6 @@
 				        
 							<li><a href="/works">作品</a></li>
 				        
-				        
-				        	<li>
-				        		<div>
-    								<label for="ajax-switch" class="ajax-checkbox">
-        								<input class="access-hide" disabled id="ajax-switch" name="auto-load" type="checkbox" />开启首页自加载<span class="switch-toggle"></span>
-    								</label>
-								</div>
-				        	</li>
 				        
 				        <li>
 				        	<form class="search-box" action="//google.com/search" method="get" target="_blank" accept-charset="utf-8">
@@ -467,6 +432,14 @@
 				
 
 				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多说现有问题"><span class="toc-number">1.</span> <span class="toc-text">多说现有问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加https"><span class="toc-number">2.</span> <span class="toc-text">添加https</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户头像https"><span class="toc-number">2.1.</span> <span class="toc-text">用户头像https</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换表情https"><span class="toc-number">2.2.</span> <span class="toc-text">替换表情https</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#增加ua"><span class="toc-number">3.</span> <span class="toc-text">增加ua</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#吐槽"><span class="toc-number">5.</span> <span class="toc-text">吐槽</span></a></li></ol>
+							
+						</div>
+					</section>
+				
 				
 				
 					<section class="switch-part switch-part4">
@@ -493,6 +466,13 @@
     <div id="viewer-box">
         <div class="viewer-box-l">
         	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多说现有问题"><span class="toc-text">多说现有问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加https"><span class="toc-text">添加https</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户头像https"><span class="toc-text">用户头像https</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换表情https"><span class="toc-text">替换表情https</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#增加ua"><span class="toc-text">增加ua</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#吐槽"><span class="toc-text">吐槽</span></a></li></ol>
+					</div>
+				</div>
+			
 			<div class="viewer-box-wrap">
 				<span class="viewer-title">导航</span>
 				<div class="viewer-div">
@@ -521,14 +501,6 @@
 				</div>
 			
 			
-				<div class="viewer-box-wrap">
-					<div class="viewer-title">
-    					<label for="ajax-switch-mobile" class="ajax-checkbox">
-        							<input class="access-hide" disabled id="ajax-switch-mobile" name="auto-load" type="checkbox" />开启首页自加载<span class="switch-toggle"	></span>
-    					</label>
-    				</div>
-				</div>
-			
         </div>
         <div class="viewer-box-r">
         </div>
@@ -546,11 +518,11 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
-		canShare: false,
+		isCategory: false,
+		canShare: true,
 		open_in_new: false
 	}
 </script>
