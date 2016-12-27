@@ -2410,13 +2410,14 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #272822;
+  background: #22262d;
   margin: 10px 0;
   padding: 10px 10px;
   overflow: auto;
-  color: #4c4c4c;
+  color: #c0c5ce;
   line-height: 22.400000000000002px;
   border-radius: 4px;
+  text-shadow: none;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -2432,13 +2433,13 @@ a.article-title:hover {
   border: none;
 }
 .article-entry pre {
-  color: #fff;
+  color: #c0c5ce;
 }
 .article-entry pre code {
   background: none;
   text-shadow: none;
   padding: 0;
-  color: #fff;
+  color: #c0c5ce;
 }
 .article-entry .highlight pre {
   border: none;
@@ -2485,7 +2486,7 @@ a.article-title:hover {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #272822;
+  background: #22262d;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -2511,7 +2512,7 @@ a.article-title:hover {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #272822;
+  background: #22262d;
   color: highlight-comment;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
@@ -2538,7 +2539,7 @@ pre .tag,
 pre .doctype,
 pre .params,
 pre .function {
-  color: #fff;
+  color: #c0c5ce;
 }
 pre .css ~ * .tag,
 pre .title,
@@ -2565,6 +2566,64 @@ pre .number {
 pre .id,
 pre .css ~ * .id {
   color: #fd971f;
+}
+.highlight .comment,
+.highlight .quote {
+  color: #5c6370;
+  font-style: italic;
+}
+.highlight .doctag,
+.highlight .keyword,
+.highlight .formula {
+  color: #c678dd;
+}
+.highlight .section,
+.highlight .name,
+.highlight .selector-tag,
+.highlight .deletion,
+.highlight .subst {
+  color: #e06c75;
+}
+.highlight .literal {
+  color: #56b6c2;
+}
+.highlight .string,
+.highlight .regexp,
+.highlight .addition,
+.highlight .attribute,
+.highlight .meta-string {
+  color: #98c379;
+}
+.highlight .built_in,
+.highlight .class .highlight .title {
+  color: #e6c07b;
+}
+.highlight .attr,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .type,
+.highlight .selector-class,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .number {
+  color: #d19a66;
+}
+.highlight .symbol,
+.highlight .bullet,
+.highlight .link,
+.highlight .meta,
+.highlight .selector-id,
+.highlight .title {
+  color: #61aeee;
+}
+.highlight .emphasis {
+  font-style: italic;
+}
+.highlight .strong {
+  font-weight: bold;
+}
+.highlight .link {
+  text-decoration: underline;
 }
 #footer {
   font-size: 12px;
