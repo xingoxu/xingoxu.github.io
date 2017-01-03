@@ -21,7 +21,7 @@ date: 2016-09-18 14:02:14
 
 　　
 ### 技能描述
-- 熟悉 HTML/CSS/JavaScript
+- 熟悉 HTML/CSS/JavaScript(ES5,ES2015)
 - 熟悉 jQuery/Vue.js 0.11/1.0 
 - 了解 Angularjs 1.4/React.js
 - 熟悉 Less 了解 Stylus
