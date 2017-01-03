@@ -9,18 +9,30 @@
             window.location.protocol = "https";
   </script>
   
-  <title>给github pages上ssl(hexo可用) | xingo&#39;s private plot</title>
+  <title>2017 いやほい | xingo&#39;s private plot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
+  <meta name="description" content="时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感
+技术狂点技术点的一年
+年初还在学习Android的我，抵不住朋友的 誘う ，决定学习一下JavaScript，把红书看完之后觉得找到了真爱语言，非常喜欢JavaScript的开放与灵活，于是放弃Android转前端
+2月~3月决定对blog现有主题进行修改来上手对HTML/CSS/JS的学习
+3月底~6月初 帮助学校完成简单的学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给github pages上ssl(hexo可用)">
-<meta property="og:url" content="https://blog.xingoxu.com/2015/04/github-pages-ssl/index.html">
+<meta property="og:title" content="2017 いやほい">
+<meta property="og:url" content="https://blog.xingoxu.com/2017/01/2017-iyahoi/index.html">
 <meta property="og:site_name" content="xingo's private plot">
-<meta property="og:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
+<meta property="og:description" content="时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感
+技术狂点技术点的一年
+年初还在学习Android的我，抵不住朋友的 誘う ，决定学习一下JavaScript，把红书看完之后觉得找到了真爱语言，非常喜欢JavaScript的开放与灵活，于是放弃Android转前端
+2月~3月决定对blog现有主题进行修改来上手对HTML/CSS/JS的学习
+3月底~6月初 帮助学校完成简单的学">
 <meta property="og:updated_time" content="2017-01-03T11:59:58.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给github pages上ssl(hexo可用)">
-<meta name="twitter:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
+<meta name="twitter:title" content="2017 いやほい">
+<meta name="twitter:description" content="时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感
+技术狂点技术点的一年
+年初还在学习Android的我，抵不住朋友的 誘う ，决定学习一下JavaScript，把红书看完之后觉得找到了真爱语言，非常喜欢JavaScript的开放与灵活，于是放弃Android转前端
+2月~3月决定对blog现有主题进行修改来上手对HTML/CSS/JS的学习
+3月底~6月初 帮助学校完成简单的学">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -98,11 +110,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-github-pages-ssl" class="article article-type-post article-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2017-iyahoi" class="article article-type-post article-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/github-pages-ssl/" class="article-date">
-  	<time datetime="2015-04-16T19:01:59.000Z" itemprop="datePublished">2015-04-17</time>
+      <a href="/2017/01/2017-iyahoi/" class="article-date">
+  	<time datetime="2017-01-03T11:55:45.000Z" itemprop="datePublished">2017-01-03</time>
 </a>
     </div>
   
@@ -115,7 +127,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      给github pages上ssl(hexo可用)
+      2017 いやほい
     </h1>
   
 
@@ -124,10 +136,6 @@
       <div class="article-info article-info-post">
         
         
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/maintaince/">maintaince</a><a class="article-category-link" href="/categories/maintaince/blog-setup/">blog-setup</a>
-	</div>
-
 
         <div class="clearfix"></div>
       </div>
@@ -135,29 +143,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>github pages已经支持https，可惜不支持自定义证书<br>我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl</p>
-<a id="more"></a>
-<h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><ol>
-<li>Sign up for Cloudflare if you don’t already have an account</li>
-<li>Add your website, and make sure all automatically generated records match those on your registrar’s website</li>
-</ol>
-<blockquote>
-<p>If you already have a gh-pages website and are simply moving to https, you don’t need to do anything else<br>If not, and are trying to set up your site at apex, create an A record pointing to Github’s IP addresses, else a CNAME pointing to your-username.github.io<br>Make sure there’s a CNAME file at the root of your gh-pages repo with your domain name</p>
-</blockquote>
-<ol>
-<li>Go to your Domain Registrar’s website and change the Domain Name Servers to those Cloudflare provides you with</li>
-<li>Finish Setting up your Domain on Cloudflare and go to the Domain Dashboard</li>
-<li>Open the “Cloudflare Settings” for your domain, and change the SSL Setting to “Flexible SSL”</li>
-</ol>
-<p>等待一个小时左右，Cloudflare就会为你的网站配上证书了</p>
-<h1 id="强制网页跳转https"><a href="#强制网页跳转https" class="headerlink" title="强制网页跳转https"></a>强制网页跳转https</h1><p>在头代码中加入</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</div><div class="line">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</div><div class="line">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="Letting-Search-Engine-know"><a href="#Letting-Search-Engine-know" class="headerlink" title="Letting Search Engine know"></a>Letting Search Engine know</h1><p>Add these following in <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> https://www.yoursite.com   <span class="comment"># with the https protocol</span></div><div class="line"><span class="attr">enforce_ssl:</span> www.yoursite.com   <span class="comment"># without any protocol</span></div></pre></td></tr></table></figure>
-<h1 id="Caution"><a href="#Caution" class="headerlink" title="Caution"></a>Caution</h1><p>CloudFlare提供的SSL服务是基于SNI技术的，也就是说，机子上是IE8及以下用户完全无法打开（Chrome使用证书为系统，所以在win7下IE8的Chrome浏览器也是无法打开的，无论版本），注意了</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
-<p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="external">Set Up SSL on Github Pages With Custom Domains for Free</a><br><a href="http://hexo.io/docs/variables.html" target="_blank" rel="external">Variables | Hexo</a></p>
-</blockquote>
+        <p>时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感</p>
+<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><p>狂点技术点的一年</p>
+<p>年初还在学习Android的我，抵不住朋友的 誘う ，决定学习一下JavaScript，把红书看完之后觉得找到了真爱语言，非常喜欢JavaScript的开放与灵活，于是放弃Android转前端</p>
+<p>2月~3月决定对blog现有主题进行修改来上手对HTML/CSS/JS的学习</p>
+<p>3月底~6月初 帮助学校完成简单的学生管理与成绩抓取</p>
+<p>6月底 开始萌购实习</p>
+<p>7月 协助完成<a href="http://rennigou.jp" target="_blank" rel="external">萌购任你购</a>前台页面</p>
+<p>8月上 完成简单活动页面<a href="http://www.030buy.net/special/2016.8.9.hh/" target="_blank" rel="external">螺旋警戒线</a></p>
+<p>8月下 完成<a href="http://works.xingoxu.com/buy-calc/" target="_blank" rel="external">日系剁手网站价格综合对比工具</a> <a href="http://weibo.com/1804320382/E51AYqS9e?type=like" target="_blank" rel="external">微博</a>获得9333转发，2446个赞，阅读量273.3万</p>
+<p>9月 完成单页面活动页面<a href="http://www.030buy.net/special/2016.9.6.qwqxs/" target="_blank" rel="external">轻文轻小说</a></p>
+<p>10月~12月 独立完成萌购App内所有内嵌网页</p>
+<p>12月上 为<a href="https://user.030buy.net/login" target="_blank" rel="external">登录页</a>添加Canvas2D动画</p>
+<p>从技术上，感觉自己是进步非常大，然而技术日新月异，长远的看，可能也只是从0到1的过程，并没有到100，所以还要接着加油！</p>
+<h1 id="娱乐上"><a href="#娱乐上" class="headerlink" title="娱乐上"></a>娱乐上</h1><p>5月帝都玩 <a href="https://goo.gl/photos/QebSkK5bAivkywjL7" target="_blank" rel="external">Google Photos</a></p>
+<p>6月陪肉排玩了一天</p>
+<p>7月和监督一起去了独立游戏大会</p>
+<p>12月和监督一起cp19 <a href="https://goo.gl/photos/hrwJoTuMnZd7cXgD7" target="_blank" rel="external">Google Photos</a></p>
+<p>bangumi 2016</p>
+<h1 id="新的一年"><a href="#新的一年" class="headerlink" title="新的一年"></a>新的一年</h1><p>顺利完成4月底的旅行</p>
+<p>顺利毕业</p>
+<p>至少考出N3，希望能考出N2</p>
+<p>希望在技术上能有新的进步 rxJs，后端也好，可视化前端也好，游戏开发也好</p>
 
       
     </div>
@@ -167,18 +174,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/hexo-setup-log/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          自用hexo+github pages搭建log
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2016/12/improve-duoshuo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">改进多说</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -188,7 +186,7 @@
   
   
   
-    <div data-url="https://blog.xingoxu.com/2015/04/github-pages-ssl/" data-title="「给github pages上ssl(hexo可用)」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2017/01/2017-iyahoi/" data-title="「2017 いやほい」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -205,7 +203,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="github-pages-ssl" data-title="给github pages上ssl(hexo可用)" data-url="https://blog.xingoxu.com/2015/04/github-pages-ssl/"></div>
+	<div class="ds-thread" data-thread-key="2017-iyahoi" data-title="2017 いやほい" data-url="https://blog.xingoxu.com/2017/01/2017-iyahoi/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -427,7 +425,7 @@
 					<section class="switch-part switch-part3">
 						<div id="toc" class="toc-article">
 							
-								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Getting-Started"><span class="toc-number">1.</span> <span class="toc-text">Getting Started</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#强制网页跳转https"><span class="toc-number">2.</span> <span class="toc-text">强制网页跳转https</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Letting-Search-Engine-know"><span class="toc-number">3.</span> <span class="toc-text">Letting Search Engine know</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Caution"><span class="toc-number">4.</span> <span class="toc-text">Caution</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">5.</span> <span class="toc-text">Reference</span></a></li></ol>
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#技术"><span class="toc-number">1.</span> <span class="toc-text">技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#娱乐上"><span class="toc-number">2.</span> <span class="toc-text">娱乐上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新的一年"><span class="toc-number">3.</span> <span class="toc-text">新的一年</span></a></li></ol>
 							
 						</div>
 					</section>
@@ -461,7 +459,7 @@
 				<div class="viewer-box-wrap">
 					<span class="viewer-title">文章目录</span>
 					<div id="toc-mobile" class="toc-article viewer-div">
-						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Getting-Started"><span class="toc-text">Getting Started</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#强制网页跳转https"><span class="toc-text">强制网页跳转https</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Letting-Search-Engine-know"><span class="toc-text">Letting Search Engine know</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Caution"><span class="toc-text">Caution</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#技术"><span class="toc-text">技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#娱乐上"><span class="toc-text">娱乐上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新的一年"><span class="toc-text">新的一年</span></a></li></ol>
 					</div>
 				</div>
 			
