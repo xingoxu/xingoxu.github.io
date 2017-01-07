@@ -262,6 +262,7 @@ a {
 #container #mobile-nav #header .header-menu {
   height: auto;
   margin: 10px;
+  margin-bottom: 4px;
 }
 #container #mobile-nav #header .header-menu ul {
   text-align: center;
@@ -272,16 +273,33 @@ a {
   margin: 3px;
 }
 #container #mobile-nav #header .header-menu li:before {
-  -webkit-transition: height 0s ease-in-out;
-  -moz-transition: height 0s ease-in-out;
-  -ms-transition: height 0s ease-in-out;
-  transition: height 0s ease-in-out;
-  width: 100%;
-  height: 0;
-  bottom: 0;
+  display: none;
 }
-#container #mobile-nav #header .header-menu li:hover:before {
+#container #mobile-nav #header .header-menu li >a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  -webkit-transform: translateY(4px);
+  -moz-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-transition-property: left, width;
+  -moz-transition-property: left, width;
+  -ms-transition-property: left, width;
+  transition-property: left, width;
+  width: 0;
   height: 4px;
+  bottom: 0;
+  left: 50%;
+  background: #4184f3;
+}
+#container #mobile-nav #header .header-menu li >a:hover:before {
+  left: 0;
+  width: 100%;
 }
 #container #mobile-nav #header .social {
   background: none;
