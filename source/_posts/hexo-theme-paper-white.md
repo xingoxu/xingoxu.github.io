@@ -15,7 +15,7 @@ categories:
 # Paper White - A Hexo Theme
 ================
 
-[![](https://dn-xingoxu.qbox.me/github/Paper-White/Showcase-Template-Flat-Presentation.png)](https://github.com/xingoxu/hexo-theme-just-use-chrome-to-debug/archive/master.zip)
+[![](https://dn-xingoxu.qbox.me/github/Paper-White/Showcase-Template-Flat-Presentation.png)](https://github.com/xingoxu/hexo-theme-paper-white/archive/master.zip)
 
 ## Update v0.9:  
 
@@ -95,7 +95,7 @@ categories:
 ## 安装
 
 ``` bash
-$ git clone https://github.com/xingoxu/hexo-theme-just-use-chrome-to-debug.git themes/Paper-White
+$ git clone https://github.com/xingoxu/hexo-theme-paper-white.git themes/Paper-White
 ```
 
 ## 配置
