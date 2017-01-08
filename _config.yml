@@ -65,6 +65,8 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: Paper-White
+stylus:
+  compress: true
 
 Plugins:
 - hexo-generator-feed
