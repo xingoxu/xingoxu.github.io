@@ -20,7 +20,7 @@ ReadMe 请[移步](https://github.com/xingoxu/hexo-theme-paper-white)
 
 此处将集中显示各种奇奇怪怪 demo
 
-## embed code
+# embed code
 ```javascript
 	//载入分享模块
 	if (paperWhiteConfig.canShare) {
@@ -38,13 +38,13 @@ ReadMe 请[移步](https://github.com/xingoxu/hexo-theme-paper-white)
 	}
 ```
 
-## embed gist
+# embed gist
 <script src="https://gist.github.com/xingoxu/9ef5d5a262f796daad94.js"></script>
 
-## jsfiddle
+# jsfiddle
 <script async src="//jsfiddle.net/6nxkckcq/3/embed/"></script>
 
-## table
+# table
 
 | 项目        | 价格   |  数量  |
 | --------   | -----:  | :----:  |
