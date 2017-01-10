@@ -42,7 +42,7 @@ ReadMe 请[移步](https://github.com/xingoxu/hexo-theme-paper-white)
 <script src="https://gist.github.com/xingoxu/9ef5d5a262f796daad94.js"></script>
 
 # jsfiddle
-<script async src="//jsfiddle.net/6nxkckcq/3/embed/"></script>
+<script async src="//jsfiddle.net/pq98medb/1/embed/js,html,css,result/dark/"></script>
 
 # table
 
