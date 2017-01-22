@@ -2,6 +2,9 @@
   "name": "xingo-s-blog",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "test": "sh test.sh"
+  },
   "hexo": {
     "version": "3.2.2"
   },
