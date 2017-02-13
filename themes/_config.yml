@@ -37,7 +37,7 @@ toc:
   aside: true     ## show contents in aside.
 
 # Miscellaneous
-google_analytics: ''
+google_analytics: 'UA-91877583-1'
 favicon: /favicon.ico
 
 #你的头像url
