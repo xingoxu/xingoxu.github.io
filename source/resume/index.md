@@ -44,12 +44,14 @@ date: 2016-09-18 14:02:14
 　　
 ### 简单作品
 > **React.js** - [日系剁手网站价格综合对比工具](http://works.xingoxu.com/buy-calc/)
+一个综合价格计算工具，实现了单价与合计总价对比
 - React.js 的组件，状态的理解
 - React.js Virtual dom的几个事件的使用
 　　
   
 　　
 > **Nodejs/Angularjs** - [简单的增删改查与权限管理实现](https://dev.xingoxu.cn)
+一个简单的权限与增删改查，以及附带简单的页面抓取
 - Express.js的使用
 - Angularjs的$scope, controller, directive, service的理解
 - gulp.js构建工具的使用
