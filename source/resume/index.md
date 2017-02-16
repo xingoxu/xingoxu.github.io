@@ -45,6 +45,7 @@ date: 2016-09-18 14:02:14
 ### 简单作品
 > **React.js** - [日系剁手网站价格综合对比工具](http://works.xingoxu.com/buy-calc/)
 一个综合价格计算工具，实现了单价与合计总价对比
+- 使用webpack 2 构建
 - React.js 的组件，状态的理解
 - React.js Virtual dom的几个事件的使用
 　　
