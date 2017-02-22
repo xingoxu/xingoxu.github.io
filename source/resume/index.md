@@ -21,12 +21,11 @@ date: 2016-09-18 14:02:14
 
 　　
 ### 技能描述
-- 熟悉 HTML/CSS/JavaScript(ES5,ES2015)
-- 熟悉 jQuery/Vue.js
-- 了解 Angularjs 1.4/React.js
+- 熟悉 HTML5/CSS3/JavaScript(ES5,ES2015)主流标准 解决常见浏览器兼容问题
+- 熟悉 jQuery/Vue.js/Bootstrap 了解 Angularjs 1.4/React.js 基础扎实，快速上手新框架
 - 熟悉 Less 了解 Stylus
-- 了解 webpack/gulp.js
-- 了解 Nodejs/Express.js
+- 了解 webpack/gulp.js 能看文档从0编写构建文件
+- 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API
 - 熟悉 git
 
 　　
@@ -35,12 +34,14 @@ date: 2016-09-18 14:02:14
 - 独立完成活动专题页面 举例： [轻文轻小说](http://www.030buy.net/special/2016.9.6.qwqxs/) [螺旋境界线](http://www.030buy.net/special/2016.8.9.hh/)
 - 协助[萌购 - 任你购](http://rennigou.jp/)的前台页面实现与搭建后台页面
 - 使用canvas2D为登录界面增加动画 [直达](https://user.030buy.net/login)
-- 独立完成萌购Android/IOS App内所有内嵌网页（有与原生客户端交互等）
+- 独立完成萌购Android/IOS App内所有内嵌网页并与原生客户端交互
 
 
 ### 简单作品
 > 除标明外 web项目均使用webpack 2，并采用响应式布局
-
+　　
+  
+　　
 > **Electron** - [PS4 Wallpaper Helper](http://works.xingoxu.com/ps4helper/)
 一个帮助更换PS4壁纸的小程序
 - PS4 Side 使用socket.io使得PC端更改壁纸后迅速在页面上展示出新图片
@@ -60,7 +61,8 @@ date: 2016-09-18 14:02:14
 一个简单的权限与增删改查，以及附带简单的页面抓取
 - Express.js的使用
 - Angularjs的$scope, controller, directive, service的理解
-- gulp.js构建工具的使用
+- gulp.js构建
+- 使用forever.js保持在线运行
 　　
   
 　　
