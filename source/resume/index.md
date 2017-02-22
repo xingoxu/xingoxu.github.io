@@ -58,7 +58,7 @@ date: 2016-09-18 14:02:14
   
 　　
 > **Nodejs/Angularjs** - [简单的增删改查与权限管理实现](https://dev.xingoxu.cn)
-一个简单的权限与增删改查，以及附带简单的页面抓取
+一个简单的登录，权限控制与增删改查，以及附带简单的成绩页面抓取
 - Express.js的使用
 - Angularjs的$scope, controller, directive, service的理解
 - gulp.js构建
