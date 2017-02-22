@@ -27,25 +27,30 @@ date: 2016-09-18 14:02:14
 - 熟悉 Less 了解 Stylus
 - 了解 webpack/gulp.js
 - 了解 Nodejs/Express.js
-- 了解 Java/PHP/C/C++
 - 熟悉 git
-　　
 
 　　
 ### 工作经历
 > 2016.06.20 - 至今 上海凌梦科技有限公司（萌购） 前端（实习）
 - 独立完成活动专题页面 举例： [轻文轻小说](http://www.030buy.net/special/2016.9.6.qwqxs/) [螺旋境界线](http://www.030buy.net/special/2016.8.9.hh/)
-- 协助[萌购 - 任你购](http://rennigou.jp/)的前台页面（Bootstrap）实现与后台页面（Vue 0.11）的实现
+- 协助[萌购 - 任你购](http://rennigou.jp/)的前台页面实现与搭建后台页面
 - 使用canvas2D为登录界面增加动画 [直达](https://user.030buy.net/login)
-- 独立完成萌购Android/IOS App内所有内嵌网页（Vue 1.0）（有与原生客户端交互等）
+- 独立完成萌购Android/IOS App内所有内嵌网页（有与原生客户端交互等）
 
-　　
 
-　　
 ### 简单作品
+> 除标明外 web项目均使用webpack 2，并采用响应式布局
+
+> **Electron** - [PS4 Wallpaper Helper](http://works.xingoxu.com/ps4helper/)
+一个帮助更换PS4壁纸的小程序
+- PS4 Side 使用socket.io使得PC端更改壁纸后迅速在页面上展示出新图片
+- PC Side Express.js起本地服务器 Vue.js做前端i18n
+- 使用electron-builder打包二进制文件，Run everywhere
+　　
+  
+　　
 > **React.js** - [日系剁手网站价格综合对比工具](http://works.xingoxu.com/buy-calc/)
-一个综合价格计算工具，实现了单价与合计总价对比
-- 使用webpack 2 构建
+一个综合价格计算工具，实现了单价与合计总价对比，[微博](http://weibo.com/1804320382/E51AYqS9e)获得 9187 转发，2438 个赞，阅读量 278.8 万
 - React.js 的组件，状态的理解
 - React.js Virtual dom的几个事件的使用
 　　
@@ -63,6 +68,7 @@ date: 2016-09-18 14:02:14
 - HTML/CSS/JS的基本学习
 - jQuery的使用
 - ejs stylus requirejs的基本使用
+- Travis Ci 持续化构建
 　　
   
 　　
