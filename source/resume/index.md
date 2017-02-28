@@ -25,7 +25,7 @@ date: 2016-09-18 14:02:14
 - 熟悉 jQuery/Vue.js/Bootstrap 了解 Angularjs 1.4/React.js 基础扎实，快速上手新框架
 - 熟悉 Less 了解 Stylus
 - 了解 webpack/gulp.js 能看文档从0编写构建文件
-- 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API
+- 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API   了解 MSSQL/MySQL 关系型数据库
 - 熟悉 git
 
 　　
