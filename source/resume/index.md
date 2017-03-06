@@ -63,6 +63,7 @@ date: 2016-09-18 14:02:14
 一个简单的登录，权限控制与增删改查，以及附带简单的成绩页面抓取
 - Express.js做路由，Angular.js做前端双向绑定，加速开发，gulp.js构建
 - Angular.js的$scope, controller, directive, service的理解
+- Request 抓取页面，使用jsdom进行页面处理并返回json片段
 - 使用forever.js保持在线运行
 - MySQL保存数据，Redis保存Session
 　　
