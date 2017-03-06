@@ -35,7 +35,7 @@ date: 2016-09-18 14:02:14
 - 协助[萌购 - 任你购](http://rennigou.jp/)的前台页面实现与搭建后台页面
 - 使用canvas2D为登录界面增加动画 [直达](https://user.030buy.net/login)
 - 独立完成萌购Android/IOS App内所有内嵌网页并与原生客户端交互
-- 高度还原设计稿 使用到包括但不限于 PHP/Vue/Less
+- 高度还原设计稿 使用到包括但不限于 PHP/Vue/Less/Vagrant
 
 
 ### 简单作品/开源项目
