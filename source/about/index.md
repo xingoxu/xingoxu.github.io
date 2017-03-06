@@ -20,10 +20,10 @@ Front-end Developer
 
 # Interests
 
-I like anime and mangas for children below 14 years old.
+I like anime and mangas such as Weekly Shounen Jump.
 You can see my favourite animes from the sites below this line.
   
-Bangumi:[@xingo](http://bangumi.tv/user/xingo)
+Bangumi:[@xingo](https://bgm.tv/user/xingo)
   
 # About this site
 

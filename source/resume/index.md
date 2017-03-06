@@ -21,11 +21,11 @@ date: 2016-09-18 14:02:14
 
 　　
 ### 技能描述
-- 熟悉 HTML5/CSS3/JavaScript(ES5,ES2015)主流标准 解决常见浏览器兼容问题
+- 熟悉 HTML5/CSS3/JavaScript(ES5,ES2015)主流标准 构建响应式布局 解决常见浏览器兼容问题
 - 熟悉 jQuery/Vue.js/Bootstrap 了解 Angularjs 1.4/React.js 基础扎实，快速上手新框架
 - 熟悉 Less 了解 Stylus
 - 了解 webpack/gulp.js 能看文档从0编写构建文件
-- 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API   了解 MSSQL/MySQL 关系型数据库
+- 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API   了解 MSSQL/MySQL 关系型数据库 了解http 前后端交互
 - 熟悉 git
 
 　　
@@ -35,14 +35,15 @@ date: 2016-09-18 14:02:14
 - 协助[萌购 - 任你购](http://rennigou.jp/)的前台页面实现与搭建后台页面
 - 使用canvas2D为登录界面增加动画 [直达](https://user.030buy.net/login)
 - 独立完成萌购Android/IOS App内所有内嵌网页并与原生客户端交互
+- 高度还原设计稿 使用到包括但不限于 PHP/Vue/Less
 
 
-### 简单作品
-> 除标明外 web项目均使用webpack 2，并采用响应式布局
+### 简单作品/开源项目
+> 除标明外 web项目均使用webpack 2/ES2015，并采用响应式布局
 　　
   
 　　
-> **Electron** - [PS4 Wallpaper Helper](http://works.xingoxu.com/ps4helper/)
+> [PS4 Wallpaper Helper](http://works.xingoxu.com/ps4helper/) - **Electron/Express.js/socket.io**
 一个帮助更换PS4壁纸的小程序
 - PS4 Side 使用socket.io使得PC端更改壁纸后迅速在页面上展示出新图片
 - PC Side Express.js起本地服务器 Vue.js做前端i18n
@@ -50,19 +51,20 @@ date: 2016-09-18 14:02:14
 　　
   
 　　
-> **React.js** - [日系剁手网站价格综合对比工具](http://works.xingoxu.com/buy-calc/)
+> [日系剁手网站价格综合对比工具](http://works.xingoxu.com/buy-calc/) - **React.js**
 一个综合价格计算工具，实现了单价与合计总价对比，[微博](http://weibo.com/1804320382/E51AYqS9e)获得 9187 转发，2438 个赞，阅读量 278.8 万
 - React.js 的组件，状态的理解
 - React.js Virtual dom的几个事件的使用
+- Fetch API
 　　
   
 　　
-> **Nodejs/Angularjs** - [简单的增删改查与权限管理实现](https://dev.xingoxu.cn)
+> [学生事务管理中心](https://dev.xingoxu.cn) - **Node.js/Express.js/Angular.js/Gulp.js/Bootstrap**
 一个简单的登录，权限控制与增删改查，以及附带简单的成绩页面抓取
-- Express.js的使用
-- Angularjs的$scope, controller, directive, service的理解
-- gulp.js构建
+- Express.js做路由，Angular.js做前端双向绑定，加速开发，gulp.js构建
+- Angular.js的$scope, controller, directive, service的理解
 - 使用forever.js保持在线运行
+- MySQL保存数据，Redis保存Session
 　　
   
 　　
