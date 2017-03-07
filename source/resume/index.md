@@ -24,7 +24,7 @@ date: 2016-09-18 14:02:14
 - 熟悉 HTML5/CSS3/JavaScript(ES5,ES2015)主流标准 构建响应式布局 解决常见浏览器兼容问题
 - 熟悉 jQuery/Vue.js/Bootstrap 了解 Angularjs 1.4/React.js 基础扎实，快速上手新框架
 - 熟悉 Less 了解 Stylus
-- 了解 webpack/gulp.js 能看文档从0编写构建文件
+- 了解 webpack/gulp.js 能看文档从0编写构建文件 了解前端组件化 工程化
 - 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API   了解 MSSQL/MySQL 关系型数据库 了解http 前后端交互
 - 熟悉 git
 
