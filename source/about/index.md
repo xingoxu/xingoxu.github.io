@@ -34,6 +34,7 @@ CDN by [CloudFlare](https://www.cloudflare.com/) and [Qiniu Cloud Service](https
 
 ## Github Contributions
 
+
 <div class="canvas-wrapper" markdown="0">
   <div class="preloader-wrapper small active loading-icon">
     <div class="spinner-layer spinner-blue">
@@ -160,6 +161,7 @@ CDN by [CloudFlare](https://www.cloudflare.com/) and [Qiniu Cloud Service](https
   }
   .canvas {
     width: 862px;
+    margin: -25px 0 0 -100px;
   }
 </style>
 
