@@ -4,7 +4,7 @@ date: 2016-09-18 14:02:14
 ---
 
 ## 徐毅鑫
-上海第二工业大学 [邮箱](mailto:xingoxu@foxmail.com) (+86) MTMxMjA5MTEwODM= 方向：前端
+上海第二工业大学 [邮箱](mailto:xingoxu@foxmail.com) (+86) MTMxMjA5MTEwODM= 方向：前端 (用户体验)
   
   
 ### 教育背景
@@ -21,7 +21,7 @@ date: 2016-09-18 14:02:14
 
 　　
 ### 技能描述
-- 熟悉 HTML5/CSS3/JavaScript(ES5,ES2015)主流标准 构建响应式布局 解决常见浏览器兼容问题
+- 熟悉 HTML5/CSS3/JavaScript(ES5,ES2015)主流标准 熟练掌握构建响应式布局 解决常见浏览器兼容问题 注重细节 追求像素级对齐
 - 熟悉 jQuery/Vue.js/Bootstrap 了解 Angularjs 1.4/React.js 基础扎实，快速上手新框架
 - 熟悉 Less 了解 Stylus
 - 了解 webpack/gulp.js 能看文档从0编写构建文件 了解前端组件化 工程化
@@ -40,6 +40,11 @@ date: 2016-09-18 14:02:14
 
 ### 简单作品/开源项目
 > 除标明外 web项目均使用webpack 2/ES2015，并采用响应式布局
+　　
+  
+　　
+> [Canvas Contribution](https://github.com/xingoxu/canvas-contribution) - Canvas2D / ES2015 /NPMpackage
+一个使用canvas生成github contribution的npm package
 　　
   
 　　
@@ -79,4 +84,4 @@ date: 2016-09-18 14:02:14
 　　
 > **C#** - [Pixiv扒原图](https://github.com/xingoxu/pixivDownloader-WPF)
 - 多线程的交互处理
-- HTTP 的GET POST方法
+- HTTP 的GET/POST/DELETE/PUT方法
