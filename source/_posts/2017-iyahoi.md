@@ -45,8 +45,7 @@ categories:
 
 12月和监督一起cp19 [Google Photos](https://goo.gl/photos/hrwJoTuMnZd7cXgD7)
 
-bangumi 2016
-
+[bangumi 2016](http://bgm.tv/award/2016/xingo)
 
 # 新的一年
 
