@@ -4,46 +4,42 @@ date: 2016-09-18 14:02:14
 ---
 
 ## 徐毅鑫
-上海第二工业大学 [邮箱](mailto:xingoxu@foxmail.com) (+86) MTMxMjA5MTEwODM= 方向：前端 (用户体验)
+上海第二工业大学 [邮箱](mailto:xingoxu@foxmail.com) (+86) MTMxMjA5MTEwODM= 方向：前端
   
   
-### 教育背景
+## 教育背景
 - 2013.9 - 2017.6  上海第二工业大学  软件工程  本科
-　　
 
-　　
-### 获得证书
+## 证书荣誉
 - 大学英语四六级（523,517）
 - 第七届蓝桥杯全国软件和信息技术专业人才大赛个人赛上海赛区省赛一等奖　全国三等奖
-- 以310分通过第六次CCF CSP软件能力认证　（算法与数据结构） 
+- 以310分通过第六次CCF CSP软件能力认证（算法与数据结构） 
 - 获得2015年、2016年校级三等奖学金
 - 初级程序员（软考）
 
-　　
-### 技能描述
+## 技能描述
 - 熟悉 HTML5/CSS3/JavaScript(ES5,ES2015)主流标准 熟练掌握构建响应式布局 解决常见浏览器兼容问题 注重细节 追求像素级对齐
 - 熟悉 jQuery/Vue.js/Bootstrap 了解 Angularjs 1.4/React.js 基础扎实，快速上手新框架
 - 熟悉 Less 了解 Stylus
 - 了解 webpack/gulp.js 能看文档从0编写构建文件 了解前端组件化 工程化
-- 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API   了解 MSSQL/MySQL 关系型数据库 了解http 前后端交互
+- 了解 Nodejs/Express.js 了解 Java/PHP 构建Restful API   了解 MSSQL/MySQL 关系型数据库 了解http协议 懂得前后端交互
 - 熟悉 git
-
 　　
-### 工作经历
+
+## 工作经历
 > 2016.06.20 - 至今 上海凌梦科技有限公司（萌购） 前端（实习）
-- 独立完成活动专题页面 举例： [轻文轻小说](http://www.030buy.net/special/2016.9.6.qwqxs/) [螺旋境界线](http://www.030buy.net/special/2016.8.9.hh/)
-- 协助[萌购 - 任你购](http://rennigou.jp/)的前台页面实现与搭建后台页面
-- 使用canvas2D为登录界面增加动画 [直达](https://user.030buy.net/login)
-- 独立完成萌购Android/IOS App内所有内嵌网页并与原生客户端交互
-- 高度还原设计稿 使用到包括但不限于 PHP/Vue/Less/Vagrant
+> - 独立完成活动专题页面 举例： [轻文轻小说](http://www.030buy.net/special/2016.9.6.qwqxs/) &nbsp; [螺旋境界线](http://www.030buy.net/special/2016.8.9.hh/) &nbsp; [清恋](http://www.030buy.net/special/2017.3.16.ql/)
+> - 协助[萌购 - 任你购](http://rennigou.jp/)的前台页面实现与搭建后台页面
+> - 使用canvas2D为登录界面增加动画 [直达](https://user.030buy.net/login)
+> - 独立完成萌购Android/IOS App内所有内嵌网页并与原生客户端交互
+> - 高度还原设计稿 技术包括且不限于 PHP/Vue/Less/Vagrant
 
-
-### 简单作品/开源项目
-> 除标明外 web项目均使用webpack 2/ES2015，并采用响应式布局
+## 简单作品/开源项目
+> 除标明外 web项目均使用webpack 2/ ES2015，并采用响应式布局
 　　
   
 　　
-> [Canvas Contribution](https://github.com/xingoxu/canvas-contribution) - Canvas2D / ES2015 /NPMpackage
+> [Canvas Contribution](https://github.com/xingoxu/canvas-contribution) - **Canvas2D / ES2015 / NPMpackage**
 一个使用canvas生成github contribution的npm package
 　　
   
@@ -74,7 +70,7 @@ date: 2016-09-18 14:02:14
 　　
   
 　　
-> **HTML/CSS/JS** - [个人博客页面](https://blog.xingoxu.com/)
+> [个人博客页面](https://blog.xingoxu.com/) - **HTML/CSS/JS**
 - HTML/CSS/JS的基本学习
 - jQuery的使用
 - ejs stylus requirejs的基本使用
@@ -82,6 +78,6 @@ date: 2016-09-18 14:02:14
 　　
   
 　　
-> **C#** - [Pixiv扒原图](https://github.com/xingoxu/pixivDownloader-WPF)
+> [Pixiv扒原图](https://github.com/xingoxu/pixivDownloader-WPF) - **C#**
 - 多线程的交互处理
 - HTTP 的GET/POST/DELETE/PUT方法
