@@ -37,7 +37,7 @@ update_date: 2017-03-25 12:53:14
 > - 使用 webpack/vue 1/PHP 独立完成萌购Android/IOS App内所有内嵌网页并与原生客户端交互
 
 ## 简单作品/开源项目
-> 除标明外 web项目均使用webpack 2/ ES2015，并采用响应式布局
+> 除标明外 web项目均使用webpack 2 / ES2015，并采用响应式布局
 　　
   
 　　
