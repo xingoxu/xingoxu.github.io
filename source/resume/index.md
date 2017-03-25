@@ -4,7 +4,7 @@ date: 2016-09-18 14:02:14
 update_date: 2017-03-25 12:53:14
 ---
 
-<button id="print" onclick="print()">打印 / 下载 PDF</button>
+<button id="print" onclick="print();ga('send','event','click','resumeDownload')">打印 / 下载 PDF</button>
 
 ## 徐毅鑫
 上海第二工业大学 &nbsp;&nbsp;&nbsp; [邮箱](mailto:xingoxu@foxmail.com) &nbsp;&nbsp;&nbsp; (+86) <script type="text/javascript" src="https://od8634671.qnssl.com/phone.js"></script> &nbsp;&nbsp;&nbsp; 方向：前端
