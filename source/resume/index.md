@@ -1,7 +1,10 @@
 ---
 title: "简历 Resume"
 date: 2016-09-18 14:02:14
+update_date: 2017-03-25 12:53:14
 ---
+
+<button id="print" onclick="print()">打印 / 下载 PDF</button>
 
 ## 徐毅鑫
 上海第二工业大学 [邮箱](mailto:xingoxu@foxmail.com) (+86) MTMxMjA5MTEwODM= 方向：前端
@@ -80,3 +83,47 @@ date: 2016-09-18 14:02:14
 > [Pixiv扒原图](https://github.com/xingoxu/pixivDownloader-WPF) - **C#**
 - 多线程的交互处理
 - HTTP 的GET/POST/DELETE/PUT方法
+
+
+<style markdown="0">
+  #print {
+    float: right;
+    margin-top: -34px;
+    background: rgb(65, 132, 243);
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    padding: 0 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 36px;
+    cursor: pointer;
+    transition: .3s all ease;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);    
+  }
+  #print:hover {
+    background: rgba(65, 132, 243,.8);
+  }
+  #print:focus {
+    background: #3a78de;
+  }
+  #print:active {
+    background: #3264b7;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.4);
+  }
+  @media print {
+    #comments, #footer,.article-share,.right-col,#print {
+      display: none;
+    }
+    #container .mid-col {
+      right: 0;
+    }
+    .article {
+      margin: 0;
+      box-shadow: none;
+    }
+    body {
+      background: #FFF;
+    }
+  }
+</style>
