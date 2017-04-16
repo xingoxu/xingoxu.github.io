@@ -9,6 +9,8 @@ date: 2017-04-16 00:03:42
 > [bgm 人物介绍](https://bgm.tv/character/28623)
 > 
 > [MyFigureCollection.net](http://myfigurecollection.net/item/286361)
+>
+> [Amazon.co.jp](https://www.amazon.co.jp/dp/B017AT19HQ)
 
 mensHdge technical statue No.21 終わりのセラフ 百夜優一郎 ノンスケール ATBC-PVC 製 塗装済みフィギュア
 
