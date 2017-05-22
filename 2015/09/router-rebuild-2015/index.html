@@ -15,14 +15,13 @@
   
   <title>WNDR4300救砖（openwrt） | xingo&#39;s private plot</title>
   <meta name="description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
-<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WNDR4300救砖（openwrt）">
 <meta property="og:url" content="https://blog.xingoxu.com/2015/09/router-rebuild-2015/index.html">
-<meta property="og:site_name" content="xingo's private plot">
+<meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
 <meta property="og:image" content="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif">
-<meta property="og:updated_time" content="2017-04-16T07:14:31.065Z">
+<meta property="og:updated_time" content="2017-05-22T10:41:59.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WNDR4300救砖（openwrt）">
 <meta name="twitter:description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
@@ -34,7 +33,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1492326947266">
+  <link rel="stylesheet" href="/css/style.css?1495449799094">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -177,7 +176,7 @@
 <li>尽管是2.3.2，但是新安装的（还是15.05的openwrt上）并没有看到UDP中继，然而ignore.list倒是要自己下载。。。</li>
 <li>ignore.list下载方式在最下面<br><br></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -O- &apos;http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest&apos; | awk -F\| &apos;/CN\|ipv4/ &#123; printf(&quot;%s/%d\n&quot;, $4, 32-log($5)/log(2)) &#125;&apos; &gt; /etc/ignore.list</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ &#123; printf("%s/%d\n", $4, 32-log($5)/log(2)) &#125;' &gt; /etc/ignore.list</div></pre></td></tr></table></figure>
 <blockquote>
 <p>luci-ss界面关于不支持域名的issue：<a href="https://github.com/shadowsocks/openwrt-shadowsocks/issues/124" target="_blank" rel="external">https://github.com/shadowsocks/openwrt-shadowsocks/issues/124</a></p>
 </blockquote>
@@ -190,18 +189,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/05/cpp-inherit/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/java-learningNotes-1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          2015.05.12 C++继承
+          Java学习笔记1
         
       </div>
     </a>
   
   
-    <a href="/2015/09/java-learningNotes-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java学习笔记1</div>
+    <a href="/2015/05/cpp-inherit/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2015.05.12 C++继承</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -241,7 +240,7 @@
   <div data-thread-key="router-rebuild-2015" data-thread-url="https://blog.xingoxu.com/2015/09/router-rebuild-2015/" data-thread-title="WNDR4300救砖（openwrt）"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1492326943996"></script>
+  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495449795199"></script>
 	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
 	<!-- 公共JS代码 end -->
 </div>
@@ -569,7 +568,7 @@
 <script>
 	var paperWhiteConfig = {
 		fancybox: true,
-		mathjax: true,
+		mathjax: false,
 		animate: true,
 		isHome: false,
 		isPost: true,
@@ -583,7 +582,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1492326947281"></script>
+<script src="/js/main.js?1495449799129"></script>
 
 
 
@@ -601,27 +600,6 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-</script>
 
 
 </body>

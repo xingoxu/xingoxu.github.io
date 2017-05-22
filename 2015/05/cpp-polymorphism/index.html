@@ -15,14 +15,13 @@
   
   <title>2015.05.09 C++多态 | xingo&#39;s private plot</title>
   <meta name="description" content="“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。">
-<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2015.05.09 C++多态">
 <meta property="og:url" content="https://blog.xingoxu.com/2015/05/cpp-polymorphism/index.html">
-<meta property="og:site_name" content="xingo's private plot">
+<meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。">
 <meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/dev/cpp/private-error.png">
-<meta property="og:updated_time" content="2017-04-16T07:14:31.065Z">
+<meta property="og:updated_time" content="2017-05-22T10:41:59.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015.05.09 C++多态">
 <meta name="twitter:description" content="“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。">
@@ -34,7 +33,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1492326947215">
+  <link rel="stylesheet" href="/css/style.css?1495449799174">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -144,13 +143,13 @@
         <p>“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”<br>C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。<br><a id="more"></a></p>
 <h1 id="静态多态"><a href="#静态多态" class="headerlink" title="静态多态"></a>静态多态</h1><p>静态多态指的是基于模板的多态，对所有可能出现的情况，把所有代码全部写好，最关键的是，这些关联处理处于编译期而非运行期。<br>常见的静态多态：函数多态，模板多态，宏多态。</p>
 <h1 id="函数多态-函数重载-overload"><a href="#函数多态-函数重载-overload" class="headerlink" title="函数多态/函数重载(overload)"></a>函数多态/函数重载(overload)</h1><p>不同参数，相同名字，返回值不看重即可对函数进行重载</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> overload&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">overload_test</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a test function!"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">overload_test</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is an overload function!"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">overload_test</span><span class="params">(<span class="keyword">double</span> a)</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is also an overload function!"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">overload</span>&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">overload_test</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a test function!"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">overload_test</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is an overload function!"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">overload_test</span><span class="params">(<span class="keyword">double</span> a)</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is also an overload function!"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h1 id="模板多态-模板函数-函数模板"><a href="#模板多态-模板函数-函数模板" class="headerlink" title="模板多态/模板函数/函数模板"></a>模板多态/模板函数/函数模板</h1><p>执行相同内容，只是参数类型不同，返回值也随着参数类型不同而改变，使用模板函数是最恰当的。模板函数要是欲对某一个不同的参数类型想进行不同的操作还可以使用模板特例。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> func_template&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> X&gt;</div><div class="line">	<span class="function">X <span class="title">func_template_func</span><span class="params">(X a, X b)</span></span>&#123;<span class="comment">//function:return big one</span></div><div class="line">		<span class="keyword">if</span> (b&gt;a) a = b;</div><div class="line">		<span class="keyword">return</span> a;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">template</span>&lt;&gt;<span class="comment">//模板特例</span></div><div class="line">	<span class="function"><span class="keyword">double</span> <span class="title">func_template_func</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a specfic template function"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">func_template</span>&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> X&gt;</div><div class="line">	<span class="function">X <span class="title">func_template_func</span><span class="params">(X a, X b)</span></span>&#123;<span class="comment">//function:return big one</span></div><div class="line">		<span class="keyword">if</span> (b&gt;a) a = b;</div><div class="line">		<span class="keyword">return</span> a;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">template</span>&lt;&gt;<span class="comment">//模板特例</span></div><div class="line">	<span class="function"><span class="keyword">double</span> <span class="title">func_template_func</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a specfic template function"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h1 id="利用虚函数实现的多态"><a href="#利用虚函数实现的多态" class="headerlink" title="利用虚函数实现的多态"></a>利用虚函数实现的多态</h1><p>在父类中定义虚函数，在子类继承父类后对此函数进行覆盖，然后调用的时候一定要使用引用传递。<br>虚函数与指针/引用传递传递一个不能少，虚函数与指针传递共同配合形成一个父类指针指向所需要的子类函数，如果缺了任意一个，即使通过编译，也仍然只会调用父类的虚函数内容。</p>
 <p>要注意的是，子类继承时一定要使用<code>public</code>继承，否则编译会报错，不允许对不可访问的基类进行转换。因为指针并不能指向一个<code>private</code>对象，<code>private</code>对象也并不能向上转换（理解<code>private</code>的意义）</p>
 <p><img src="https://dn-xingoxu.qbox.me/blog/dev/cpp/private-error.png" alt="不允许对不可访问的基类进行转换"></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> father_class&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">	&#125;;</div><div class="line">	</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">class</span> son_class :<span class="keyword">public</span> father_class&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"test"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(father_class &amp;a)</span></span>&#123;</div><div class="line">	a.run();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">father_class</span>&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">	&#125;;</div><div class="line">	</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">son_class</span> :</span><span class="keyword">public</span> father_class&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"test"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(father_class &amp;a)</span></span>&#123;</div><div class="line">	a.run();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>因为C++通过父类指针查找到子类函数，查找的过程，是在运行时完成的，所以这样的多态叫做动态多态。<br>以上</p>
 <p>代码中涉及到的一些其他，请参见：</p>
 <blockquote>
@@ -168,18 +167,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/cpp-study-log/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/05/cpp-inherit/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          2015.04.24 C++近期学习小结
+          2015.05.12 C++继承
         
       </div>
     </a>
   
   
-    <a href="/2015/05/cpp-inherit/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2015.05.12 C++继承</div>
+    <a href="/2015/04/cpp-study-log/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2015.04.24 C++近期学习小结</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -219,7 +218,7 @@
   <div data-thread-key="cpp-polymorphism" data-thread-url="https://blog.xingoxu.com/2015/05/cpp-polymorphism/" data-thread-title="2015.05.09 C++多态"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1492326943958"></script>
+  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495449795245"></script>
 	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
 	<!-- 公共JS代码 end -->
 </div>
@@ -547,7 +546,7 @@
 <script>
 	var paperWhiteConfig = {
 		fancybox: true,
-		mathjax: true,
+		mathjax: false,
 		animate: true,
 		isHome: false,
 		isPost: true,
@@ -561,7 +560,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1492326947232"></script>
+<script src="/js/main.js?1495449799194"></script>
 
 
 
@@ -579,27 +578,6 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-</script>
 
 
 </body>

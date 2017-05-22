@@ -15,13 +15,12 @@
   
   <title>2015.04.24 C++近期学习小结 | xingo&#39;s private plot</title>
   <meta name="description" content="函数参数传递，类的构造函数，类的可见性，类的继承都是一些碎片化的东西，做做笔记防止自己忘记">
-<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2015.04.24 C++近期学习小结">
 <meta property="og:url" content="https://blog.xingoxu.com/2015/04/cpp-study-log/index.html">
-<meta property="og:site_name" content="xingo's private plot">
+<meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="函数参数传递，类的构造函数，类的可见性，类的继承都是一些碎片化的东西，做做笔记防止自己忘记">
-<meta property="og:updated_time" content="2017-04-16T07:14:31.065Z">
+<meta property="og:updated_time" content="2017-05-22T10:41:59.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015.04.24 C++近期学习小结">
 <meta name="twitter:description" content="函数参数传递，类的构造函数，类的可见性，类的继承都是一些碎片化的东西，做做笔记防止自己忘记">
@@ -32,7 +31,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1492326947176">
+  <link rel="stylesheet" href="/css/style.css?1495449799208">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -162,7 +161,7 @@
 </blockquote>
 <p>奇怪的就是，难道是理解有误吗？明显<code>protected</code>就算被继承后也是<code>protected</code>类型，然而书上则说父类的<code>protected</code>成员只能通过子类的对象进行访问，然而即使是<code>public</code>成员，子类对象也无法直接访问父类的成员（如果已被覆盖），更何况是<code>protected</code>了，根本没法直接访问，通不过编译，不明白啊。</p>
 <h1 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h1><p>子类继承父类，使用 <code>derived_class_name:base_class_name</code>进行继承，继承时，先执行父类默认构造函数，再执行子类构造函数。析构时，先析构子类构造函数，再析构父类析构函数。<br>　　子类继承父类的<code>public</code>, <code>protected</code>成员函数与成员变量，继承下来的成员仍然是<code>public</code>与<code>protected</code>可见性的（public继承），子类可以对父类中的成员进行覆盖，在子类（对象）中优先调用子类成员。在子类定义中，即使成员已覆盖，也可以使用父类的成员，只需要在定义中使用<code>father_class_name::member_name</code>，就可以使用父类成员，但在子类对象中不能调用父类成员</p>
-<h1 id="类的操作的实现"><a href="#类的操作的实现" class="headerlink" title="类的操作的实现"></a>类的操作的实现</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> father_class&#123;</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	father_class()&#123;<span class="comment">//父类默认构造函数</span></div><div class="line">		public_print();</div><div class="line">		private_print();</div><div class="line">		protected_print();</div><div class="line">	&#125;</div><div class="line">	father_class(<span class="keyword">int</span> a)&#123;<span class="comment">//父类自定义构造函数</span></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"father class constructed function overloaded."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> father_public_variable = <span class="number">100</span>;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">public_print</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a public function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">private_print</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a private function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"><span class="keyword">protected</span>:</div><div class="line">	<span class="keyword">int</span> father_protected_variable = <span class="number">2</span>;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">protected_print</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a protected function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">class</span> son_class :father_class&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	son_class()&#123;<span class="comment">//子类默认构造函数</span></div><div class="line">		public_print();</div><div class="line">		<span class="comment">//private_print();基类不可访问父类的private</span></div><div class="line">		protected_print();		</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> father_public_variable = <span class="number">200</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">public_print</span><span class="params">()</span></span>&#123;<span class="comment">//覆盖父类中的public_print</span></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"I'am son_public_print function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">		<span class="comment">//print public variable</span></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_public_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_class::father_public_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		</div><div class="line">		father_protected_variable = <span class="number">50</span>;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_protected_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_class::father_protected_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	father_class father_object;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"father object created."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	father_class* father_object_2 = <span class="keyword">new</span> father_class(<span class="number">0</span>);</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	son_class son_object;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"son object created."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">	</div><div class="line">	son_object.father_public_variable = <span class="number">500</span>;</div><div class="line">	father_object.father_public_variable = <span class="number">300</span>;<span class="comment">//不影响son_object</span></div><div class="line">	<span class="comment">//son_object.father_protected_variable = 10;子类对象不能对protected变量进行直接操作</span></div><div class="line">	son_object.public_print();</div><div class="line">	</div><div class="line">	<span class="keyword">delete</span> father_object_2;</div><div class="line">	system(<span class="string">"pause"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="类的操作的实现"><a href="#类的操作的实现" class="headerlink" title="类的操作的实现"></a>类的操作的实现</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">father_class</span>&#123;</span></div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	father_class()&#123;<span class="comment">//父类默认构造函数</span></div><div class="line">		public_print();</div><div class="line">		private_print();</div><div class="line">		protected_print();</div><div class="line">	&#125;</div><div class="line">	father_class(<span class="keyword">int</span> a)&#123;<span class="comment">//父类自定义构造函数</span></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"father class constructed function overloaded."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> father_public_variable = <span class="number">100</span>;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">public_print</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a public function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">private_print</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a private function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"><span class="keyword">protected</span>:</div><div class="line">	<span class="keyword">int</span> father_protected_variable = <span class="number">2</span>;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">protected_print</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a protected function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">son_class</span> :</span>father_class&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	son_class()&#123;<span class="comment">//子类默认构造函数</span></div><div class="line">		public_print();</div><div class="line">		<span class="comment">//private_print();基类不可访问父类的private</span></div><div class="line">		protected_print();		</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> father_public_variable = <span class="number">200</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">public_print</span><span class="params">()</span></span>&#123;<span class="comment">//覆盖父类中的public_print</span></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"I'am son_public_print function."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">		<span class="comment">//print public variable</span></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_public_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_class::father_public_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		</div><div class="line">		father_protected_variable = <span class="number">50</span>;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_protected_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; father_class::father_protected_variable &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	father_class father_object;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"father object created."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	father_class* father_object_2 = <span class="keyword">new</span> father_class(<span class="number">0</span>);</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	son_class son_object;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"son object created."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">	</div><div class="line">	son_object.father_public_variable = <span class="number">500</span>;</div><div class="line">	father_object.father_public_variable = <span class="number">300</span>;<span class="comment">//不影响son_object</span></div><div class="line">	<span class="comment">//son_object.father_protected_variable = 10;子类对象不能对protected变量进行直接操作</span></div><div class="line">	son_object.public_print();</div><div class="line">	</div><div class="line">	<span class="keyword">delete</span> father_object_2;</div><div class="line">	system(<span class="string">"pause"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://www.cnblogs.com/Romi/archive/2012/08/09/2630014.html" target="_blank" rel="external">C/C++中函数参数传递详解</a><br><a href="http://blog.csdn.net/luoruiyi2008/article/details/7179788" target="_blank" rel="external">C++中protected的访问权限</a></p>
 
       
@@ -173,18 +172,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/android-chrome-issues-with-webpage/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/05/cpp-polymorphism/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          两个Android Chrome的小坑
+          2015.05.09 C++多态
         
       </div>
     </a>
   
   
-    <a href="/2015/05/cpp-polymorphism/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2015.05.09 C++多态</div>
+    <a href="/2015/04/android-chrome-issues-with-webpage/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">两个Android Chrome的小坑</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -224,7 +223,7 @@
   <div data-thread-key="cpp-study-log" data-thread-url="https://blog.xingoxu.com/2015/04/cpp-study-log/" data-thread-title="2015.04.24 C++近期学习小结"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1492326943939"></script>
+  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495449795262"></script>
 	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
 	<!-- 公共JS代码 end -->
 </div>
@@ -552,7 +551,7 @@
 <script>
 	var paperWhiteConfig = {
 		fancybox: true,
-		mathjax: true,
+		mathjax: false,
 		animate: true,
 		isHome: false,
 		isPost: true,
@@ -566,7 +565,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1492326947206"></script>
+<script src="/js/main.js?1495449799245"></script>
 
 
 
@@ -584,27 +583,6 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-</script>
 
 
 </body>
