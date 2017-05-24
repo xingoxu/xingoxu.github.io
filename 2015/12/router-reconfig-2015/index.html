@@ -20,16 +20,16 @@
 <meta property="og:url" content="https://blog.xingoxu.com/2015/12/router-reconfig-2015/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-lan-1.PNG">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-wan-1.PNG">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-wan-2.PNG">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/59254648ca777.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/592546679bdb8.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/5925467479b82.png">
 <meta property="og:image" content="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif">
 <meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/ignore.list.PNG">
-<meta property="og:updated_time" content="2017-05-23T09:03:11.902Z">
+<meta property="og:updated_time" content="2017-05-24T08:48:39.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重配置WNDR4300手记">
 <meta name="twitter:description" content="给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）">
-<meta name="twitter:image" content="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-lan-1.PNG">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/05/24/59254648ca777.png">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -37,7 +37,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1495530231648">
+  <link rel="stylesheet" href="/css/style.css?1495615761209">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -149,7 +149,7 @@
 <h1 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h1><p>今天是美好的12.31号，也是在学校的最后一个学习日（下周起为考试周），心情异常高兴，自然是要把学校那个很好的路由器带回家咯，虽然曾有过一次不同环境配置的经验，但今天居然掉坑了</p>
 <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>家庭：上海电信光纤接入，光猫自带路由，不可更改，想要自接无线路由出墙需要无线路由再分配一次DHCP<br>学校：上海电信光纤接入，光猫不自带路由，自己拨号</p>
 <hr>
-<p>到家直接更改接口处的LAN与WAN，分别改成如图所示：<br><img src="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-lan-1.PNG" alt="LAN"><br><img src="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-wan-1.PNG" alt="WAN-1"><br><img src="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-wan-2.PNG" alt="WAN-2"></p>
+<p>到家直接更改接口处的LAN与WAN，分别改成如图所示：<br><img src="https://ooo.0o0.ooo/2017/05/24/59254648ca777.png" alt="LAN"><br><img src="https://ooo.0o0.ooo/2017/05/24/592546679bdb8.png" alt="WAN-1"><br><img src="https://ooo.0o0.ooo/2017/05/24/5925467479b82.png" alt="WAN-2"></p>
 <p>172.168.x.x是很容易想到的除开192的一个地址，虽然属于B类地址，然而现在并没有被卖掉，也被大家广而使用，因此也并没有什么特别的不妥，大不了以后要是有人指向他了，咱就改成192之后的呗</p>
 <p>改完之后发现网能上了，也能顺利出去了，但踏马的路由器设置进不去了，诶怎么都进不去，把网断了，踏马的还是进不去，断网前不停地转圈圈，一直<code>waiting For 172.168.1.1…</code>断网后显示<code>Connection Reset</code>，亲你是在逗我吗！这叫个什么事！什么叫网上的去路由器设置上不去，狗带！</p>
 <p>仔细想想，想来想去，还是没有想出个啥道理，以为自己哪里设置没改过来，只好重置</p>
@@ -235,7 +235,7 @@
   <div data-thread-key="router-reconfig-2015" data-thread-url="https://blog.xingoxu.com/2015/12/router-reconfig-2015/" data-thread-title="重配置WNDR4300手记"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495530230139"></script>
+  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495615759506"></script>
 	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
 	<!-- 公共JS代码 end -->
 </div>
@@ -577,7 +577,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1495530231656"></script>
+<script src="/js/main.js?1495615761222"></script>
 
 
 
