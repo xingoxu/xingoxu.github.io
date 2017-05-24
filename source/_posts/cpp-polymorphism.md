@@ -64,7 +64,7 @@ public:
 要注意的是，子类继承时一定要使用`public`继承，否则编译会报错，不允许对不可访问的基类进行转换。因为指针并不能指向一个`private`对象，`private`对象也并不能向上转换（理解`private`的意义）
 
 
-![不允许对不可访问的基类进行转换](https://dn-xingoxu.qbox.me/blog/dev/cpp/private-error.png)
+![不允许对不可访问的基类进行转换](https://ooo.0o0.ooo/2017/05/24/592545c28b9b8.png)
 
 
 ```cpp

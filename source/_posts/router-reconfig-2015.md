@@ -17,9 +17,9 @@ date: 2015-12-31 18:20:58
 ---
 
 到家直接更改接口处的LAN与WAN，分别改成如图所示：
-![LAN](https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-lan-1.PNG)
-![WAN-1](https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-wan-1.PNG)
-![WAN-2](https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/home-wan-2.PNG)
+![LAN](https://ooo.0o0.ooo/2017/05/24/59254648ca777.png)
+![WAN-1](https://ooo.0o0.ooo/2017/05/24/592546679bdb8.png)
+![WAN-2](https://ooo.0o0.ooo/2017/05/24/5925467479b82.png)
 
 172.168.x.x是很容易想到的除开192的一个地址，虽然属于B类地址，然而现在并没有被卖掉，也被大家广而使用，因此也并没有什么特别的不妥，大不了以后要是有人指向他了，咱就改成192之后的呗
 

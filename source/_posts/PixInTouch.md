@@ -10,12 +10,12 @@ date: 2015-12-21 13:42:54
 
 <!-- more -->
 
-![](https://dn-xingoxu.qbox.me/works/pixivDownloader/screenshots/Capture3.PNG)
+![](https://ooo.0o0.ooo/2017/05/24/59252d9256e76.png)
 
 
 ## 需求：
 .Net Framework 4.5
-（windows xp将不受支持，windows 7/8用户如您不确定是否拥有这个环境，请您移步[安装说明与使用](#instruction)）
+（windows xp不支持，windows 7/8用户如您不确定是否拥有这个环境，请您移步[安装说明与使用](#instruction)）
 
 ## 功能：
 1. 按您关注的作者的新作品/您的收藏（公开/非公开）进行浏览作品
@@ -64,10 +64,10 @@ What's new?
 
 windows 7/8用户如您不确定是否拥有.Net Framework 4.5的环境，请您按如下提示检查：
 开始菜单（Start）->搜索（Search）->控制面板（Control Panel）->程序与功能（Programs and Features）
-![Programs and Features](https://dn-xingoxu.qbox.me/works/pixivDownloader/setup-instructions/Capture.PNG)
+![Programs and Features](https://ooo.0o0.ooo/2017/05/24/59254449639da.png)
 在程序与功能面板的右上角进行搜索：.net framework
 如您发现类似于如下的提示，则您已经安装了4.5版本
-![search in Programs and Features](https://dn-xingoxu.qbox.me/works/pixivDownloader/setup-instructions/Capture2.PNG)
+![search in Programs and Features](https://ooo.0o0.ooo/2017/05/24/59254461f29df.png)
 
 如您发现并没有.Net Framework或是版本不足4.5，请您移步至：
 - [Microsoft .NET Framework 4.5.1 (Offline Installer) English](https://www.microsoft.com/en-us/download/details.aspx?id=40779)

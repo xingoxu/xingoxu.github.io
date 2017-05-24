@@ -36,8 +36,8 @@ body{
 
 支持Android 5.x下Chrome的标题栏沉浸颜色
 
-![安卓Chrome沉浸主题色](https://dn-xingoxu.qbox.me/dev/html-css/android-chrome-immersive-mode.png)
-![安卓Chrome沉浸主题色-任务列表显示](https://dn-xingoxu.qbox.me/dev/html-css/android-chrome-immersive-mode-2.png)
+![安卓Chrome沉浸主题色](https://ooo.0o0.ooo/2017/05/24/592546e52c39a.png)
+![安卓Chrome沉浸主题色-任务列表显示](https://ooo.0o0.ooo/2017/05/24/592546f366eaa.png)
 
 header中加入以下代码，选个喜欢的颜色
 
