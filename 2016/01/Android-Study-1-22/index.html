@@ -20,14 +20,14 @@
 <meta property="og:url" content="https://blog.xingoxu.com/2016/01/Android-Study-1-22/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="Intro: Android Studio Library的导入与导出 Java的Exception再复习 Handler的内存泄漏问题与其相关的Looper坑 AppCompat v7的Toolbar与Contextual ActionBar 心得">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-1.PNG">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-2.PNG">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/dev/android/Handler-Memory-Leaks-Tip.PNG">
-<meta property="og:updated_time" content="2017-05-24T08:48:39.192Z">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bc2810.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb12d7.png">
+<meta property="og:updated_time" content="2017-05-25T03:47:15.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写一些最近Android学习中遇到的坑以及心得">
 <meta name="twitter:description" content="Intro: Android Studio Library的导入与导出 Java的Exception再复习 Handler的内存泄漏问题与其相关的Looper坑 AppCompat v7的Toolbar与Contextual ActionBar 心得">
-<meta name="twitter:image" content="https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-1.PNG">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -35,7 +35,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1495615761165">
+  <link rel="stylesheet" href="/css/style.css?1495684071034">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -154,8 +154,8 @@
 
 
 <h2 id="Android-Studio-库相关的正确使用姿势"><a href="#Android-Studio-库相关的正确使用姿势" class="headerlink" title="Android Studio 库相关的正确使用姿势"></a>Android Studio 库相关的正确使用姿势</h2><p>Android Studio 1.5.x 更新后很多网上找到的其他教程包括回答基本都是旧版本的，直接lib下添加，然而在编译时总是遇到这样那样的问题，原因在于Gradle会把jar compile了，然而module本身的package(感觉相当于命名空间？)却没有导入，当你导入后，两行命令相互打架编译时能通过却无法生成apk提示错误。提示的错误五花八门，一会是java虚拟机非0退出，一会是Class文件重名。</p>
-<h3 id="引用其他人的jar-aar-Lib"><a href="#引用其他人的jar-aar-Lib" class="headerlink" title="引用其他人的jar/aar Lib"></a>引用其他人的jar/aar Lib</h3><p>Library在Android Studio中相当于一个Module，在Project中如果想要导入其他人的库，则选择File-&gt;New Module…<br><img src="https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-1.PNG" alt="File-&gt;New Module..."></p>
-<p>选择Import .JAR/.AAR Package，之后简单，就不细说了，请不要忘了如果Lib作者有要求提示在Gradle中加入脚本的不要忘记加入<br><img src="https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-2.PNG" alt="Import Jar/AAR"></p>
+<h3 id="引用其他人的jar-aar-Lib"><a href="#引用其他人的jar-aar-Lib" class="headerlink" title="引用其他人的jar/aar Lib"></a>引用其他人的jar/aar Lib</h3><p>Library在Android Studio中相当于一个Module，在Project中如果想要导入其他人的库，则选择File-&gt;New Module…<br><img src="https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png" alt="File-&gt;New Module..."></p>
+<p>选择Import .JAR/.AAR Package，之后简单，就不细说了，请不要忘了如果Lib作者有要求提示在Gradle中加入脚本的不要忘记加入<br><img src="https://ooo.0o0.ooo/2017/05/25/5926470bc2810.png" alt="Import Jar/AAR"></p>
 <h3 id="新建Library-Project"><a href="#新建Library-Project" class="headerlink" title="新建Library Project"></a>新建Library Project</h3><p>还是新建普通的Project，然后New Module选择Android Library，在新模块下工作，写demo的话就到app下进行工作就ok了</p>
 <h3 id="导出Library"><a href="#导出Library" class="headerlink" title="导出Library"></a>导出Library</h3><p>对整个Module Build后就可以在模块路径下，build-&gt;outputs-&gt;aar中找到aar包了</p>
 <h2 id="Java-Exception"><a href="#Java-Exception" class="headerlink" title="Java Exception"></a>Java Exception</h2><h3 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h3><p>所有的异常都派生于Throwable类</p>
@@ -183,7 +183,7 @@
 <h4 id="编写方法时："><a href="#编写方法时：" class="headerlink" title="编写方法时："></a>编写方法时：</h4><p>当遇到RuntimeException时，大多数情况下不必手动抛出，也不应在方法上声明，例如越界访问，一般来说，这样的运行时错误会被自动抛出，如若想自己对参数进行校正检验抛出可以继承RuntimeException类创建一个自定义运行时异常对象或者new RuntimeException对象<br>当遇到CheckedException时，直接抛出即可</p>
 <h3 id="如何考虑异常的捕获"><a href="#如何考虑异常的捕获" class="headerlink" title="如何考虑异常的捕获"></a>如何考虑异常的捕获</h3><p>“底层抛出，顶层记录解决”，是一句比较正确程序观的话。</p>
 <h2 id="Handler的内存泄露问题"><a href="#Handler的内存泄露问题" class="headerlink" title="Handler的内存泄露问题"></a>Handler的内存泄露问题</h2><p>这个问题的引发是由于在实践Handler时使用匿名内部类/非静态内部类重写handleMessage方法，Android Studio的深色提示会显示：</p>
-<p><img src="https://dn-xingoxu.qbox.me/blog/dev/android/Handler-Memory-Leaks-Tip.PNG" alt="Handler Memory Leaks Tips"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/5926470bb12d7.png" alt="Handler Memory Leaks Tips"></p>
 <p>这个问题的解决很多文章很多回答都有，贴两个：<br><a href="http://blog.csdn.net/lincyang/article/details/46875157" target="_blank" rel="external">http://blog.csdn.net/lincyang/article/details/46875157</a><br><a href="http://www.jianshu.com/p/cb9b4b71a820" target="_blank" rel="external">http://www.jianshu.com/p/cb9b4b71a820</a></p>
 <p>在看这些回答前，应该先了解，在Java中的引用与垃圾回收的机制，以及强弱引用<br><a href="http://blog.csdn.net/matrix_xu/article/details/8424038" target="_blank" rel="external">http://blog.csdn.net/matrix_xu/article/details/8424038</a></p>
 <p>对于这些回答中的一些小疏漏就是，对于任何外界（生命周期比Handler短）的引用，都应该用WeakReference</p>
@@ -289,8 +289,22 @@
   <div data-thread-key="Android-Study-1-22" data-thread-url="https://blog.xingoxu.com/2016/01/Android-Study-1-22/" data-thread-title="写一些最近Android学习中遇到的坑以及心得"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495615759478"></script>
-	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1495684069525';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
 	<!-- 公共JS代码 end -->
 </div>
     
@@ -631,7 +645,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1495615761179"></script>
+<script src="/js/main.js?1495684071046"></script>
 
 
 

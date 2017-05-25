@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.xingoxu.com/"/>
-  <updated>2017-05-24T08:48:39.196Z</updated>
+  <updated>2017-05-25T03:47:15.565Z</updated>
   <id>https://blog.xingoxu.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.xingoxu.com/2017/04/kotobukiya-syaoran/"/>
     <id>https://blog.xingoxu.com/2017/04/kotobukiya-syaoran/</id>
     <published>2017-04-16T06:57:56.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://bgm.tv/character/6527" target="_blank" rel="external">bgm 人物介绍</a></p>
@@ -74,7 +74,7 @@
     <link href="https://blog.xingoxu.com/2017/04/uc-hyakuya-yuichiro/"/>
     <id>https://blog.xingoxu.com/2017/04/uc-hyakuya-yuichiro/</id>
     <published>2017-04-15T16:03:42.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://bgm.tv/character/28623" target="_blank" rel="external">bgm 人物介绍</a></p>
@@ -144,7 +144,7 @@
     <link href="https://blog.xingoxu.com/2017/04/macbook-and-surface/"/>
     <id>https://blog.xingoxu.com/2017/04/macbook-and-surface/</id>
     <published>2017-04-13T09:11:22.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<p>前年12月入手的surface pro 4，去年11月入手的mbp，都是第一时间下单的，所以其实很早就想做一个对比，或者说在拿到sp4之后就想写一个感受，只是一直没有时间去想这些事情</p>
 <p>此文结论先写在前面：</p>
@@ -254,7 +254,7 @@
     <link href="https://blog.xingoxu.com/2017/01/webpack-amd/"/>
     <id>https://blog.xingoxu.com/2017/01/webpack-amd/</id>
     <published>2017-01-22T09:13:19.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<p>什么？webpack出2了？</p>
 <p>刚用了小半年的webpack就又要重头学过了？</p>
@@ -342,7 +342,7 @@
     <link href="https://blog.xingoxu.com/2017/01/2017-iyahoi/"/>
     <id>https://blog.xingoxu.com/2017/01/2017-iyahoi/</id>
     <published>2017-01-03T11:55:45.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<p>时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感</p>
 <a id="more"></a>
@@ -385,7 +385,7 @@
     <link href="https://blog.xingoxu.com/2016/12/improve-duoshuo/"/>
     <id>https://blog.xingoxu.com/2016/12/improve-duoshuo/</id>
     <published>2016-12-27T07:34:24.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>增加用户尾巴</li>
@@ -444,7 +444,7 @@
     <link href="https://blog.xingoxu.com/2016/12/use-travis-ci-your-blog/"/>
     <id>https://blog.xingoxu.com/2016/12/use-travis-ci-your-blog/</id>
     <published>2016-12-23T07:51:13.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<p>前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;&amp; hexo g &amp;&amp; hexo d呢</p>
 <a id="more"></a>
@@ -514,7 +514,7 @@
     <link href="https://blog.xingoxu.com/2016/12/config-switchresx-and-2khidpi/"/>
     <id>https://blog.xingoxu.com/2016/12/config-switchresx-and-2khidpi/</id>
     <published>2016-12-18T13:57:37.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<p>  <strong>非Apple显示器字体模糊的终极方案</strong></p>
 <p>  OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI</p>
@@ -573,7 +573,7 @@
     <link href="https://blog.xingoxu.com/2016/10/2016-10-27/"/>
     <id>https://blog.xingoxu.com/2016/10/2016-10-27/</id>
     <published>2016-10-27T15:58:37.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>Android Chrome 非常奇怪的字体偏移</li>
@@ -662,7 +662,7 @@
     <link href="https://blog.xingoxu.com/2016/09/2016-09-18/"/>
     <id>https://blog.xingoxu.com/2016/09/2016-09-18/</id>
     <published>2016-09-18T08:53:27.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<p>  即使是找到了实习，然而还是没能闲下来啊_(:з」∠)_</p>
 <a id="more"></a>
@@ -678,7 +678,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performance.getEntries().forEach(<span class="function"><span class="params">v</span>=&gt;</span> <span class="built_in">console</span>.log(v.name));</div></pre></td></tr></table></figure>
 <p>　　然而我们狗日的上海电信是tcp劫持给你插包，把正常网页插在iframe中返回，真几把酷炫，希望电信原地爆炸，全家上天，并求大佬给点流量到他们的广告服务器上【。</p>
 <h2 id="近期游戏与番"><a href="#近期游戏与番" class="headerlink" title="近期游戏与番"></a>近期游戏与番</h2><p>  　8月买了胧村正，卧槽，这游戏真好玩！三个礼拜本篇白金！现在正在努力DLC全奖杯中~</p>
-<p>  <img src="https://od8634671.qnssl.com/blog/notes/oboromuramasa-DLC-1-complete.png" alt="本篇与DLC1完美通关~"></p>
+<p>  <img src="https://ooo.0o0.ooo/2017/05/25/59264ac2020d6.png" alt="本篇与DLC1完美通关~"></p>
 <p>  番的话，最近看了<a href="https://bgm.tv/subject/4014" target="_blank" rel="external">《异邦人 无皇刃谭》</a>，超好看，推荐！<br>  <img src="https://lain.bgm.tv/pic/cover/l/1c/df/4014_e6u34.jpg" alt="异邦人 无皇刃谭"></p>
 ]]></content>
     
@@ -698,7 +698,7 @@
     <link href="https://blog.xingoxu.com/2016/06/2016-06-16/"/>
     <id>https://blog.xingoxu.com/2016/06/2016-06-16/</id>
     <published>2016-06-16T12:47:18.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<p>　　突然发现今天是个轴对称的日期233是个写博客的好日子（？），离上一次写博客有两个月，然而这两个月中真是经历了许多许多，不过接下来感觉可以稍微放轻松一点了</p>
 <a id="more"></a>
@@ -730,7 +730,7 @@
     <link href="https://blog.xingoxu.com/2016/04/2016-04-19/"/>
     <id>https://blog.xingoxu.com/2016/04/2016-04-19/</id>
     <published>2016-04-18T16:48:42.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<p>又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践</p>
 <a id="more"></a>
@@ -782,7 +782,7 @@
     <link href="https://blog.xingoxu.com/2016/03/gulpjs-1/"/>
     <id>https://blog.xingoxu.com/2016/03/gulpjs-1/</id>
     <published>2016-03-25T12:34:33.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h1><ol>
 <li>gulp能做什么</li>
@@ -848,7 +848,7 @@
     <link href="https://blog.xingoxu.com/2016/03/2016-03-20/"/>
     <id>https://blog.xingoxu.com/2016/03/2016-03-20/</id>
     <published>2016-03-20T15:36:32.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h1><ol>
 <li>重拾HTML/CSS</li>
@@ -899,7 +899,7 @@
     <link href="https://blog.xingoxu.com/2016/03/GSC-535/"/>
     <id>https://blog.xingoxu.com/2016/03/GSC-535/</id>
     <published>2016-03-20T15:11:17.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<p>终于买了又帅又可爱的西林困，嘻嘻，稍微照几张~<br><a id="more"></a><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec136546c8.jpg" alt="GSC535-1 (6).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec131cdbca.jpg" alt="GSC535-1 (1).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec133a750e.jpg" alt="GSC535-1 (2).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec1362a8e1.jpg" alt="GSC535-1 (3).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec1337b00c.jpg" alt="GSC535-1 (4).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec13a81f2b.jpg" alt="GSC535-1 (5).jpg"></p>
 ]]></content>
@@ -922,7 +922,7 @@
     <link href="https://blog.xingoxu.com/2016/03/hexo-theme-paper-white/"/>
     <id>https://blog.xingoxu.com/2016/03/hexo-theme-paper-white/</id>
     <published>2016-03-11T19:44:46.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎有爱自取啦</p>
 <p>最后更新： 2016.01.09</p>
@@ -982,7 +982,7 @@
     <link href="https://blog.xingoxu.com/2016/01/Android-Study-1-22/"/>
     <id>https://blog.xingoxu.com/2016/01/Android-Study-1-22/</id>
     <published>2016-01-21T18:05:18.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h2><ol>
 <li>Android Studio Library的导入与导出</li>
@@ -996,8 +996,8 @@
 
 
 <h2 id="Android-Studio-库相关的正确使用姿势"><a href="#Android-Studio-库相关的正确使用姿势" class="headerlink" title="Android Studio 库相关的正确使用姿势"></a>Android Studio 库相关的正确使用姿势</h2><p>Android Studio 1.5.x 更新后很多网上找到的其他教程包括回答基本都是旧版本的，直接lib下添加，然而在编译时总是遇到这样那样的问题，原因在于Gradle会把jar compile了，然而module本身的package(感觉相当于命名空间？)却没有导入，当你导入后，两行命令相互打架编译时能通过却无法生成apk提示错误。提示的错误五花八门，一会是java虚拟机非0退出，一会是Class文件重名。</p>
-<h3 id="引用其他人的jar-aar-Lib"><a href="#引用其他人的jar-aar-Lib" class="headerlink" title="引用其他人的jar/aar Lib"></a>引用其他人的jar/aar Lib</h3><p>Library在Android Studio中相当于一个Module，在Project中如果想要导入其他人的库，则选择File-&gt;New Module…<br><img src="https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-1.PNG" alt="File-&gt;New Module..."></p>
-<p>选择Import .JAR/.AAR Package，之后简单，就不细说了，请不要忘了如果Lib作者有要求提示在Gradle中加入脚本的不要忘记加入<br><img src="https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-2.PNG" alt="Import Jar/AAR"></p>
+<h3 id="引用其他人的jar-aar-Lib"><a href="#引用其他人的jar-aar-Lib" class="headerlink" title="引用其他人的jar/aar Lib"></a>引用其他人的jar/aar Lib</h3><p>Library在Android Studio中相当于一个Module，在Project中如果想要导入其他人的库，则选择File-&gt;New Module…<br><img src="https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png" alt="File-&gt;New Module..."></p>
+<p>选择Import .JAR/.AAR Package，之后简单，就不细说了，请不要忘了如果Lib作者有要求提示在Gradle中加入脚本的不要忘记加入<br><img src="https://ooo.0o0.ooo/2017/05/25/5926470bc2810.png" alt="Import Jar/AAR"></p>
 <h3 id="新建Library-Project"><a href="#新建Library-Project" class="headerlink" title="新建Library Project"></a>新建Library Project</h3><p>还是新建普通的Project，然后New Module选择Android Library，在新模块下工作，写demo的话就到app下进行工作就ok了</p>
 <h3 id="导出Library"><a href="#导出Library" class="headerlink" title="导出Library"></a>导出Library</h3><p>对整个Module Build后就可以在模块路径下，build-&gt;outputs-&gt;aar中找到aar包了</p>
 <h2 id="Java-Exception"><a href="#Java-Exception" class="headerlink" title="Java Exception"></a>Java Exception</h2><h3 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h3><p>所有的异常都派生于Throwable类</p>
@@ -1025,7 +1025,7 @@
 <h4 id="编写方法时："><a href="#编写方法时：" class="headerlink" title="编写方法时："></a>编写方法时：</h4><p>当遇到RuntimeException时，大多数情况下不必手动抛出，也不应在方法上声明，例如越界访问，一般来说，这样的运行时错误会被自动抛出，如若想自己对参数进行校正检验抛出可以继承RuntimeException类创建一个自定义运行时异常对象或者new RuntimeException对象<br>当遇到CheckedException时，直接抛出即可</p>
 <h3 id="如何考虑异常的捕获"><a href="#如何考虑异常的捕获" class="headerlink" title="如何考虑异常的捕获"></a>如何考虑异常的捕获</h3><p>“底层抛出，顶层记录解决”，是一句比较正确程序观的话。</p>
 <h2 id="Handler的内存泄露问题"><a href="#Handler的内存泄露问题" class="headerlink" title="Handler的内存泄露问题"></a>Handler的内存泄露问题</h2><p>这个问题的引发是由于在实践Handler时使用匿名内部类/非静态内部类重写handleMessage方法，Android Studio的深色提示会显示：</p>
-<p><img src="https://dn-xingoxu.qbox.me/blog/dev/android/Handler-Memory-Leaks-Tip.PNG" alt="Handler Memory Leaks Tips"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/5926470bb12d7.png" alt="Handler Memory Leaks Tips"></p>
 <p>这个问题的解决很多文章很多回答都有，贴两个：<br><a href="http://blog.csdn.net/lincyang/article/details/46875157" target="_blank" rel="external">http://blog.csdn.net/lincyang/article/details/46875157</a><br><a href="http://www.jianshu.com/p/cb9b4b71a820" target="_blank" rel="external">http://www.jianshu.com/p/cb9b4b71a820</a></p>
 <p>在看这些回答前，应该先了解，在Java中的引用与垃圾回收的机制，以及强弱引用<br><a href="http://blog.csdn.net/matrix_xu/article/details/8424038" target="_blank" rel="external">http://blog.csdn.net/matrix_xu/article/details/8424038</a></p>
 <p>对于这些回答中的一些小疏漏就是，对于任何外界（生命周期比Handler短）的引用，都应该用WeakReference</p>
@@ -1097,7 +1097,7 @@
     <link href="https://blog.xingoxu.com/2016/01/2016-stepping-further/"/>
     <id>https://blog.xingoxu.com/2016/01/2016-stepping-further/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2017-05-24T08:48:39.192Z</updated>
+    <updated>2017-05-25T03:47:15.561Z</updated>
     
     <content type="html"><![CDATA[<p>Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却也是回不去的昨天。</p>
 <a id="more"></a>
@@ -1108,23 +1108,23 @@
 <p><br></p>
 <h2 id="20岁"><a href="#20岁" class="headerlink" title="20岁"></a>20岁</h2><p>我仍然不敢相信自己居然已经跨入20岁，我似乎一直觉得自己还是15，16，似乎昨天还是高三学生，似乎今天还要背诵默写古诗词，但身边一切的一切都早已变了。20岁的这一年，有了人生许多的第一次，20岁的这一年，明天似乎触手可得。傍晚时分，我给自己买了一块跟去年一样的蛋糕，希望能够重新背起包袱，向人生的最有活力的时段进发。<br><br></p>
 <h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p><div class="IMGalignLeft" style="width: 330px;"><br><img src="https://ooo.0o0.ooo/2017/05/24/59252d929d187.png" alt="今年的作品(?)"><br></div><br>当大家都不怎么学习的时候，你只需稍稍的努力，便能取得一个很不错的成绩。第一次尝到认真学习的甜头，只用了半个学期，就把上半学年不怎么地的绩点拉了上来还能拿奖，但综合这一年，感觉不怎么合算，第二学期还好，大三上的这一个学期，写了很多，做了很多，然而并没有什么卵用，虽然还没出成绩，但感觉得分不会很高。你很认真的在做一个东西，你把他当一个产品来看待，用了很多课外的知识，但老师只看你课内努力的这一部分，那为什么不早点告诉我我随便写点玩具代码就交给你呢？而且想要发展的方向也并不是C#方向，老师连基本的面向对象的概念也不讲，这个年纪，真是耽误人啊！<br>下半年把java核心技术这本书好好的读了一遍，还是写的不错，话说几个好友给我推荐的几本书都很好很容易上手也由浅入深，很喜欢很经典，嘛，就是没有时间去实践，虽然在写算法题的时候会用java来写，但还是感觉熟练度啊，熟悉程度啊，完全是比不上连书都没看过的C#，这完全得益于winform/wpf的框架和自动提示，太智能，不得不感叹上手容易，想搜什么也是很快就能定位到目标。<br><br><br><br></p>
-<h2 id="第一次的独立远行"><a href="#第一次的独立远行" class="headerlink" title="第一次的独立远行"></a>第一次的独立远行</h2><p><div class="IMGalignRight" style="width: 330px;"><br><img src="https://dn-xingoxu.qbox.me/blog/notes/beijing_GUOZIJIAN.jpg" alt="国子监"><br></div><br>惭愧的是，这么大了居然才是一个人出门玩（典型的家长的独生乖儿子），出门玩也是各种三叮咛四嘱咐的，到了帝都还时不时打电话来发短消息发QQ发微信给我问我玩的开心不开心，也是醉了！花了小半天做了点有什么好玩的地方的功课就冲动的买下了火车票，也没跟任何人说，然而等我坐上车的时候却被母亲的大嘴巴已经讲的全亲戚朋友都知道了。。。。。也没跟太多人搭过话，所以自认这趟旅行京味还是不够足的，但值回票价就可以啦！逛过巷子，去过景点，吃过包子（跟魔都小笼类似），看过孔夫老爷子，拜过国子监<del>（怪不得下半年那么拼原来是上身了）</del>，还有什么值得留恋的呢？<br><br><br><br></p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p><div class="IMGalignLeft" style="width: 281px;"><br><img src="https://dn-xingoxu.qbox.me/blog/notes/ccf.PNG" alt="ccf"><br></div><br>作为想要当一名合格的coder的人，深知算法和数据结构是基础内功，然而此内功虽然是万恶之本，但点到即可，不需过多掌握，关键在于应用性技能，但看到身边的一小部分同学有些出没ACM比赛，有些不知道搞起了什么东西胸有成竹，自己的心中总有那么一些不安，想做些什么，另一个自己却总是说“你什么都不会出去丢人？不怕被拒？”，于是自己也报了一些所谓的一个测试标准，成绩下来的时候还是有点意外的，班长说咱学校好久没有300分以上的了，你终于过了，我感觉很莫名其妙，300分算很好嘛。。。。毕竟自己什么练习也没做。。。。稍稍安心了一下，虽然这个测试现在看起来并没有什么卵用。。。。<br><br></p>
+<h2 id="第一次的独立远行"><a href="#第一次的独立远行" class="headerlink" title="第一次的独立远行"></a>第一次的独立远行</h2><p><div class="IMGalignRight" style="width: 330px;"><br><img src="https://ooo.0o0.ooo/2017/05/25/5926441199e9c.jpg" alt="国子监"><br></div><br>惭愧的是，这么大了居然才是一个人出门玩（典型的家长的独生乖儿子），出门玩也是各种三叮咛四嘱咐的，到了帝都还时不时打电话来发短消息发QQ发微信给我问我玩的开心不开心，也是醉了！花了小半天做了点有什么好玩的地方的功课就冲动的买下了火车票，也没跟任何人说，然而等我坐上车的时候却被母亲的大嘴巴已经讲的全亲戚朋友都知道了。。。。。也没跟太多人搭过话，所以自认这趟旅行京味还是不够足的，但值回票价就可以啦！逛过巷子，去过景点，吃过包子（跟魔都小笼类似），看过孔夫老爷子，拜过国子监<del>（怪不得下半年那么拼原来是上身了）</del>，还有什么值得留恋的呢？<br><br><br><br></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p><div class="IMGalignLeft" style="width: 281px;"><br><img src="https://ooo.0o0.ooo/2017/05/25/592644ff505dc.png" alt="ccf"><br></div><br>作为想要当一名合格的coder的人，深知算法和数据结构是基础内功，然而此内功虽然是万恶之本，但点到即可，不需过多掌握，关键在于应用性技能，但看到身边的一小部分同学有些出没ACM比赛，有些不知道搞起了什么东西胸有成竹，自己的心中总有那么一些不安，想做些什么，另一个自己却总是说“你什么都不会出去丢人？不怕被拒？”，于是自己也报了一些所谓的一个测试标准，成绩下来的时候还是有点意外的，班长说咱学校好久没有300分以上的了，你终于过了，我感觉很莫名其妙，300分算很好嘛。。。。毕竟自己什么练习也没做。。。。稍稍安心了一下，虽然这个测试现在看起来并没有什么卵用。。。。<br><br></p>
 <h2 id="年末的实习"><a href="#年末的实习" class="headerlink" title="年末的实习"></a>年末的实习</h2><p>下定决心年末想找份实习实践一下<del>半年</del>一年所学吧，可以熟练一点，然后也是算是受到了监督前辈的鼓舞吧，再加上自己看着下半年的抢钱计划（长叹一口气），想想自己简历也没什么好写的，斗着胆随便写了点东西就投了，然后有一家要我去面试，感觉还行吧也没问什么特别奇怪的问题，就是数据结构算法和面向对象的问的多了点，关于语言的倒是只问了重载的写法，有点让我意外，却也在情理之中，虽然知道自己大三and一般单位周六周日都不会上班因此基本上是不会被录取的，话也说在前面了，但面试的这个程序员小哥还是把面试面完了，也不知是真是假，他说你要是大四我就要你了（这应该只是安慰吧应该只是安慰吧），反正再学习一下吧，寒假里把安卓再好好学学，写一个算能见人的作品，也通过这次面试知道自己数据结构还有面向对象这些小概念还是不是很清楚需要再深入学习。不算是一个差的结局吧，永远相信努力的人运气不会太差<del>（？）</del><br><br><br><br></p>
-<h2 id="动画小结"><a href="#动画小结" class="headerlink" title="动画小结"></a>动画小结</h2><p><div class="IMGalignRight" style="width: 533px;"><br><img src="https://dn-xingoxu.qbox.me/blog/notes/anime_bsse.png" alt="Battle Spirits Sword Eyes"><br></div><br>今年感觉会坑很多连载动画，大多看了一部分便又开始兴致冲冲的追了另一部动画片，前一部便一直搁着，还有就是不愿意在闲暇时间看动画，喜欢把大块时间留给动画，然而大块时间都在写作业导致了看番的时间少得可怜（在写这篇文章时离年末还有一个礼拜，不知道这一个礼拜能不能把坑都补掉，这一周作业都解决了基本没事）</p>
+<h2 id="动画小结"><a href="#动画小结" class="headerlink" title="动画小结"></a>动画小结</h2><p><div class="IMGalignRight" style="width: 533px;"><br><img src="https://ooo.0o0.ooo/2017/05/25/5926452a96a8e.png" alt="Battle Spirits Sword Eyes"><br></div><br>今年感觉会坑很多连载动画，大多看了一部分便又开始兴致冲冲的追了另一部动画片，前一部便一直搁着，还有就是不愿意在闲暇时间看动画，喜欢把大块时间留给动画，然而大块时间都在写作业导致了看番的时间少得可怜（在写这篇文章时离年末还有一个礼拜，不知道这一个礼拜能不能把坑都补掉，这一周作业都解决了基本没事）</p>
 <h3 id="年初："><a href="#年初：" class="headerlink" title="年初："></a>年初：</h3><p>记录的地平线（一）/2014年而来的 四月是你的谎言/战勇/打工吧魔王大人/男子高中生的日常/Hunter X Hunter/流星洛克人 &amp; Tribe/记录的地平线（二）</p>
 <h3 id="年中以动画电影为主："><a href="#年中以动画电影为主：" class="headerlink" title="年中以动画电影为主："></a>年中以动画电影为主：</h3><p>秒速5厘米/情热传说 导师的黎明/追逐繁星的孩子/萤火之森/穿越时空的少女/ブレイブ ストーリー/ 夏日大作战/言叶之庭/幽灵公主/龙猫/风之谷/起风了/星之声</p>
 <h3 id="年末："><a href="#年末：" class="headerlink" title="年末："></a>年末：</h3><p>银之匙（一）（二）/高达创战者（一）/Battle Spirits Season 6(最強銀河究極ゼロ～バトルスピリッツ～)<br>最后还完整复习了DA01 DA滚球兽的诞生 DA我们的战争游戏 </p>
 <p>动画小结的最后再甩一下锅，其实也有部分不是我的错！还有汉化组还没出汉化的呢_(:3」∠)_<br><br></p>
 <h2 id="游戏小结"><a href="#游戏小结" class="headerlink" title="游戏小结"></a>游戏小结</h2><p>今年可以说在游戏上，在动漫上还是花了比较多的钱的，无论是旧坑闪十一，还是新坑TOZ，还是年末的新坑BS，花钱花精力，真是辣鸡游戏，毁我钱财，败我身心233，psv，ps4，new 3ds全都有了，大概是真·迈向死宅了（。</p>
-<p><div class="IMGalignLeft" style="width: 335px;"><br><img src="https://dn-xingoxu.qbox.me/blog/notes/2015_gameRecord.jpg" alt="3DS今年游戏时间"><br></div></p>
+<p><div class="IMGalignLeft" style="width: 335px;"><br><img src="https://ooo.0o0.ooo/2017/05/25/59264a4a15fb1.jpg" alt="3DS今年游戏时间"><br></div></p>
 <h3 id="PS4"><a href="#PS4" class="headerlink" title="PS4"></a>PS4</h3><p>当得知TOZ要出PS4版本时，心中便已按捺不住，偷跑一出便下了单一起把ps4买了，玩了十几个小时，画质实在是太棒了，高清斯雷舔舔舔啊！</p>
 <h3 id="3DS"><a href="#3DS" class="headerlink" title="3DS"></a>3DS</h3><p>今年游戏玩了很多，坑了也很多，没有一款游戏基本是好好认真的刷刷刷的，上半年把go3 超新星刷了个自觉的算是满意了，给这张盘画上了个算是圆满的句号吧，然而就是把之前刷了130个小时的稍微完善一下也花了30多个小时，全年第二，临近年末玩了火纹if，打算认真刷的，然而在今年结束前是不可能结束掉啦。</p>
 <h3 id="PSV"><a href="#PSV" class="headerlink" title="PSV"></a>PSV</h3><p>今年购买了太鼓达人V和初音F2，f2其实在上半年的ps3中就已经通过关了，然而感觉歌曲还不错于是便买下来了重新打，太鼓达人作为一款零碎时间的打发游戏，V版的歌曲还是很不错的（一开始还不了解，打了感觉还不错），太鼓达人是好友Fido安利的</p>
-<h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><p><img src="https://dn-xingoxu.qbox.me/blog/notes/orange-7!!.png" alt="7!! - オレンジ"><br>7!!的オレンジ作为四月是你的谎言的ED，从听到这首歌开始，一直loop到了年末，很喜欢钢琴的那一部分，很动人</p>
+<h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><p><img src="https://ooo.0o0.ooo/2017/05/25/5926463e35706.jpg" alt="7!! - オレンジ"><br>7!!的オレンジ作为四月是你的谎言的ED，从听到这首歌开始，一直loop到了年末，很喜欢钢琴的那一部分，很动人</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=30496836&auto=0&height=66"></iframe>
 
-<h2 id="Stepping-Further-2016"><a href="#Stepping-Further-2016" class="headerlink" title="Stepping Further - 2016"></a>Stepping Further - 2016</h2><p><div class="IMGalignRight" style="width: 330px;"><br><img src="https://dn-xingoxu.qbox.me/blog/notes/2015吃土套装.jpg" alt="今年的伙伴们（误）"></div></p>
+<h2 id="Stepping-Further-2016"><a href="#Stepping-Further-2016" class="headerlink" title="Stepping Further - 2016"></a>Stepping Further - 2016</h2><p><div class="IMGalignRight" style="width: 330px;"><br><img src="https://ooo.0o0.ooo/2017/05/25/59264a48c009e.jpg" alt="今年的伙伴们（误）"></div></p>
 <p><br>一年回顾的最后，自己给自己煲个鸡汤，无论是2015年喜也好，2015年的悲也好，还是错过的遗憾，还是令人感慨的种种，都已是过去的一页，无论喜忧，要好好面对2016的自己，希望能够在新的一年中找到一份像样的实习工作，希望能够快点学会自己想要学会的东西，打起12分的精神，能够像えんどうさん一样继续充满干劲！</p>
 <h3 id="2016年初计划"><a href="#2016年初计划" class="headerlink" title="2016年初计划"></a>2016年初计划</h3><ul>
 <li>2015年没有看完的番统统要看完</li>
@@ -1132,7 +1132,7 @@
 <li>2015年没有看完的书要统统看完</li>
 <li>以上内容不准延续到2017</li>
 </ul>
-<p><img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif" alt="新浪 - 笑哭">看起来并没有诚意呢233</p>
+<p><img src="https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif" alt="新浪 - 笑哭">看起来并没有诚意呢233</p>
 ]]></content>
     
     <summary type="html">
@@ -1151,7 +1151,7 @@
     <link href="https://blog.xingoxu.com/2015/12/solve-a-problem-with-xposed-after-otaTo6-0-1/"/>
     <id>https://blog.xingoxu.com/2015/12/solve-a-problem-with-xposed-after-otaTo6-0-1/</id>
     <published>2015-12-31T10:22:18.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<h1 id="遇见情况"><a href="#遇见情况" class="headerlink" title="遇见情况"></a>遇见情况</h1><p>Android 5.0.1-&gt;6.0.1 OTA并root后安装Xposed框架，却提示报错：</p>
 <blockquote>
@@ -1187,7 +1187,7 @@
     <link href="https://blog.xingoxu.com/2015/12/router-reconfig-2015/"/>
     <id>https://blog.xingoxu.com/2015/12/router-reconfig-2015/</id>
     <published>2015-12-31T10:20:58.000Z</published>
-    <updated>2017-05-24T08:48:39.196Z</updated>
+    <updated>2017-05-25T03:47:15.565Z</updated>
     
     <content type="html"><![CDATA[<p>给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）</p>
 <a id="more"></a>
@@ -1212,7 +1212,7 @@
 <h2 id="打不开172-168-1-1原因的发现"><a href="#打不开172-168-1-1原因的发现" class="headerlink" title="打不开172.168.1.1原因的发现"></a>打不开172.168.1.1原因的发现</h2><p>之间一路顺风，安装各种依赖包ss chinadns什么的，这个因为之前 <del>作死过很多次</del> 装过很多次，所以还是比较知道的，待老夫配置好ss后启动试试效果，结果踏马的又开不开我的路由器配置界面啦！情况和开始的一样！哇擦！才想起来，172.168.x.x的地址会不会并没有被排除掉然后被ss接管了直接转发出去了，幸好这个时候putty是连接着的（ssh连接为何不受ip地址影响也是不懂了），赶紧关掉ss，发现路由器设置能进了，内心松下一口气，但我也很奇怪，为什么上次回来的时候路由器也是这样搞得一切正常呢。（后想起：ss openwrt版本呢2.3.1后不再自带ignore.list）</p>
 <p>想来想去，好吧，也没有很好的系统层面上的解决方法，ss我也不知道她的实现方法是怎样的，先添加一下排除试试看吧，定位到ss的luci界面，直接在下面添加了排除，重启服务，发现一切正常，可以进入，明白了ss排除有效，因此我需要在ss的ignore.list将172.168.x.x这个域名段全部添加入，排除掉他，这样我内网传输也暂时不会有什么问题了。</p>
 <p>putty定位到<code>/etc/ignore.list</code>（我的ignore.list设定在这里，你需要定位到自己设置的位置），vi打开</p>
-<p><img src="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/ignore.list.PNG" alt="ignore.list"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/5926497f2e6de.png" alt="ignore.list"></p>
 <p>前面的四位ip地址姑且能理解，后面的16 18 19 24是什么鬼啊！后实验一番，想起计算机网络的内容（x</p>
 <p>每个ip数字8位二进制，/后指的是指定到多少位忽略，比如</p>
 <p>1.0.1.0/24 -&gt; 00000001.00000000.00000001.00000000的前24位，也就是1.0.1.x会被忽略</p>

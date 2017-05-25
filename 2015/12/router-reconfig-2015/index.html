@@ -24,8 +24,8 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/592546679bdb8.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/5925467479b82.png">
 <meta property="og:image" content="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/ignore.list.PNG">
-<meta property="og:updated_time" content="2017-05-24T08:48:39.196Z">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926497f2e6de.png">
+<meta property="og:updated_time" content="2017-05-25T03:47:15.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重配置WNDR4300手记">
 <meta name="twitter:description" content="给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）">
@@ -37,7 +37,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1495615761209">
+  <link rel="stylesheet" href="/css/style.css?1495684071078">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -167,7 +167,7 @@
 <h2 id="打不开172-168-1-1原因的发现"><a href="#打不开172-168-1-1原因的发现" class="headerlink" title="打不开172.168.1.1原因的发现"></a>打不开172.168.1.1原因的发现</h2><p>之间一路顺风，安装各种依赖包ss chinadns什么的，这个因为之前 <del>作死过很多次</del> 装过很多次，所以还是比较知道的，待老夫配置好ss后启动试试效果，结果踏马的又开不开我的路由器配置界面啦！情况和开始的一样！哇擦！才想起来，172.168.x.x的地址会不会并没有被排除掉然后被ss接管了直接转发出去了，幸好这个时候putty是连接着的（ssh连接为何不受ip地址影响也是不懂了），赶紧关掉ss，发现路由器设置能进了，内心松下一口气，但我也很奇怪，为什么上次回来的时候路由器也是这样搞得一切正常呢。（后想起：ss openwrt版本呢2.3.1后不再自带ignore.list）</p>
 <p>想来想去，好吧，也没有很好的系统层面上的解决方法，ss我也不知道她的实现方法是怎样的，先添加一下排除试试看吧，定位到ss的luci界面，直接在下面添加了排除，重启服务，发现一切正常，可以进入，明白了ss排除有效，因此我需要在ss的ignore.list将172.168.x.x这个域名段全部添加入，排除掉他，这样我内网传输也暂时不会有什么问题了。</p>
 <p>putty定位到<code>/etc/ignore.list</code>（我的ignore.list设定在这里，你需要定位到自己设置的位置），vi打开</p>
-<p><img src="https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/ignore.list.PNG" alt="ignore.list"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/5926497f2e6de.png" alt="ignore.list"></p>
 <p>前面的四位ip地址姑且能理解，后面的16 18 19 24是什么鬼啊！后实验一番，想起计算机网络的内容（x</p>
 <p>每个ip数字8位二进制，/后指的是指定到多少位忽略，比如</p>
 <p>1.0.1.0/24 -&gt; 00000001.00000000.00000001.00000000的前24位，也就是1.0.1.x会被忽略</p>
@@ -235,8 +235,22 @@
   <div data-thread-key="router-reconfig-2015" data-thread-url="https://blog.xingoxu.com/2015/12/router-reconfig-2015/" data-thread-title="重配置WNDR4300手记"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495615759506"></script>
-	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1495684069551';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
 	<!-- 公共JS代码 end -->
 </div>
     
@@ -577,7 +591,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1495615761222"></script>
+<script src="/js/main.js?1495684071086"></script>
 
 
 

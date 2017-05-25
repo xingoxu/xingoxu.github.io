@@ -20,13 +20,13 @@
 <meta property="og:url" content="https://blog.xingoxu.com/2015/12/git-study-1/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="git的教程很多，但很杂，留一篇自用吧">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/dev/git/git%20(1).png">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/blog/dev/git/git%20(2).png">
-<meta property="og:updated_time" content="2017-05-24T08:48:39.196Z">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926482034f7a.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/592648208b7e8.png">
+<meta property="og:updated_time" content="2017-05-25T03:47:15.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识命令行git">
 <meta name="twitter:description" content="git的教程很多，但很杂，留一篇自用吧">
-<meta name="twitter:image" content="https://dn-xingoxu.qbox.me/blog/dev/git/git%20(1).png">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/05/25/5926482034f7a.png">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -34,7 +34,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1495615761329">
+  <link rel="stylesheet" href="/css/style.css?1495684071153">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -151,7 +151,7 @@
 <h1 id="1-初始化仓库"><a href="#1-初始化仓库" class="headerlink" title="1 初始化仓库"></a>1 初始化仓库</h1><p>不管是远程已经有了仓库，还是自己家有仓库，首先在git里你都必须新建一个仓库，如果在文件夹下没有检测到.git文件夹，他就不会对这个文件夹有任何操作，such as pull or push</p>
 <p>可以在任何你想建立仓库的父文件夹下右键git bash here(如果你没有在安装时去除这个钩钩的话)</p>
 <p>进入后输入命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir 仓库名</div><div class="line">cd 仓库名</div><div class="line">git init</div></pre></td></tr></table></figure></p>
-<p><img src="https://dn-xingoxu.qbox.me/blog/dev/git/git%20(1).png" alt="git init"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/5926482034f7a.png" alt="git init"></p>
 <p>你的仓库就初始化好了！</p>
 <h1 id="2-设置你的SSH-Key"><a href="#2-设置你的SSH-Key" class="headerlink" title="2 设置你的SSH Key"></a>2 设置你的SSH Key</h1><p>在与我们的github服务器进行交流前，我们要告诉他，我们是谁。在github中，我们可以用密码登陆，也可以用ssh key来操作仓库</p>
 <p>如果你想使用其他方式与github服务器交流，请搜索其他文章，如果你已经初始化了ssh key，也请搜索其他文章如何关联</p>
@@ -159,7 +159,7 @@
 <p>看清英文，一步一步，如果你需要设置密码，在途中自行输入，以后上传时都会要求输入密码，当然也可以不设置</p>
 <h1 id="3-pull-and-push"><a href="#3-pull-and-push" class="headerlink" title="3 pull and push"></a>3 pull and push</h1><p>首先先将我们的仓库与远程仓库进行关联</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin ssh地址</div></pre></td></tr></table></figure>
-<p><img src="https://dn-xingoxu.qbox.me/blog/dev/git/git%20(2).png" alt="ssh path"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/592648208b7e8.png" alt="ssh path"></p>
 <p>ssh地址都可以在github仓库页面上找到，以git@github.com:开头的，请将它们整个复制进去</p>
 <p>操作完成后不会有任何提示</p>
 <h2 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull origin master</div></pre></td></tr></table></figure>
@@ -249,8 +249,22 @@ HEAD^ 上一次
   <div data-thread-key="git-study-1" data-thread-url="https://blog.xingoxu.com/2015/12/git-study-1/" data-thread-title="初识命令行git"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495615759530"></script>
-	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1495684069575';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
 	<!-- 公共JS代码 end -->
 </div>
     
@@ -591,7 +605,7 @@ HEAD^ 上一次
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1495615761338"></script>
+<script src="/js/main.js?1495684071168"></script>
 
 
 

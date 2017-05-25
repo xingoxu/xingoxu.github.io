@@ -20,13 +20,13 @@
 <meta property="og:url" content="https://blog.xingoxu.com/2015/04/hexo-setup-log/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="hexo+github pages 静态页面 速度杠杠的">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/maintaince/blog-setup/ssh-key-success.png">
-<meta property="og:image" content="https://dn-xingoxu.qbox.me/maintaince/blog-setup/github-cname-setup.png">
-<meta property="og:updated_time" content="2017-05-24T08:48:39.196Z">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/59264929aa77e.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/59264929af2f0.png">
+<meta property="og:updated_time" content="2017-05-25T03:47:15.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自用hexo+github pages搭建log">
 <meta name="twitter:description" content="hexo+github pages 静态页面 速度杠杠的">
-<meta name="twitter:image" content="https://dn-xingoxu.qbox.me/maintaince/blog-setup/ssh-key-success.png">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/05/25/59264929aa77e.png">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -34,7 +34,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1495615761513">
+  <link rel="stylesheet" href="/css/style.css?1495684071322">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -153,7 +153,7 @@
 <p>No such file or directory 说明没有创建<br>如果有，请删除，个人文件夹（C:/Users/username/）下的.ssh文件夹</p>
 <h2 id="生成新的SSH-key"><a href="#生成新的SSH-key" class="headerlink" title="生成新的SSH key"></a>生成新的SSH key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):</div></pre></td></tr></table></figure>
 <p>-C大写注意<br>回车后系统要求输入密码，输入即可<br>可以不设置</p>
-<p><img src="https://dn-xingoxu.qbox.me/maintaince/blog-setup/ssh-key-success.png" alt="ssh key success"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/59264929aa77e.png" alt="ssh key success"></p>
 <h2 id="添加SSH-key到GitHub"><a href="#添加SSH-key到GitHub" class="headerlink" title="添加SSH key到GitHub"></a>添加SSH key到GitHub</h2><p>要把SSH key添加入GitHub才能正常pull/send requests</p>
 <ol>
 <li>打开.ssh文件夹下的.pub文件，用notepad/notepad++等编辑器打开</li>
@@ -200,7 +200,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Extensions</span></div><div class="line"><span class="attr">Plugins:</span></div><div class="line"><span class="bullet">-</span> <span class="string">hexo-generator-feed</span></div><div class="line"><span class="bullet">-</span> <span class="string">hexo-generator-sitemap</span></div><div class="line"></div><div class="line"><span class="comment">#Feed Atom</span></div><div class="line"><span class="attr">feed:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">atom</span></div><div class="line"><span class="attr">  path:</span> <span class="string">atom.xml</span></div><div class="line"><span class="attr">  limit:</span> <span class="number">20</span></div><div class="line"></div><div class="line"><span class="comment">#sitemap</span></div><div class="line"><span class="attr">sitemap:</span></div><div class="line"><span class="attr">  path:</span> <span class="string">sitemap.xml</span></div></pre></td></tr></table></figure>
 <p>主题中有相应部分也要做出修改</p>
 <h1 id="设置CNAME"><a href="#设置CNAME" class="headerlink" title="设置CNAME"></a>设置CNAME</h1><p>在sources文件夹新建一个CNAME文件，内容是一行无空格一个CNAME域名<br>这样做的目的是可以使hexo generate的时候把cname放进网站根目录下<br>当github项目中的设置中这样显示的时候，证明设置成功</p>
-<p><img src="https://dn-xingoxu.qbox.me/maintaince/blog-setup/github-cname-setup.png" alt="github-cname-success"></p>
+<p><img src="https://ooo.0o0.ooo/2017/05/25/59264929af2f0.png" alt="github-cname-success"></p>
 <p>当你使用非cname，想使用A域名等，请看这里：<br><a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/" target="_blank" rel="external">Setting up a custom domain with GitHub Pages - User Documentation</a><br>最后不要忘记在你的ns服务商中设置cname哦</p>
 <h1 id="拾漏补遗-amp-技巧"><a href="#拾漏补遗-amp-技巧" class="headerlink" title="拾漏补遗&amp;技巧"></a>拾漏补遗&amp;技巧</h1><p><code>\scaffolds\post.md</code>进行修改，可以更改默认发布模板<br>例如：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">categories: </div><div class="line">  - Uncategorized</div><div class="line"><span class="section">description: </span></div><div class="line">---</div></pre></td></tr></table></figure>
@@ -271,8 +271,22 @@
   <div data-thread-key="hexo-setup-log" data-thread-url="https://blog.xingoxu.com/2015/04/hexo-setup-log/" data-thread-title="自用hexo+github pages搭建log"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript" src="https://od8634671.qnssl.com/comments.js?1495615759660"></script>
-	<script type="text/javascript">comments(document.querySelectorAll('.duoshuo>div')[0])</script>
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1495684069687';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
 	<!-- 公共JS代码 end -->
 </div>
     
@@ -613,7 +627,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1495615761528"></script>
+<script src="/js/main.js?1495684071336"></script>
 
 
 
