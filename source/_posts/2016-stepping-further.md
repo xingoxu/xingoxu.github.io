@@ -28,14 +28,14 @@ Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却�
 <br />
 ## 第一次的独立远行
 <div class="IMGalignRight" style="width: 330px;">
-![国子监](https://dn-xingoxu.qbox.me/blog/notes/beijing_GUOZIJIAN.jpg)
+![国子监](https://ooo.0o0.ooo/2017/05/25/5926441199e9c.jpg)
 </div>
 惭愧的是，这么大了居然才是一个人出门玩（典型的家长的独生乖儿子），出门玩也是各种三叮咛四嘱咐的，到了帝都还时不时打电话来发短消息发QQ发微信给我问我玩的开心不开心，也是醉了！花了小半天做了点有什么好玩的地方的功课就冲动的买下了火车票，也没跟任何人说，然而等我坐上车的时候却被母亲的大嘴巴已经讲的全亲戚朋友都知道了。。。。。也没跟太多人搭过话，所以自认这趟旅行京味还是不够足的，但值回票价就可以啦！逛过巷子，去过景点，吃过包子（跟魔都小笼类似），看过孔夫老爷子，拜过国子监~~（怪不得下半年那么拼原来是上身了）~~，还有什么值得留恋的呢？
 <br />
 <br />
 ## 测试
 <div class="IMGalignLeft" style="width: 281px;">
-![ccf](https://dn-xingoxu.qbox.me/blog/notes/ccf.PNG)
+![ccf](https://ooo.0o0.ooo/2017/05/25/592644ff505dc.png)
 </div>
 作为想要当一名合格的coder的人，深知算法和数据结构是基础内功，然而此内功虽然是万恶之本，但点到即可，不需过多掌握，关键在于应用性技能，但看到身边的一小部分同学有些出没ACM比赛，有些不知道搞起了什么东西胸有成竹，自己的心中总有那么一些不安，想做些什么，另一个自己却总是说“你什么都不会出去丢人？不怕被拒？”，于是自己也报了一些所谓的一个测试标准，成绩下来的时候还是有点意外的，班长说咱学校好久没有300分以上的了，你终于过了，我感觉很莫名其妙，300分算很好嘛。。。。毕竟自己什么练习也没做。。。。稍稍安心了一下，虽然这个测试现在看起来并没有什么卵用。。。。
 <br />
@@ -45,7 +45,7 @@ Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却�
 <br />
 ## 动画小结
 <div class="IMGalignRight" style="width: 533px;">
-![Battle Spirits Sword Eyes](https://dn-xingoxu.qbox.me/blog/notes/anime_bsse.png)
+![Battle Spirits Sword Eyes](https://ooo.0o0.ooo/2017/05/25/5926452a96a8e.png)
 </div>
 今年感觉会坑很多连载动画，大多看了一部分便又开始兴致冲冲的追了另一部动画片，前一部便一直搁着，还有就是不愿意在闲暇时间看动画，喜欢把大块时间留给动画，然而大块时间都在写作业导致了看番的时间少得可怜（在写这篇文章时离年末还有一个礼拜，不知道这一个礼拜能不能把坑都补掉，这一周作业都解决了基本没事）
 ### 年初：
@@ -62,7 +62,7 @@ Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却�
 
 今年可以说在游戏上，在动漫上还是花了比较多的钱的，无论是旧坑闪十一，还是新坑TOZ，还是年末的新坑BS，花钱花精力，真是辣鸡游戏，毁我钱财，败我身心233，psv，ps4，new 3ds全都有了，大概是真·迈向死宅了（。
 <div class="IMGalignLeft" style="width: 335px;">
-![3DS今年游戏时间](https://dn-xingoxu.qbox.me/blog/notes/2015_gameRecord.jpg)
+![3DS今年游戏时间](https://ooo.0o0.ooo/2017/05/25/59264a4a15fb1.jpg)
 </div>
 ### PS4
 当得知TOZ要出PS4版本时，心中便已按捺不住，偷跑一出便下了单一起把ps4买了，玩了十几个小时，画质实在是太棒了，高清斯雷舔舔舔啊！
@@ -73,7 +73,7 @@ Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却�
 
 
 ## 音乐
-![7!! - オレンジ](https://dn-xingoxu.qbox.me/blog/notes/orange-7!!.png)
+![7!! - オレンジ](https://ooo.0o0.ooo/2017/05/25/5926463e35706.jpg)
 7!!的オレンジ作为四月是你的谎言的ED，从听到这首歌开始，一直loop到了年末，很喜欢钢琴的那一部分，很动人
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=30496836&auto=0&height=66"></iframe>
@@ -81,7 +81,7 @@ Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却�
 ## Stepping Further - 2016
 <div class="IMGalignRight" style="width: 330px;">
 ![今年的伙伴们（误）][1]
-[1]: https://dn-xingoxu.qbox.me/blog/notes/2015吃土套装.jpg
+[1]: https://ooo.0o0.ooo/2017/05/25/59264a48c009e.jpg
 </div>
 一年回顾的最后，自己给自己煲个鸡汤，无论是2015年喜也好，2015年的悲也好，还是错过的遗憾，还是令人感慨的种种，都已是过去的一页，无论喜忧，要好好面对2016的自己，希望能够在新的一年中找到一份像样的实习工作，希望能够快点学会自己想要学会的东西，打起12分的精神，能够像えんどうさん一样继续充满干劲！
 
@@ -91,4 +91,4 @@ Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却�
 * 2015年没有看完的书要统统看完
 * 以上内容不准延续到2017
 
-![新浪 - 笑哭](http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif)看起来并没有诚意呢233
+![新浪 - 笑哭](https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif)看起来并没有诚意呢233

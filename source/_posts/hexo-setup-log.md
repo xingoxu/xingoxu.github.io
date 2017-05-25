@@ -44,7 +44,7 @@ Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):
 回车后系统要求输入密码，输入即可
 可以不设置
 
-![ssh key success](https://dn-xingoxu.qbox.me/maintaince/blog-setup/ssh-key-success.png)
+![ssh key success](https://ooo.0o0.ooo/2017/05/25/59264929aa77e.png)
 
 ## 添加SSH key到GitHub
 
@@ -250,7 +250,7 @@ sitemap:
 这样做的目的是可以使hexo generate的时候把cname放进网站根目录下
 当github项目中的设置中这样显示的时候，证明设置成功
 
-![github-cname-success](https://dn-xingoxu.qbox.me/maintaince/blog-setup/github-cname-setup.png)
+![github-cname-success](https://ooo.0o0.ooo/2017/05/25/59264929af2f0.png)
 
 当你使用非cname，想使用A域名等，请看这里：
 [Setting up a custom domain with GitHub Pages - User Documentation](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/)

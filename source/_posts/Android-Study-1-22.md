@@ -26,10 +26,10 @@ Android Studio 1.5.x 更新后很多网上找到的其他教程包括回答基�
 
 ### 引用其他人的jar/aar Lib
 Library在Android Studio中相当于一个Module，在Project中如果想要导入其他人的库，则选择File->New Module...
-![File->New Module...](https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-1.PNG)
+![File->New Module...](https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png)
 
 选择Import .JAR/.AAR Package，之后简单，就不细说了，请不要忘了如果Lib作者有要求提示在Gradle中加入脚本的不要忘记加入
-![Import Jar/AAR](https://dn-xingoxu.qbox.me/blog/dev/android/Android-Studio-New-Module-2.PNG)
+![Import Jar/AAR](https://ooo.0o0.ooo/2017/05/25/5926470bc2810.png)
 
 ### 新建Library Project
 
@@ -106,7 +106,7 @@ RuntimeException是指这样的问题能够在编写程序时完全避免，是�
 
 这个问题的引发是由于在实践Handler时使用匿名内部类/非静态内部类重写handleMessage方法，Android Studio的深色提示会显示：
 
-![Handler Memory Leaks Tips](https://dn-xingoxu.qbox.me/blog/dev/android/Handler-Memory-Leaks-Tip.PNG)
+![Handler Memory Leaks Tips](https://ooo.0o0.ooo/2017/05/25/5926470bb12d7.png)
 
 
 这个问题的解决很多文章很多回答都有，贴两个：

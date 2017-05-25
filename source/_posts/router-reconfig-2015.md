@@ -88,7 +88,7 @@ opkg install luci-i18n-base-zh-cn
 
 putty定位到```/etc/ignore.list```（我的ignore.list设定在这里，你需要定位到自己设置的位置），vi打开
 
-![ignore.list](https://dn-xingoxu.qbox.me/blog/maintaince/router-reconfig/ignore.list.PNG)
+![ignore.list](https://ooo.0o0.ooo/2017/05/25/5926497f2e6de.png)
 
 前面的四位ip地址姑且能理解，后面的16 18 19 24是什么鬼啊！后实验一番，想起计算机网络的内容（x
 

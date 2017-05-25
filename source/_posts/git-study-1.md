@@ -45,7 +45,7 @@ cd 仓库名
 git init
 ```
 ![git init][1]
-[1]: https://dn-xingoxu.qbox.me/blog/dev/git/git%20(1).png
+[1]: https://ooo.0o0.ooo/2017/05/25/5926482034f7a.png
 你的仓库就初始化好了！
 
 # 2 设置你的SSH Key
@@ -70,7 +70,7 @@ ssh-keygen -C '你的email' -t rsa
  git remote add origin ssh地址
 ```
 ![ssh path][2]
-[2]: https://dn-xingoxu.qbox.me/blog/dev/git/git%20(2).png
+[2]: https://ooo.0o0.ooo/2017/05/25/592648208b7e8.png
 ssh地址都可以在github仓库页面上找到，以git@github.com:开头的，请将它们整个复制进去
 
 操作完成后不会有任何提示
