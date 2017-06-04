@@ -7,6 +7,17 @@ date: 2017-06-04 13:28:41
 toc: false
 ---
 
+上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在~~忙~~（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下
+
+时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
+<br />
+
+
+<div class="pull-left img">![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/59339ee10d3e0.jpg)</div><div class="pull-left img">![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/59339ee32e9ad.jpg)</div>
+<div class="clear-float img-caption">西新宿</div>
+
+这边正好在修路，没法搞到很好的角度
+
 <style markdown="0">
   div.img {
     width: 50%;
@@ -25,14 +36,7 @@ toc: false
   }
 </style>
 
-上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在~~忙~~（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下
-
-时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
 <br />
-
-
-<div class="pull-left img">![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/59339ee10d3e0.jpg)</div><div class="pull-left img">![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/59339ee32e9ad.jpg)</div>
-<div class="clear-float img-caption">西新宿</div>这边正好在修路，没法搞到很好的角度
 
 <div class="pull-left img">![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/5933a3f92feb9.jpg)</div><div class="pull-left img">![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/5933a3ff26b98.jpg)</div>
 <div class="clear-float img-caption">刚才那张的对面</div><!-- more -->
