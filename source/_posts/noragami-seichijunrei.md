@@ -21,11 +21,15 @@ toc: false
 <style markdown="0">
   div.img {
     width: 50%;
+    text-align: center;
+    line-height: 300px;
+    height: 300px;
   }
   div.img img {
-    display: block;
     margin: 0 auto;
-    height: 300px;
+    max-height: 300px;
+    vertical-align: middle;
+    margin-top: -3px;
   }
   .clear-float {
     clear: both;
