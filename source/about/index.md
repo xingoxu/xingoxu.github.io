@@ -9,13 +9,8 @@ slug: about-me
 Xingo Xu(Xu Yixin)
 
 # I am
-Still a student in high school.
 
-Now I'm interning at 030buy.
-
-# Target
-
-Front-end Developer 
+A Front-end Developer who works in Rajax Network Technology
 
 
 # Interests
