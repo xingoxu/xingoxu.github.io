@@ -18,6 +18,7 @@
 <meta property="og:title" content="xingo&#39;s private plot">
 <meta property="og:url" content="https://blog.xingoxu.com/page/5/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xingo&#39;s private plot">
 <meta name="twitter:creator" content="@xingoxu">
@@ -27,7 +28,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1499421255944">
+  <link rel="stylesheet" href="/css/style.css?1502089927559">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -98,6 +99,80 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-openwrt-mount-harddisk-and-thunder-download" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/03/openwrt-mount-harddisk-and-thunder-download/" class="article-date" >
+  	<time datetime="2015-03-02T19:27:12.000Z" itemprop="datePublished">2015-03-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/openwrt-mount-harddisk-and-thunder-download/">openwrt 挂载硬盘以及迅雷下载</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>迅雷下载模块：<br><a href="http://www.right.com.cn/forum/thread-157967-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-157967-1-1.html</a></p>
+<p>luci界面：<br><a href="http://www.right.com.cn/forum/thread-135833-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-135833-1-1.html</a></p>
+<p>samba共享：</p>
+<p><a href="http://www.right.com.cn/forum/thread-151546-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-151546-1-1.html</a></p>
+<p>opkg update<br>opkg install luci-app-samba</p>
+<p>修改/etc/config/samba<br>增加以下内容：</p>
+<p>config sambashare<br>option ‘name’ ‘share’<br>option ‘path’ ‘/mnt’<br>option ‘read_only’ ‘no’<br>option ‘guest_ok’ ‘no’<br>option ‘create_mask’ ‘0700’<br>option ‘dir_mask’ ‘0700’</p>
+<p>修改/etc/samba/smb.conf.template</p>
+<p>guest ok = no<br>invalid users = root</p>
+<p>修改后执行命令：<br>/etc/init.d/samba start</p>
+<p>samba添加用户： </p>
+<p>smbpasswd -a root<br>设置密码</p>
+<p>挂载硬盘：</p>
+<p>opkg install以下包</p>
+<p>kmod-usb-storage<br>kmod-usb-storage-extras 可选<br>block-mount<br>kmod-fs-ext4<br>kmod-fs-ntfs 只读不可写</p>
+<p>插入记得挂载，putty 命令<br>mount /dev/sda(x) /mnt/sda(x)<br>卸载umount /dev/sda(x)</p>
+<p>迅雷离线教程：<br><a href="http://www.right.com.cn/forum/thread-115029-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-115029-1-1.html</a><br><a href="https://chrome.google.com/webstore/detail/thunderlixianassistant/eehlmkfpnagoieibahhcghphdbjcdmen" target="_blank" rel="external">https://chrome.google.com/webstore/detail/thunderlixianassistant/eehlmkfpnagoieibahhcghphdbjcdmen</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/maintaince/">maintaince</a><a class="article-category-link" href="/categories/maintaince/router-config/">router-config</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
   
     <article id="post-WNDR4300-setup-log" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -605,7 +680,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1499421255946"></script>
+<script src="/js/main.js?1502089927564"></script>
 
 
 

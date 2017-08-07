@@ -20,9 +20,10 @@
 <meta property="og:url" content="https://blog.xingoxu.com/2015/04/hexo-setup-log/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="hexo+github pages 静态页面 速度杠杠的">
+<meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/59264929aa77e.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/59264929af2f0.png">
-<meta property="og:updated_time" content="2017-07-07T09:53:37.768Z">
+<meta property="og:updated_time" content="2017-08-07T07:11:18.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自用hexo+github pages搭建log">
 <meta name="twitter:description" content="hexo+github pages 静态页面 速度杠杠的">
@@ -34,7 +35,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1499421255636">
+  <link rel="stylesheet" href="/css/style.css?1502089927218">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -163,7 +164,7 @@
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>输入以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
 <p>出现以下情况表示配置正确：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is                                                    .</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span></div><div class="line"><span class="string">RSA key fingerprint is                                                    .</span></div><div class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></div></pre></td></tr></table></figure>
 <p>输入yes</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi xingoxu! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure>
 <p>完善个人信息</p>
@@ -203,7 +204,7 @@
 <p><img src="https://ooo.0o0.ooo/2017/05/25/59264929af2f0.png" alt="github-cname-success"></p>
 <p>当你使用非cname，想使用A域名等，请看这里：<br><a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/" target="_blank" rel="external">Setting up a custom domain with GitHub Pages - User Documentation</a><br>最后不要忘记在你的ns服务商中设置cname哦</p>
 <h1 id="拾漏补遗-amp-技巧"><a href="#拾漏补遗-amp-技巧" class="headerlink" title="拾漏补遗&amp;技巧"></a>拾漏补遗&amp;技巧</h1><p><code>\scaffolds\post.md</code>进行修改，可以更改默认发布模板<br>例如：</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">categories: </div><div class="line">  - Uncategorized</div><div class="line"><span class="section">description: </span></div><div class="line">---</div></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">categories: </div><div class="line">  - Uncategorized</div><div class="line">description: </div><div class="line">---</div></pre></td></tr></table></figure>
 <p>pacman 主题启用公式高亮<br>要在pacman的_config.yml中最后加入</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">highlight:</span></div><div class="line"><span class="attr">  enable:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
 <p>p.s.听说pacman还不支持3.0(?)</p>
@@ -277,7 +278,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1499421254067';
+			'/comments.js?1502089925446';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -626,7 +627,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1499421255649"></script>
+<script src="/js/main.js?1502089927232"></script>
 
 
 

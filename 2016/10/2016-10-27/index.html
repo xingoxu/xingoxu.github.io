@@ -20,6 +20,7 @@
 <meta property="og:url" content="https://blog.xingoxu.com/2016/10/2016-10-27/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="Android Chrome 非常奇怪的字体偏移 IOS Safari -webkit-box 非常奇怪的字体偏移 linear-gradient 小笔记 晒晒最近的怪物猎人物语  夹个怪猎物语的私货你们有意见吗【没有】">
+<meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/25/580ef6ffa1f2c.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/25/580ef6ffc70f9.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/24/580dd472845a5.png">
@@ -35,7 +36,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/27/581223dbbfa58.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/27/581223db71dc7.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/27/581223d5d6ea8.jpg">
-<meta property="og:updated_time" content="2017-07-07T09:53:37.768Z">
+<meta property="og:updated_time" content="2017-08-07T07:11:18.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最近遇到的小坑">
 <meta name="twitter:description" content="Android Chrome 非常奇怪的字体偏移 IOS Safari -webkit-box 非常奇怪的字体偏移 linear-gradient 小笔记 晒晒最近的怪物猎人物语  夹个怪猎物语的私货你们有意见吗【没有】">
@@ -47,7 +48,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1499421255271">
+  <link rel="stylesheet" href="/css/style.css?1502089926794">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -208,7 +209,7 @@
 <p>所以应该这么写<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 1%,<span class="selector-tag">white</span> 1%) <span class="selector-tag">no-repeat</span>;</div></pre></td></tr></table></figure></p>
 <p>当然啦，要注意多个颜色（&gt;3）的情况下，两个颜色之间的距离如果大于0就是产生渐变（废话，这是人家本来的用处啊233）</p>
 <p>所以如果要做无渐变的多个颜色的混合，应该这么写</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">background: linear-gradient(to right,black 1%,white 1%,white 3%,#0c0119 3%) no-repeat;</div><div class="line">                                     \------/ \------/ \------/ \------/</div><div class="line">                                     颜色0结束 颜色1开始 颜色1结束 颜色2开始</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 1%,<span class="selector-tag">white</span> 1%,<span class="selector-tag">white</span> 3%,<span class="selector-id">#0c0119</span> 3%) <span class="selector-tag">no-repeat</span>;</div><div class="line">                                     \------/ \------/ \------/ \------/</div><div class="line">                                     颜色0结束 颜色1开始 颜色1结束 颜色2开始</div></pre></td></tr></table></figure>
 <h1 id="晒游戏晒游戏233"><a href="#晒游戏晒游戏233" class="headerlink" title="晒游戏晒游戏233"></a>晒游戏晒游戏233</h1><p>最近在玩怪物猎人物语！超喜欢リュート，田村睦心这季配了好多男主，都超可爱！隔壁bs的约克也是！</p>
 <p>感觉这个游戏就是卡普空简化战斗的怪物猎人啊，果然从小培养信仰吗（然而我并不吃这套哼</p>
 <p>还差一些材料，现在在刷塔，刷完塔做出装备后就马上能全委托通关啦【并不打算再刷其他东西了】</p>
@@ -281,7 +282,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1499421253843';
+			'/comments.js?1502089925201';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -630,7 +631,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1499421255279"></script>
+<script src="/js/main.js?1502089926803"></script>
 
 
 

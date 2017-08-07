@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.xingoxu.com/"/>
-  <updated>2017-07-07T09:53:37.768Z</updated>
+  <updated>2017-08-07T07:11:18.556Z</updated>
   <id>https://blog.xingoxu.com/</id>
   
   <author>
@@ -16,11 +16,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>交叉编译原版某不可描述程序为梅林某停更插件续命</title>
+    <link href="https://blog.xingoxu.com/2017/08/cross-compile-55-libev/"/>
+    <id>https://blog.xingoxu.com/2017/08/cross-compile-55-libev/</id>
+    <published>2017-08-07T06:41:43.000Z</published>
+    <updated>2017-08-07T07:11:18.556Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>Forked from <a href="http://telegra.ph/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%8E%9F%E7%89%88shadowsocks%E4%B8%BAkoolshare%E6%A2%85%E6%9E%97ss%E6%8F%92%E4%BB%B6%E7%BB%AD%E5%91%BD-08-07" target="_blank" rel="external">原文 and 非自审查版</a></p>
+</blockquote>
+<h1 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h1><ol>
+<li>ubuntu 16.04</li>
+<li><a href="https://github.com/RMerl/asuswrt-merlin" target="_blank" rel="external">原版梅林源码</a></li>
+<li>55-libev 源码</li>
+</ol>
+<h1 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h1><p>解包梅林 55 插件发现，基本都是脚本，核心都是调用 55-redir ，因此猜测 55-redir 为原版 55 ，只需要更新原版 55 ，并在前端进行相应修改，便能对其续命</p>
+<h2 id="ubuntu-16-04"><a href="#ubuntu-16-04" class="headerlink" title="ubuntu 16.04"></a>ubuntu 16.04</h2><p>不是很了解 linux，但是应该只要能够运行 arm-linux-gcc 的 linux 发行版都可以，但我在 ubuntu 16.04 下实验成功，因此这里写 ubuntu 16.04，当然 docker 是可以的（因为我就是在 macos 下用的 docker）</p>
+<h2 id="原版梅林源码"><a href="#原版梅林源码" class="headerlink" title="原版梅林源码"></a>原版梅林源码</h2><p>虽然是 koolshare 改版固件，但其还是合并了梅林的代码，因此可以使用梅林的交叉编译工具链</p>
+<p>下载时，注意对应相对的梅林版本号，可以看一下固件发布时的说明</p>
+<p>梅林的交叉编译工具链在梅林源码 <code>release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3</code>，release 下应该是固件版本的不同，但几个固件版本下的 toolchains 均指向这个文件夹，应该是 toolchains 没有改变过</p>
+<h2 id="55-libev-源码"><a href="#55-libev-源码" class="headerlink" title="55-libev 源码"></a>55-libev 源码</h2><p>不解释</p>
+<h1 id="炼丹编译"><a href="#炼丹编译" class="headerlink" title="炼丹编译"></a>炼丹编译</h1><h2 id="镜像准备与-arm-linux-gcc"><a href="#镜像准备与-arm-linux-gcc" class="headerlink" title="镜像准备与 arm-linux-gcc"></a>镜像准备与 arm-linux-gcc</h2><p>ubuntu 首先需要安装一些编译工具，如果对系统有洁癖的，推荐使用docker，我使用了别人写好的 DockerFile 的镜像</p>
+<blockquote>
+<p><a href="https://github.com/mritd/dockerfile/tree/master/asuswrt-merlin-build" target="_blank" rel="external">Asuswrt Merlin 固件交叉编译环境</a></p>
+</blockquote>
+<p>启动并挂载源码，运行 <code>docker exec -it container-name zsh</code></p>
+<p>进入容器后尝试运行 <code>arm-linux-gcc</code></p>
+<p>如果出现 <code>arm-linux-gcc: no input files</code> 说明正常，进行下一步</p>
+<p>如果出现 其他，请检查路径，权限，否则等下编译出来的可能是 ubuntu 的 55 （我之前编译时，解压后arm-linux-gcc没有运行权限，于是没法编译，给了权限就可以了）</p>
+<h2 id="编译-55-依赖与-55"><a href="#编译-55-依赖与-55" class="headerlink" title="编译 55 依赖与 55"></a>编译 55 依赖与 55</h2><p>编译 55 还有一些依赖需要安装，以下过程参阅</p>
+<blockquote>
+<p><a href="https://haoutil.com/topic/cross-compile-shadowsocks-libev" target="_blank" rel="external">交叉编译55-libev</a></p>
+</blockquote>
+<p>需要编译 <code>mbedTLS</code>、<code>pcre</code>、<code>libsodium</code>、<code>libev</code>、<code>libudns</code></p>
+<p>按照原博文的编译后，最后编译 55 时死活没有检测到编译了libudns，怕是编译后文件夹没有添加到 <code>PATH</code> 中，当然刚才的博文里还提供了一键编译脚本，但那个一键编译脚本中判断参数的部分在ubuntu里报错，于是我就去了，直接写死环境 <code>arm-linux</code> 即可</p>
+<p>fork了一下  </p>
+<script src="https://gist.github.com/xingoxu/a9dc40df528c57c792ee72f1409a6ebb.js"></script>
+
+
+<p>编译过程大约需要持续 5-10 分钟</p>
+<p><img src="https://i.loli.net/2017/08/07/5987eac266528.png" alt="编译开始"></p>
+<p><img src="https://i.loli.net/2017/08/07/5987f6bf102a1.png" alt="编译成功"></p>
+<p>使用一键脚本编译的话，在 <code>dists/55-libev/bin</code> 中拿到 <code>ss-redir</code>，将他scp到路由器上，执行 <code>ss-redir -v</code></p>
+<p><img src="https://i.loli.net/2017/08/07/5987e533d41aa.jpg" alt="编译成功后运行ss-redir -v"></p>
+<p>出现以上则为成功</p>
+<h1 id="替换原插件并自行打包"><a href="#替换原插件并自行打包" class="headerlink" title="替换原插件并自行打包"></a>替换原插件并自行打包</h1><p>Fork原插件repo</p>
+<p><code>base=shadowsocks</code></p>
+<p><code>./ss/ssconfig.sh</code> 中将地址更换成自己的repo可以使用自动更新</p>
+<p><code>./version</code> 第一行是版本号  第二行是 tar.gz 的 hash值</p>
+<p><code>./bin</code> 55 的各种二进制执行文件，可以将刚才编译出来的东西都覆盖进来</p>
+<p><code>./webs/Main_Ss_Content.asp</code> 前端界面，加加密方式都在这里添加</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Forked from &lt;a href=&quot;http://telegra.ph/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%8E%9F%E7%89%88shadowsocks%E4%B8%BAkoolshare%E
+    
+    </summary>
+    
+      <category term="dev" scheme="https://blog.xingoxu.com/categories/dev/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>2017 野良神圣地巡礼</title>
     <link href="https://blog.xingoxu.com/2017/06/noragami-seichijunrei/"/>
     <id>https://blog.xingoxu.com/2017/06/noragami-seichijunrei/</id>
     <published>2017-06-04T05:28:41.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在<del>忙</del>（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下</p>
 <p>时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」<br><br></p>
@@ -144,7 +209,7 @@
     <link href="https://blog.xingoxu.com/2017/04/kotobukiya-syaoran/"/>
     <id>https://blog.xingoxu.com/2017/04/kotobukiya-syaoran/</id>
     <published>2017-04-16T06:57:56.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://bgm.tv/character/6527" target="_blank" rel="external">bgm 人物介绍</a></p>
@@ -198,7 +263,7 @@
     <link href="https://blog.xingoxu.com/2017/04/uc-hyakuya-yuichiro/"/>
     <id>https://blog.xingoxu.com/2017/04/uc-hyakuya-yuichiro/</id>
     <published>2017-04-15T16:03:42.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://bgm.tv/character/28623" target="_blank" rel="external">bgm 人物介绍</a></p>
@@ -268,7 +333,7 @@
     <link href="https://blog.xingoxu.com/2017/04/macbook-and-surface/"/>
     <id>https://blog.xingoxu.com/2017/04/macbook-and-surface/</id>
     <published>2017-04-13T09:11:22.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>前年12月入手的surface pro 4，去年11月入手的mbp，都是第一时间下单的，所以其实很早就想做一个对比，或者说在拿到sp4之后就想写一个感受，只是一直没有时间去想这些事情</p>
 <p>此文结论先写在前面：</p>
@@ -378,7 +443,7 @@
     <link href="https://blog.xingoxu.com/2017/01/webpack-amd/"/>
     <id>https://blog.xingoxu.com/2017/01/webpack-amd/</id>
     <published>2017-01-22T09:13:19.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>什么？webpack出2了？</p>
 <p>刚用了小半年的webpack就又要重头学过了？</p>
@@ -466,7 +531,7 @@
     <link href="https://blog.xingoxu.com/2017/01/2017-iyahoi/"/>
     <id>https://blog.xingoxu.com/2017/01/2017-iyahoi/</id>
     <published>2017-01-03T11:55:45.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感</p>
 <a id="more"></a>
@@ -509,7 +574,7 @@
     <link href="https://blog.xingoxu.com/2016/12/improve-duoshuo/"/>
     <id>https://blog.xingoxu.com/2016/12/improve-duoshuo/</id>
     <published>2016-12-27T07:34:24.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>增加用户尾巴</li>
@@ -568,7 +633,7 @@
     <link href="https://blog.xingoxu.com/2016/12/use-travis-ci-your-blog/"/>
     <id>https://blog.xingoxu.com/2016/12/use-travis-ci-your-blog/</id>
     <published>2016-12-23T07:51:13.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;&amp; hexo g &amp;&amp; hexo d呢</p>
 <a id="more"></a>
@@ -581,7 +646,7 @@
 <p><a href="https://docs.travis-ci.com/user/customizing-the-build/" target="_blank" rel="external">Getting Started</a></p>
 <p>如果你想再加hook，那么自己看官方文档去，这里对我自己的travis.yml稍作解释</p>
 <blockquote>
-<p>Hosted on <a href="https://github.com/xingoxu/xingoxu.github.io/blob/source/.travis.yml" target="_blank" rel="external">GitHub</a><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> <span class="string">node_js</span></div><div class="line"><span class="attr">node_js:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">'6'</span></div><div class="line"><span class="attr">before_install:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">export</span> <span class="string">TZ='Asia/Shanghai'</span></div><div class="line"><span class="bullet">  -</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="bullet">-g</span></div><div class="line"><span class="attr">install:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">npm</span> <span class="string">install</span></div><div class="line"><span class="attr">script:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo</span> <span class="string">clean</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span></div><div class="line"><span class="attr">after_script:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">config</span> <span class="bullet">--global</span> <span class="string">user.name</span> <span class="string">"xingoxu"</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">config</span> <span class="bullet">--global</span> <span class="string">user.email</span> <span class="string">"xingoxu@gmail.com"</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">clone</span> <span class="attr">https://$&#123;GH_REF&#125;</span> <span class="string">.deploy_git</span></div><div class="line"><span class="bullet">  -</span> <span class="string">cd</span> <span class="string">.deploy_git</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">checkout</span> <span class="string">master</span></div><div class="line"><span class="bullet">  -</span> <span class="string">cd</span> <span class="string">../</span></div><div class="line"><span class="bullet">  -</span> <span class="string">sed</span> <span class="bullet">-i''</span> <span class="string">"s~$&#123;GH_REF&#125;~$&#123;GH_TOKEN&#125;:x-oauth-basic@$&#123;GH_REF&#125;~"</span> <span class="string">_config.yml</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo</span> <span class="string">d</span> <span class="string">&gt; log.txt 2&gt;&amp;1</span></div><div class="line">  - cat log.txt | sed "s~$&#123;GH_TOKEN&#125;~TOKEN~g"</div><div class="line"><span class="attr">branches:</span></div><div class="line"><span class="attr">  only:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">source</span></div><div class="line"><span class="attr">env:</span></div><div class="line"><span class="attr">  global:</span></div><div class="line"><span class="attr">  - GH_REF:</span> <span class="string">github.com/xingoxu/xingoxu.github.io.git</span></div></pre></td></tr></table></figure></p>
+<p>Hosted on <a href="https://github.com/xingoxu/xingoxu.github.io/blob/source/.travis.yml" target="_blank" rel="external">GitHub</a><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> <span class="string">node_js</span></div><div class="line"><span class="attr">node_js:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">'6'</span></div><div class="line"><span class="attr">before_install:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">export</span> <span class="string">TZ='Asia/Shanghai'</span></div><div class="line"><span class="bullet">  -</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="bullet">-g</span></div><div class="line"><span class="attr">install:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">npm</span> <span class="string">install</span></div><div class="line"><span class="attr">script:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo</span> <span class="string">clean</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span></div><div class="line"><span class="attr">after_script:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">config</span> <span class="bullet">--global</span> <span class="string">user.name</span> <span class="string">"xingoxu"</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">config</span> <span class="bullet">--global</span> <span class="string">user.email</span> <span class="string">"xingoxu@gmail.com"</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">clone</span> <span class="attr">https://$&#123;GH_REF&#125;</span> <span class="string">.deploy_git</span></div><div class="line"><span class="bullet">  -</span> <span class="string">cd</span> <span class="string">.deploy_git</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">checkout</span> <span class="string">master</span></div><div class="line"><span class="bullet">  -</span> <span class="string">cd</span> <span class="string">../</span></div><div class="line"><span class="bullet">  -</span> <span class="string">sed</span> <span class="bullet">-i''</span> <span class="string">"s~$&#123;GH_REF&#125;~$&#123;GH_TOKEN&#125;:x-oauth-basic@$&#123;GH_REF&#125;~"</span> <span class="string">_config.yml</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo</span> <span class="string">d</span> <span class="string">&gt; log.txt 2&gt;&amp;1</span></div><div class="line"><span class="string">  - cat log.txt | sed "s~$&#123;GH_TOKEN&#125;~TOKEN~g"</span></div><div class="line"><span class="string"></span><span class="attr">branches:</span></div><div class="line"><span class="attr">  only:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">source</span></div><div class="line"><span class="attr">env:</span></div><div class="line"><span class="attr">  global:</span></div><div class="line"><span class="attr">  - GH_REF:</span> <span class="string">github.com/xingoxu/xingoxu.github.io.git</span></div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>前面的不用多说，需要关注的是部署的问题</p>
 <h2 id="解决git-push的证书问题"><a href="#解决git-push的证书问题" class="headerlink" title="解决git push的证书问题"></a>解决git push的证书问题</h2><p>普通的push肯定是需要ssh的key的，或者https的话需要输入用户名和密码</p>
@@ -638,7 +703,7 @@
     <link href="https://blog.xingoxu.com/2016/12/config-switchresx-and-2khidpi/"/>
     <id>https://blog.xingoxu.com/2016/12/config-switchresx-and-2khidpi/</id>
     <published>2016-12-18T13:57:37.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>  <strong>非Apple显示器字体模糊的终极方案</strong></p>
 <p>  OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI</p>
@@ -697,7 +762,7 @@
     <link href="https://blog.xingoxu.com/2016/10/2016-10-27/"/>
     <id>https://blog.xingoxu.com/2016/10/2016-10-27/</id>
     <published>2016-10-27T15:58:37.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>Android Chrome 非常奇怪的字体偏移</li>
@@ -753,7 +818,7 @@
 <p>所以应该这么写<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 1%,<span class="selector-tag">white</span> 1%) <span class="selector-tag">no-repeat</span>;</div></pre></td></tr></table></figure></p>
 <p>当然啦，要注意多个颜色（&gt;3）的情况下，两个颜色之间的距离如果大于0就是产生渐变（废话，这是人家本来的用处啊233）</p>
 <p>所以如果要做无渐变的多个颜色的混合，应该这么写</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">background: linear-gradient(to right,black 1%,white 1%,white 3%,#0c0119 3%) no-repeat;</div><div class="line">                                     \------/ \------/ \------/ \------/</div><div class="line">                                     颜色0结束 颜色1开始 颜色1结束 颜色2开始</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 1%,<span class="selector-tag">white</span> 1%,<span class="selector-tag">white</span> 3%,<span class="selector-id">#0c0119</span> 3%) <span class="selector-tag">no-repeat</span>;</div><div class="line">                                     \------/ \------/ \------/ \------/</div><div class="line">                                     颜色0结束 颜色1开始 颜色1结束 颜色2开始</div></pre></td></tr></table></figure>
 <h1 id="晒游戏晒游戏233"><a href="#晒游戏晒游戏233" class="headerlink" title="晒游戏晒游戏233"></a>晒游戏晒游戏233</h1><p>最近在玩怪物猎人物语！超喜欢リュート，田村睦心这季配了好多男主，都超可爱！隔壁bs的约克也是！</p>
 <p>感觉这个游戏就是卡普空简化战斗的怪物猎人啊，果然从小培养信仰吗（然而我并不吃这套哼</p>
 <p>还差一些材料，现在在刷塔，刷完塔做出装备后就马上能全委托通关啦【并不打算再刷其他东西了】</p>
@@ -786,12 +851,12 @@
     <link href="https://blog.xingoxu.com/2016/09/2016-09-18/"/>
     <id>https://blog.xingoxu.com/2016/09/2016-09-18/</id>
     <published>2016-09-18T08:53:27.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>  即使是找到了实习，然而还是没能闲下来啊_(:з」∠)_</p>
 <a id="more"></a>
 <h2 id="浏览器的dom操作合并"><a href="#浏览器的dom操作合并" class="headerlink" title="浏览器的dom操作合并"></a>浏览器的dom操作合并</h2><p>　　刚学js的时候，明白js单线程时间线的模型，知道dom操作是缓慢的，因此明白要做动画最好应该在css中书写，修改dom只修改他的class，在不同的状态间切换，刚开始做一些动画成功了，然而做一个<code>input[type=text]</code>的错误闪烁框，写了animation，想在两个状态间交换，然而点了却没有反应，无论是用jQ写，还是用原生dom写，在控制台中根本没有变换过，当时很是疑问，最后我<del>异想天开</del>，试了一下setTimeout，把两个状态间的一个放入其中，结果就顺利的展现出想要的效果了。<br>　　当时没有仔细想过，后来当看到优化dom操作，减少重流重绘 博文的时候，猛然想起，浏览器对dom树的操作都是有优化的，同一个时间线中操作dom的操作会被合并成一个，到你下一次读取的时候才会产生变化</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> domElem; <span class="comment">//假设这是dom节点</span></div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;- 'c'</span></div><div class="line">domElem.className = <span class="string">'a'</span>;</div><div class="line">domElem.className = <span class="string">'b'</span>;</div><div class="line">domElem.className = <span class="string">'a'</span>;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">实际上浏览器只干了一件事情</div><div class="line">domElem.className = 'a';</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;- 'a'</span></div><div class="line">domElem.className = <span class="string">'b'</span>;</div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;-'b'</span></div><div class="line">domElem.className = <span class="string">'c'</span>;</div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;-'c'</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> domElem; <span class="comment">//假设这是dom节点</span></div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;- 'c'</span></div><div class="line">domElem.className = <span class="string">'a'</span>;</div><div class="line">domElem.className = <span class="string">'b'</span>;</div><div class="line">domElem.className = <span class="string">'a'</span>;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">实际上浏览器只干了一件事情</span></div><div class="line"><span class="comment">domElem.className = 'a';</span></div><div class="line"><span class="comment">*/</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;- 'a'</span></div><div class="line">domElem.className = <span class="string">'b'</span>;</div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;-'b'</span></div><div class="line">domElem.className = <span class="string">'c'</span>;</div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;-'c'</span></div></pre></td></tr></table></figure>
 <h2 id="React的学习"><a href="#React的学习" class="headerlink" title="React的学习"></a>React的学习</h2><p>　　<del>工作量不够</del>趁着空闲的时间，学习了React【，感受是React其实是单向版的Vue，但React最重要的是它带给我们的Components的概念，React其他的东西非常小，不依赖组件，什么都没有，可以说是Virtual Dom版的Mustache，正因为其他都很小，他的Components就变成了他想传达给我们的理念<del>（大概是这样）</del>。看了getting started，手痒痒，写了一个一直很想做的一个东西，感觉用React来写这个真是太合适了</p>
 <blockquote>
 <p><a href="http://works.xingoxu.com/buy-calc/" target="_blank" rel="external">日系剁手网站价格综合对比工具</a></p>
@@ -822,7 +887,7 @@
     <link href="https://blog.xingoxu.com/2016/06/2016-06-16/"/>
     <id>https://blog.xingoxu.com/2016/06/2016-06-16/</id>
     <published>2016-06-16T12:47:18.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>　　突然发现今天是个轴对称的日期233是个写博客的好日子（？），离上一次写博客有两个月，然而这两个月中真是经历了许多许多，不过接下来感觉可以稍微放轻松一点了</p>
 <a id="more"></a>
@@ -854,7 +919,7 @@
     <link href="https://blog.xingoxu.com/2016/04/2016-04-19/"/>
     <id>https://blog.xingoxu.com/2016/04/2016-04-19/</id>
     <published>2016-04-18T16:48:42.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践</p>
 <a id="more"></a>
@@ -906,7 +971,7 @@
     <link href="https://blog.xingoxu.com/2016/03/gulpjs-1/"/>
     <id>https://blog.xingoxu.com/2016/03/gulpjs-1/</id>
     <published>2016-03-25T12:34:33.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h1><ol>
 <li>gulp能做什么</li>
@@ -972,7 +1037,7 @@
     <link href="https://blog.xingoxu.com/2016/03/2016-03-20/"/>
     <id>https://blog.xingoxu.com/2016/03/2016-03-20/</id>
     <published>2016-03-20T15:36:32.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h1><ol>
 <li>重拾HTML/CSS</li>
@@ -1023,7 +1088,7 @@
     <link href="https://blog.xingoxu.com/2016/03/GSC-535/"/>
     <id>https://blog.xingoxu.com/2016/03/GSC-535/</id>
     <published>2016-03-20T15:11:17.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>终于买了又帅又可爱的西林困，嘻嘻，稍微照几张~<br><a id="more"></a><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec136546c8.jpg" alt="GSC535-1 (6).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec131cdbca.jpg" alt="GSC535-1 (1).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec133a750e.jpg" alt="GSC535-1 (2).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec1362a8e1.jpg" alt="GSC535-1 (3).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec1337b00c.jpg" alt="GSC535-1 (4).jpg"><br><img src="https://ooo.0o0.ooo/2016/03/20/56eec13a81f2b.jpg" alt="GSC535-1 (5).jpg"></p>
 ]]></content>
@@ -1046,7 +1111,7 @@
     <link href="https://blog.xingoxu.com/2016/03/hexo-theme-paper-white/"/>
     <id>https://blog.xingoxu.com/2016/03/hexo-theme-paper-white/</id>
     <published>2016-03-11T19:44:46.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎有爱自取啦</p>
 <p>最后更新： 2016.01.09</p>
@@ -1054,7 +1119,7 @@
 <h1 id="Paper-White-A-Hexo-Theme"><a href="#Paper-White-A-Hexo-Theme" class="headerlink" title="Paper White - A Hexo Theme"></a>Paper White - A Hexo Theme</h1><p>================</p>
 <p>ReadMe 请<a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank" rel="external">移步</a></p>
 <p>此处将集中显示各种奇奇怪怪 demo</p>
-<h1 id="embed-code"><a href="#embed-code" class="headerlink" title="embed code"></a>embed code</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//载入分享模块</span></div><div class="line"><span class="keyword">if</span> (paperWhiteConfig.canShare) &#123;</div><div class="line">	<span class="built_in">require</span>([<span class="string">'/js/share.js'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">share</span>) </span>&#123;</div><div class="line">		share.init();</div><div class="line">		share.shareLinks.push(&#123;</div><div class="line">			<span class="attr">id</span>: <span class="string">'download'</span>, <span class="comment">//暂时都能下载，如有不能下载的需求移动至init进行克隆数组等操作</span></div><div class="line">			label: <span class="string">'下载'</span>,</div><div class="line">			<span class="attr">url</span>:<span class="string">'&#123;&#123;raw_image_url&#125;&#125;'</span>, </div><div class="line">			<span class="attr">download</span>: <span class="literal">true</span> </div><div class="line">		&#125;);</div><div class="line">		photoSwipeOption.shareEl = <span class="literal">true</span>;</div><div class="line">		photoSwipeOption.shareButtons = share.shareLinks;</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="embed-code"><a href="#embed-code" class="headerlink" title="embed code"></a>embed code</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//载入分享模块</span></div><div class="line"><span class="keyword">if</span> (paperWhiteConfig.canShare) &#123;</div><div class="line">	<span class="built_in">require</span>([<span class="string">'/js/share.js'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">share</span>) </span>&#123;</div><div class="line">		share.init();</div><div class="line">		share.shareLinks.push(&#123;</div><div class="line">			id: <span class="string">'download'</span>, <span class="comment">//暂时都能下载，如有不能下载的需求移动至init进行克隆数组等操作</span></div><div class="line">			label: <span class="string">'下载'</span>,</div><div class="line">			url:<span class="string">'&#123;&#123;raw_image_url&#125;&#125;'</span>, </div><div class="line">			download: <span class="literal">true</span> </div><div class="line">		&#125;);</div><div class="line">		photoSwipeOption.shareEl = <span class="literal">true</span>;</div><div class="line">		photoSwipeOption.shareButtons = share.shareLinks;</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="embed-gist"><a href="#embed-gist" class="headerlink" title="embed gist"></a>embed gist</h1><script src="https://gist.github.com/xingoxu/9ef5d5a262f796daad94.js"></script>
 
 <h1 id="jsfiddle"><a href="#jsfiddle" class="headerlink" title="jsfiddle"></a>jsfiddle</h1><script async src="//jsfiddle.net/pq98medb/1/embed/js,html,css,result/dark/"></script>
@@ -1106,7 +1171,7 @@
     <link href="https://blog.xingoxu.com/2016/01/Android-Study-1-22/"/>
     <id>https://blog.xingoxu.com/2016/01/Android-Study-1-22/</id>
     <published>2016-01-21T18:05:18.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h2><ol>
 <li>Android Studio Library的导入与导出</li>
@@ -1221,7 +1286,7 @@
     <link href="https://blog.xingoxu.com/2016/01/2016-stepping-further/"/>
     <id>https://blog.xingoxu.com/2016/01/2016-stepping-further/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
+    <updated>2017-08-07T07:11:18.556Z</updated>
     
     <content type="html"><![CDATA[<p>Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却也是回不去的昨天。</p>
 <a id="more"></a>
@@ -1266,42 +1331,6 @@
     </summary>
     
       <category term="notes" scheme="https://blog.xingoxu.com/categories/notes/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>解决一个OTA后安装Xposed发生No space left on device错误</title>
-    <link href="https://blog.xingoxu.com/2015/12/solve-a-problem-with-xposed-after-otaTo6-0-1/"/>
-    <id>https://blog.xingoxu.com/2015/12/solve-a-problem-with-xposed-after-otaTo6-0-1/</id>
-    <published>2015-12-31T10:22:18.000Z</published>
-    <updated>2017-07-07T09:53:37.768Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="遇见情况"><a href="#遇见情况" class="headerlink" title="遇见情况"></a>遇见情况</h1><p>Android 5.0.1-&gt;6.0.1 OTA并root后安装Xposed框架，却提示报错：</p>
-<blockquote>
-<p>cp: write error: No space left on device</p>
-</blockquote>
-<a id="more"></a>
-<p>第一次看见这样的错误提示，觉得很奇怪，明明手机剩余空间还有一半以上，后来爬贴才发现system分区分开来的，/system/App分区的可用空间居然小于20MB了</p>
-<p>好吧，google也是可以的，只能删除一些谷歌的全家桶了</p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>使用任意可使用root权限的文件管理器，定位到/system/App下删除不使用的app的文件夹即可，腾出20M以上就可以了</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
-<p><a href="http://bbs.gfan.com/android-8198870-1-1.html" target="_blank" rel="external">解决安装 XPOSED 时遇到的cp: write error: No space left on device</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;遇见情况&quot;&gt;&lt;a href=&quot;#遇见情况&quot; class=&quot;headerlink&quot; title=&quot;遇见情况&quot;&gt;&lt;/a&gt;遇见情况&lt;/h1&gt;&lt;p&gt;Android 5.0.1-&amp;gt;6.0.1 OTA并root后安装Xposed框架，却提示报错：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;cp: write error: No space left on device&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="tricks" scheme="https://blog.xingoxu.com/categories/tricks/"/>
-    
-      <category term="android" scheme="https://blog.xingoxu.com/categories/tricks/android/"/>
     
     
   </entry>
