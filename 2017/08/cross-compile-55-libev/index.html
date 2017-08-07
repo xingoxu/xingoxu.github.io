@@ -14,20 +14,20 @@
   </script>
   
   <title>交叉编译原版某不可描述程序为梅林某停更插件续命 | xingo&#39;s private plot</title>
-  <meta name="description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码  原理说明解包梅林 55 插件发现，基本都是脚本，核心都是调用 55-redir ，因此猜测 55-redir 为原版 55 ，只需要更新原版 55 ，并在前端进行相应修改，便能对其续命 ubuntu 16.04不是很了解 linux，但是应该只要能够运行 arm-li">
+  <meta name="description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="交叉编译原版某不可描述程序为梅林某停更插件续命">
 <meta property="og:url" content="https://blog.xingoxu.com/2017/08/cross-compile-55-libev/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
-<meta property="og:description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码  原理说明解包梅林 55 插件发现，基本都是脚本，核心都是调用 55-redir ，因此猜测 55-redir 为原版 55 ，只需要更新原版 55 ，并在前端进行相应修改，便能对其续命 ubuntu 16.04不是很了解 linux，但是应该只要能够运行 arm-li">
+<meta property="og:description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987eac266528.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987f6bf102a1.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987e533d41aa.jpg">
-<meta property="og:updated_time" content="2017-08-07T07:11:18.556Z">
+<meta property="og:updated_time" content="2017-08-07T07:15:51.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="交叉编译原版某不可描述程序为梅林某停更插件续命">
-<meta name="twitter:description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码  原理说明解包梅林 55 插件发现，基本都是脚本，核心都是调用 55-redir ，因此猜测 55-redir 为原版 55 ，只需要更新原版 55 ，并在前端进行相应修改，便能对其续命 ubuntu 16.04不是很了解 linux，但是应该只要能够运行 arm-li">
+<meta name="twitter:description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码">
 <meta name="twitter:image" content="https://i.loli.net/2017/08/07/5987eac266528.png">
 <meta name="twitter:creator" content="@xingoxu">
   
@@ -36,7 +36,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1502089926620">
+  <link rel="stylesheet" href="/css/style.css?1502090190541">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -151,6 +151,7 @@
 <li><a href="https://github.com/RMerl/asuswrt-merlin" target="_blank" rel="external">原版梅林源码</a></li>
 <li>55-libev 源码</li>
 </ol>
+<a id="more"></a>
 <h1 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h1><p>解包梅林 55 插件发现，基本都是脚本，核心都是调用 55-redir ，因此猜测 55-redir 为原版 55 ，只需要更新原版 55 ，并在前端进行相应修改，便能对其续命</p>
 <h2 id="ubuntu-16-04"><a href="#ubuntu-16-04" class="headerlink" title="ubuntu 16.04"></a>ubuntu 16.04</h2><p>不是很了解 linux，但是应该只要能够运行 arm-linux-gcc 的 linux 发行版都可以，但我在 ubuntu 16.04 下实验成功，因此这里写 ubuntu 16.04，当然 docker 是可以的（因为我就是在 macos 下用的 docker）</p>
 <h2 id="原版梅林源码"><a href="#原版梅林源码" class="headerlink" title="原版梅林源码"></a>原版梅林源码</h2><p>虽然是 koolshare 改版固件，但其还是合并了梅林的代码，因此可以使用梅林的交叉编译工具链</p>
@@ -244,7 +245,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1502089925109';
+			'/comments.js?1502090189072';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -593,7 +594,7 @@
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1502089926636"></script>
+<script src="/js/main.js?1502090190558"></script>
 
 
 
