@@ -1,21 +1,23 @@
 language: node_js
 node_js:
   - '6'
-before_install:
-  - export TZ='Asia/Shanghai'
-  - cp themes/_config.yml themes/Paper-White/_config.yml #拷贝个人主题配置
-  - npm install hexo-cli -g
+git:
+  submodules: false
 install:
+  - npm install hexo-cli -g
   - npm install
+before_script:
+  - export TZ='Asia/Shanghai'
+  - sed -i'' "s~${GITHUB_THEME_URL}~${GITLAB_THEME_URL}~" .gitmodules # 主题改成self branch
+  - rm -rf themes/Paper-White/*
+  - git submodule update --init --recursive
+  - cp themes/_config.yml themes/Paper-White/_config.yml #拷贝个人主题配置
 script:
   - hexo clean && hexo g
 after_script:
-  - git config --global user.name "xingoxu"
-  - git config --global user.email "xingoxu@gmail.com"
-  - git clone https://${GH_REF} .deploy_git
-  - cd .deploy_git
-  - git checkout master
-  - cd ../
+  - git config --global user.name "Travis CI Bot"
+  - git config --global user.email "travis@travis-ci.org"
+  - git clone -b master https://${GH_REF} .deploy_git # clone 现在的线上以延续tree
   - sed -i'' "s~${GH_REF}~${GH_TOKEN}:x-oauth-basic@${GH_REF}~" _config.yml #将配置中的地址改成github api地址
   - hexo d > log.txt 2>&1 #deploy输出重定位
   - cat log.txt | sed "s~${GH_TOKEN}~TOKEN~g" #输出deploy内容并替换掉token
@@ -25,4 +27,5 @@ branches:
 env:
   global:
   - GH_REF: github.com/xingoxu/xingoxu.github.io.git
+  - GITHUB_THEME_URL: https://github.com/xingoxu/hexo-theme-paper-white
 
