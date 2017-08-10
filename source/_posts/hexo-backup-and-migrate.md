@@ -1,8 +1,10 @@
+---
 title: hexo的备份与迁移
 categories:
   - maintaince
   - blog-setup
 date: 2015-12-25 21:42:48
+toc: false
 ---
 
 原虚拟机效率太低，决定重新装新的虚拟机只跑node.js+hexo，正好学习如何备份hexo元数据。
