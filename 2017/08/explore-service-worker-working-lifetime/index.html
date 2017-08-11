@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>探索 Service Worker “生命周期” | xingo&#39;s private plot</title>
+  <meta name="description" content="最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft">
+<meta property="og:type" content="article">
+<meta property="og:title" content="探索 Service Worker “生命周期”">
+<meta property="og:url" content="https://blog.xingoxu.com/2017/08/explore-service-worker-working-lifetime/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:description" content="最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d457727c83.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d45b36a053.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d45ea6be64.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d4776cc312.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d45b36a053.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d498dc090f.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d4b2ce1e1e.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d4b85023f5.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d498dc090f.png">
+<meta property="og:image" content="https://i.loli.net/2017/08/11/598d4e045ebfe.png">
+<meta property="og:updated_time" content="2017-08-11T07:10:19.968Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="探索 Service Worker “生命周期”">
+<meta name="twitter:description" content="最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft">
+<meta name="twitter:image" content="https://i.loli.net/2017/08/11/598d457727c83.png">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css?1502435496817">
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一个在成长的男孩</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-explore-service-worker-working-lifetime" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/explore-service-worker-working-lifetime/" class="article-date" >
+  	<time datetime="2017-08-11T07:05:42.000Z" itemprop="datePublished">2017-08-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      探索 Service Worker “生命周期”
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/dev/">dev</a><a class="article-category-link" href="/categories/dev/Front-End-Dev/">Front-End-Dev</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft 是 2014 年 5 月 8 日，第一个实现 Service Worker 的是 Chrome 40 （2015 年 1 月 21 日）</p>
+<a id="more"></a>
+<p>以下将Service Worker简称为SW</p>
+<p>SW的功能略有耳闻，在MDN上它被描述为，“对资源缓存和自定义的网络请求进行控制的一个好的统筹机制”，同时他还具有“访问推送通知和后台同步API”</p>
+<p>听起来很神奇，事实上看起来也很神奇，Twitter上个月更新了样式，大家都看到了推特变成了圆头像圆角，然而推特还使用了新的 SW，在允许推特使用Notification的情况下，推特可以在你Chrome开启的时候而没有打开网页的时候给你推送你所关注的内容（<a href="https://twitter.com/settings/web_notifications" target="_blank" rel="external">传送门</a>），有一种javascript在关闭网页后，甚至没有打开网页的情况下，就能在后台运行的感觉。</p>
+<p>但事实上并非如此</p>
+<h1 id="编写一个最简单的-SW"><a href="#编写一个最简单的-SW" class="headerlink" title="编写一个最简单的 SW"></a>编写一个最简单的 SW</h1><p>从零创建 Service Worker，只需四步</p>
+<p><strong>第一步</strong>：我们需要一张 index.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>My first Service Worker test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    Hello, Service Worker!</div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>第二步</strong>：我们需要一个 sw.js，他就是我们的service worker<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'When you see this, we have successfully registered the SW!'</span>);</div></pre></td></tr></table></figure></p>
+<p><strong>第三步</strong>：我们需要在刚才的网页上注册，我们可以在网页中的js引入注册，在这里我直接写在了index.html的script标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span></div><div class="line"><span class="javascript">    navigator.serviceWorker.register(<span class="string">'/sw.js'</span>, &#123; <span class="attr">scope</span>: <span class="string">'/'</span> &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">reg</span>) </span>&#123;</span></div><div class="line"><span class="javascript">      <span class="comment">// registration worked</span></span></div><div class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Registration succeeded. Scope is '</span> + reg.scope);</span></div><div class="line"><span class="javascript">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span></div><div class="line"><span class="javascript">      <span class="comment">// registration failed</span></span></div><div class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Registration failed with '</span> + error);</span></div><div class="line"><span class="undefined">    &#125;);</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>最后一步</strong>：将上边的两个文件放在一个文件夹里，从这个文件夹起个服务器</p>
+<p>打开浏览器，访问localhost，让我们看看控制台</p>
+<p><img src="https://i.loli.net/2017/08/11/598d457727c83.png" alt="一个最简单的 SW"></p>
+<p>至此，我们的第一个 SW 就成功完成了</p>
+<h1 id="SW-的-Debug"><a href="#SW-的-Debug" class="headerlink" title="SW 的 Debug"></a>SW 的 Debug</h1><p>在chrome中，我们可以通过 <a href="chrome://serviceworker-internals/" target="_blank" rel="external"><code>chrome://serviceworker-internals/</code></a> 查看浏览器注册的所有SW</p>
+<p><img src="https://i.loli.net/2017/08/11/598d45b36a053.png" alt="chrome://serviceworker-internals/"></p>
+<p>可以在 <a href="chrome://inspect/#service-workers" target="_blank" rel="external"><code>chrome://inspect/#service-workers</code></a> 查看到当前正在运行的所有 SW</p>
+<p><img src="https://i.loli.net/2017/08/11/598d45ea6be64.png" alt="chrome://inspect/#service-workers"></p>
+<p>点击inspect，可以在Console中看到SW在控制台中输出的内容，在Source中，对SW进行断点调试</p>
+<p>如果你还保留着刚才的那个localhost，你可以发现，在inspect service-worker页面中，我们刚才的sw.js还一直在运行着</p>
+<h1 id="Service-Worker-的“生命周期”"><a href="#Service-Worker-的“生命周期”" class="headerlink" title="Service Worker 的“生命周期”"></a>Service Worker 的“生命周期”</h1><p>SW 的生命周期与事件可以在MDN上找到，也不再重复贴出，SW的缓存与推送通知就是靠着他的生命周期所发出的这些<code>event</code>来驱动的。</p>
+<p>我想说的是另一个生命周期，我刚才说到，如果我们第一次进入localhost，并一直保留在那个页面，在inspect service-worker还可以看到service worker还一直运行着</p>
+<p>我们可以将 sw.js 改写成如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">&#125;, <span class="number">5</span> * <span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>在 chrome://serviceworker-internals/ 取消注册 SW ，并强制刷新 localhost（ mac下 ⌘+shift+R，windows 下 ctrl+shift+R ），我们会发现控制台中，每五秒就打印了一次 test，这也正是说明，SW在第一次进入的时候没有关闭页面的时候，一直在运行，我们也可以在刚才的 chrome://serviceworker-internals/ 看到这个 SW 正在运行。</p>
+<p><img src="https://i.loli.net/2017/08/11/598d4776cc312.png" alt="5秒打印console.log(&#39;test&#39;)"></p>
+<p>然而当我们关闭localhost页面，稍等十几秒后，在两个调试页面上，sw.js都会消失/停止了运行</p>
+<p><img src="https://i.loli.net/2017/08/11/598d45b36a053.png" alt="关闭localhost后 sw 停止了运行"></p>
+<p>我们再直接打开localhost，打开控制台，发现只有<code>Registration succeeded.</code>，而没有了test，再看两个调试页面，发现sw.js依然没有运行</p>
+<p><img src="https://i.loli.net/2017/08/11/598d498dc090f.png" alt="重新再次打开页面 sw 没有运行"></p>
+<p>让我们关闭这个localhost，将 sw.js 改写如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'Yet Another sw.js'</span>);</div></pre></td></tr></table></figure>
+<p>保存后，打开localhost</p>
+<p><img src="https://i.loli.net/2017/08/11/598d4b2ce1e1e.png" alt="第一次改写sw.js"></p>
+<p>我们刚才对 SW 完成了一次更新，发现他注册 handler 只会注册一次，接下来我们对 SW 的生命周期与运行周期进行探索，看看他在打开网页时，会不会触发生命周期。</p>
+<p>然后我们再对 sw.js 进行重写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">self.addEventListener(<span class="string">'install'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'install'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">self.addEventListener(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'activate'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>关闭localhost，等待sw停止运行或者deactivate它后再打开localhost，控制台显示出了<code>install</code>和<code>activate</code></p>
+<p><img src="https://i.loli.net/2017/08/11/598d4b85023f5.png" alt="改写sw.js 加入生命周期"></p>
+<p>再次关闭 localhost ，等待 sw 停止运行再打开 localhost ，控制台上只有 registration succeeded</p>
+<p><img src="https://i.loli.net/2017/08/11/598d498dc090f.png" alt="重新再次打开页面 sw 没有运行"></p>
+<p>很明显，SW 的生命周期的事件也只会触发一次，只是相对于他第一次下载后。</p>
+<p>更新SW的机制可以在MDN上的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers#恢复失败的请求" target="_blank" rel="external">#更新你的Service Worker</a> 这章看到，但这仅仅几行文字，而且比较绕口，我认为这其实是SW自身的工作周期，或者说是运行机制</p>
+<p>于是在W3C Working Draft找到了Service Worker的<a href="https://www.w3.org/TR/service-workers-1/#service-worker-lifetime" target="_blank" rel="external">Lifetime定义</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">The lifetime of a service worker is tied to the execution lifetime of events and not references held by service worker clients to the ServiceWorker object.</div><div class="line"></div><div class="line">A user agent may terminate service workers at any time it:</div><div class="line"></div><div class="line">- Has no event to handle.</div><div class="line">- Detects abnormal operation: such as infinite loops and tasks exceeding imposed time limits (if any) while handling the events.</div></pre></td></tr></table></figure>
+<p>于是我觉得SW的工作周期结合上边的表现可以由下边的图来表示</p>
+<p><img src="https://i.loli.net/2017/08/11/598d4e045ebfe.png" alt="SW 工作周期"></p>
+<p>其实图里有一点不对的是，sw 的第一次运行并不一定是网页关闭才结束的，根据标准来的话，只要 sw 没有 event 需要 handle ，sw 的工作进程都可以结束，只是 Chrome 下是如此运行的。</p>
+<p>另外需要一提的是因为工作线程结束了，因此在外边的变量不一定还保持着之前结束前的状态，所以不要写出如下的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> count = <span class="number">0</span>;</div><div class="line">self.addEventListener(<span class="string">'fetch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">  count++;</div><div class="line">  <span class="built_in">console</span>.log(count);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>可能为1，也可能是2</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>SW 是一个事件驱动型Worker，本质上，它是个Worker，工作在 worker context，所以没有访问 DOM 的权限</p>
+<p>如果他要和window进行一些操作的话，与web worker类似，需要使用postMessage这样的方法来传递信息，在window里才能进行DOM操作</p>
+<p>SW 是个Event bus，他的几个运行周期的事件，是专门为缓存与推送量身打造的（install事件和push事件），因此他的扩展性也非常好，以后如果有更多需求只需添加事件即可（比如chrome实现了sync事件是为了弥补离线时从本地到服务器post的不好体验），它将我们对资源拉的需求（对服务器的请求资源，对服务器的轮询），隐形转换为了推（本地缓存资源代码控制缓存，统一服务器推送）</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/cross-compile-55-libev/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">交叉编译原版某不可描述程序为梅林某停更插件续命</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+  
+
+  
+    <div data-url="https://blog.xingoxu.com/2017/08/explore-service-worker-working-lifetime/" data-title="「探索 Service Worker “生命周期”」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+		
+		<div class="qrcode">
+			<div class="qrcode-body-mask"></div>
+			<div class="qrcode-module">
+				<h2>微信扫一扫，分享到朋友圈</h2>
+				<div id="qrcode-pic"></div>
+				<img id="logo-qrcode" src="/favicon.ico" />
+	  	</div>
+		</div>
+
+</div>
+  
+</article>
+
+
+  <section id="comments">
+  
+    <div class="duoshuo">
+  <div data-thread-key="explore-service-worker-working-lifetime" data-thread-url="https://blog.xingoxu.com/2017/08/explore-service-worker-working-lifetime/" data-thread-title="探索 Service Worker “生命周期”"></div>
+	<!-- 评论框 end -->
+	<!-- 公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1502435493627';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 公共JS代码 end -->
+</div>
+    
+
+    
+  </section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 xingo Hosted on <a href="https://github.com/" target="_blank">Github</a>
+    	</div>
+      	<div class="footer-right">
+      		Powered By <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a> by xingo
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" class="profilepic">
+			
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="https://xingoxu.com/">xingo</a></h1>
+				
+					<p class="header-subtitle">一个在成长的男孩</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>导航</li>
+						
+						
+							<li>文章目录</li>
+						
+						
+							<li>朋友们</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/">主页</a></li>
+							
+								<li><a href="/archives">所有文章</a></li>
+							
+								<li><a href="/about">关于我</a></li>
+							
+								<li><a href="http://works.xingoxu.com/">作品</a></li>
+							
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+									<label class="search-icon" for="search">
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="回顶部"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#编写一个最简单的-SW"><span class="toc-number">1.</span> <span class="toc-text">编写一个最简单的 SW</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SW-的-Debug"><span class="toc-number">2.</span> <span class="toc-text">SW 的 Debug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Service-Worker-的“生命周期”"><span class="toc-number">3.</span> <span class="toc-text">Service Worker 的“生命周期”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#编写一个最简单的-SW"><span class="toc-text">编写一个最简单的 SW</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SW-的-Debug"><span class="toc-text">SW 的 Debug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Service-Worker-的“生命周期”"><span class="toc-text">Service Worker 的“生命周期”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">导航</span>
+				<div class="viewer-div">
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+						<li><a href="http://works.xingoxu.com/">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">朋友们</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+<script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="/js/main.js?1502435496859"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+</body>
+</html>
