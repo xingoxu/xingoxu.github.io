@@ -18,27 +18,7 @@ toc: false
 
 这边正好在修路，没法搞到很好的角度
 
-<style markdown="0">
-  div.img {
-    width: 50%;
-    text-align: center;
-    line-height: 300px;
-    height: 300px;
-  }
-  div.img img {
-    margin: 0 auto;
-    max-height: 300px;
-    vertical-align: middle;
-    margin-top: -3px;
-  }
-  .clear-float {
-    clear: both;
-  }
-  .img-caption {
-    text-align: center;
-    line-height: 2em;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="/css/seichi.css">
 
 <br />
 
