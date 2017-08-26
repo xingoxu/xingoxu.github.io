@@ -4,6 +4,7 @@ date: 2015-03-02 03:27:23
 categories:
   - maintaince
   - router-config
+toc: false
 ---
 dnsmasq仍旧生效，效果很好
  

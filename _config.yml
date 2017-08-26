@@ -4,10 +4,25 @@
 
 # Site
 title: xingo's private plot
-subtitle: 一个在成长的男孩
+subtitle: 
+  zh-cn: 混乱邪恶冻鳗玻珠
+  jp: 男の子の味方
 description:
 author: xingo
-language: zh-cn
+language:
+- zh-cn
+- jp
+
+i18n:
+  type: [page, post]
+  generator: []
+index_generator:
+  single_language_index: true
+archive_generator:
+  single_language: true
+category_generator:
+  single_language: true
+
 timezone: Asia/Shanghai
 
 # URL
@@ -15,8 +30,9 @@ timezone: Asia/Shanghai
 url: https://blog.xingoxu.com
 enforce_ssl: blog.xingoxu.com
 root: /
-permalink: :year/:month/:title/
+permalink: :lang/:year/:month/:title/
 permalink_defaults:
+  lang: ''
 
 # Directory
 source_dir: source
@@ -29,7 +45,7 @@ i18n_dir: :lang
 skip_render: [CNAME,google311213f0c8d812a9.html,setup-log/blog-setup/*,baidu_verify_YbTSlpWIUJ.html]
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :lang/:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
