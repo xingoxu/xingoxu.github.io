@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>xingo&#39;s private plot</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="xingo&#39;s private plot">
+<meta property="og:url" content="https://blog.xingoxu.com/zh-cn/page/3/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:locale" content="zh-cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xingo&#39;s private plot">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css?1503767193974">
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">混乱邪恶冻鳗玻珠</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-Android-Study-1-22" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/Android-Study-1-22/" class="article-date" >
+  	<time datetime="2016-01-21T18:05:18.000Z" itemprop="datePublished">2016-01-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/Android-Study-1-22/">写一些最近Android学习中遇到的坑以及心得</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h2><ol>
+<li>Android Studio Library的导入与导出</li>
+<li>Java的Exception再复习</li>
+<li>Handler的内存泄漏问题与其相关的Looper坑</li>
+<li>AppCompat v7的Toolbar与Contextual ActionBar</li>
+<li>心得</li>
+</ol>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/categories/dev/android/" class="article-category-link">android</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/Android-Study-1-22/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-2016-stepping-further" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/2016-stepping-further/" class="article-date" >
+  	<time datetime="2015-12-31T16:00:00.000Z" itemprop="datePublished">2016-01-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/2016-stepping-further/">Stepping Further - 2016</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却也是回不去的昨天。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/notes/" class="article-category-link">notes</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/2016-stepping-further/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-solve-a-problem-with-xposed-after-otaTo6-0-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/solve-a-problem-with-xposed-after-otaTo6-0-1/" class="article-date" >
+  	<time datetime="2015-12-31T10:22:18.000Z" itemprop="datePublished">2015-12-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/solve-a-problem-with-xposed-after-otaTo6-0-1/">解决一个OTA后安装Xposed发生No space left on device错误</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="遇见情况"><a href="#遇见情况" class="headerlink" title="遇见情况"></a>遇见情况</h1><p>Android 5.0.1-&gt;6.0.1 OTA并root后安装Xposed框架，却提示报错：</p>
+<blockquote>
+<p>cp: write error: No space left on device</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/tricks/" class="article-category-link">tricks</a>
+		
+			<a href="/categories/tricks/android/" class="article-category-link">android</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/solve-a-problem-with-xposed-after-otaTo6-0-1/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-router-reconfig-2015" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/router-reconfig-2015/" class="article-date" >
+  	<time datetime="2015-12-31T10:20:58.000Z" itemprop="datePublished">2015-12-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/router-reconfig-2015/">重配置WNDR4300手记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/maintaince/" class="article-category-link">maintaince</a>
+		
+			<a href="/categories/maintaince/router-config/" class="article-category-link">router-config</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/router-reconfig-2015/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-inazuma-eleven-go-anime-op-ed-collection" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/inazuma-eleven-go-anime-op-ed-collection/" class="article-date" >
+  	<time datetime="2015-12-26T08:02:54.000Z" itemprop="datePublished">2015-12-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/inazuma-eleven-go-anime-op-ed-collection/">闪电十一人GO动画全op&amp;ed音乐专辑整理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>和无印相比，go的资源真是好找了许多<br>除GO3 ED外均为320K+APE/FLAC，GO3 ED只有320K且无完整专辑【我看GO3的时候ED从来只看左边正片233，ed3信息少得可怜<br>建议使用Ctrl+F迅速找到所在专辑<br>有BK的尽量附上BK<br>该单曲要是有单曲专辑会在当前歌曲优先附上单曲专辑（一般来数单曲专辑是完整版歌曲，如果要寻TV版长度一般在原生集中）<br>所有歌曲的专辑皆以动画发布的歌曲专辑优先，歌手自己的专辑将不包括在这次整理中<br>提示输入密码的话，所有密码均为：xingo（只是为了不被各大网盘屏蔽篡改）<br>如果无法下载，又或者是因为疏忽编辑错误，又或者是发现了某资源的无损版本，请立刻在微博上<a href="http://weibo.com/pokemonxu/" target="_blank" rel="external">@xingo</a></p>
+<p>专辑来源来自互联网，非常感谢各位署名的不署名的分享！由于整理时头晕眼花恕不能全部加上来源（基本都附在压缩包的注释内），如果在这里找到自己的资源需要注明的话请与我联系我会立刻加上！<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/ACG/" class="article-category-link">ACG</a>
+		
+			<a href="/categories/ACG/Music/" class="article-category-link">Music</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/inazuma-eleven-go-anime-op-ed-collection/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-inazuma-eleven-anime-op-ed-collection" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/inazuma-eleven-anime-op-ed-collection/" class="article-date" >
+  	<time datetime="2015-12-26T07:11:11.000Z" itemprop="datePublished">2015-12-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/inazuma-eleven-anime-op-ed-collection/">闪电十一人（动画）全op&amp;ed音乐专辑整理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>建议使用Ctrl+F迅速找到所在专辑<br>有BK的尽量附上BK<br>该单曲要是有单曲专辑会在当前歌曲优先附上单曲专辑（一般来数单曲专辑是完整版歌曲，如果要寻TV版长度一般在原声集中）<br>如无注明所有音乐最低品质320K，如果有无损会尽量附上<br>所有歌曲的专辑皆以动画发布的歌曲专辑优先，歌手自己的专辑将不包括在这次整理中<br>提示输入密码的话，所有密码均为：xingo<br>如果无法下载，又或者是因为疏忽编辑错误，又或者是发现了某资源的无损版本，请立刻在微博上<a href="http://weibo.com/pokemonxu/" target="_blank" rel="external">@xingo</a><br>专辑来源来自互联网，非常感谢各位署名的不署名的分享！如果在这里找到自己的资源需要注明的话请与我联系我会立刻加上！<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/ACG/" class="article-category-link">ACG</a>
+		
+			<a href="/categories/ACG/Music/" class="article-category-link">Music</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/inazuma-eleven-anime-op-ed-collection/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-git-study-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/git-study-1/" class="article-date" >
+  	<time datetime="2015-12-25T13:50:12.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/git-study-1/">初识命令行git</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git的教程很多，但很杂，留一篇自用吧<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/categories/dev/git/" class="article-category-link">git</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/git-study-1/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-hexo-backup-and-migrate" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/hexo-backup-and-migrate/" class="article-date" >
+  	<time datetime="2015-12-25T13:42:48.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/hexo-backup-and-migrate/">hexo的备份与迁移</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原虚拟机效率太低，决定重新装新的虚拟机只跑node.js+hexo，正好学习如何备份hexo元数据。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/maintaince/" class="article-category-link">maintaince</a>
+		
+			<a href="/categories/maintaince/blog-setup/" class="article-category-link">blog-setup</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/hexo-backup-and-migrate/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-2015-12-21" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/2015-12-21/" class="article-date" >
+  	<time datetime="2015-12-21T14:57:16.000Z" itemprop="datePublished">2015-12-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/2015-12-21/">近况</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很久时间没有写博客了，6月放假在外面忙活打工的事<del>（为了还老妈的债）</del> ，9月去了北京和监督面了基，触动很大，便一直在学习与写作业，然后学校作业也是多的醉人，虽然没有任何技术含量然而还是很烦，主要是课程老师看完作品后就说，你再加个功能呗，我<img src="https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif" alt="新浪表情-再见">！终于有空了，然而却发现马上又要寒假了，自己还是什么经验和吹b的资本都没有_(:3」∠)_</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/notes/" class="article-category-link">notes</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/2015-12-21/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+    <article id="post-PixInTouch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/PixInTouch/" class="article-date" >
+  	<time datetime="2015-12-21T05:42:54.000Z" itemprop="datePublished">2015-12-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/PixInTouch/">PixInTouch发布页面</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为一个花了三个礼拜稍微有那么点心思的<del>其实花了很多想法，然而根本看不出这是一个花了心思的作品</del>，还是给他开个页面用来发布吧！</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/works/" class="article-category-link">works</a>
+		
+			<a href="/categories/works/csharp-wpf/" class="article-category-link">csharp-wpf</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/PixInTouch/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
+  
+    <!-- loadingcircle comes from http://materializecss.com/preloader.html -->
+<div class="loading-circle">
+    <div class="preloader-wrapper small active">
+        <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="spinner-layer spinner-green">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+    <div class="fail-message">加载失败，请尝试使用下方导航</div>
+</div>
+
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/zh-cn/page/2/">&laquo; Prev</a><a class="page-number" href="/zh-cn/">1</a><a class="page-number" href="/zh-cn/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/zh-cn/page/4/">4</a><a class="page-number" href="/zh-cn/page/5/">5</a><a class="extend next" rel="next" href="/zh-cn/page/4/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 xingo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" class="profilepic">
+			
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/">xingo</a></h1>
+				
+					<p class="header-subtitle">混乱邪恶冻鳗玻珠</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>导航</li>
+						
+						
+						
+							<li>朋友们</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/">主页</a></li>
+							
+								<li><a href="/archives">所有文章</a></li>
+							
+								<li><a href="/about">关于我</a></li>
+							
+								<li><a href="http://works.xingoxu.com/">作品</a></li>
+							
+							
+								<li>
+									<div>
+										<label for="ajax-switch" class="ajax-checkbox">
+											<input class="access-hide" disabled id="ajax-switch" name="auto-load" type="checkbox" />首页自动加载<span class="switch-toggle"></span>
+										</label>
+									</div>
+								</li>
+							
+							
+								<li class="change-language">
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 简体中文</label>
+									<select>
+										
+											<option value="zh-cn" selected>简体中文</option>
+										
+											<option value="jp" >日本語</option>
+										
+									</select>
+								</li>
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+									<label class="search-icon" for="search">
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="回到顶部"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">导航</span>
+				<div class="viewer-div">
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+						<li><a href="http://works.xingoxu.com/">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">朋友们</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title">
+    					<label for="ajax-switch-mobile" class="ajax-checkbox">
+        							<input class="access-hide" disabled id="ajax-switch-mobile" name="auto-load" type="checkbox" />首页自动加载<span class="switch-toggle"	></span>
+    					</label>
+    				</div>
+				</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title change-language">
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 简体中文</label>
+						<select >
+							
+								<option value="zh-cn" selected>简体中文</option>
+							
+								<option value="jp" >日本語</option>
+							
+						</select>
+					</div>
+				</div>
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		languageList: ["zh-cn","jp"],
+		canShare: false,
+		open_in_new: false
+	}
+</script>
+<script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="/js/main.js?1503767193977"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+</body>
+</html>

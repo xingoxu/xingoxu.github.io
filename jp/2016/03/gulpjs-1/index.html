@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>gulp.js初体验 - 自动编译/刷新/Release | xingo&#39;s private plot</title>
+  <meta name="description" content="Intro: gulp能做什么 利用gulp编译stylus，本地预览，自动刷新，自动提升版本并Release 心得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp.js初体验 - 自动编译&#x2F;刷新&#x2F;Release">
+<meta property="og:url" content="https://blog.xingoxu.com/jp//2016/03/gulpjs-1/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:description" content="Intro: gulp能做什么 利用gulp编译stylus，本地预览，自动刷新，自动提升版本并Release 心得">
+<meta property="og:locale" content="jp">
+<meta property="og:updated_time" content="2017-08-26T17:05:11.493Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp.js初体验 - 自动编译&#x2F;刷新&#x2F;Release">
+<meta name="twitter:description" content="Intro: gulp能做什么 利用gulp编译stylus，本地预览，自动刷新，自动提升版本并Release 心得">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css?1503767194604">
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">混乱邪恶冻鳗玻珠</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-gulpjs-1" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/jp/2016/03/gulpjs-1/" class="article-date" >
+  	<time datetime="2016-03-25T12:34:33.000Z" itemprop="datePublished">2016-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp.js初体验 - 自动编译/刷新/Release
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+		
+			<a href="/jp/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/jp/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
+		
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h1><ol>
+<li>gulp能做什么</li>
+<li>利用gulp编译stylus，本地预览，自动刷新，自动提升版本并Release</li>
+<li>心得</li>
+</ol>
+<a id="more"></a>
+<h1 id="gulp能做什么"><a href="#gulp能做什么" class="headerlink" title="gulp能做什么"></a>gulp能做什么</h1><p>半个月前朋友提醒我说可以开始学习构建了，学习grunt，gulp，当时我对这些一无所知，对于构建的理解，只是处于minify html/css/js，uglify js等，想想这些不都已经有了很多现成的工具吗，然后又去grunt,gulp主页逛了，完全看不懂主页上的getting started要干什么</p>
+<p>然而最近在尝试使用bootstrap与学习angularjs，想要试试自己搞一个小型的CRUD的app，我发现，我需要一个工具，能帮我处理这些框架中的sass，less，需要一个工具能帮我自动从framework文件夹编译成result并放入dist，而且我也根本无法脱离stylus的语法了（汗），单独编译以及手动整理真是太花费人的时间了，完全不能专注于写代码</p>
+<p>于是诞生了以下需求：</p>
+<ul>
+<li>编译sass,less,stylus</li>
+<li>帮我把编译好的内容自动替换掉旧的dist</li>
+<li>灵活的http-server，最好能在我修改源文件的时候自动编译好自动刷新</li>
+</ul>
+<p>打开搜索引擎，发现gulp似乎在一阵之前很火热啊，于是稍稍学习了一下gulp</p>
+<p>gulp的官方入门，我感觉不是很好，因为他只告诉了你如何安装插件233（误，好吧，看了一圈又一圈的博客，终于理解了gulp想让我们用它干什么了</p>
+<ol>
+<li>编写构建任务</li>
+<li>执行构建任务</li>
+</ol>
+<p>其实核心就这两样</p>
+<p>然后在任务中我们能干什么呢，gulp给我们了一些api</p>
+<ol>
+<li>从文档中读取流（.src）</li>
+<li>将流传到某个插件中让他读取（.pipe）</li>
+<li>最后把插件中输出的流我们把它变回文件（gulp.pipe(gulp.dest())）</li>
+</ol>
+<p>怪不得叫流式自动化构建，玛德，就不能说正常人的语言吗！</p>
+<p>gulp还给我们提供了一个watch api，用来在任务中挂起并监视文件变动</p>
+<h1 id="利用gulp的任务"><a href="#利用gulp的任务" class="headerlink" title="利用gulp的任务"></a>利用gulp的任务</h1><blockquote>
+<p><a href="https://www.npmjs.com/package/gulp-stylus" target="_blank" rel="external">gulp-stylus</a><br><a href="https://www.npmjs.com/package/gulp-sourcemaps" target="_blank" rel="external">gulp-sourcemap</a><br><a href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/server-with-livereload-and-css-injection.md" target="_blank" rel="external">gulp-browserSync</a><br><a href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/automate-release-workflow.md" target="_blank" rel="external">利用gulp提升版本号并自动发布</a><br><a href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/split-tasks-across-multiple-files.md" target="_blank" rel="external">将任务分不同文件存放 - 我最喜欢的特性</a></p>
+</blockquote>
+<p>哈哈以上都是官方的api文档，其实了解了gulp怎么运作之后，编写属于自己的任务还是挺简单的</p>
+<p><del>抄写</del>仿照官方的编译stylus与sourcemap，写了个自己的compile任务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">	stylus = <span class="built_in">require</span>(<span class="string">'gulp-stylus'</span>),</div><div class="line">	sourceMaps = <span class="built_in">require</span>(<span class="string">'gulp-sourcemaps'</span>),</div><div class="line">	runSequence = <span class="built_in">require</span>(<span class="string">'run-sequence'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'compile-stylus'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">//non-minified用作查看是否是编译问题而不是compress问题</span></div><div class="line">	gulp</div><div class="line">		.src(<span class="string">'src/stylus/*.styl'</span>)</div><div class="line">		.pipe(stylus(&#123;</div><div class="line">			<span class="string">'include css'</span>: <span class="literal">true</span></div><div class="line">		&#125;))</div><div class="line">		.pipe(gulp.dest(<span class="string">'src/debuggable/css/'</span>));</div><div class="line">	<span class="keyword">var</span> taskReturn =</div><div class="line">		gulp</div><div class="line">		.src(<span class="string">'src/stylus/*.styl'</span>)</div><div class="line">		.pipe(sourceMaps.init())</div><div class="line">		.pipe(stylus(&#123;</div><div class="line">			<span class="string">'include css'</span>: <span class="literal">true</span>,</div><div class="line">			<span class="string">'compress'</span>: <span class="literal">true</span></div><div class="line">		&#125;))</div><div class="line">		.pipe(sourceMaps.write(<span class="string">'../../debug-maps'</span>))<span class="comment">//cwd:src/dist/css/</span></div><div class="line">		.pipe(gulp.dest(<span class="string">'src/dist/css/'</span>));</div><div class="line">	<span class="keyword">return</span> taskReturn;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'compile'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</div><div class="line">	runSequence(</div><div class="line">		<span class="string">'compile-stylus'</span>,</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">			<span class="keyword">if</span> (error) &#123;</div><div class="line">				<span class="built_in">console</span>.log(error.message);</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">'compile finished!'</span>);</div><div class="line">			&#125;</div><div class="line">			callback(error);</div><div class="line">		&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>然而我发现其实生成了sourcemap，chrome的调试工具就很棒的帮我们自动对应到了stylus上了，所以好像输出一下那个编译后文件并没有什么卵用了。。。</p>
+<h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p><strong>注意！</strong><br>gulp有个坑就是在相对路径时，不要加’./‘，以及注意调用路径，第一次写任务的时候被坑惨了，还以为是自己哪里写错了or getting started过时了</p>
+<p>gulp的运行时路径就是你cmd/gitbash的路径，不是相对于js的路径（<strong>使用require-dir的小伙伴们要注意了</strong>）</p>
+<p>还有个坑就是自动更新版本并提交的那个中文文档有问题，插件被换掉了，所以按照中文文档写的任务是跑不起来会提示错（好像是fs.end不是一个function）</p>
+<p>用了gulp之后，感觉真是爽爆了233</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <a href="/jp/2017/08/hello-jp-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">日本語ブログ始動</div>
+    </a>
+    
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</nav>
+
+  
+  
+
+  
+    <div data-url="https://blog.xingoxu.com/2016/03/gulpjs-1/" data-title="「gulp.js初体验 - 自动编译/刷新/Release」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+		
+		<div class="qrcode">
+			<div class="qrcode-body-mask"></div>
+			<div class="qrcode-module">
+				<h2>微信扫一扫，分享到朋友圈</h2>
+				<div id="qrcode-pic"></div>
+				<img id="logo-qrcode" src="/favicon.ico" />
+	  	</div>
+		</div>
+
+</div>
+  
+</article>
+
+
+  <section id="comments">
+  
+    <div class="duoshuo">
+  <div data-thread-key="gulpjs-1" data-thread-url="https://blog.xingoxu.com/jp/2016/03/gulpjs-1/" data-thread-title="gulp.js初体验 - 自动编译/刷新/Release"></div>
+	<!-- 评论框 end -->
+	<!-- 公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1503767190427';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 公共JS代码 end -->
+</div>
+    
+
+    
+  </section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 xingo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" class="profilepic">
+			
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/jp/">xingo</a></h1>
+				
+					<p class="header-subtitle">男の子の味方</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="http://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>ナビ</li>
+						
+						
+							<li>文章目録</li>
+						
+						
+							<li>友達</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/jp/">ホーム</a></li>
+							
+								<li><a href="/jp/archives">アーカイブ</a></li>
+							
+								<li><a href="/jp/about">プロフィール</a></li>
+							
+								<li><a href="http://works.xingoxu.com/">作品</a></li>
+							
+							
+							
+								<li class="change-language">
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+									<select>
+										
+											<option value="zh-cn" >简体中文</option>
+										
+											<option value="jp" selected>日本語</option>
+										
+									</select>
+								</li>
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+									<label class="search-icon" for="search">
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="ページトップへ"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gulp能做什么"><span class="toc-number">2.</span> <span class="toc-text">gulp能做什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#利用gulp的任务"><span class="toc-number">3.</span> <span class="toc-text">利用gulp的任务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#心得"><span class="toc-number">4.</span> <span class="toc-text">心得</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Intro"><span class="toc-text">Intro:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gulp能做什么"><span class="toc-text">gulp能做什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#利用gulp的任务"><span class="toc-text">利用gulp的任务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#心得"><span class="toc-text">心得</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">ナビ</span>
+				<div class="viewer-div">
+					
+						<li><a href="/jp/">ホーム</a></li>
+					
+						<li><a href="/jp/archives">アーカイブ</a></li>
+					
+						<li><a href="/jp/about">プロフィール</a></li>
+					
+						<li><a href="http://works.xingoxu.com/">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">友達</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title change-language">
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+						<select >
+							
+								<option value="zh-cn" >简体中文</option>
+							
+								<option value="jp" selected>日本語</option>
+							
+						</select>
+					</div>
+				</div>
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		languageList: ["zh-cn","jp"],
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+<script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="/js/main.js?1503767194617"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+</body>
+</html>
