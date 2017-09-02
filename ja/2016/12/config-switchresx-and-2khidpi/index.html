@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI | xingo&#39;s private plot</title>
+  <meta name="description" content="非Apple显示器字体模糊的终极方案   OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI">
+<meta property="og:url" content="https://blog.xingoxu.com/ja//2016/12/config-switchresx-and-2khidpi/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:description" content="非Apple显示器字体模糊的终极方案   OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/12/18/58569bffcf83b.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/12/18/5856a391cadba.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/12/18/5856a5badb5b3.png">
+<meta property="og:updated_time" content="2017-09-02T07:27:46.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI">
+<meta name="twitter:description" content="非Apple显示器字体模糊的终极方案   OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2016/12/18/58569bffcf83b.png">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css?1504337348449">
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">男の子の味方</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/ja/">ホーム</a></li>
+		        
+					<li><a href="/ja/archives">アーカイブ</a></li>
+		        
+					<li><a href="/ja/about">プロフィール</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-config-switchresx-and-2khidpi" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/ja/2016/12/config-switchresx-and-2khidpi/" class="article-date" >
+  	<time datetime="2016-12-18T13:57:37.000Z" itemprop="datePublished">2016-12-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+		
+			<a href="/ja/categories/maintaince/" class="article-category-link">maintaince</a>
+		
+			<a href="/ja/categories/maintaince/macbook/" class="article-category-link">macbook</a>
+		
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  <strong>非Apple显示器字体模糊的终极方案</strong></p>
+<p>  OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI</p>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>等了一年半，很早就想入macbook的坑了，然而呢厨师貌似忘记了mbp这条产品线了，当然了，英特尔也是有一部分责任的，因此一年前的这个时候，我买了微软的surface pro 4。</p>
+<p>结果这玩意非常不好使啊，开发者这边各种吃屎啊，各种没有快捷键啊，起个bash非常烦啊（最快也要右键），终于一个月前入手了macbook，但入手之后的那段时间，非常非常忙，各种事情吧，所以直到最近才有时间去配置各种开发环境。</p>
+<p>当然我也不是果粉，os x这个破系统也是💊，各种问题，也有很吃屎的地方（有空整理），所以，surface pro 4还不能扔掉233</p>
+<h1 id="初次连接显示器"><a href="#初次连接显示器" class="headerlink" title="初次连接显示器"></a>初次连接显示器</h1><p>连上u2715h之后，我以为会展现一个比windows更好看更漂亮的，结果没想到，连上之后的字 是这样的：</p>
+<p><img src="https://ooo.0o0.ooo/2016/12/18/58569bffcf83b.png" alt="未调整前"></p>
+<p>好好的東京のイケメン男子就被这个长满粉刺的字体给毁了，尤其是这个g，非常难看，感觉糊在一起了，整个人都不好了，怎么会这样</p>
+<h1 id="google一下？"><a href="#google一下？" class="headerlink" title="google一下？"></a>google一下？</h1><p>80%教你开启LCD字体平滑，但开启之后，并没有任何卵用</p>
+<p>20%教你使用一个ruby脚本，将Television变成显示器，然而，还是没有任何卵用</p>
+<p>上面那张图就是干完那两件事情之后的截图，还是那样，粉刺字体，像狗啃过</p>
+<h1 id="试试hidpi？"><a href="#试试hidpi？" class="headerlink" title="试试hidpi？"></a>试试hidpi？</h1><p>在surface上装过虚拟机的黑果，当时用过一个软件叫RDM，为高分屏而准备的（也就是变成Retina的渲染效果），打开发现，有HiDPI的选项，选择1280x800，开启了hidpi，字体平滑了，结果因为显示器是16:9，选择的是16:10，旁边有两条黑边，想选择1280x720，结果点了无反应，唉，无奈 回到原来的分辨率</p>
+<p>所以通过这个事情知道了，并不是显示器的问题，只是苹果在1:1的显示下已经放弃了治疗（同时在思考macbook air朋友的心理阴影）</p>
+<h1 id="探索新可能"><a href="#探索新可能" class="headerlink" title="探索新可能"></a>探索新可能</h1><p>既然知道了hidpi是字体平滑的关键所在，那我就试试往这个方向搜索看看，由<a href="https://www.v2ex.com/t/277921" target="_blank" rel="external">这贴</a>和<a href="https://www.v2ex.com/t/307893" target="_blank" rel="external">这贴</a>和<a href="https://www.zhihu.com/question/27610849" target="_blank" rel="external">这贴</a>得知，osx的渲染和输出是两个步骤，得知了一款SwitchResX的软件，可以修改自定义分辨率，那就尝试一下</p>
+<p>按照<a href="https://www.zhihu.com/question/35300978" target="_blank" rel="external">此贴</a>得票最高做法，安装SwitchResX，关闭SIP，重启，添加Custom Resolution，保存，重启</p>
+<p>结果tm是 “Not active - invalid?” ，握日 折腾了一晚上，还是不行吗？心灰意冷之时，拉到下方看到 Sierra 做法，只是比上方多新建一个账户，感觉很奇怪，新建一个账户又能改变什么呢，抱着并不怎么会成功的心态尝试了一下，新建了账户，删除了原有的分辨率，填入了1080px2的分辨率 3840x2160，重启，进入新建的这个账户，尝试一下，居然成功了！</p>
+<p>于是更大胆的思考了一下，既然是渲染与输出两部分，那也就是说，我可以使用5k分辨率HiDPI到2k，进行输出咯？于是我就尝试添加了一个5120x2880，重启，点击切换，哇！成了！字体变得顺滑了！</p>
+<p><img src="https://ooo.0o0.ooo/2016/12/18/5856a391cadba.png" alt="成功在普通2K显示器开启2K HiDPI"></p>
+<p><img src="https://ooo.0o0.ooo/2016/12/18/5856a5badb5b3.png" alt="对比"></p>
+<h1 id="后遗症"><a href="#后遗症" class="headerlink" title="后遗症"></a>后遗症</h1><p>折腾了这么多的方法后，这些方法给我留下了后遗症，我并不能确定是SwitchResX这个软件留下的，还是因为这些个方法一起作用，导致了下面的后遗症</p>
+<h2 id="合盖的时候外接显示器必须不能是hidpi"><a href="#合盖的时候外接显示器必须不能是hidpi" class="headerlink" title="合盖的时候外接显示器必须不能是hidpi"></a>合盖的时候外接显示器必须不能是hidpi</h2><p>正常外接显示器的情况下，合盖之后，外接显示器黑屏，再亮屏</p>
+<p>如果合盖之前外接显示器是hidpi，合盖之后，外接显示器一定黑屏毫无显示，此时其实有信号，有鼠标，但就是黑屏，打开盖子又正常了。尝试之后发现是合盖的时候外接显示器不能为hidpi，这并不意味着你开盖的时候外接显示器不能是hidpi，也并不意味着你合盖之后外接显示器不能变成hidpi，只是如果你要合盖，那外接显示器请不要是hidpi</p>
+<h2 id="开盖莫名其妙注销了"><a href="#开盖莫名其妙注销了" class="headerlink" title="开盖莫名其妙注销了"></a><strong>开盖莫名其妙注销了</strong></h2><p>真的是莫名其妙至极，插电插外显示器的情况下，开盖后要求输入密码，结果输入之后原有程序统统重新打开，黑人问号！</p>
+<p>我尝试过把系统设置里取消勾掉再重新勾上，也尝试过把SwitchResX中的Sleep monitors after disabling给取消勾掉，更尝试过删除switchresx，并没有任何效果，所以这个后遗症需要十分注意！</p>
+<p>当然我自己也找到了一个变通的方法，那就是，拔掉线，再开盖，就不会注销了，虽然麻烦了点，但我希望把我电脑搞出这个设定的人去吃屎</p>
+<h1 id="小问题"><a href="#小问题" class="headerlink" title="小问题"></a>小问题</h1><p>这个问题应该不是由软件引起的，没错，这个问题就是 卡</p>
+<p>思考一下，你的显示器是2k的，显示效果完全都由显卡渲染，mac输出5k分辨率，再缩到2k，虽然是新款的macbook pro，系统的动画也不卡，但用chrome的时候，就会很明显的发现一些css3的效果非常明显的掉帧，大概降到了20帧/s吧，safari好一点，但也就比chrome好大概10帧左右</p>
+<p>这个问题说大不大，说小不小，不大的原因是，chrome这种调显卡渲染的程序不要开太多，对于我这样拿mbp写代码的人，基本没有什么影响，也就是开一个chrome，开一个编辑器，编辑器基本无视，也就是chrome，chrome也就是看看文档，和显示的效果而已</p>
+<p>不小的原因是，我今天中午下了个720p的新番全屏来看，结果看到一半，开始掉帧卡了，一摸macbook，贼热（我的macbook放在床上，因为天气很冷，所以也不怎么在意温度，不看视频的时候摸了下只是温的），马上放到了桌子上，让他散热，很快macbook的温度就降下来了（也让我看到了这么牛逼的散热，这surface简直是落后几个世纪），愉快的继续看视频</p>
+<p>所以结论是</p>
+<ol>
+<li>保持散热</li>
+<li>别开太多浏览器</li>
+</ol>
+<p>当然如果你很在乎性能，不在乎这点渲染效果，那还是还原成2k普通分辨率吧，我之前的switchresx应该也不是完全卸载，完全卸载官方的做法是在顶部菜单里uninstall，不过官方说会删除所有switchresx做过的修改，那估计自定义的分辨率也会被删除</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <a href="/ja/2017/08/hello-jp-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">日本語ブログ始動</div>
+    </a>
+    
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</nav>
+
+  
+  
+
+  
+    <div data-url="https://blog.xingoxu.com/2016/12/config-switchresx-and-2khidpi/" data-title="「新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+		
+		<div class="qrcode">
+			<div class="qrcode-body-mask"></div>
+			<div class="qrcode-module">
+				<h2>微信扫一扫，分享到朋友圈</h2>
+				<div id="qrcode-pic"></div>
+				<img id="logo-qrcode" src="/favicon.ico" />
+	  	</div>
+		</div>
+
+</div>
+  
+</article>
+
+
+  <section id="comments">
+  
+    <div class="duoshuo">
+  <div data-thread-key="config-switchresx-and-2khidpi" data-thread-url="https://blog.xingoxu.com/ja/2016/12/config-switchresx-and-2khidpi/" data-thread-title="新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI"></div>
+	<!-- 评论框 end -->
+	<!-- 公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1504337344631';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 公共JS代码 end -->
+</div>
+    
+
+    
+  </section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 xingo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" class="profilepic">
+			
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/ja/">xingo</a></h1>
+				
+					<p class="header-subtitle">男の子の味方</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>ナビ</li>
+						
+						
+							<li>文章目録</li>
+						
+						
+							<li>友達</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/ja/">ホーム</a></li>
+							
+								<li><a href="/ja/archives">アーカイブ</a></li>
+							
+								<li><a href="/ja/about">プロフィール</a></li>
+							
+								<li><a href="http://works.xingoxu.com/">作品</a></li>
+							
+							
+							
+								<li class="change-language">
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+									<select>
+										
+											<option value="zh-cn" >简体中文</option>
+										
+											<option value="ja" selected>日本語</option>
+										
+									</select>
+								</li>
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+									<label class="search-icon" for="search">
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="ページトップへ"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初次连接显示器"><span class="toc-number">2.</span> <span class="toc-text">初次连接显示器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#google一下？"><span class="toc-number">3.</span> <span class="toc-text">google一下？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#试试hidpi？"><span class="toc-number">4.</span> <span class="toc-text">试试hidpi？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#探索新可能"><span class="toc-number">5.</span> <span class="toc-text">探索新可能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后遗症"><span class="toc-number">6.</span> <span class="toc-text">后遗症</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#合盖的时候外接显示器必须不能是hidpi"><span class="toc-number">6.1.</span> <span class="toc-text">合盖的时候外接显示器必须不能是hidpi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开盖莫名其妙注销了"><span class="toc-number">6.2.</span> <span class="toc-text">开盖莫名其妙注销了</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小问题"><span class="toc-number">7.</span> <span class="toc-text">小问题</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初次连接显示器"><span class="toc-text">初次连接显示器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#google一下？"><span class="toc-text">google一下？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#试试hidpi？"><span class="toc-text">试试hidpi？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#探索新可能"><span class="toc-text">探索新可能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后遗症"><span class="toc-text">后遗症</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#合盖的时候外接显示器必须不能是hidpi"><span class="toc-text">合盖的时候外接显示器必须不能是hidpi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开盖莫名其妙注销了"><span class="toc-text">开盖莫名其妙注销了</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小问题"><span class="toc-text">小问题</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">ナビ</span>
+				<div class="viewer-div">
+					
+						<li><a href="/ja/">ホーム</a></li>
+					
+						<li><a href="/ja/archives">アーカイブ</a></li>
+					
+						<li><a href="/ja/about">プロフィール</a></li>
+					
+						<li><a href="http://works.xingoxu.com/">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">友達</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title change-language">
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+						<select >
+							
+								<option value="zh-cn" >简体中文</option>
+							
+								<option value="ja" selected>日本語</option>
+							
+						</select>
+					</div>
+				</div>
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		languageList: ["zh-cn","ja"],
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+<script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="/js/main.js?1504337348468"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+</body>
+</html>
