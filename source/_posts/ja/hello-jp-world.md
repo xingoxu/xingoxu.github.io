@@ -2,7 +2,7 @@
 title: 日本語ブログ始動
 categories:
   - uncategorized
-lang: jp
+lang: ja
 date: 2017-08-26 16:55:10
 toc: false
 ---
