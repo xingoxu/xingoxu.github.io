@@ -98,6 +98,35 @@ feed:
 sitemap:
   path: sitemap.xml
 
+# service worker
+service_worker:
+  maximumFileSizeToCacheInBytes: 5242880
+  staticFileGlobs:
+  - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  stripPrefix: public
+  verbose: true
+  runtimeCaching:
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: ooo.0o0.ooo
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: cdn.bootcss.com
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: i.loli.net
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: dn-xingoxu.qbox.me
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: od8634671.qnssl.com
+        
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
