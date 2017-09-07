@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="handheldfriendly" content="true">
   <meta name="theme-color" content="#325899">
+  <link rel="manifest" href="/pwa/manifest.json">
   <script>
     if ((window.location.host == 'blog.xingoxu.com') &&
         (window.location.protocol != "https:"))
@@ -31,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2017/08/11/598d4b85023f5.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/11/598d498dc090f.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/11/598d4e045ebfe.png">
-<meta property="og:updated_time" content="2017-09-03T09:49:58.035Z">
+<meta property="og:updated_time" content="2017-09-07T08:50:03.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索 Service Worker “生命周期”">
 <meta name="twitter:description" content="最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft">
@@ -43,7 +44,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1504432275302">
+  <link rel="stylesheet" href="/css/style.css?1504774290710">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -281,7 +282,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1504432269067';
+			'/comments.js?1504774284877';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -666,10 +667,11 @@
 		open_in_new: false
 	}
 </script>
+<script src="/sw-register.js?1504774290757"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1504432275340"></script>
+<script src="/js/main.js?1504774290757"></script>
 
 
 
@@ -689,5 +691,4 @@ ga('send', 'pageview');
 
 
 
-</body>
-</html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

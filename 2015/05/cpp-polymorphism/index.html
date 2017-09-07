@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="handheldfriendly" content="true">
   <meta name="theme-color" content="#325899">
+  <link rel="manifest" href="/pwa/manifest.json">
   <script>
     if ((window.location.host == 'blog.xingoxu.com') &&
         (window.location.protocol != "https:"))
@@ -22,7 +23,7 @@
 <meta property="og:description" content="“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/592545c28b9b8.png">
-<meta property="og:updated_time" content="2017-09-03T09:49:58.035Z">
+<meta property="og:updated_time" content="2017-09-07T08:50:03.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015.05.09 C++多态">
 <meta name="twitter:description" content="“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。">
@@ -34,7 +35,7 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css?1504432276302">
+  <link rel="stylesheet" href="/css/style.css?1504774292038">
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
@@ -234,7 +235,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1504432269675';
+			'/comments.js?1504774285597';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -619,10 +620,11 @@
 		open_in_new: false
 	}
 </script>
+<script src="/sw-register.js?1504774292062"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<script src="/js/main.js?1504432276317"></script>
+<script src="/js/main.js?1504774292062"></script>
 
 
 
@@ -642,5 +644,4 @@ ga('send', 'pageview');
 
 
 
-</body>
-</html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
