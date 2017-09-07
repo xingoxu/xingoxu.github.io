@@ -104,7 +104,7 @@ service_worker:
   staticFileGlobs:
   - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
   stripPrefix: public
-  verbose: true
+  verbose: false
   runtimeCaching:
     - urlPattern: /*
       handler: cacheFirst
@@ -126,7 +126,7 @@ service_worker:
       handler: cacheFirst
       options:
         origin: od8634671.qnssl.com
-        
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
