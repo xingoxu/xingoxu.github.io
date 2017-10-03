@@ -27,14 +27,14 @@ update_date: 2017-09-03 12:53:14
 これまで1年間、フロントエンドエンジニアを担当しました。
 
 > 2017.04.17 - 在職中 &nbsp; ele.me（中国のオンラインフードデリバリー最大手）
-> - webpackとvue.jsで宅配配送システムのフロントエンド開発
+> - webpackとvue.jsで出前配送システムのフロントエンド開発
 > - vue.jsのUIフレームワーク - Elementの開発に参加する
 > - Zeplinで設計を実現
 
 <br>
 
 > 2016.06.20 - 2017.04.14 &nbsp; 030buy.com / rennigou.jp （日本商品代理購入サイト）
-> - canvas2D や CSS や Javascript で活動ページを完成　アニメーション満載 举例： [轻文轻小说](http://www.030buy.net/special/2016.9.6.qwqxs/) &nbsp; [螺旋境界线](http://www.030buy.net/special/2016.8.9.hh/) &nbsp; [セイレン](http://www.030buy.net/special/2017.3.16.ql/) &nbsp; [登録](https://user.030buy.net/login)
+> - canvas2D や CSS や Javascript で活動ページを完成　アニメーション満載 例： [轻文轻小说](http://www.030buy.net/special/2016.9.6.qwqxs/) &nbsp; [螺旋境界线](http://www.030buy.net/special/2016.8.9.hh/) &nbsp; [セイレン](http://www.030buy.net/special/2017.3.16.ql/) &nbsp; [登録](https://user.030buy.net/login)
 > - php、gulp.js、vue.jsで一緒に業務システムを完成
 > - モバイルウェブページの完成、ページにネイティブと通信
 　　
