@@ -24,12 +24,12 @@ update_date: 2017-09-03 12:53:14
 
 ## 職務経歴
 
-これまで1年間、フロントエンドエンジニアを担当しました。
+これまで1年間、フロントエンドエンジニアを担当しています。
 
 > 2017.04.17 - 在職中 &nbsp; ele.me（中国のオンラインフードデリバリー最大手）
 > - webpackとvue.jsで出前配送システムのフロントエンド開発
-> - vue.jsのUIフレームワーク - Elementの開発に参加する
-> - Zeplinで設計を実現
+> - vue.jsのUIフレームワーク - Elementの開発に参加した
+> - Zeplinの設計を実現する
 
 <br>
 
@@ -49,8 +49,8 @@ update_date: 2017-09-03 12:53:14
 ## 個人作品
 > [Canvas Contribution](https://github.com/xingoxu/canvas-contribution) - **Canvas2D / ES2015 / NPMpackage**
 > [PS4 Wallpaper Helper](http://works.xingoxu.com/ps4helper/) - **Electron/Express.js/socket.io**
-> [日系剁手网站价格综合对比工具](http://works.xingoxu.com/buy-calc/) - **React.js**
-> [ブログ](https://blog.xingoxu.com/) - **HTML/CSS/JS**
+> [代理購入サイト価格比較ツール（中国語のみ）](http://works.xingoxu.com/buy-calc/) - **React.js**
+> [ブログ（ほとんど中国語）](https://blog.xingoxu.com/) - **HTML/CSS/JS**
 > もっと \>\>　[作品](http://works.xingoxu.com/)
 
 
