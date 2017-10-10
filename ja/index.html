@@ -101,6 +101,78 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-vue-typescript-early" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/ja/2017/10/vue-typescript-early/" class="article-date" >
+  	<time datetime="2017-10-10T09:33:23.000Z" itemprop="datePublished">2017-10-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/ja/2017/10/vue-typescript-early/">Vue + TypeScript 早期体験</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Vue.version &lt; 2.5 &amp;&amp; Vue.version &gt;= 2.2　適用される</p>
+</blockquote>
+<h1 id="公式ドキュメントによるやり方"><a href="#公式ドキュメントによるやり方" class="headerlink" title="公式ドキュメントによるやり方"></a>公式ドキュメントによるやり方</h1><p>Vue 2.2 から、Vue にいろんな公式型宣言を提供しており、さっそく、単一ファイルコンポーネントに TypeScript を試してみましょう。</p>
+<h2 id="webpack-rules-に-ts-loader-相関を添付しましょう"><a href="#webpack-rules-に-ts-loader-相関を添付しましょう" class="headerlink" title="webpack rules に ts-loader 相関を添付しましょう"></a>webpack rules に ts-loader 相関を添付しましょう</h2><blockquote>
+<p>こっちは webpack2</p>
+</blockquote>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">  rules: [</div><div class="line"><span class="addition">+   &#123;</span></div><div class="line"><span class="addition">+     test: /\.ts$/,</span></div><div class="line"><span class="addition">+     exclude: /node_modules|vue\/src/,</span></div><div class="line"><span class="addition">+     loader: 'ts-loader',</span></div><div class="line"><span class="addition">+     options: &#123;</span></div><div class="line"><span class="addition">+       appendTsSuffixTo: [/\.vue$/]</span></div><div class="line"><span class="addition">+     &#125;</span></div><div class="line"><span class="addition">+   &#125;,</span></div><div class="line">    ...</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/ja/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/ja/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
+		
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/ja/2017/10/vue-typescript-early/#more"></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
     <article id="post-record-user-login-status-methods" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -601,7 +673,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1507436729598"></script>
+<script src="/sw-register.js?1507629181976"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

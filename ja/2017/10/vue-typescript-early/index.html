@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <link rel="manifest" href="/pwa/manifest.json">
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>Vue + TypeScript 早期体験 | xingo&#39;s private plot</title>
+  <meta name="description" content="Vue.version &amp;lt; 2.5 &amp;amp;&amp;amp; Vue.version &amp;gt;= 2.2　適用される  公式ドキュメントによるやり方Vue 2.2 から、Vue にいろんな公式型宣言を提供しており、さっそく、単一ファイルコンポーネントに TypeScript を試してみましょう。 webpack rules に ts-loader 相関を添付しましょう こっちは webpac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue + TypeScript 早期体験">
+<meta property="og:url" content="https://blog.xingoxu.com/ja/2017/10/vue-typescript-early/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:description" content="Vue.version &amp;lt; 2.5 &amp;amp;&amp;amp; Vue.version &amp;gt;= 2.2　適用される  公式ドキュメントによるやり方Vue 2.2 から、Vue にいろんな公式型宣言を提供しており、さっそく、単一ファイルコンポーネントに TypeScript を試してみましょう。 webpack rules に ts-loader 相関を添付しましょう こっちは webpac">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2017-10-10T09:52:06.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue + TypeScript 早期体験">
+<meta name="twitter:description" content="Vue.version &amp;lt; 2.5 &amp;amp;&amp;amp; Vue.version &amp;gt;= 2.2　適用される  公式ドキュメントによるやり方Vue 2.2 から、Vue にいろんな公式型宣言を提供しており、さっそく、単一ファイルコンポーネントに TypeScript を試してみましょう。 webpack rules に ts-loader 相関を添付しましょう こっちは webpac">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css?">
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">男の子の味方</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/ja/">ホーム</a></li>
+		        
+					<li><a href="/ja/archives">アーカイブ</a></li>
+		        
+					<li><a href="/ja/about">プロフィール</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-vue-typescript-early" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/ja/2017/10/vue-typescript-early/" class="article-date" >
+  	<time datetime="2017-10-10T09:33:23.000Z" itemprop="datePublished">2017-10-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue + TypeScript 早期体験
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+		
+			<a href="/ja/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/ja/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
+		
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Vue.version &lt; 2.5 &amp;&amp; Vue.version &gt;= 2.2　適用される</p>
+</blockquote>
+<h1 id="公式ドキュメントによるやり方"><a href="#公式ドキュメントによるやり方" class="headerlink" title="公式ドキュメントによるやり方"></a>公式ドキュメントによるやり方</h1><p>Vue 2.2 から、Vue にいろんな公式型宣言を提供しており、さっそく、単一ファイルコンポーネントに TypeScript を試してみましょう。</p>
+<h2 id="webpack-rules-に-ts-loader-相関を添付しましょう"><a href="#webpack-rules-に-ts-loader-相関を添付しましょう" class="headerlink" title="webpack rules に ts-loader 相関を添付しましょう"></a>webpack rules に ts-loader 相関を添付しましょう</h2><blockquote>
+<p>こっちは webpack2</p>
+</blockquote>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">  rules: [</div><div class="line"><span class="addition">+   &#123;</span></div><div class="line"><span class="addition">+     test: /\.ts$/,</span></div><div class="line"><span class="addition">+     exclude: /node_modules|vue\/src/,</span></div><div class="line"><span class="addition">+     loader: 'ts-loader',</span></div><div class="line"><span class="addition">+     options: &#123;</span></div><div class="line"><span class="addition">+       appendTsSuffixTo: [/\.vue$/]</span></div><div class="line"><span class="addition">+     &#125;</span></div><div class="line"><span class="addition">+   &#125;,</span></div><div class="line">    ...</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>.ts のファイルを ts-loader で読み込む<br><code>appendTsSuffixTo</code>は vue を module として tsc でプロセスして、module not found の問題を解決する（tsc は .vue ファイルが知らない）</p>
+<h2 id="d-ts-ファイルを作成する"><a href="#d-ts-ファイルを作成する" class="headerlink" title=".d.ts ファイルを作成する"></a>.d.ts ファイルを作成する</h2><p>どんな名前もいい、どこでもいい、tsconfig.json の include PATH にいればいい、必ず .d.ts を名前の終わりします。<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">declare</span> <span class="keyword">module</span> "*.vue" &#123;</div><div class="line">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> Vue</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>vscode の .ts ファイルに .vueファイルも知らせます。</p>
+<h2 id="tsconfig-json-を作成する"><a href="#tsconfig-json-を作成する" class="headerlink" title="tsconfig.json を作成する"></a>tsconfig.json を作成する</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"compilerOptions"</span>: &#123;</div><div class="line">    <span class="attr">"allowSyntheticDefaultImports"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"lib"</span>: [</div><div class="line">      <span class="string">"dom"</span>,</div><div class="line">      <span class="string">"es5"</span>,</div><div class="line">      <span class="string">"es2015.promise"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"module"</span>: <span class="string">"es2015"</span>,</div><div class="line">    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</div><div class="line">    <span class="attr">"isolatedModules"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"target"</span>: <span class="string">"es5"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"include"</span>: [</div><div class="line">    <span class="string">"./src/**/*.ts"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>allowSyntheticDefaultImports</code> は es6 の import を直接使えるの option</p>
+<h2 id="準備万端、npm-run-dev-いきましょう！"><a href="#準備万端、npm-run-dev-いきましょう！" class="headerlink" title="準備万端、npm run dev いきましょう！"></a>準備万端、<code>npm run dev</code> いきましょう！</h2><p>こっちは vue-cli の webpack boilerplate を例として、Hello.vue を改造しましょう。</p>
+<p>html template の msg の下に<br><figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;</div><div class="line"><span class="addition">+ &lt;h2&gt;Say Hello Times: &#123;&#123; count &#125;&#125;&lt;/h2&gt;</span></div><div class="line">  &lt;h2&gt;Essential Links&lt;/h2&gt;</div></pre></td></tr></table></figure></p>
+<p>script の部分を<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span></div><div class="line"><span class="javascript">  <span class="comment">// Declare the component's type</span></span></div><div class="line"><span class="undefined">  interface HelloInterface extends Vue &#123;</span></div><div class="line"><span class="undefined">    msg: string,</span></div><div class="line"><span class="undefined">    count: number,</span></div><div class="line"><span class="undefined">    sayHello(): number</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">  </span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> &#123;</span></div><div class="line"><span class="javascript">    HelloInterface <span class="keyword">as</span> interface</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    data() &#123;</span></div><div class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></div><div class="line"><span class="javascript">        msg: <span class="string">'Welcome to Your Vue.js App'</span>,</span></div><div class="line"><span class="undefined">        count: 0</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      sayHello() &#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">this</span>.count++;</span></div><div class="line"><span class="javascript">        <span class="keyword">return</span> <span class="keyword">this</span>.count;</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="javascript">    <span class="comment">// We need to explicitly annotate the exported options object</span></span></div><div class="line"><span class="javascript">    <span class="comment">// with the Hello type</span></span></div><div class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;HelloInterface&gt;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>こうして改造します</p>
+<p>親としての App.vue を改造してみて</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  &lt;div id="app"&gt;</div><div class="line"><span class="deletion">-   &lt;img src="./assets/logo.png"&gt;</span></div><div class="line"><span class="addition">+   &lt;img src="./assets/logo.png" @click="sayHello"&gt;</span></div><div class="line"><span class="deletion">-   &lt;hello&gt;&lt;/hello&gt;</span></div><div class="line"><span class="addition">+   &lt;hello ref="helloComponent"&gt;&lt;/hello&gt;</span></div><div class="line">  &lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span>;</span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> &#123; interface <span class="keyword">as</span> helloInterface, <span class="keyword">default</span> <span class="keyword">as</span> Hello &#125; <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</span></div><div class="line"><span class="undefined">  interface App extends Vue &#123;</span></div><div class="line"><span class="undefined">    $refs: &#123;</span></div><div class="line"><span class="javascript">      <span class="comment">// helloComponent を宣言する、helloComponent のメソッドとプロパティを使えようになるました</span></span></div><div class="line"><span class="undefined">      helloComponent: helloInterface</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      sayHello() &#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.count++;</span></div><div class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.sayHello();</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    components: &#123;</span></div><div class="line"><span class="undefined">      Hello</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;App&gt;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>refsといった動的なもの、interface に宣言して、typescript にオートコンプリートを使えます。</p>
+<blockquote>
+<p>App.vue の <code>script</code> を <code>lang=ts</code> 変更すると、main.js を main.ts に変更する必要があります、webpack の entry も忘れないでください，そうしないと file not found のエラーが発生する可能性がある。</p>
+</blockquote>
+<p>コードはちょっと多いね、公式サイトによるの <code>vue-class-component</code> を使ってみますか？</p>
+<h1 id="vue-class-component"><a href="#vue-class-component" class="headerlink" title="vue-class-component"></a>vue-class-component</h1><p><code>vue-class-component</code>の demo と readme はちょっと問題がある、TypeScript の新入りの私が困った、pr を提出した、速くマージされて欲しい。</p>
+<p><code>vue-class-component</code> を使っている Hello.vue の script 部分</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</div><div class="line"><span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span>;</div><div class="line">　</div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> Hello <span class="keyword">extends</span> Vue &#123;</div><div class="line">  msg: <span class="built_in">string</span> = <span class="string">'Welcome to Your Vue.js App'</span></div><div class="line">  count: <span class="built_in">number</span> = <span class="number">0</span></div><div class="line">  sayHello(): <span class="built_in">number</span> &#123;</div><div class="line">    <span class="keyword">this</span>.count++;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.count;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>で、App.vue</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</div><div class="line"><span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span>;</div><div class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</div><div class="line">　</div><div class="line"><span class="meta">@Component</span>(&#123;</div><div class="line">  components: &#123;</div><div class="line">    Hello</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> App <span class="keyword">extends</span> Vue &#123;</div><div class="line">  $refs: &#123;</div><div class="line">    helloComponent: Hello</div><div class="line">  &#125;</div><div class="line">　</div><div class="line">  sayHello() &#123;</div><div class="line">    <span class="keyword">this</span>.$refs.helloComponent.count++;</div><div class="line">    <span class="keyword">this</span>.$refs.helloComponent.sayHello();</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>随分清潔ですね、オートコンプリートもバッチリ！他の vue コンポーネントと TypeScript の不具合は一時的に考え出来ません。</p>
+<h1 id="終わりに"><a href="#終わりに" class="headerlink" title="終わりに"></a>終わりに</h1><p>Vue 2.5から TypeScript のサポートはどんどん増えますと<a href="https://medium.com/the-vue-point/upcoming-typescript-changes-in-vue-2-5-e9bd7e2ecf08" target="_blank" rel="external">言います</a>、どんなサポートですね〜</p>
+<p>日本語まだ下手ですから、変なところいっぱいと思います、コメントエリアに指摘すれば幸いです。</p>
+<p>最後まで閲覧いただきありがとうございました。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+    <a href="/ja/2017/09/record-user-login-status-methods/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">いくつのユーザー状態の記録方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+    
+
+</nav>
+
+  
+  
+
+  
+    <div data-url="https://blog.xingoxu.com/ja/2017/10/vue-typescript-early/" data-title="「Vue + TypeScript 早期体験」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+		
+		<div class="qrcode">
+			<div class="qrcode-body-mask"></div>
+			<div class="qrcode-module">
+				<h2>微信扫一扫，分享到朋友圈</h2>
+				<div id="qrcode-pic"></div>
+				<img id="logo-qrcode" src="/favicon.ico" />
+	  	</div>
+		</div>
+
+</div>
+  
+</article>
+
+
+  <section id="comments">
+  
+    <div class="duoshuo">
+  <div data-thread-key="vue-typescript-early" data-thread-url="https://blog.xingoxu.com/ja/2017/10/vue-typescript-early/" data-thread-title="Vue + TypeScript 早期体験"></div>
+	<!-- 评论框 end -->
+	<!-- 公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 
+			'https://od8634671.qnssl.com' : 
+			'http://7xin1x.com1.z0.glb.clouddn.com') + 
+			'/comments.js?1507629175232';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 公共JS代码 end -->
+</div>
+    
+
+    
+  </section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 xingo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" class="profilepic">
+			
+				<img lazy-src="https://dn-xingoxu.qbox.me/author.jpg" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/ja/">xingo</a></h1>
+				
+					<p class="header-subtitle">男の子の味方</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>ナビ</li>
+						
+						
+							<li>文章目録</li>
+						
+						
+							<li>友達</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/ja/">ホーム</a></li>
+							
+								<li><a href="/ja/archives">アーカイブ</a></li>
+							
+								<li><a href="/ja/about">プロフィール</a></li>
+							
+								<li><a href="http://works.xingoxu.com/">作品</a></li>
+							
+							
+							
+								<li class="change-language">
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+									<select>
+										
+											<option value="zh-cn" >简体中文</option>
+										
+											<option value="ja" selected>日本語</option>
+										
+									</select>
+								</li>
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+									<label class="search-icon" for="search">
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="ページトップへ"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#公式ドキュメントによるやり方"><span class="toc-number">1.</span> <span class="toc-text">公式ドキュメントによるやり方</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-rules-に-ts-loader-相関を添付しましょう"><span class="toc-number">1.1.</span> <span class="toc-text">webpack rules に ts-loader 相関を添付しましょう</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#d-ts-ファイルを作成する"><span class="toc-number">1.2.</span> <span class="toc-text">.d.ts ファイルを作成する</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tsconfig-json-を作成する"><span class="toc-number">1.3.</span> <span class="toc-text">tsconfig.json を作成する</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#準備万端、npm-run-dev-いきましょう！"><span class="toc-number">1.4.</span> <span class="toc-text">準備万端、npm run dev いきましょう！</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-class-component"><span class="toc-number">2.</span> <span class="toc-text">vue-class-component</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#終わりに"><span class="toc-number">3.</span> <span class="toc-text">終わりに</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#公式ドキュメントによるやり方"><span class="toc-text">公式ドキュメントによるやり方</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-rules-に-ts-loader-相関を添付しましょう"><span class="toc-text">webpack rules に ts-loader 相関を添付しましょう</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#d-ts-ファイルを作成する"><span class="toc-text">.d.ts ファイルを作成する</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tsconfig-json-を作成する"><span class="toc-text">tsconfig.json を作成する</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#準備万端、npm-run-dev-いきましょう！"><span class="toc-text">準備万端、npm run dev いきましょう！</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-class-component"><span class="toc-text">vue-class-component</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#終わりに"><span class="toc-text">終わりに</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">ナビ</span>
+				<div class="viewer-div">
+					
+						<li><a href="/ja/">ホーム</a></li>
+					
+						<li><a href="/ja/archives">アーカイブ</a></li>
+					
+						<li><a href="/ja/about">プロフィール</a></li>
+					
+						<li><a href="http://works.xingoxu.com/">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">友達</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title change-language">
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+						<select >
+							
+								<option value="zh-cn" >简体中文</option>
+							
+								<option value="ja" selected>日本語</option>
+							
+						</select>
+					</div>
+				</div>
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		languageList: ["zh-cn","ja"],
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+<script src="/sw-register.js?1507629179021"></script>
+<script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="/js/main.js?"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
