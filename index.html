@@ -101,6 +101,96 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-vue-typescript-early" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/vue-typescript-early/" class="article-date" >
+  	<time datetime="2017-10-18T07:04:23.000Z" itemprop="datePublished">2017-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/vue-typescript-early/">Vue + TypeScript 尝鲜体验</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>适用 Vue.version &lt; 2.5 &amp;&amp; Vue.version &gt;= 2.2</p>
+</blockquote>
+<p>其实我个人一开始很讨厌 TypeScript 这个东西，就是因为讨厌 Java 的啰里巴嗦，突然在我眼前出现了 Javascript，便爱上了这门语言。</p>
+<p>但现在的我稍稍又觉得这样的东西其实还行，只使用类型系统也并没有完全限制 Javascript 本身的灵活性，并且他帮助我不会犯一些低级错误，而且还能配合 Visual Studio Code 的提示，我觉得这个还是很不错的，最近忙起来的时候，甚至经常把两个输入框的 value 直接进行比较了，于是就想尝试一下 TypeScript。</p>
+<h1 id="官方做法"><a href="#官方做法" class="headerlink" title="官方做法"></a>官方做法</h1><p>Vue 2.2 以上之后，官方给 Vue已经添加了很多类型声明，那么我们就来实践一下在单文件 Vue 中使用 TypeScript。</p>
+<h2 id="webpack-rules-中添加-ts-loader-相关（这里使用-webpack-2）"><a href="#webpack-rules-中添加-ts-loader-相关（这里使用-webpack-2）" class="headerlink" title="webpack rules 中添加 ts-loader 相关（这里使用 webpack 2）"></a>webpack rules 中添加 ts-loader 相关（这里使用 webpack 2）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: <span class="regexp">/\.ts$/</span>,</div><div class="line">  exclude: <span class="regexp">/node_modules|vue\/src/</span>,</div><div class="line">  loader: <span class="string">'ts-loader'</span>,</div><div class="line">  options: &#123;</div><div class="line">    appendTsSuffixTo: [<span class="regexp">/\.vue$/</span>]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>表示对 .ts 文件编译时使用 ts-loader 进行读取，appendTsSuffixTo 是为了让 tsc 对 vue 文件能够当成一个 module 进行处理，以解决 moudle not found 的问题（tsc 本身不认识 vue 结尾的文件）</p>
+<h2 id="添加-d-ts文件"><a href="#添加-d-ts文件" class="headerlink" title="添加 .d.ts文件"></a>添加 .d.ts文件</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">declare</span> <span class="keyword">module</span> "*.vue" &#123;</div><div class="line">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> Vue</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也是为了让 vscode 在 ts 文件中识别 vue 结尾文件</p>
+<h2 id="项目根目录下添加-tsconfig-json"><a href="#项目根目录下添加-tsconfig-json" class="headerlink" title="项目根目录下添加 tsconfig.json"></a>项目根目录下添加 tsconfig.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"compilerOptions"</span>: &#123;</div><div class="line">    <span class="attr">"allowSyntheticDefaultImports"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"lib"</span>: [</div><div class="line">      <span class="string">"dom"</span>,</div><div class="line">      <span class="string">"es5"</span>,</div><div class="line">      <span class="string">"es2015.promise"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"module"</span>: <span class="string">"es2015"</span>,</div><div class="line">    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</div><div class="line">    <span class="attr">"isolatedModules"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"target"</span>: <span class="string">"es5"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"include"</span>: [</div><div class="line">    <span class="string">"./src/**/*.ts"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>allowSyntheticDefaultImports</code> 是为了能够用 es6 形式的 import，其他就参照 Vue 和官网的弄了个最小化的 json。</p>
+<h2 id="万事俱备，让我们-npm-run-dev-跑起来！"><a href="#万事俱备，让我们-npm-run-dev-跑起来！" class="headerlink" title="万事俱备，让我们 npm run dev 跑起来！"></a>万事俱备，让我们 <code>npm run dev</code> 跑起来！</h2><p>在这里，我们假设使用 Vue 官方的 webpack boilerplate，对 Hello.vue 进行一下改造。</p>
+<p>在模板的 msg 下新增一行<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Say Hello Times: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>并将 script 部分修改成<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span></div><div class="line"><span class="javascript">  <span class="comment">// Declare the component's type</span></span></div><div class="line"><span class="undefined">  interface HelloInterface extends Vue &#123;</span></div><div class="line"><span class="undefined">    msg: string,</span></div><div class="line"><span class="undefined">    count: number,</span></div><div class="line"><span class="undefined">    sayHello(): number</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">  </span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> &#123;</span></div><div class="line"><span class="javascript">    HelloInterface <span class="keyword">as</span> interface</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    data() &#123;</span></div><div class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></div><div class="line"><span class="javascript">        msg: <span class="string">'Welcome to Your Vue.js App'</span>,</span></div><div class="line"><span class="undefined">        count: 0</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      sayHello() &#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">this</span>.count++;</span></div><div class="line"><span class="javascript">        <span class="keyword">return</span> <span class="keyword">this</span>.count;</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="javascript">    <span class="comment">// We need to explicitly annotate the exported options object</span></span></div><div class="line"><span class="javascript">    <span class="comment">// with the Hello type</span></span></div><div class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;HelloInterface&gt;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这段代码没有什么太大的问题</p>
+<p>接着我们改造一下 App.vue<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./assets/logo.png"</span> @<span class="attr">click</span>=<span class="string">"sayHello"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span>;</span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> &#123; interface <span class="keyword">as</span> helloInterface, <span class="keyword">default</span> <span class="keyword">as</span> Hello &#125; <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</span></div><div class="line"><span class="undefined">  interface App extends Vue &#123;</span></div><div class="line"><span class="undefined">    $refs: &#123;</span></div><div class="line"><span class="javascript">      <span class="comment">// 对 helloComponent 进行声明，可以使用 helloComponent 上的方法和属性</span></span></div><div class="line"><span class="undefined">      helloComponent: helloInterface</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      sayHello() &#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.count++;</span></div><div class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.sayHello();</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    components: &#123;</span></div><div class="line"><span class="undefined">      Hello</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;App&gt;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>也就是说，像 refs 这种动态的在运行时才能确定的东西，如果需要在 coding 过程中静态化，则需要在 interface 中对其进行声明，写的 code 稍微有点多，不过可以接受。</p>
+<blockquote>
+<p>注： App.vue 修改成 <code>lang=ts</code> 后，顶层的 main.js 需要换成 main.ts 并修改 webpack 入口点，否则发生 file not found 错误</p>
+</blockquote>
+<h1 id="vue-class-component"><a href="#vue-class-component" class="headerlink" title="vue-class-component"></a>vue-class-component</h1><p>官方的另一种推荐做法是 <code>vue-class-component</code>，不过 demo 和 readme 有点小问题，可把我这个 TypeScript 新手给难到啦，提了 pr 希望快快通过。</p>
+<p>让我们看看使用 <code>vue-class-component</code> 之后的 Hello.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span></span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined">  @Component</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span></div><div class="line"><span class="javascript">    msg: string = <span class="string">'Welcome to Your Vue.js App'</span></span></div><div class="line"><span class="undefined">    count: number = 0</span></div><div class="line"><span class="undefined">    sayHello(): number &#123;</span></div><div class="line"><span class="javascript">      <span class="keyword">this</span>.count++;</span></div><div class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">this</span>.count;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>再让我们看看 App.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span></span></div><div class="line"><span class="javascript">  <span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</span></div><div class="line"><span class="undefined">  </span></div><div class="line"><span class="undefined">  @Component(&#123;</span></div><div class="line"><span class="undefined">    components: &#123;</span></div><div class="line"><span class="undefined">      Hello</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;)</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span></div><div class="line"><span class="undefined">    $refs: &#123;</span></div><div class="line"><span class="undefined">      helloComponent: Hello</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">    </span></div><div class="line"><span class="undefined">    sayHello() &#123;</span></div><div class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.helloComponent.count++;</span></div><div class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.helloComponent.sayHello();</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>非常 Cool，非常精炼，暂时没有想到可能会发生的没法解决的因为 vue 或者 vue 组件 和 TypeScript 水土不服的编译错误，而且都有了类型和提示。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>尤大佬说在接下来的 Vue 2.5 还会加强一系列的 TypeScript 支持（<a href="https://medium.com/the-vue-point/upcoming-typescript-changes-in-vue-2-5-e9bd7e2ecf08" target="_blank" rel="external">链接</a>），不知道是怎样的支持呢。<br>另外，欢迎大家在评论区发表 Vue + TypeScript 的使用场景以及你遇到的错误。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
+		
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
     <article id="post-record-user-login-status-methods" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -725,69 +815,6 @@
 
 
   
-    <article id="post-2017-iyahoi" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/2017-iyahoi/" class="article-date" >
-  	<time datetime="2017-01-03T11:55:45.000Z" itemprop="datePublished">2017-01-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/2017-iyahoi/">2017 いやほい</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		
-			<a href="/categories/notes/" class="article-category-link">notes</a>
-		
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/01/2017-iyahoi/#more"></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-  
-    <div class="index-progress">
-      <div class="progress-bar-indeterminate"></div>
-    </div>
-  
-
-  
-</article>
-
-
-
-  
   
     <!-- loadingcircle comes from http://materializecss.com/preloader.html -->
 <div class="loading-circle">
@@ -1208,7 +1235,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1507629863207"></script>
+<script src="/sw-register.js?1508310459289"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
