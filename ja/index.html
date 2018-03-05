@@ -134,7 +134,7 @@
 <h2 id="webpack-rules-に-ts-loader-相関を添付しましょう"><a href="#webpack-rules-に-ts-loader-相関を添付しましょう" class="headerlink" title="webpack rules に ts-loader 相関を添付しましょう"></a>webpack rules に ts-loader 相関を添付しましょう</h2><blockquote>
 <p>こっちは webpack2</p>
 </blockquote>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">  rules: [</div><div class="line"><span class="addition">+   &#123;</span></div><div class="line"><span class="addition">+     test: /\.ts$/,</span></div><div class="line"><span class="addition">+     exclude: /node_modules|vue\/src/,</span></div><div class="line"><span class="addition">+     loader: 'ts-loader',</span></div><div class="line"><span class="addition">+     options: &#123;</span></div><div class="line"><span class="addition">+       appendTsSuffixTo: [/\.vue$/]</span></div><div class="line"><span class="addition">+     &#125;</span></div><div class="line"><span class="addition">+   &#125;,</span></div><div class="line">    ...</div></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line"><span class="addition">+   &#123;</span></span><br><span class="line"><span class="addition">+     test: /\.ts$/,</span></span><br><span class="line"><span class="addition">+     exclude: /node_modules|vue\/src/,</span></span><br><span class="line"><span class="addition">+     loader: 'ts-loader',</span></span><br><span class="line"><span class="addition">+     options: &#123;</span></span><br><span class="line"><span class="addition">+       appendTsSuffixTo: [/\.vue$/]</span></span><br><span class="line"><span class="addition">+     &#125;</span></span><br><span class="line"><span class="addition">+   &#125;,</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -314,7 +314,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -673,7 +673,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649749302"></script>
+<script src="/sw-register.js?1520216763232"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

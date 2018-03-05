@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/5925467479b82.png">
 <meta property="og:image" content="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926497f2e6de.png">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.309Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重配置WNDR4300手记">
 <meta name="twitter:description" content="给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）">
@@ -160,15 +160,15 @@
 <p>改完之后发现网能上了，也能顺利出去了，但踏马的路由器设置进不去了，诶怎么都进不去，把网断了，踏马的还是进不去，断网前不停地转圈圈，一直<code>waiting For 172.168.1.1…</code>断网后显示<code>Connection Reset</code>，亲你是在逗我吗！这叫个什么事！什么叫网上的去路由器设置上不去，狗带！</p>
 <p>仔细想想，想来想去，还是没有想出个啥道理，以为自己哪里设置没改过来，只好重置</p>
 <h1 id="重配置"><a href="#重配置" class="headerlink" title="重配置"></a>重配置</h1><h2 id="语言的更改"><a href="#语言的更改" class="headerlink" title="语言的更改"></a>语言的更改</h2><p>重置完后的第一件事情是要将英语改成中文，虽然咱英文不烂，但网络有些专有名词看起来再过一遍脑子还是挺吃力的，关于为什么要改语言，就要追溯到上一个作死贴<a href="https://blog.xingoxu.com/2015/09/router-rebuild-2015/">WNDR4300救砖（openwrt）</a><img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/34/xiaoku_thumb.gif" alt="新浪 - 笑哭">，15.05官方固件踏马没带中文！话题回来，首先我们要做的是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opkg update</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br></pre></td></tr></table></figure>
 <p>但这个狗带的电信尼玛又作死了！openwrt.org开不开，奇慢无比，而且15.05的openwrt在配置里可以看到是有签名校验的，想了很久，去搜了一下可行性，最后还是用镜像站吧，还是ustc的大学站，不错啊，你们这个镜像站啊，excited！啧啧</p>
 <p>将软件包配置改成如下：</p>
 <p>原：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">dest root /</div><div class="line">dest ram /tmp</div><div class="line">lists_dir ext /var/opkg-lists</div><div class="line">option overlay_root /overlay</div><div class="line">src/gz chaos_calmer_base http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/base</div><div class="line">src/gz chaos_calmer_luci http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/luci</div><div class="line">src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/packages</div><div class="line">src/gz chaos_calmer_routing http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/routing</div><div class="line">src/gz chaos_calmer_telephony http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/telephony</div><div class="line">src/gz chaos_calmer_management http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/management</div><div class="line">option check_signature 1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext /var/opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">src/gz chaos_calmer_base http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/base</span><br><span class="line">src/gz chaos_calmer_luci http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/luci</span><br><span class="line">src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/packages</span><br><span class="line">src/gz chaos_calmer_routing http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/routing</span><br><span class="line">src/gz chaos_calmer_telephony http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/telephony</span><br><span class="line">src/gz chaos_calmer_management http://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/nand/packages/management</span><br><span class="line">option check_signature 1</span><br></pre></td></tr></table></figure>
 <p>改后：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">dest root /</div><div class="line">dest ram /tmp</div><div class="line">lists_dir ext /var/opkg-lists</div><div class="line">option overlay_root /overlay</div><div class="line">src/gz chaos_calmer_base http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/base</div><div class="line">src/gz chaos_calmer_luci http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/luci</div><div class="line">src/gz chaos_calmer_packages http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/packages</div><div class="line">src/gz chaos_calmer_routing http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/routing</div><div class="line">src/gz chaos_calmer_telephony http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/telephony</div><div class="line">src/gz chaos_calmer_management http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/management</div><div class="line">option check_signature 1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext /var/opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">src/gz chaos_calmer_base http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/base</span><br><span class="line">src/gz chaos_calmer_luci http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/luci</span><br><span class="line">src/gz chaos_calmer_packages http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/packages</span><br><span class="line">src/gz chaos_calmer_routing http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/routing</span><br><span class="line">src/gz chaos_calmer_telephony http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/telephony</span><br><span class="line">src/gz chaos_calmer_management http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/management</span><br><span class="line">option check_signature 1</span><br></pre></td></tr></table></figure>
 <p>好噜，上网再搜了一下，luci的最新的中文界面语言包的包名叫做<code>luci-i18n-base-zh-cn</code>，got后直接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opkg install luci-i18n-base-zh-cn</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg install luci-i18n-base-zh-cn</span><br></pre></td></tr></table></figure>
 <p>就好啦，安装基本包的时候也使用这几个镜像站，等到我们装完ss后再改回来升级安装包吧</p>
 <h2 id="打不开172-168-1-1原因的发现"><a href="#打不开172-168-1-1原因的发现" class="headerlink" title="打不开172.168.1.1原因的发现"></a>打不开172.168.1.1原因的发现</h2><p>之间一路顺风，安装各种依赖包ss chinadns什么的，这个因为之前 <del>作死过很多次</del> 装过很多次，所以还是比较知道的，待老夫配置好ss后启动试试效果，结果踏马的又开不开我的路由器配置界面啦！情况和开始的一样！哇擦！才想起来，172.168.x.x的地址会不会并没有被排除掉然后被ss接管了直接转发出去了，幸好这个时候putty是连接着的（ssh连接为何不受ip地址影响也是不懂了），赶紧关掉ss，发现路由器设置能进了，内心松下一口气，但我也很奇怪，为什么上次回来的时候路由器也是这样搞得一切正常呢。（后想起：ss openwrt版本呢2.3.1后不再自带ignore.list）</p>
 <p>想来想去，好吧，也没有很好的系统层面上的解决方法，ss我也不知道她的实现方法是怎样的，先添加一下排除试试看吧，定位到ss的luci界面，直接在下面添加了排除，重启服务，发现一切正常，可以进入，明白了ss排除有效，因此我需要在ss的ignore.list将172.168.x.x这个域名段全部添加入，排除掉他，这样我内网传输也暂时不会有什么问题了。</p>
@@ -344,7 +344,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2015/12/router-reconfig-2015/" data-title="「重配置WNDR4300手记」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2015/12/router-reconfig-2015/" data-title="「重配置WNDR4300手记」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -380,7 +380,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649745233';
+			'/comments.js?1520216758704';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -401,7 +401,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -765,7 +765,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649750596"></script>
+<script src="/sw-register.js?1520216764574"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

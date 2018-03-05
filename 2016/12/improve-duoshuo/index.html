@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/27/586228e6c8f9e.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/27/586229a1c0dae.png">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.309Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="改进多说">
 <meta name="twitter:description" content="增加用户尾巴 头像/表情转换成https">
@@ -158,15 +158,15 @@
 <li>新浪头像/QQ头像/新浪表情 国内已经支持https了，多说没有及时跟进</li>
 </ol>
 <p>另外多说记录了ua，在用户返回的数据里也给到了发评论的ua，想利用这个ua，展现我们睾贵的操作系统/浏览器/硬件等</p>
-<p>相比不能切换表情，不能收起表情框稍微好那么一点，于是我决定将多说替换成开发版，而且对标准版增加UA以及https的教程网上也有很多，我也进行了参考，我自修改的<a href="https://github.com/xingoxu/improve-duoshuo/blob/b3985130b8fe565e5d47185edcc12c5efc4022ac/embed.js" target="_blank" rel="external">0.32版improve-duoshuo</a>就是使用标准版的多说进行了显示UA，只是没有替换https，如果你需要对标准版进行动手术，欢迎你参考我的这份，也欢迎你参考本篇blog的Reference</p>
+<p>相比不能切换表情，不能收起表情框稍微好那么一点，于是我决定将多说替换成开发版，而且对标准版增加UA以及https的教程网上也有很多，我也进行了参考，我自修改的<a href="https://github.com/xingoxu/improve-duoshuo/blob/b3985130b8fe565e5d47185edcc12c5efc4022ac/embed.js" target="_blank" rel="noopener">0.32版improve-duoshuo</a>就是使用标准版的多说进行了显示UA，只是没有替换https，如果你需要对标准版进行动手术，欢迎你参考我的这份，也欢迎你参考本篇blog的Reference</p>
 <p><strong>以下内容使用多说dev版进行</strong></p>
 <p>首先格式化多说，使其稍微好看一点</p>
-<h1 id="添加https"><a href="#添加https" class="headerlink" title="添加https"></a>添加https</h1><h2 id="用户头像https"><a href="#用户头像https" class="headerlink" title="用户头像https"></a>用户头像https</h2><p>参考<a href="https://blog.nofile.cc/posts/2016/11/26/note-duoshuo-https.html" target="_blank" rel="external">多说插件支持站点 https</a>，在<a href="https://github.com/xingoxu/improve-duoshuo/commit/0c4a3456784e98f5a47ef0a46f5a5f4e3165f66a" target="_blank" rel="external">第2634行</a>替换a字符串</p>
+<h1 id="添加https"><a href="#添加https" class="headerlink" title="添加https"></a>添加https</h1><h2 id="用户头像https"><a href="#用户头像https" class="headerlink" title="用户头像https"></a>用户头像https</h2><p>参考<a href="https://blog.nofile.cc/posts/2016/11/26/note-duoshuo-https.html" target="_blank" rel="noopener">多说插件支持站点 https</a>，在<a href="https://github.com/xingoxu/improve-duoshuo/commit/0c4a3456784e98f5a47ef0a46f5a5f4e3165f66a" target="_blank" rel="noopener">第2634行</a>替换a字符串</p>
 <h2 id="替换表情https"><a href="#替换表情https" class="headerlink" title="替换表情https"></a>替换表情https</h2><p>点击表情后，Network中出现</p>
 <p><img src="https://ooo.0o0.ooo/2016/12/27/586228e6c8f9e.png" alt="点击表情后，DevTools-Network"></p>
 <p>格式化后发现</p>
 <p><img src="https://ooo.0o0.ooo/2016/12/27/586229a1c0dae.png" alt="格式化jsonp"></p>
-<p>证明前缀写死在js中，搜索一下<code>http://</code>，发现和新浪有关的只有<a href="https://github.com/xingoxu/improve-duoshuo/commit/0c4a3456784e98f5a47ef0a46f5a5f4e3165f66a" target="_blank" rel="external">第3333行</a>，修改成https后，问题解决</p>
+<p>证明前缀写死在js中，搜索一下<code>http://</code>，发现和新浪有关的只有<a href="https://github.com/xingoxu/improve-duoshuo/commit/0c4a3456784e98f5a47ef0a46f5a5f4e3165f66a" target="_blank" rel="noopener">第3333行</a>，修改成https后，问题解决</p>
 <h1 id="增加ua"><a href="#增加ua" class="headerlink" title="增加ua"></a>增加ua</h1><p>dev版多说格式化后找到<code>ds-comment-header</code> <code>ds-user-name</code> 附近，发现全部改成了react风格的绑定</p>
 <p>尝试旧逻辑不变，直接插入<code>{ userTail.showAdmin(author) }</code>和 <code>{ userTail.showUA(comment) }</code> </p>
 <blockquote>
@@ -174,13 +174,15 @@
 </blockquote>
 <p>发现逻辑正常，证明模板可以读取全局变量，但输出字符被escape了</p>
 <p>那就只能老老实实的改成模板形式了</p>
-<p>代码参见<a href="https://github.com/xingoxu/improve-duoshuo/commit/81106ba23d110f0e866e627799fc95d6bec6bc76" target="_blank" rel="external">旧2869行/新2847行</a>，没啥技术含量</p>
+<p>代码参见<a href="https://github.com/xingoxu/improve-duoshuo/commit/81106ba23d110f0e866e627799fc95d6bec6bc76" target="_blank" rel="noopener">旧2869行/新2847行</a>，没啥技术含量</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
-<p><a href="https://blog.nofile.cc/posts/2016/11/26/note-duoshuo-https.html" target="_blank" rel="external">多说插件支持站点 https</a></p>
-<p><a href="http://ssk.91txh.com/209" target="_blank" rel="external">多说回复后显示浏览器及操作系统信息（Useragent）</a></p>
+<p><a href="https://blog.nofile.cc/posts/2016/11/26/note-duoshuo-https.html" target="_blank" rel="noopener">多说插件支持站点 https</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://ssk.91txh.com/209" target="_blank" rel="noopener">多说回复后显示浏览器及操作系统信息（Useragent）</a></p>
 </blockquote>
 <h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>多说这几个礼拜天天炸，时不时500，看来是要跑路啊，赶紧趁跑路前上一波https装个逼（雾</p>
-<p>也欢迎对我的<a href="https://github.com/xingoxu/improve-duoshuo" target="_blank" rel="external">improve-duoshuo</a>提issue提pr</p>
+<p>也欢迎对我的<a href="https://github.com/xingoxu/improve-duoshuo" target="_blank" rel="noopener">improve-duoshuo</a>提issue提pr</p>
 
       
     </div>
@@ -216,7 +218,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2016/12/improve-duoshuo/" data-title="「改进多说」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2016/12/improve-duoshuo/" data-title="「改进多说」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -252,7 +254,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649739407';
+			'/comments.js?1520216752196';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -273,7 +275,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -637,7 +639,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649746023"></script>
+<script src="/sw-register.js?1520216759568"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

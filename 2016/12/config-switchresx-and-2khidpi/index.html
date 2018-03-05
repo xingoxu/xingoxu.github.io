@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/18/58569bffcf83b.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/18/5856a391cadba.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/18/5856a5badb5b3.png">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.305Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI">
 <meta name="twitter:description" content="非Apple显示器字体模糊的终极方案   OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI">
@@ -162,8 +162,8 @@
 <p>上面那张图就是干完那两件事情之后的截图，还是那样，粉刺字体，像狗啃过</p>
 <h1 id="试试hidpi？"><a href="#试试hidpi？" class="headerlink" title="试试hidpi？"></a>试试hidpi？</h1><p>在surface上装过虚拟机的黑果，当时用过一个软件叫RDM，为高分屏而准备的（也就是变成Retina的渲染效果），打开发现，有HiDPI的选项，选择1280x800，开启了hidpi，字体平滑了，结果因为显示器是16:9，选择的是16:10，旁边有两条黑边，想选择1280x720，结果点了无反应，唉，无奈 回到原来的分辨率</p>
 <p>所以通过这个事情知道了，并不是显示器的问题，只是苹果在1:1的显示下已经放弃了治疗（同时在思考macbook air朋友的心理阴影）</p>
-<h1 id="探索新可能"><a href="#探索新可能" class="headerlink" title="探索新可能"></a>探索新可能</h1><p>既然知道了hidpi是字体平滑的关键所在，那我就试试往这个方向搜索看看，由<a href="https://www.v2ex.com/t/277921" target="_blank" rel="external">这贴</a>和<a href="https://www.v2ex.com/t/307893" target="_blank" rel="external">这贴</a>和<a href="https://www.zhihu.com/question/27610849" target="_blank" rel="external">这贴</a>得知，osx的渲染和输出是两个步骤，得知了一款SwitchResX的软件，可以修改自定义分辨率，那就尝试一下</p>
-<p>按照<a href="https://www.zhihu.com/question/35300978" target="_blank" rel="external">此贴</a>得票最高做法，安装SwitchResX，关闭SIP，重启，添加Custom Resolution，保存，重启</p>
+<h1 id="探索新可能"><a href="#探索新可能" class="headerlink" title="探索新可能"></a>探索新可能</h1><p>既然知道了hidpi是字体平滑的关键所在，那我就试试往这个方向搜索看看，由<a href="https://www.v2ex.com/t/277921" target="_blank" rel="noopener">这贴</a>和<a href="https://www.v2ex.com/t/307893" target="_blank" rel="noopener">这贴</a>和<a href="https://www.zhihu.com/question/27610849" target="_blank" rel="noopener">这贴</a>得知，osx的渲染和输出是两个步骤，得知了一款SwitchResX的软件，可以修改自定义分辨率，那就尝试一下</p>
+<p>按照<a href="https://www.zhihu.com/question/35300978" target="_blank" rel="noopener">此贴</a>得票最高做法，安装SwitchResX，关闭SIP，重启，添加Custom Resolution，保存，重启</p>
 <p>结果tm是 “Not active - invalid?” ，握日 折腾了一晚上，还是不行吗？心灰意冷之时，拉到下方看到 Sierra 做法，只是比上方多新建一个账户，感觉很奇怪，新建一个账户又能改变什么呢，抱着并不怎么会成功的心态尝试了一下，新建了账户，删除了原有的分辨率，填入了1080px2的分辨率 3840x2160，重启，进入新建的这个账户，尝试一下，居然成功了！</p>
 <p>于是更大胆的思考了一下，既然是渲染与输出两部分，那也就是说，我可以使用5k分辨率HiDPI到2k，进行输出咯？于是我就尝试添加了一个5120x2880，重启，点击切换，哇！成了！字体变得顺滑了！</p>
 <p><img src="https://ooo.0o0.ooo/2016/12/18/5856a391cadba.png" alt="成功在普通2K显示器开启2K HiDPI"></p>
@@ -219,7 +219,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2016/12/config-switchresx-and-2khidpi/" data-title="「新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2016/12/config-switchresx-and-2khidpi/" data-title="「新MacBook Pro连接U2715H并使用SwitchResX开启2K HiDPI」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -255,7 +255,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649739437';
+			'/comments.js?1520216752244';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -276,7 +276,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -640,7 +640,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649746085"></script>
+<script src="/sw-register.js?1520216759639"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/59264ac2020d6.png">
 <meta property="og:image" content="https://lain.bgm.tv/pic/cover/l/1c/df/4014_e6u34.jpg">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.305Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近况">
 <meta name="twitter:description" content="即使是找到了实习，然而还是没能闲下来啊_(:з」∠)_">
@@ -148,19 +148,19 @@
         <p>  即使是找到了实习，然而还是没能闲下来啊_(:з」∠)_</p>
 <a id="more"></a>
 <h2 id="浏览器的dom操作合并"><a href="#浏览器的dom操作合并" class="headerlink" title="浏览器的dom操作合并"></a>浏览器的dom操作合并</h2><p>　　刚学js的时候，明白js单线程时间线的模型，知道dom操作是缓慢的，因此明白要做动画最好应该在css中书写，修改dom只修改他的class，在不同的状态间切换，刚开始做一些动画成功了，然而做一个<code>input[type=text]</code>的错误闪烁框，写了animation，想在两个状态间交换，然而点了却没有反应，无论是用jQ写，还是用原生dom写，在控制台中根本没有变换过，当时很是疑问，最后我<del>异想天开</del>，试了一下setTimeout，把两个状态间的一个放入其中，结果就顺利的展现出想要的效果了。<br>　　当时没有仔细想过，后来当看到优化dom操作，减少重流重绘 博文的时候，猛然想起，浏览器对dom树的操作都是有优化的，同一个时间线中操作dom的操作会被合并成一个，到你下一次读取的时候才会产生变化</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> domElem; <span class="comment">//假设这是dom节点</span></div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;- 'c'</span></div><div class="line">domElem.className = <span class="string">'a'</span>;</div><div class="line">domElem.className = <span class="string">'b'</span>;</div><div class="line">domElem.className = <span class="string">'a'</span>;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">实际上浏览器只干了一件事情</span></div><div class="line"><span class="comment">domElem.className = 'a';</span></div><div class="line"><span class="comment">*/</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;- 'a'</span></div><div class="line">domElem.className = <span class="string">'b'</span>;</div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;-'b'</span></div><div class="line">domElem.className = <span class="string">'c'</span>;</div><div class="line"><span class="built_in">console</span>.log(domElem.className);</div><div class="line"><span class="comment">//&lt;-'c'</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domElem; <span class="comment">//假设这是dom节点</span></span><br><span class="line"><span class="built_in">console</span>.log(domElem.className);</span><br><span class="line"><span class="comment">//&lt;- 'c'</span></span><br><span class="line">domElem.className = <span class="string">'a'</span>;</span><br><span class="line">domElem.className = <span class="string">'b'</span>;</span><br><span class="line">domElem.className = <span class="string">'a'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">实际上浏览器只干了一件事情</span></span><br><span class="line"><span class="comment">domElem.className = 'a';</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(domElem.className);</span><br><span class="line"><span class="comment">//&lt;- 'a'</span></span><br><span class="line">domElem.className = <span class="string">'b'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(domElem.className);</span><br><span class="line"><span class="comment">//&lt;-'b'</span></span><br><span class="line">domElem.className = <span class="string">'c'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(domElem.className);</span><br><span class="line"><span class="comment">//&lt;-'c'</span></span><br></pre></td></tr></table></figure>
 <h2 id="React的学习"><a href="#React的学习" class="headerlink" title="React的学习"></a>React的学习</h2><p>　　<del>工作量不够</del>趁着空闲的时间，学习了React【，感受是React其实是单向版的Vue，但React最重要的是它带给我们的Components的概念，React其他的东西非常小，不依赖组件，什么都没有，可以说是Virtual Dom版的Mustache，正因为其他都很小，他的Components就变成了他想传达给我们的理念<del>（大概是这样）</del>。看了getting started，手痒痒，写了一个一直很想做的一个东西，感觉用React来写这个真是太合适了</p>
 <blockquote>
-<p><a href="http://works.xingoxu.com/buy-calc/" target="_blank" rel="external">日系剁手网站价格综合对比工具</a></p>
+<p><a href="http://works.xingoxu.com/buy-calc/" target="_blank" rel="noopener">日系剁手网站价格综合对比工具</a></p>
 </blockquote>
 <p>其实我最想对比的是亚马逊直邮和代购之间的价格差，但是亚马逊这个计费规则实在是太奇葩了，而且，真结算的时候貌似并不是他的那个计费规则，所以只好暂时搁置</p>
 <p>因为之前有MVVM框架的概念，在学习Vue和React就显得简单了很多，作为在实际使用的人来说，三种框架（Angularjs, React, Vue）我感觉写的最顺手的，最符合顺下来的思路的，还是Vue</p>
-<h2 id="利用Performance追踪运营商广告"><a href="#利用Performance追踪运营商广告" class="headerlink" title="利用Performance追踪运营商广告"></a>利用Performance追踪运营商广告</h2><p>　　这几天，智障的上海电信又给我插入了丰富的广告内容，以前插的是什么jd啦，taobao啦，tmall啦，一号店啦，现在他们都上https了，丧心病狂的电信就开始插cnbeta，csdn，s1，卧槽，excuse me，你这样挑衅技术真的好吗？<br>  　好吧，你赢了，我承认当我看到和感受到被插了，我打开chrome面板只能看到当前的html的结构，network部分是空空的，只能从html结构里查插入的广告服务器地址。<br>      然而前几天在<a href="http://weibo.com/u/2313289447" target="_blank" rel="external">@EtherDream</a> 微博上看到的这条语句，就可以快速的筛出非本域的加载的资源了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performance.getEntries().forEach(<span class="function"><span class="params">v</span>=&gt;</span> <span class="built_in">console</span>.log(v.name));</div></pre></td></tr></table></figure>
+<h2 id="利用Performance追踪运营商广告"><a href="#利用Performance追踪运营商广告" class="headerlink" title="利用Performance追踪运营商广告"></a>利用Performance追踪运营商广告</h2><p>　　这几天，智障的上海电信又给我插入了丰富的广告内容，以前插的是什么jd啦，taobao啦，tmall啦，一号店啦，现在他们都上https了，丧心病狂的电信就开始插cnbeta，csdn，s1，卧槽，excuse me，你这样挑衅技术真的好吗？<br>  　好吧，你赢了，我承认当我看到和感受到被插了，我打开chrome面板只能看到当前的html的结构，network部分是空空的，只能从html结构里查插入的广告服务器地址。<br>      然而前几天在<a href="http://weibo.com/u/2313289447" target="_blank" rel="noopener">@EtherDream</a> 微博上看到的这条语句，就可以快速的筛出非本域的加载的资源了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">performance.getEntries().forEach(<span class="function"><span class="params">v</span>=&gt;</span> <span class="built_in">console</span>.log(v.name));</span><br></pre></td></tr></table></figure>
 <p>　　然而我们狗日的上海电信是tcp劫持给你插包，把正常网页插在iframe中返回，真几把酷炫，希望电信原地爆炸，全家上天，并求大佬给点流量到他们的广告服务器上【。</p>
 <h2 id="近期游戏与番"><a href="#近期游戏与番" class="headerlink" title="近期游戏与番"></a>近期游戏与番</h2><p>  　8月买了胧村正，卧槽，这游戏真好玩！三个礼拜本篇白金！现在正在努力DLC全奖杯中~</p>
 <p>  <img src="https://ooo.0o0.ooo/2017/05/25/59264ac2020d6.png" alt="本篇与DLC1完美通关~"></p>
-<p>  番的话，最近看了<a href="https://bgm.tv/subject/4014" target="_blank" rel="external">《异邦人 无皇刃谭》</a>，超好看，推荐！<br>  <img src="https://lain.bgm.tv/pic/cover/l/1c/df/4014_e6u34.jpg" alt="异邦人 无皇刃谭"></p>
+<p>  番的话，最近看了<a href="https://bgm.tv/subject/4014" target="_blank" rel="noopener">《异邦人 无皇刃谭》</a>，超好看，推荐！<br>  <img src="https://lain.bgm.tv/pic/cover/l/1c/df/4014_e6u34.jpg" alt="异邦人 无皇刃谭"></p>
 
       
     </div>
@@ -196,7 +196,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2016/09/2016-09-18/" data-title="「近况」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2016/09/2016-09-18/" data-title="「近况」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -232,7 +232,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649739465';
+			'/comments.js?1520216752279';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -253,7 +253,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -617,7 +617,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649746151"></script>
+<script src="/sw-register.js?1520216759703"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

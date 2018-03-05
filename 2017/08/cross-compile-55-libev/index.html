@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987eac266528.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987f6bf102a1.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987e533d41aa.jpg">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.305Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="交叉编译原版某不可描述程序为梅林某停更插件续命">
 <meta name="twitter:description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码">
@@ -147,11 +147,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Forked from <a href="http://telegra.ph/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%8E%9F%E7%89%88shadowsocks%E4%B8%BAkoolshare%E6%A2%85%E6%9E%97ss%E6%8F%92%E4%BB%B6%E7%BB%AD%E5%91%BD-08-07" target="_blank" rel="external">原文 and 非自审查版</a></p>
+<p>Forked from <a href="http://telegra.ph/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%8E%9F%E7%89%88shadowsocks%E4%B8%BAkoolshare%E6%A2%85%E6%9E%97ss%E6%8F%92%E4%BB%B6%E7%BB%AD%E5%91%BD-08-07" target="_blank" rel="noopener">原文 and 非自审查版</a></p>
 </blockquote>
 <h1 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h1><ol>
 <li>ubuntu 16.04</li>
-<li><a href="https://github.com/RMerl/asuswrt-merlin" target="_blank" rel="external">原版梅林源码</a></li>
+<li><a href="https://github.com/RMerl/asuswrt-merlin" target="_blank" rel="noopener">原版梅林源码</a></li>
 <li>55-libev 源码</li>
 </ol>
 <a id="more"></a>
@@ -163,7 +163,7 @@
 <h2 id="55-libev-源码"><a href="#55-libev-源码" class="headerlink" title="55-libev 源码"></a>55-libev 源码</h2><p>不解释</p>
 <h1 id="炼丹编译"><a href="#炼丹编译" class="headerlink" title="炼丹编译"></a>炼丹编译</h1><h2 id="镜像准备与-arm-linux-gcc"><a href="#镜像准备与-arm-linux-gcc" class="headerlink" title="镜像准备与 arm-linux-gcc"></a>镜像准备与 arm-linux-gcc</h2><p>ubuntu 首先需要安装一些编译工具，如果对系统有洁癖的，推荐使用docker，我使用了别人写好的 DockerFile 的镜像</p>
 <blockquote>
-<p><a href="https://github.com/mritd/dockerfile/tree/master/asuswrt-merlin-build" target="_blank" rel="external">Asuswrt Merlin 固件交叉编译环境</a></p>
+<p><a href="https://github.com/mritd/dockerfile/tree/master/asuswrt-merlin-build" target="_blank" rel="noopener">Asuswrt Merlin 固件交叉编译环境</a></p>
 </blockquote>
 <p>启动并挂载源码，运行 <code>docker exec -it container-name zsh</code></p>
 <p>进入容器后尝试运行 <code>arm-linux-gcc</code></p>
@@ -171,7 +171,7 @@
 <p>如果出现 其他，请检查路径，权限，否则等下编译出来的可能是 ubuntu 的 55 （我之前编译时，解压后arm-linux-gcc没有运行权限，于是没法编译，给了权限就可以了）</p>
 <h2 id="编译-55-依赖与-55"><a href="#编译-55-依赖与-55" class="headerlink" title="编译 55 依赖与 55"></a>编译 55 依赖与 55</h2><p>编译 55 还有一些依赖需要安装，以下过程参阅</p>
 <blockquote>
-<p><a href="https://haoutil.com/topic/cross-compile-shadowsocks-libev" target="_blank" rel="external">交叉编译55-libev</a></p>
+<p><a href="https://haoutil.com/topic/cross-compile-shadowsocks-libev" target="_blank" rel="noopener">交叉编译55-libev</a></p>
 </blockquote>
 <p>需要编译 <code>mbedTLS</code>、<code>pcre</code>、<code>libsodium</code>、<code>libev</code>、<code>libudns</code></p>
 <p>按照原博文的编译后，最后编译 55 时死活没有检测到编译了libudns，怕是编译后文件夹没有添加到 <code>PATH</code> 中，当然刚才的博文里还提供了一键编译脚本，但那个一键编译脚本中判断参数的部分在ubuntu里报错，于是我就去了，直接写死环境 <code>arm-linux</code> 即可</p>
@@ -226,7 +226,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2017/08/cross-compile-55-libev/" data-title="「交叉编译原版某不可描述程序为梅林某停更插件续命」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2017/08/cross-compile-55-libev/" data-title="「交叉编译原版某不可描述程序为梅林某停更插件续命」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -262,7 +262,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649739290';
+			'/comments.js?1520216752045';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -283,7 +283,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -647,7 +647,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649745804"></script>
+<script src="/sw-register.js?1520216759324"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

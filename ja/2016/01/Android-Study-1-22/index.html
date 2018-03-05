@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bc2810.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb12d7.png">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.305Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写一些最近Android学习中遇到的坑以及心得">
 <meta name="twitter:description" content="Intro: Android Studio Library的导入与导出 Java的Exception再复习 Handler的内存泄漏问题与其相关的Looper坑 AppCompat v7的Toolbar与Contextual ActionBar 心得">
@@ -156,7 +156,7 @@
 <li>心得</li>
 </ol>
 <a id="more"></a>
-<h2 id="最近Loop：シュガーソングとビターステップ"><a href="#最近Loop：シュガーソングとビターステップ" class="headerlink" title="最近Loop：シュガーソングとビターステップ"></a>最近Loop：<a href="http://music.163.com/#/song?id=32192451" target="_blank" rel="external">シュガーソングとビターステップ</a></h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=32192451&auto=0&height=66"></iframe>
+<h2 id="最近Loop：シュガーソングとビターステップ"><a href="#最近Loop：シュガーソングとビターステップ" class="headerlink" title="最近Loop：シュガーソングとビターステップ"></a>最近Loop：<a href="http://music.163.com/#/song?id=32192451" target="_blank" rel="noopener">シュガーソングとビターステップ</a></h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=32192451&auto=0&height=66"></iframe>
 
 
 <h2 id="Android-Studio-库相关的正确使用姿势"><a href="#Android-Studio-库相关的正确使用姿势" class="headerlink" title="Android Studio 库相关的正确使用姿势"></a>Android Studio 库相关的正确使用姿势</h2><p>Android Studio 1.5.x 更新后很多网上找到的其他教程包括回答基本都是旧版本的，直接lib下添加，然而在编译时总是遇到这样那样的问题，原因在于Gradle会把jar compile了，然而module本身的package(感觉相当于命名空间？)却没有导入，当你导入后，两行命令相互打架编译时能通过却无法生成apk提示错误。提示的错误五花八门，一会是java虚拟机非0退出，一会是Class文件重名。</p>
@@ -190,16 +190,16 @@
 <h3 id="如何考虑异常的捕获"><a href="#如何考虑异常的捕获" class="headerlink" title="如何考虑异常的捕获"></a>如何考虑异常的捕获</h3><p>“底层抛出，顶层记录解决”，是一句比较正确程序观的话。</p>
 <h2 id="Handler的内存泄露问题"><a href="#Handler的内存泄露问题" class="headerlink" title="Handler的内存泄露问题"></a>Handler的内存泄露问题</h2><p>这个问题的引发是由于在实践Handler时使用匿名内部类/非静态内部类重写handleMessage方法，Android Studio的深色提示会显示：</p>
 <p><img src="https://ooo.0o0.ooo/2017/05/25/5926470bb12d7.png" alt="Handler Memory Leaks Tips"></p>
-<p>这个问题的解决很多文章很多回答都有，贴两个：<br><a href="http://blog.csdn.net/lincyang/article/details/46875157" target="_blank" rel="external">http://blog.csdn.net/lincyang/article/details/46875157</a><br><a href="http://www.jianshu.com/p/cb9b4b71a820" target="_blank" rel="external">http://www.jianshu.com/p/cb9b4b71a820</a></p>
-<p>在看这些回答前，应该先了解，在Java中的引用与垃圾回收的机制，以及强弱引用<br><a href="http://blog.csdn.net/matrix_xu/article/details/8424038" target="_blank" rel="external">http://blog.csdn.net/matrix_xu/article/details/8424038</a></p>
+<p>这个问题的解决很多文章很多回答都有，贴两个：<br><a href="http://blog.csdn.net/lincyang/article/details/46875157" target="_blank" rel="noopener">http://blog.csdn.net/lincyang/article/details/46875157</a><br><a href="http://www.jianshu.com/p/cb9b4b71a820" target="_blank" rel="noopener">http://www.jianshu.com/p/cb9b4b71a820</a></p>
+<p>在看这些回答前，应该先了解，在Java中的引用与垃圾回收的机制，以及强弱引用<br><a href="http://blog.csdn.net/matrix_xu/article/details/8424038" target="_blank" rel="noopener">http://blog.csdn.net/matrix_xu/article/details/8424038</a></p>
 <p>对于这些回答中的一些小疏漏就是，对于任何外界（生命周期比Handler短）的引用，都应该用WeakReference</p>
 <h3 id="深层次想法"><a href="#深层次想法" class="headerlink" title="深层次想法"></a>深层次想法</h3><p>对于内存泄漏，就是该释放的时候，系统的垃圾回收器没办法释放掉，原因是有强引用正在引用着这个对象，如果说两个对象的生命周期一致，则没有这个问题，如果说生命周期比我生成的对象要短，而且，我不一定需要这个对象一定是保存到我的对象结束为止的话，就应该使用弱引用而不是强引用</p>
 <h2 id="Looper"><a href="#Looper" class="headerlink" title="Looper"></a>Looper</h2><p>Looper这个坑真是深的不行，所有的学习过程中，包括看视频啊，看书啊，看博客啊，都没有提到。<br>对于线程之间的通信，使用的是Handler/Message Queue进行相互交流，对于自行new 的线程，我们需要执行以下两步来初始化Looper以保证Handler能处理消息</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="comment">//do anything</span></div><div class="line">	Looper.prepare();</div><div class="line">	<span class="comment">//prepare your Handler here and do anything</span></div><div class="line">	Looper.loop();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//do anything</span></span><br><span class="line">	Looper.prepare();</span><br><span class="line">	<span class="comment">//prepare your Handler here and do anything</span></span><br><span class="line">	Looper.loop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然而当我们的Handler处理完消息，我们的消息只需要处理一次，想要把线程终结了的时候，没有视频，没有书会告诉你，要记得把Looper关掉，源码是说Looper.loop()是死循环，因此Thread永远不会停止，Handler永远会接受消息，没错Handler的职责就是一直负责处理消息，然而如果没有消息再进来了，这时我们不需要这条线程这个Handler这个Looper了，如果一直不停的创建Looper，则会引发Android的Assert!<br>Assert的提示是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Abort message: &apos;Could not create wake pipe.  errno=24&apos;</div></pre></td></tr></table></figure>
-<p>或者是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Looper: Could not create epoll instance.  errno=24</div></pre></td></tr></table></figure></p>
-<p>有时会提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/A art/runtime/indirect_reference_table.cc:77] Check failed: table_mem_map_.get() != nullptr ashmem_create_region failed for &apos;indirect ref table&apos;: Too many open files</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Abort message: &apos;Could not create wake pipe.  errno=24&apos;</span><br></pre></td></tr></table></figure>
+<p>或者是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Looper: Could not create epoll instance.  errno=24</span><br></pre></td></tr></table></figure></p>
+<p>有时会提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/A art/runtime/indirect_reference_table.cc:77] Check failed: table_mem_map_.get() != nullptr ashmem_create_region failed for &apos;indirect ref table&apos;: Too many open files</span><br></pre></td></tr></table></figure></p>
 <p>真是千奇百怪的错误提示，google搜了一大圈都没搜到，也从来没有往Looper这个方向想，尽管loop是死循环，但对他死循环没有卡系统也就没有想太多</p>
 <p>根本原因Looper的实现是用pipe//待探究</p>
 <p>最后解决是如果我处理完了信息不需要Looper了，对Looper<strong>对象</strong>进行quit()就可以了：looper.quit();，这样线程也就随之而结束了</p>
@@ -209,18 +209,18 @@
 <p>当然啦，如果处理异步，规范的做法应该是两条线程，主线程交给后台线程进行处理耗时操作，而不是每次新开的一个线程里直接发送返回处理</p>
 <p><del>（我不会说我在写这段话的时候才想起来应该这么做，这个问题可困扰我好长时间了）</del></p>
 <p>对于有兴趣想知道为什么我会找到这样问题的可以来看：</p>
-<p><a href="https://github.com/xingoxu/pixivAPI_android/blob/90de95bb4e475ad0211b449d22b06bdc3b7e7bf4/app/src/main/java/com/xingoxu/pixivapi_in_android/Logic/pixivImageCacheHelper.java" target="_blank" rel="external">pixivImageCacheHelper</a></p>
+<p><a href="https://github.com/xingoxu/pixivAPI_android/blob/90de95bb4e475ad0211b449d22b06bdc3b7e7bf4/app/src/main/java/com/xingoxu/pixivapi_in_android/Logic/pixivImageCacheHelper.java" target="_blank" rel="noopener">pixivImageCacheHelper</a></p>
 <blockquote>
 <p>想法是新开一个线程发送请求后就在当前线程处理返回的请求，应该做法是在新开的线程中定义Handler，将这个handler作为主线程发送的请求的参数</p>
 </blockquote>
 <h2 id="AppCompat-v7的Toolbar与Contextual-ActionBar的坑"><a href="#AppCompat-v7的Toolbar与Contextual-ActionBar的坑" class="headerlink" title="AppCompat v7的Toolbar与Contextual ActionBar的坑"></a>AppCompat v7的Toolbar与Contextual ActionBar的坑</h2><p>Google 在v7兼容包发布后对于Contextual ActionMode感觉上来说不太支持，所有的文档也并不鼓励使用Contextual ActionMode，然后在使用的过程中就感受到了满满的恶意</p>
 <blockquote>
-<p><a href="http://developer.android.com/guide/topics/ui/menus.html#CAB" target="_blank" rel="external">来自谷歌官方的提示：</a><br>Note: The contextual action bar is not necessarily associated with the app bar. They operate independently, even though the contextual action bar visually overtakes the app bar position.</p>
+<p><a href="http://developer.android.com/guide/topics/ui/menus.html#CAB" target="_blank" rel="noopener">来自谷歌官方的提示：</a><br>Note: The contextual action bar is not necessarily associated with the app bar. They operate independently, even though the contextual action bar visually overtakes the app bar position.</p>
 </blockquote>
 <p>Toolbar and Contextual ActionBar with AppCompat-v7</p>
-<p><a href="https://stackoverflow.com/questions/26443403/toolbar-and-contextual-actionbar-with-appcompat-v7" target="_blank" rel="external">https://stackoverflow.com/questions/26443403/toolbar-and-contextual-actionbar-with-appcompat-v7</a><br><a href="http://stackoverflow.com/questions/27663853/how-to-make-the-contextual-actionmode-bar-overlay-the-appcompat-v7-toolbar-but-n" target="_blank" rel="external">http://stackoverflow.com/questions/27663853/how-to-make-the-contextual-actionmode-bar-overlay-the-appcompat-v7-toolbar-but-n</a></p>
-<p><a href="http://stackoverflow.com/questions/32318563/appcompat-v7-v23-0-0-statusbar-color-black-when-in-actionmode" target="_blank" rel="external">http://stackoverflow.com/questions/32318563/appcompat-v7-v23-0-0-statusbar-color-black-when-in-actionmode</a></p>
-<p>最后对于ActionMode的status bar变黑问题上，我选择了：<br><a href="http://stackoverflow.com/questions/30180091/when-using-actionmode-the-status-bar-turns-black-on-lollipop" target="_blank" rel="external">http://stackoverflow.com/questions/30180091/when-using-actionmode-the-status-bar-turns-black-on-lollipop</a><br>的处理方法，虽然不够完美，有精力的话是会想重新自己造轮子的</p>
+<p><a href="https://stackoverflow.com/questions/26443403/toolbar-and-contextual-actionbar-with-appcompat-v7" target="_blank" rel="noopener">https://stackoverflow.com/questions/26443403/toolbar-and-contextual-actionbar-with-appcompat-v7</a><br><a href="http://stackoverflow.com/questions/27663853/how-to-make-the-contextual-actionmode-bar-overlay-the-appcompat-v7-toolbar-but-n" target="_blank" rel="noopener">http://stackoverflow.com/questions/27663853/how-to-make-the-contextual-actionmode-bar-overlay-the-appcompat-v7-toolbar-but-n</a></p>
+<p><a href="http://stackoverflow.com/questions/32318563/appcompat-v7-v23-0-0-statusbar-color-black-when-in-actionmode" target="_blank" rel="noopener">http://stackoverflow.com/questions/32318563/appcompat-v7-v23-0-0-statusbar-color-black-when-in-actionmode</a></p>
+<p>最后对于ActionMode的status bar变黑问题上，我选择了：<br><a href="http://stackoverflow.com/questions/30180091/when-using-actionmode-the-status-bar-turns-black-on-lollipop" target="_blank" rel="noopener">http://stackoverflow.com/questions/30180091/when-using-actionmode-the-status-bar-turns-black-on-lollipop</a><br>的处理方法，虽然不够完美，有精力的话是会想重新自己造轮子的</p>
 <h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>感谢你看到这里！</p>
 <p>对Java/Android的设计模式感受到了前所未有的累，虽然知道他用的这个模式，自己在写的时候虽然只是模仿就已经是非常艰难了，因为是在学习，虽然是以作品驱动的学习动力，也不敢乱用第三方的库啊什么的，嘛，希望自己能够加油！ <del>自己选的坑含着泪也要跳下去</del></p>
 <h3 id="IDEA-Android-Studio的一些自用快捷键："><a href="#IDEA-Android-Studio的一些自用快捷键：" class="headerlink" title="IDEA/Android Studio的一些自用快捷键："></a>IDEA/Android Studio的一些自用快捷键：</h3><ul>
@@ -231,9 +231,9 @@
 </ul>
 <h3 id="References："><a href="#References：" class="headerlink" title="References："></a>References：</h3><p>都是已经填平了的坑的文章，感谢这些作者的付出！</p>
 <blockquote>
-<p><a href="https://android.googlesource.com/platform/development/+/master/samples/ApiDemos/" target="_blank" rel="external">API Demos Source Code From Git at Google</a><br><a href="http://stackoverflow.com/q/4237469" target="_blank" rel="external">Why do variable names often start with the letter ‘m’?</a><br><a href="http://my.oschina.net/blackylin/blog/144342" target="_blank" rel="external">imageView src与background关于alpha的两三事</a><br><a href="http://blog.csdn.net/lmj623565791/article/details/45059587" target="_blank" rel="external">RecyclerView的使用</a><br><a href="https://www.bignerdranch.com/blog/recyclerview-part-2-choice-modes/" target="_blank" rel="external">为RecyclerView 添加ChoiceMode</a></p>
-<p>大量图片异步加载<br><a href="http://blog.csdn.net/chdjj/article/details/20455791" target="_blank" rel="external">http://blog.csdn.net/chdjj/article/details/20455791</a><br><a href="https://developer.android.com/training/displaying-bitmaps/cache-bitmap.html" target="_blank" rel="external">https://developer.android.com/training/displaying-bitmaps/cache-bitmap.html</a></p>
-<p>SwipeRefreshLayout RecyclerView的下拉刷新与上拉加载<br><a href="http://51up.club/2015/10/13/SwipeRefreshLayout-RecyclerView-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A/" target="_blank" rel="external">http://51up.club/2015/10/13/SwipeRefreshLayout-RecyclerView-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A/</a><br><a href="https://www.easydone.cn/2015/10/26/" target="_blank" rel="external">https://www.easydone.cn/2015/10/26/</a></p>
+<p><a href="https://android.googlesource.com/platform/development/+/master/samples/ApiDemos/" target="_blank" rel="noopener">API Demos Source Code From Git at Google</a><br><a href="http://stackoverflow.com/q/4237469" target="_blank" rel="noopener">Why do variable names often start with the letter ‘m’?</a><br><a href="http://my.oschina.net/blackylin/blog/144342" target="_blank" rel="noopener">imageView src与background关于alpha的两三事</a><br><a href="http://blog.csdn.net/lmj623565791/article/details/45059587" target="_blank" rel="noopener">RecyclerView的使用</a><br><a href="https://www.bignerdranch.com/blog/recyclerview-part-2-choice-modes/" target="_blank" rel="noopener">为RecyclerView 添加ChoiceMode</a></p>
+<p>大量图片异步加载<br><a href="http://blog.csdn.net/chdjj/article/details/20455791" target="_blank" rel="noopener">http://blog.csdn.net/chdjj/article/details/20455791</a><br><a href="https://developer.android.com/training/displaying-bitmaps/cache-bitmap.html" target="_blank" rel="noopener">https://developer.android.com/training/displaying-bitmaps/cache-bitmap.html</a></p>
+<p>SwipeRefreshLayout RecyclerView的下拉刷新与上拉加载<br><a href="http://51up.club/2015/10/13/SwipeRefreshLayout-RecyclerView-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A/" target="_blank" rel="noopener">http://51up.club/2015/10/13/SwipeRefreshLayout-RecyclerView-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A/</a><br><a href="https://www.easydone.cn/2015/10/26/" target="_blank" rel="noopener">https://www.easydone.cn/2015/10/26/</a></p>
 </blockquote>
 
       
@@ -398,7 +398,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2016/01/Android-Study-1-22/" data-title="「写一些最近Android学习中遇到的坑以及心得」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2016/01/Android-Study-1-22/" data-title="「写一些最近Android学习中遇到的坑以及心得」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -434,7 +434,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649744978';
+			'/comments.js?1520216758203';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -455,7 +455,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -819,7 +819,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649749945"></script>
+<script src="/sw-register.js?1520216763536"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

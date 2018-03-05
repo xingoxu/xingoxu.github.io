@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.309Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给github pages上ssl(hexo可用)">
 <meta name="twitter:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
@@ -160,12 +160,12 @@
 </ol>
 <p>等待一个小时左右，Cloudflare就会为你的网站配上证书了</p>
 <h1 id="强制网页跳转https"><a href="#强制网页跳转https" class="headerlink" title="强制网页跳转https"></a>强制网页跳转https</h1><p>在头代码中加入</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></div><div class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></div><div class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="Letting-Search-Engine-know"><a href="#Letting-Search-Engine-know" class="headerlink" title="Letting Search Engine know"></a>Letting Search Engine know</h1><p>Add these following in <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> <span class="attr">https://www.yoursite.com</span>   <span class="comment"># with the https protocol</span></div><div class="line"><span class="attr">enforce_ssl:</span> <span class="string">www.yoursite.com</span>   <span class="comment"># without any protocol</span></div></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="attr">https://www.yoursite.com</span>   <span class="comment"># with the https protocol</span></span><br><span class="line"><span class="attr">enforce_ssl:</span> <span class="string">www.yoursite.com</span>   <span class="comment"># without any protocol</span></span><br></pre></td></tr></table></figure>
 <h1 id="Caution"><a href="#Caution" class="headerlink" title="Caution"></a>Caution</h1><p>CloudFlare提供的SSL服务是基于SNI技术的，也就是说，机子上是IE8及以下用户完全无法打开（Chrome使用证书为系统，所以在win7下IE8的Chrome浏览器也是无法打开的，无论版本），注意了</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
-<p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="external">Set Up SSL on Github Pages With Custom Domains for Free</a><br><a href="http://hexo.io/docs/variables.html" target="_blank" rel="external">Variables | Hexo</a></p>
+<p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="noopener">Set Up SSL on Github Pages With Custom Domains for Free</a><br><a href="http://hexo.io/docs/variables.html" target="_blank" rel="noopener">Variables | Hexo</a></p>
 </blockquote>
 
       
@@ -202,7 +202,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2015/04/github-pages-ssl/" data-title="「给github pages上ssl(hexo可用)」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2015/04/github-pages-ssl/" data-title="「给github pages上ssl(hexo可用)」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -238,7 +238,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649739889';
+			'/comments.js?1520216752789';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -259,7 +259,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -623,7 +623,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649747092"></script>
+<script src="/sw-register.js?1520216760853"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

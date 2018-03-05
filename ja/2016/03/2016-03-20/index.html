@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="Intro: 重拾HTML/CSS jQuery与Firefox的一个坑 心得">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2017-10-22T05:21:13.305Z">
+<meta property="og:updated_time" content="2018-03-05T02:24:38.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期学习小结">
 <meta name="twitter:description" content="Intro: 重拾HTML/CSS jQuery与Firefox的一个坑 心得">
@@ -161,12 +161,12 @@
 <p>其实学习HTML/CSS入门很快，但我经常发处女病（这边怎么会多1px？/这边怎么看上去不像是10px？/这边间距是不是多了4px？），但幸好不是坏事，了解了许多许多之前并没有了解的事情。</p>
 <p>好多都有了现有的文章啦，也就不再多阐述了。</p>
 <blockquote>
-<p><a href="http://www.zhangxinxu.com/wordpress/?p=2427" target="_blank" rel="external">transform的matrix</a><br><a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="external">CSS 外边距合并</a><br><a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank" rel="external">垂直外边距合并问题</a><br><a href="http://www.cnblogs.com/myqianlan/p/4255346.html" target="_blank" rel="external">a img 高度多4px</a><br><a href="http://blog.csdn.net/chen_zw/article/details/8741365" target="_blank" rel="external">position属性</a><br><a href="http://zihua.li/2013/12/keep-height-relevant-to-width-using-css/" target="_blank" rel="external">宽高成比例</a> 《- 没想到padding的height百分比是以width作参照的<br><a href="http://www.zhangxinxu.com/wordpress/?p=2357" target="_blank" rel="external">inline-block 4px（间距）问题</a><br><a href="http://www.w3chtml.com/css3/properties/user-interface/box-sizing.html" target="_blank" rel="external">box-sizing</a><br><a href="http://www.cnblogs.com/mofish/archive/2012/05/14/2499400.html" target="_blank" rel="external">clearfix</a><br><a href="http://www.cnblogs.com/KeithWang/p/3139517.html" target="_blank" rel="external">block inline inline-block</a><br><a href="https://segmentfault.com/a/1190000003038583" target="_blank" rel="external">line-height</a><br><a href="http://www.zhangxinxu.com/wordpress/?p=4925" target="_blank" rel="external">vertical align line-height</a><br>内联元素对齐与基线对齐，块级元素与边框对齐<br>行高是整行的高度，并不是盒子的高度，你可以理解为盒子浮在行上，行拉开了，但是盒子还是那么高</p>
+<p><a href="http://www.zhangxinxu.com/wordpress/?p=2427" target="_blank" rel="noopener">transform的matrix</a><br><a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="noopener">CSS 外边距合并</a><br><a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank" rel="noopener">垂直外边距合并问题</a><br><a href="http://www.cnblogs.com/myqianlan/p/4255346.html" target="_blank" rel="noopener">a img 高度多4px</a><br><a href="http://blog.csdn.net/chen_zw/article/details/8741365" target="_blank" rel="noopener">position属性</a><br><a href="http://zihua.li/2013/12/keep-height-relevant-to-width-using-css/" target="_blank" rel="noopener">宽高成比例</a> 《- 没想到padding的height百分比是以width作参照的<br><a href="http://www.zhangxinxu.com/wordpress/?p=2357" target="_blank" rel="noopener">inline-block 4px（间距）问题</a><br><a href="http://www.w3chtml.com/css3/properties/user-interface/box-sizing.html" target="_blank" rel="noopener">box-sizing</a><br><a href="http://www.cnblogs.com/mofish/archive/2012/05/14/2499400.html" target="_blank" rel="noopener">clearfix</a><br><a href="http://www.cnblogs.com/KeithWang/p/3139517.html" target="_blank" rel="noopener">block inline inline-block</a><br><a href="https://segmentfault.com/a/1190000003038583" target="_blank" rel="noopener">line-height</a><br><a href="http://www.zhangxinxu.com/wordpress/?p=4925" target="_blank" rel="noopener">vertical align line-height</a><br>内联元素对齐与基线对齐，块级元素与边框对齐<br>行高是整行的高度，并不是盒子的高度，你可以理解为盒子浮在行上，行拉开了，但是盒子还是那么高</p>
 </blockquote>
 <h1 id="jQuery与Firefox的一个坑"><a href="#jQuery与Firefox的一个坑" class="headerlink" title="jQuery与Firefox的一个坑"></a>jQuery与Firefox的一个坑</h1><p>在写本博客主题的时候，碰到了一个玛德超奇怪的一个问题，为某个按钮添加了mousedown与mouseup事件，然后再给这个按钮添加了click事件，结果呢，IE都反应正常，firefox居然不发生click事件！嘿你敢信？虽然我的mouseup事件是停止了冒泡，然而关click事件奶子事情？事件冒泡不应该只是对于文档层次而言的吗？不是很懂你们Firefox，暂时先把click事件变成mouseup事件</p>
 <p>其他关于js的一些小坑~</p>
 <blockquote>
-<p><a href="http://www.cnblogs.com/feng524822/p/4084037.html" target="_blank" rel="external">label触发两次click事件</a><br><a href="http://www.w3school.com.cn/tags/tag_label.asp" target="_blank" rel="external">label与input关系</a><br><a href="http://stackoverflow.com/questions/24639335/javascript-console-log-causes-error-synchronous-xmlhttprequest-on-the-main-thr" target="_blank" rel="external">sync script</a><br>jQuery现在已经官方支持了live-query，方法名是on off<br><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">js的模块化加载框架 - requireJS</a><br>ejs貌似对switch语句不识别</p>
+<p><a href="http://www.cnblogs.com/feng524822/p/4084037.html" target="_blank" rel="noopener">label触发两次click事件</a><br><a href="http://www.w3school.com.cn/tags/tag_label.asp" target="_blank" rel="noopener">label与input关系</a><br><a href="http://stackoverflow.com/questions/24639335/javascript-console-log-causes-error-synchronous-xmlhttprequest-on-the-main-thr" target="_blank" rel="noopener">sync script</a><br>jQuery现在已经官方支持了live-query，方法名是on off<br><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="noopener">js的模块化加载框架 - requireJS</a><br>ejs貌似对switch语句不识别</p>
 </blockquote>
 <h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>前端这边入门门槛很低，得益于完备的各大网站的html/css的完整的文档（翻译自w3school，以及各大前辈的博客），以及jquery的文档做的也很棒，学习起来真的特别方便！话说在学习jQuery的时候感觉把css所有的选择器重新复习了233</p>
 
@@ -332,7 +332,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2016/03/2016-03-20/" data-title="「近期学习小结」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="undefined" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2016/03/2016-03-20/" data-title="「近期学习小结」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -368,7 +368,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1508649744698';
+			'/comments.js?1520216758101';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -389,7 +389,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 xingo
+    		&copy; 2018 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -753,7 +753,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1508649749390"></script>
+<script src="/sw-register.js?1520216763322"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
