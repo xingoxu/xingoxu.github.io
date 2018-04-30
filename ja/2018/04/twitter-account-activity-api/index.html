@@ -14,19 +14,19 @@
         window.location.protocol = "https";
   </script>
   
-  <title>推特 Account Activity API 使用体验 | xingo&#39;s private plot</title>
-  <meta name="description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
+  <title>ツイッターの Account Activity API 使ってみた | xingo&#39;s private plot</title>
+  <meta name="description" content="前日ツイッターのAccount Activity APIを使ってみました、この API が一つ webhook 登録が可能です、アカウントのリアル活動（ツィート、通知、設定）を受信します。 以下のものが含まれます：  ツィート at 通知 リプライ リツイート 引用リツイート いいね ダイレクトメッセージとその受信 フォロー ブロック ミュート  使う時実際起こった問題を書きました。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="推特 Account Activity API 使用体验">
+<meta property="og:title" content="ツイッターの Account Activity API 使ってみた">
 <meta property="og:url" content="https://blog.xingoxu.com/ja/2018/04/twitter-account-activity-api/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
-<meta property="og:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
+<meta property="og:description" content="前日ツイッターのAccount Activity APIを使ってみました、この API が一つ webhook 登録が可能です、アカウントのリアル活動（ツィート、通知、設定）を受信します。 以下のものが含まれます：  ツィート at 通知 リプライ リツイート 引用リツイート いいね ダイレクトメッセージとその受信 フォロー ブロック ミュート  使う時実際起こった問題を書きました。">
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="https://i.loli.net/2018/04/30/5ae7000843f53.png">
-<meta property="og:updated_time" content="2018-04-30T12:04:30.033Z">
+<meta property="og:updated_time" content="2018-04-30T12:52:43.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="推特 Account Activity API 使用体验">
-<meta name="twitter:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
+<meta name="twitter:title" content="ツイッターの Account Activity API 使ってみた">
+<meta name="twitter:description" content="前日ツイッターのAccount Activity APIを使ってみました、この API が一つ webhook 登録が可能です、アカウントのリアル活動（ツィート、通知、設定）を受信します。 以下のものが含まれます：  ツィート at 通知 リプライ リツイート 引用リツイート いいね ダイレクトメッセージとその受信 フォロー ブロック ミュート  使う時実際起こった問題を書きました。">
 <meta name="twitter:image" content="https://i.loli.net/2018/04/30/5ae7000843f53.png">
 <meta name="twitter:creator" content="@xingoxu">
   
@@ -122,7 +122,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      推特 Account Activity API 使用体验
+      ツイッターの Account Activity API 使ってみた
     </h1>
   
 
@@ -144,40 +144,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。</p>
-<p>包括以下内容：</p>
+        <p>前日ツイッターのAccount Activity APIを使ってみました、この API が一つ webhook 登録が可能です、アカウントのリアル活動（ツィート、通知、設定）を受信します。</p>
+<p>以下のものが含まれます：</p>
 <ul>
-<li>推特内容</li>
-<li>at 提醒</li>
-<li>回复</li>
-<li>转发</li>
-<li>带评论转发</li>
-<li>点赞</li>
-<li>发出的私信和接收到的私信</li>
-<li>关注</li>
-<li>拉黑</li>
-<li>屏蔽</li>
-<li>阅读回执</li>
+<li>ツィート</li>
+<li>at 通知</li>
+<li>リプライ</li>
+<li>リツイート</li>
+<li>引用リツイート</li>
+<li>いいね</li>
+<li>ダイレクトメッセージとその受信</li>
+<li>フォロー</li>
+<li>ブロック</li>
+<li>ミュート</li>
 </ul>
-<p>在试用的过程中，碰到了一些问题，做一个整理。</p>
+<p>使う時実際起こった問題を書きました。</p>
 <a id="more"></a>
-<h1 id="应用中心创建应用"><a href="#应用中心创建应用" class="headerlink" title="应用中心创建应用"></a>应用中心创建应用</h1><p>首先需要到 <a href="https://apps.twitter.com/" target="_blank" rel="noopener">https://apps.twitter.com/</a> 在这里按提示创建应用，获得应用的 key 与 Secret。</p>
-<h1 id="申请-Account-Activity-API-试用权限"><a href="#申请-Account-Activity-API-试用权限" class="headerlink" title="申请 Account Activity API 试用权限"></a>申请 Account Activity API 试用权限</h1><p><a href="https://developer.twitter.com/en/apply" target="_blank" rel="noopener">https://developer.twitter.com/en/apply</a><br>到这里按照提示申请API权限，并附上 app ID（app ID相关解释：<a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview）" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview）</a></p>
-<p>申请完成后会收到邮件<br><img src="https://i.loli.net/2018/04/30/5ae7000843f53.png" alt="申请成功回执"></p>
-<h1 id="注册-webhook"><a href="#注册-webhook" class="headerlink" title="注册 webhook"></a>注册 webhook</h1><h2 id="CRC-测试"><a href="#CRC-测试" class="headerlink" title="CRC 测试"></a>CRC 测试</h2><p>webhook 的地址要求通过 CRC 测试，详细要求可以查看<br><a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks</a></p>
-<p>写了一个自己的demo，关于CRC测试的代码：<br><a href="https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23</a></p>
-<h2 id="通过-postman-发送请求注册webhook"><a href="#通过-postman-发送请求注册webhook" class="headerlink" title="通过 postman 发送请求注册webhook"></a>通过 postman 发送请求注册webhook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=$&#123;你的webhook地址&#125;</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
-<p><code>Bearer TOKEN</code> 可以通过<code>https://api.twitter.com/oauth2/token</code>接口获得</p>
+<h1 id="アプリを作ります"><a href="#アプリを作ります" class="headerlink" title="アプリを作ります"></a>アプリを作ります</h1><p>まずここで <a href="https://apps.twitter.com/" target="_blank" rel="noopener">https://apps.twitter.com/</a> チュートリアルに従ってアプリを作って、アプリの key と secret を取得します。</p>
+<h1 id="Account-Activity-API-を申請します"><a href="#Account-Activity-API-を申請します" class="headerlink" title="Account Activity API を申請します"></a>Account Activity API を申請します</h1><p><a href="https://developer.twitter.com/en/apply" target="_blank" rel="noopener">https://developer.twitter.com/en/apply</a><br>ここで権限を申請します，app ID の添付を忘れずに（app ID について：<a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview</a> ）</p>
+<p>申請成功したらメールが来ます<br><img src="https://i.loli.net/2018/04/30/5ae7000843f53.png" alt="申請成功のメール"></p>
+<h1 id="webhook-URL-を登録"><a href="#webhook-URL-を登録" class="headerlink" title="webhook URL を登録"></a>webhook URL を登録</h1><h2 id="CRC-テスト"><a href="#CRC-テスト" class="headerlink" title="CRC テスト"></a>CRC テスト</h2><p>webhook は CRC テストを合格しなければ登録できない、具体的な要望はここに書いている -&gt;<br><a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks</a></p>
+<p>自分もNode.jsのdemoを書きました、一応参考になれば：<br><a href="https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23</a></p>
+<h2 id="postman-でリクエストを送って-webhook-URL-を登録します"><a href="#postman-でリクエストを送って-webhook-URL-を登録します" class="headerlink" title="postman でリクエストを送って webhook URL を登録します"></a>postman でリクエストを送って webhook URL を登録します</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=$&#123;你的webhook地址&#125;</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
+<p><code>Bearer TOKEN</code> は<code>https://api.twitter.com/oauth2/token</code>で取得できます。</p>
 <p>注意</p>
 <ul>
-<li>webhook 地址 需要https，且只能使用443端口（<a href="https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36）" target="_blank" rel="noopener">https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36）</a></li>
+<li>webhook URL は https と 443 ポートのみサポートします（<a href="https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36" target="_blank" rel="noopener">https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36</a> ）</li>
 </ul>
-<p>注册完成后可以通过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
-<p>可以收到<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  // &lt;- 自己的user_id</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>随便对一条推特点赞</p>
-<p>可以收到推特来的 webhook object。</p>
-<p>自己用这个写了一个推特的bot，可以作为参考。<br><a href="https://github.com/xingoxu/twitter-like-downloader" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader</a></p>
+<p>登録したらここに見えます<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure></p>
+<p>これを受けれます<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  // &lt;- 自己的user_id</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="テスト"><a href="#テスト" class="headerlink" title="テスト"></a>テスト</h1><p>好きなツイートをいいねすると</p>
+<p>ツイッターサーバーから webhook object 受けれます。</p>
+<p>最後、Account Activity API使ってる自家用ツイッターBotです、参考になればぜひ<br><a href="https://github.com/xingoxu/twitter-like-downloader" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader</a></p>
+<p>最後まで閲覧いただきありがとうございました。</p>
 
       
     </div>
@@ -203,6 +202,9 @@
   
   
   
+  
+  
+  
     <a href="/ja/2017/10/vue-typescript-early/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Vue + TypeScript 早期体験</div>
       <strong class="article-nav-caption">></strong>
@@ -215,7 +217,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2018/04/twitter-account-activity-api/" data-title="「推特 Account Activity API 使用体验」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/ja/2018/04/twitter-account-activity-api/" data-title="「ツイッターの Account Activity API 使ってみた」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -241,7 +243,7 @@
   <section id="comments">
   
     <div class="duoshuo">
-  <div data-thread-key="twitter-account-activity-api" data-thread-url="https://blog.xingoxu.com/ja/2018/04/twitter-account-activity-api/" data-thread-title="推特 Account Activity API 使用体验"></div>
+  <div data-thread-key="twitter-account-activity-api" data-thread-url="https://blog.xingoxu.com/ja/2018/04/twitter-account-activity-api/" data-thread-title="ツイッターの Account Activity API 使ってみた"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -251,7 +253,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1525089923222';
+			'/comments.js?1525092814053';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -489,7 +491,7 @@
 					<section class="switch-part switch-part3">
 						<div id="toc" class="toc-article">
 							
-								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-number">1.</span> <span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-number">2.</span> <span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-number">3.</span> <span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-number">3.1.</span> <span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册webhook"><span class="toc-number">3.2.</span> <span class="toc-text">通过 postman 发送请求注册webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li></ol>
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#アプリを作ります"><span class="toc-number">1.</span> <span class="toc-text">アプリを作ります</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Account-Activity-API-を申請します"><span class="toc-number">2.</span> <span class="toc-text">Account Activity API を申請します</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webhook-URL-を登録"><span class="toc-number">3.</span> <span class="toc-text">webhook URL を登録</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-テスト"><span class="toc-number">3.1.</span> <span class="toc-text">CRC テスト</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postman-でリクエストを送って-webhook-URL-を登録します"><span class="toc-number">3.2.</span> <span class="toc-text">postman でリクエストを送って webhook URL を登録します</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#テスト"><span class="toc-number">4.</span> <span class="toc-text">テスト</span></a></li></ol>
 							
 						</div>
 					</section>
@@ -527,7 +529,7 @@
 				<div class="viewer-box-wrap">
 					<span class="viewer-title">文章目录</span>
 					<div id="toc-mobile" class="toc-article viewer-div">
-						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册webhook"><span class="toc-text">通过 postman 发送请求注册webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol>
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#アプリを作ります"><span class="toc-text">アプリを作ります</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Account-Activity-API-を申請します"><span class="toc-text">Account Activity API を申請します</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webhook-URL-を登録"><span class="toc-text">webhook URL を登録</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-テスト"><span class="toc-text">CRC テスト</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postman-でリクエストを送って-webhook-URL-を登録します"><span class="toc-text">postman でリクエストを送って webhook URL を登録します</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#テスト"><span class="toc-text">テスト</span></a></li></ol>
 					</div>
 				</div>
 			
@@ -636,7 +638,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1525089926717"></script>
+<script src="/sw-register.js?1525092818835"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
