@@ -31,7 +31,7 @@ date: 2018-04-30 20:59:43
 # 申请 Account Activity API 试用权限
 
 https://developer.twitter.com/en/apply
-到这里按照提示申请API权限，并附上 app ID（app ID相关解释：https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview）
+到这里按照提示申请API权限，并附上 app ID（app ID相关解释：https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview ）
 
 申请完成后会收到邮件
 ![申请成功回执](https://i.loli.net/2018/04/30/5ae7000843f53.png)
@@ -58,7 +58,7 @@ Authorization: Bearer TOKEN
 `Bearer TOKEN` 可以通过`https://api.twitter.com/oauth2/token`接口获得
 
 注意
-- webhook 地址 需要https，且只能使用443端口（https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36）
+- webhook 地址 需要https，且只能使用443端口（https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36 ）
 
 
 注册完成后可以通过
@@ -89,7 +89,6 @@ Authorization: Bearer TOKEN
 随便对一条推特点赞
 
 可以收到推特来的 webhook object。
-
 
 
 自己用这个写了一个推特的bot，可以作为参考。
