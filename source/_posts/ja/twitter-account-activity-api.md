@@ -75,7 +75,7 @@ Authorization: Bearer TOKEN
     "application_id": "12345678",
     "subscriptions": [
         {
-            "user_id": "12345678"  // <- 自己的user_id
+            "user_id": "12345678"  // <- 自分のuser_id
         }
     ]
 }
