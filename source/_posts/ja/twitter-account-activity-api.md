@@ -48,7 +48,7 @@ https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js
 
 ```
 POST:
-https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=${你的webhook地址}
+https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=${あなたのwebhook URL}
 
 Header:
 Authorization: Bearer TOKEN
