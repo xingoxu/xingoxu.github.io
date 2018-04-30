@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -14,20 +14,20 @@
         window.location.protocol = "https";
   </script>
   
-  <title>再见 2017 | xingo&#39;s private plot</title>
-  <meta name="description" content="忙完这一阵，回过神来已经是2018年的4月了，才有空开始补一些之前没有干完的事情，比如写这一篇2017年的总结。 仔细想想还真的是2017年经历了太多太多事情，很多事情甚至自己都没有想到，感觉自己非常幸运，总的来说是一个很开心的一年。">
+  <title>推特 Account Activity API 使用体验 | xingo&#39;s private plot</title>
+  <meta name="description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="再见 2017">
-<meta property="og:url" content="https://blog.xingoxu.com/2018/04/2017-end/index.html">
+<meta property="og:title" content="推特 Account Activity API 使用体验">
+<meta property="og:url" content="https://blog.xingoxu.com/ja/2018/04/twitter-account-activity-api/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
-<meta property="og:description" content="忙完这一阵，回过神来已经是2018年的4月了，才有空开始补一些之前没有干完的事情，比如写这一篇2017年的总结。 仔细想想还真的是2017年经历了太多太多事情，很多事情甚至自己都没有想到，感觉自己非常幸运，总的来说是一个很开心的一年。">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://i.loli.net/2018/04/10/5acc59ab88143.jpg">
-<meta property="og:updated_time" content="2018-04-30T12:04:30.025Z">
+<meta property="og:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://i.loli.net/2018/04/30/5ae7000843f53.png">
+<meta property="og:updated_time" content="2018-04-30T12:04:30.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="再见 2017">
-<meta name="twitter:description" content="忙完这一阵，回过神来已经是2018年的4月了，才有空开始补一些之前没有干完的事情，比如写这一篇2017年的总结。 仔细想想还真的是2017年经历了太多太多事情，很多事情甚至自己都没有想到，感觉自己非常幸运，总的来说是一个很开心的一年。">
-<meta name="twitter:image" content="https://i.loli.net/2018/04/10/5acc59ab88143.jpg">
+<meta name="twitter:title" content="推特 Account Activity API 使用体验">
+<meta name="twitter:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
+<meta name="twitter:image" content="https://i.loli.net/2018/04/30/5ae7000843f53.png">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -57,16 +57,16 @@
 			  <h1 class="header-author">xingo</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">混乱邪恶冻鳗玻珠</p>
+			<p class="header-subtitle">男の子の味方</p>
 			
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
+					<li><a href="/ja/">ホーム</a></li>
 		        
-					<li><a href="/archives">所有文章</a></li>
+					<li><a href="/ja/archives">アーカイブ</a></li>
 		        
-					<li><a href="/about">关于我</a></li>
+					<li><a href="/ja/about">プロフィール</a></li>
 		        
 					<li><a href="http://works.xingoxu.com/">作品</a></li>
 		        
@@ -105,11 +105,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-2017-end" class="article article-type-post article-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-twitter-account-activity-api" class="article article-type-post article-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/2017-end/" class="article-date" >
-  	<time datetime="2018-04-10T04:15:49.000Z" itemprop="datePublished">2018-04-10</time>
+      <a href="/ja/2018/04/twitter-account-activity-api/" class="article-date" >
+  	<time datetime="2018-04-30T12:59:43.000Z" itemprop="datePublished">2018-04-30</time>
 </a>
     </div>
   
@@ -122,7 +122,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      再见 2017
+      推特 Account Activity API 使用体验
     </h1>
   
 
@@ -133,7 +133,7 @@
         
 	<div class="article-category tagcloud">
 		
-			<a href="/categories/notes/" class="article-category-link">notes</a>
+			<a href="/ja/categories/dev/" class="article-category-link">dev</a>
 		
 	</div>
 
@@ -144,24 +144,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>忙完这一阵，回过神来已经是2018年的4月了，才有空开始补一些之前没有干完的事情，比如写这一篇2017年的总结。</p>
-<p>仔细想想还真的是2017年经历了太多太多事情，很多事情甚至自己都没有想到，感觉自己非常幸运，总的来说是一个很开心的一年。<br><a id="more"></a></p>
-<p>按时间顺序</p>
-<h1 id="跳槽到饿了妈"><a href="#跳槽到饿了妈" class="headerlink" title="跳槽到饿了妈"></a>跳槽到饿了妈</h1><p>怎么说，年前就有想跳槽的想法，其实在萌购干着也挺好的，老板也承诺说毕业之后的工资多少多少，价格嘛也不低（跟饿了妈差不多），但始终是有那么点没有安全感，终于逮到个机会去了饿了妈面试，虽然自己是个菜鸡，不过面试的问题还算是都自我感觉挺好的答了下来，于是就很顺利的跳槽到了饿了妈。</p>
-<p>也算走到了算是一个不太容易倒闭的公司，体验了各种大公司的流程，效率也挺高的，时间嘛也还行自己手脚比较快所以基本会有一定的空闲时间，不算很多，但可以。</p>
-<h1 id="去日本玩"><a href="#去日本玩" class="headerlink" title="去日本玩"></a>去日本玩</h1><p>刚进饿了妈不久，就要收拾东西准备攻略自己一个人出去玩啦。半年前的既定安排跟跳槽也无关，不过当时想着4月底5月初的时间段怎么说也得三方啊毕业的准备都差不多了吧，那又是谁知道这个点了我自己居然还会跳槽，真是。。。</p>
-<p>嘛操着自己零零碎碎平假名和片假名，也没跟太多人说话，现在想起来我当时到底是怎么旅游的都完全不怎么会说日语，顺顺利利的玩了10天，肥肠快乐，嘛钱也用了不少，差不多一共两万左右吧？</p>
-<p><a href="https://photos.app.goo.gl/Gh0Qox7rmOz3rRqz2" target="_blank" rel="noopener">Google Photo</a></p>
-<h1 id="毕业"><a href="#毕业" class="headerlink" title="毕业"></a>毕业</h1><p><div class="IMGalignRight" style="width: 330px;"><img src="https://i.loli.net/2018/04/10/5acc59ab88143.jpg" alt="毕业啦"></div><br>一霎眼毕业了，当时好像没有什么感觉，取了毕业证书，学位证书，回家就往公司的系统上传表示7.1日起就可以拿正式工资了，只有这点才让我感觉到了毕业。不过现在想想，我居然已经是个社会人了，而且已经实习+上班上了一年了，时间的力量还真是强大，把自己给塑造成了什么样只有回头看的时候才能知道。</p>
-<p>我对学校没什么好感，对周围同学也没什么太多好感，4年自己也不知道自己干了什么，只是埋头学了很多东西，所以这4年，嘛也就这样。</p>
-<h1 id="N2合格"><a href="#N2合格" class="headerlink" title="N2合格"></a>N2合格</h1><p>旅游回来之后发现自己只有一个月时间就要考N2于是工作之余还不停的去做之前买来没做的练习再去查字典，最后考前一星期还买了一本书再做练习，直接就上了考场。考完回来感觉应该能过吧，虽然有一半的语法题我是瞎蒙的，有一篇阅读没有时间看。这种没有范围的考试真的非常吓人，又或者说因为是第一次正正经经考一个完全自学的语言所以会如此害怕。</p>
-<p>复习非常累，考试也很累，幸好最后顺利通过，还是很开心的（分数不高啦）</p>
-<h1 id="跳槽去了LINE"><a href="#跳槽去了LINE" class="headerlink" title="跳槽去了LINE"></a>跳槽去了LINE</h1><p>这算是下半年一直在做的一件事情吧，从9月初开始试试的心态投了一封简历，结果到最后面试走完被发了offer真的非常非常开心又意外，一个是LINE是日本的企业之中应该是我心中最想去的一个企业，Google也好Twitter也好也很想去，但那些真的水平太高，自己99%是不太可能的，不过LINE的话最初我觉得自己可能70%不太可能，不过最后居然能进是非常意外的，另一个意外就是自己其实日语也就是三脚猫水准，也不要说三脚猫了，一脚猫吧，顶多也就看看小学生向的普通动画，在这之前都没跟日本人说过话，推特也只是在去日本玩送东西给太太的时候结下的太太聊天，聊的也不多还不需要太注重细节，就这么烂的水平，居然最后被采用了。</p>
-<p>然后就是递签证，返签证，去日本找地方睡觉，上班这样的过程，签证只花了一周不过递签证跟返签证还真是艰辛前前后后块花了一个半月，嘛只能算是好事多磨。期间当然是在饿了妈当没事人一样刷KPI，我觉得如果我不走的话我KPI至少有B吧，A能不能有就不太清楚了。</p>
-<p>第一次离开自己家自己一个人住，唔太幸福了，小黄本放题啊~~</p>
-<p>要说原因的话，也不太那么好明着说吧，嘛自己来日本的时候的确也是觉得哇这里真好真舒服，想来这里上班呢，另一个是2017下半年也的确发生了很多事，让自己对周围的环境有了一些看法吧。</p>
-<h1 id="2018年的计划？"><a href="#2018年的计划？" class="headerlink" title="2018年的计划？"></a>2018年的计划？</h1><p>天呐看看去年的计划，什么rxJs，什么后端，什么可视化前端，什么游戏开发，完全没有学嘛。<br>2018年的话，先把欠账还清吧，下的动画啥的赶紧看完，不过游戏啥的基本都完成了还算是，摸鱼上手（笑）</p>
-<p><a href="https://bgm.tv/award/2017/xingo" target="_blank" rel="noopener">Bangumi 2017</a></p>
+        <p>前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。</p>
+<p>包括以下内容：</p>
+<ul>
+<li>推特内容</li>
+<li>at 提醒</li>
+<li>回复</li>
+<li>转发</li>
+<li>带评论转发</li>
+<li>点赞</li>
+<li>发出的私信和接收到的私信</li>
+<li>关注</li>
+<li>拉黑</li>
+<li>屏蔽</li>
+<li>阅读回执</li>
+</ul>
+<p>在试用的过程中，碰到了一些问题，做一个整理。</p>
+<a id="more"></a>
+<h1 id="应用中心创建应用"><a href="#应用中心创建应用" class="headerlink" title="应用中心创建应用"></a>应用中心创建应用</h1><p>首先需要到 <a href="https://apps.twitter.com/" target="_blank" rel="noopener">https://apps.twitter.com/</a> 在这里按提示创建应用，获得应用的 key 与 Secret。</p>
+<h1 id="申请-Account-Activity-API-试用权限"><a href="#申请-Account-Activity-API-试用权限" class="headerlink" title="申请 Account Activity API 试用权限"></a>申请 Account Activity API 试用权限</h1><p><a href="https://developer.twitter.com/en/apply" target="_blank" rel="noopener">https://developer.twitter.com/en/apply</a><br>到这里按照提示申请API权限，并附上 app ID（app ID相关解释：<a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview）" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview）</a></p>
+<p>申请完成后会收到邮件<br><img src="https://i.loli.net/2018/04/30/5ae7000843f53.png" alt="申请成功回执"></p>
+<h1 id="注册-webhook"><a href="#注册-webhook" class="headerlink" title="注册 webhook"></a>注册 webhook</h1><h2 id="CRC-测试"><a href="#CRC-测试" class="headerlink" title="CRC 测试"></a>CRC 测试</h2><p>webhook 的地址要求通过 CRC 测试，详细要求可以查看<br><a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks</a></p>
+<p>写了一个自己的demo，关于CRC测试的代码：<br><a href="https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23</a></p>
+<h2 id="通过-postman-发送请求注册webhook"><a href="#通过-postman-发送请求注册webhook" class="headerlink" title="通过 postman 发送请求注册webhook"></a>通过 postman 发送请求注册webhook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=$&#123;你的webhook地址&#125;</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
+<p><code>Bearer TOKEN</code> 可以通过<code>https://api.twitter.com/oauth2/token</code>接口获得</p>
+<p>注意</p>
+<ul>
+<li>webhook 地址 需要https，且只能使用443端口（<a href="https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36）" target="_blank" rel="noopener">https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36）</a></li>
+</ul>
+<p>注册完成后可以通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
+<p>可以收到<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  // &lt;- 自己的user_id</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>随便对一条推特点赞</p>
+<p>可以收到推特来的 webhook object。</p>
+<p>自己用这个写了一个推特的bot，可以作为参考。<br><a href="https://github.com/xingoxu/twitter-like-downloader" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader</a></p>
 
       
     </div>
@@ -174,19 +190,21 @@
   
   
   
-    <a href="/2018/04/twitter-account-activity-api/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">推特 Account Activity API 使用体验</div>
-    </a>
-    
+  
 
 
   
   
   
   
-    <a href="/2017/10/vue-typescript-early/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue + TypeScript 尝鲜体验</div>
+  
+  
+  
+  
+  
+  
+    <a href="/ja/2017/10/vue-typescript-early/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue + TypeScript 早期体験</div>
       <strong class="article-nav-caption">></strong>
     </a>
     
@@ -197,7 +215,7 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2018/04/2017-end/" data-title="「再见 2017」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2018/04/twitter-account-activity-api/" data-title="「推特 Account Activity API 使用体验」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
 		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
@@ -223,7 +241,7 @@
   <section id="comments">
   
     <div class="duoshuo">
-  <div data-thread-key="2017-end" data-thread-url="https://blog.xingoxu.com/2018/04/2017-end/" data-thread-title="再见 2017"></div>
+  <div data-thread-key="twitter-account-activity-api" data-thread-url="https://blog.xingoxu.com/ja/2018/04/twitter-account-activity-api/" data-thread-title="推特 Account Activity API 使用体验"></div>
 	<!-- 评论框 end -->
 	<!-- 公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -233,7 +251,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1525089918901';
+			'/comments.js?1525089923222';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -276,9 +294,9 @@
 			</a>
 
 			<hgroup>
-				<h1 class="header-author"><a href="/">xingo</a></h1>
+				<h1 class="header-author"><a href="/ja/">xingo</a></h1>
 				
-					<p class="header-subtitle">混乱邪恶冻鳗玻珠</p>
+					<p class="header-subtitle">男の子の味方</p>
 				
 			</hgroup>
 			<div class="social">
@@ -340,13 +358,13 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>导航</li>
+						<li>ナビ</li>
 						
 						
-							<li>文章目录</li>
+							<li>文章目録</li>
 						
 						
-							<li>朋友们</li>
+							<li>友達</li>
 						
 						
 						
@@ -363,23 +381,23 @@
 					<nav class="header-menu">
 						<ul>
 							
-								<li><a href="/">主页</a></li>
+								<li><a href="/ja/">ホーム</a></li>
 							
-								<li><a href="/archives">所有文章</a></li>
+								<li><a href="/ja/archives">アーカイブ</a></li>
 							
-								<li><a href="/about">关于我</a></li>
+								<li><a href="/ja/about">プロフィール</a></li>
 							
 								<li><a href="http://works.xingoxu.com/">作品</a></li>
 							
 							
 							
 								<li class="change-language">
-									<label> <i class="fa fa-globe" aria-hidden="true"></i> 简体中文</label>
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
 									<select>
 										
-											<option value="zh-cn" selected>简体中文</option>
+											<option value="zh-cn" >简体中文</option>
 										
-											<option value="ja" >日本語</option>
+											<option value="ja" selected>日本語</option>
 										
 									</select>
 								</li>
@@ -457,7 +475,7 @@
 									</label>
 								</form>
 							</li>
-							<li id="totop" title="回到顶部"><i class="fa fa-angle-double-up"></i></li>
+							<li id="totop" title="ページトップへ"><i class="fa fa-angle-double-up"></i></li>
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -471,7 +489,7 @@
 					<section class="switch-part switch-part3">
 						<div id="toc" class="toc-article">
 							
-								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#跳槽到饿了妈"><span class="toc-number">1.</span> <span class="toc-text">跳槽到饿了妈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#去日本玩"><span class="toc-number">2.</span> <span class="toc-text">去日本玩</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#毕业"><span class="toc-number">3.</span> <span class="toc-text">毕业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#N2合格"><span class="toc-number">4.</span> <span class="toc-text">N2合格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#跳槽去了LINE"><span class="toc-number">5.</span> <span class="toc-text">跳槽去了LINE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2018年的计划？"><span class="toc-number">6.</span> <span class="toc-text">2018年的计划？</span></a></li></ol>
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-number">1.</span> <span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-number">2.</span> <span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-number">3.</span> <span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-number">3.1.</span> <span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册webhook"><span class="toc-number">3.2.</span> <span class="toc-text">通过 postman 发送请求注册webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li></ol>
 							
 						</div>
 					</section>
@@ -509,19 +527,19 @@
 				<div class="viewer-box-wrap">
 					<span class="viewer-title">文章目录</span>
 					<div id="toc-mobile" class="toc-article viewer-div">
-						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#跳槽到饿了妈"><span class="toc-text">跳槽到饿了妈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#去日本玩"><span class="toc-text">去日本玩</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#毕业"><span class="toc-text">毕业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#N2合格"><span class="toc-text">N2合格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#跳槽去了LINE"><span class="toc-text">跳槽去了LINE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2018年的计划？"><span class="toc-text">2018年的计划？</span></a></li></ol>
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册webhook"><span class="toc-text">通过 postman 发送请求注册webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol>
 					</div>
 				</div>
 			
 			<div class="viewer-box-wrap">
-				<span class="viewer-title">导航</span>
+				<span class="viewer-title">ナビ</span>
 				<div class="viewer-div">
 					
-						<li><a href="/">主页</a></li>
+						<li><a href="/ja/">ホーム</a></li>
 					
-						<li><a href="/archives">所有文章</a></li>
+						<li><a href="/ja/archives">アーカイブ</a></li>
 					
-						<li><a href="/about">关于我</a></li>
+						<li><a href="/ja/about">プロフィール</a></li>
 					
 						<li><a href="http://works.xingoxu.com/">作品</a></li>
 					
@@ -530,7 +548,7 @@
 			
 			
 				<div class="viewer-box-wrap">
-					<span class="viewer-title">朋友们</span>
+					<span class="viewer-title">友達</span>
 					<div class="viewer-div friends" id="js-mobile-friends">
 						
 			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
@@ -544,12 +562,12 @@
 			
 				<div class="viewer-box-wrap">
 					<div class="viewer-title change-language">
-						<label> <i class="fa fa-globe" aria-hidden="true"></i> 简体中文</label>
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
 						<select >
 							
-								<option value="zh-cn" selected>简体中文</option>
+								<option value="zh-cn" >简体中文</option>
 							
-								<option value="ja" >日本語</option>
+								<option value="ja" selected>日本語</option>
 							
 						</select>
 					</div>
@@ -618,7 +636,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1525089923404"></script>
+<script src="/sw-register.js?1525089926717"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
