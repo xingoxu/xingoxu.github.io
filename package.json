@@ -6,10 +6,10 @@
     "test": "sh test.sh"
   },
   "hexo": {
-    "version": "3.6.0"
+    "version": "3.7.1"
   },
   "dependencies": {
-    "hexo": "^3.6.0",
+    "hexo": "^3.7.1",
     "hexo-deployer-git": "^0.1.0",
     "hexo-generator-archive-i18n": "git+https://github.com/xingoxu/hexo-generator-archive-i18n.git",
     "hexo-generator-category-i18n": "git+https://github.com/xingoxu/hexo-generator-category-i18n.git",
