@@ -280,7 +280,7 @@
 </blockquote>
 <h1 id="公式ドキュメントによるやり方"><a href="#公式ドキュメントによるやり方" class="headerlink" title="公式ドキュメントによるやり方"></a>公式ドキュメントによるやり方</h1><p>Vue 2.2 から、Vue にいろんな公式型宣言を提供しており、さっそく、単一ファイルコンポーネントに TypeScript を試してみましょう。</p>
 <h2 id="webpack-rules-に-ts-loader-相関を添付しましょう"><a href="#webpack-rules-に-ts-loader-相関を添付しましょう" class="headerlink" title="webpack rules に ts-loader 相関を添付しましょう"></a>webpack rules に ts-loader 相関を添付しましょう</h2><blockquote>
-<p>こっちは webpack2</p>
+<p>こっちは webpack2</p>
 </blockquote>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line"><span class="addition">+   &#123;</span></span><br><span class="line"><span class="addition">+     test: /\.ts$/,</span></span><br><span class="line"><span class="addition">+     exclude: /node_modules|vue\/src/,</span></span><br><span class="line"><span class="addition">+     loader: 'ts-loader',</span></span><br><span class="line"><span class="addition">+     options: &#123;</span></span><br><span class="line"><span class="addition">+       appendTsSuffixTo: [/\.vue$/]</span></span><br><span class="line"><span class="addition">+     &#125;</span></span><br><span class="line"><span class="addition">+   &#125;,</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
       
@@ -821,7 +821,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1526210885416"></script>
+<script src="/sw-register.js?1526211260657"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
