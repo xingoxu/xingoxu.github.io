@@ -60,6 +60,31 @@ Authorization: Bearer TOKEN
 - webhook URL は https と 443 ポートのみサポートします（https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36 ）
 
 
+## postman でリクエストを送って subscription に webhook を登録します
+
+```
+GET:
+https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json
+
+Header:
+Authorization: Bearer TOKEN
+```
+さっきの webhook の id を取って
+
+```
+POST:
+https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions.json
+
+Header:
+Authorization: OAuth 1.0
+
+Body:
+webhook_id: さっきの webhook の id
+```
+注意すべきところ：ここAuthorization は OAuth 1.0（user id 認識ため）
+
+リスポンス内容はない、`HTTP Code: 204 No Conent`
+
 登録したらここに見えます
 ```
 GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json

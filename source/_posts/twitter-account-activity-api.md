@@ -45,7 +45,7 @@ https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activ
 写了一个自己的demo，关于CRC测试的代码：
 https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23
 
-## 通过 postman 发送请求注册webhook
+## 通过 postman 发送请求注册 webhook
 
 ```
 POST:
@@ -59,6 +59,32 @@ Authorization: Bearer TOKEN
 
 注意
 - webhook 地址 需要https，且只能使用443端口（https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36 ）
+
+## 通过 postman 发送请求在 subscription 里注册 webhook
+
+```
+GET:
+https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json
+
+Header:
+Authorization: Bearer TOKEN
+```
+获取到刚才的 webhook id
+
+之后
+```
+POST:
+https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions.json
+
+Header:
+Authorization: OAuth 1.0
+
+Body:
+webhook_id: 刚才的 webhook id
+```
+注意这里需要用OAuth 1.0（用于识别注册的user id）
+
+注册完成后不会有任何返回，`HTTP Code: 204 No Conent`
 
 
 注册完成后可以通过
