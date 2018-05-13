@@ -14,7 +14,7 @@ date: 2017-10-10 17:33:23
 Vue 2.2 から、Vue にいろんな公式型宣言を提供しており、さっそく、単一ファイルコンポーネントに TypeScript を試してみましょう。
 
 ## webpack rules に ts-loader 相関を添付しましょう
-> こっちは webpack2
+> こっちは webpack2
 
 ```diff
 module: {
@@ -32,11 +32,11 @@ module: {
 
 <!-- more -->
 
-.ts のファイルを ts-loader で読み込む
-`appendTsSuffixTo`は vue を module として tsc でプロセスして、module not found の問題を解決する（tsc は .vue ファイルが知らない）
+.ts のファイルを ts-loader で読み込む
+`appendTsSuffixTo`は vue を module として tsc でプロセスして、module not found の問題を解決する（tsc は .vue ファイルが知らない）
 
 ## .d.ts ファイルを作成する
-どんな名前もいい、どこでもいい、tsconfig.json の include PATH にいればいい、必ず .d.ts を名前の終わりします。
+どんな名前もいい、どこでもいい、tsconfig.json の include PATH にいればいい、必ず .d.ts を名前の終わりします。
 ```typescript
 declare module "*.vue" {
   import Vue from 'vue'
@@ -78,7 +78,7 @@ html template の msg の下に
   <h2>Essential Links</h2>
 ```
 
-script の部分を
+script の部分を
 ```html
 <script lang="ts">
   import Vue, { ComponentOptions } from 'vue'
@@ -112,7 +112,7 @@ script の部分を
 ```
 こうして改造します
 
-親としての App.vue を改造してみて
+親としての App.vue を改造してみて
 
 ```diff
   <div id="app">
@@ -129,7 +129,7 @@ script の部分を
   import { interface as helloInterface, default as Hello } from './components/Hello.vue';
   interface App extends Vue {
     $refs: {
-      // helloComponent を宣言する、helloComponent のメソッドとプロパティを使えようになるました
+      // helloComponent を宣言する、helloComponent のメソッドとプロパティを使えようになるました
       helloComponent: helloInterface
     }
   }
@@ -154,7 +154,7 @@ refsといった動的なもの、interface に宣言して、typescript にオ�
 
 # vue-class-component
 
-`vue-class-component`の demo と readme はちょっと問題がある、TypeScript の新入りの私が困った、pr を提出した、速くマージされて欲しい。
+`vue-class-component`の demo と readme はちょっと問題がある、TypeScript の新入りの私が困った、pr を提出した、速くマージされて欲しい。
 
 `vue-class-component` を使っている Hello.vue の script 部分
 
@@ -196,13 +196,13 @@ refsといった動的なもの、interface に宣言して、typescript にオ�
     }
   };
 ```
-随分清潔になりました、オートコンプリートもバッチリ！他の vue コンポーネントと TypeScript の不具合は一時的に考え出来ません。
+随分清潔になりました、オートコンプリートもバッチリ！他の vue コンポーネントと TypeScript の不具合は一時的に考え出来ません。
 
 
 # 終わりに
 
-Vue 2.5から TypeScript のサポートはどんどん増えますと[言います](https://medium.com/the-vue-point/upcoming-typescript-changes-in-vue-2-5-e9bd7e2ecf08)、どんなサポートですね〜
+Vue 2.5から TypeScript のサポートはどんどん増えますと[言います](https://medium.com/the-vue-point/upcoming-typescript-changes-in-vue-2-5-e9bd7e2ecf08)、どんなサポートですね〜
 
-日本語まだ下手ですから、変なところいっぱいと思います、コメントエリアに指摘すれば幸いです。
+日本語まだ下手ですから、変なところいっぱいと思います、コメントエリアに指摘すれば幸いです。
 
 最後まで閲覧いただきありがとうございました。
