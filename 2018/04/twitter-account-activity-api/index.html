@@ -23,7 +23,7 @@
 <meta property="og:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://i.loli.net/2018/04/30/5ae7000843f53.png">
-<meta property="og:updated_time" content="2018-04-30T13:04:40.135Z">
+<meta property="og:updated_time" content="2018-05-13T11:08:07.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推特 Account Activity API 使用体验">
 <meta name="twitter:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
@@ -166,12 +166,17 @@
 <p>申请完成后会收到邮件<br><img src="https://i.loli.net/2018/04/30/5ae7000843f53.png" alt="申请成功回执"></p>
 <h1 id="注册-webhook"><a href="#注册-webhook" class="headerlink" title="注册 webhook"></a>注册 webhook</h1><h2 id="CRC-测试"><a href="#CRC-测试" class="headerlink" title="CRC 测试"></a>CRC 测试</h2><p>webhook 的地址要求通过 CRC 测试，详细要求可以查看<br><a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks</a></p>
 <p>写了一个自己的demo，关于CRC测试的代码：<br><a href="https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23</a></p>
-<h2 id="通过-postman-发送请求注册webhook"><a href="#通过-postman-发送请求注册webhook" class="headerlink" title="通过 postman 发送请求注册webhook"></a>通过 postman 发送请求注册webhook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=$&#123;你的webhook地址&#125;</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
+<h2 id="通过-postman-发送请求注册-webhook"><a href="#通过-postman-发送请求注册-webhook" class="headerlink" title="通过 postman 发送请求注册 webhook"></a>通过 postman 发送请求注册 webhook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=$&#123;你的webhook地址&#125;</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
 <p><code>Bearer TOKEN</code> 可以通过<code>https://api.twitter.com/oauth2/token</code>接口获得</p>
 <p>注意</p>
 <ul>
 <li>webhook 地址 需要https，且只能使用443端口（<a href="https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36" target="_blank" rel="noopener">https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36</a> ）</li>
 </ul>
+<h2 id="通过-postman-发送请求在-subscription-里注册-webhook"><a href="#通过-postman-发送请求在-subscription-里注册-webhook" class="headerlink" title="通过 postman 发送请求在 subscription 里注册 webhook"></a>通过 postman 发送请求在 subscription 里注册 webhook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
+<p>获取到刚才的 webhook id</p>
+<p>之后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: OAuth 1.0</span><br><span class="line"></span><br><span class="line">Body:</span><br><span class="line">webhook_id: 刚才的 webhook id</span><br></pre></td></tr></table></figure></p>
+<p>注意这里需要用OAuth 1.0（用于识别注册的user id）</p>
+<p>注册完成后不会有任何返回，<code>HTTP Code: 204 No Conent</code></p>
 <p>注册完成后可以通过</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
 <p>可以收到<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  // &lt;- 自己的user_id</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -193,7 +198,11 @@
   
   
   
-  
+    <a href="/2018/05/buddy-complex-seichijunrei/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">心灵盟友 Buddy Complex 圣地巡礼</div>
+    </a>
+    
 
 
   
@@ -248,7 +257,7 @@
 			ds.src = (document.location.protocol == 'https:' ? 
 			'https://od8634671.qnssl.com' : 
 			'http://7xin1x.com1.z0.glb.clouddn.com') + 
-			'/comments.js?1525093544173';
+			'/comments.js?1526209738162';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -486,7 +495,7 @@
 					<section class="switch-part switch-part3">
 						<div id="toc" class="toc-article">
 							
-								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-number">1.</span> <span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-number">2.</span> <span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-number">3.</span> <span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-number">3.1.</span> <span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册webhook"><span class="toc-number">3.2.</span> <span class="toc-text">通过 postman 发送请求注册webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li></ol>
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-number">1.</span> <span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-number">2.</span> <span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-number">3.</span> <span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-number">3.1.</span> <span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册-webhook"><span class="toc-number">3.2.</span> <span class="toc-text">通过 postman 发送请求注册 webhook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求在-subscription-里注册-webhook"><span class="toc-number">3.3.</span> <span class="toc-text">通过 postman 发送请求在 subscription 里注册 webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li></ol>
 							
 						</div>
 					</section>
@@ -524,7 +533,7 @@
 				<div class="viewer-box-wrap">
 					<span class="viewer-title">文章目录</span>
 					<div id="toc-mobile" class="toc-article viewer-div">
-						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册webhook"><span class="toc-text">通过 postman 发送请求注册webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol>
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用中心创建应用"><span class="toc-text">应用中心创建应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#申请-Account-Activity-API-试用权限"><span class="toc-text">申请 Account Activity API 试用权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册-webhook"><span class="toc-text">注册 webhook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC-测试"><span class="toc-text">CRC 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求注册-webhook"><span class="toc-text">通过 postman 发送请求注册 webhook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-postman-发送请求在-subscription-里注册-webhook"><span class="toc-text">通过 postman 发送请求在 subscription 里注册 webhook</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol>
 					</div>
 				</div>
 			
@@ -633,7 +642,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1525093551515"></script>
+<script src="/sw-register.js?1526209743019"></script>
 <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
