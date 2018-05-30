@@ -41,7 +41,7 @@ google_analytics: 'UA-91877583-1'
 favicon: /favicon.ico
 
 #你的头像url
-avatar: https://dn-xingoxu.qbox.me/author.jpg
+avatar: https://dn-xingoxu.qbox.me/avatar.png
 #是否开启分享
 share: true
 shareid: 
@@ -70,6 +70,6 @@ aboutme: false
 #开启——
 #aboutme: 愿能一直像个小男孩一样仰望未来......
 # 头图
-titlepic: https://dn-xingoxu.qbox.me/blog_theme/banner_v1.png
+titlepic: https://dn-xingoxu.qbox.me/blog_theme/banner_v2.png
 
 bangumi_update_api: https://updates.xingoxu.com/bangumi/timeline 
