@@ -16,7 +16,7 @@
     "hexo-generator-feed": "^1.2.2",
     "hexo-generator-index": "^0.2.0",
     "hexo-generator-index-i18n": "git+https://github.com/xingoxu/hexo-generator-index-i18n.git",
-    "hexo-generator-sitemap": "^1.1.2",
+    "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-generator-i18n-fix": "git+https://github.com/xingoxu/hexo-generator-i18n.git",
     "hexo-renderer-ejs": "^0.3.1",
