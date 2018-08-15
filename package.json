@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "hexo": "^3.7.1",
-    "hexo-deployer-git": "^0.1.0",
+    "hexo-deployer-git": "^0.3.1",
     "hexo-generator-archive-i18n": "git+https://github.com/xingoxu/hexo-generator-archive-i18n.git",
     "hexo-generator-category-i18n": "git+https://github.com/xingoxu/hexo-generator-category-i18n.git",
     "hexo-generator-feed": "^1.2.2",
@@ -22,7 +22,7 @@
     "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.1",
-    "hexo-server": "^0.2.0",
+    "hexo-server": "^0.3.2",
     "hexo-service-worker": "^1.0.1"
   }
 }
