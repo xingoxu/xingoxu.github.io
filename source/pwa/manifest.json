@@ -3,11 +3,11 @@
   "short_name": "xingo's Blog",
   "description": "xingo's private plot",
   "icons": [{
-    "src": "https://dn-xingoxu.qbox.me/author.jpg",
+    "src": "https://static.xingoxu.com/avatar.jpg",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "https://dn-xingoxu.qbox.me/author.jpg",
+    "src": "https://static.xingoxu.com/avatar.jpg",
     "sizes": "512x512",
     "type": "image/png"
   }],

@@ -160,7 +160,7 @@ CDN by [CloudFlare](https://www.cloudflare.com/) and [Qiniu Cloud Service](https
   }
 </style>
 
-<script src="https://od8634671.qnssl.com/blog/canvas-contribution.544.js"></script>
+<script src="https://static.xingoxu.com/js/canvas-contribution.544.js"></script>
 
 
 Friends’ links are warmly welcomed to be exchanged. Contact me with the links right!
