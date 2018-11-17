@@ -10,8 +10,8 @@ Xingo Xu
 
 # I am
 
-A Front-end Developer who works in Rajax Network Technology
-
+A Front-end Engineer.
+<!-- who works in LINE Corporation -->
 
 # Interests
 
@@ -22,7 +22,8 @@ Bangumi:[@xingo](https://bgm.tv/user/xingo)
   
 # About this site
 
-Powered By [Hexo](https://hexo.io/).Hosted on [Github](https://github.com/xingoxu/xingoxu.github.io).
+Powered By [Hexo](https://hexo.io/).
+Hosted on [Github](https://github.com/xingoxu/xingoxu.github.io).
 Continuous Integration by [Travis CI](https://travis-ci.org/).
 CDN by [CloudFlare](https://www.cloudflare.com/) and [Qiniu Cloud Service](https://portal.qiniu.com/signup?code=3ldfo1zlxc6s2).
 
