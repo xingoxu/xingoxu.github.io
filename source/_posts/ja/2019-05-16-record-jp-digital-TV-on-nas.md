@@ -380,3 +380,5 @@ NASがある場合は5000ぐらいで立てるのはいいと思います、今�
 > [Linuxの自宅サーバをテレビ化して家中どこでもテレビが見れる環境を作ろう(2)](https://ywnb.net/p/201612/3264)
 > [通过Nginx反向代理配置Basic Authentication实现kibana的访问安全](https://www.jianshu.com/p/e62c2a1cd3ab)
 > [2017/01/30 時点での録画サーバ構築手順](http://arc680.hatenablog.jp/entry/2017/01/31/005135)
+
+最後まで読んでいただきありがとうございました！
