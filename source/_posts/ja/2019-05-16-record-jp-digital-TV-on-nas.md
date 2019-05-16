@@ -1,5 +1,5 @@
 ---
-title: Synology NASに自宅で録画サーバーを立てましょう
+title: Synology NASに自宅で録画サーバーを立てました
 categories:
   - dev
 date: 2019-05-16 15:47:37
