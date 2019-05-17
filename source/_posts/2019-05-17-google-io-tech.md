@@ -144,9 +144,11 @@ Google 的性能建议
 
 以及使用Lighthouse 与设定性能预算 LightWallet
 
+> 相关Session： Elevating the Web Platform with the JavaScript Framework Community (Google I/O ’19)
+
 # 其他
 
-更多性能、How to、以及Web内容可参照
+更多性能其他案例、How to、以及Web内容可参照
 https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i
 
 <!-- Google 的架构建议
