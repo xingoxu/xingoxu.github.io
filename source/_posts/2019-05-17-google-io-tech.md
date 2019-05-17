@@ -63,7 +63,7 @@ Chrome 正在开发的
 
 > 关联Session： What’s New with Chrome and the Web (Google I/O ’19)
 
-# Web API
+## Web API
 
 - 开发中
   - 分享 -> Web Share API (Shipped) -> Web Share Target (v2) (Working)
@@ -89,7 +89,7 @@ Chrome 正在开发的
 
 > 相关Session： Unlocking New Capabilities for the Web (Google I/O ’19)
 
-# JavaScript API / Syntax
+## JavaScript API / Syntax
 - 类的私有字段 (已实装) - working on privatter method and getters and setters
 - String.prototype.matchAll (已实装)
 - 数字分隔 (Chrome 75)
