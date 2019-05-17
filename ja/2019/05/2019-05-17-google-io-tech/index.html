@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <link rel="manifest" href="/pwa/manifest.json">
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>2019 Google IO Web 前端内容总结 | xingo&#39;s private plot - アニメ / フロントエンド開発 / いろいろやってみてます</title>
+  <meta name="description" content="Web 新产品 / 新技术 web.dev https://web.dev 一个可以用来学习框架、性能、各种 Web 技术的地方 还有实战 Codelab 正在进行多国翻译   Lighthouse Performance Budgets https://developers.google.com/web/tools/lighthouse/audits/budgets 在Lighthouse中设定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019 Google IO Web 前端内容总结 | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
+<meta property="og:url" content="https://blog.xingoxu.com/ja/2019/05/2019-05-17-google-io-tech/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:description" content="Web 新产品 / 新技术 web.dev https://web.dev 一个可以用来学习框架、性能、各种 Web 技术的地方 还有实战 Codelab 正在进行多国翻译   Lighthouse Performance Budgets https://developers.google.com/web/tools/lighthouse/audits/budgets 在Lighthouse中设定">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2019-05-17T08:11:36.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019 Google IO Web 前端内容总结 | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
+<meta name="twitter:description" content="Web 新产品 / 新技术 web.dev https://web.dev 一个可以用来学习框架、性能、各种 Web 技术的地方 还有实战 Codelab 正在进行多国翻译   Lighthouse Performance Budgets https://developers.google.com/web/tools/lighthouse/audits/budgets 在Lighthouse中设定">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">アニメ / フロントエンド開発 / いろいろやってみてます</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/ja/">ホーム</a></li>
+		        
+					<li><a href="/ja/archives">アーカイブ</a></li>
+		        
+					<li><a href="/ja/about">プロフィール</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2019-05-17-google-io-tech" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/ja/2019/05/2019-05-17-google-io-tech/" class="article-date">
+  	<time datetime="2019-05-17T08:55:59.000Z" itemprop="datePublished">2019-05-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2019 Google IO Web 前端内容总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+		
+			<a href="/ja/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/ja/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
+		
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Web-新产品-新技术"><a href="#Web-新产品-新技术" class="headerlink" title="Web 新产品 / 新技术"></a>Web 新产品 / 新技术</h1><ul>
+<li>web.dev<ul>
+<li><a href="https://web.dev" target="_blank" rel="noopener">https://web.dev</a></li>
+<li>一个可以用来学习框架、性能、各种 Web 技术的地方</li>
+<li>还有实战 Codelab</li>
+<li>正在进行多国翻译</li>
+</ul>
+</li>
+<li>Lighthouse Performance Budgets<ul>
+<li><a href="https://developers.google.com/web/tools/lighthouse/audits/budgets" target="_blank" rel="noopener">https://developers.google.com/web/tools/lighthouse/audits/budgets</a></li>
+<li>在Lighthouse中设定性能预算，让Lighthouse在测试性能时使用并打分</li>
+</ul>
+</li>
+<li>PWA Desktop<ul>
+<li>PWA现在可以各大桌面平台系统中安装了</li>
+</ul>
+</li>
+<li>Trusted Web Activity<ul>
+<li><a href="https://developers.google.com/web/updates/2019/02/using-twa" target="_blank" rel="noopener">https://developers.google.com/web/updates/2019/02/using-twa</a></li>
+<li>Chrome Custom Tab 的升级版，不再显示标题栏</li>
+<li>一个常见的使用场景是在已有的App中去使用PWA来打包家族应用并打造原生体验</li>
+<li>在网页中可以使用schema url来与App通信</li>
+<li>App可以在网址后附上参数给网页发送数据</li>
+</ul>
+</li>
+<li>Perception Toolkit<ul>
+<li><a href="https://web.dev/perception-toolkit" target="_blank" rel="noopener">https://web.dev/perception-toolkit</a></li>
+<li>一个工具包使用Shape Detection API去扫描条码或者获取实物信息</li>
+<li>从网站的 meta 信息展示相关卡片</li>
+<li>提供了WebAssembly版以向下兼容</li>
+</ul>
+</li>
+<li>Puppeteer with Firefox<ul>
+<li>可以使用Firefox进行自动化了</li>
+<li><code>npm i puppeteer-firefox</code></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h1 id="Web-将来可以使用的新功能-新Web-API-新-JavaScript-API-等"><a href="#Web-将来可以使用的新功能-新Web-API-新-JavaScript-API-等" class="headerlink" title="Web 将来可以使用的新功能 / 新Web API / 新 JavaScript API 等"></a>Web 将来可以使用的新功能 / 新Web API / 新 JavaScript API 等</h1><h2 id="Chrome-Only-目前为止，没有写入w3c标准"><a href="#Chrome-Only-目前为止，没有写入w3c标准" class="headerlink" title="Chrome Only (目前为止，没有写入w3c标准)"></a>Chrome Only (目前为止，没有写入w3c标准)</h2><ul>
+<li>Lazy loading<ul>
+<li>在图片和iframe中添加 loading=”lazy” 属性来让浏览器自动懒加载</li>
+<li>Chrome 75 启用</li>
+</ul>
+</li>
+<li>Portals<ul>
+<li><a href="https://web.dev/hands-on-portals" target="_blank" rel="noopener">https://web.dev/hands-on-portals</a></li>
+<li>一个新tag，类似iframe，以提供转到网页中嵌入内容的无缝体验</li>
+<li>可以在Chrome Canary体验</li>
+</ul>
+</li>
+<li>Web Packaging<ul>
+<li><a href="https://github.com/WICG/webpackage" target="_blank" rel="noopener">https://github.com/WICG/webpackage</a></li>
+<li>对网页进行签名打包，在不同服务器上部署，使得浏览器可以不仅在源服务器上获取内容（p2p的感觉）</li>
+<li>暂时没有任何 demo</li>
+</ul>
+</li>
+<li>Paint Holding<ul>
+<li>同一网站切换页面时将保持之前的绘制不会白屏一次</li>
+<li>Chrome Canary 可预览</li>
+</ul>
+</li>
+<li>Cookie Changes upcoming in Chrome 76<ul>
+<li><a href="https://web.dev/samesite-cookies-explained" target="_blank" rel="noopener">https://web.dev/samesite-cookies-explained</a></li>
+<li>没有添加Same-Site的Cookie将会自动适用<code>Same-Site=LAX</code></li>
+</ul>
+</li>
+</ul>
+<p>Chrome 正在开发的</p>
+<ul>
+<li><a href="https://github.com/WICG/native-file-system" target="_blank" rel="noopener">原生文件系统</a></li>
+<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=897276" target="_blank" rel="noopener">无需提前申请即可存储文件在本地</a></li>
+<li><a href="https://github.com/sso-google/sms-otp-retrieval" target="_blank" rel="noopener">基于短信的验证</a></li>
+</ul>
+<blockquote>
+<p>关联Session： What’s New with Chrome and the Web (Google I/O ’19)</p>
+</blockquote>
+<h1 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a>Web API</h1><ul>
+<li><p>开发中</p>
+<ul>
+<li>分享 -&gt; Web Share API (Shipped) -&gt; Web Share Target (v2) (Working)</li>
+<li>media control on System level -&gt; mediaSession API (Shipped)</li>
+<li>检测条码与形状 -&gt; Shape Detection API (FaceDetect / BarcodeDetect both shipped in Chrome Canary) </li>
+<li>App Badging (App上的数字) -&gt; window.Badge / window.ExperimentalBadge (Origin Trial 78)</li>
+<li>唤醒锁 -&gt; (Screen wake lock / System wake lock) -&gt; Wake Lock (In Development)</li>
+<li>文件操作 -&gt; File Picker -&gt; chooseFileSystemEntries (propse stage / In Development)</li>
+<li>访问串口设备（例如打印机） -&gt; Serial API (Proposed API)</li>
+<li>HID 设备访问 -&gt; WebHID (Proposed API / In Development)</li>
+<li>访问通讯录 -&gt; Contacts Picker (Proposed API / Experimenting)</li>
+<li>访问安装字体列表 -&gt; Proposed / In Development</li>
+</ul>
+</li>
+<li><p>很快实装</p>
+<ul>
+<li>剪贴板复制与粘贴图片 </li>
+<li><a href="https://bit.ly/sms-verification-explainer" target="_blank" rel="noopener">基于短信的手机号验证流程</a></li>
+<li>基于时间的推送通知API</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在 Chrome 中可参与试用并参与反馈<br><a href="https://developers.chrome.com/origintrials" target="_blank" rel="noopener">https://developers.chrome.com/origintrials</a></p>
+</blockquote>
+<blockquote>
+<p>Web API 可在 Project hugu 参阅进度 <a href="https://bugs.chromium.org/p/chromium/issues/list?can=2&amp;q=proj-fugu&amp;sort=m&amp;colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified" target="_blank" rel="noopener">Project hugu</a></p>
+</blockquote>
+<blockquote>
+<p>相关Session： Unlocking New Capabilities for the Web (Google I/O ’19)</p>
+</blockquote>
+<h1 id="JavaScript-API-Syntax"><a href="#JavaScript-API-Syntax" class="headerlink" title="JavaScript API / Syntax"></a>JavaScript API / Syntax</h1><ul>
+<li>类的私有字段 (已实装) - working on privatter method and getters and setters</li>
+<li>String.prototype.matchAll (已实装)</li>
+<li>数字分隔 (Chrome 75)</li>
+<li>BigInt (Chrome 74 与 Firefox nightly 与 node 实装 &amp; transpiler available)</li>
+<li>Array.prototype.flat (in chrome firefox safari node)</li>
+<li>从 Entries 反转化为 Object  (in chrome firefox safari node )</li>
+<li>globalThis (in chrome firefox safari node )</li>
+<li>正在将数字排序的稳定性写入标准</li>
+<li>多国语言相关<ul>
+<li>Intl.RelativeTimeFormat -&gt; today yesterday tomorrow (in chrome firefox node)</li>
+<li>Intl.ListFormat -&gt; ex. A, B or C  (in chrome node)</li>
+<li>Intl.DateTimeFormat -&gt; ex. May, 5  (in chrome)</li>
+<li>Intl.Locale -&gt; Internal Translation (in chrome node)</li>
+</ul>
+</li>
+<li>Promise.allSettled (in chrome 76 nightly) / Promise.any</li>
+<li>WeakRef and finalizers (in chrome with flags) &amp; 写入标准</li>
+</ul>
+<blockquote>
+<p>关联Session： What’s new in JavaScript (Google I/O ’19)</p>
+</blockquote>
+<h1 id="经验分享与性能提升"><a href="#经验分享与性能提升" class="headerlink" title="经验分享与性能提升"></a>经验分享与性能提升</h1><p>Chrome 想为各个框架提供一些API这样他们在连续执行分块任务时同时相应用户输入</p>
+<ul>
+<li>Scheduling API<ul>
+<li><a href="https://github.com/WICG/main-thread-scheduling" target="_blank" rel="noopener">https://github.com/WICG/main-thread-scheduling</a></li>
+<li><a href="https://github.com/WICG/is-input-pending" target="_blank" rel="noopener">https://github.com/WICG/is-input-pending</a></li>
+<li><a href="https://github.com/WICG/display-locking" target="_blank" rel="noopener">https://github.com/WICG/display-locking</a></li>
+</ul>
+</li>
+</ul>
+<p>Google 分享了他们在性能上的一些做法和建议</p>
+<ul>
+<li>阶段式SSR</li>
+<li>捕获JS完全加载前的用户点击</li>
+<li>保持初始大小的JS</li>
+<li>交互驱动懒加载组件</li>
+<li>建立依赖关系图，声明性加载功能，同时获取数据</li>
+</ul>
+<p>Google 的性能建议</p>
+<ol>
+<li>懒加载</li>
+<li>响应式图片（根据设备像素密度等加载不同分辨率图片）</li>
+<li>图片CDN</li>
+<li>延迟第三方JS</li>
+<li>移除代价巨大的库</li>
+<li>分离代码</li>
+<li>避免Web Font字体闪烁</li>
+<li>Prefetch</li>
+<li>Preconnect</li>
+<li>Preload</li>
+<li>首屏关键CSS</li>
+<li>gzip -&gt; Brotli </li>
+<li>响应式加载JS（适应不同浏览器分别加载不同JS）</li>
+</ol>
+<p>以及使用Lighthouse 与设定性能预算 LightWallet</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>更多性能、How to、以及Web内容可参照<br><a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i" target="_blank" rel="noopener">https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i</a></p>
+<!-- Google 的架构建议
+1. 为不断发展的Web API而设计程序
+2. 避免惩罚新浏览器（polyfill等）
+3. 持续服务器缓存，保持高CDN命中率
+4. 避免重大修改并增强现有工具 -->
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+    <a href="/ja/2019/05/2019-05-16-record-jp-digital-TV-on-nas/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Synology NASに自宅で録画サーバーを立てました</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+    
+
+</nav>
+
+  
+  
+
+  
+    <div data-url="https://blog.xingoxu.com/2019/05/2019-05-17-google-io-tech/" data-title="「2019 Google IO Web 前端内容总结」 | xingo&#39;s private plot" data-tsina="1804320382" data-image duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+		
+		<div class="qrcode">
+			<div class="qrcode-body-mask"></div>
+			<div class="qrcode-module">
+				<h2>微信扫一扫，分享到朋友圈</h2>
+				<div id="qrcode-pic"></div>
+				<img id="logo-qrcode" src="/favicon.ico">
+	  	</div>
+		</div>
+
+</div>
+  
+</article>
+
+
+  <section id="comments">
+  
+    <div class="duoshuo">
+  <div data-thread-key="2019-05-17-google-io-tech" data-thread-url="https://blog.xingoxu.com/ja/2019/05/2019-05-17-google-io-tech/" data-thread-title="2019 Google IO Web 前端内容总结"></div>
+	<!-- 评论框 end -->
+	<!-- 公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = '//static.xingoxu.com' + 
+			'/js/comments.js?1558080749339';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 公共JS代码 end -->
+</div>
+    
+
+    
+  </section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2019 xingo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" class="profilepic">
+			
+				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/ja/">xingo</a></h1>
+				
+					<p class="header-subtitle">アニメ / フロントエンド開発 / いろいろやってみてます</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>ナビ</li>
+						
+						
+							<li>文章目録</li>
+						
+						
+							<li>友達</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/ja/">ホーム</a></li>
+							
+								<li><a href="/ja/archives">アーカイブ</a></li>
+							
+								<li><a href="/ja/about">プロフィール</a></li>
+							
+								<li><a href="http://works.xingoxu.com/">作品</a></li>
+							
+							
+							
+								<li class="change-language">
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+									<select>
+										
+											<option value="zh-cn">简体中文</option>
+										
+											<option value="ja" selected>日本語</option>
+										
+									</select>
+								</li>
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder>
+									<label class="search-icon" for="search">
+										<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="1500" height="350" viewbox="0 0 1500 350" id="searchAnimatorSVG" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="search-icon.svg" preserveaspectratio="xMinYMid meet">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4" inkscape:cx="287.96719" inkscape:cy="238.13903" inkscape:document-units="px" inkscape:current-layer="searchAnimatorSVG" showgrid="false" units="px" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="2560" inkscape:window-height="1377" inkscape:window-x="-8" inkscape:window-y="196" inkscape:window-maximized="1"/>
+  <path style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="M 315,315 187,202 a 105,105 0 1 1 15,-15" id="magnifier" inkscape:connector-curvature="0"/>
+  <path inkscape:connector-curvature="0" id="underline" d="m 315,315 1700,0" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"/>
+  <metadata id="metadata4154">
+    <rdf:rdf>
+      <cc:work rdf:about="">
+        <dc:title/>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:work>
+    </rdf:rdf>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="ページトップへ"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-新产品-新技术"><span class="toc-number">1.</span> <span class="toc-text">Web 新产品 / 新技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-将来可以使用的新功能-新Web-API-新-JavaScript-API-等"><span class="toc-number">2.</span> <span class="toc-text">Web 将来可以使用的新功能 / 新Web API / 新 JavaScript API 等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome-Only-目前为止，没有写入w3c标准"><span class="toc-number">2.1.</span> <span class="toc-text">Chrome Only (目前为止，没有写入w3c标准)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-API"><span class="toc-number">3.</span> <span class="toc-text">Web API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-API-Syntax"><span class="toc-number">4.</span> <span class="toc-text">JavaScript API / Syntax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#经验分享与性能提升"><span class="toc-number">5.</span> <span class="toc-text">经验分享与性能提升</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-number">6.</span> <span class="toc-text">其他</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-新产品-新技术"><span class="toc-text">Web 新产品 / 新技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-将来可以使用的新功能-新Web-API-新-JavaScript-API-等"><span class="toc-text">Web 将来可以使用的新功能 / 新Web API / 新 JavaScript API 等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome-Only-目前为止，没有写入w3c标准"><span class="toc-text">Chrome Only (目前为止，没有写入w3c标准)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-API"><span class="toc-text">Web API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-API-Syntax"><span class="toc-text">JavaScript API / Syntax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#经验分享与性能提升"><span class="toc-text">经验分享与性能提升</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">ナビ</span>
+				<div class="viewer-div">
+					
+						<li><a href="/ja/">ホーム</a></li>
+					
+						<li><a href="/ja/archives">アーカイブ</a></li>
+					
+						<li><a href="/ja/about">プロフィール</a></li>
+					
+						<li><a href="http://works.xingoxu.com/">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">友達</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title change-language">
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+						<select>
+							
+								<option value="zh-cn">简体中文</option>
+							
+								<option value="ja" selected>日本語</option>
+							
+						</select>
+					</div>
+				</div>
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		languageList: ["zh-cn","ja"],
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+<script src="/sw-register.js?1558080752367"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
