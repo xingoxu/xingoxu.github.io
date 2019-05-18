@@ -1,5 +1,5 @@
 ---
-title: 2019 Google IO Web 前端内容总结
+title: Google I/O 2019 Web 前端内容总结
 categories:
   - dev
   - Front-End-Dev
@@ -78,14 +78,19 @@ Chrome 正在开发的
   - 访问安装字体列表 -> Proposed / In Development
 
 - 很快实装
-  - 剪贴板复制与粘贴图片 
+  - 剪贴板复制与粘贴图片 Clipboard API
   - [基于短信的手机号验证流程](https://bit.ly/sms-verification-explainer)
-  - 基于时间的推送通知API
+  - 基于时间的推送通知API Notification Triggers API
+
+
+> 以上内容年内实装
 
 > 在 Chrome 中可参与试用并参与反馈
 > https://developers.chrome.com/origintrials
 
 > Web API 可在 Project hugu 参阅进度 [Project hugu](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=proj-fugu&sort=m&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified)
+
+![Web API 预定](http://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1g356dbrkpgj21rs0xs4qp.jpg)
 
 > 相关Session： Unlocking New Capabilities for the Web (Google I/O ’19)
 
@@ -126,6 +131,8 @@ Google 分享了他们在性能上的一些做法和建议
 - 交互驱动懒加载组件
 - 建立依赖关系图，声明性加载功能，同时获取数据
 
+![Google Important Piece](http://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1g356nnvqhfj21ra0z2e81.jpg)
+
 Google 的性能建议
 
 1. 懒加载
@@ -144,7 +151,11 @@ Google 的性能建议
 
 以及使用Lighthouse 与设定性能预算 LightWallet
 
-> 相关Session： Elevating the Web Platform with the JavaScript Framework Community (Google I/O ’19)
+![Performance Suggestion](http://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1g358gekpplj21430l4k2y.jpg)
+
+> 相关Session：   
+> Elevating the Web Platform with the JavaScript Framework Community (Google I/O ’19)  
+> Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O ’19)
 
 # 其他
 
