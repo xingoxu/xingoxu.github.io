@@ -16,7 +16,7 @@ date: 2019-05-17 16:55:59
   - 翻訳は今進行中らしい
 - Lighthouse Performance Budgets
   - https://developers.google.com/web/tools/lighthouse/audits/budgets
-  - Lighthouseにパフォーマンス時間 / ファイル大きさ予算、Lighthouseが測ってくれる
+  - Lighthouseにパフォーマンス時間 / ファイル大きさ予算を設定し、Lighthouseが測ってくれる
 - PWA Desktop
   - PWA 今デスクトップOSにインストールできます
 - Trusted Web Activity
