@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="适用 Vue.version &amp;lt; 2.5 &amp;amp;&amp;amp; Vue.version &amp;gt;= 2.2  其实我个人一开始很讨厌 TypeScript 这个东西，就是因为讨厌 Java 的啰里巴嗦，突然在我眼前出现了 Javascript，便爱上了这门语言。 但现在的我稍稍又觉得这样的东西其实还行，只使用类型系统也并没有完全限制 Javascript 本身的灵活性，并且他帮助我不会犯一">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-05-18T11:14:30.026Z">
+<meta property="og:updated_time" content="2019-09-06T05:53:22.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue + TypeScript 尝鲜体验 | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="适用 Vue.version &amp;lt; 2.5 &amp;amp;&amp;amp; Vue.version &amp;gt;= 2.2  其实我个人一开始很讨厌 TypeScript 这个东西，就是因为讨厌 Java 的啰里巴嗦，突然在我眼前出现了 Javascript，便爱上了这门语言。 但现在的我稍稍又觉得这样的东西其实还行，只使用类型系统也并没有完全限制 Javascript 本身的灵活性，并且他帮助我不会犯一">
@@ -106,14 +106,14 @@
       <div class="body-wrap"><article id="post-vue-typescript-early" class="article article-type-post article-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/10/vue-typescript-early/" class="article-date">
+      <a href="/2017/10/vue-typescript-early/" class="article-date" >
   	<time datetime="2017-10-18T07:04:23.000Z" itemprop="datePublished">2017-10-18</time>
 </a>
     </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -159,19 +159,19 @@
 <p><code>allowSyntheticDefaultImports</code> 是为了能够用 es6 形式的 import，其他就参照 Vue 和官网的弄了个最小化的 json。</p>
 <h2 id="万事俱备，让我们-npm-run-dev-跑起来！"><a href="#万事俱备，让我们-npm-run-dev-跑起来！" class="headerlink" title="万事俱备，让我们 npm run dev 跑起来！"></a>万事俱备，让我们 <code>npm run dev</code> 跑起来！</h2><p>在这里，我们假设使用 Vue 官方的 webpack boilerplate，对 Hello.vue 进行一下改造。</p>
 <p>在模板的 msg 下新增一行<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Say Hello Times: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>并将 script 部分修改成<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// Declare the component's type</span></span></span><br><span class="line"><span class="undefined">  interface HelloInterface extends Vue &#123;</span></span><br><span class="line"><span class="undefined">    msg: string,</span></span><br><span class="line"><span class="undefined">    count: number,</span></span><br><span class="line"><span class="undefined">    sayHello(): number</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> &#123;</span></span><br><span class="line"><span class="javascript">    HelloInterface <span class="keyword">as</span> interface</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    data() &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">        msg: <span class="string">'Welcome to Your Vue.js App'</span>,</span></span><br><span class="line"><span class="undefined">        count: 0</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods: &#123;</span></span><br><span class="line"><span class="undefined">      sayHello() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.count++;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="keyword">this</span>.count;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// We need to explicitly annotate the exported options object</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// with the Hello type</span></span></span><br><span class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;HelloInterface&gt;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>并将 script 部分修改成<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// Declare the component's type</span></span></span><br><span class="line">  interface HelloInterface extends Vue &#123;</span><br><span class="line">    msg: string,</span><br><span class="line">    count: number,</span><br><span class="line">    sayHello(): number</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> &#123;</span></span><br><span class="line"><span class="javascript">    HelloInterface <span class="keyword">as</span> interface</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    data() &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">        msg: <span class="string">'Welcome to Your Vue.js App'</span>,</span></span><br><span class="line">        count: 0</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      sayHello() &#123;</span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.count++;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="keyword">this</span>.count;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">// We need to explicitly annotate the exported options object</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// with the Hello type</span></span></span><br><span class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;HelloInterface&gt;;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>这段代码没有什么太大的问题</p>
 <p>接着我们改造一下 App.vue<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./assets/logo.png"</span> @<span class="attr">click</span>=<span class="string">"sayHello"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span>;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> &#123; interface <span class="keyword">as</span> helloInterface, <span class="keyword">default</span> <span class="keyword">as</span> Hello &#125; <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</span></span><br><span class="line"><span class="undefined">  interface App extends Vue &#123;</span></span><br><span class="line"><span class="undefined">    $refs: &#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 对 helloComponent 进行声明，可以使用 helloComponent 上的方法和属性</span></span></span><br><span class="line"><span class="undefined">      helloComponent: helloInterface</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    methods: &#123;</span></span><br><span class="line"><span class="undefined">      sayHello() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.count++;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.sayHello();</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    components: &#123;</span></span><br><span class="line"><span class="undefined">      Hello</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;App&gt;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue, &#123; ComponentOptions &#125; <span class="keyword">from</span> <span class="string">'vue'</span>;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> &#123; interface <span class="keyword">as</span> helloInterface, <span class="keyword">default</span> <span class="keyword">as</span> Hello &#125; <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</span></span><br><span class="line">  interface App extends Vue &#123;</span><br><span class="line">    $refs: &#123;</span><br><span class="line"><span class="javascript">      <span class="comment">// 对 helloComponent 进行声明，可以使用 helloComponent 上的方法和属性</span></span></span><br><span class="line">      helloComponent: helloInterface</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    methods: &#123;</span><br><span class="line">      sayHello() &#123;</span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.count++;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.helloComponent.sayHello();</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">      Hello</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">  &#125; <span class="keyword">as</span> ComponentOptions&lt;App&gt;;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>也就是说，像 refs 这种动态的在运行时才能确定的东西，如果需要在 coding 过程中静态化，则需要在 interface 中对其进行声明，写的 code 稍微有点多，不过可以接受。</p>
 <blockquote>
 <p>注： App.vue 修改成 <code>lang=ts</code> 后，顶层的 main.js 需要换成 main.ts 并修改 webpack 入口点，否则发生 file not found 错误</p>
 </blockquote>
 <h1 id="vue-class-component"><a href="#vue-class-component" class="headerlink" title="vue-class-component"></a>vue-class-component</h1><p>官方的另一种推荐做法是 <code>vue-class-component</code>，不过 demo 和 readme 有点小问题，可把我这个 TypeScript 新手给难到啦，提了 pr 希望快快通过。</p>
 <p>让我们看看使用 <code>vue-class-component</code> 之后的 Hello.vue</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  @Component</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    msg: string = <span class="string">'Welcome to Your Vue.js App'</span></span></span><br><span class="line"><span class="undefined">    count: number = 0</span></span><br><span class="line"><span class="undefined">    sayHello(): number &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.count++;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">this</span>.count;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span></span></span><br><span class="line"></span><br><span class="line">  @Component</span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    msg: string = <span class="string">'Welcome to Your Vue.js App'</span></span></span><br><span class="line">    count: number = 0</span><br><span class="line">    sayHello(): number &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.count++;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">this</span>.count;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>再让我们看看 App.vue</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="undefined">  @Component(&#123;</span></span><br><span class="line"><span class="undefined">    components: &#123;</span></span><br><span class="line"><span class="undefined">      Hello</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span></span><br><span class="line"><span class="undefined">    $refs: &#123;</span></span><br><span class="line"><span class="undefined">      helloComponent: Hello</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    sayHello() &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.helloComponent.count++;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.helloComponent.sayHello();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">'vue-class-component'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./components/Hello.vue'</span>;</span></span><br><span class="line">  </span><br><span class="line">  @Component(&#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      Hello</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span></span><br><span class="line">    $refs: &#123;</span><br><span class="line">      helloComponent: Hello</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    sayHello() &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.helloComponent.count++;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.helloComponent.sayHello();</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>非常 Cool，非常精炼，暂时没有想到可能会发生的没法解决的因为 vue 或者 vue 组件 和 TypeScript 水土不服的编译错误，而且都有了类型和提示。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>尤大佬说在接下来的 Vue 2.5 还会加强一系列的 TypeScript 支持（<a href="https://medium.com/the-vue-point/upcoming-typescript-changes-in-vue-2-5-e9bd7e2ecf08" target="_blank" rel="noopener">链接</a>），不知道是怎样的支持呢。<br>另外，欢迎大家在评论区发表 Vue + TypeScript 的使用场景以及你遇到的错误。</p>
 
@@ -215,9 +215,9 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2017/10/vue-typescript-early/" data-title="「Vue + TypeScript 尝鲜体验」 | xingo&#39;s private plot" data-tsina="1804320382" data-image duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2017/10/vue-typescript-early/" data-title="「Vue + TypeScript 尝鲜体验」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
-		<a class="share-icon share-wechat" href="javascript:;"></a>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
 		<a target="_blank" class="share-icon share-twitter"></a>
 		<a target="_blank" class="share-icon share-google"></a>
@@ -229,7 +229,7 @@
 			<div class="qrcode-module">
 				<h2>微信扫一扫，分享到朋友圈</h2>
 				<div id="qrcode-pic"></div>
-				<img id="logo-qrcode" src="/favicon.ico">
+				<img id="logo-qrcode" src="/favicon.ico" />
 	  	</div>
 		</div>
 
@@ -249,7 +249,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1558178124221';
+			'/js/comments.js?1567749260755';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -395,28 +395,77 @@
 										
 											<option value="zh-cn" selected>简体中文</option>
 										
-											<option value="ja">日本語</option>
+											<option value="ja" >日本語</option>
 										
 									</select>
 								</li>
 							
 							<li>
 								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
-									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder>
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
 									<label class="search-icon" for="search">
-										<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="1500" height="350" viewbox="0 0 1500 350" id="searchAnimatorSVG" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="search-icon.svg" preserveaspectratio="xMinYMid meet">
-  <defs id="defs4"/>
-  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4" inkscape:cx="287.96719" inkscape:cy="238.13903" inkscape:document-units="px" inkscape:current-layer="searchAnimatorSVG" showgrid="false" units="px" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="2560" inkscape:window-height="1377" inkscape:window-x="-8" inkscape:window-y="196" inkscape:window-maximized="1"/>
-  <path style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="M 315,315 187,202 a 105,105 0 1 1 15,-15" id="magnifier" inkscape:connector-curvature="0"/>
-  <path inkscape:connector-curvature="0" id="underline" d="m 315,315 1700,0" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"/>
-  <metadata id="metadata4154">
-    <rdf:rdf>
-      <cc:work rdf:about="">
-        <dc:title/>
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
         <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-      </cc:work>
-    </rdf:rdf>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
   </metadata>
 </svg>
 
@@ -512,11 +561,11 @@
 				<div class="viewer-box-wrap">
 					<div class="viewer-title change-language">
 						<label> <i class="fa fa-globe" aria-hidden="true"></i> 简体中文</label>
-						<select>
+						<select >
 							
 								<option value="zh-cn" selected>简体中文</option>
 							
-								<option value="ja">日本語</option>
+								<option value="ja" >日本語</option>
 							
 						</select>
 					</div>
@@ -585,7 +634,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1558178128569"></script>
+<script src="/sw-register.js?1567749264290"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

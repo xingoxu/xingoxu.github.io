@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-05-18T11:14:30.022Z">
+<meta property="og:updated_time" content="2019-09-06T05:53:22.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给github pages上ssl(hexo可用) | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
@@ -106,14 +106,14 @@
       <div class="body-wrap"><article id="post-github-pages-ssl" class="article article-type-post article-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/ja/2015/04/github-pages-ssl/" class="article-date">
+      <a href="/ja/2015/04/github-pages-ssl/" class="article-date" >
   	<time datetime="2015-04-16T19:01:59.000Z" itemprop="datePublished">2015-04-17</time>
 </a>
     </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -160,7 +160,7 @@
 </ol>
 <p>等待一个小时左右，Cloudflare就会为你的网站配上证书了</p>
 <h1 id="强制网页跳转https"><a href="#强制网页跳转https" class="headerlink" title="强制网页跳转https"></a>强制网页跳转https</h1><p>在头代码中加入</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="Letting-Search-Engine-know"><a href="#Letting-Search-Engine-know" class="headerlink" title="Letting Search Engine know"></a>Letting Search Engine know</h1><p>Add these following in <code>_config.yml</code>:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="attr">https://www.yoursite.com</span>   <span class="comment"># with the https protocol</span></span><br><span class="line"><span class="attr">enforce_ssl:</span> <span class="string">www.yoursite.com</span>   <span class="comment"># without any protocol</span></span><br></pre></td></tr></table></figure>
 <h1 id="Caution"><a href="#Caution" class="headerlink" title="Caution"></a>Caution</h1><p>CloudFlare提供的SSL服务是基于SNI技术的，也就是说，机子上是IE8及以下用户完全无法打开（Chrome使用证书为系统，所以在win7下IE8的Chrome浏览器也是无法打开的，无论版本），注意了</p>
@@ -330,9 +330,9 @@
   
 
   
-    <div data-url="https://blog.xingoxu.com/2015/04/github-pages-ssl/" data-title="「给github pages上ssl(hexo可用)」 | xingo&#39;s private plot" data-tsina="1804320382" data-image duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+    <div data-url="https://blog.xingoxu.com/2015/04/github-pages-ssl/" data-title="「给github pages上ssl(hexo可用)」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
 		<span class="share-icon" title="分享到"></span>
-		<a class="share-icon share-wechat" href="javascript:;"></a>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
 		<a target="_blank" class="share-icon share-weibo"></a>
 		<a target="_blank" class="share-icon share-twitter"></a>
 		<a target="_blank" class="share-icon share-google"></a>
@@ -344,7 +344,7 @@
 			<div class="qrcode-module">
 				<h2>微信扫一扫，分享到朋友圈</h2>
 				<div id="qrcode-pic"></div>
-				<img id="logo-qrcode" src="/favicon.ico">
+				<img id="logo-qrcode" src="/favicon.ico" />
 	  	</div>
 		</div>
 
@@ -364,7 +364,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1558178127584';
+			'/js/comments.js?1567749263566';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -508,7 +508,7 @@
 									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
 									<select>
 										
-											<option value="zh-cn">简体中文</option>
+											<option value="zh-cn" >简体中文</option>
 										
 											<option value="ja" selected>日本語</option>
 										
@@ -517,21 +517,70 @@
 							
 							<li>
 								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
-									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder>
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
 									<label class="search-icon" for="search">
-										<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="1500" height="350" viewbox="0 0 1500 350" id="searchAnimatorSVG" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="search-icon.svg" preserveaspectratio="xMinYMid meet">
-  <defs id="defs4"/>
-  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4" inkscape:cx="287.96719" inkscape:cy="238.13903" inkscape:document-units="px" inkscape:current-layer="searchAnimatorSVG" showgrid="false" units="px" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="2560" inkscape:window-height="1377" inkscape:window-x="-8" inkscape:window-y="196" inkscape:window-maximized="1"/>
-  <path style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="M 315,315 187,202 a 105,105 0 1 1 15,-15" id="magnifier" inkscape:connector-curvature="0"/>
-  <path inkscape:connector-curvature="0" id="underline" d="m 315,315 1700,0" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"/>
-  <metadata id="metadata4154">
-    <rdf:rdf>
-      <cc:work rdf:about="">
-        <dc:title/>
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
         <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-      </cc:work>
-    </rdf:rdf>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
   </metadata>
 </svg>
 
@@ -627,9 +676,9 @@
 				<div class="viewer-box-wrap">
 					<div class="viewer-title change-language">
 						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
-						<select>
+						<select >
 							
-								<option value="zh-cn">简体中文</option>
+								<option value="zh-cn" >简体中文</option>
 							
 								<option value="ja" selected>日本語</option>
 							
@@ -700,7 +749,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1558178131488"></script>
+<script src="/sw-register.js?1567749266430"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
