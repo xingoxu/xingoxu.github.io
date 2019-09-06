@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>目標サイト接続中... / Jumping...</title>
+  <script src="https://cdnjs.loli.net/ajax/libs/qs/6.8.0/qs.min.js"></script>
+  <script>
+    const sendImpression = path =>
+      new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve({ path, status: 'ok' });
+        img.onerror = () => resolve({ path, status: 'error' });
+
+        img.src = path;
+      });
+    function main() {
+      fetch('/js/affiliate_data.json').then(data => {
+        return data.json();
+      }).then(aff => {
+        let param = Qs.parse(location.search.substr(1));
+        return aff[param['target']];
+      }).then(site => {
+        sendImpression(site.impression).then(() => {
+          location.href = site.link;
+        });
+      }).catch(err => {
+        location.href = '/404';
+      });
+    }
+
+    main();
+  </script>
+</head>
+
+<body>
+</body>
+</html>

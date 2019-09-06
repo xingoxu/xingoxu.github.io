@@ -42,7 +42,14 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: [CNAME,google311213f0c8d812a9.html,setup-log/blog-setup/*,baidu_verify_YbTSlpWIUJ.html]
+skip_render: 
+  - CNAME
+  - google311213f0c8d812a9.html
+  - setup-log/blog-setup/*
+  - baidu_verify_YbTSlpWIUJ.html
+  - keep_origin/*
+  - js/*
+  - assets/*
 
 # Writing
 new_post_name: :lang/:title.md # File name of new posts
