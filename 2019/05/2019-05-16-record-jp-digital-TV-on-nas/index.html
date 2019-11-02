@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336pg2yuyj30fm0akgm2.jpg">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1g336sgurv5j224s17k1ky.jpg">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336q15opxj31bx0u0wmy.jpg">
-<meta property="og:updated_time" content="2019-09-06T05:58:03.751Z">
+<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="群晖 NAS 打造自动电视录像服务器 | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="什么是录像服务器录像服务器就是指将电脑接上电视天线，把电视节目自动录制下来并保存在硬盘上。在日本许多电视机都会自带录制功能，指定节目之后每周录制相同时间段的节目，或者指定条件，自动录制符合条件的节目。这次我们就要来尝试在NAS上搭建这么一个录制服务器。 为什么我们要搭建这样的服务器既然电视机已经有了这样的功能，为什么还需要额外搭建这样的服务器呢。电视机确实已经很强大，但我们也有串流需求，在家，在外">
@@ -236,7 +236,7 @@
 <h2 id="安装Mirakurun主程序"><a href="#安装Mirakurun主程序" class="headerlink" title="安装Mirakurun主程序"></a>安装Mirakurun主程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install mirakurun -g --unsafe-perm --production</span><br></pre></td></tr></table></figure>
 <h2 id="配置Mirakurun"><a href="#配置Mirakurun" class="headerlink" title="配置Mirakurun"></a>配置Mirakurun</h2><p>主要是对Tuner进行配置，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun config tuners</span><br></pre></td></tr></table></figure></p>
 <p>这里卡了很久，一直没法成功录制，但最终注释掉了一些奇怪的配置就搞定了</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">- name:</span> <span class="string">PX-S1UD-1</span></span><br><span class="line"><span class="attr">  types:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">GR</span></span><br><span class="line"><span class="attr">  command:</span> <span class="string">recdev</span> <span class="bullet">--b25</span> <span class="bullet">--strip</span> <span class="string">&lt;channel&gt;</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br><span class="line"><span class="attr">  isDisabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">PX-S1UD-1</span></span><br><span class="line">  <span class="attr">types:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">GR</span></span><br><span class="line">  <span class="attr">command:</span> <span class="string">recdev</span> <span class="string">--b25</span> <span class="string">--strip</span> <span class="string">&lt;channel&gt;</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br><span class="line">  <span class="attr">isDisabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun restart</span><br></pre></td></tr></table></figure>
 <p>重启mirakurun之后查看 pm2 log，如果没有错误正常开始Recording，表示搭建成功。</p>
 <p>频道的话对Tuner设置成功之后会自己更新频道并更新节目列表，因此无需其他操作，一个天线的情况下耐心等待5分钟到10分钟左右即可。</p>
@@ -361,6 +361,9 @@
   
   
   
+  
+  
+  
     <a href="/2018/05/buddy-complex-seichijunrei/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">心灵盟友 Buddy Complex 圣地巡礼</div>
       <strong class="article-nav-caption">></strong>
@@ -407,7 +410,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1567749512451';
+			'/js/comments.js?1572719808482';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -792,7 +795,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1567749515955"></script>
+<script src="/sw-register.js?1572719811952"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

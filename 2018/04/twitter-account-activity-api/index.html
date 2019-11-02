@@ -23,7 +23,7 @@
 <meta property="og:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://i.loli.net/2018/04/30/5ae7000843f53.png">
-<meta property="og:updated_time" content="2019-09-06T05:58:03.755Z">
+<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推特 Account Activity API 使用体验 | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="前几天使用了一下推特的 Account Activity API，这个 API 支持注册一个 webhook，用于接受授权账户的实时活动（推特文，事件，设置）。 包括以下内容：  推特内容 at 提醒 回复 转发 带评论转发 点赞 发出的私信和接收到的私信 关注 拉黑 屏蔽 阅读回执  在试用的过程中，碰到了一些问题，做一个整理。">
@@ -179,7 +179,7 @@
 <p>注册完成后不会有任何返回，<code>HTTP Code: 204 No Conent</code></p>
 <p>注册完成后可以通过</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
-<p>可以收到<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  // &lt;- 自己的user_id</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以收到<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  <span class="comment">// &lt;- 自己的user_id</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>随便对一条推特点赞</p>
 <p>可以收到推特来的 webhook object。</p>
 <p>自己用这个写了一个推特的bot，可以作为参考。<br><a href="https://github.com/xingoxu/twitter-like-downloader" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader</a></p>
@@ -191,9 +191,6 @@
   
     
 <nav id="article-nav">
-  
-  
-  
   
   
   
@@ -258,7 +255,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1567749512473';
+			'/js/comments.js?1572719808506';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -643,7 +640,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1567749516005"></script>
+<script src="/sw-register.js?1572719812007"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336pg2yuyj30fm0akgm2.jpg">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1g336sgurv5j224s17k1ky.jpg">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336q15opxj31bx0u0wmy.jpg">
-<meta property="og:updated_time" content="2019-09-06T05:58:03.755Z">
+<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Synology NASに自宅で録画サーバーを立てました | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="なぜNASにNASを持ってる方多いと思いますし、NASは24時間起動してるので、新しいデバイス買わなく節電できて録画サービスを任せろう。 使うもの Synology NAS 一台 アンテナを接続してリコードする DockerとVirtual Machine Manager対応機種 （機種一覧）   PLEX USB地上波アンテナ PX-S1UD V2.0 初心者に優しい地デジアンテナ 高くない、4">
@@ -235,7 +235,7 @@
 <h2 id="Mirakurun-メインプログラムインストール"><a href="#Mirakurun-メインプログラムインストール" class="headerlink" title="Mirakurun メインプログラムインストール"></a>Mirakurun メインプログラムインストール</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install mirakurun -g --unsafe-perm --production</span><br></pre></td></tr></table></figure>
 <h2 id="Mirakurun-を設定"><a href="#Mirakurun-を設定" class="headerlink" title="Mirakurun を設定"></a>Mirakurun を設定</h2><p>Tuner設定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun config tuners</span><br></pre></td></tr></table></figure></p>
 <p>ここで半日間かかった！わけわからんパラメーターを抜いたら使えました！</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">- name:</span> <span class="string">PX-S1UD-1</span></span><br><span class="line"><span class="attr">  types:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">GR</span></span><br><span class="line"><span class="attr">  command:</span> <span class="string">recdev</span> <span class="bullet">--b25</span> <span class="bullet">--strip</span> <span class="string">&lt;channel&gt;</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br><span class="line"><span class="attr">  isDisabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">PX-S1UD-1</span></span><br><span class="line">  <span class="attr">types:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">GR</span></span><br><span class="line">  <span class="attr">command:</span> <span class="string">recdev</span> <span class="string">--b25</span> <span class="string">--strip</span> <span class="string">&lt;channel&gt;</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br><span class="line">  <span class="attr">isDisabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p>Mirakurun再起動します。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun restart</span><br></pre></td></tr></table></figure></p>
 <p><code>pm2 log</code> で状況を見てみましょう、特になんのエラーが出てなく、<code>Recording</code> が出たら多分大丈夫です。</p>
 <p>チャンネルの設定は Mirakurun は自分が取得しますので、5-10分ぐらい待てばいい。</p>
@@ -362,9 +362,6 @@
   
   
   
-  
-  
-  
     <a href="/ja/2018/05/buddy-complex-seichijunrei/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">バディ・コンプレックス 聖地巡礼</div>
       <strong class="article-nav-caption">></strong>
@@ -411,7 +408,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1567749512440';
+			'/js/comments.js?1572719808458';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -796,7 +793,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1567749515917"></script>
+<script src="/sw-register.js?1572719811926"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
