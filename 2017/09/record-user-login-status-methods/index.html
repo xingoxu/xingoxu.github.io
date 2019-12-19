@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="Cookie直接在Cookie中存信息可谓是上古时代的操作了，在服务器还没有那么便宜的情况下，好多网站选择将用户的登录信息存在cookie中，他们把用户名或者用户id转换并签名之后，直接存入Cookie，如果有其他需要的信息，也是如此操作 转换或签名可以是加盐md5，也可以是使用secret的双向加密 用户第二次访问网站的时候，代码中对这段信息进行验证，看看是否是正确的签名的">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
+<meta property="og:updated_time" content="2019-12-19T22:56:25.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用户登录状态 验证权限的时代变迁 | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="Cookie直接在Cookie中存信息可谓是上古时代的操作了，在服务器还没有那么便宜的情况下，好多网站选择将用户的登录信息存在cookie中，他们把用户名或者用户id转换并签名之后，直接存入Cookie，如果有其他需要的信息，也是如此操作 转换或签名可以是加盐md5，也可以是使用secret的双向加密 用户第二次访问网站的时候，代码中对这段信息进行验证，看看是否是正确的签名的">
@@ -144,7 +144,9 @@
       
         <h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><p>直接在Cookie中存信息可谓是上古时代的操作了，在服务器还没有那么便宜的情况下，好多网站选择将用户的登录信息存在cookie中，他们把用户名或者用户id转换并签名之后，直接存入Cookie，如果有其他需要的信息，也是如此操作</p>
 <p>转换或签名可以是加盐md5，也可以是使用secret的双向加密</p>
-<p>用户第二次访问网站的时候，代码中对这段信息进行验证，看看是否是正确的签名的<br><a id="more"></a></p>
+<p>用户第二次访问网站的时候，代码中对这段信息进行验证，看看是否是正确的签名的</p>
+<a id="more"></a>
+
 <p>这样做的好处是：<br>不会再占用服务器资源，直接就在cookie中读取数据，获得结果</p>
 <p>坏处是：<br>登录凭据容易被窃取，尤其是那个年代还没有流行https，如果被中间人了，或者以另一种方式拿到了cookie，那就会被窃取登录，另外，每个数据还可能是分开存储的，因此容易被篡改</p>
 <p>当然那时的互联网也并没有那么发达，cookie也就存存用户名什么的用于显示</p>
@@ -245,7 +247,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1572719808556';
+			'/js/comments.js?1576796214633';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -630,7 +632,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1572719812091"></script>
+<script src="/sw-register.js?1576796216674"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

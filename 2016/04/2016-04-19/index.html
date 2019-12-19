@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-11-02T18:35:49.619Z">
+<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期学习小结 | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践">
@@ -146,10 +146,11 @@
       
         <p>又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践</p>
 <a id="more"></a>
+
 <h1 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h1><p>nodejs的学习我是跟着《了不起的Node.js》这本书来入门的，其中书后面的connect，express等部分可能有点过时了（api之类的），但是其实这些框架学习了前面的知识后，稍微看一下这本书讲的理念，完全可以去看文档便能灵活掌握使用方法了，就nodejs这一块我感觉坑其实不多不深。<br>另外我觉得这本书不错<del>（我不是书商啊大家不要随便轻信我的话）</del>，是因为他让我对现在web后端的一些新的概念，新的理念，一些实际应用中的是如何实现有了一点概念，比如session（之前我还读season233），mongodb这些的，总算是感觉自己离这些看起来很高大上的东西其实只有几行代码的距离。在nodejs中，如果需要处理一些复杂的逻辑，回调函数用的多的话，那么Promise就有了用武之地，包括维护代码整洁，代码分层（？）这个样子是非常有帮助的，而且nodejs稳步实现ES6嘛所以Promise是原生对象（奇怪WebStorm为什么没有提示）。</p>
 <h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p><a href="http://liubin.org/promises-book/" target="_blank" rel="noopener">JavaScript Promise迷你书</a></p>
 <h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><p>整个Angularjs的学习过程我觉得是非常陡峭的，学的时候我并没有买书看，我先去看的视频，视频其实没有多少，然而反复看了三个礼拜（老忘），上手写了几段，而且视频看到最后说是声明式ui，恍然大悟（？），才算是感觉好像入门了。。。。<del>（唉我说google的文档啊你能不能好好写啊，找着看真累）</del></p>
-<h2 id="双向绑定的’-scope’"><a href="#双向绑定的’-scope’" class="headerlink" title="双向绑定的’$scope’"></a>双向绑定的’$scope’</h2><p>用Angularjs来实现的前端的web应用（？），在其ngApp下的作用域的每一个DOM节点上都会有$scope，$scope是双向绑定的灵魂所在。这个\$scope是以原型链的方式来继承上一级节点的\$scope的，因此在实现逻辑复用的时候，是不应该将函数啊什么的全部都往scope上来附，感觉就相当于全局变量污染（？），可读性和扩展性会比较差。</p>
+<h2 id="双向绑定的’-scope’"><a href="#双向绑定的’-scope’" class="headerlink" title="双向绑定的’$scope’"></a>双向绑定的’$scope’</h2><p>用Angularjs来实现的前端的web应用（？），在其ngApp下的作用域的每一个DOM节点上都会有$scope，$scope是双向绑定的灵魂所在。这个$scope是以原型链的方式来继承上一级节点的$scope的，因此在实现逻辑复用的时候，是不应该将函数啊什么的全部都往scope上来附，感觉就相当于全局变量污染（？），可读性和扩展性会比较差。</p>
 <h2 id="controller与directive"><a href="#controller与directive" class="headerlink" title="controller与directive"></a>controller与directive</h2><p>刚学习Angularjs的时候我对controller和directive很懊恼，玛德，怎么前面这个东西是个controller，后面这个东西怎么也有controller，后面这个东西还能依赖啊，那么多config项，什么compile啊什么link啊，然后当写了一点，体验了一些过后，controller这个东西，就是mvc中的controller，你可以在controller范围内的节点上声明ngClick调用controller，那就是mvc的结构咯，v-&gt;c,c-&gt;m,m-&gt;v，而directive这个东西其实是angularjs最后偏向的mvw的what，因为他什么都可以当，我现在比较喜欢拿directive当presenter，当我一直在考虑如何将代码的逻辑理顺，把代码结构分清，而且各司其职，我发现原来我更倾向于mvp这个模式。</p>
 <blockquote>
 <p>按需加载 AngularJS 的 Controller<br><a href="http://www.cnblogs.com/zhrj000/p/3383898.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhrj000/p/3383898.html</a><br><a href="http://beginor.github.io/2014/12/20/angularjs-controller-load-on-demand.html" target="_blank" rel="noopener">http://beginor.github.io/2014/12/20/angularjs-controller-load-on-demand.html</a></p>
@@ -247,7 +248,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1572719808699';
+			'/js/comments.js?1576796214701';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -632,7 +633,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1572719812315"></script>
+<script src="/sw-register.js?1576796216806"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

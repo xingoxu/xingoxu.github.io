@@ -23,7 +23,7 @@
 <meta property="og:description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif">
-<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
+<meta property="og:updated_time" content="2019-12-19T22:56:25.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WNDR4300救砖（openwrt） | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="记一次作死把路由如何弄砖，又是如何救回来的过程">
@@ -148,6 +148,7 @@
       
         <p>记一次作死把路由如何弄砖，又是如何救回来的过程</p>
 <a id="more"></a>
+
 <h1 id="本教程适用于："><a href="#本教程适用于：" class="headerlink" title="本教程适用于："></a>本教程适用于：</h1><ol>
 <li>砖前为openwrt</li>
 <li>救后为openwrt</li>
@@ -172,7 +173,8 @@
 <li>等待TFTP软件显示绿色圆点，表示刷机成功。再等待几分钟，就可以看到电源键变绿，4300起来了。</li>
 <li>此时，局域网已经支持DHCP，并可以通过 <a href="http://192.168.1.1" target="_blank" rel="noopener">http://192.168.1.1</a> 来进入luci管理平台，广域网口插入网线，设置后可以上网。</li>
 </ol>
-<p><br></p>
+<br>
+
 <p>注：恢复后没有5G的配置项，解决办法：已经正常运行时，把4300断电，然后插电重启。就会看到5G的配置项。</p>
 <h1 id="最后再记"><a href="#最后再记" class="headerlink" title="最后再记"></a>最后再记</h1><p>恢复后什么都没有了，要重头配置，在配置的过程中还发现了自己以前记录的一些问题</p>
 <ol>
@@ -180,9 +182,12 @@
 <li>ss包从luci开发者的github界面进入，不要从其他地方进入，傲娇的很luci。。。记得选择spec优化版本（？）</li>
 <li>ss更新过后luci界面开发者就将地址只支持数字ip了，不再支持域名了（明明人家windows客户端优秀的不行</li>
 <li>尽管是2.3.2，但是新安装的（还是15.05的openwrt上）并没有看到UDP中继，然而ignore.list倒是要自己下载。。。</li>
-<li>ignore.list下载方式在最下面<br><br></li>
+<li>ignore.list下载方式在最下面<br>
+
+</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ &#123; printf("%s/%d\n", $4, 32-log($5)/log(2)) &#125;' &gt; /etc/ignore.list</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>luci-ss界面关于不支持域名的issue：<a href="https://github.com/shadowsocks/openwrt-shadowsocks/issues/124" target="_blank" rel="noopener">https://github.com/shadowsocks/openwrt-shadowsocks/issues/124</a></p>
 </blockquote>
@@ -383,7 +388,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1572719811446';
+			'/js/comments.js?1576796216203';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -768,7 +773,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1572719814399"></script>
+<script src="/sw-register.js?1576796218130"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

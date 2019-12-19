@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="Intro: gulp能做什么 利用gulp编译stylus，本地预览，自动刷新，自动提升版本并Release 心得">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
+<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp.js初体验 - 自动编译&#x2F;刷新&#x2F;Release | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="Intro: gulp能做什么 利用gulp编译stylus，本地预览，自动刷新，自动提升版本并Release 心得">
@@ -150,6 +150,8 @@
 <li>心得</li>
 </ol>
 <a id="more"></a>
+
+
 <h1 id="gulp能做什么"><a href="#gulp能做什么" class="headerlink" title="gulp能做什么"></a>gulp能做什么</h1><p>半个月前朋友提醒我说可以开始学习构建了，学习grunt，gulp，当时我对这些一无所知，对于构建的理解，只是处于minify html/css/js，uglify js等，想想这些不都已经有了很多现成的工具吗，然后又去grunt,gulp主页逛了，完全看不懂主页上的getting started要干什么</p>
 <p>然而最近在尝试使用bootstrap与学习angularjs，想要试试自己搞一个小型的CRUD的app，我发现，我需要一个工具，能帮我处理这些框架中的sass，less，需要一个工具能帮我自动从framework文件夹编译成result并放入dist，而且我也根本无法脱离stylus的语法了（汗），单独编译以及手动整理真是太花费人的时间了，完全不能专注于写代码</p>
 <p>于是诞生了以下需求：</p>
@@ -179,6 +181,7 @@
 <p>哈哈以上都是官方的api文档，其实了解了gulp怎么运作之后，编写属于自己的任务还是挺简单的</p>
 <p><del>抄写</del>仿照官方的编译stylus与sourcemap，写了个自己的compile任务</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</span><br><span class="line">	stylus = <span class="built_in">require</span>(<span class="string">'gulp-stylus'</span>),</span><br><span class="line">	sourceMaps = <span class="built_in">require</span>(<span class="string">'gulp-sourcemaps'</span>),</span><br><span class="line">	runSequence = <span class="built_in">require</span>(<span class="string">'run-sequence'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'compile-stylus'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//non-minified用作查看是否是编译问题而不是compress问题</span></span><br><span class="line">	gulp</span><br><span class="line">		.src(<span class="string">'src/stylus/*.styl'</span>)</span><br><span class="line">		.pipe(stylus(&#123;</span><br><span class="line">			<span class="string">'include css'</span>: <span class="literal">true</span></span><br><span class="line">		&#125;))</span><br><span class="line">		.pipe(gulp.dest(<span class="string">'src/debuggable/css/'</span>));</span><br><span class="line">	<span class="keyword">var</span> taskReturn =</span><br><span class="line">		gulp</span><br><span class="line">		.src(<span class="string">'src/stylus/*.styl'</span>)</span><br><span class="line">		.pipe(sourceMaps.init())</span><br><span class="line">		.pipe(stylus(&#123;</span><br><span class="line">			<span class="string">'include css'</span>: <span class="literal">true</span>,</span><br><span class="line">			<span class="string">'compress'</span>: <span class="literal">true</span></span><br><span class="line">		&#125;))</span><br><span class="line">		.pipe(sourceMaps.write(<span class="string">'../../debug-maps'</span>))<span class="comment">//cwd:src/dist/css/</span></span><br><span class="line">		.pipe(gulp.dest(<span class="string">'src/dist/css/'</span>));</span><br><span class="line">	<span class="keyword">return</span> taskReturn;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'compile'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">	runSequence(</span><br><span class="line">		<span class="string">'compile-stylus'</span>,</span><br><span class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (error) &#123;</span><br><span class="line">				<span class="built_in">console</span>.log(error.message);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">'compile finished!'</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			callback(error);</span><br><span class="line">		&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>然而我发现其实生成了sourcemap，chrome的调试工具就很棒的帮我们自动对应到了stylus上了，所以好像输出一下那个编译后文件并没有什么卵用了。。。</p>
 <h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p><strong>注意！</strong><br>gulp有个坑就是在相对路径时，不要加’./‘，以及注意调用路径，第一次写任务的时候被坑惨了，还以为是自己哪里写错了or getting started过时了</p>
 <p>gulp的运行时路径就是你cmd/gitbash的路径，不是相对于js的路径（<strong>使用require-dir的小伙伴们要注意了</strong>）</p>
@@ -381,7 +384,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1572719811344';
+			'/js/comments.js?1576796216155';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -766,7 +769,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1572719814176"></script>
+<script src="/sw-register.js?1576796218003"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

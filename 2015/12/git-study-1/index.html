@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="git的教程很多，但很杂，留一篇自用吧">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
+<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识命令行git | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="git的教程很多，但很杂，留一篇自用吧">
@@ -144,37 +144,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>git的教程很多，但很杂，留一篇自用吧<br><a id="more"></a> </p>
+        <p>git的教程很多，但很杂，留一篇自用吧</p>
+<a id="more"></a> 
+
 <h1 id="机遇"><a href="#机遇" class="headerlink" title="机遇"></a>机遇</h1><p>以前一直使用傻瓜式的SourceTree，然而今天（2015-12-1）升了级之后全部爆炸，完全push不上去，好吧，不得不感叹一下windows平台真的越来越像个定时炸弹（微软再这么玩真的。。。）<br>在部署blog的时候也学习了git的一点点概念，所以上手挺快</p>
 <h1 id="0-安装"><a href="#0-安装" class="headerlink" title="0 安装"></a>0 安装</h1><p>在windows平台上，git的客户端有很多，在这里我选择git for windows(以前是msysgit)</p>
 <p>首先你得从他的官网(<a href="https://git-for-windows.github.io/)上下载下来" target="_blank" rel="noopener">https://git-for-windows.github.io/)上下载下来</a></p>
 <p>安装过程中没有什么需要配置的，如果看不懂，请自行学习英语这一门语言</p>
 <p>安装后先打开git然后输入两条命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;user_test&quot;</span><br><span class="line">#git的全局设置，设置一次即可，这里设置用户名</span><br><span class="line">git config --global user.email &quot;user_test@user.test&quot;</span><br><span class="line">#git的全局设置，设置一次即可，这里设置邮件</span><br><span class="line">git config --global push.default simple</span><br><span class="line">#听说需要设置</span><br></pre></td></tr></table></figure>
+
 <h1 id="1-初始化仓库"><a href="#1-初始化仓库" class="headerlink" title="1 初始化仓库"></a>1 初始化仓库</h1><p>不管是远程已经有了仓库，还是自己家有仓库，首先在git里你都必须新建一个仓库，如果在文件夹下没有检测到.git文件夹，他就不会对这个文件夹有任何操作，such as pull or push</p>
 <p>可以在任何你想建立仓库的父文件夹下右键git bash here(如果你没有在安装时去除这个钩钩的话)</p>
-<p>进入后输入命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir 仓库名</span><br><span class="line">cd 仓库名</span><br><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>进入后输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir 仓库名</span><br><span class="line">cd 仓库名</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+
 <p>![git init][1]<br>[1]: <a href="https://ooo.0o0.ooo/2017/05/25/5926482034f7a.png" target="_blank" rel="noopener">https://ooo.0o0.ooo/2017/05/25/5926482034f7a.png</a><br>你的仓库就初始化好了！</p>
 <h1 id="2-设置你的SSH-Key"><a href="#2-设置你的SSH-Key" class="headerlink" title="2 设置你的SSH Key"></a>2 设置你的SSH Key</h1><p>在与我们的github服务器进行交流前，我们要告诉他，我们是谁。在github中，我们可以用密码登陆，也可以用ssh key来操作仓库</p>
 <p>如果你想使用其他方式与github服务器交流，请搜索其他文章，如果你已经初始化了ssh key，也请搜索其他文章如何关联</p>
-<p>键入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C &apos;你的email&apos; -t rsa</span><br></pre></td></tr></table></figure></p>
+<p>键入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C &apos;你的email&apos; -t rsa</span><br></pre></td></tr></table></figure>
+
 <p>看清英文，一步一步，如果你需要设置密码，在途中自行输入，以后上传时都会要求输入密码，当然也可以不设置</p>
 <h1 id="3-pull-and-push"><a href="#3-pull-and-push" class="headerlink" title="3 pull and push"></a>3 pull and push</h1><p>首先先将我们的仓库与远程仓库进行关联</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin ssh地址</span><br></pre></td></tr></table></figure>
+
 <p>![ssh path][2]<br>[2]: <a href="https://ooo.0o0.ooo/2017/05/25/592648208b7e8.png" target="_blank" rel="noopener">https://ooo.0o0.ooo/2017/05/25/592648208b7e8.png</a><br>ssh地址都可以在github仓库页面上找到，以<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:开头的，请将它们整个复制进去</p>
 <p>操作完成后不会有任何提示</p>
 <h2 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+
 <h2 id="add"><a href="#add" class="headerlink" title="add"></a>add</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
 <p>可以将当前所有文件加入push list(.git文件夹)</p>
-<h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><p>在push前，请记得打commit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;commit注释&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><p>在push前，请记得打commit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;commit注释&quot;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
 <p>目前还不明白 -u参数作用</p>
 <h1 id="4-What-if-I-did-wrong"><a href="#4-What-if-I-did-wrong" class="headerlink" title="4 What if I did wrong?"></a>4 What if I did wrong?</h1><p>起因: 不小心把pixiv的账号密码一起传到了github上。。。</p>
 <p>方法: </p>
 <pre><code>git reset --hard &lt;commit_id&gt;
 
-git push origin HEAD --force
-</code></pre><p>其他:</p>
+git push origin HEAD --force</code></pre><p>其他:</p>
 <pre><code>根据–soft –mixed –hard，会对working tree和index和HEAD进行重置:
 git reset –mixed：此为默认方式，不带任何参数的git reset，即时这种方式，它回退到某个版本，只保留源码，回退commit和index信息
 git reset –soft：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可
@@ -183,8 +195,7 @@ git reset –hard：彻底回退到某个版本，本地的源码也会变为上
 
 HEAD 最近一个提交
 HEAD^ 上一次
-&lt;commit_id&gt;  每次commit的SHA1值. 可以用git log 看到,也可以在页面上commit标签页里找到.
-</code></pre><blockquote>
+&lt;commit_id&gt;  每次commit的SHA1值. 可以用git log 看到,也可以在页面上commit标签页里找到.</code></pre><blockquote>
 <p>From： <a href="http://www.douban.com/note/189603387/" target="_blank" rel="noopener">http://www.douban.com/note/189603387/</a></p>
 </blockquote>
 <h1 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h1><blockquote>
@@ -259,7 +270,7 @@ HEAD^ 上一次
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1572719808784';
+			'/js/comments.js?1576796214749';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -644,7 +655,7 @@ HEAD^ 上一次
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1572719812505"></script>
+<script src="/sw-register.js?1576796216928"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

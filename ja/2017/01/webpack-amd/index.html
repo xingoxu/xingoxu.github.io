@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/01/22/5884a7e1b5563.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/01/22/5884aab1c137b.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/01/22/5884ada8243fb.png">
-<meta property="og:updated_time" content="2019-11-02T18:35:49.623Z">
+<meta property="og:updated_time" content="2019-12-19T22:56:25.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探究&#x2F;使用webpack的AMD | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="什么？webpack出2了？ 刚用了小半年的webpack就又要重头学过了？  那么试试吧？先试试改造一下blog？ 我擦？怎么用requirejs？">
@@ -160,6 +160,8 @@
 <p>那么试试吧？先试试改造一下blog？</p>
 <p>我擦？怎么用requirejs？</p>
 <a id="more"></a>
+
+
 <h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>也不算熟悉webpack吧，1的时候用vue-cli bootstrap了萌购的几个手机页面，虽说其实完全不用关心构建这一块，只需要改改路径就可以了，但闲下来的时候好奇心也是会驱动自己看看别人是怎么写的构建文件的，不过看别人写的构建文件，又稍微看了点其他网站的webpack的有关教程，自己倒也是没有想到AMD这件事情，也对webpack并不怎么熟悉，而且1的文档也实在是狗屎的可以，就停留在会用，会模仿着套路写</p>
 <p>前两天2出了，看看这新的文档站，手边又正好不怎么忙，那么看看</p>
 <p>官方风格不错，也有很好的introduction和concept的解释，重新学习了一下官方对loaders的定义，不过2刚出，文档站里也有很多问题，比如loaders现在叫rules但文档里还是loaders等这样的小问题</p>
@@ -173,13 +175,16 @@
 <p>然后 <code>npm install webpack --save-dev &amp;&amp; npm install requirejs --save</code> </p>
 <p>然后入口点app.js</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requirejs <span class="keyword">from</span> <span class="string">'requirejs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'passed'</span>, <span class="string">"I'm in app.js"</span>);</span><br><span class="line"></span><br><span class="line">requirejs([<span class="string">'./async.js'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">asyncModule</span>) </span>&#123;</span><br><span class="line">  asyncModule.init();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>async.js</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define([],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    init()&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"I'm in async.js"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://ooo.0o0.ooo/2017/01/22/58849f426e077.png" alt="import requirejs"></p>
 <p>好的，无情报错，unexpected character，打开看了一下这个r.js，第一行显示是注释，但在webpack却报错了，看来是姿势不对</p>
 <h1 id="搜索一下"><a href="#搜索一下" class="headerlink" title="搜索一下"></a>搜索一下</h1><p>那么在webpack中怎么用上AMD呢，搜了webpack 1的<a href="http://webpack.github.io/docs/api-in-modules.html#require-amd" target="_blank" rel="noopener">文档</a></p>
 <p>哦？原来直接就能写？<br>试试，去掉import，直接require看看？async.js不变，app.js</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'passed'</span>, <span class="string">"I'm in app.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">'./async.js'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">asyncModule</span>) </span>&#123;</span><br><span class="line">  asyncModule.init();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>此时出现<br><img src="https://ooo.0o0.ooo/2017/01/22/5884a3812a1e9.png" alt="直接require并传函数进去"></p>
 <p>发现我们的async被打包成了0.bundle.js</p>
 <p>让我们打开浏览器看看<br><img src="https://ooo.0o0.ooo/2017/01/22/5884a3e560cd8.png" alt="浏览器成功运行1"></p>
@@ -189,6 +194,7 @@
 <p>webpack 2把这个api单独拿出来讲了一整页是有它的道理<br>一个是，webpack2把这个现在这样的引用 也看成引用一个chunk，只不过是异步引用<br>另一个是，没有了以前1的require AMD用法，可能将来会弃用？</p>
 <p>从文档上也得知了，用这样的api，可以对chunkname进行指定，那我们来试试，app.js改成</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'passed'</span>, <span class="string">"I'm in app.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>.ensure([<span class="string">'./async.js'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">require</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> asyncModule = <span class="built_in">require</span>(<span class="string">'./async.js'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(asyncModule); <span class="comment">//等下再说</span></span><br><span class="line">  asyncModule.init();</span><br><span class="line">&#125;,<span class="string">'async'</span>);</span><br></pre></td></tr></table></figure>
+
 <p>浏览器控制台还是正常输出了</p>
 <p>但我们输出的文件还是0.bundle.js啊</p>
 <p><img src="https://ooo.0o0.ooo/2017/01/22/5884a7e1b5563.png" alt="使用require.ensure bash中 1"></p>
@@ -204,12 +210,15 @@
 <h1 id="AMD模块的写法"><a href="#AMD模块的写法" class="headerlink" title="AMD模块的写法"></a>AMD模块的写法</h1><h2 id="es6的exports写法"><a href="#es6的exports写法" class="headerlink" title="es6的exports写法"></a>es6的exports写法</h2><p>让我们改变一下AMD模块的写法，之前我们是用标准的AMD define，那么ES6的exports写法会怎么样呢？</p>
 <p>app.js </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'passed'</span>, <span class="string">"I'm in app.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>.ensure([<span class="string">'./async.src.js'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">require</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> asyncModule = <span class="built_in">require</span>(<span class="string">'./async.js'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(asyncModule);</span><br><span class="line">  asyncModule.init();</span><br><span class="line">&#125;,<span class="string">'async'</span>);</span><br></pre></td></tr></table></figure>
+
 <p>async.src.js （刚才不当心取名async覆盖掉了原来的async.js）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  init() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"I'm in async.js"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>浏览器报错<br><img src="https://ooo.0o0.ooo/2017/01/22/5884ada8243fb.png" alt="浏览器报错"></p>
 <p>这个问题webpack没有给我们答案，不过我在 stackoverflow 的解释中看到了<a href="http://stackoverflow.com/questions/33704714/cant-require-default-export-value-in-babel-6-x" target="_blank" rel="noopener">答案</a></p>
 <h2 id="自动检测的写法"><a href="#自动检测的写法" class="headerlink" title="自动检测的写法"></a>自动检测的写法</h2><p>有很多插件是这种写法</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">root, factory</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</span><br><span class="line">        define([<span class="string">'jquery'</span>], factory);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        factory(root[<span class="string">'jQuery'</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(<span class="keyword">this</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log($);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"I'm in async.js !"</span>);</span><br><span class="line">    <span class="comment">//$.fn.anything = funciton()&#123;...&#125;</span></span><br><span class="line"></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
 <p>ok，webpack也能帮你amd使用amd，cmd使用cmd，不过cmd也不会走下面那条factory的路哦</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>使用require.ensure进行AMD获取模块<br>对于AMD模块，最好使用AMD模块标准编写，因为还能在define时写好前置模块，让webpack自动帮我们处理打包</p>
 <p><del>2的文档写的仍然非常有水准</del> 黑科技满满</p>
@@ -413,7 +422,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1572719811479';
+			'/js/comments.js?1576796216236';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -798,7 +807,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1572719814478"></script>
+<script src="/sw-register.js?1576796218177"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
