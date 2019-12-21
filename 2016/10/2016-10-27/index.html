@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/27/581223dbbfa58.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/27/581223db71dc7.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/10/27/581223d5d6ea8.jpg">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最近遇到的小坑 | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="Android Chrome 非常奇怪的字体偏移 IOS Safari -webkit-box 非常奇怪的字体偏移 linear-gradient 小笔记 晒晒最近的怪物猎人物语  夹个怪猎物语的私货你们有意见吗【没有】">
@@ -168,8 +168,6 @@
 </ol>
 <p>夹个怪猎物语的私货你们有意见吗【没有】</p>
 <a id="more"></a>
-
-
 <p>最近两天在做移动端的web开发，总体来说活不算多，页面很简单，全新的页面没有包袱，也有现成的ui库可以用，又是用vue进行开发，一个礼拜就切完了所有5个图，所以大多数时间都花在了适配后端数据以及细节的深究</p>
 <h1 id="Android-非常奇怪的字体偏移"><a href="#Android-非常奇怪的字体偏移" class="headerlink" title="Android 非常奇怪的字体偏移"></a>Android 非常奇怪的字体偏移</h1><p>上图（左iphone 6/ios 10.0，右Nexus 6p/Android 7.0/Chrome 53.0）</p>
 <p><img src="https://ooo.0o0.ooo/2016/10/25/580ef6ffa1f2c.png" alt="ios.png"> <img src="https://ooo.0o0.ooo/2016/10/25/580ef6ffc70f9.png" alt="android.png"></p>
@@ -189,8 +187,7 @@
 <p>仔细一看，发现是渲染字体的问题</p>
 <p>我的Nexus 6p使用的是日文语言，渲染的时候用的是Noto Sans CJK JP Regular<br><img src="https://ooo.0o0.ooo/2016/10/25/580eb1207efbf.png" alt="normal.png"> </p>
 <p>而他的是中文，渲染就用普通Noto Sans</p>
-<blockquote>想了想，日文字体中的很多中文字体是不存在的，发现了不存在的中文字体可能去借用了其他字体库，日文的中文字体和普通的中文字体混在了一起，系统没有处理好出了问题，一个猜想，不一定对</blockquote>
-<blockquote>当我把iphone 6改成日文再测试，发现，还是很棒的渲染效果 （辣鸡Google</blockquote>
+<blockquote>想了想，日文字体中的很多中文字体是不存在的，发现了不存在的中文字体可能去借用了其他字体库，日文的中文字体和普通的中文字体混在了一起，系统没有处理好出了问题，一个猜想，不一定对</blockquote><br><blockquote>当我把iphone 6改成日文再测试，发现，还是很棒的渲染效果 （辣鸡Google</blockquote>
 
 <h1 id="IOS-webkit-box-奇怪的字体偏移"><a href="#IOS-webkit-box-奇怪的字体偏移" class="headerlink" title="IOS -webkit-box 奇怪的字体偏移"></a>IOS -webkit-box 奇怪的字体偏移</h1><p>用-webkit-box在做一个省略的两行标题的时候，碰到的一个非常奇怪的问题</p>
 <p>上图（iphone 6/ios 10.0）</p>
@@ -203,16 +200,11 @@
 <p>不过box也已经废弃了，flex已经替代box（标准不一样）。后来搜了一下，做多行省略号倒是有很多tricks，当时也是纠结于这一个事情，实在是太傻了233，还是不要闷声写代码啊，多谷歌一下，说不定有其他套路233</p>
 <h1 id="linear-gradient-小笔记"><a href="#linear-gradient-小笔记" class="headerlink" title="linear-gradient 小笔记"></a>linear-gradient 小笔记</h1><p>很久以前便知道了他的大名，然而 很久都没有使用过它，因为他 远看厉害，去看他的标准，却总是被搞得一头雾水<br>这两天做一个timeline的效果，以前不怎么用linear-gradient，一般用:before,:after进行拼接，然而这次觉得，巨麻烦，用上了linear-gradient<br>第一次用，做类似于–o- 这样的效果，稍微瞄了几眼标准，随手写</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 70%,<span class="selector-tag">white</span> 30%);</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://ooo.0o0.ooo/2016/10/27/58121bf5dea34.png" alt="左70右30"></p>
 <p>看了效果，不错</p>
-<p>结果今天过去做- o  这样的效果，写下了</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 30%,<span class="selector-tag">white</span> 70%);</span><br></pre></td></tr></table></figure>
-
+<p>结果今天过去做- o  这样的效果，写下了<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 30%,<span class="selector-tag">white</span> 70%);</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://ooo.0o0.ooo/2016/10/27/58121c6942677.png" alt="左30右70，却变成了黑白渐变"><br>结果变成了黑白渐变</p>
-<p>只好乖乖去仔细看文档</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> linear-gradient( </span><br><span class="line">  [ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]? &lt;color-stop&gt; [, &lt;color-stop&gt;]+ )</span><br><span class="line">  \---------------------------------/ \----------------------------/</span><br><span class="line">    Definition of the gradient line        List of color stops  </span><br><span class="line"></span><br><span class="line">where &lt;side-or-corner&gt; = [left | right] || [top | bottom]</span><br><span class="line">  and &lt;color-stop&gt;     = &lt;color&gt; [ &lt;percentage&gt; | &lt;length&gt; ]?</span><br></pre></td></tr></table></figure>
-
+<p>只好乖乖去仔细看文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> linear-gradient( </span><br><span class="line">  [ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]? &lt;color-stop&gt; [, &lt;color-stop&gt;]+ )</span><br><span class="line">  \---------------------------------/ \----------------------------/</span><br><span class="line">    Definition of the gradient line        List of color stops  </span><br><span class="line"></span><br><span class="line">where &lt;side-or-corner&gt; = [left | right] || [top | bottom]</span><br><span class="line">  and &lt;color-stop&gt;     = &lt;color&gt; [ &lt;percentage&gt; | &lt;length&gt; ]?</span><br></pre></td></tr></table></figure></p>
 <p>注意这个color-stop</p>
 <blockquote>
 <p><code>&lt;color-stop&gt;</code></p>
@@ -221,13 +213,10 @@
 <p>This value is comprised of a <color> value, followed by an optional stop position (either a percentage or a <length> along the gradient’s axis).<br>Rendering of color stops in CSS gradients follows the same rules as color stops in SVG gradients.</length></color></p>
 </blockquote>
 <p>followed by an optional stop position ← 原来是停止位置。。。</p>
-<p>所以应该这么写</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 1%,<span class="selector-tag">white</span> 1%) <span class="selector-tag">no-repeat</span>;</span><br></pre></td></tr></table></figure>
-
+<p>所以应该这么写<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 1%,<span class="selector-tag">white</span> 1%) <span class="selector-tag">no-repeat</span>;</span><br></pre></td></tr></table></figure></p>
 <p>当然啦，要注意多个颜色（&gt;3）的情况下，两个颜色之间的距离如果大于0就是产生渐变（废话，这是人家本来的用处啊233）</p>
 <p>所以如果要做无渐变的多个颜色的混合，应该这么写</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>,<span class="selector-tag">black</span> 1%,<span class="selector-tag">white</span> 1%,<span class="selector-tag">white</span> 3%,<span class="selector-id">#0c0119</span> 3%) <span class="selector-tag">no-repeat</span>;</span><br><span class="line">                                     \------/ \------/ \------/ \------/</span><br><span class="line">                                     颜色0结束 颜色1开始 颜色1结束 颜色2开始</span><br></pre></td></tr></table></figure>
-
 <h1 id="晒游戏晒游戏233"><a href="#晒游戏晒游戏233" class="headerlink" title="晒游戏晒游戏233"></a>晒游戏晒游戏233</h1><p>最近在玩怪物猎人物语！超喜欢リュート，田村睦心这季配了好多男主，都超可爱！隔壁bs的约克也是！</p>
 <p>感觉这个游戏就是卡普空简化战斗的怪物猎人啊，果然从小培养信仰吗（然而我并不吃这套哼</p>
 <p>还差一些材料，现在在刷塔，刷完塔做出装备后就马上能全委托通关啦【并不打算再刷其他东西了】</p>
@@ -303,7 +292,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796214682';
+			'/js/comments.js?1576906594184';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -688,7 +677,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796216788"></script>
+<script src="/sw-register.js?1576906597165"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2017/08/11/598d4b85023f5.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/11/598d498dc090f.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/11/598d4e045ebfe.png">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索 Service Worker “生命周期” | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft">
@@ -157,7 +157,6 @@
       
         <p>最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft 是 2014 年 5 月 8 日，第一个实现 Service Worker 的是 Chrome 40 （2015 年 1 月 21 日）</p>
 <a id="more"></a>
-
 <p>以下将Service Worker简称为SW</p>
 <p>SW的功能略有耳闻，在MDN上它被描述为，“对资源缓存和自定义的网络请求进行控制的一个好的统筹机制”，同时他还具有“访问推送通知和后台同步API”</p>
 <p>听起来很神奇，事实上看起来也很神奇，Twitter上个月更新了样式，大家都看到了推特变成了圆头像圆角，然而推特还使用了新的 SW，在允许推特使用Notification的情况下，推特可以在你Chrome开启的时候而没有打开网页的时候给你推送你所关注的内容（<a href="https://twitter.com/settings/web_notifications" target="_blank" rel="noopener">传送门</a>），有一种javascript在关闭网页后，甚至没有打开网页的情况下，就能在后台运行的感觉。</p>
@@ -165,13 +164,9 @@
 <h1 id="编写一个最简单的-SW"><a href="#编写一个最简单的-SW" class="headerlink" title="编写一个最简单的 SW"></a>编写一个最简单的 SW</h1><p>从零创建 Service Worker，只需四步</p>
 <p><strong>第一步</strong>：我们需要一张 index.html</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>My first Service Worker test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    Hello, Service Worker!</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>第二步</strong>：我们需要一个 sw.js，他就是我们的service worker</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'When you see this, we have successfully registered the SW!'</span>);</span><br></pre></td></tr></table></figure>
-
+<p><strong>第二步</strong>：我们需要一个 sw.js，他就是我们的service worker<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'When you see this, we have successfully registered the SW!'</span>);</span><br></pre></td></tr></table></figure></p>
 <p><strong>第三步</strong>：我们需要在刚才的网页上注册，我们可以在网页中的js引入注册，在这里我直接写在了index.html的script标签</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span></span><br><span class="line"><span class="javascript">    navigator.serviceWorker.register(<span class="string">'/sw.js'</span>, &#123; <span class="attr">scope</span>: <span class="string">'/'</span> &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">reg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// registration worked</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Registration succeeded. Scope is '</span> + reg.scope);</span></span><br><span class="line"><span class="javascript">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// registration failed</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Registration failed with '</span> + error);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span></span><br><span class="line"><span class="javascript">    navigator.serviceWorker.register(<span class="string">'/sw.js'</span>, &#123; <span class="attr">scope</span>: <span class="string">'/'</span> &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">reg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// registration worked</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Registration succeeded. Scope is '</span> + reg.scope);</span></span><br><span class="line"><span class="javascript">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// registration failed</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Registration failed with '</span> + error);</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>最后一步</strong>：将上边的两个文件放在一个文件夹里，从这个文件夹起个服务器</p>
 <p>打开浏览器，访问localhost，让我们看看控制台</p>
 <p><img src="https://i.loli.net/2017/08/11/598d457727c83.png" alt="一个最简单的 SW"></p>
@@ -186,7 +181,6 @@
 <p>我想说的是另一个生命周期，我刚才说到，如果我们第一次进入localhost，并一直保留在那个页面，在inspect service-worker还可以看到service worker还一直运行着</p>
 <p>我们可以将 sw.js 改写成如下</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'test'</span>);</span><br><span class="line">&#125;, <span class="number">5</span> * <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-
 <p>在 chrome://serviceworker-internals/ 取消注册 SW ，并强制刷新 localhost（ mac下 ⌘+shift+R，windows 下 ctrl+shift+R ），我们会发现控制台中，每五秒就打印了一次 test，这也正是说明，SW在第一次进入的时候没有关闭页面的时候，一直在运行，我们也可以在刚才的 chrome://serviceworker-internals/ 看到这个 SW 正在运行。</p>
 <p><img src="https://i.loli.net/2017/08/11/598d4776cc312.png" alt="5秒打印console.log(&#39;test&#39;)"></p>
 <p>然而当我们关闭localhost页面，稍等十几秒后，在两个调试页面上，sw.js都会消失/停止了运行</p>
@@ -195,13 +189,11 @@
 <p><img src="https://i.loli.net/2017/08/11/598d498dc090f.png" alt="重新再次打开页面 sw 没有运行"></p>
 <p>让我们关闭这个localhost，将 sw.js 改写如下</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'Yet Another sw.js'</span>);</span><br></pre></td></tr></table></figure>
-
 <p>保存后，打开localhost</p>
 <p><img src="https://i.loli.net/2017/08/11/598d4b2ce1e1e.png" alt="第一次改写sw.js"></p>
 <p>我们刚才对 SW 完成了一次更新，发现他注册 handler 只会注册一次，接下来我们对 SW 的生命周期与运行周期进行探索，看看他在打开网页时，会不会触发生命周期。</p>
 <p>然后我们再对 sw.js 进行重写</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">self.addEventListener(<span class="string">'install'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'install'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'activate'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>关闭localhost，等待sw停止运行或者deactivate它后再打开localhost，控制台显示出了<code>install</code>和<code>activate</code></p>
 <p><img src="https://i.loli.net/2017/08/11/598d4b85023f5.png" alt="改写sw.js 加入生命周期"></p>
 <p>再次关闭 localhost ，等待 sw 停止运行再打开 localhost ，控制台上只有 registration succeeded</p>
@@ -210,13 +202,11 @@
 <p>更新SW的机制可以在MDN上的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers#恢复失败的请求" target="_blank" rel="noopener">#更新你的Service Worker</a> 这章看到，但这仅仅几行文字，而且比较绕口，我认为这其实是SW自身的工作周期，或者说是运行机制</p>
 <p>于是在W3C Working Draft找到了Service Worker的<a href="https://www.w3.org/TR/service-workers-1/#service-worker-lifetime" target="_blank" rel="noopener">Lifetime定义</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The lifetime of a service worker is tied to the execution lifetime of events and not references held by service worker clients to the ServiceWorker object.</span><br><span class="line"></span><br><span class="line">A user agent may terminate service workers at any time it:</span><br><span class="line"></span><br><span class="line">- Has no event to handle.</span><br><span class="line">- Detects abnormal operation: such as infinite loops and tasks exceeding imposed time limits (if any) while handling the events.</span><br></pre></td></tr></table></figure>
-
 <p>于是我觉得SW的工作周期结合上边的表现可以由下边的图来表示</p>
 <p><img src="https://i.loli.net/2017/08/11/598d4e045ebfe.png" alt="SW 工作周期"></p>
 <p>其实图里有一点不对的是，sw 的第一次运行并不一定是网页关闭才结束的，根据标准来的话，只要 sw 没有 event 需要 handle ，sw 的工作进程都可以结束，只是 Chrome 下是如此运行的。</p>
 <p>另外需要一提的是因为工作线程结束了，因此在外边的变量不一定还保持着之前结束前的状态，所以不要写出如下的代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">self.addEventListener(<span class="string">'fetch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  count++;</span><br><span class="line">  <span class="built_in">console</span>.log(count);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>可能为1，也可能是2</p>
 <h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>SW 是一个事件驱动型Worker，本质上，它是个Worker，工作在 worker context，所以没有访问 DOM 的权限</p>
 <p>如果他要和window进行一些操作的话，与web worker类似，需要使用postMessage这样的方法来传递信息，在window里才能进行DOM操作</p>
@@ -290,7 +280,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796214644';
+			'/js/comments.js?1576906594126';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -675,7 +665,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796216692"></script>
+<script src="/sw-register.js?1576906597044"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

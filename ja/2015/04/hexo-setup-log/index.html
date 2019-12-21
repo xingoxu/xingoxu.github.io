@@ -24,7 +24,7 @@
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/59264929aa77e.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/59264929af2f0.png">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自用hexo+github pages搭建log | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="hexo+github pages 静态页面 速度杠杠的">
@@ -149,7 +149,6 @@
       
         <p>hexo+github pages 静态页面 速度杠杠的</p>
 <a id="more"></a>
-
 <p>#环境</p>
 <blockquote>
 <p>Node.js<br>Git</p>
@@ -157,10 +156,8 @@
 <h1 id="GitHub-Pages创建"><a href="#GitHub-Pages创建" class="headerlink" title="GitHub Pages创建"></a>GitHub Pages创建</h1><p>很多种GitHub Pages，这次创建的是个人id顶级pages<br>New repository，项目的名字就是username.github.io<br>其他选项不再详细赘述，比较简单</p>
 <h1 id="配置SSH-Keys"><a href="#配置SSH-Keys" class="headerlink" title="配置SSH Keys"></a>配置SSH Keys</h1><p>（不知是否可以使用github自己客户端的git，自动生成ssh key，可以的话就跳过这步）<br>现有ssh key check</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-
 <p>No such file or directory 说明没有创建<br>如果有，请删除，个人文件夹（C:/Users/username/）下的.ssh文件夹</p>
 <h2 id="生成新的SSH-key"><a href="#生成新的SSH-key" class="headerlink" title="生成新的SSH key"></a>生成新的SSH key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
-
 <p>-C大写注意<br>回车后系统要求输入密码，输入即可<br>可以不设置</p>
 <p><img src="https://ooo.0o0.ooo/2017/05/25/59264929aa77e.png" alt="ssh key success"></p>
 <h2 id="添加SSH-key到GitHub"><a href="#添加SSH-key到GitHub" class="headerlink" title="添加SSH key到GitHub"></a>添加SSH key到GitHub</h2><p>要把SSH key添加入GitHub才能正常pull/send requests</p>
@@ -171,71 +168,50 @@
 </ol>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>输入以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
 <p>出现以下情况表示配置正确：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is                                                    .</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
-
 <p>输入yes</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xingoxu! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
-
 <p>完善个人信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"cnfeat"</span>//用户名</span><br><span class="line">$ git config --global user.email  <span class="string">"cnfeat@gmail.com"</span>//填写自己的邮箱</span><br></pre></td></tr></table></figure>
-
 <p>配置成功</p>
 <h2 id="常见错误参考"><a href="#常见错误参考" class="headerlink" title="常见错误参考"></a>常见错误参考</h2><p><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="noopener">GitHub Help - Generating SSH Keys</a><br><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="noopener">GitHub Help - Error Permission denied (publickey)</a></p>
 <h1 id="开始使用hexo部署博客"><a href="#开始使用hexo部署博客" class="headerlink" title="开始使用hexo部署博客"></a>开始使用hexo部署博客</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
 <h2 id="部署hexo"><a href="#部署hexo" class="headerlink" title="部署hexo"></a>部署hexo</h2><p>找个地方新建个文件夹，右键git bash</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-
 <p>然后尝试执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
 <p>如果出现错误，尝试重新执行 <code>npm install hexo-cli -g</code><br>成功后可以在浏览器中查看到<code>localhost:4000</code></p>
 <h2 id="使用-调试"><a href="#使用-调试" class="headerlink" title="使用/调试"></a>使用/调试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
 <p>or</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
 <p>每次执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
 <p>deploy/d 是部署到github<br>但前提是首先我们要配置hexo</p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>首先安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
 <p>否则不识别git上传方式</p>
 <p>然后配置根目录下_config.yml</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repository:</span> <span class="string">git@github.com:A-limon/alimon.github.com.git</span> <span class="comment">#此行内容可以在没有部署项目的项目首页找到，点击SSH</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span> <span class="comment">#为不同项目创建，参考其他资料</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site #整站的基本信息</span></span><br><span class="line"><span class="attr">title:</span>  <span class="comment">#网站标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="comment">#网站副标题</span></span><br><span class="line"><span class="attr">description:</span>  <span class="comment">#网站描述</span></span><br><span class="line"><span class="attr">author:</span>   <span class="comment">#网站作者，在下方显示</span></span><br><span class="line"><span class="attr">email:</span>  <span class="comment">#联系邮箱</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://www.cnfeat.com</span> <span class="comment">#你的域名</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repository:</span> <span class="string">git@github.com:A-limon/alimon.github.com.git</span> <span class="comment">#此行内容可以在没有部署项目的项目首页找到，点击SSH</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span> <span class="comment">#为不同项目创建，参考其他资料</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site #整站的基本信息</span></span><br><span class="line"><span class="attr">title:</span>  <span class="comment">#网站标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="comment">#网站副标题</span></span><br><span class="line"><span class="attr">description:</span>  <span class="comment">#网站描述</span></span><br><span class="line"><span class="attr">author:</span>   <span class="comment">#网站作者，在下方显示</span></span><br><span class="line"><span class="attr">email:</span>  <span class="comment">#联系邮箱</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://www.cnfeat.com</span> <span class="comment">#你的域名</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br></pre></td></tr></table></figure>
 <p>这么多差不多就配置好了<br>要注意的是hexo的配置文件，冒号后面一定要空一格空格，字符串后面也要空一格空格</p>
 <h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/wuchong/jacman.git themes/jacman</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/A-limon/pacman.git themes/pacman</span><br></pre></td></tr></table></figure>
-
 <h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>_config.yml中</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jacman</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">$</span> <span class="string">cd</span> <span class="string">themes/jacman</span></span><br><span class="line"><span class="string">$</span> <span class="string">git</span> <span class="string">pull</span></span><br></pre></td></tr></table></figure>
-
 <p>注意备份主题_config.yml</p>
 <h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;plugin-name&gt; --save</span><br></pre></td></tr></table></figure>
-
 <h2 id="安装sitemap与feed插件"><a href="#安装sitemap与feed插件" class="headerlink" title="安装sitemap与feed插件"></a>安装sitemap与feed插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
-
 <p>修改_config.yml，增加以下内容</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">Plugins:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo-generator-feed</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo-generator-sitemap</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">atom</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">atom.xml</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#sitemap</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">sitemap.xml</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">Plugins:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo-generator-feed</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo-generator-sitemap</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#sitemap</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br></pre></td></tr></table></figure>
 <p>主题中有相应部分也要做出修改</p>
 <h1 id="设置CNAME"><a href="#设置CNAME" class="headerlink" title="设置CNAME"></a>设置CNAME</h1><p>在sources文件夹新建一个CNAME文件，内容是一行无空格一个CNAME域名<br>这样做的目的是可以使hexo generate的时候把cname放进网站根目录下<br>当github项目中的设置中这样显示的时候，证明设置成功</p>
 <p><img src="https://ooo.0o0.ooo/2017/05/25/59264929af2f0.png" alt="github-cname-success"></p>
 <p>当你使用非cname，想使用A域名等，请看这里：<br><a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/" target="_blank" rel="noopener">Setting up a custom domain with GitHub Pages - User Documentation</a><br>最后不要忘记在你的ns服务商中设置cname哦</p>
 <h1 id="拾漏补遗-amp-技巧"><a href="#拾漏补遗-amp-技巧" class="headerlink" title="拾漏补遗&amp;技巧"></a>拾漏补遗&amp;技巧</h1><p><code>\scaffolds\post.md</code>进行修改，可以更改默认发布模板<br>例如：</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories: </span><br><span class="line">  - Uncategorized</span><br><span class="line">description: </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">  - </span>Uncategorized</span><br><span class="line">description: </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>pacman 主题启用公式高亮<br>要在pacman的_config.yml中最后加入</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>p.s.听说pacman还不支持3.0(?)</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>参见以下作者文章，感谢他们的努力！：</p>
 <blockquote>
@@ -438,7 +414,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796216162';
+			'/js/comments.js?1576906596400';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -823,7 +799,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796218025"></script>
+<script src="/sw-register.js?1576906598767"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

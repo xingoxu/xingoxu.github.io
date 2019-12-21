@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给github pages上ssl(hexo可用) | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
@@ -146,7 +146,6 @@
       
         <p>github pages已经支持https，可惜不支持自定义证书<br>我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl</p>
 <a id="more"></a>
-
 <h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><ol>
 <li>Sign up for Cloudflare if you don’t already have an account</li>
 <li>Add your website, and make sure all automatically generated records match those on your registrar’s website</li>
@@ -161,11 +160,9 @@
 </ol>
 <p>等待一个小时左右，Cloudflare就会为你的网站配上证书了</p>
 <h1 id="强制网页跳转https"><a href="#强制网页跳转https" class="headerlink" title="强制网页跳转https"></a>强制网页跳转https</h1><p>在头代码中加入</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="Letting-Search-Engine-know"><a href="#Letting-Search-Engine-know" class="headerlink" title="Letting Search Engine know"></a>Letting Search Engine know</h1><p>Add these following in <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="attr">https://www.yoursite.com</span>   <span class="comment"># with the https protocol</span></span><br><span class="line"><span class="attr">enforce_ssl:</span> <span class="string">www.yoursite.com</span>   <span class="comment"># without any protocol</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://www.yoursite.com</span>   <span class="comment"># with the https protocol</span></span><br><span class="line"><span class="attr">enforce_ssl:</span> <span class="string">www.yoursite.com</span>   <span class="comment"># without any protocol</span></span><br></pre></td></tr></table></figure>
 <h1 id="Caution"><a href="#Caution" class="headerlink" title="Caution"></a>Caution</h1><p>CloudFlare提供的SSL服务是基于SNI技术的，也就是说，机子上是IE8及以下用户完全无法打开（Chrome使用证书为系统，所以在win7下IE8的Chrome浏览器也是无法打开的，无论版本），注意了</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
 <p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="noopener">Set Up SSL on Github Pages With Custom Domains for Free</a><br><a href="http://hexo.io/docs/variables.html" target="_blank" rel="noopener">Variables | Hexo</a></p>
@@ -239,7 +236,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796214813';
+			'/js/comments.js?1576906594362';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -624,7 +621,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796217039"></script>
+<script src="/sw-register.js?1576906597503"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

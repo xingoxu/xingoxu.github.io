@@ -23,7 +23,7 @@
 <meta property="og:description" content="“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。">
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/592545c28b9b8.png">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015.05.09 C++多态 | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。">
@@ -146,21 +146,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”<br>C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。</p>
-<a id="more"></a>
-
+        <p>“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”<br>C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。<br><a id="more"></a></p>
 <h1 id="静态多态"><a href="#静态多态" class="headerlink" title="静态多态"></a>静态多态</h1><p>静态多态指的是基于模板的多态，对所有可能出现的情况，把所有代码全部写好，最关键的是，这些关联处理处于编译期而非运行期。<br>常见的静态多态：函数多态，模板多态，宏多态。</p>
 <h1 id="函数多态-函数重载-overload"><a href="#函数多态-函数重载-overload" class="headerlink" title="函数多态/函数重载(overload)"></a>函数多态/函数重载(overload)</h1><p>不同参数，相同名字，返回值不看重即可对函数进行重载</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">overload</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">overload_test</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a test function!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">overload_test</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is an overload function!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">overload_test</span><span class="params">(<span class="keyword">double</span> a)</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is also an overload function!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <h1 id="模板多态-模板函数-函数模板"><a href="#模板多态-模板函数-函数模板" class="headerlink" title="模板多态/模板函数/函数模板"></a>模板多态/模板函数/函数模板</h1><p>执行相同内容，只是参数类型不同，返回值也随着参数类型不同而改变，使用模板函数是最恰当的。模板函数要是欲对某一个不同的参数类型想进行不同的操作还可以使用模板特例。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">func_template</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> X&gt;</span><br><span class="line">	<span class="function">X <span class="title">func_template_func</span><span class="params">(X a, X b)</span></span>&#123;<span class="comment">//function:return big one</span></span><br><span class="line">		<span class="keyword">if</span> (b&gt;a) a = b;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">template</span>&lt;&gt;<span class="comment">//模板特例</span></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">func_template_func</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"This is a specfic template function"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <h1 id="利用虚函数实现的多态"><a href="#利用虚函数实现的多态" class="headerlink" title="利用虚函数实现的多态"></a>利用虚函数实现的多态</h1><p>在父类中定义虚函数，在子类继承父类后对此函数进行覆盖，然后调用的时候一定要使用引用传递。<br>虚函数与指针/引用传递传递一个不能少，虚函数与指针传递共同配合形成一个父类指针指向所需要的子类函数，如果缺了任意一个，即使通过编译，也仍然只会调用父类的虚函数内容。</p>
 <p>要注意的是，子类继承时一定要使用<code>public</code>继承，否则编译会报错，不允许对不可访问的基类进行转换。因为指针并不能指向一个<code>private</code>对象，<code>private</code>对象也并不能向上转换（理解<code>private</code>的意义）</p>
 <p><img src="https://ooo.0o0.ooo/2017/05/24/592545c28b9b8.png" alt="不允许对不可访问的基类进行转换"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">father_class</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">son_class</span> :</span><span class="keyword">public</span> father_class&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"test"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(father_class &amp;a)</span></span>&#123;</span><br><span class="line">	a.run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>因为C++通过父类指针查找到子类函数，查找的过程，是在运行时完成的，所以这样的多态叫做动态多态。<br>以上</p>
 <p>代码中涉及到的一些其他，请参见：</p>
 <blockquote>
@@ -366,7 +361,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796216128';
+			'/js/comments.js?1576906596348';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -751,7 +746,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796217953"></script>
+<script src="/sw-register.js?1576906598660"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

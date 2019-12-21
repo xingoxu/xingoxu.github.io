@@ -23,7 +23,7 @@
 <meta property="og:description" content="前日ツイッターのAccount Activity APIを使ってみました、この API が一つ webhook 登録が可能です、アカウントのリアル活動（ツィート、通知、設定）を受信します。 以下のものが含まれます：  ツィート at 通知 リプライ リツイート 引用リツイート いいね ダイレクトメッセージとその受信 フォロー ブロック ミュート  使う時実際起こった問題を書きました。">
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="https://i.loli.net/2018/04/30/5ae7000843f53.png">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ツイッターの Account Activity API 使ってみた | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="前日ツイッターのAccount Activity APIを使ってみました、この API が一つ webhook 登録が可能です、アカウントのリアル活動（ツィート、通知、設定）を受信します。 以下のものが含まれます：  ツィート at 通知 リプライ リツイート 引用リツイート いいね ダイレクトメッセージとその受信 フォロー ブロック ミュート  使う時実際起こった問題を書きました。">
@@ -160,32 +160,24 @@
 </ul>
 <p>使う時実際起こった問題を書きました。</p>
 <a id="more"></a>
-
 <h1 id="アプリを作ります"><a href="#アプリを作ります" class="headerlink" title="アプリを作ります"></a>アプリを作ります</h1><p>まずここで <a href="https://apps.twitter.com/" target="_blank" rel="noopener">https://apps.twitter.com/</a> チュートリアルに従ってアプリを作って、アプリの key と secret を取得します。</p>
 <h1 id="Account-Activity-API-を申請します"><a href="#Account-Activity-API-を申請します" class="headerlink" title="Account Activity API を申請します"></a>Account Activity API を申請します</h1><p><a href="https://developer.twitter.com/en/apply" target="_blank" rel="noopener">https://developer.twitter.com/en/apply</a><br>ここで権限を申請します，app ID の添付を忘れずに（app ID について：<a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview</a> ）</p>
 <p>申請成功したらメールが来ます<br><img src="https://i.loli.net/2018/04/30/5ae7000843f53.png" alt="申請成功のメール"></p>
 <h1 id="webhook-URL-を登録"><a href="#webhook-URL-を登録" class="headerlink" title="webhook URL を登録"></a>webhook URL を登録</h1><h2 id="CRC-テスト"><a href="#CRC-テスト" class="headerlink" title="CRC テスト"></a>CRC テスト</h2><p>webhook は CRC テストを合格しなければ登録できない、具体的な要望はここに書いている -&gt;<br><a href="https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/guides/securing-webhooks</a></p>
 <p>自分もNode.jsのdemoを書きました、一応参考になれば：<br><a href="https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader/blob/master/routes/twitter.js#L13-L23</a></p>
 <h2 id="postman-でリクエストを送って-webhook-URL-を登録します"><a href="#postman-でリクエストを送って-webhook-URL-を登録します" class="headerlink" title="postman でリクエストを送って webhook URL を登録します"></a>postman でリクエストを送って webhook URL を登録します</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json?url=$&#123;あなたのwebhook URL&#125;</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
-
 <p><code>Bearer TOKEN</code> は<code>https://api.twitter.com/oauth2/token</code>で取得できます。</p>
 <p>注意</p>
 <ul>
 <li>webhook URL は https と 443 ポートのみサポートします（<a href="https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36" target="_blank" rel="noopener">https://twittercommunity.com/t/how-to-register-a-webhook-url-in-twitter/86096/36</a> ）</li>
 </ul>
 <h2 id="postman-でリクエストを送って-subscription-に-webhook-を登録します"><a href="#postman-でリクエストを送って-subscription-に-webhook-を登録します" class="headerlink" title="postman でリクエストを送って subscription に webhook を登録します"></a>postman でリクエストを送って subscription に webhook を登録します</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/webhooks.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
-
 <p>さっきの webhook の id を取って</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">POST:</span><br><span class="line">https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: OAuth 1.0</span><br><span class="line"></span><br><span class="line">Body:</span><br><span class="line">webhook_id: さっきの webhook の id</span><br></pre></td></tr></table></figure>
-
 <p>注意すべきところ：ここAuthorization は OAuth 1.0（user id 認識ため）</p>
 <p>リスポンス内容はない、<code>HTTP Code: 204 No Conent</code></p>
-<p>登録したらここに見えます</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure>
-
-<p>これを受けれます</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  // &lt;- 自分のuser_id</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>登録したらここに見えます<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET：https://api.twitter.com/1.1/account_activity/all/env-beta/subscriptions/list.json</span><br><span class="line"></span><br><span class="line">Header:</span><br><span class="line">Authorization: Bearer TOKEN</span><br></pre></td></tr></table></figure></p>
+<p>これを受けれます<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"environment"</span>: <span class="string">"env-beta"</span>,</span><br><span class="line">    <span class="attr">"application_id"</span>: <span class="string">"12345678"</span>,</span><br><span class="line">    <span class="attr">"subscriptions"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"user_id"</span>: <span class="string">"12345678"</span>  <span class="comment">// &lt;- 自分のuser_id</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="テスト"><a href="#テスト" class="headerlink" title="テスト"></a>テスト</h1><p>好きなツイートをいいねすると</p>
 <p>ツイッターサーバーから webhook object 受けれます。</p>
 <p>最後、Account Activity API使ってる自家用ツイッターBotです、参考になればぜひ<br><a href="https://github.com/xingoxu/twitter-like-downloader" target="_blank" rel="noopener">https://github.com/xingoxu/twitter-like-downloader</a></p>
@@ -198,6 +190,9 @@
   
     
 <nav id="article-nav">
+  
+  
+  
   
   
   
@@ -268,7 +263,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796214596';
+			'/js/comments.js?1576906594061';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -653,7 +648,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796216619"></script>
+<script src="/sw-register.js?1576906596953"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

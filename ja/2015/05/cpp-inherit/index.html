@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="继承和组合是C++中比较重要的代码重用方式">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015.05.12 C++继承 | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
 <meta name="twitter:description" content="继承和组合是C++中比较重要的代码重用方式">
@@ -146,7 +146,6 @@
       
         <p>继承和组合是C++中比较重要的代码重用方式</p>
 <a id="more"></a>
-
 <h1 id="继承与组合"><a href="#继承与组合" class="headerlink" title="继承与组合"></a>继承与组合</h1><p>通常，继承被看做是is-a，组合被看做是has-a<br>当我们不仅想重用内部实现而且还想重用接口的话，使用继承是最好的。</p>
 <h1 id="继承方法"><a href="#继承方法" class="headerlink" title="继承方法"></a>继承方法</h1><p>C++内有三种继承方式：公有继承、私有继承、保护继承</p>
 <h2 id="公有继承"><a href="#公有继承" class="headerlink" title="公有继承"></a>公有继承</h2><p>公有继承是把父类的公有和保护成员/函数保持原有状态进行继承</p>
@@ -155,31 +154,33 @@
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">public</th>
-<th align="center">protected</th>
-<th align="center">private</th>
+<th style="text-align:center">　　</th>
+<th style="text-align:center">public</th>
+<th style="text-align:center">protected</th>
+<th style="text-align:center">private</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">公有继承</td>
-<td align="center">public</td>
-<td align="center">protected</td>
-<td align="center">不可见</td>
+<tbody>
+<tr>
+<td style="text-align:center">公有继承</td>
+<td style="text-align:center">public</td>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">不可见</td>
 </tr>
 <tr>
-<td align="center">私有继承</td>
-<td align="center">private</td>
-<td align="center">private</td>
-<td align="center">不可见</td>
+<td style="text-align:center">私有继承</td>
+<td style="text-align:center">private</td>
+<td style="text-align:center">private</td>
+<td style="text-align:center">不可见</td>
 </tr>
 <tr>
-<td align="center">保护继承</td>
-<td align="center">protected</td>
-<td align="center">protected</td>
-<td align="center">不可见</td>
+<td style="text-align:center">保护继承</td>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">不可见</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>C++中默认继承方式为private继承</p>
 <h1 id="向上类型转换"><a href="#向上类型转换" class="headerlink" title="向上类型转换"></a>向上类型转换</h1><p>C++中允许向上类型转换，也就是，从一个专门的类型转换到一个更一般的类型，也就是从子类转换到父类，所以这样的类型转换也是安全的。对于这个转换唯一可能出现的事情就是它失去它专属的成员，而不是获得。</p>
 <blockquote>
@@ -391,7 +392,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796216124';
+			'/js/comments.js?1576906596344';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -776,7 +777,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796217946"></script>
+<script src="/sw-register.js?1576906598650"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>

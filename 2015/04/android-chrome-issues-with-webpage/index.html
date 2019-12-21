@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/592546e52c39a.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/24/592546f366eaa.png">
-<meta property="og:updated_time" content="2019-12-19T22:56:25.707Z">
+<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两个Android Chrome的小坑 | xingo&#39;s private plot - 一个大龄萌二">
 <meta name="twitter:description" content="背景不支持fixed属性标题栏沉浸">
@@ -147,9 +147,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>背景不支持fixed属性<br>标题栏沉浸</p>
-<a id="more"></a>
-
+        <p>背景不支持fixed属性<br>标题栏沉浸<br><a id="more"></a></p>
 <h1 id="背景不支持fixed属性"><a href="#背景不支持fixed属性" class="headerlink" title="背景不支持fixed属性"></a>背景不支持fixed属性</h1><p>安卓浏览器/安卓Chrome中对于background已经移除了fixed属性</p>
 <p>解决方法：</p>
 <ul>
@@ -160,14 +158,11 @@
 <li>第二种（适用于body background）：</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">html&#123;</span><br><span class="line"> height:100%;</span><br><span class="line"> min-height:100%;</span><br><span class="line"> &#125;</span><br><span class="line">body&#123;</span><br><span class="line"> min-height:100%;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
 <h1 id="标题栏沉浸"><a href="#标题栏沉浸" class="headerlink" title="标题栏沉浸"></a>标题栏沉浸</h1><p>支持Android 5.x下Chrome的标题栏沉浸颜色</p>
 <p><img src="https://ooo.0o0.ooo/2017/05/24/592546e52c39a.png" alt="安卓Chrome沉浸主题色"><br><img src="https://ooo.0o0.ooo/2017/05/24/592546f366eaa.png" alt="安卓Chrome沉浸主题色-任务列表显示"></p>
 <p>header中加入以下代码，选个喜欢的颜色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#ffffff"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">sizes</span>=<span class="string">"192x192"</span> <span class="attr">href</span>=<span class="string">"nice-highres.png"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><blockquote>
 <p><a href="http://ippotsuko.com/support-for-theme-color-in-chrome-39-for-android/" target="_blank" rel="noopener">支持Android 5.x下Chrome的标题栏沉浸颜色</a><br><a href="http://stackoverflow.com/questions/14876035/background-size-cover-not-working-in-portrait-on-android-tablet" target="_blank" rel="noopener">background-size: cover not working in portrait on Android tablet</a></p>
 </blockquote>
@@ -240,7 +235,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576796214801';
+			'/js/comments.js?1576906594344';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -625,7 +620,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576796217018"></script>
+<script src="/sw-register.js?1576906597462"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
