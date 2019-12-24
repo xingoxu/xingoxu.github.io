@@ -32,7 +32,7 @@ CDN by [CloudFlare](https://www.cloudflare.com/).
 ## Github Contributions
 <p></p>
 <div class="canvas-wrapper" markdown="0">
-  <div class="preloader-wrapper small active loading-icon">
+  <div class="preloader-wrapper small active loading-icon loading-circle">
     <div class="spinner-layer spinner-blue">
       <div class="circle-clipper left">
         <div class="circle"></div>
@@ -86,7 +86,7 @@ CDN by [CloudFlare](https://www.cloudflare.com/).
 ## Bangumi Activities
 
 <div class="canvas-wrapper" markdown="0">
-  <div class="preloader-wrapper small active loading-icon">
+  <div class="preloader-wrapper small active loading-icon loading-circle">
     <div class="spinner-layer spinner-blue">
       <div class="circle-clipper left">
         <div class="circle"></div>

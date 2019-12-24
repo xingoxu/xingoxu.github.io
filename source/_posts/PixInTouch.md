@@ -1,3 +1,4 @@
+---
 title: PixInTouch发布页面
 categories:
   - works
@@ -58,6 +59,7 @@ What's new?
 - 首次发布功能
 
 <span id="instruction"></span>
+
 ## 安装使用与说明
 
 本软体无需安装，直接打开pixiv_downloader.exe即可运行
