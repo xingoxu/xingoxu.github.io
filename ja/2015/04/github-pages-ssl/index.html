@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -21,11 +21,11 @@
 <meta property="og:url" content="https://blog.xingoxu.com/ja/2015/04/github-pages-ssl/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
-<meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2015-04-16T19:01:59.000Z">
+<meta property="article:modified_time" content="2019-12-24T23:23:32.195Z">
+<meta property="article:author" content="xingo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给github pages上ssl(hexo可用) | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
-<meta name="twitter:description" content="github pages已经支持https，可惜不支持自定义证书我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl">
 <meta name="twitter:creator" content="@xingoxu">
   
     <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
@@ -33,10 +33,12 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container">
     <div class="mid-col">
@@ -66,7 +68,7 @@
 		        
 					<li><a href="/ja/about">プロフィール</a></li>
 		        
-					<li><a href="http://works.xingoxu.com/">作品</a></li>
+					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -146,6 +148,7 @@
       
         <p>github pages已经支持https，可惜不支持自定义证书<br>我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl</p>
 <a id="more"></a>
+
 <h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><ol>
 <li>Sign up for Cloudflare if you don’t already have an account</li>
 <li>Add your website, and make sure all automatically generated records match those on your registrar’s website</li>
@@ -160,7 +163,8 @@
 </ol>
 <p>等待一个小时左右，Cloudflare就会为你的网站配上证书了</p>
 <h1 id="强制网页跳转https"><a href="#强制网页跳转https" class="headerlink" title="强制网页跳转https"></a>强制网页跳转https</h1><p>在头代码中加入</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"&lt;%- page.permalink %&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">       <span class="keyword">var</span> host = <span class="string">"blog.xingoxu.com"</span>;</span></span><br><span class="line"><span class="javascript">       <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">           <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="Letting-Search-Engine-know"><a href="#Letting-Search-Engine-know" class="headerlink" title="Letting Search Engine know"></a>Letting Search Engine know</h1><p>Add these following in <code>_config.yml</code>:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://www.yoursite.com</span>   <span class="comment"># with the https protocol</span></span><br><span class="line"><span class="attr">enforce_ssl:</span> <span class="string">www.yoursite.com</span>   <span class="comment"># without any protocol</span></span><br></pre></td></tr></table></figure>
 <h1 id="Caution"><a href="#Caution" class="headerlink" title="Caution"></a>Caution</h1><p>CloudFlare提供的SSL服务是基于SNI技术的，也就是说，机子上是IE8及以下用户完全无法打开（Chrome使用证书为系统，所以在win7下IE8的Chrome浏览器也是无法打开的，无论版本），注意了</p>
@@ -364,7 +368,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576906596381';
+			'/js/comments.js?1577229838602';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -400,7 +404,7 @@
 	<header id="header" class="inner">
 		<div class="profileCard">
 			<div class="overlay"></div>
-			<a href="https://xingoxu.com/" class="profilepic">
+			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
 			
 				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
 			
@@ -500,7 +504,7 @@
 							
 								<li><a href="/ja/about">プロフィール</a></li>
 							
-								<li><a href="http://works.xingoxu.com/">作品</a></li>
+								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 							
 							
 							
@@ -654,7 +658,7 @@
 					
 						<li><a href="/ja/about">プロフィール</a></li>
 					
-						<li><a href="http://works.xingoxu.com/">作品</a></li>
+						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 					
 				</div>
 			</div>
@@ -694,8 +698,12 @@
 
   
   
-  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
-  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+  
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+  
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
 	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="pswp__bg"></div>
 	  <div class="pswp__scroll-wrap">
@@ -749,11 +757,21 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576906598729"></script>
+
+<script src="/sw-register.js?1577229839368.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
 <script src="/js/main.js"></script>
+
 
 
 

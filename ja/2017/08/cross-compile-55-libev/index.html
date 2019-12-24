@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -21,14 +21,14 @@
 <meta property="og:url" content="https://blog.xingoxu.com/ja/2017/08/cross-compile-55-libev/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码">
-<meta property="og:locale" content="ja">
+<meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987eac266528.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987f6bf102a1.png">
 <meta property="og:image" content="https://i.loli.net/2017/08/07/5987e533d41aa.jpg">
-<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
+<meta property="article:published_time" content="2017-08-07T06:41:43.000Z">
+<meta property="article:modified_time" content="2019-12-24T23:23:32.195Z">
+<meta property="article:author" content="xingo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="交叉编译原版某不可描述程序为梅林某停更插件续命 | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
-<meta name="twitter:description" content="Forked from 原文 and 非自审查版  准备环境 ubuntu 16.04 原版梅林源码 55-libev 源码">
 <meta name="twitter:image" content="https://i.loli.net/2017/08/07/5987eac266528.png">
 <meta name="twitter:creator" content="@xingoxu">
   
@@ -37,10 +37,12 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container">
     <div class="mid-col">
@@ -70,7 +72,7 @@
 		        
 					<li><a href="/ja/about">プロフィール</a></li>
 		        
-					<li><a href="http://works.xingoxu.com/">作品</a></li>
+					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -155,6 +157,7 @@
 <li>55-libev 源码</li>
 </ol>
 <a id="more"></a>
+
 <h1 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h1><p>解包梅林 55 插件发现，基本都是脚本，核心都是调用 55-redir ，因此猜测 55-redir 为原版 55 ，只需要更新原版 55 ，并在前端进行相应修改，便能对其续命</p>
 <h2 id="ubuntu-16-04"><a href="#ubuntu-16-04" class="headerlink" title="ubuntu 16.04"></a>ubuntu 16.04</h2><p>不是很了解 linux，但是应该只要能够运行 arm-linux-gcc 的 linux 发行版都可以，但我在 ubuntu 16.04 下实验成功，因此这里写 ubuntu 16.04，当然 docker 是可以的（因为我就是在 macos 下用的 docker）</p>
 <h2 id="原版梅林源码"><a href="#原版梅林源码" class="headerlink" title="原版梅林源码"></a>原版梅林源码</h2><p>虽然是 koolshare 改版固件，但其还是合并了梅林的代码，因此可以使用梅林的交叉编译工具链</p>
@@ -388,7 +391,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576906596359';
+			'/js/comments.js?1577229838599';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -424,7 +427,7 @@
 	<header id="header" class="inner">
 		<div class="profileCard">
 			<div class="overlay"></div>
-			<a href="https://xingoxu.com/" class="profilepic">
+			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
 			
 				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
 			
@@ -524,7 +527,7 @@
 							
 								<li><a href="/ja/about">プロフィール</a></li>
 							
-								<li><a href="http://works.xingoxu.com/">作品</a></li>
+								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 							
 							
 							
@@ -678,7 +681,7 @@
 					
 						<li><a href="/ja/about">プロフィール</a></li>
 					
-						<li><a href="http://works.xingoxu.com/">作品</a></li>
+						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 					
 				</div>
 			</div>
@@ -718,8 +721,12 @@
 
   
   
-  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
-  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+  
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+  
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
 	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="pswp__bg"></div>
 	  <div class="pswp__scroll-wrap">
@@ -773,11 +780,21 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576906598685"></script>
+
+<script src="/sw-register.js?1577229839361.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
 <script src="/js/main.js"></script>
+
 
 
 

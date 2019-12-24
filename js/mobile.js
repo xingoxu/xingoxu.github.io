@@ -35,7 +35,7 @@ define([], function() {
 
 	var bindDOM = function() {
 
-		$menu.bind('touchend', function() {
+		$menu.bind('touchend mouseup', function() {
 			show();
 			return false; //prevent bubbling to upper <a>
 		});
@@ -43,10 +43,10 @@ define([], function() {
 		var $viewerBoxRight = $(".viewer-box-r");
 		var touchStartTime;
 		var touchEndTime;
-		$viewerBoxRight.bind("touchstart", function() {
+		$viewerBoxRight.bind("touchstart mousedown", function() {
 			touchStartTime = +new Date();
 		});
-		$viewerBoxRight.bind("touchend", function() {
+		$viewerBoxRight.bind("touchend mouseup", function() {
 			touchEndTime = +new Date();
 			if (touchEndTime - touchStartTime < 300) {
 				hide();
@@ -78,13 +78,13 @@ define([], function() {
 		var lastClickPosition = 0;
 		var $docuElem = $(document);
 		var $bodyElem = $('html,body');
-		$header.bind("touchstart", function() {
+		$header.bind("touchstart mousedown", function() {
 			lastClickPosition = $docuElem.scrollTop();
 			$bodyElem.animate({
 				scrollTop: 0
 			}, 'slow');
 		});
-		$headerName.bind('touchstart', function() {
+		$headerName.bind('touchstart mousedown', function() {
 			$bodyElem.animate({
 				scrollTop: lastClickPosition
 			}, 'slow');
@@ -95,7 +95,7 @@ define([], function() {
 		//bind viewer-div
 		var animating = false;
 		var $viewerTitle = $('span.viewer-title');
-		$viewerTitle.bind('touchend', function(event) {
+		$viewerTitle.bind('touchend mouseup', function(event) {
 			if (animating) {
 				return;
 			}

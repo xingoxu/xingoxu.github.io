@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -15,20 +15,20 @@
   </script>
   
   <title>使用Travis Ci使hexo自动生成并部署 | xingo&#39;s private plot - 一个大龄萌二</title>
-  <meta name="description" content="前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d呢">
+  <meta name="description" content="前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;&amp; hexo g &amp;&amp; hexo d呢">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Travis Ci使hexo自动生成并部署 | xingo&#39;s private plot - 一个大龄萌二">
 <meta property="og:url" content="https://blog.xingoxu.com/2016/12/use-travis-ci-your-blog/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
-<meta property="og:description" content="前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d呢">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:description" content="前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;&amp; hexo g &amp;&amp; hexo d呢">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/23/585cdeb7b5d87.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/23/585cf0ac72c22.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2016/12/23/585cf1ce75576.png">
-<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
+<meta property="article:published_time" content="2016-12-23T07:51:13.000Z">
+<meta property="article:modified_time" content="2019-12-24T23:23:32.199Z">
+<meta property="article:author" content="xingo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Travis Ci使hexo自动生成并部署 | xingo&#39;s private plot - 一个大龄萌二">
-<meta name="twitter:description" content="前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d呢">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2016/12/23/585cdeb7b5d87.png">
 <meta name="twitter:creator" content="@xingoxu">
   
@@ -37,10 +37,12 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container">
     <div class="mid-col">
@@ -70,7 +72,7 @@
 		        
 					<li><a href="/about">关于我</a></li>
 		        
-					<li><a href="http://works.xingoxu.com/">作品</a></li>
+					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -150,6 +152,7 @@
       
         <p>前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;&amp; hexo g &amp;&amp; hexo d呢</p>
 <a id="more"></a>
+
 <h1 id="为什么选择travis-ci"><a href="#为什么选择travis-ci" class="headerlink" title="为什么选择travis ci"></a>为什么选择travis ci</h1><p>因为他和github配合的很好，如果是github的开源项目，travis ci 永久免费</p>
 <p>言下之意，如果你是使用github pages来托管你的博客的话，那travis ci简直就是最好的搭档</p>
 <p><img src="https://ooo.0o0.ooo/2016/12/23/585cdeb7b5d87.png" alt="travis ci 开源项目永久免费"></p>
@@ -159,8 +162,10 @@
 <p><a href="https://docs.travis-ci.com/user/customizing-the-build/" target="_blank" rel="noopener">Getting Started</a></p>
 <p>如果你想再加hook，那么自己看官方文档去，这里对我自己的travis.yml稍作解释</p>
 <blockquote>
-<p>Hosted on <a href="https://github.com/xingoxu/xingoxu.github.io/blob/source/.travis.yml" target="_blank" rel="noopener">GitHub</a><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">'6'</span></span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">export</span> <span class="string">TZ='Asia/Shanghai'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span></span><br><span class="line"><span class="attr">install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">clean</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="attr">after_script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"xingoxu"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"xingoxu@gmail.com"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">clone</span> <span class="string">https://$&#123;GH_REF&#125;</span> <span class="string">.deploy_git</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cd</span> <span class="string">.deploy_git</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">checkout</span> <span class="string">master</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cd</span> <span class="string">../</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">sed</span> <span class="string">-i''</span> <span class="string">"s~$&#123;GH_REF&#125;~$&#123;GH_TOKEN&#125;:x-oauth-basic@$&#123;GH_REF&#125;~"</span> <span class="string">_config.yml</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">d</span> <span class="string">&gt;</span> <span class="string">log.txt</span> <span class="number">2</span><span class="string">&gt;&amp;1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cat</span> <span class="string">log.txt</span> <span class="string">|</span> <span class="string">sed</span> <span class="string">"s~$&#123;GH_TOKEN&#125;~TOKEN~g"</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">source</span></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">GH_REF:</span> <span class="string">github.com/xingoxu/xingoxu.github.io.git</span></span><br></pre></td></tr></table></figure></p>
+<p>Hosted on <a href="https://github.com/xingoxu/xingoxu.github.io/blob/source/.travis.yml" target="_blank" rel="noopener">GitHub</a></p>
 </blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">'6'</span></span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">export</span> <span class="string">TZ='Asia/Shanghai'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span></span><br><span class="line"><span class="attr">install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">clean</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="attr">after_script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"xingoxu"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"xingoxu@gmail.com"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">clone</span> <span class="string">https://$&#123;GH_REF&#125;</span> <span class="string">.deploy_git</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cd</span> <span class="string">.deploy_git</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">checkout</span> <span class="string">master</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cd</span> <span class="string">../</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">sed</span> <span class="string">-i''</span> <span class="string">"s~$&#123;GH_REF&#125;~$&#123;GH_TOKEN&#125;:x-oauth-basic@$&#123;GH_REF&#125;~"</span> <span class="string">_config.yml</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">d</span> <span class="string">&gt;</span> <span class="string">log.txt</span> <span class="number">2</span><span class="string">&gt;&amp;1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cat</span> <span class="string">log.txt</span> <span class="string">|</span> <span class="string">sed</span> <span class="string">"s~$&#123;GH_TOKEN&#125;~TOKEN~g"</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">source</span></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">GH_REF:</span> <span class="string">github.com/xingoxu/xingoxu.github.io.git</span></span><br></pre></td></tr></table></figure>
+
 <p>前面的不用多说，需要关注的是部署的问题</p>
 <h2 id="解决git-push的证书问题"><a href="#解决git-push的证书问题" class="headerlink" title="解决git push的证书问题"></a>解决git push的证书问题</h2><p>普通的push肯定是需要ssh的key的，或者https的话需要输入用户名和密码</p>
 <p>然鹅，这里是持续化环境中，也就是虚拟机环境中，那根本没法询问用户啊</p>
@@ -175,18 +180,24 @@
 <p><img src="https://ooo.0o0.ooo/2016/12/23/585cf1ce75576.png" alt="travis ci repo setting"></p>
 <p>可以在文件中以<code>${变量名}</code>来引用</p>
 <p>文件中的env global，和在这里设置的效果相同</p>
-<p>所以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i<span class="string">''</span> <span class="string">"s~<span class="variable">$&#123;GH_REF&#125;</span>~<span class="variable">$&#123;GH_TOKEN&#125;</span>:x-oauth-basic@<span class="variable">$&#123;GH_REF&#125;</span>~"</span> _config.yml</span><br></pre></td></tr></table></figure></p>
+<p>所以</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i<span class="string">''</span> <span class="string">"s~<span class="variable">$&#123;GH_REF&#125;</span>~<span class="variable">$&#123;GH_TOKEN&#125;</span>:x-oauth-basic@<span class="variable">$&#123;GH_REF&#125;</span>~"</span> _config.yml</span><br></pre></td></tr></table></figure>
+
 <p>就会变成</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i<span class="string">''</span> <span class="string">"s~github.com/xingoxu/xingoxu.github.io.git~这里是密钥:x-oauth-basic@github.com/xingoxu/xingoxu.github.io.git~"</span></span><br></pre></td></tr></table></figure>
+
 <p>以将config.yml中的deploy的地址改成这样的一个拼接地址，就不需要密钥啦</p>
 <h2 id="解决master-commit树被清空"><a href="#解决master-commit树被清空" class="headerlink" title="解决master commit树被清空"></a>解决master commit树被清空</h2><p>如果仅解决push问题，那么你会发现，你部署分支的commit树被清空了</p>
 <p>其实也不是什么很大的问题，但感觉看起来很丑，每次更新都像是一个新站点，没有历史更新记录，虽然这样以后你可以用source的commit来记录和回溯，但，总觉得怪怪的</p>
-<p>使用下面的git命令来解决问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://<span class="variable">$&#123;GH_REF&#125;</span> .deploy_git</span><br><span class="line"><span class="built_in">cd</span> .deploy_git</span><br><span class="line">git checkout master</span><br><span class="line"><span class="built_in">cd</span> ../</span><br></pre></td></tr></table></figure></p>
+<p>使用下面的git命令来解决问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://<span class="variable">$&#123;GH_REF&#125;</span> .deploy_git</span><br><span class="line"><span class="built_in">cd</span> .deploy_git</span><br><span class="line">git checkout master</span><br><span class="line"><span class="built_in">cd</span> ../</span><br></pre></td></tr></table></figure>
+
 <p>其实是很简单的git操作，就是需要注意一下</p>
 <p>最后注意下主题文件夹如果是git文件夹的问题，不过这个应该不算是持续集成的问题</p>
 <h2 id="解决hexo-d显示出私钥的问题"><a href="#解决hexo-d显示出私钥的问题" class="headerlink" title="解决hexo d显示出私钥的问题"></a>解决hexo d显示出私钥的问题</h2><p>travis ci的build log是可以被大家看到的，但是，在添加变量那边关掉后 就不会显示出来了，然而，这也仅限于使用<code>${}</code>来引用他的地方，git push时，会把此地址再显示一遍，这样你的私人密钥又会被显示了</p>
 <p>于是乎我把hexo d的命令改成了这两行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d &gt; log.txt 2&gt;&amp;1</span><br><span class="line">cat log.txt | sed <span class="string">"s~<span class="variable">$&#123;GH_TOKEN&#125;</span>~TOKEN~g"</span></span><br></pre></td></tr></table></figure>
+
 <p>将hexo d的输出，包括标准与非标准，全部输入到log.txt，再cat出来的时候，使用sed对里边含有GH_TOKEN统统替换成TOKEN字符串</p>
 <p>我对linux命令不怎么样熟悉，只能写成这样，如果您有更好的，不输出到log.txt的方法，可以在评论里指点一下</p>
 <p>当然这样也有“缺点”，其实这个缺点在这里不成立，缺点就是把错误吞了，但不成立的原因是，after script的错误不错误不会影响到ci的过程</p>
@@ -265,7 +276,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576906594170';
+			'/js/comments.js?1577229838132';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -301,7 +312,7 @@
 	<header id="header" class="inner">
 		<div class="profileCard">
 			<div class="overlay"></div>
-			<a href="https://xingoxu.com/" class="profilepic">
+			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
 			
 				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
 			
@@ -401,7 +412,7 @@
 							
 								<li><a href="/about">关于我</a></li>
 							
-								<li><a href="http://works.xingoxu.com/">作品</a></li>
+								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 							
 							
 							
@@ -555,7 +566,7 @@
 					
 						<li><a href="/about">关于我</a></li>
 					
-						<li><a href="http://works.xingoxu.com/">作品</a></li>
+						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 					
 				</div>
 			</div>
@@ -595,8 +606,12 @@
 
   
   
-  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
-  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+  
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+  
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
 	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="pswp__bg"></div>
 	  <div class="pswp__scroll-wrap">
@@ -650,11 +665,21 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576906597147"></script>
+
+<script src="/sw-register.js?1577229838909.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
 <script src="/js/main.js"></script>
+
 
 
 

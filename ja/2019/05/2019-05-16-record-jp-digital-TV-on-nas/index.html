@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -21,14 +21,14 @@
 <meta property="og:url" content="https://blog.xingoxu.com/ja/2019/05/2019-05-16-record-jp-digital-TV-on-nas/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="なぜNASにNASを持ってる方多いと思いますし、NASは24時間起動してるので、新しいデバイス買わなく節電できて録画サービスを任せろう。 使うもの Synology NAS 一台 アンテナを接続してリコードする DockerとVirtual Machine Manager対応機種 （機種一覧）   PLEX USB地上波アンテナ PX-S1UD V2.0 初心者に優しい地デジアンテナ 高くない、4">
-<meta property="og:locale" content="ja">
+<meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336pg2yuyj30fm0akgm2.jpg">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1g336sgurv5j224s17k1ky.jpg">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336q15opxj31bx0u0wmy.jpg">
-<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
+<meta property="article:published_time" content="2019-05-16T07:47:37.000Z">
+<meta property="article:modified_time" content="2019-12-24T23:23:32.199Z">
+<meta property="article:author" content="xingo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Synology NASに自宅で録画サーバーを立てました | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
-<meta name="twitter:description" content="なぜNASにNASを持ってる方多いと思いますし、NASは24時間起動してるので、新しいデバイス買わなく節電できて録画サービスを任せろう。 使うもの Synology NAS 一台 アンテナを接続してリコードする DockerとVirtual Machine Manager対応機種 （機種一覧）   PLEX USB地上波アンテナ PX-S1UD V2.0 初心者に優しい地デジアンテナ 高くない、4">
 <meta name="twitter:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336pg2yuyj30fm0akgm2.jpg">
 <meta name="twitter:creator" content="@xingoxu">
   
@@ -37,10 +37,12 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container">
     <div class="mid-col">
@@ -70,7 +72,7 @@
 		        
 					<li><a href="/ja/about">プロフィール</a></li>
 		        
-					<li><a href="http://works.xingoxu.com/">作品</a></li>
+					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -182,6 +184,7 @@
 </li>
 </ul>
 <a id="more"></a>
+
 <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>記事書く時点だけの有効性を保証します、エンドユーザー、コンピュータ初心者向けではない。<br>以下の手順は全て自己責任で、何かしらの問題が発生しても自力で対処できる方のみ実行してください。<br>テレビ番組のコピー、配信は違法となる場合があります。使用についても十分注意して下さい。<br>この記事を参考にしたことにより生じたあらゆる損害について、著者は一切の責任を負いません。</p>
 <h1 id="構造"><a href="#構造" class="headerlink" title="構造"></a>構造</h1><p><img src="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336pg2yuyj30fm0akgm2.jpg" alt="架构"></p>
 <p>大体こういう感じでやっていきたいと思います。</p>
@@ -196,26 +199,31 @@
 </li>
 </ul>
 <h1 id="アンテナ設置"><a href="#アンテナ設置" class="headerlink" title="アンテナ設置"></a>アンテナ設置</h1><p>VMにアンテナのドライバをインストールします</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://plex-net.co.jp/plex/px-s1ud/PX-S1UD_driver_Ver.1.0.1.zip</span><br><span class="line">$ unzip PX-S1UD_driver_Ver.1.0.1.zip</span><br><span class="line">$ sudo cp PX-S1UD_driver_Ver.1.0.1/x64/amd64/isdbt_rio.inp /lib/firmware/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget http:&#x2F;&#x2F;plex-net.co.jp&#x2F;plex&#x2F;px-s1ud&#x2F;PX-S1UD_driver_Ver.1.0.1.zip</span><br><span class="line">$ unzip PX-S1UD_driver_Ver.1.0.1.zip</span><br><span class="line">$ sudo cp PX-S1UD_driver_Ver.1.0.1&#x2F;x64&#x2F;amd64&#x2F;isdbt_rio.inp &#x2F;lib&#x2F;firmware&#x2F;</span><br></pre></td></tr></table></figure>
 <p>完了。</p>
 <p>アンテナドライバ最低3.15のLinux カーネル必要なので、Synology NASのLinuxカーネルは3.10なのでVMを立って使います。</p>
 <p>もし今後 NAS のカーネルが3.15以上になったら、次回 <a href="https://github.com/Chinachu/docker-mirakurun-chinachu" target="_blank" rel="noopener">https://github.com/Chinachu/docker-mirakurun-chinachu</a> の Docker イメージを使ってみたいと思います。</p>
 <h1 id="カードリーダーとB-CASの準備"><a href="#カードリーダーとB-CASの準備" class="headerlink" title="カードリーダーとB-CASの準備"></a>カードリーダーとB-CASの準備</h1><p>カードリーダーソフトとビルドツールのパッケージをインストールします。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential git cmake g++</span><br><span class="line">$ sudo apt-get install pcscd libpcsclite-dev libccid pcsc-tools</span><br></pre></td></tr></table></figure>
+
 <p>完了後、<code>sudo pcsc_scan</code> を実行して、<code>Japanese Chijou Digital B-CAS Card (pay TV)</code>みたいものでたら完成です。</p>
 <p>しかし、私はここ２つ問題遭った、<br>１つ目は入れ間違えたww、<br>２つ目はB-CASカード無効問題、B-CASカードを最初にテレビに入れて見てみたら多分分かると思います。</p>
 <p>型番も問題になるかもしれない、参考した記事の作家さんは遭ったのでそちらの記事をお越しいただければと思います。</p>
 <h1 id="B-CASのデコード用ライブラリのインストール"><a href="#B-CASのデコード用ライブラリのインストール" class="headerlink" title="B-CASのデコード用ライブラリのインストール"></a>B-CASのデコード用ライブラリのインストール</h1><p>日本の地デジ放送は暗号化された状態で配信されているため、そのまま受信して保存すると再生や複製の際に問題が起こる。そこで、B-CASカードの情報を使って受信と同時に復号するのが望ましい。これを実現するライブラリがlibarib25だ。</p>
-<p>コンパイル必要です<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://github.com/stz2012/libarib25/archive/master.zip</span><br><span class="line">$ unzip master.zip</span><br><span class="line">$ cd libarib25-master</span><br><span class="line">$ cmake .</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure></p>
+<p>コンパイル必要です</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ wget https:&#x2F;&#x2F;github.com&#x2F;stz2012&#x2F;libarib25&#x2F;archive&#x2F;master.zip</span><br><span class="line">$ unzip master.zip</span><br><span class="line">$ cd libarib25-master</span><br><span class="line">$ cmake .</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
 <p>インストール完了です。</p>
 <h1 id="録画用コマンドのインストール"><a href="#録画用コマンドのインストール" class="headerlink" title="録画用コマンドのインストール"></a>録画用コマンドのインストール</h1><p>録画ソフトはこれを使って録画しますので、recdvbをインストールします。<br>ソースコードあるんけど、Githubに載っていない。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://www13.plala.or.jp/sat/recdvb/recdvb-1.3.2.tgz</span><br><span class="line">$ tar xvzf recdvb-1.3.2.tgz</span><br><span class="line">$ cd recdvb-1.3.2</span><br><span class="line">$ ./autogen.sh</span><br><span class="line">$ ./configure --enable-b25</span><br><span class="line">$ make </span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ wget http:&#x2F;&#x2F;www13.plala.or.jp&#x2F;sat&#x2F;recdvb&#x2F;recdvb-1.3.2.tgz</span><br><span class="line">$ tar xvzf recdvb-1.3.2.tgz</span><br><span class="line">$ cd recdvb-1.3.2</span><br><span class="line">$ .&#x2F;autogen.sh</span><br><span class="line">$ .&#x2F;configure --enable-b25</span><br><span class="line">$ make </span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
 <p>インストール完了。</p>
-<p>この時点で、コマンドでの録画が可能になった。例えば、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ recdvb --b25 --strip &lt;channel&gt; &lt;seconds&gt; test.m2ts</span><br></pre></td></tr></table></figure></p>
+<p>この時点で、コマンドでの録画が可能になった。例えば、</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ recdvb --b25 --strip &lt;channel&gt; &lt;seconds&gt; test.m2ts</span><br></pre></td></tr></table></figure>
 <p>チャンネルは受信タワーによる違いますので、<a href="http://www.maspro.co.jp/contact/channel.pdf" target="_blank" rel="noopener">こちら</a>から確認できます。</p>
-<p>また、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ recdvb --b25 --strip --http &lt;port&gt;</span><br></pre></td></tr></table></figure></p>
+<p>また、</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ recdvb --b25 --strip --http &lt;port&gt;</span><br></pre></td></tr></table></figure>
 <p>を使ったらリアルタイムストリーミングを配信します。</p>
-<p>Windows / MacのVLCかMacのIINAからURLを開いたら直接見れます。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://[IPアドレス]:8080/[channel number]</span><br></pre></td></tr></table></figure></p>
+<p>Windows / MacのVLCかMacのIINAからURLを開いたら直接見れます。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[IPアドレス]:8080&#x2F;[channel number]</span><br></pre></td></tr></table></figure>
 <p>チャンネルは上と同じです。</p>
 <p>だが、その前に、<br>VMの<code>/etc/hosts</code>を設定しなければいけない（安全保障かな）、<br>でも私のチューナーサーバーはWANに公開するつもりはないので下のリンクを参考して解除しました。</p>
 <blockquote>
@@ -232,11 +240,16 @@
 <p>请参照 <a href="https://github.com/nodesource/distributions/blob/master/README.md#debinstall" target="_blank" rel="noopener">https://github.com/nodesource/distributions/blob/master/README.md#debinstall</a></p>
 </blockquote>
 <h2 id="PM2をインストール"><a href="#PM2をインストール" class="headerlink" title="PM2をインストール"></a>PM2をインストール</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install pm2 -g</span><br></pre></td></tr></table></figure>
+
 <h2 id="Mirakurun-メインプログラムインストール"><a href="#Mirakurun-メインプログラムインストール" class="headerlink" title="Mirakurun メインプログラムインストール"></a>Mirakurun メインプログラムインストール</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install mirakurun -g --unsafe-perm --production</span><br></pre></td></tr></table></figure>
-<h2 id="Mirakurun-を設定"><a href="#Mirakurun-を設定" class="headerlink" title="Mirakurun を設定"></a>Mirakurun を設定</h2><p>Tuner設定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun config tuners</span><br></pre></td></tr></table></figure></p>
+
+<h2 id="Mirakurun-を設定"><a href="#Mirakurun-を設定" class="headerlink" title="Mirakurun を設定"></a>Mirakurun を設定</h2><p>Tuner設定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun config tuners</span><br></pre></td></tr></table></figure>
+
 <p>ここで半日間かかった！わけわからんパラメーターを抜いたら使えました！</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">PX-S1UD-1</span></span><br><span class="line">  <span class="attr">types:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">GR</span></span><br><span class="line">  <span class="attr">command:</span> <span class="string">recdev</span> <span class="string">--b25</span> <span class="string">--strip</span> <span class="string">&lt;channel&gt;</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br><span class="line">  <span class="attr">isDisabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>Mirakurun再起動します。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun restart</span><br></pre></td></tr></table></figure></p>
+<p>Mirakurun再起動します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mirakurun restart</span><br></pre></td></tr></table></figure>
 <p><code>pm2 log</code> で状況を見てみましょう、特になんのエラーが出てなく、<code>Recording</code> が出たら多分大丈夫です。</p>
 <p>チャンネルの設定は Mirakurun は自分が取得しますので、5-10分ぐらい待てばいい。</p>
 <p>ここまでチューナーサーバーの設定は完了しました。<br>MirakurunはAPIとHttp Streamingも提供してるので、<br>APIの使用はここへ</p>
@@ -250,11 +263,13 @@
 </blockquote>
 <p>もし私のDockerFileを参照して立ているなら、下記を注意してください。<br>（Dockerを利用する方も見るといい）</p>
 <ul>
-<li>タイムゾーン問題<ul>
+<li><p>タイムゾーン問題</p>
+<ul>
 <li><code>/etc/localtime:/etc/localtime:ro</code>をマウント</li>
 </ul>
 </li>
-<li>Chinachu の予約、設定データ<ul>
+<li><p>Chinachu の予約、設定データ</p>
+<ul>
 <li>下記のファイルとフォルダをマウントしてデータを保存しましょう</li>
 <li><code>./chinachu/data:/chinachu/data</code></li>
 <li><code>./chinachu/rules.json:/chinachu/rules.json</code></li>
@@ -264,7 +279,7 @@
 <li><p>膨大ログ問題</p>
 <ul>
 <li>Chinachuとpm2はログ入ってるから、Dockerのログはいらない、エラーだけを出力させろう</li>
-<li>下記スクリプトを書いて保存して入り口を設定します。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line">pm2-runtime processes.json &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<li>下記スクリプトを書いて保存して入り口を設定します。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line">pm2-runtime processes.json &gt; &#x2F;dev&#x2F;null</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -273,7 +288,8 @@
 <li><code>/volume2/TVRecorded:/chinachu/recorded</code></li>
 </ul>
 </li>
-<li>ポートの公開</li>
+<li><p>ポートの公開</p>
+</li>
 </ul>
 <h2 id="Chinachu-設定"><a href="#Chinachu-設定" class="headerlink" title="Chinachu 設定"></a>Chinachu 設定</h2><p>公式ドキュメント</p>
 <blockquote>
@@ -287,9 +303,11 @@
 <h2 id="録画後のトランスコード"><a href="#録画後のトランスコード" class="headerlink" title="録画後のトランスコード"></a>録画後のトランスコード</h2><p>録画したファイルは大きな生TS、 大体 x86 アーキテクチャの NAS はハードウェアアクセラレーションついてるので、速いスピードでmp4にトランスコードして、どこでも見れるコーデックにしながら、ファイルサイズも小さくさせる。</p>
 <p>注意するべきのはDockerにvaapi（Intel CPUのハードウェアアクセラレーション）を使うと、rootの権限でアプリを走らないと行けない（<code>/dev/dri/renderD128</code>をアクセスために）</p>
 <p>だがこうすると、録画したファイルはrootが所有者になって、他のアプリの編集は出来ないので、録画後、トランスコードした後、chownを走らせましょう。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chown &lt;uid&gt;:&lt;gid&gt; &lt;/path/to/file&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chown &lt;uid&gt;:&lt;gid&gt; &lt;&#x2F;path&#x2F;to&#x2F;file&gt;</span><br></pre></td></tr></table></figure>
+
 <p>ffmpegのパラメーターも共有しますが、自分のニーズをあわせて公式ドキュメントを参照して調整できます。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg \</span><br><span class="line">  -init_hw_device vaapi=intel:/dev/dri/renderD128 -hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device intel -filter_hw_device intel \</span><br><span class="line">  -i /path/to/recorded/file \</span><br><span class="line">  -analyzeduration 30M -probesize 30M \</span><br><span class="line">  -vf &apos;format=nv12|vaapi,hwupload,deinterlace_vaapi&apos; \</span><br><span class="line">  -c:v h264_vaapi  \</span><br><span class="line">  -threads 4 \</span><br><span class="line">  /path/to/output/file</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg \</span><br><span class="line">  -init_hw_device vaapi&#x3D;intel:&#x2F;dev&#x2F;dri&#x2F;renderD128 -hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device intel -filter_hw_device intel \</span><br><span class="line">  -i &#x2F;path&#x2F;to&#x2F;recorded&#x2F;file \</span><br><span class="line">  -analyzeduration 30M -probesize 30M \</span><br><span class="line">  -vf &#39;format&#x3D;nv12|vaapi,hwupload,deinterlace_vaapi&#39; \</span><br><span class="line">  -c:v h264_vaapi  \</span><br><span class="line">  -threads 4 \</span><br><span class="line">  &#x2F;path&#x2F;to&#x2F;output&#x2F;file</span><br></pre></td></tr></table></figure>
+
 <p>注意：ここのPATHは絶対にフルパスを指定してください、そうじゃないと妙なところに行っちゃいますよ。</p>
 <p>名前をつけて、<code>afterRecord</code>とし、 <code>config.json</code> に</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  "recordedCommand": "./userScripts/afterRecord",</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -297,14 +315,18 @@
 <p>自分のニーズ合わせてスクリプトをカストマイズして自分唯一無二のサーバーを作りましょう！<br>僕はLINE通知を入ってて録画したら通知がLINEに来ますね。</p>
 <h1 id="NASでやるべきのこと"><a href="#NASでやるべきのこと" class="headerlink" title="NASでやるべきのこと"></a>NASでやるべきのこと</h1><h2 id="WebGUI-パスワードをつける"><a href="#WebGUI-パスワードをつける" class="headerlink" title="WebGUI パスワードをつける"></a>WebGUI パスワードをつける</h2><p>WebGUIそのままWANに公開するとちょっと危ない、入るときパスワード機能を入れましょう、自分だけ入ることを確保しましょう。</p>
 <p>僕docker-compose を使ったから、すぐ nginx を追加できます。</p>
-<h3 id="パスワードを生成する"><a href="#パスワードを生成する" class="headerlink" title="パスワードを生成する"></a>パスワードを生成する</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo htpasswd -c /path/to/.htpasswd &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="パスワードを生成する"><a href="#パスワードを生成する" class="headerlink" title="パスワードを生成する"></a>パスワードを生成する</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo htpasswd -c &#x2F;path&#x2F;to&#x2F;.htpasswd &lt;username&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="サーバーにコピーして"><a href="#サーバーにコピーして" class="headerlink" title="サーバーにコピーして"></a>サーバーにコピーして</h3><p>サーバーで生成する方はスキップー</p>
-<h3 id="nginx-を設定して-docker-compose-再起動"><a href="#nginx-を設定して-docker-compose-再起動" class="headerlink" title="nginx を設定して docker-compose 再起動"></a>nginx を設定して docker-compose 再起動</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">location / &#123;</span><br><span class="line">    proxy_pass   http://localhost:5601;</span><br><span class="line">    auth_basic &quot; Basic Authentication &quot;;      </span><br><span class="line">    auth_basic_user_file &quot;/etc/nginx/.htpasswd&quot;;       </span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="nginx-を設定して-docker-compose-再起動"><a href="#nginx-を設定して-docker-compose-再起動" class="headerlink" title="nginx を設定して docker-compose 再起動"></a>nginx を設定して docker-compose 再起動</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">location &#x2F; &#123;</span><br><span class="line">    proxy_pass   http:&#x2F;&#x2F;localhost:5601;</span><br><span class="line">    auth_basic &quot; Basic Authentication &quot;;      </span><br><span class="line">    auth_basic_user_file &quot;&#x2F;etc&#x2F;nginx&#x2F;.htpasswd&quot;;       </span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose restart</span><br></pre></td></tr></table></figure>
+
 <p>ブラウザをリフレッシュして、ここでパスワードが求められてるはずです。</p>
 <h2 id="NAS-再インデックス"><a href="#NAS-再インデックス" class="headerlink" title="NAS 再インデックス"></a>NAS 再インデックス</h2><p>自分のスクリプトで作ったファイルは NAS は知らないので、DLNAとかで出てこない。<br>そこで再インデックスする必要があります。</p>
 <p>仮にすべて録画したファイルは<code>/path/to/record/folder</code>の第一層でいる、このようなスクリプトを書いて</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /path/to/record/folder</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> mediafile <span class="keyword">in</span> $(find /path/to/record/folder -maxdepth 1 -<span class="built_in">type</span> f -mmin -&lt;minutes&gt; -not -name .DS_Store)</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		synoindex -a <span class="variable">$mediafile</span></span><br><span class="line">	<span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 <p><code>reindexTVRecorded</code>を名前を付けて、 <code>Control Panel - Task - New - Scheduled - User Script</code>、時間とか選択して、スクリプトのパス入れて「はい」を押したら完了。</p>
 <p><img src="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336q15opxj31bx0u0wmy.jpg" alt="重新索引"></p>
 <h1 id="残りの問題と課題"><a href="#残りの問題と課題" class="headerlink" title="残りの問題と課題"></a>残りの問題と課題</h1><ul>
@@ -408,7 +430,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576906594026';
+			'/js/comments.js?1577229838107';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -444,7 +466,7 @@
 	<header id="header" class="inner">
 		<div class="profileCard">
 			<div class="overlay"></div>
-			<a href="https://xingoxu.com/" class="profilepic">
+			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
 			
 				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
 			
@@ -544,7 +566,7 @@
 							
 								<li><a href="/ja/about">プロフィール</a></li>
 							
-								<li><a href="http://works.xingoxu.com/">作品</a></li>
+								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 							
 							
 							
@@ -646,7 +668,7 @@
 					<section class="switch-part switch-part3">
 						<div id="toc" class="toc-article">
 							
-								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#なぜNASに"><span class="toc-number">1.</span> <span class="toc-text">なぜNASに</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使うもの"><span class="toc-number">2.</span> <span class="toc-text">使うもの</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意"><span class="toc-number">3.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#構造"><span class="toc-number">4.</span> <span class="toc-text">構造</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NAS-の準備"><span class="toc-number">5.</span> <span class="toc-text">NAS の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#アンテナ設置"><span class="toc-number">6.</span> <span class="toc-text">アンテナ設置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#カードリーダーとB-CASの準備"><span class="toc-number">7.</span> <span class="toc-text">カードリーダーとB-CASの準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B-CASのデコード用ライブラリのインストール"><span class="toc-number">8.</span> <span class="toc-text">B-CASのデコード用ライブラリのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#録画用コマンドのインストール"><span class="toc-number">9.</span> <span class="toc-text">録画用コマンドのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mirakurunをインストールしてチューナーサーバーを立ちます"><span class="toc-number">10.</span> <span class="toc-text">Mirakurunをインストールしてチューナーサーバーを立ちます</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-10-をインストール"><span class="toc-number">10.1.</span> <span class="toc-text">Node.js 10 をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PM2をインストール"><span class="toc-number">10.2.</span> <span class="toc-text">PM2をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-メインプログラムインストール"><span class="toc-number">10.3.</span> <span class="toc-text">Mirakurun メインプログラムインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-を設定"><span class="toc-number">10.4.</span> <span class="toc-text">Mirakurun を設定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chinachu-ffmpeg-をインストールする"><span class="toc-number">11.</span> <span class="toc-text">Chinachu / ffmpeg をインストールする</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chinachu-設定"><span class="toc-number">11.1.</span> <span class="toc-text">Chinachu 設定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#できましたか"><span class="toc-number">11.2.</span> <span class="toc-text">できましたか</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#録画後のトランスコード"><span class="toc-number">11.3.</span> <span class="toc-text">録画後のトランスコード</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NASでやるべきのこと"><span class="toc-number">12.</span> <span class="toc-text">NASでやるべきのこと</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WebGUI-パスワードをつける"><span class="toc-number">12.1.</span> <span class="toc-text">WebGUI パスワードをつける</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#パスワードを生成する"><span class="toc-number">12.1.1.</span> <span class="toc-text">パスワードを生成する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#サーバーにコピーして"><span class="toc-number">12.1.2.</span> <span class="toc-text">サーバーにコピーして</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-を設定して-docker-compose-再起動"><span class="toc-number">12.1.3.</span> <span class="toc-text">nginx を設定して docker-compose 再起動</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAS-再インデックス"><span class="toc-number">12.2.</span> <span class="toc-text">NAS 再インデックス</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#残りの問題と課題"><span class="toc-number">13.</span> <span class="toc-text">残りの問題と課題</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最後"><span class="toc-number">14.</span> <span class="toc-text">最後</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">15.</span> <span class="toc-text">参考</span></a></li></ol>
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#なぜNASに"><span class="toc-number">1.</span> <span class="toc-text">なぜNASに</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使うもの"><span class="toc-number">2.</span> <span class="toc-text">使うもの</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意"><span class="toc-number">3.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#構造"><span class="toc-number">4.</span> <span class="toc-text">構造</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NAS-の準備"><span class="toc-number">5.</span> <span class="toc-text">NAS の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#アンテナ設置"><span class="toc-number">6.</span> <span class="toc-text">アンテナ設置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#カードリーダーとB-CASの準備"><span class="toc-number">7.</span> <span class="toc-text">カードリーダーとB-CASの準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B-CASのデコード用ライブラリのインストール"><span class="toc-number">8.</span> <span class="toc-text">B-CASのデコード用ライブラリのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#録画用コマンドのインストール"><span class="toc-number">9.</span> <span class="toc-text">録画用コマンドのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mirakurunをインストールしてチューナーサーバーを立ちます"><span class="toc-number">10.</span> <span class="toc-text">Mirakurunをインストールしてチューナーサーバーを立ちます</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-10-をインストール"><span class="toc-number">10.1.</span> <span class="toc-text">Node.js 10 をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PM2をインストール"><span class="toc-number">10.2.</span> <span class="toc-text">PM2をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-メインプログラムインストール"><span class="toc-number">10.3.</span> <span class="toc-text">Mirakurun メインプログラムインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-を設定"><span class="toc-number">10.4.</span> <span class="toc-text">Mirakurun を設定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chinachu-ffmpeg-をインストールする"><span class="toc-number">11.</span> <span class="toc-text">Chinachu &#x2F; ffmpeg をインストールする</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chinachu-設定"><span class="toc-number">11.1.</span> <span class="toc-text">Chinachu 設定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#できましたか"><span class="toc-number">11.2.</span> <span class="toc-text">できましたか</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#録画後のトランスコード"><span class="toc-number">11.3.</span> <span class="toc-text">録画後のトランスコード</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NASでやるべきのこと"><span class="toc-number">12.</span> <span class="toc-text">NASでやるべきのこと</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WebGUI-パスワードをつける"><span class="toc-number">12.1.</span> <span class="toc-text">WebGUI パスワードをつける</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#パスワードを生成する"><span class="toc-number">12.1.1.</span> <span class="toc-text">パスワードを生成する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#サーバーにコピーして"><span class="toc-number">12.1.2.</span> <span class="toc-text">サーバーにコピーして</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-を設定して-docker-compose-再起動"><span class="toc-number">12.1.3.</span> <span class="toc-text">nginx を設定して docker-compose 再起動</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAS-再インデックス"><span class="toc-number">12.2.</span> <span class="toc-text">NAS 再インデックス</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#残りの問題と課題"><span class="toc-number">13.</span> <span class="toc-text">残りの問題と課題</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最後"><span class="toc-number">14.</span> <span class="toc-text">最後</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">15.</span> <span class="toc-text">参考</span></a></li></ol>
 							
 						</div>
 					</section>
@@ -684,7 +706,7 @@
 				<div class="viewer-box-wrap">
 					<span class="viewer-title">文章目录</span>
 					<div id="toc-mobile" class="toc-article viewer-div">
-						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#なぜNASに"><span class="toc-text">なぜNASに</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使うもの"><span class="toc-text">使うもの</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#構造"><span class="toc-text">構造</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NAS-の準備"><span class="toc-text">NAS の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#アンテナ設置"><span class="toc-text">アンテナ設置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#カードリーダーとB-CASの準備"><span class="toc-text">カードリーダーとB-CASの準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B-CASのデコード用ライブラリのインストール"><span class="toc-text">B-CASのデコード用ライブラリのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#録画用コマンドのインストール"><span class="toc-text">録画用コマンドのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mirakurunをインストールしてチューナーサーバーを立ちます"><span class="toc-text">Mirakurunをインストールしてチューナーサーバーを立ちます</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-10-をインストール"><span class="toc-text">Node.js 10 をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PM2をインストール"><span class="toc-text">PM2をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-メインプログラムインストール"><span class="toc-text">Mirakurun メインプログラムインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-を設定"><span class="toc-text">Mirakurun を設定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chinachu-ffmpeg-をインストールする"><span class="toc-text">Chinachu / ffmpeg をインストールする</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chinachu-設定"><span class="toc-text">Chinachu 設定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#できましたか"><span class="toc-text">できましたか</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#録画後のトランスコード"><span class="toc-text">録画後のトランスコード</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NASでやるべきのこと"><span class="toc-text">NASでやるべきのこと</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WebGUI-パスワードをつける"><span class="toc-text">WebGUI パスワードをつける</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#パスワードを生成する"><span class="toc-text">パスワードを生成する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#サーバーにコピーして"><span class="toc-text">サーバーにコピーして</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-を設定して-docker-compose-再起動"><span class="toc-text">nginx を設定して docker-compose 再起動</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAS-再インデックス"><span class="toc-text">NAS 再インデックス</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#残りの問題と課題"><span class="toc-text">残りの問題と課題</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最後"><span class="toc-text">最後</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#なぜNASに"><span class="toc-text">なぜNASに</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使うもの"><span class="toc-text">使うもの</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#構造"><span class="toc-text">構造</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NAS-の準備"><span class="toc-text">NAS の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#アンテナ設置"><span class="toc-text">アンテナ設置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#カードリーダーとB-CASの準備"><span class="toc-text">カードリーダーとB-CASの準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B-CASのデコード用ライブラリのインストール"><span class="toc-text">B-CASのデコード用ライブラリのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#録画用コマンドのインストール"><span class="toc-text">録画用コマンドのインストール</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mirakurunをインストールしてチューナーサーバーを立ちます"><span class="toc-text">Mirakurunをインストールしてチューナーサーバーを立ちます</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-10-をインストール"><span class="toc-text">Node.js 10 をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PM2をインストール"><span class="toc-text">PM2をインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-メインプログラムインストール"><span class="toc-text">Mirakurun メインプログラムインストール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mirakurun-を設定"><span class="toc-text">Mirakurun を設定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chinachu-ffmpeg-をインストールする"><span class="toc-text">Chinachu &#x2F; ffmpeg をインストールする</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chinachu-設定"><span class="toc-text">Chinachu 設定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#できましたか"><span class="toc-text">できましたか</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#録画後のトランスコード"><span class="toc-text">録画後のトランスコード</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NASでやるべきのこと"><span class="toc-text">NASでやるべきのこと</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WebGUI-パスワードをつける"><span class="toc-text">WebGUI パスワードをつける</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#パスワードを生成する"><span class="toc-text">パスワードを生成する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#サーバーにコピーして"><span class="toc-text">サーバーにコピーして</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-を設定して-docker-compose-再起動"><span class="toc-text">nginx を設定して docker-compose 再起動</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAS-再インデックス"><span class="toc-text">NAS 再インデックス</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#残りの問題と課題"><span class="toc-text">残りの問題と課題</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最後"><span class="toc-text">最後</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
 					</div>
 				</div>
 			
@@ -698,7 +720,7 @@
 					
 						<li><a href="/ja/about">プロフィール</a></li>
 					
-						<li><a href="http://works.xingoxu.com/">作品</a></li>
+						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 					
 				</div>
 			</div>
@@ -738,8 +760,12 @@
 
   
   
-  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
-  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+  
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+  
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
 	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="pswp__bg"></div>
 	  <div class="pswp__scroll-wrap">
@@ -793,11 +819,21 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576906596876"></script>
+
+<script src="/sw-register.js?1577229838765.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
 <script src="/js/main.js"></script>
+
 
 
 

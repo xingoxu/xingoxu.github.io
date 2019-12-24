@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -21,14 +21,14 @@
 <meta property="og:url" content="https://blog.xingoxu.com/2016/01/Android-Study-1-22/index.html">
 <meta property="og:site_name" content="xingo&#39;s private plot">
 <meta property="og:description" content="Intro: Android Studio Library的导入与导出 Java的Exception再复习 Handler的内存泄漏问题与其相关的Looper坑 AppCompat v7的Toolbar与Contextual ActionBar 心得">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bc2810.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb12d7.png">
-<meta property="og:updated_time" content="2019-12-21T05:35:44.503Z">
+<meta property="article:published_time" content="2016-01-21T18:05:18.000Z">
+<meta property="article:modified_time" content="2019-12-24T23:23:32.195Z">
+<meta property="article:author" content="xingo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="写一些最近Android学习中遇到的坑以及心得 | xingo&#39;s private plot - 一个大龄萌二">
-<meta name="twitter:description" content="Intro: Android Studio Library的导入与导出 Java的Exception再复习 Handler的内存泄漏问题与其相关的Looper坑 AppCompat v7的Toolbar与Contextual ActionBar 心得">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2017/05/25/5926470bb0406.png">
 <meta name="twitter:creator" content="@xingoxu">
   
@@ -37,10 +37,12 @@
   
     <link rel="icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container">
     <div class="mid-col">
@@ -70,7 +72,7 @@
 		        
 					<li><a href="/about">关于我</a></li>
 		        
-					<li><a href="http://works.xingoxu.com/">作品</a></li>
+					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -156,7 +158,8 @@
 <li>心得</li>
 </ol>
 <a id="more"></a>
-<h2 id="最近Loop：シュガーソングとビターステップ"><a href="#最近Loop：シュガーソングとビターステップ" class="headerlink" title="最近Loop：シュガーソングとビターステップ"></a>最近Loop：<a href="http://music.163.com/#/song?id=32192451" target="_blank" rel="noopener">シュガーソングとビターステップ</a></h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=32192451&auto=0&height=66"></iframe>
+
+<h2 id="最近Loop：シュガーソングとビターステップ"><a href="#最近Loop：シュガーソングとビターステップ" class="headerlink" title="最近Loop：シュガーソングとビターステップ"></a>最近Loop：<a href="http://music.163.com/#/song?id=32192451" target="_blank" rel="noopener">シュガーソングとビターステップ</a></h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=32192451&auto=0&height=66"></iframe>
 
 
 <h2 id="Android-Studio-库相关的正确使用姿势"><a href="#Android-Studio-库相关的正确使用姿势" class="headerlink" title="Android Studio 库相关的正确使用姿势"></a>Android Studio 库相关的正确使用姿势</h2><p>Android Studio 1.5.x 更新后很多网上找到的其他教程包括回答基本都是旧版本的，直接lib下添加，然而在编译时总是遇到这样那样的问题，原因在于Gradle会把jar compile了，然而module本身的package(感觉相当于命名空间？)却没有导入，当你导入后，两行命令相互打架编译时能通过却无法生成apk提示错误。提示的错误五花八门，一会是java虚拟机非0退出，一会是Class文件重名。</p>
@@ -196,10 +199,14 @@
 <h3 id="深层次想法"><a href="#深层次想法" class="headerlink" title="深层次想法"></a>深层次想法</h3><p>对于内存泄漏，就是该释放的时候，系统的垃圾回收器没办法释放掉，原因是有强引用正在引用着这个对象，如果说两个对象的生命周期一致，则没有这个问题，如果说生命周期比我生成的对象要短，而且，我不一定需要这个对象一定是保存到我的对象结束为止的话，就应该使用弱引用而不是强引用</p>
 <h2 id="Looper"><a href="#Looper" class="headerlink" title="Looper"></a>Looper</h2><p>Looper这个坑真是深的不行，所有的学习过程中，包括看视频啊，看书啊，看博客啊，都没有提到。<br>对于线程之间的通信，使用的是Handler/Message Queue进行相互交流，对于自行new 的线程，我们需要执行以下两步来初始化Looper以保证Handler能处理消息</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//do anything</span></span><br><span class="line">	Looper.prepare();</span><br><span class="line">	<span class="comment">//prepare your Handler here and do anything</span></span><br><span class="line">	Looper.loop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>然而当我们的Handler处理完消息，我们的消息只需要处理一次，想要把线程终结了的时候，没有视频，没有书会告诉你，要记得把Looper关掉，源码是说Looper.loop()是死循环，因此Thread永远不会停止，Handler永远会接受消息，没错Handler的职责就是一直负责处理消息，然而如果没有消息再进来了，这时我们不需要这条线程这个Handler这个Looper了，如果一直不停的创建Looper，则会引发Android的Assert!<br>Assert的提示是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Abort message: &apos;Could not create wake pipe.  errno=24&apos;</span><br></pre></td></tr></table></figure>
-<p>或者是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Looper: Could not create epoll instance.  errno=24</span><br></pre></td></tr></table></figure></p>
-<p>有时会提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/A art/runtime/indirect_reference_table.cc:77] Check failed: table_mem_map_.get() != nullptr ashmem_create_region failed for &apos;indirect ref table&apos;: Too many open files</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Abort message: &#39;Could not create wake pipe.  errno&#x3D;24&#39;</span><br></pre></td></tr></table></figure>
+<p>或者是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Looper: Could not create epoll instance.  errno&#x3D;24</span><br></pre></td></tr></table></figure>
+
+<p>有时会提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;A art&#x2F;runtime&#x2F;indirect_reference_table.cc:77] Check failed: table_mem_map_.get() !&#x3D; nullptr ashmem_create_region failed for &#39;indirect ref table&#39;: Too many open files</span><br></pre></td></tr></table></figure>
 <p>真是千奇百怪的错误提示，google搜了一大圈都没搜到，也从来没有往Looper这个方向想，尽管loop是死循环，但对他死循环没有卡系统也就没有想太多</p>
 <p>根本原因Looper的实现是用pipe//待探究</p>
 <p>最后解决是如果我处理完了信息不需要Looper了，对Looper<strong>对象</strong>进行quit()就可以了：looper.quit();，这样线程也就随之而结束了</p>
@@ -304,7 +311,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1576906594239';
+			'/js/comments.js?1577229838142';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -340,7 +347,7 @@
 	<header id="header" class="inner">
 		<div class="profileCard">
 			<div class="overlay"></div>
-			<a href="https://xingoxu.com/" class="profilepic">
+			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
 			
 				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
 			
@@ -440,7 +447,7 @@
 							
 								<li><a href="/about">关于我</a></li>
 							
-								<li><a href="http://works.xingoxu.com/">作品</a></li>
+								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 							
 							
 							
@@ -542,7 +549,7 @@
 					<section class="switch-part switch-part3">
 						<div id="toc" class="toc-article">
 							
-								<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最近Loop：シュガーソングとビターステップ"><span class="toc-number">2.</span> <span class="toc-text">最近Loop：シュガーソングとビターステップ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio-库相关的正确使用姿势"><span class="toc-number">3.</span> <span class="toc-text">Android Studio 库相关的正确使用姿势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用其他人的jar-aar-Lib"><span class="toc-number">3.1.</span> <span class="toc-text">引用其他人的jar/aar Lib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建Library-Project"><span class="toc-number">3.2.</span> <span class="toc-text">新建Library Project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出Library"><span class="toc-number">3.3.</span> <span class="toc-text">导出Library</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Exception"><span class="toc-number">4.</span> <span class="toc-text">Java Exception</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#异常分类"><span class="toc-number">4.1.</span> <span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两类异常如何选择？"><span class="toc-number">4.2.</span> <span class="toc-text">两类异常如何选择？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用方法时："><span class="toc-number">4.2.1.</span> <span class="toc-text">使用方法时：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写方法时："><span class="toc-number">4.2.2.</span> <span class="toc-text">编写方法时：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何考虑异常的捕获"><span class="toc-number">4.3.</span> <span class="toc-text">如何考虑异常的捕获</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handler的内存泄露问题"><span class="toc-number">5.</span> <span class="toc-text">Handler的内存泄露问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#深层次想法"><span class="toc-number">5.1.</span> <span class="toc-text">深层次想法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Looper"><span class="toc-number">6.</span> <span class="toc-text">Looper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppCompat-v7的Toolbar与Contextual-ActionBar的坑"><span class="toc-number">7.</span> <span class="toc-text">AppCompat v7的Toolbar与Contextual ActionBar的坑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心得"><span class="toc-number">8.</span> <span class="toc-text">心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-Android-Studio的一些自用快捷键："><span class="toc-number">8.1.</span> <span class="toc-text">IDEA/Android Studio的一些自用快捷键：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References："><span class="toc-number">8.2.</span> <span class="toc-text">References：</span></a></li></ol></li></ol>
+								<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最近Loop：シュガーソングとビターステップ"><span class="toc-number">2.</span> <span class="toc-text">最近Loop：シュガーソングとビターステップ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio-库相关的正确使用姿势"><span class="toc-number">3.</span> <span class="toc-text">Android Studio 库相关的正确使用姿势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用其他人的jar-aar-Lib"><span class="toc-number">3.1.</span> <span class="toc-text">引用其他人的jar&#x2F;aar Lib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建Library-Project"><span class="toc-number">3.2.</span> <span class="toc-text">新建Library Project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出Library"><span class="toc-number">3.3.</span> <span class="toc-text">导出Library</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Exception"><span class="toc-number">4.</span> <span class="toc-text">Java Exception</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#异常分类"><span class="toc-number">4.1.</span> <span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两类异常如何选择？"><span class="toc-number">4.2.</span> <span class="toc-text">两类异常如何选择？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用方法时："><span class="toc-number">4.2.1.</span> <span class="toc-text">使用方法时：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写方法时："><span class="toc-number">4.2.2.</span> <span class="toc-text">编写方法时：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何考虑异常的捕获"><span class="toc-number">4.3.</span> <span class="toc-text">如何考虑异常的捕获</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handler的内存泄露问题"><span class="toc-number">5.</span> <span class="toc-text">Handler的内存泄露问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#深层次想法"><span class="toc-number">5.1.</span> <span class="toc-text">深层次想法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Looper"><span class="toc-number">6.</span> <span class="toc-text">Looper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppCompat-v7的Toolbar与Contextual-ActionBar的坑"><span class="toc-number">7.</span> <span class="toc-text">AppCompat v7的Toolbar与Contextual ActionBar的坑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心得"><span class="toc-number">8.</span> <span class="toc-text">心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-Android-Studio的一些自用快捷键："><span class="toc-number">8.1.</span> <span class="toc-text">IDEA&#x2F;Android Studio的一些自用快捷键：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References："><span class="toc-number">8.2.</span> <span class="toc-text">References：</span></a></li></ol></li></ol>
 							
 						</div>
 					</section>
@@ -580,7 +587,7 @@
 				<div class="viewer-box-wrap">
 					<span class="viewer-title">文章目录</span>
 					<div id="toc-mobile" class="toc-article viewer-div">
-						<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-text">Intro:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最近Loop：シュガーソングとビターステップ"><span class="toc-text">最近Loop：シュガーソングとビターステップ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio-库相关的正确使用姿势"><span class="toc-text">Android Studio 库相关的正确使用姿势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用其他人的jar-aar-Lib"><span class="toc-text">引用其他人的jar/aar Lib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建Library-Project"><span class="toc-text">新建Library Project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出Library"><span class="toc-text">导出Library</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Exception"><span class="toc-text">Java Exception</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#异常分类"><span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两类异常如何选择？"><span class="toc-text">两类异常如何选择？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用方法时："><span class="toc-text">使用方法时：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写方法时："><span class="toc-text">编写方法时：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何考虑异常的捕获"><span class="toc-text">如何考虑异常的捕获</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handler的内存泄露问题"><span class="toc-text">Handler的内存泄露问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#深层次想法"><span class="toc-text">深层次想法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Looper"><span class="toc-text">Looper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppCompat-v7的Toolbar与Contextual-ActionBar的坑"><span class="toc-text">AppCompat v7的Toolbar与Contextual ActionBar的坑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心得"><span class="toc-text">心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-Android-Studio的一些自用快捷键："><span class="toc-text">IDEA/Android Studio的一些自用快捷键：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References："><span class="toc-text">References：</span></a></li></ol></li></ol>
+						<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-text">Intro:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最近Loop：シュガーソングとビターステップ"><span class="toc-text">最近Loop：シュガーソングとビターステップ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio-库相关的正确使用姿势"><span class="toc-text">Android Studio 库相关的正确使用姿势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用其他人的jar-aar-Lib"><span class="toc-text">引用其他人的jar&#x2F;aar Lib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建Library-Project"><span class="toc-text">新建Library Project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出Library"><span class="toc-text">导出Library</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Exception"><span class="toc-text">Java Exception</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#异常分类"><span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两类异常如何选择？"><span class="toc-text">两类异常如何选择？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用方法时："><span class="toc-text">使用方法时：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写方法时："><span class="toc-text">编写方法时：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何考虑异常的捕获"><span class="toc-text">如何考虑异常的捕获</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handler的内存泄露问题"><span class="toc-text">Handler的内存泄露问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#深层次想法"><span class="toc-text">深层次想法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Looper"><span class="toc-text">Looper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppCompat-v7的Toolbar与Contextual-ActionBar的坑"><span class="toc-text">AppCompat v7的Toolbar与Contextual ActionBar的坑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心得"><span class="toc-text">心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-Android-Studio的一些自用快捷键："><span class="toc-text">IDEA&#x2F;Android Studio的一些自用快捷键：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References："><span class="toc-text">References：</span></a></li></ol></li></ol>
 					</div>
 				</div>
 			
@@ -594,7 +601,7 @@
 					
 						<li><a href="/about">关于我</a></li>
 					
-						<li><a href="http://works.xingoxu.com/">作品</a></li>
+						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
 					
 				</div>
 			</div>
@@ -634,8 +641,12 @@
 
   
   
-  <link rel="stylesheet" href="/photoswipe/photoswipe.css">
-  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+  
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+  
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
 	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="pswp__bg"></div>
 	  <div class="pswp__scroll-wrap">
@@ -689,11 +700,21 @@
 		open_in_new: false
 	}
 </script>
-<script src="/sw-register.js?1576906597245"></script>
+
+<script src="/sw-register.js?1577229838943.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
 <script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
 <script src="/js/main.js"></script>
+
 
 
 
