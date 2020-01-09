@@ -9,32 +9,28 @@ comments: false
 
 ## XU YIXIN
 
-希望職種：フロントエンドエンジニア
-  
-  
-## 学歴
-- 2013.9 - 2017.6  Shanghai Polytechnic University  ソフトウェア工学
+完璧なピクセルのWebページを作成し、JavaScriptを正しく作成することで3年の経験を持つプロフロントエンドエンジニア。
 
-## スキルシート
-- HTML5, CSS3, JavaScriptを使ってマークアップ、フロントエンド案件の開発
-- Vue.js、React.jsというフロントエンドフレームワークの運用、実装
-- webpack、gulp.jsなど運用して、新規プロジェクトの立ち上げ
-- Nodejs、Express.js、Java、PHP サーバー言語の運用、一部の実装
-- MSSQL、MySQL、redis の運用
-- git、Docker、CIなどのツールを運用して効率上げ
+また、ブラウザ/モバイルにおいてできること、HTTPプロトコル、およびデータベースに関する知識も持っております。
+
+キャリアの次のステップを踏み出し、わくわくの困難に挑戦するために、トップの品質に専念する尊敬される組織を探しています。
+
 
 ## 職務経歴
 
-### 2018.01.01 - Present LINE Corp.
-- LINE SP Solution / LINE News / LINE Store (Sticker Shop) / LINE お年玉 2019 を担当してきました、Vue.js / React.js / Typescript を使って開発しまして、webpackとCIの周りを調整してビルドスピード、パッケージサイズ、ウェブページの読み込み速度の改善を行った
-- LINE Design System というwebcomponentを基ついた新規プロジェクトの立ち上げ
-- Typescriptを使ってオープンソースプロジェクト[line-bot-sdk-nodejs](https://github.com/line/line-bot-sdk-nodejs)のメンテナンス
-- LIFF (LINE Front-end Framework)の開発、jestを使ってユニットテストの追加
-<br />
+### 2018.01.01 - Present, LINE Corp.
+- LINE Newsの読み込み速度をほぼ60％向上しました。
+- アニメーションとトランジションを使用して、顧客向けのウェブページを高速で開発します。
+- LINE News / LINE Store（Sticker Shop）/ 2019 お年玉キャンペーンの開発を参加して、リファクタリングを積極的に推進して、React.js / Vue.js のような MVC / MVVM フレームワークと Webpack のようなバンドルシステムを採用するようにしました。
+- Typescriptを使用してオープンソースプロジェクト [line-bot-sdk-nodejs](https://github.com/line/line-bot-sdk-nodejs) および LIFF（LINEフロントエンドフレームワーク）を開発しまして、ユニットテストを追加しました。
+- 新しい LINE Design System プロジェクトに、Web Component を使用してコンポーネントシステムを提供しました。
+- CI を立ち上げて、プロジェクトのワークフローを自動化しました。
+- Bot / CLI ツールなどの内部ツールを開発して、エンジニアリングの効率を改善します。
 
-### 2017.04.17 - 2017.12.20 ele.me (中国のオンライン出前最大手)
+
+### 2017.04.17 - 2017.12.20, ele.me（中国のオンライン出前最大手）
 - Zeplin からマークアップを実装する
-- webpackとvue.jsで出前配送システムのフロントエンド開発
+- Webpack と Vue.js で出前配送システムのフロントエンド開発
 - vue.jsのUIフレームワーク - [ElementUI](https://element.eleme.io/#/)の開発に参加した
 
 <!-- ### 2016.06.20 - 2017.04.14 030buy.com / rennigou.jp （日本商品代理購入サイト、インターン）
@@ -43,19 +39,21 @@ comments: false
 > - モバイルウェブページの完成、ページにネイティブと通信 -->
 　　
 
+## 学歴
+- 2013.9 - 2017.6 学士 ソフトウェア工学 <br /><span style="font-size: 90%"> Shanghai Polytechnic University  </span>
+
 ## 免許・資格
 - 日本語能力試験 N1
-- 中国大学英語　六級
 - 中国工業和信息化部教育与考試中心が実施する試験 程序員（プログラマ）
 　　
 
 
-## その他の個人作品
+<!-- ## その他の個人作品
 > [Canvas Contribution](https://github.com/xingoxu/canvas-contribution) - **Canvas2D / ES2015 / NPMpackage**
 > [PS4 Wallpaper Helper](http://works.xingoxu.com/ps4helper/) - **Electron/Express.js/socket.io**
 > [代理購入サイト価格比較ツール（中国語のみ）](http://works.xingoxu.com/buy-calc/) - **React.js**
-> [ブログ（ほとんど中国語）](https://blog.xingoxu.com/) - **HTML/CSS/JS**
-> もっと \>\>　[作品](http://works.xingoxu.com/)
+> [ブログ](https://blog.xingoxu.com/ja/) - **HTML/CSS/JS**
+> もっと \>\>　[作品](http://works.xingoxu.com/) -->
 
 
 <style markdown="0">
