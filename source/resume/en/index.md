@@ -1,7 +1,7 @@
 ---
 title: "Resume"
 date: 2016-09-18 14:02:14
-update_date: 2019-12-18 12:53:14
+update_date: 2020-01-31 12:53:14
 comments: false
 ---
 
@@ -24,6 +24,10 @@ Seeking a respected organization dedicated to world class quality to take the ne
 - Set up the new LINE Design System project which is targeting to provide a component system by using Web Component.
 - Set up CI to automate the workflow for projects.
 - Developed internal tools like bots / cli tools to improve the engineering effiency.
+- Authored two articles at LINE Engineering Blog (in Japanese)
+  - https://engineering.linecorp.com/ja/blog/vue-js-typescript-otoshidama/
+  - https://engineering.linecorp.com/ja/blog/front-end-otoshidama/
+
 <br />
 
 ### 2017.04.17 - 2017.12.20, ele.me (The biggest online food delivery company in China)

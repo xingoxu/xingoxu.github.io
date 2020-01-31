@@ -1,7 +1,7 @@
 ---
 title: "履歴書"
 date: 2016-09-18 14:02:14
-update_date: 2019-12-23 12:53:14
+update_date: 2020-01-31 12:53:14
 comments: false
 ---
 
@@ -26,6 +26,9 @@ comments: false
 - 新しい LINE Design System プロジェクトに、Web Component を使用してコンポーネントシステムを提供しました。
 - CI を立ち上げて、プロジェクトのワークフローを自動化しました。
 - Bot / CLI ツールなどの内部ツールを開発して、エンジニアリングの効率を改善します。
+- LINE Engineering Blog を執筆
+  - https://engineering.linecorp.com/ja/blog/vue-js-typescript-otoshidama/
+  - https://engineering.linecorp.com/ja/blog/front-end-otoshidama/
 
 
 ### 2017.04.17 - 2017.12.20, ele.me（中国のオンライン出前最大手）
