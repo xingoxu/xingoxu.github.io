@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1g336sgurv5j224s17k1ky.jpg">
 <meta property="og:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336q15opxj31bx0u0wmy.jpg">
 <meta property="article:published_time" content="2019-05-16T07:47:37.000Z">
-<meta property="article:modified_time" content="2020-03-14T07:28:25.929Z">
+<meta property="article:modified_time" content="2020-06-11T11:20:16.308Z">
 <meta property="article:author" content="xingo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://static.xingoxu.com/blog/sinaimg/005BYqpggy1g336pg2yuyj30fm0akgm2.jpg">
@@ -211,7 +211,7 @@
 <p>安装完毕之后，使用 <code>sudo pcsc_scan</code> 命令，如果出现了 <code>Japanese Chijou Digital B-CAS Card (pay TV)</code> 类似的字样，那么B-CAS卡的安装和驱动就顺利完成了</p>
 <p>笔者在这里碰到过两个问题，一个是B-CAS插反了，没读到芯片（汗），另一个是B-CAS卡无效问题。<br>B-CAS卡如果无效的话，是会顺利出线上述字样的，但是之后无法正常使用录制电视，可以将B-CAS插上电视看一下是否有错误提示。</p>
 <p>另外如果使用的不是NEC读头的读卡器，可能会没法扫描出或者没法启动pcscd（参考的原文章作者碰到了这个问题），读者可以自行搜索相关方法或参考下方参考文章链接。</p>
-<h1 id="安装B-CAS解码用的相关库"><a href="#安装B-CAS解码用的相关库" class="headerlink" title="安装B-CAS解码用的相关库"></a>安装B-CAS解码用的相关库</h1><p>由于日本地上波加密后进行广播，直接录制的话也没法播放和保存。因此我们需要在接收信号的同时使用B-CAS卡进行解码并无视加密（破解加密是违反法律，因此这里的原理是无视加密）。实现这个的是一个叫libarib25的库。</p>
+<h1 id="安装B-CAS解码用的相关库"><a href="#安装B-CAS解码用的相关库" class="headerlink" title="安装B-CAS解码用的相关库"></a>安装B-CAS解码用的相关库</h1><p>由于日本地上波加密后进行广播，直接录制的话也没法播放和保存。因此我们需要在接收信号的同时使用B-CAS卡进行解码并无视加密。实现这个的是一个叫libarib25的库。</p>
 <p>这个库需要编译。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ wget https:&#x2F;&#x2F;github.com&#x2F;stz2012&#x2F;libarib25&#x2F;archive&#x2F;master.zip</span><br><span class="line">$ unzip master.zip</span><br><span class="line">$ cd libarib25-master</span><br><span class="line">$ cmake .</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
 <p>完成安装</p>
@@ -434,7 +434,7 @@
 			var ds = document.createElement('script');
 			ds.type = 'text/javascript';ds.async = true;
 			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1584170932248';
+			'/js/comments.js?1591874444695';
 			ds.charset = 'UTF-8';
 			ds.onload = function() {
 				comments(document.querySelectorAll('.duoshuo>div')[0]);
@@ -824,7 +824,7 @@
 	}
 </script>
 
-<script src="/sw-register.js?1584170932841.js"></script>
+<script src="/sw-register.js?1591874445317.js"></script>
 
 
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
