@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <link rel="manifest" href="/pwa/manifest.json">
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>用最热的Serverless，以最快的速度，写最野的JavaScript | xingo&#39;s private plot - 一个大龄萌二</title>
+  <meta name="description" content="Serverless，云原生，年初到现在，我关注的好几个前端公众号和资讯号都在疯狂推这些东西，去年年底就早有耳闻，原来以为是各种活动大会组织联合云厂商在对 devops 卖票整的新技术，但热度越来越强，于是我也跃跃欲试蹭个热度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用最热的Serverless，以最快的速度，写最野的JavaScript | xingo&#39;s private plot - 一个大龄萌二">
+<meta property="og:url" content="https://blog.xingoxu.com/2020/06/try-serverless/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:description" content="Serverless，云原生，年初到现在，我关注的好几个前端公众号和资讯号都在疯狂推这些东西，去年年底就早有耳闻，原来以为是各种活动大会组织联合云厂商在对 devops 卖票整的新技术，但热度越来越强，于是我也跃跃欲试蹭个热度">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-21T07:52:35.000Z">
+<meta property="article:modified_time" content="2020-06-21T06:55:13.453Z">
+<meta property="article:author" content="xingo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一个大龄萌二</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-try-serverless" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/06/try-serverless/" class="article-date" >
+  	<time datetime="2020-06-21T07:52:35.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用最热的Serverless，以最快的速度，写最野的JavaScript
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
+		
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Serverless，云原生，年初到现在，我关注的好几个前端公众号和资讯号都在疯狂推这些东西，去年年底就早有耳闻，原来以为是各种活动大会组织联合云厂商在对 devops 卖票整的新技术，但热度越来越强，于是我也跃跃欲试蹭个热度</p>
+<a id="more"></a>
+
+<h1 id="Serverless-到底是什么¿"><a href="#Serverless-到底是什么¿" class="headerlink" title="Serverless 到底是什么¿"></a>Serverless 到底是什么¿</h1><p>一句话概括就是 Cloud Function + Object Storage + Cloud Database + API Gateway and more by Cloud Service Provider. 简单来说就是有个叫 serverless 的开源框架把云厂商提供的这些服务整合成了一个配置文件，后端运维统统都不要了。好处显而易见，服务弹性伸缩，价格按量收费，大多数的运维问题，你的云服务提供商统统帮你兜了，小学生也能写网站。</p>
+<p>这么牛逼，前端可得好好学学，让后端和运维统统下岗咯？</p>
+<h1 id="Serverless、启动！"><a href="#Serverless、启动！" class="headerlink" title="Serverless、启动！"></a>Serverless、启动！</h1><p>既然 Serverless 图的就是快，那我们自然是不能自己手动一个一个的去到云服务商那里去手动设置的咯。<br>当然你也可以这么做，只不过我的服务今天就上线，你的服务可能就要等到后天了。</p>
+<p>Github 星星 3万个，1000万下载的 serverless npm package，<code>npm install -g serverless</code>，下载！启动！</p>
+<p>任意位置，terminal 输入 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ serverless</span><br></pre></td></tr></table></figure>
+
+<p>友好向导一步一步带你迈向 serverless 美好<del>大坑</del></p>
+<p>进入你刚创建的项目，敲下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sls deploy</span><br></pre></td></tr></table></figure>
+
+<p>点击屏幕给出的连接！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<p>牛逼！我们的后端服务器已经搭好了！太简单了吧！</p>
+<blockquote>
+<p>国内用户 serverless 自动使用腾讯云<br>以上内容其实在 <a href="https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/node/" target="_blank" rel="noopener">https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/node/</a> 都有</p>
+</blockquote>
+<h1 id="套个模板，快上加快"><a href="#套个模板，快上加快" class="headerlink" title="套个模板，快上加快"></a>套个模板，快上加快</h1><blockquote>
+<p>以下内容使用 aws 进行操作</p>
+</blockquote>
+<p>今天我打算做一个信用卡外汇比价工具，三步搞定：</p>
+<ol>
+<li>抓取汇率</li>
+<li>保存当天汇率（云函数没有状态）</li>
+<li>前端计算比价</li>
+</ol>
+<p>非常适合 serverless 的初学应用</p>
+<p>代码已经开源并上线，欢迎大家边看边 review</p>
+<p>成品地址：<a href="https://whichcard.xingoxu.com/" target="_blank" rel="noopener">https://whichcard.xingoxu.com/</a><br>代码地址：<a href="https://github.com/xingoxu/whichcard-abroad" target="_blank" rel="noopener">https://github.com/xingoxu/whichcard-abroad</a></p>
+<p>serverless 这个框架，还能使用 template 来创建项目，既然图的就是快，找一个现成的模板套进去，填一填就上线是不是更美滋滋</p>
+<p>技术栈，就选 nuxt.js，开启 SSR，再加上可编程使用，妙啊</p>
+<p>搜一搜</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serverless create --template-url https://github.com/tonyfromundefined/nuxt-serverless -n whichcard-abroad</span><br></pre></td></tr></table></figure>
+
+<p>创建项目后，我们编辑一下 <code>serverless.yml</code>，加上非关系型数据库相关配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">resources:</span></span><br><span class="line">  <span class="attr">Resources:</span></span><br><span class="line">    <span class="attr">CurrencyTable:</span></span><br><span class="line">      <span class="attr">Type:</span> <span class="string">AWS::DynamoDB::Table</span></span><br><span class="line">      <span class="attr">Properties:</span></span><br><span class="line">        <span class="attr">TableName:</span> <span class="string">$&#123;env:DYANMODB_TABLE&#125;</span></span><br><span class="line">        <span class="attr">AttributeDefinitions:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">AttributeName:</span> <span class="string">$&#123;env:DYANMODB_PRIMARY_KEY&#125;</span></span><br><span class="line">            <span class="attr">AttributeType:</span> <span class="string">S</span></span><br><span class="line">        <span class="attr">KeySchema:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">AttributeName:</span> <span class="string">$&#123;env:DYANMODB_PRIMARY_KEY&#125;</span></span><br><span class="line">            <span class="attr">KeyType:</span> <span class="string">HASH</span></span><br><span class="line">        <span class="attr">ProvisionedThroughput:</span></span><br><span class="line">          <span class="attr">ReadCapacityUnits:</span> <span class="number">1</span></span><br><span class="line">          <span class="attr">WriteCapacityUnits:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>数据库需要配置权限，要给运行 lambda function 的用户，也就是第一次使用 serverless 的时候让你发行的那个key所代表的用户，给他权限，那，同样在 <code>serverless.yml</code> 下加入</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">provider:</span></span><br><span class="line">  <span class="attr">iamRoleStatements:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">Effect:</span> <span class="string">Allow</span></span><br><span class="line">      <span class="attr">Action:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">dynamodb:Query</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">dynamodb:Scan</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">dynamodb:GetItem</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">dynamodb:PutItem</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">dynamodb:UpdateItem</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">dynamodb:DeleteItem</span></span><br><span class="line">      <span class="attr">Resource:</span> <span class="string">"arn:aws:dynamodb:$&#123;self:provider.region&#125;:*:table/$&#123;env:DYANMODB_TABLE&#125;"</span></span><br></pre></td></tr></table></figure>
+
+<p>好了，我们服务器已经配置完了，开始编写后端</p>
+<p>刚才用的这个模板，大多数已经搭建好了，只不过后端这里没有 typescript 支持</p>
+<p><a href="https://github.com/xingoxu/whichcard-abroad/blob/master/tsconfig.json" target="_blank" rel="noopener"><code>tsconfig.json</code></a> 复制一份，重命名 <a href="https://github.com/xingoxu/whichcard-abroad/blob/master/tsconfig-server.json" target="_blank" rel="noopener"><code>tsconfig-server.json</code></a></p>
+<p>配置我就不粘过来了，大家可以自己参考上边连接。</p>
+<p>用了 typescript 之后，我得把他变成 js 后才能被 lambda function 给读取，在 <a href="https://github.com/xingoxu/whichcard-abroad/blob/master/webpack.config.js" target="_blank" rel="noopener"><code>webpack.config.js</code></a>加上 <code>ts-loader</code>。</p>
+<h2 id="抓取汇率"><a href="#抓取汇率" class="headerlink" title="抓取汇率"></a>抓取汇率</h2><p>我们以 <a href="https://github.com/xingoxu/whichcard-abroad/blob/master/src/api/functions/visa.ts" target="_blank" rel="noopener">VISA</a> 为例，他的汇率当天公布在 <a href="https://usa.visa.com/support/consumer/travel-support/exchange-rate-calculator.html" target="_blank" rel="noopener">这个网页</a> 上</p>
+<p>我们导入 <code>axios</code>，导入<code>cheerio</code>，三下五除二，jQuery一把梭，轻松加愉快，摸出了他的汇率</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="keyword">import</span> cheerio <span class="keyword">from</span> <span class="string">'cheerio'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; format &#125; <span class="keyword">from</span> <span class="string">'date-fns'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getVisaCurrency = <span class="keyword">async</span> (&#123;</span><br><span class="line">  transCurr = <span class="string">"USD"</span>,</span><br><span class="line">  billCurr = <span class="string">"JPY"</span>,</span><br><span class="line">  date</span><br><span class="line">&#125;) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; data: htmlBody &#125; = <span class="keyword">await</span> axios.get&lt;</span><br><span class="line">    <span class="built_in">string</span></span><br><span class="line">  &gt;(</span><br><span class="line">    <span class="string">`https://usa.visa.com/support/consumer/travel-support/exchange-rate-calculator.html`</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      params: &#123;</span><br><span class="line">        amount: <span class="number">1</span>,</span><br><span class="line">        fee: <span class="string">'0.0'</span>,</span><br><span class="line">        utcConvertedDate: <span class="string">''</span>,</span><br><span class="line">        exchangedate: format(</span><br><span class="line">          date,</span><br><span class="line">          <span class="string">'MM/dd/yyyy'</span></span><br><span class="line">        ),</span><br><span class="line">        fromCurr: billCurr,</span><br><span class="line">        toCurr: transCurr,</span><br><span class="line">        submitButton:</span><br><span class="line">          <span class="string">'Calculate exchange rate'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">const</span> $ = cheerio.load(htmlBody);</span><br><span class="line">  <span class="keyword">const</span> $targetDOM = $(</span><br><span class="line">    <span class="string">'.converted-amount-value'</span></span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">const</span> result = $targetDOM</span><br><span class="line">    .eq($targetDOM.length - <span class="number">2</span>)</span><br><span class="line">    .text()</span><br><span class="line">    .match(<span class="regexp">/^\d+\.\d+/</span>)![<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; getVisaCurrency &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>40行的代码我们就解决了战斗</p>
+<h2 id="保存当天汇率"><a href="#保存当天汇率" class="headerlink" title="保存当天汇率"></a>保存当天汇率</h2><p>既然按需付费，那么空闲的时候云厂商势必不可能给你资源，因此云函数是无状态这点其实还是比较 make sense 的</p>
+<p>虽然我们可以对每个请求都实时抓取一次汇率，但是这显然也太影响打开速度、用户体验了吧。</p>
+<p>而且如果被上游发现，对方直接把 aws 一整段 ip 给封了的事情也不是没有</p>
+<p>即使是抓取公开数据这种事情，还是静悄悄搞比较好。</p>
+<p>直接导入 <code>aws-sdk</code>，草草几行代码就能写好保存工具函数和查询工具函数</p>
+<p><a href="https://github.com/xingoxu/whichcard-abroad/blob/master/src/api/utils/database.ts" target="_blank" rel="noopener">源代码</a></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; DynamoDB &#125; <span class="keyword">from</span> <span class="string">'aws-sdk'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; format &#125; <span class="keyword">from</span> <span class="string">'date-fns'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> DATE_FORMAT = <span class="string">'yyyy-MM-dd'</span>;</span><br><span class="line"><span class="keyword">const</span> DYANMODB_TABLE: <span class="built_in">string</span> = <span class="string">"currencyTable"</span>;</span><br><span class="line"><span class="keyword">const</span> DYANMODB_PRIMARY_KEY: <span class="built_in">string</span> = <span class="string">"currency"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dynamoDBClient = <span class="keyword">new</span> DynamoDB(&#123;</span><br><span class="line">  region: process.env.DYANMODB_REGION</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> queryFromCache = <span class="keyword">async</span> (</span><br><span class="line">  date: <span class="built_in">Date</span></span><br><span class="line">): <span class="built_in">Promise</span>&lt;DBCurrencyObject | <span class="literal">undefined</span>&gt; =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;</span><br><span class="line">    Count,</span><br><span class="line">    Items</span><br><span class="line">  &#125; = <span class="keyword">await</span> dynamoDBClient</span><br><span class="line">    .query(&#123;</span><br><span class="line">      TableName: DYANMODB_TABLE,</span><br><span class="line">      KeyConditionExpression: <span class="string">`#key=:dt`</span>,</span><br><span class="line">      ExpressionAttributeNames: &#123;</span><br><span class="line">        <span class="string">'#key'</span>: DYANMODB_PRIMARY_KEY</span><br><span class="line">      &#125;,</span><br><span class="line">      ExpressionAttributeValues: &#123;</span><br><span class="line">        <span class="string">':dt'</span>: &#123;</span><br><span class="line">          S: format(date, DATE_FORMAT)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .promise();</span><br><span class="line">  <span class="keyword">if</span> (Count &amp;&amp; Count == <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> DyanmodbResultAdapter(</span><br><span class="line">      Items![<span class="number">0</span>]</span><br><span class="line">    ) <span class="keyword">as</span> DBCurrencyObject;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> storeResult = <span class="keyword">async</span> (&#123;</span><br><span class="line">  date,</span><br><span class="line">  result,</span><br><span class="line">  billCurr,</span><br><span class="line">  transCurr,</span><br><span class="line">  brand</span><br><span class="line">&#125;): <span class="built_in">Promise</span>&lt;<span class="built_in">void</span>&gt; =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> cacheResult = <span class="keyword">await</span> queryFromCache(</span><br><span class="line">    date</span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">if</span> (!cacheResult)</span><br><span class="line">    cacheResult = &#123;</span><br><span class="line">      date: format(date, DATE_FORMAT)</span><br><span class="line">    &#125;;</span><br><span class="line">  <span class="keyword">if</span> (!cacheResult[brand])</span><br><span class="line">    cacheResult[brand] = &#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span> (!cacheResult[brand]![transCurr])</span><br><span class="line">    cacheResult[brand]![transCurr] = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  cacheResult[brand]![transCurr]![</span><br><span class="line">    billCurr</span><br><span class="line">  ] = result;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">await</span> dynamoDBClient</span><br><span class="line">    .updateItem(&#123;</span><br><span class="line">      Key: &#123;</span><br><span class="line">        [DYANMODB_PRIMARY_KEY]: &#123;</span><br><span class="line">          S: format(date, DATE_FORMAT)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      TableName: DYANMODB_TABLE,</span><br><span class="line">      UpdateExpression: <span class="string">`set <span class="subst">$&#123;brand&#125;</span>=:<span class="subst">$&#123;brand&#125;</span>`</span>,</span><br><span class="line">      ExpressionAttributeValues: &#123;</span><br><span class="line">        [<span class="string">`:<span class="subst">$&#123;brand&#125;</span>`</span>]: &#123;</span><br><span class="line">          M: DyanmodbRequestAdapter(</span><br><span class="line">            cacheResult[brand]!</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .promise();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; queryFromCache, storeResult &#125;;</span><br></pre></td></tr></table></figure>
+
+<p><code>DyanmodbRequestAdapter</code>和<code>DyanmodbResultAdapter</code>是为了解决 dyanmodb 存储的时候符合他的sdk的递归的key（加上类型），另外在这里篇幅过长略去了一些类型定义，大家可以在源代码里查看</p>
+<p>同时，我们不要忘记，数据在抓取/存储的过程中都有可能发生新请求，因此我们再写一个工具类把刚才的抓取函数包装一下</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncOnce</span>&lt;</span></span><br><span class="line"><span class="function">  <span class="title">T</span> <span class="title">extends</span> (<span class="params">...args: <span class="built_in">any</span></span>) =&gt; <span class="title">Promise</span>&lt;<span class="title">any</span>&gt;</span></span><br><span class="line"><span class="function">&gt;(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  func: (</span></span></span><br><span class="line"><span class="function"><span class="params">    ...args: Parameters&lt;T&gt;</span></span></span><br><span class="line"><span class="function"><span class="params">  ) =&gt; ReturnType&lt;T&gt;</span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> running: ReturnType&lt;</span><br><span class="line">    <span class="keyword">typeof</span> func</span><br><span class="line">  &gt; | <span class="literal">null</span> = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    ...args: Parameters&lt;<span class="keyword">typeof</span> func&gt;</span><br><span class="line">  ) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (running === <span class="literal">null</span>) &#123;</span><br><span class="line">      running = func(...args);</span><br><span class="line">      running.finally(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        running = <span class="literal">null</span>;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> running;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="前端计算比价"><a href="#前端计算比价" class="headerlink" title="前端计算比价"></a>前端计算比价</h2><p>其实我们这个网站，如果没有关于帮助页面的话，就是只有一个页面的网站了。因此其实没有必要暴露 API，不过我这次为了尝试一下Nuxt.js的Programming Usage，那前端和后端就可以非常巧妙的结合在一起</p>
+<p>我们直接在 SFC 中 import 进我们刚才写好的抓取函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; response &#125; <span class="keyword">from</span> <span class="string">'@/api/functions/currency'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="keyword">async</span> asyncData(context) &#123;</span><br><span class="line">    <span class="keyword">let</span> currencyData;</span><br><span class="line">    <span class="keyword">if</span> (process.server &amp;&amp; context) &#123;</span><br><span class="line">      currencyData = <span class="keyword">await</span> response(</span><br><span class="line">        context.req</span><br><span class="line">      );</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> data = <span class="keyword">await</span> axios.$<span class="keyword">get</span>(</span><br><span class="line">        '/currency',</span><br><span class="line">        &#123;</span><br><span class="line">          params: &#123; ...someParams &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">      currencyData = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123; currencyData &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样的话，就算是 SSR，也不需要自己向自己发送一个 <code>/currency</code> 的请求。</p>
+<p>如果我们没有其他页面，那么 <code>/currency</code> 的API也不用暴露，相当于把 Nuxt.js 当成了模板引擎！</p>
+<p>写过 Express.js 等的小伙伴很清楚，一般是先生成数据，然后渲染模板，但是在这里，我们的重点是先写好前端后，导入 server 的函数，把请求丢过去拿数据。</p>
+<p>是不是很野！（此处应该有惊叹声（哇哦好野））</p>
+<p>剩下的写界面啊，写排序啊什么的就略过。</p>
+<h1 id="解决一些小问题"><a href="#解决一些小问题" class="headerlink" title="解决一些小问题"></a>解决一些小问题</h1><h2 id="记得开启-extractCSS"><a href="#记得开启-extractCSS" class="headerlink" title="记得开启 extractCSS"></a>记得开启 extractCSS</h2><p>Nuxt.js 默认不开启 <code>extractCSS</code>，如果你像我一样引了一个 UI 库，还对这个 UI 库自定义了的话，那你的 HTML 可能会长到令人发指。记得在 <code>nuxt.config.js</code> 中启用哦</p>
+<h2 id="Nuxt-js-把-aws-sdk-打包进了前端"><a href="#Nuxt-js-把-aws-sdk-打包进了前端" class="headerlink" title="Nuxt.js 把 aws-sdk 打包进了前端"></a>Nuxt.js 把 aws-sdk 打包进了前端</h2><p>我暂时还没有深入去看是 Nuxt.js 的 webpack 的问题，还是可能是 <code>vue-loader</code> 的问题（毕竟我们的宗旨是要快）</p>
+<p>不过这个问题可以用 nuxt plugin 的方式去回避。</p>
+<p>在 <code>plguins</code> 文件夹下创建 <a href="https://github.com/xingoxu/whichcard-abroad/blob/master/src/plugins/getData.server.ts" target="_blank" rel="noopener"><code>getData.server.ts</code></a>，</p>
+<p>把跟 server 有关的写成一个 handler，然后挂载到 <code>Vue</code> 上也可以，<code>context</code> 上也可以，都可以，只要是个在 SFC 中可以访问到的全局方法就可以了。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; response &#125; <span class="keyword">from</span> <span class="string">'@/api/functions/currency'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Context &#125; <span class="keyword">from</span> <span class="string">'@nuxt/types'</span>;</span><br><span class="line"></span><br><span class="line">Vue.$serverGetCurrency = <span class="function">(<span class="params">context: Context</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> response(context.req);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>然后到 SFC 里把刚才 Server 的方法改成这个全局方法</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (process.server &amp;&amp; context) &#123;</span><br><span class="line">  currencyData = <span class="keyword">await</span> Vue.$serverGetCurrency(</span><br><span class="line">    context</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另外 ts 定义的问题，在函数的旁边 declare 一下就没有问题了（<a href="https://github.com/xingoxu/whichcard-abroad/blob/master/src/plugins/getData.server.ts" target="_blank" rel="noopener">源代码</a>）</p>
+<blockquote>
+<p>记得参考 <a href="https://nuxtjs.org/guide/plugins/" target="_blank" rel="noopener">Nuxt.js Plugins</a> &amp; <a href="https://vuejs.org/v2/guide/typescript.html#Augmenting-Types-for-Use-with-Plugins" target="_blank" rel="noopener">Vue.js Augumenting Types for Use With Plugins</a></p>
+</blockquote>
+<h1 id="这么香？我读书少，你不要骗我"><a href="#这么香？我读书少，你不要骗我" class="headerlink" title="这么香？我读书少，你不要骗我"></a>这么香？我读书少，你不要骗我</h1><p>Serverless 本身其实并不是什么新鲜东西，云函数运行环境、对象存储、云数据库哪个都不是2019年或者2020年才出现的新东西，但他的想法解决了小微服务的上线速度问题，对刚起步的成长型企业，没有基础设施的小公司，或者是我有一个想法就差一个程序员的公司来说，是一个非常省时间省事情节约人力物力成本的选择。</p>
+<p>不过…</p>
+<h2 id="本地开发，云端调试¿"><a href="#本地开发，云端调试¿" class="headerlink" title="本地开发，云端调试¿"></a>本地开发，云端调试¿</h2><p>就问你怕不怕本地跑得好好的，放到云厂商那边炸了，然后调试无门！<br>为什么会这样呢，我们以 aws 为例，你有没有想过云原生是怎么处理 node_modules 这样的问题的？</p>
+<blockquote>
+<p><a href="https://docs.aws.amazon.com/zh_cn/lambda/latest/dg/nodejs-package.html" target="_blank" rel="noopener">Node.js 中的 AWS Lambda 部署程序包</a></p>
+</blockquote>
+<p>答案是，和你的源代码一起上传！</p>
+<p>🐂🍺了我的 aws，也就是说如果你的 node_modules 里边有依赖 native 能力的话，传上去必爆炸，而且你本地还检测不出任何问题。</p>
+<blockquote>
+<p>比如 <a href="https://stackoverflow.com/questions/36079438/npm-install-with-aws-lambda" target="_blank" rel="noopener">npm install with AWS Lambda - Stack Overflow</a></p>
+</blockquote>
+<h2 id="成本问题"><a href="#成本问题" class="headerlink" title="成本问题"></a>成本问题</h2><p>云服务商又当基础服务提供商，又帮你干了运维 Scaling 的事情，还提供了友好的 Interface ，这么多这么好的事情，当然不可能是免费的，一年免费与看起来低价的 lambda 的背后，是高额的捆绑消费以及对价格不敏感群体的整体割韭菜</p>
+<p>我没有办法直接对比使用 Serverless 的开销与传统服务器的开销，但是 以AWS 为例，Serverless 使用的 API Gateway 每百万次 $3.5 请求对于一个正常企业来说，应该是不小的开销，甚至如果遭受一次 DDNS 攻击的话，确实是有点害怕你的房子明天是不是还在了。。。</p>
+<p>而相比之下只需要多花几刀钱买一个不错的云服务器，独享内存，相对稳定的CPU，以及几乎无限流量（Fair Use），显而易见应该是一个更省钱的选择。</p>
+<h2 id="但还是香"><a href="#但还是香" class="headerlink" title="但还是香"></a>但还是香</h2><p>在大公司里有着自己的基础设置，运营着自己的云原生，那么适当的下放一些简单的增删改查需求给前端，效率提升应该是毋庸置疑的。</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>以上，希望本文的整体思想，又或者是代码片段，能够给你带来一些灵感或者启发。</p>
+<p>本文有任何问题欢迎指出，也欢迎你对我写的这个小学生网站提出任何意见。</p>
+<p>欢迎给本文打赏（在线要饭）</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+    <a href="/2019/05/2019-05-17-google-io-tech/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Google I/O 2019 Web 前端内容总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+    
+
+</nav>
+
+  
+  
+
+  
+    <div data-url="https://blog.xingoxu.com/2020/06/try-serverless/" data-title="「用最热的Serverless，以最快的速度，写最野的JavaScript」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+		
+		<div class="qrcode">
+			<div class="qrcode-body-mask"></div>
+			<div class="qrcode-module">
+				<h2>微信扫一扫，分享到朋友圈</h2>
+				<div id="qrcode-pic"></div>
+				<img id="logo-qrcode" src="/favicon.ico" />
+	  	</div>
+		</div>
+
+</div>
+  
+</article>
+
+
+  <section id="comments">
+  
+    <div class="duoshuo">
+  <div data-thread-key="try-serverless" data-thread-url="https://blog.xingoxu.com/2020/06/try-serverless/" data-thread-title="用最热的Serverless，以最快的速度，写最野的JavaScript"></div>
+	<!-- 评论框 end -->
+	<!-- 公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = '//static.xingoxu.com' + 
+			'/js/comments.js?1592722534602';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 公共JS代码 end -->
+</div>
+    
+
+    
+  </section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2020 xingo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
+			
+				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/">xingo</a></h1>
+				
+					<p class="header-subtitle">一个大龄萌二</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>导航</li>
+						
+						
+							<li>文章目录</li>
+						
+						
+							<li>朋友们</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/">主页</a></li>
+							
+								<li><a href="/archives">所有文章</a></li>
+							
+								<li><a href="/about">关于我</a></li>
+							
+								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
+							
+							
+							
+								<li class="change-language">
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 简体中文</label>
+									<select>
+										
+											<option value="zh-cn" selected>简体中文</option>
+										
+											<option value="ja" >日本語</option>
+										
+									</select>
+								</li>
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+									<label class="search-icon" for="search">
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="回到顶部"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Serverless-到底是什么¿"><span class="toc-number">1.</span> <span class="toc-text">Serverless 到底是什么¿</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Serverless、启动！"><span class="toc-number">2.</span> <span class="toc-text">Serverless、启动！</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#套个模板，快上加快"><span class="toc-number">3.</span> <span class="toc-text">套个模板，快上加快</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#抓取汇率"><span class="toc-number">3.1.</span> <span class="toc-text">抓取汇率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存当天汇率"><span class="toc-number">3.2.</span> <span class="toc-text">保存当天汇率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端计算比价"><span class="toc-number">3.3.</span> <span class="toc-text">前端计算比价</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决一些小问题"><span class="toc-number">4.</span> <span class="toc-text">解决一些小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#记得开启-extractCSS"><span class="toc-number">4.1.</span> <span class="toc-text">记得开启 extractCSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nuxt-js-把-aws-sdk-打包进了前端"><span class="toc-number">4.2.</span> <span class="toc-text">Nuxt.js 把 aws-sdk 打包进了前端</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#这么香？我读书少，你不要骗我"><span class="toc-number">5.</span> <span class="toc-text">这么香？我读书少，你不要骗我</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#本地开发，云端调试¿"><span class="toc-number">5.1.</span> <span class="toc-text">本地开发，云端调试¿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成本问题"><span class="toc-number">5.2.</span> <span class="toc-text">成本问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#但还是香"><span class="toc-number">5.3.</span> <span class="toc-text">但还是香</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后"><span class="toc-number">6.</span> <span class="toc-text">最后</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Serverless-到底是什么¿"><span class="toc-text">Serverless 到底是什么¿</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Serverless、启动！"><span class="toc-text">Serverless、启动！</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#套个模板，快上加快"><span class="toc-text">套个模板，快上加快</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#抓取汇率"><span class="toc-text">抓取汇率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存当天汇率"><span class="toc-text">保存当天汇率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端计算比价"><span class="toc-text">前端计算比价</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决一些小问题"><span class="toc-text">解决一些小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#记得开启-extractCSS"><span class="toc-text">记得开启 extractCSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nuxt-js-把-aws-sdk-打包进了前端"><span class="toc-text">Nuxt.js 把 aws-sdk 打包进了前端</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#这么香？我读书少，你不要骗我"><span class="toc-text">这么香？我读书少，你不要骗我</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#本地开发，云端调试¿"><span class="toc-text">本地开发，云端调试¿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成本问题"><span class="toc-text">成本问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#但还是香"><span class="toc-text">但还是香</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">导航</span>
+				<div class="viewer-div">
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">朋友们</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title change-language">
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 简体中文</label>
+						<select >
+							
+								<option value="zh-cn" selected>简体中文</option>
+							
+								<option value="ja" >日本語</option>
+							
+						</select>
+					</div>
+				</div>
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+  
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		languageList: ["zh-cn","ja"],
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+
+<script src="/sw-register.js?1592722535188.js"></script>
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
