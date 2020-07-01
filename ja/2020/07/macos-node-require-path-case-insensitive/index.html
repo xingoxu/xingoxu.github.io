@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="handheldfriendly" content="true">
+  <meta name="theme-color" content="#325899">
+  <link rel="manifest" href="/pwa/manifest.json">
+  <script data-ad-client="ca-pub-9028897522388472" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    if ((window.location.host == 'blog.xingoxu.com') &&
+        (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  
+  <title>Node.js 路径大小写的坑 | xingo&#39;s private plot - アニメ / フロントエンド開発 / いろいろやってみてます</title>
+  <meta name="description" content="大多数前端开发同学都用的是 macOS ，然而 macOS 上文件名不区分大小写，因此你不能在同一个文件夹下同时创建 package.json 和 packagE.json。 这个细节很小，因为大家不是英语母语，现在又越来越依靠 intelliSense 补全文件路径，在这个事情上翻跟头会比较少，就算翻了跟头也很容易忘记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js 路径大小写的坑 | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
+<meta property="og:url" content="https://blog.xingoxu.com/ja/2020/07/macos-node-require-path-case-insensitive/index.html">
+<meta property="og:site_name" content="xingo&#39;s private plot">
+<meta property="og:description" content="大多数前端开发同学都用的是 macOS ，然而 macOS 上文件名不区分大小写，因此你不能在同一个文件夹下同时创建 package.json 和 packagE.json。 这个细节很小，因为大家不是英语母语，现在又越来越依靠 intelliSense 补全文件路径，在这个事情上翻跟头会比较少，就算翻了跟头也很容易忘记。">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2020-07-01T10:59:40.000Z">
+<meta property="article:modified_time" content="2020-07-01T10:01:01.499Z">
+<meta property="article:author" content="xingo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@xingoxu">
+  
+    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="banner-cover"></div>
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xingo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xingo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">アニメ / フロントエンド開発 / いろいろやってみてます</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/ja/">ホーム</a></li>
+		        
+					<li><a href="/ja/archives">アーカイブ</a></li>
+		        
+					<li><a href="/ja/about">プロフィール</a></li>
+		        
+					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-macos-node-require-path-case-insensitive" class="article article-type-post article-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/ja/2020/07/macos-node-require-path-case-insensitive/" class="article-date" >
+  	<time datetime="2020-07-01T10:59:40.000Z" itemprop="datePublished">2020-07-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Node.js 路径大小写的坑
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+		
+			<a href="/ja/categories/dev/" class="article-category-link">dev</a>
+		
+			<a href="/ja/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
+		
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>大多数前端开发同学都用的是 macOS ，然而 macOS 上文件名不区分大小写，因此你不能在同一个文件夹下同时创建 <code>package.json</code> 和 <code>packagE.json</code>。</p>
+<p>这个细节很小，因为大家不是英语母语，现在又越来越依靠 intelliSense 补全文件路径，在这个事情上翻跟头会比较少，就算翻了跟头也很容易忘记。</p>
+<a id="more"></a>
+
+<p>大多数情况下你在这个上边会跌进的一个坑是</p>
+<h1 id="Linux-下部署时找不到-Module"><a href="#Linux-下部署时找不到-Module" class="headerlink" title="Linux 下部署时找不到 Module"></a>Linux 下部署时找不到 Module</h1><p>可能哪位高人用记事本写的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = <span class="built_in">require</span>(<span class="string">'./List'</span>);</span><br></pre></td></tr></table></figure>
+<p>然鹅现实生活中你的 List 的文件名是<code>list.js</code></p>
+<p>完了，你就得在你的代码库里把 List 统统改成 list</p>
+<p>所以这其实是个很小的问题也很容易解决就是浪费了一点时间。</p>
+<p>但我碰到一个浪费了我一个下午的问题，也促使我写了这篇其实没有什么技术含量的笔记</p>
+<h1 id="require-39-a-js-39-require-39-A-js-39"><a href="#require-39-a-js-39-require-39-A-js-39" class="headerlink" title="require(&#39;./a.js&#39;) !== require(&#39;./A.js&#39;)"></a><code>require(&#39;./a.js&#39;) !== require(&#39;./A.js&#39;)</code></h1><p>前因后果：</p>
+<p>在用 TypeORM 写增删改查的时候，新引进了一张表，于是挂上去调试。发现一直报找不到表的错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeORM EntityMetadataNotFound: No metadata for &quot;***&quot; was found</span><br></pre></td></tr></table></figure>
+
+<p>就是这个错。</p>
+<p>反反复复确认了表已经挂到了 option 下边。</p>
+<p>怎么办，只能进 node_modules 下边直接改源码调试了（</p>
+<p>进去 <code>console.log</code> 三下五除二，发现表确实挂载了，然而</p>
+<p><a href="https://github.com/typeorm/typeorm/blob/master/src/connection/Connection.ts" target="_blank" rel="noopener">https://github.com/typeorm/typeorm/blob/master/src/connection/Connection.ts</a></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Gets entity metadata for the given entity class or schema name.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">getMetadata(target: <span class="built_in">Function</span>|EntitySchema&lt;<span class="built_in">any</span>&gt;|<span class="built_in">string</span>): EntityMetadata &#123;</span><br><span class="line">    <span class="keyword">const</span> metadata = <span class="keyword">this</span>.findMetadata(target);</span><br><span class="line">    <span class="keyword">if</span> (!metadata)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> EntityMetadataNotFoundError(target);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> metadata;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Finds exist entity metadata by the given entity class, target name or table name.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">protected</span> findMetadata(target: <span class="built_in">Function</span>|EntitySchema&lt;<span class="built_in">any</span>&gt;|<span class="built_in">string</span>): EntityMetadata|<span class="literal">undefined</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.entityMetadatas.find(<span class="function"><span class="params">metadata</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(metadata.target, target, metadata.target === target) <span class="comment">// ←ここ</span></span><br><span class="line">        <span class="keyword">if</span> (metadata.target === target)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (target <span class="keyword">instanceof</span> EntitySchema) &#123;</span><br><span class="line">            <span class="keyword">return</span> metadata.name === target.options.name;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> target === <span class="string">"string"</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (target.indexOf(<span class="string">"."</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> metadata.tablePath === target;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> metadata.name === target || metadata.tableName === target;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>左边右边都是 Function xxx，但是却不完全相等。</p>
+<p>于是我开始疯狂比较两边 import 的代码，最后才发现，import 的时候因为 Class 名和文件名一样，所以一个用的是 intelliSense 自动补全，一个是我复制粘贴的 Class 名，但是 Class 名是首字母大写的，但文件名不是。</p>
+<p>那么为什么同样的文件，引用的时候文件名不同，引用会不同呢？</p>
+<p><a href="https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js#L936" target="_blank" rel="noopener">https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js#L936</a></p>
+<p>我们都知道 Node.js 的 require 只会引用一次，究其原因是因为 Node.js 会把模块缓存到内存里，以便快速重复调用。<br>我们在上边的源代码可以看到，Node.js 会使用 filename 进行缓存，而这里的 filename 是你 require 的文件名 + 绝对路径。</p>
+<p>因此 Node.js 会认为这是两个模块，就会重复 require 两次，但是如果是在 windows 下，filename 会被 path.resolve 给 toLowerCase 成一个模块，在 Linux 下，又会因为大小写敏感而找不到模块，也就是只会在 macOS 上出现的一个问题。</p>
+<p>所幸不是到部署才发现的问题，也所幸这个只会在调试的时候出现问题。。。。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+    <a href="/ja/2020/06/cls/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CLS とは？ブラウザとNode.jsで CLS を実装してみます</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+    
+
+</nav>
+
+  
+  
+
+  
+    <div data-url="https://blog.xingoxu.com/2020/07/macos-node-require-path-case-insensitive/" data-title="「Node.js 路径大小写的坑」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
+		<span class="share-icon" title="分享到"></span>
+		<a                 class="share-icon share-wechat" href="javascript:;"></a>
+		<a target="_blank" class="share-icon share-weibo"></a>
+		<a target="_blank" class="share-icon share-twitter"></a>
+		<a target="_blank" class="share-icon share-google"></a>
+		<a target="_blank" class="share-icon share-qq"></a>
+		<a target="_blank" class="share-icon share-facebook"></a>
+		
+		<div class="qrcode">
+			<div class="qrcode-body-mask"></div>
+			<div class="qrcode-module">
+				<h2>微信扫一扫，分享到朋友圈</h2>
+				<div id="qrcode-pic"></div>
+				<img id="logo-qrcode" src="/favicon.ico" />
+	  	</div>
+		</div>
+
+</div>
+  
+</article>
+
+
+  <section id="comments">
+  
+    <div class="duoshuo">
+  <div data-thread-key="macos-node-require-path-case-insensitive" data-thread-url="https://blog.xingoxu.com/ja/2020/07/macos-node-require-path-case-insensitive/" data-thread-title="Node.js 路径大小写的坑"></div>
+	<!-- 评论框 end -->
+	<!-- 公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = '//static.xingoxu.com' + 
+			'/js/comments.js?1593597683938';
+			ds.charset = 'UTF-8';
+			ds.onload = function() {
+				comments(document.querySelectorAll('.duoshuo>div')[0]);
+			};
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 公共JS代码 end -->
+</div>
+    
+
+    
+  </section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2020 xingo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="right-col">
+      
+        <div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profileCard">
+			<div class="overlay"></div>
+			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
+			
+				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
+			
+			</a>
+
+			<hgroup>
+				<h1 class="header-author"><a href="/ja/">xingo</a></h1>
+				
+					<p class="header-subtitle">アニメ / フロントエンド開発 / いろいろやってみてます</p>
+				
+			</hgroup>
+			<div class="social">
+				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
+						
+							<i class="fa fa-github"></i>
+						
+					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
+						
+							<i class="fa fa-weibo"></i>
+						
+					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
+						
+							<i class="fa fa-twitter"></i>
+						
+					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
+						
+							<i class="fa fa-bangumi"></i>
+						
+					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
+						
+							<i class="fa fa-envelope-o"></i>
+						
+					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
+						
+							<i class="fa fa-rss"></i>
+						
+					</a>
+			</div>
+		</div>
+
+		<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<i class="fa fa-bars"></i>
+						</div>
+						
+						
+							<div class="icon-wrap icon-bookmark hide" data-idx="2">
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+						
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						
+							<div class="icon-wrap icon-rss hide" data-idx="5">
+								<i class="fa fa-rss"></i>
+							</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>ナビ</li>
+						
+						
+							<li>文章目録</li>
+						
+						
+							<li>友達</li>
+						
+						
+						
+							<li>Bangumi Updates</li>
+						
+					</ul>
+				</div>
+		</div>
+
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							
+								<li><a href="/ja/">ホーム</a></li>
+							
+								<li><a href="/ja/archives">アーカイブ</a></li>
+							
+								<li><a href="/ja/about">プロフィール</a></li>
+							
+								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
+							
+							
+							
+								<li class="change-language">
+									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+									<select>
+										
+											<option value="zh-cn" >简体中文</option>
+										
+											<option value="ja" selected>日本語</option>
+										
+									</select>
+								</li>
+							
+							<li>
+								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
+									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
+									<label class="search-icon" for="search">
+										<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1500"
+   height="350"
+   viewBox="0 0 1500 350"
+   id="searchAnimatorSVG"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="search-icon.svg"
+   preserveAspectRatio="xMinYMid meet">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="287.96719"
+     inkscape:cy="238.13903"
+     inkscape:document-units="px"
+     inkscape:current-layer="searchAnimatorSVG"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="196"
+     inkscape:window-maximized="1" />
+  <path
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
+     id="magnifier"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="underline"
+     d="m 315,315 1700,0"
+     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  <metadata
+     id="metadata4154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
+									</label>
+								</form>
+							</li>
+							<li id="totop" title="ページトップへ"><i class="fa fa-angle-double-up"></i></li>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+
+					</nav>
+				</section>
+				
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="toc" class="toc-article">
+							
+								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-下部署时找不到-Module"><span class="toc-number">1.</span> <span class="toc-text">Linux 下部署时找不到 Module</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#require-39-a-js-39-require-39-A-js-39"><span class="toc-number">2.</span> <span class="toc-text">require(&#39;.&#x2F;a.js&#39;) !&#x3D;&#x3D; require(&#39;.&#x2F;A.js&#39;)</span></a></li></ol>
+							
+						</div>
+					</section>
+				
+				
+				
+					<section class="switch-part switch-part4">
+						<div id="js-friends">
+						
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
+			      
+			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
+			      
+			      </div>
+					</section>
+				
+
+				
+				
+					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
+					</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      
+    </div>
+  </div>
+  
+    <div id="viewer">
+    <div id="viewer-box">
+        <div class="viewer-box-l">
+        	
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">文章目录</span>
+					<div id="toc-mobile" class="toc-article viewer-div">
+						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-下部署时找不到-Module"><span class="toc-text">Linux 下部署时找不到 Module</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#require-39-a-js-39-require-39-A-js-39"><span class="toc-text">require(&#39;.&#x2F;a.js&#39;) !&#x3D;&#x3D; require(&#39;.&#x2F;A.js&#39;)</span></a></li></ol>
+					</div>
+				</div>
+			
+			<div class="viewer-box-wrap">
+				<span class="viewer-title">ナビ</span>
+				<div class="viewer-div">
+					
+						<li><a href="/ja/">ホーム</a></li>
+					
+						<li><a href="/ja/archives">アーカイブ</a></li>
+					
+						<li><a href="/ja/about">プロフィール</a></li>
+					
+						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
+					
+				</div>
+			</div>
+			
+			
+				<div class="viewer-box-wrap">
+					<span class="viewer-title">友達</span>
+					<div class="viewer-div friends" id="js-mobile-friends">
+						
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
+			       		
+			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
+			       		
+			       	</div>
+				</div>
+			
+			
+			
+				<div class="viewer-box-wrap">
+					<div class="viewer-title change-language">
+						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
+						<select >
+							
+								<option value="zh-cn" >简体中文</option>
+							
+								<option value="ja" selected>日本語</option>
+							
+						</select>
+					</div>
+				</div>
+			
+        </div>
+        <div class="viewer-box-r">
+        </div>
+    </div>
+</div>
+
+  
+  
+  
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+  
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="pswp__bg"></div>
+	  <div class="pswp__scroll-wrap">
+	    <div class="pswp__container">
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	      <div class="pswp__item"></div>
+	    </div>
+	    <div class="pswp__ui pswp__ui--hidden">
+	      <div class="pswp__top-bar">
+	        <div class="pswp__counter"></div>
+	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	        <button class="pswp__button pswp__button--share" title="Share"></button>
+	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	        <div class="pswp__preloader">
+	          <div class="pswp__preloader__icn">
+	            <div class="pswp__preloader__cut">
+	              <div class="pswp__preloader__donut"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	        <div class="pswp__share-tooltip"></div>
+	      </div>
+	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	      <div class="pswp__caption">
+	        <div class="pswp__caption__center"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+<script>
+	var paperWhiteConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		languageList: ["zh-cn","ja"],
+		canShare: true,
+		open_in_new: false
+	}
+</script>
+
+<script src="/sw-register.js?1593597684692.js"></script>
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91877583-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
