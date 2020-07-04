@@ -16,7 +16,7 @@ date: 2020-07-01 18:59:40
 
 # Linux 下部署时找不到 Module
 
-可能哪位高人用记事本写的代码
+也许是之前哪位高人用记事本写的代码
 ```javascript
 const list = require('./List');
 ```
