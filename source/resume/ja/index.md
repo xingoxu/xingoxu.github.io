@@ -12,7 +12,7 @@ comments: false
 ## 職務経歴
 
 ### 2018.01.01 - Present, LINE Corp.
-- LINE Newsのの開発で読み込み速度をほぼ60％向上しました。
+- LINE Newsの開発で webpack と全体アーキテクチャの調整で読み込み速度をほぼ60％向上しました。
 - LINE Store（Sticker Shop）/ 2019 お年玉キャンペーンの開発を参加し、React.js / Vue.js / Webpack を使ってリファクタリングをしてました。またUX向上のためアニメーション、トランジション積極的に採用して、細かいところまでケアしてきた。
 - TypeScript を使用してオープンソースプロジェクト [line-bot-sdk-nodejs](https://github.com/line/line-bot-sdk-nodejs) および LIFF（LINEフロントエンドフレームワーク）を開発して、ユニットテストを追加しました。
 - Node.js / Express.js / TypeScript / Nuxt.js を使って社内用社外向け静的リソース配信ツールを開発してきた。
