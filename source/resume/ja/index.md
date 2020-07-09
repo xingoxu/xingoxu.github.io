@@ -9,21 +9,14 @@ comments: false
 
 ## XU YIXIN
 
-完璧なピクセルのWebページを作成し、JavaScriptを正しく作成することで3年の経験を持つプロフロントエンドエンジニア。
-
-また、ブラウザ/モバイルにおいてできること、HTTPプロトコル、およびデータベースに関する知識も持っております。
-
-キャリアの次のステップを踏み出し、わくわくの困難に挑戦するために、トップの品質に専念する尊敬される組織を探しています。
-
-
 ## 職務経歴
 
 ### 2018.01.01 - Present, LINE Corp.
-- LINE Newsの読み込み速度をほぼ60％向上しました。
-- アニメーションとトランジションを使用して、顧客向けのウェブページを高速で開発します。
-- LINE News / LINE Store（Sticker Shop）/ 2019 お年玉キャンペーンの開発を参加して、リファクタリングを積極的に推進して、React.js / Vue.js のような MVC / MVVM フレームワークと Webpack のようなバンドルシステムを採用するようにしました。
-- Typescriptを使用してオープンソースプロジェクト [line-bot-sdk-nodejs](https://github.com/line/line-bot-sdk-nodejs) および LIFF（LINEフロントエンドフレームワーク）を開発しまして、ユニットテストを追加しました。
-- 新しい LINE Design System プロジェクトに、Web Component を使用してコンポーネントシステムを提供しました。
+- LINE Newsのの開発で読み込み速度をほぼ60％向上しました。
+- LINE Store（Sticker Shop）/ 2019 お年玉キャンペーンの開発を参加し、React.js / Vue.js / Webpack を使ってリファクタリングをしてました。またUX向上のためアニメーション、トランジション積極的に採用して、細かいところまでケアしてきた。
+- TypeScript を使用してオープンソースプロジェクト [line-bot-sdk-nodejs](https://github.com/line/line-bot-sdk-nodejs) および LIFF（LINEフロントエンドフレームワーク）を開発して、ユニットテストを追加しました。
+- Node.js / Express.js / TypeScript / Nuxt.js を使って社内用社外向け静的リソース配信ツールを開発してきた。
+- 新しい LINE Design System プロジェクトに、Web Component を使用してコンポーネントシステムを提供した。
 - CI を立ち上げて、プロジェクトのワークフローを自動化しました。
 - Bot / CLI ツールなどの内部ツールを開発して、エンジニアリングの効率を改善します。
 - LINE Engineering Blog を執筆
@@ -50,6 +43,10 @@ comments: false
 - 中国工業和信息化部教育与考試中心が実施する試験 程序員（プログラマ）
 　　
 
+## その他
+
+- https://qiita.com/xingoxu
+- https://github.com/xingoxu
 
 <!-- ## その他の個人作品
 > [Canvas Contribution](https://github.com/xingoxu/canvas-contribution) - **Canvas2D / ES2015 / NPMpackage**
