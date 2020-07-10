@@ -1,7 +1,7 @@
 ---
 title: "Resume"
 date: 2016-09-18 14:02:14
-update_date: 2020-01-31 12:53:14
+update_date: 2020-07-10 12:53:14
 comments: false
 ---
 
@@ -17,10 +17,10 @@ Seeking a respected organization dedicated to world class quality to take the ne
 ## Working Experience
 
 ### 2018.01.01 - Present, LINE Corp.
-- Boosted the loading speed of LINE News by almost 60%.
-- Develop webpages for customers in a high speed with animation and transitions.
-- Pushed and attended the refactoring of LINE News / LINE Store (Sticker Shop) / 2019 Otoshitama to use MVC / MVVM frameworks like React.js / Vue.js and bundle system like webpack.
+- By configuring webpack & changing architecture, boosted the loading speed of LINE News by almost 60%.
+- Used React.js / Vue.js to refactoring LINE Store (Sticker Shop) / 2019 Otoshitama and make good UX by adding transition and animation to tiny places.
 - Used Typescript and set up unit tests in open-sourced project [line-bot-sdk-nodejs](https://github.com/line/line-bot-sdk-nodejs) and LIFF (LINE Front-end Framework).
+- Used Node.js / Express.js / TypeScript / Nuxt.js to build a internal tool for delivering static resource to external.
 - Set up the new LINE Design System project which is targeting to provide a component system by using Web Component.
 - Set up CI to automate the workflow for projects.
 - Developed internal tools like bots / cli tools to improve the engineering effiency.
