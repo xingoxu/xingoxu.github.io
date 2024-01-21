@@ -1,0 +1,57 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Build & Deploy
+
+on:
+  push:
+    branches: [ "source" ]
+  pull_request:
+    branches: [ "source" ]
+env:
+  GH_REF: github.com/xingoxu/xingoxu.github.io.git
+  GITHUB_THEME_URL: https://github.com/xingoxu/hexo-theme-paper-white
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - name: Set Timezone
+      # You may pin to the exact commit or the version.
+      # uses: szenius/set-timezone@ce9c440bc3af4f51b28d7ef7e5c47ee8f26c8dcb
+      uses: szenius/set-timezone@v1.2
+      with:
+        # Desired timezone for Linux
+        timezoneLinux: Asia/Shanghai
+    # Checkout Repository
+    - uses: actions/checkout@v3
+    # 主题改成self branch
+    - run: sed -i'' "s~${{ env.GITHUB_THEME_URL }}~${{ env.GITLAB_THEME_URL }}~" .gitmodules 
+    - run: rm -rf themes/Paper-White/*
+    - run: git submodule update --init --recursive
+    # 拷贝个人主题配置
+    - run: cp themes/_config.yml themes/Paper-White/_config.yml
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.0.1
+      with:
+        # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+        node-version: 14.x
+        cache: 'npm'
+    - run: npm install hexo-cli -g
+    - run: npm install
+    - run: hexo clean && hexo g
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+    # clone 现在的线上以延续tree
+    - run: |
+        git clone -b master https://${GH_REF} .deploy_git
+    - run: |
+        hexo d
+
+
+
