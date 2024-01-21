@@ -134,5 +134,5 @@ service_worker:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:xingoxu/xingoxu.github.io.git
+  repository: https://github.com/xingoxu/xingoxu.github.io.git
   branch: master 
