@@ -17,7 +17,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-
     steps:
     - name: Set Timezone
       # You may pin to the exact commit or the version.
@@ -40,7 +39,7 @@ jobs:
         # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
         node-version: 14.x
         cache: 'npm'
-    - run: npm install hexo-cli -g
+    - run: npm -v && npm install npm@6 && npm install hexo-cli -g
     - run: npm install
     - run: hexo clean && hexo g
     - name: Deploy to GitHub Pages
