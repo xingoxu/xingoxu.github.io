@@ -13,7 +13,7 @@ env:
   GITHUB_THEME_URL: https://github.com/xingoxu/hexo-theme-paper-white
 
 jobs:
-  build:
+  default:
 
     runs-on: ubuntu-latest
 
