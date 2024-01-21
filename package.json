@@ -14,11 +14,11 @@
     "hexo-generator-archive-i18n": "git+https://github.com/xingoxu/hexo-generator-archive-i18n.git",
     "hexo-generator-category-i18n": "git+https://github.com/xingoxu/hexo-generator-category-i18n.git",
     "hexo-generator-feed": "^2.2.0",
-    "hexo-generator-i18n-fix": "git+https://github.com/xingoxu/hexo-generator-i18n.git",
     "hexo-generator-index": "^1.0.0",
     "hexo-generator-index-i18n": "git+https://github.com/xingoxu/hexo-generator-index-i18n.git",
     "hexo-generator-sitemap": "^2.0.0",
     "hexo-generator-tag": "^1.0.0",
+    "hexo-generator-i18n-fix": "git+https://github.com/xingoxu/hexo-generator-i18n.git",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
@@ -26,6 +26,6 @@
     "hexo-service-worker": "^1.0.1"
   },
   "volta": {
-    "node": "14.21.3"
+    "node": "12.22.12"
   }
 }

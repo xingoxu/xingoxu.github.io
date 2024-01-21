@@ -37,7 +37,7 @@ jobs:
       uses: actions/setup-node@v4.0.1
       with:
         # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
-        node-version: 14.x
+        node-version: 12.x
     - run: npm install hexo-cli -g && npm install
     - run: hexo clean && hexo g
     - name: Deploy to GitHub Pages
@@ -48,7 +48,7 @@ jobs:
     - run: |
         git clone -b master https://${{ env.GH_REF }} .deploy_git
     - run: |
-        hexo -v && hexo d
+        hexo d
 
 
 
