@@ -48,7 +48,7 @@ jobs:
     - run: |
         git clone -b master https://${{ env.GH_REF }} .deploy_git
     - run: |
-        hexo d
+        hexo -v && hexo d
 
 
 
