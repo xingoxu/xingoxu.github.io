@@ -40,15 +40,12 @@ jobs:
         node-version: 12.x
     - run: npm install hexo-cli -g && npm install
     - run: hexo clean && hexo g
+    # clone 现在的线上以延续tree
+    - run: |
+        git clone -b master https://${{ env.GH_REF }} .deploy_git
     - name: Deploy to GitHub Pages
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-    # clone 现在的线上以延续tree
-    - run: |
-        git clone -b master https://${{ env.GH_REF }} .deploy_git
-    - run: |
         hexo d
-
-
 
