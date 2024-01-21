@@ -104,6 +104,118 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-transmission-under-vpn" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2024/01/transmission-under-vpn/" class="article-date" >
+  	<time datetime="2024-01-21T02:07:32.000Z" itemprop="datePublished">2024-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/01/transmission-under-vpn/">VPN双栈环境下构建 Transmission PT 做种客户端</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>寻找技术上既能规避自家网络使用 BT 协议又能利用本地环境的大硬盘的解决方案</p>
+<h1 id="采用方案"><a href="#采用方案" class="headerlink" title="采用方案"></a>采用方案</h1><p>Wireguard + Transmission</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>以前一直使用 <a href="https://github.com/haugene/docker-transmission-openvpn" target="_blank" rel="noopener">docker-transmission-openvpn</a> 这个 repo 的 OpenVPN</p>
+<p>但是</p>
+<ul>
+<li>wireguard 配置简单、现代化</li>
+<li>想上 IPv6</li>
+<li>可以自己控制 Transmission 的自由化</li>
+</ul>
+<h1 id="在-Docker-中安装-Transmission"><a href="#在-Docker-中安装-Transmission" class="headerlink" title="在 Docker 中安装 Transmission"></a>在 Docker 中安装 Transmission</h1><p>使用 <a href="https://hub.docker.com/r/linuxserver/wireguard" target="_blank" rel="noopener"><code>linuxserver/wireguard</code></a>  镜像启动 wireguard 并在镜像内安装 transmission</p>
+<figure class="highlight yaml"><figcaption><span>docker-compose.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'2.4'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">transmission-wireguard:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">linuxserver/wireguard:1.0.20210914</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">transmission-wireguard</span></span><br><span class="line">    <span class="attr">cap_add:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NET_ADMIN</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DOCKER_MODS=linuxserver/mods:universal-package-install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">INSTALL_PACKAGES=dnsutils|traceroute|transmission|transmission-daemon|transmission-cli</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">USER=</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">PASS=</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./wireguard-config:/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./custom-cont-init.d:/custom-cont-init.d</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">transmission</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:9091:9091</span></span><br></pre></td></tr></table></figure>
+
+<p>在 <code>wg0.conf</code> 中添加 PostUp / PreDown 脚本启动 Transmission</p>
+<figure class="highlight plain"><figcaption><span>wg0.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[Interface]</span><br><span class="line">PrivateKey &#x3D; PrivateKeyPrivateKeyPrivateKey</span><br><span class="line">ListenPort &#x3D; 54321</span><br><span class="line">Address &#x3D; 10.13.13.2&#x2F;32, 2001:ipv6:public:address:1::2&#x2F;128</span><br><span class="line"># Cloudflare 1.1.1.1 DNS</span><br><span class="line">DNS &#x3D; 2606:4700:4700::1111, 1.1.1.1</span><br><span class="line">PostUp &#x3D; start.sh</span><br><span class="line">PreDown &#x3D; stop.sh</span><br><span class="line"></span><br><span class="line"># server here</span><br><span class="line">[Peer]</span><br><span class="line">PublicKey &#x3D; &#x2F;pX3pc&#x2F;Lwxc94O93sjKaAG&#x2F;v0VJM5wkqr3HZxX6GD0Q&#x3D;</span><br><span class="line">PresharedKey &#x3D; 5bQ18jyDGwtNyX37Iv6AiI9TDPo02oDzwMaIJM&#x2F;SKgE&#x3D;</span><br><span class="line">AllowedIPs &#x3D; 0.0.0.0&#x2F;0, ::&#x2F;0</span><br><span class="line">Endpoint &#x3D; [2001:ipv6:public:address:1::1]:54321</span><br><span class="line">PersistentKeepalive &#x3D; 20</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><figcaption><span>start.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s6-setuidgid abc transmission-daemon -f &amp;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><figcaption><span>stop.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"Stopping transmission..."</span></span><br><span class="line">pid=$(pidof transmission-daemon)</span><br><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$USER</span>"</span> ] &amp;&amp; [ ! -z <span class="string">"<span class="variable">$PASS</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">  transmission-remote -n <span class="string">"<span class="variable">$USER</span>"</span>:<span class="string">"<span class="variable">$PASS</span>"</span> --<span class="built_in">exit</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  transmission-remote --<span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># terminate when the transmission-daemon process dies</span></span><br><span class="line">tail --pid=<span class="variable">$&#123;pid&#125;</span> -f /dev/null</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Transmission exited."</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="问题-发现-PT-显示只有-IPv6-权限"><a href="#问题-发现-PT-显示只有-IPv6-权限" class="headerlink" title="问题 - 发现 PT 显示只有 IPv6 权限"></a>问题 - 发现 PT 显示只有 IPv6 权限</h1><p>启动做种之后在各大 PT 站发现自己只有 IPv6 权限，然而在容器内可以 ping 通 IPv4 地址（从延迟上来看也确实走了 VPN）</p>
+<p>而在VPN服务器上同样也安装了 Transmission 客户端，但是却正常显示双栈权限</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><h2 id="调整优先级让-IPv4-优先-IPv6"><a href="#调整优先级让-IPv4-优先-IPv6" class="headerlink" title="调整优先级让 IPv4 优先 IPv6"></a>调整优先级让 IPv4 优先 IPv6</h2><p>Google 中搜索过后大多数的解决方案是添加一行 <code>precedence ::ffff:0:0/96 100</code> 到 <code>/etc/gai.conf</code> 文件中</p>
+<p>但尝试之后并没有起到有效作用，于是常识在 <code>wg0.conf</code> 中不分配 IPv6 地址后拥有 IPv4 权限，一度尝试放弃准备起两个容器一个走 v4 一个走 v6</p>
+<h2 id="屏蔽做种服务器的-IPv6-DNS-响应"><a href="#屏蔽做种服务器的-IPv6-DNS-响应" class="headerlink" title="屏蔽做种服务器的 IPv6 DNS 响应"></a>屏蔽做种服务器的 IPv6 DNS 响应</h2><p>再次更换搜索词为 “双栈 transmission” 后，出现了一些结果，发现写到</p>
+<blockquote>
+<p>需要通过更改 host 或者调整系统前缀策略让 BT 客户端通过 v4 连接 tracker</p>
+</blockquote>
+<blockquote>
+<p>设置双栈做种时，先在本机网络适配器中关闭IPV6协议，然后ping一下tracker服务器，得到一个IPV4地址，将这个IPV4地址和tracker服务器域名写进系统的hosts文件，再开启IPV6协议即可。</p>
+</blockquote>
+<p>这才醒悟到根本原因很有可能是 transmission 汇报的ip地址为网卡地址，种子服务器接收后不认可私网IPv4地址，于是开始屏蔽汇报服务器的AAAA地址</p>
+<p><code>custom-cont-init.d</code> 下新建安装启动 bind9 脚本</p>
+<figure class="highlight bash"><figcaption><span>start-bind9.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">DEBIAN_FRONTEND=<span class="string">"noninteractive"</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get -o DPkg::Options::=--force-confdef install -y --no-install-recommends bind9 bind9-libs bind9-utils</span><br><span class="line"></span><br><span class="line">named -c /etc/<span class="built_in">bind</span>/named.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"nameserver 127.0.0.1"</span> &gt; /etc/resolv.conf</span><br></pre></td></tr></table></figure>
+
+<p>创建 <code>named.conf</code> 挂载进容器喂给 bind9</p>
+<figure class="highlight bash"><figcaption><span>named.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugin query <span class="string">"/usr/lib/x86_64-linux-gnu/bind/filter-aaaa.so"</span> &#123;</span><br><span class="line">  filter-aaaa-on-v4 yes;</span><br><span class="line">  filter-aaaa-on-v6 yes;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>容器挂载</p>
+<figure class="highlight yaml"><figcaption><span>docker-compose.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ...前略</span></span><br><span class="line">  <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">named.conf:/etc/bind/named.conf:ro</span></span><br><span class="line"><span class="comment"># ... 后略</span></span><br></pre></td></tr></table></figure>
+
+<p>后正常拥有双栈权限</p>
+<h1 id="问题-IPv6的传入链接有问题"><a href="#问题-IPv6的传入链接有问题" class="headerlink" title="问题 - IPv6的传入链接有问题"></a>问题 - IPv6的传入链接有问题</h1><p>发现交换客户端中永远没有 IPv6 地址后，遂尝试 ping IPv6地址，无果，traceroute 之后发现停留在 VPN 服务器上不到达 container</p>
+<h1 id="解决-VPN服务器上安装NDP发现服务"><a href="#解决-VPN服务器上安装NDP发现服务" class="headerlink" title="解决 VPN服务器上安装NDP发现服务"></a>解决 VPN服务器上安装NDP发现服务</h1><p>Ubuntu 上 <code>apt -y install ndppd</code></p>
+<p>创建</p>
+<figure class="highlight bash"><figcaption><span>/etc/ndppd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># eno0 is your NIC name like eth0 etc...</span></span><br><span class="line">proxy eno0 &#123;</span><br><span class="line">  rule 2001:public:ipv6:address::/64 &#123;</span><br><span class="line">    static</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>service ndppd restart</code> 就可以了。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p><a href="https://blog.lfalive.top/2021/06/17/PT/#%E5%8F%8C%E6%A0%88%E5%81%9A%E7%A7%8D" target="_blank" rel="noopener">双栈做种</a><br><a href="https://www.v2ex.com/t/497336" target="_blank" rel="noopener">双栈环境挂 PT 需注意</a><br><a href="https://www.nodeseek.com/post-9473-1" target="_blank" rel="noopener">关于IPv6的常识科普，以及VPS通过ndppd向母鸡广播小鸡内网IPv6邻居的方法教程</a></p>
+</blockquote>
+<h1 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h1><p>其实搭建这个东西是 2021 年做的事情了，当时这个东西还挂在群晖上还解决了 wireguard 代理 IPv6 路由表的奇怪问题，但现在回想整个过程，其实是对网络部分，与操作系统这边的实现细节并不清楚才会走了很多弯路，回想发生过有很多类似的事情，不刨根问底就会有“感觉上对这个东西应该很熟悉每天都在打交道”但为什么最后会有偏差的问题</p>
+<p>另外整体一遍做过之后调试之后也对 IPv4 / IPv6 有了进一步的认识，对网络问题如何定位，查找也有了一些心得。</p>
+<p><del>终于可以把 2021 年的 Chrome Tab 给关上了呢</del></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		
+			<a href="/categories/dev/" class="article-category-link">dev</a>
+		
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+    <div class="index-progress">
+      <div class="progress-bar-indeterminate"></div>
+    </div>
+  
+
+  
+</article>
+
+
+
+  
     <article id="post-macos-node-require-path-case-insensitive" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -755,71 +867,6 @@
 
 
   
-    <article id="post-record-user-login-status-methods" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/record-user-login-status-methods/" class="article-date" >
-  	<time datetime="2017-09-28T09:57:15.000Z" itemprop="datePublished">2017-09-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/record-user-login-status-methods/">用户登录状态 验证权限的时代变迁</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><p>直接在Cookie中存信息可谓是上古时代的操作了，在服务器还没有那么便宜的情况下，好多网站选择将用户的登录信息存在cookie中，他们把用户名或者用户id转换并签名之后，直接存入Cookie，如果有其他需要的信息，也是如此操作</p>
-<p>转换或签名可以是加盐md5，也可以是使用secret的双向加密</p>
-<p>用户第二次访问网站的时候，代码中对这段信息进行验证，看看是否是正确的签名的</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		
-			<a href="/categories/dev/" class="article-category-link">dev</a>
-		
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/09/record-user-login-status-methods/#more"></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-  
-    <div class="index-progress">
-      <div class="progress-bar-indeterminate"></div>
-    </div>
-  
-
-  
-</article>
-
-
-
-  
   
     <!-- loadingcircle comes from http://materializecss.com/preloader.html -->
 <div class="loading-circle">
@@ -881,7 +928,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 xingo
+    		&copy; 2024 xingo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
@@ -1245,7 +1292,7 @@
 	}
 </script>
 
-<script src="/sw-register.js?1594856488279.js"></script>
+<script src="/sw-register.js?1705820897989.js"></script>
 
 
 <script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
