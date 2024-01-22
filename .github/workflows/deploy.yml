@@ -49,7 +49,7 @@ jobs:
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-        mv public/* .deploy_git/
+        rm -rf .deploy_git/* && mv public/* .deploy_git/
         cd .deploy_git && git add . && git commit -m "Deploy to GitHub Pages"
         git push
 
