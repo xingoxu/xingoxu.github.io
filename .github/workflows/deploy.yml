@@ -6,8 +6,7 @@ name: Build & Deploy
 on:
   push:
     branches: [ "source" ]
-  pull_request:
-    branches: [ "source" ]
+
 env:
   GH_REF: github.com/xingoxu/xingoxu.github.io.git
   GITHUB_THEME_URL: https://github.com/xingoxu/hexo-theme-paper-white
@@ -41,12 +40,15 @@ jobs:
     - run: npm install hexo-cli -g && npm install
     - run: hexo clean && hexo g
     # clone 现在的线上以延续tree
-    - run: |
-        git clone -b master https://${{ env.GH_REF }} .deploy_git
+    # Checkout Repository
+    - uses: actions/checkout@v3
+      with:
+        path: '.deploy_git'
     - name: Deploy to GitHub Pages
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-        sed -i'' "s~${{ env.GH_REF }}~${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@${{ env.GH_REF }}~" _config.yml #将配置中的地址改成github api地址
-        hexo d
+        mv public/* .deploy_git/
+        cd .deploy_git && git add . && git commit -m "Deploy to GitHub Pages"
+        git push
 
