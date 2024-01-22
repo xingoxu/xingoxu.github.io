@@ -43,6 +43,7 @@ jobs:
     # Checkout Repository
     - uses: actions/checkout@v3
       with:
+        ref: 'master'
         path: '.deploy_git'
     - name: Deploy to GitHub Pages
       run: |
