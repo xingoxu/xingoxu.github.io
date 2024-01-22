@@ -47,6 +47,6 @@ jobs:
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-        sed -i'' "s~${{ env.GH_REF }}~${{ secrets.GH_TOKEN }}:x-oauth-basic@${{ env.GH_REF }}~" _config.yml #将配置中的地址改成github api地址
+        sed -i'' "s~${{ env.GH_REF }}~${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@${{ env.GH_REF }}~" _config.yml #将配置中的地址改成github api地址
         hexo d
 
