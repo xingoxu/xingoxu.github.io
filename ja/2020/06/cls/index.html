@@ -1,710 +1,119 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="handheldfriendly" content="true">
-  <meta name="theme-color" content="#325899">
-  <link rel="manifest" href="/pwa/manifest.json">
-  <script data-ad-client="ca-pub-9028897522388472" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    if ((window.location.host == 'blog.xingoxu.com') &&
-        (window.location.protocol != "https:"))
-        window.location.protocol = "https";
-  </script>
-  
-  <title>CLS とは？ブラウザとNode.jsで CLS を実装してみます | xingo&#39;s private plot - アニメ / フロントエンド開発 / いろいろやってみてます</title>
-  <meta name="description" content="資料を調べる際に、CLS の存在を知りました。エンジニアリングで結構いいデカップリングのやり方と感じまして、シェアしたいと思います。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CLS とは？ブラウザとNode.jsで CLS を実装してみます | xingo&#39;s private plot - アニメ &#x2F; フロントエンド開発 &#x2F; いろいろやってみてます">
-<meta property="og:url" content="https://blog.xingoxu.com/ja/2020/06/cls/index.html">
-<meta property="og:site_name" content="xingo&#39;s private plot">
-<meta property="og:description" content="資料を調べる際に、CLS の存在を知りました。エンジニアリングで結構いいデカップリングのやり方と感じまして、シェアしたいと思います。">
-<meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2020-06-29T11:48:05.000Z">
-<meta property="article:modified_time" content="2024-01-22T03:17:28.016Z">
-<meta property="article:author" content="xingo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:creator" content="@xingoxu">
-  
-    <link rel="alternative" href="/atom.xml" title="xingo&#39;s private plot" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<meta name="generator" content="Hexo 4.2.1"></head>
-
-<body>
-  <div id="container">
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="banner-cover"></div>
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">xingo</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
-			</div>
-			<hgroup>
-			  <h1 class="header-author">xingo</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">アニメ / フロントエンド開発 / いろいろやってみてます</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/ja/">ホーム</a></li>
-		        
-					<li><a href="/ja/archives">アーカイブ</a></li>
-		        
-					<li><a href="/ja/about">プロフィール</a></li>
-		        
-					<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
-						
-							<i class="fa fa-github"></i>
-						
-					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
-						
-							<i class="fa fa-weibo"></i>
-						
-					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
-						
-							<i class="fa fa-twitter"></i>
-						
-					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
-						
-							<i class="fa fa-bangumi"></i>
-						
-					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
-						
-							<i class="fa fa-envelope-o"></i>
-						
-					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
-						
-							<i class="fa fa-rss"></i>
-						
-					</a>
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-      <div class="body-wrap"><article id="post-cls" class="article article-type-post article-page" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/ja/2020/06/cls/" class="article-date" >
-  	<time datetime="2020-06-29T11:48:05.000Z" itemprop="datePublished">2020-06-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      CLS とは？ブラウザとNode.jsで CLS を実装してみます
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-	<div class="article-category tagcloud">
-		
-			<a href="/ja/categories/dev/" class="article-category-link">dev</a>
-		
-			<a href="/ja/categories/dev/Front-End-Dev/" class="article-category-link">Front-End-Dev</a>
-		
-	</div>
-
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>資料を調べる際に、CLS の存在を知りました。エンジニアリングで結構いいデカップリングのやり方と感じまして、シェアしたいと思います。</p>
-<a id="more"></a>
-
-<h1 id="シチュエーション"><a href="#シチュエーション" class="headerlink" title="シチュエーション"></a>シチュエーション</h1><p>ブラウザか、サーバーのNode.jsか、どっちでもエラーハンドリング、ユーザートラッキングのニーズは日常茶飯事。例えユーザーを特定しなくても、id をつけて、ユーザーの行為を追跡して、エラーの再現にも重要し、プロダクトの改善にも役たちます。</p>
-<p>仮に今エラーハンドリングを書こうと思って、このエラーハンドリングはすべてのエラーを処理しますが、どのリクエストから生み出したエラーを知りたいと</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log.error(<span class="string">"Error occured"</span>, req);</span><br></pre></td></tr></table></figure>
-
-<p>このハンドリングは req と結合しちゃった</p>
-<p>仮に今このエラーどのユーザーから出たエラー、ユーザーが何をやったかを知りたいと</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">log.info(<span class="string">"User has done xxx"</span>, user);</span><br><span class="line">log.error(<span class="string">"Error occured by"</span>, user);</span><br></pre></td></tr></table></figure>
-
-<p>ユーザーとも結合しちゃった</p>
-<p>この２つの例は一見するとそんなに大きいな問題ではなさそう、ただ２つのパラメータが増えただけじゃ。<br>だけど、大型サービスを作る時、どんどん増えた機能に対して、関数の引数と関数の長さと共にどんどん伸びちゃって気持ち悪くてリファクタリングしようとしょうもないこと、少なくありませんでしょうか？</p>
-<h1 id="解決してみよう"><a href="#解決してみよう" class="headerlink" title="解決してみよう"></a>解決してみよう</h1><p>関数が同期のであれば、グローバルで変数につけたらいいじゃんー</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> global = &#123;&#125;;</span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  global.event = event;</span><br><span class="line">  log(<span class="string">"button clicked"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(global.event, ...args); <span class="comment">// &#123; x: xxx, y: xxx, target: xxx &#125; 'button clicked'</span></span><br><span class="line">  <span class="comment">// other logic</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>だが、非同期関数のであれば</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> global = &#123;&#125;;</span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  global.event = event;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    log(<span class="string">"button clicked"</span>);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(global.event, ...args);</span><br><span class="line">  <span class="comment">// other logic</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>すべての global.event は同じイベントになちゃった(´；ω；｀)！それはだめですね。</p>
-<p>我々必要なのは非同期呼び出しチェーンに最初から最後まで持続的なストレージ、<br>もしくは今走ってる非同期関数の呼び出しの唯一の識別子。</p>
-<h1 id="CLS-が登場"><a href="#CLS-が登場" class="headerlink" title="CLS が登場"></a>CLS が登場</h1><p>他の言語では、<a href="https://en.wikipedia.org/wiki/Thread-local_storage" target="_blank" rel="noopener">Thread-local storage</a>と呼ばれるものがあります。が JavaScript はマルチスレッドはありません（Web Workerなどはメインと関係ないし、自分でもマルチスレッドしない）。CLS という名前は TLS みたいに関数型プログラミングからの Continuation-passing style 名前をもらって、Continuation-local Storage、そのチェインの呼び出しの中で持続的データストレージをメンテナンスする。</p>
-<h2 id="ブラウザの解決-Zone-js"><a href="#ブラウザの解決-Zone-js" class="headerlink" title="ブラウザの解決 Zone.js"></a>ブラウザの解決 Zone.js</h2><p>どうのように解決したかちょっと見てみましょう</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'button'</span>).click(<span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">  Zone.current.fork(&#123;</span><br><span class="line">    name: <span class="string">'clickZone'</span>,</span><br><span class="line">    properties: &#123;</span><br><span class="line">      event</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;).run(</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      log(<span class="string">'button clicked'</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(global.event, ...args);</span><br><span class="line">  <span class="comment">// other logic</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/angular/angular/tree/master/packages/zone.js" target="_blank" rel="noopener"><code>Zone.js</code></a> は Angular 2.0 から誕生したもので、もちろん他の機能も持ってる。</p>
-<h3 id="この方法は残念なところがあります"><a href="#この方法は残念なところがあります" class="headerlink" title="この方法は残念なところがあります"></a>この方法は残念なところがあります</h3><p>考えてみましょう、 <code>Zone.js</code> はどうやってこれを実現しました。ブラウザは呼び出しに対して唯一の識別子を提供するAPIがなければ、すべての非同期関数をリライトしかできなく、そうすれば非同期が入る時と出る時 hook できて、この効果が実装できますね。</p>
-<p>自分も書いてみました。</p>
-<!-- https://gist.github.com/xingoxu/58f8f7faa83732ec922fcd38299f3283 -->
-
-
-<script src="https://gist.github.com/xingoxu/58f8f7faa83732ec922fcd38299f3283.js"></script>
-
-<p>また問題なさそうだけど、</p>
-<p><a href="https://github.com/angular/angular/issues/31730" target="_blank" rel="noopener">angular with tsconfig target ES2017 async/await will not work with zone.js</a></p>
-<h4 id="ブラウザ今では完璧の解決方法はありません"><a href="#ブラウザ今では完璧の解決方法はありません" class="headerlink" title="ブラウザ今では完璧の解決方法はありません"></a>ブラウザ今では完璧の解決方法はありません</h4><p>実験をやってみましょう、console で下のコードを打ったら、</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _promise = <span class="built_in">Promise</span>;</span><br><span class="line"><span class="built_in">Promise</span> = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'rewrite by ourselves'</span>) &#125;;</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;) <span class="keyword">instanceof</span> <span class="built_in">Promise</span></span><br><span class="line"><span class="comment">// rewrite by ourselves</span></span><br><span class="line"><span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">test() <span class="keyword">instanceof</span> <span class="built_in">Promise</span></span><br><span class="line"><span class="comment">// false</span></span><br><span class="line">test() <span class="keyword">instanceof</span> _promise</span><br><span class="line"><span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>() &#125;</span><br><span class="line"></span><br><span class="line">test() <span class="keyword">instanceof</span> <span class="built_in">Promise</span></span><br><span class="line"><span class="comment">// rewrite by ourselves</span></span><br><span class="line"><span class="comment">// false</span></span><br><span class="line">test() <span class="keyword">instanceof</span> _promise</span><br><span class="line"><span class="comment">// rewrite by ourselves</span></span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>ブラウザは、async 関数のリターンをネイティブの Promise で再ラッピングします。ネイティブ文法なので、async 関数はリライトできない。<br>もちろん transpiler で async 関数を generator もしくは Promise にすることは可能ですが、完璧とは言わないでしょう。</p>
-<h2 id="Node-js-の解決-async-hooks"><a href="#Node-js-の解決-async-hooks" class="headerlink" title="Node.js の解決 async_hooks"></a>Node.js の解決 <code>async_hooks</code></h2><p>Node.js バージョン 8 以降出た <code>async_hook</code> モジュール、バージョン 14 の今でも <code>Experimental</code> ステータスから脱却してない。出たごろ性能に関しての議論もあったが、今はどうなってるかまだわからない状態ですが</p>
-<blockquote>
-<p>Experimental ステータスにしても安定性としては問題なさそう、大量な Node.js のトラッキング / APM が依存していて、問題があったら issue が立てられるはずです。</p>
-</blockquote>
-<p>性能に関する問題はここは展開しない、コードの低結合と少しパフォーマンスの低下を交換するかしないかによりますね。</p>
-<h3 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h3><p><code>async_hooks</code> は <code>createHook</code> という関数を提供した、これが非同期関数のライフサイクルに hook できます、しかも唯一識別子も提供してくれますので、CLS を簡単に作れます。</p>
-<!-- https://gist.github.com/xingoxu/590e7f99658ea160b1f77cdb4e956637 -->
-
-
-<script src="https://gist.github.com/xingoxu/590e7f99658ea160b1f77cdb4e956637.js"></script>
-
-
-<h3 id="Node-js-バージョン-13-からオフィシャルの実装も"><a href="#Node-js-バージョン-13-からオフィシャルの実装も" class="headerlink" title="Node.js バージョン 13 からオフィシャルの実装も"></a>Node.js バージョン 13 からオフィシャルの実装も</h3><p>コミュニティの中でたくさんの CLS ライブラリーがあった上に、Node.js 13.10 から <code>AsyncLocalStorage</code> の API がありました。</p>
-<p><a href="https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage" target="_blank" rel="noopener">https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage</a></p>
-<p>実はこれはすでにすぐに使える CLS です。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  AsyncLocalStorage,</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">"async_hooks"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> session = <span class="keyword">new</span> AsyncLocalStorage();</span><br><span class="line"></span><br><span class="line">app.use(<span class="function">(<span class="params">_req, _res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> userId = <span class="built_in">Math</span>.random() * <span class="number">1000</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(userId);</span><br><span class="line">  session.enterWith(&#123; userId &#125;);</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    next();</span><br><span class="line">  &#125;, userId);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.use(<span class="function">(<span class="params">_req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; userId &#125; = session.getStore();</span><br><span class="line">  res.json(&#123; userId &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Listen 3000"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fetch = <span class="built_in">require</span>(<span class="string">'node-fetch'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>).fill(<span class="number">0</span>).forEach(<span class="function">(<span class="params">_, i</span>) =&gt;</span> fetch(<span class="string">'http://localhost:3000/test'</span>, &#123;</span><br><span class="line">  method: <span class="string">'GET'</span>,</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json()).then(<span class="built_in">console</span>.log))</span><br><span class="line"></span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line"><span class="comment">// Listen 3000</span></span><br><span class="line"><span class="comment">// 355.9573987560112</span></span><br><span class="line"><span class="comment">// 548.3773445851497</span></span><br><span class="line"><span class="comment">// 716.2437886469793</span></span><br><span class="line"><span class="comment">// 109.84756385607896</span></span><br><span class="line"><span class="comment">// 907.6261832949347</span></span><br><span class="line"><span class="comment">// 308.34659685842513</span></span><br><span class="line"><span class="comment">// 407.0145853469649</span></span><br><span class="line"><span class="comment">// 525.820449114568</span></span><br><span class="line"><span class="comment">// 76.91502437038133</span></span><br><span class="line"><span class="comment">// 997.8611964598299</span></span><br><span class="line"><span class="comment">// &#123; userId: 76.91502437038133 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 109.84756385607896 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 308.34659685842513 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 355.9573987560112 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 407.0145853469649 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 525.820449114568 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 548.3773445851497 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 716.2437886469793 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 907.6261832949347 &#125;</span></span><br><span class="line"><span class="comment">// &#123; userId: 997.8611964598299 &#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="参照"><a href="#参照" class="headerlink" title="参照"></a>参照</h1><ul>
-<li><a href="https://juejin.im/post/5e23f89f6fb9a02fcf18e24a" target="_blank" rel="noopener">Javascript与CLS（Continuation-local Storage）</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/50835920" target="_blank" rel="noopener">翻阅源码后，我终于理解了Zone.js</a></li>
-<li><a href="https://shanyue.tech/node/cls.html#async-hooks" target="_blank" rel="noopener">使用 async_hooks 监听异步资源的生命周期</a></li>
-<li><a href="https://blog.xizhibei.me/2018/04/07/distributed-tracing/" target="_blank" rel="noopener">分布式追踪</a></li>
-</ul>
-
-      
-    </div>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-  
-  
-  
-  
-  
-    <a href="/ja/2020/07/macos-node-require-path-case-insensitive/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">Node.js 依存モジュールのファイルはケースセンシティブの件</div>
-    </a>
-    
-
-
-  
-  
-  
-  
-  
-  
-  
-    <a href="/ja/2020/06/try-serverless/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Serverless から見えてきた一体化設計</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-    
-
-</nav>
-
-  
-  
-
-  
-    <div data-url="https://blog.xingoxu.com/ja/2020/06/cls/" data-title="「CLS とは？ブラウザとNode.jsで CLS を実装してみます」 | xingo&#39;s private plot" data-tsina="1804320382" data-image="" duoshuo-id="blog-xingoxu" favicon="https://blog.xingoxu.com/favicon.ico" class="article-share">
-		<span class="share-icon" title="分享到"></span>
-		<a                 class="share-icon share-wechat" href="javascript:;"></a>
-		<a target="_blank" class="share-icon share-weibo"></a>
-		<a target="_blank" class="share-icon share-twitter"></a>
-		<a target="_blank" class="share-icon share-google"></a>
-		<a target="_blank" class="share-icon share-qq"></a>
-		<a target="_blank" class="share-icon share-facebook"></a>
-		
-		<div class="qrcode">
-			<div class="qrcode-body-mask"></div>
-			<div class="qrcode-module">
-				<h2>微信扫一扫，分享到朋友圈</h2>
-				<div id="qrcode-pic"></div>
-				<img id="logo-qrcode" src="/favicon.ico" />
-	  	</div>
-		</div>
-
-</div>
-  
-</article>
-
-
-  <section id="comments">
-  
-    <div class="duoshuo">
-  <div data-thread-key="cls" data-thread-url="https://blog.xingoxu.com/ja/2020/06/cls/" data-thread-title="CLS とは？ブラウザとNode.jsで CLS を実装してみます"></div>
-	<!-- 评论框 end -->
-	<!-- 公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-		(function() {
-			var ds = document.createElement('script');
-			ds.type = 'text/javascript';ds.async = true;
-			ds.src = '//static.xingoxu.com' + 
-			'/js/comments.js?1705893463384';
-			ds.charset = 'UTF-8';
-			ds.onload = function() {
-				comments(document.querySelectorAll('.duoshuo>div')[0]);
-			};
-			(document.getElementsByTagName('head')[0] 
-			|| document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-	</script>
-	<!-- 公共JS代码 end -->
-</div>
-    
-
-    
-  </section>
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2024 xingo
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xingoxu/hexo-theme-paper-white" target="_blank">Paper White</a>
-      	</div>
-    </div>
-  </div>
-</footer>
-    </div>
-    <div class="right-col">
-      
-        <div class="intrude-less">
-	<header id="header" class="inner">
-		<div class="profileCard">
-			<div class="overlay"></div>
-			<a href="https://xingoxu.com/" target="_blank" rel="noopener" class="profilepic">
-			
-				<img lazy-src="https://static.xingoxu.com/avatar.png" class="js-avatar">
-			
-			</a>
-
-			<hgroup>
-				<h1 class="header-author"><a href="/ja/">xingo</a></h1>
-				
-					<p class="header-subtitle">アニメ / フロントエンド開発 / いろいろやってみてます</p>
-				
-			</hgroup>
-			<div class="social">
-				<a class="github" target="_blank" href="https://github.com/xingoxu" title="github">
-						
-							<i class="fa fa-github"></i>
-						
-					</a><a class="weibo" target="_blank" href="https://weibo.com/pokemonxu/" title="weibo">
-						
-							<i class="fa fa-weibo"></i>
-						
-					</a><a class="twitter" target="_blank" href="https://twitter.com/xingoxu" title="twitter">
-						
-							<i class="fa fa-twitter"></i>
-						
-					</a><a class="bangumi" target="_blank" href="https://bgm.tv/user/xingo" title="bangumi">
-						
-							<i class="fa fa-bangumi"></i>
-						
-					</a><a class="mail" target="_blank" href="mailto:admin@xingoxu.com" title="mail">
-						
-							<i class="fa fa-envelope-o"></i>
-						
-					</a><a class="rss" target="_blank" href="/atom.xml" title="rss">
-						
-							<i class="fa fa-rss"></i>
-						
-					</a>
-			</div>
-		</div>
-
-		<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<i class="fa fa-bars"></i>
-						</div>
-						
-						
-							<div class="icon-wrap icon-bookmark hide" data-idx="2">
-								<i class="fa fa-bookmark-o"></i>
-							</div>
-						
-						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						
-							<div class="icon-wrap icon-rss hide" data-idx="5">
-								<i class="fa fa-rss"></i>
-							</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>ナビ</li>
-						
-						
-							<li>文章目録</li>
-						
-						
-							<li>友達</li>
-						
-						
-						
-							<li>Bangumi Updates</li>
-						
-					</ul>
-				</div>
-		</div>
-
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-							
-								<li><a href="/ja/">ホーム</a></li>
-							
-								<li><a href="/ja/archives">アーカイブ</a></li>
-							
-								<li><a href="/ja/about">プロフィール</a></li>
-							
-								<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
-							
-							
-							
-								<li class="change-language">
-									<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
-									<select>
-										
-											<option value="zh-cn" >简体中文</option>
-										
-											<option value="ja" selected>日本語</option>
-										
-									</select>
-								</li>
-							
-							<li>
-								<form class="search-box" action="//www.google.com/search" method="get" target="_blank" accept-charset="utf-8">
-									<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="">
-									<label class="search-icon" for="search">
-										<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1500"
-   height="350"
-   viewBox="0 0 1500 350"
-   id="searchAnimatorSVG"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="search-icon.svg"
-   preserveAspectRatio="xMinYMid meet">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="287.96719"
-     inkscape:cy="238.13903"
-     inkscape:document-units="px"
-     inkscape:current-layer="searchAnimatorSVG"
-     showgrid="false"
-     units="px"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:window-width="2560"
-     inkscape:window-height="1377"
-     inkscape:window-x="-8"
-     inkscape:window-y="196"
-     inkscape:window-maximized="1" />
-  <path
-     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-     d="M 315,315 187,202 a 105,105 0 1 1 15,-15"
-     id="magnifier"
-     inkscape:connector-curvature="0" />
-  <path
-     inkscape:connector-curvature="0"
-     id="underline"
-     d="m 315,315 1700,0"
-     style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
-  <metadata
-     id="metadata4154">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:title></dc:title>
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-</svg>
-
-									<input type="hidden" class="hide" name="q" value="site:blog.xingoxu.com">
-									</label>
-								</form>
-							</li>
-							<li id="totop" title="ページトップへ"><i class="fa fa-angle-double-up"></i></li>
-						</ul>
-					</nav>
-					<nav class="header-nav">
-
-					</nav>
-				</section>
-				
-				
-
-				
-					<section class="switch-part switch-part3">
-						<div id="toc" class="toc-article">
-							
-								<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#シチュエーション"><span class="toc-number">1.</span> <span class="toc-text">シチュエーション</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解決してみよう"><span class="toc-number">2.</span> <span class="toc-text">解決してみよう</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CLS-が登場"><span class="toc-number">3.</span> <span class="toc-text">CLS が登場</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ブラウザの解決-Zone-js"><span class="toc-number">3.1.</span> <span class="toc-text">ブラウザの解決 Zone.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#この方法は残念なところがあります"><span class="toc-number">3.1.1.</span> <span class="toc-text">この方法は残念なところがあります</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ブラウザ今では完璧の解決方法はありません"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">ブラウザ今では完璧の解決方法はありません</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-の解決-async-hooks"><span class="toc-number">3.2.</span> <span class="toc-text">Node.js の解決 async_hooks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使い方"><span class="toc-number">3.2.1.</span> <span class="toc-text">使い方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js-バージョン-13-からオフィシャルの実装も"><span class="toc-number">3.2.2.</span> <span class="toc-text">Node.js バージョン 13 からオフィシャルの実装も</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参照"><span class="toc-number">4.</span> <span class="toc-text">参照</span></a></li></ol>
-							
-						</div>
-					</section>
-				
-				
-				
-					<section class="switch-part switch-part4">
-						<div id="js-friends">
-						
-			      	<a target="_blank" class="main-nav-link switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a>
-			      
-			      	<a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a>
-			      
-			      </div>
-					</section>
-				
-
-				
-				
-					<section class="switch-part switch-part6 bangumi-rss-inside" data-url="https://updates.xingoxu.com/bangumi/timeline">
-					</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
-      
-    </div>
-  </div>
-  
-    <div id="viewer">
-    <div id="viewer-box">
-        <div class="viewer-box-l">
-        	
-				<div class="viewer-box-wrap">
-					<span class="viewer-title">文章目录</span>
-					<div id="toc-mobile" class="toc-article viewer-div">
-						<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#シチュエーション"><span class="toc-text">シチュエーション</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解決してみよう"><span class="toc-text">解決してみよう</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CLS-が登場"><span class="toc-text">CLS が登場</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ブラウザの解決-Zone-js"><span class="toc-text">ブラウザの解決 Zone.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#この方法は残念なところがあります"><span class="toc-text">この方法は残念なところがあります</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ブラウザ今では完璧の解決方法はありません"><span class="toc-text">ブラウザ今では完璧の解決方法はありません</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-の解決-async-hooks"><span class="toc-text">Node.js の解決 async_hooks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使い方"><span class="toc-text">使い方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js-バージョン-13-からオフィシャルの実装も"><span class="toc-text">Node.js バージョン 13 からオフィシャルの実装も</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参照"><span class="toc-text">参照</span></a></li></ol>
-					</div>
-				</div>
-			
-			<div class="viewer-box-wrap">
-				<span class="viewer-title">ナビ</span>
-				<div class="viewer-div">
-					
-						<li><a href="/ja/">ホーム</a></li>
-					
-						<li><a href="/ja/archives">アーカイブ</a></li>
-					
-						<li><a href="/ja/about">プロフィール</a></li>
-					
-						<li><a href="http://works.xingoxu.com/" target="_blank" rel="noopener">作品</a></li>
-					
-				</div>
-			</div>
-			
-			
-				<div class="viewer-box-wrap">
-					<span class="viewer-title">友達</span>
-					<div class="viewer-div friends" id="js-mobile-friends">
-						
-			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="https://blog.smdcn.net/">SmdCn&#39;s Blog</a></li>
-			       		
-			         		<li><a target="_blank" class="main-navlink switch-friends-link" href="http://blog.d0zingcat.xyz/">Carpe Diem</a></li>
-			       		
-			       	</div>
-				</div>
-			
-			
-			
-				<div class="viewer-box-wrap">
-					<div class="viewer-title change-language">
-						<label> <i class="fa fa-globe" aria-hidden="true"></i> 日本語</label>
-						<select >
-							
-								<option value="zh-cn" >简体中文</option>
-							
-								<option value="ja" selected>日本語</option>
-							
-						</select>
-					</div>
-				</div>
-			
-        </div>
-        <div class="viewer-box-r">
-        </div>
-    </div>
-</div>
-
-  
-  
-  
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-
-  
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-	<div class="pswp paper-white-pswp" tabindex="-1" role="dialog" aria-hidden="true">
-	  <div class="pswp__bg"></div>
-	  <div class="pswp__scroll-wrap">
-	    <div class="pswp__container">
-	      <div class="pswp__item"></div>
-	      <div class="pswp__item"></div>
-	      <div class="pswp__item"></div>
-	    </div>
-	    <div class="pswp__ui pswp__ui--hidden">
-	      <div class="pswp__top-bar">
-	        <div class="pswp__counter"></div>
-	        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-	        <button class="pswp__button pswp__button--share" title="Share"></button>
-	        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-	        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-	        <div class="pswp__preloader">
-	          <div class="pswp__preloader__icn">
-	            <div class="pswp__preloader__cut">
-	              <div class="pswp__preloader__donut"></div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-	        <div class="pswp__share-tooltip"></div>
-	      </div>
-	      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-	            </button>
-	      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-	            </button>
-	      <div class="pswp__caption">
-	        <div class="pswp__caption__center"></div>
-	      </div>
-	    </div>
-	  </div>
-	</div>	
-
-
-<script>
-	var paperWhiteConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		languageList: ["zh-cn","ja"],
-		canShare: true,
-		open_in_new: false
-	}
-</script>
-
-<script src="/sw-register.js?1705893463864.js"></script>
-
-
-<script src="https://cdnjs.loli.net/ajax/libs/require.js/2.3.2/require.min.js"></script>
-
-
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
-<script src="https://cdnjs.loli.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-
-
-<script src="/js/main.js"></script>
-
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-91877583-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-
-<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<!DOCTYPE html><html class="transition bg-[var(--page-bg)] md:text-[16px] text-[14px]" data-astro-cid-sckkx6r4 lang=ja style=--configHue:200><head><title>CLS とは？ブラウザとNode.jsで CLS を実装してみます - xingo&#39;s private plot</title><meta charset=UTF-8><meta content="CLS とは？ブラウザとNode.jsで CLS を実装してみます - xingo's private plot" name=description><meta content="width=device-width" name=viewport><meta content="Astro v4.9.2" name=generator><link href=/favicon.ico rel=icon><script>!function(){switch(localStorage.getItem("theme")||"auto"){case"light":document.documentElement.classList.remove("dark");break;case"dark":document.documentElement.classList.add("dark");break;case"auto":window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}}()</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"CLS とは？ブラウザとNode.jsで CLS を実装してみます","description":"CLS とは？ブラウザとNode.jsで CLS を実装してみます","keywords":["dev","Front-End-Dev"],"author":{"@type":"Person","name":"xingo","url":"https://blog.xingoxu.com/"},"datePublished":"2020-06-29"}</script><link href=https://cdn.staticfile.net/KaTeX/0.16.9/katex.min.css rel=stylesheet crossorigin=anonymous integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV><link href=https://blog.xingoxu.com/rss.xml rel=alternate title=xingo type=application/rss+xml><link href=/_astro/hoisted.BjUibFA8.css rel=stylesheet><style>#display-setting.svelte-3akcb9 input[type=range].svelte-3akcb9{-webkit-appearance:none;height:1.5rem;background-image:var(--color-selection-bar);transition:background-image .15s ease-in-out}#display-setting.svelte-3akcb9 .svelte-3akcb9::-webkit-slider-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-3akcb9 .svelte-3akcb9::-webkit-slider-thumb:hover{background:#fffc}#display-setting.svelte-3akcb9 .svelte-3akcb9::-webkit-slider-thumb:active{background:#fff9}#display-setting.svelte-3akcb9 .svelte-3akcb9::-moz-range-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;border-width:0;background:#ffffffb3;box-shadow:none}#display-setting.svelte-3akcb9 .svelte-3akcb9::-moz-range-thumb:hover{background:#fffc}#display-setting.svelte-3akcb9 .svelte-3akcb9::-moz-range-thumb:active{background:#fff9}#display-setting.svelte-3akcb9.svelte-3akcb9::-ms-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-3akcb9.svelte-3akcb9::-ms-thumb:hover{background:#fffc}#display-setting.svelte-3akcb9.svelte-3akcb9::-ms-thumb:active{background:#fff9}</style><link href=/_astro/_page_.DWALMKgV.css rel=stylesheet><link href=/_astro/_page_.Czz10OcG.css rel=stylesheet><link href=/_astro/_page_.C9G9Aeex.css rel=stylesheet><link href=/_astro/_category_.C3sn-RcL.css rel=stylesheet><style>#post-container :first-child{animation-delay:calc(var(--content-delay) + 0ms)}#post-container :nth-child(2){animation-delay:calc(var(--content-delay) + 50ms)}#post-container :nth-child(3){animation-delay:calc(var(--content-delay) + .1s)}#post-container :nth-child(4){animation-delay:calc(var(--content-delay) + 175ms)}#post-container :nth-child(5){animation-delay:calc(var(--content-delay) + .25s)}#post-container :nth-child(6){animation-delay:calc(var(--content-delay) + 325ms)}#waline-comment .wl-count{color:var(--waline-color)}#waline-comment .wl-editor{margin:.75em 1.5em;width:calc(100% - 3em)}#waline-comment a.wl-action[href*=markdown]{display:inline-flex}@keyframes previous-arrow{0%{transform:translate(0);opacity:1}to{transform:translate(-50px);opacity:0}}@keyframes next-arrow{0%{transform:translate(0);opacity:1}to{transform:translate(50px);opacity:0}}#display-setting.svelte-3akcb9 input[type=range].svelte-3akcb9{-webkit-appearance:none;height:1.5rem;background-image:var(--color-selection-bar);transition:background-image .15s ease-in-out}#display-setting.svelte-3akcb9 .svelte-3akcb9::-webkit-slider-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-3akcb9 .svelte-3akcb9::-webkit-slider-thumb:hover{background:#fffc}#display-setting.svelte-3akcb9 .svelte-3akcb9::-webkit-slider-thumb:active{background:#fff9}#display-setting.svelte-3akcb9 .svelte-3akcb9::-moz-range-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;border-width:0;background:#ffffffb3;box-shadow:none}#display-setting.svelte-3akcb9 .svelte-3akcb9::-moz-range-thumb:hover{background:#fffc}#display-setting.svelte-3akcb9 .svelte-3akcb9::-moz-range-thumb:active{background:#fff9}#display-setting.svelte-3akcb9.svelte-3akcb9::-ms-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-3akcb9.svelte-3akcb9::-ms-thumb:hover{background:#fffc}#display-setting.svelte-3akcb9.svelte-3akcb9::-ms-thumb:active{background:#fff9}</style><script src=/_astro/hoisted.D1oYVmv9.js type=module></script><script src=/_astro/page.BgRbYlqv.js type=module></script></head><body class="transition min-h-screen" data-astro-cid-sckkx6r4 style=--configHue:200><div id=config-carrier data-hue=200></div><div><div class="relative mx-auto gap-4 grid grid-cols-[17.5rem_auto] grid-rows-[auto_auto_1fr_auto] lg:grid-rows-[auto_1fr_auto] max-w-[var(--page-width)] md:px-4 min-h-screen px-0"><div class="onload-animation col-span-2 grid-rows-1 z-50" id=top-row><div class="transition absolute -top-8 bg-[var(--card-bg)] h-8 left-0 right-0"></div><div class="flex items-center justify-between card-base h-[4.5rem] max-w-[var(--page-width)] mx-auto overflow-visible px-4 rounded-t-none sticky top-0"><a href=/ class="rounded-lg btn-plain active:scale-95 font-bold px-5 h-[3.25rem] md:hidden"><div class="flex items-center flex-row text-[var(--primary)] text-md"><svg data-icon=material-symbols:home-outline-rounded height=1.75rem viewBox="0 0 24 24" width=1.75rem><symbol id=ai:material-symbols:home-outline-rounded><path d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:home-outline-rounded></use></svg></div></a><div class="hidden md:flex"><a href=/ class="rounded-lg btn-plain h-11 active:scale-95 font-bold px-5" aria-label=主页><div class="flex items-center">主页</div></a><a href=/archive/ class="rounded-lg btn-plain h-11 active:scale-95 font-bold px-5" aria-label=归档><div class="flex items-center">归档</div></a><a href=/about/ class="rounded-lg btn-plain h-11 active:scale-95 font-bold px-5" aria-label=关于><div class="flex items-center">关于</div></a></div><div class=flex><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(self.Astro||(self.Astro={})).load=async t=>{await(await t())()},window.dispatchEvent(new Event("astro:load")),(()=>{var t=Object.defineProperty,e=(e,r,n)=>((e,r,n)=>r in e?t(e,r,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[r]=n)(e,"symbol"!=typeof r?r+"":r,n);{let t={0:t=>s(t),1:t=>n(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(n(t)),5:t=>new Set(n(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},r=e=>{let[r,n]=e;return r in t?t[r](n):void 0},n=t=>t.map(r),s=t=>"object"!=typeof t||null===t?t:Object.fromEntries(Object.entries(t).map((([t,e])=>[t,r(e)])));class i extends HTMLElement{constructor(){super(...arguments),e(this,"Component"),e(this,"hydrator"),e(this,"hydrate",(async()=>{var t;if(!this.hydrator||!this.isConnected)return;let e=null==(t=this.parentElement)?void 0:t.closest("astro-island[ssr]");if(e)return void e.addEventListener("astro:hydrate",this.hydrate,{once:!0});let r,n=this.querySelectorAll("astro-slot"),i={},o=this.querySelectorAll("template[data-astro-template]");for(let t of o){let e=t.closest(this.tagName);null!=e&&e.isSameNode(this)&&(i[t.getAttribute("data-astro-template")||"default"]=t.innerHTML,t.remove())}for(let t of n){let e=t.closest(this.tagName);null!=e&&e.isSameNode(this)&&(i[t.getAttribute("name")||"default"]=t.innerHTML)}try{r=this.hasAttribute("props")?s(JSON.parse(this.getAttribute("props"))):{}}catch(t){let e=this.getAttribute("component-url")||"<unknown>",r=this.getAttribute("component-export");throw r&&(e+=` (export ${r})`),console.error(`[hydrate] Error parsing props for component ${e}`,this.getAttribute("props"),t),t}await this.hydrator(this)(this.Component,r,i,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))})),e(this,"unmount",(()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))}))}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(this.hasAttribute("await-children")&&"interactive"!==document.readyState&&"complete"!==document.readyState){let t=()=>{document.removeEventListener("DOMContentLoaded",t),e.disconnect(),this.childrenConnectedCallback()},e=new MutationObserver((()=>{var e;(null==(e=this.lastChild)?void 0:e.nodeType)===Node.COMMENT_NODE&&"astro:end"===this.lastChild.nodeValue&&(this.lastChild.remove(),t())}));e.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",t)}else this.childrenConnectedCallback()}async childrenConnectedCallback(){let t=this.getAttribute("before-hydration-url");t&&await import(t),this.start()}async start(){let t=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(void 0!==Astro[e])try{await Astro[e]((async()=>{let t=this.getAttribute("renderer-url"),[e,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),t?import(t):()=>()=>{}]),n=this.getAttribute("component-export")||"default";if(n.includes(".")){this.Component=e;for(let t of n.split("."))this.Component=this.Component[t]}else this.Component=e[n];return this.hydrator=r,this.hydrate}),t,this)}catch(t){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,t)}else window.addEventListener(`astro:${e}`,(()=>this.start()),{once:!0})}attributeChangedCallback(){this.hydrate()}}e(i,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",i)}})()</script><astro-island await-children="" client=load component-export=default component-url=/_astro/Search.MoBDMLR-.js opts={&quot;name&quot;:&quot;Search&quot;,&quot;value&quot;:true} props={} renderer-url=/_astro/client.Cx1FBVJX.js ssr="" uid=16pOYi><div class="rounded-lg h-11 bg-black/[0.04] dark:bg-white/5 dark:focus-within:bg-white/10 dark:hover:bg-white/10 focus-within:bg-black/[0.06] hidden hover:bg-black/[0.06] items-center lg:flex mr-2 transition-all" id=search-bar><astro-slot name=search-icon><svg data-icon=material-symbols:search height=1.25rem viewBox="0 0 24 24" width=1.25rem class="transition absolute pointer-events-none dark:text-white/30 ml-3 my-auto text-black/30" slot=search-icon><symbol id=ai:material-symbols:search><path d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:search></use></svg></astro-slot><input class="text-sm bg-transparent dark:text-white/50 focus:w-60 outline-0 pl-10 text-black/50 active:w-60 h-full transition-all w-40" placeholder=Search value=""></div><button class="rounded-lg btn-plain h-11 active:scale-90 w-11 lg:hidden" aria-label="Search Panel" id=search-switch><astro-slot name=search-switch><svg data-icon=material-symbols:search height=1.25rem viewBox="0 0 24 24" width=1.25rem slot=search-switch><use xlink:href=#ai:material-symbols:search></use></svg></astro-slot></button><div class="absolute float-panel-closed float-panel right-4 left-4 md:left-[unset] md:w-[30rem] p-2 rounded-2xl search-panel shadow-2xl top-20" id=search-panel><div class="flex items-center bg-black/[0.04] dark:bg-white/5 dark:focus-within:bg-white/10 dark:hover:bg-white/10 focus-within:bg-black/[0.06] h-11 hover:bg-black/[0.06] lg:hidden relative rounded-xl transition-all" id=search-bar-inside><astro-slot name=search-icon><svg data-icon=material-symbols:search height=1.25rem viewBox="0 0 24 24" width=1.25rem class="transition absolute pointer-events-none dark:text-white/30 ml-3 my-auto text-black/30" slot=search-icon><symbol id=ai:material-symbols:search><path d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:search></use></svg></astro-slot><input class="text-sm bg-transparent dark:text-white/50 focus:w-60 outline-0 pl-10 text-black/50 absolute inset-0" placeholder=Search value=""></div></div><template data-astro-template=arrow-icon><svg data-icon=fa6-solid:chevron-right height=0.75rem viewBox="0 0 320 512" width=0.75rem class="transition my-auto text-[var(--primary)] translate-x-0.5" slot=arrow-icon><symbol id=ai:fa6-solid:chevron-right><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256L73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" fill=currentColor /></symbol><use xlink:href=#ai:fa6-solid:chevron-right></use></svg></template></astro-island><button class="rounded-lg btn-plain h-11 active:scale-90 w-11" aria-label="Display Settings" id=display-settings-switch><svg data-icon=material-symbols:palette-outline height=1.25rem viewBox="0 0 24 24" width=1.25rem><symbol id=ai:material-symbols:palette-outline><path d="M12 22q-2.05 0-3.875-.788t-3.187-2.15t-2.15-3.187T2 12q0-2.075.813-3.9t2.2-3.175T8.25 2.788T12.2 2q2 0 3.775.688t3.113 1.9t2.125 2.875T22 11.05q0 2.875-1.75 4.413T16 17h-1.85q-.225 0-.312.125t-.088.275q0 .3.375.863t.375 1.287q0 1.25-.687 1.85T12 22m-5.5-9q.65 0 1.075-.425T8 11.5t-.425-1.075T6.5 10t-1.075.425T5 11.5t.425 1.075T6.5 13m3-4q.65 0 1.075-.425T11 7.5t-.425-1.075T9.5 6t-1.075.425T8 7.5t.425 1.075T9.5 9m5 0q.65 0 1.075-.425T16 7.5t-.425-1.075T14.5 6t-1.075.425T13 7.5t.425 1.075T14.5 9m3 4q.65 0 1.075-.425T19 11.5t-.425-1.075T17.5 10t-1.075.425T16 11.5t.425 1.075T17.5 13M12 20q.225 0 .363-.125t.137-.325q0-.35-.375-.825T11.75 17.3q0-1.05.725-1.675T14.25 15H16q1.65 0 2.825-.962T20 11.05q0-3.025-2.312-5.038T12.2 4Q8.8 4 6.4 6.325T4 12q0 3.325 2.338 5.663T12 20" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:palette-outline></use></svg></button><astro-island await-children="" client=load component-export=default component-url=/_astro/LightDarkSwitch.3UtevMFr.js opts={&quot;name&quot;:&quot;LightDarkSwitch&quot;,&quot;value&quot;:true} props={} renderer-url=/_astro/client.Cx1FBVJX.js ssr="" uid=Z27j8lo><div class="relative z-50" role=menu tabindex=-1><button class="rounded-lg btn-plain h-11 active:scale-90 w-11 relative" aria-label="Light/Dark Mode" id=scheme-switch role=menuitem><div class="absolute opacity-0"></div><div class="absolute opacity-0"></div><div class=absolute></div></button><div class="transition absolute -right-2 float-panel-closed pt-5 top-11 hidden lg:block" id=light-dark-panel><div class="float-panel p-2 card-base"><button class="transition whitespace-nowrap flex items-center rounded-lg active:scale-95 btn-plain font-medium h-9 justify-start px-3 svelte-slqk6m w-full mb-0.5">亮色</button> <button class="transition whitespace-nowrap flex items-center rounded-lg active:scale-95 btn-plain font-medium h-9 justify-start px-3 svelte-slqk6m w-full mb-0.5">暗色</button> <button class="transition whitespace-nowrap flex items-center rounded-lg active:scale-95 btn-plain font-medium h-9 justify-start px-3 svelte-slqk6m w-full current-setting">跟随系统</button></div></div></div></astro-island><astro-island await-children="" client=load component-export=default component-url=/_astro/LanguageSettings.XkcbeLfu.js opts={&quot;name&quot;:&quot;LanguageSettings&quot;,&quot;value&quot;:true} props={&quot;menus&quot;:[1,[[0,{&quot;lang&quot;:[0,&quot;zh_cn&quot;],&quot;text&quot;:[0,&quot;简体中文&quot;],&quot;url&quot;:[0,&quot;/&quot;]}],[0,{&quot;lang&quot;:[0,&quot;ja&quot;],&quot;text&quot;:[0,&quot;日本語&quot;],&quot;url&quot;:[0,&quot;/ja/&quot;]}]]]} renderer-url=/_astro/client.Cx1FBVJX.js ssr="" uid=2hyrxz><div class="relative z-50" role=menu tabindex=-1><button class="rounded-lg btn-plain h-11 active:scale-90 w-11 relative" aria-label="Light/Dark Mode" id=scheme-switch role=menuitem><div class=absolute></div></button><div class="transition absolute -right-2 float-panel-closed pt-5 top-11 block" id=language-setting-panel><div class="float-panel p-2"><a href=/ class="transition whitespace-nowrap flex items-center rounded-lg active:bg-[var(--btn-plain-bg-active)] gap-8 group hover:bg-[var(--btn-plain-bg-hover)] justify-between pl-3 pr-1 py-2"><div class="transition whitespace-nowrap dark:text-white/75 text-black/75 font-bold group-active:text-[var(--primary)] group-hover:text-[var(--primary)]">简体中文</div></a><a href=/ja/ class="transition whitespace-nowrap flex items-center rounded-lg active:bg-[var(--btn-plain-bg-active)] gap-8 group hover:bg-[var(--btn-plain-bg-hover)] justify-between pl-3 pr-1 py-2"><div class="transition whitespace-nowrap dark:text-white/75 text-black/75 font-bold group-active:text-[var(--primary)] group-hover:text-[var(--primary)]">日本語</div></a></div></div></div></astro-island><button class="rounded-lg btn-plain h-11 active:scale-90 w-11 md:hidden" aria-label=Menu id=nav-menu-switch name="Nav Menu"><svg data-icon=material-symbols:menu-rounded height=1.25rem viewBox="0 0 24 24" width=1.25rem><symbol id=ai:material-symbols:menu-rounded><path d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:menu-rounded></use></svg></button></div><astro-island await-children="" client=load component-export=default component-url=/_astro/NavMenuPanel.BoqvXwDX.js opts={&quot;name&quot;:&quot;NavMenuPanel&quot;,&quot;value&quot;:true} props={&quot;links&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;主页&quot;],&quot;url&quot;:[0,&quot;/&quot;]}],[0,{&quot;name&quot;:[0,&quot;归档&quot;],&quot;url&quot;:[0,&quot;/archive/&quot;]}],[0,{&quot;name&quot;:[0,&quot;关于&quot;],&quot;url&quot;:[0,&quot;/about/&quot;]}]]]} renderer-url=/_astro/client.Cx1FBVJX.js ssr="" uid=2qViUe><div class="absolute float-panel-closed float-panel right-4 fixed px-2 py-2 transition-all" id=nav-menu-panel><a href=/ class="transition items-center flex rounded-lg active:bg-[var(--btn-plain-bg-active)] gap-8 group hover:bg-[var(--btn-plain-bg-hover)] justify-between pl-3 pr-1 py-2"><div class="transition dark:text-white/75 text-black/75 font-bold group-active:text-[var(--primary)] group-hover:text-[var(--primary)]">主页</div></a><a href=/archive/ class="transition items-center flex rounded-lg active:bg-[var(--btn-plain-bg-active)] gap-8 group hover:bg-[var(--btn-plain-bg-hover)] justify-between pl-3 pr-1 py-2"><div class="transition dark:text-white/75 text-black/75 font-bold group-active:text-[var(--primary)] group-hover:text-[var(--primary)]">归档</div></a><a href=/about/ class="transition items-center flex rounded-lg active:bg-[var(--btn-plain-bg-active)] gap-8 group hover:bg-[var(--btn-plain-bg-hover)] justify-between pl-3 pr-1 py-2"><div class="transition dark:text-white/75 text-black/75 font-bold group-active:text-[var(--primary)] group-hover:text-[var(--primary)]">关于</div></a></div></astro-island><script>(self.Astro||(self.Astro={})).only=async t=>{await(await t())()},window.dispatchEvent(new Event("astro:only"))</script><astro-island await-children="" client=only component-export=default component-url=/_astro/DisplaySettings.CCuHgDQM.js opts={&quot;name&quot;:&quot;DisplaySettings&quot;,&quot;value&quot;:&quot;svelte&quot;} props={} renderer-url=/_astro/client.Cx1FBVJX.js ssr="" uid=Z4uExk><template data-astro-template=restore-icon><svg data-icon=fa6-solid:arrow-rotate-left height=0.875rem viewBox="0 0 512 512" width=0.875rem class="" slot=restore-icon><symbol id=ai:fa6-solid:arrow-rotate-left><path d="M125.7 160H176c17.7 0 32 14.3 32 32s-14.3 32-32 32H48c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32s32 14.3 32 32v51.2l17.6-17.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0z" fill=currentColor /></symbol><use xlink:href=#ai:fa6-solid:arrow-rotate-left></use></svg></template></astro-island></div><script>!async function(){const i=await import("/pagefind/pagefind.js");await i.options({excerptLength:20}),i.init(),window.pagefind=i,i.search("")}()</script></div><div class="onload-animation col-span-2 row-end-4 row-start-3 w-full" id=sidebar><div class="flex w-full gap-4 flex-col mb-4"><div class=card-base><a href=/about/ class="relative overflow-hidden mx-auto active:scale-95 block group max-w-[240px] mb-3 mt-4 rounded-xl" aria-label="Go to About Page"><div class="transition items-center flex w-full absolute group-active:bg-black/50 group-hover:bg-black/30 h-full justify-center pointer-events-none z-50"><svg data-icon=fa6-regular:address-card height=1em viewBox="0 0 576 512" width=1.13em class="transition group-hover:opacity-100 opacity-0 text-5xl text-white"><symbol id=ai:fa6-regular:address-card><path d="M512 80c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm144 224a64 64 0 1 0 0-128a64 64 0 1 0 0 128m-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16h192c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80zm200-144c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24z" fill=currentColor /></symbol><use xlink:href=#ai:fa6-regular:address-card></use></svg></div><div class="relative overflow-hidden mx-auto h-full"><div class="transition absolute pointer-events-none bg-opacity-50 dark:bg-black/10 inset-0"></div><img alt="Profile Image of the Author" class="object-center h-full object-cover w-full" src=https://static.xingoxu.com/avatar.png></div></a><div class="transition font-bold dark:text-neutral-50 mb-1 text-center text-xl">xingo</div><div class="transition mb-2 bg-[var(--primary)] h-1 mx-auto rounded-full w-5"></div><div class="transition text-center mb-2.5 text-neutral-400">大龄萌二 失踪人口</div><div class="flex mb-4 gap-2 justify-center mx-2"><a href=https://twitter.com/xingoxu class="rounded-lg btn-regular active:scale-90 h-10 w-10" aria-label=X-Twitter rel=me target=_blank><svg data-icon=fa6-brands:x-twitter height=1.5rem viewBox="0 0 512 512" width=1.5rem><symbol id=ai:fa6-brands:x-twitter><path d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z" fill=currentColor /></symbol><use xlink:href=#ai:fa6-brands:x-twitter></use></svg> </a><a href=https://weibo.com/pokemonxu class="rounded-lg btn-regular active:scale-90 h-10 w-10" aria-label=微博 rel=me target=_blank><svg data-icon=fa6-brands:weibo height=1.5rem viewBox="0 0 512 512" width=1.5rem><symbol id=ai:fa6-brands:weibo><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7c-22 4.8-28.8-28.1-7.1-32.8c50.1-10.9 92.3 37.1 76.5 84.8c-6.8 21.2-38.8 10.8-32-10.3M214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6c79.5-33.6 140.5-16.8 114 51.4c-3.7 9.4 1.1 10.9 8.3 13.1c135.7 42.3 34.8 215.2-169.7 215.2m143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7c-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116M347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3c72.3-15.2 134.8 52.8 111.7 124c-7.4 24.2 29.1 37 37.4 12c31.9-99.8-55.1-195.9-157.4-174.3m-78.5 311c-17.1 38.8-66.8 60-109.1 46.3c-40.8-13.1-58-53.4-40.3-89.7c17.7-35.4 63.1-55.4 103.4-45.1c42 10.8 63.1 50.2 46 88.5m-86.3-30c-12.9-5.4-30 .3-38 12.9c-8.3 12.9-4.3 28 8.6 34c13.1 6 30.8.3 39.1-12.9c8-13.1 3.7-28.3-9.7-34m32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4c-2.9 5.1-1.4 10.6 3.7 12.9c5.1 2 11.7-.3 14.6-5.4c2.8-5.2 1.1-10.9-4-12.9" fill=currentColor /></symbol><use xlink:href=#ai:fa6-brands:weibo></use></svg> </a><a href=https://github.com/xingoxu class="rounded-lg btn-regular active:scale-90 h-10 w-10" aria-label=GitHub rel=me target=_blank><svg data-icon=fa6-brands:github height=1.5rem viewBox="0 0 496 512" width=1.5rem><symbol id=ai:fa6-brands:github><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2c1.6 1.6 3.9 2.3 5.2 1c1.3-1 1-3.3-.7-5.2c-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9c1.6 1 3.6.7 4.3-.7c.7-1.3-.3-2.9-2.3-3.9c-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2c2.3 2.3 5.2 2.6 6.5 1c1.3-1.3.7-4.3-1.3-6.2c-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9c1.6 2.3 4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2c-1.4-2.3-4-3.3-5.6-2" fill=currentColor /></symbol><use xlink:href=#ai:fa6-brands:github></use></svg> </a><a href=/rss.xml class="rounded-lg btn-regular active:scale-90 h-10 w-10" aria-label=rss rel=me target=_blank><svg data-icon=fa6-solid:square-rss height=1.5rem viewBox="0 0 448 512" width=1.5rem><symbol id=ai:fa6-solid:square-rss><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm32 104c0-13.3 10.7-24 24-24c137 0 248 111 248 248c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200c-13.3 0-24-10.7-24-24m0 96c0-13.3 10.7-24 24-24c83.9 0 152 68.1 152 152c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104c-13.3 0-24-10.7-24-24m0 120a32 32 0 1 1 64 0a32 32 0 1 1-64 0" fill=currentColor /></symbol><use xlink:href=#ai:fa6-solid:square-rss></use></svg> </a><a href=mailto:admin@xingoxu.com class="rounded-lg btn-regular active:scale-90 h-10 w-10" aria-label=mail rel=me target=_blank><svg data-icon=material-symbols:mail-outline height=1.5rem viewBox="0 0 24 24" width=1.5rem><symbol id=ai:material-symbols:mail-outline><path d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:mail-outline></use></svg></a></div></div></div><div class="flex w-full gap-4 flex-col top-4 top-4 sticky"><widget-layout class="onload-animation card-base pb-4" data-astro-cid-ucso7hve data-id=tags data-is-collapsed style=animation-delay:.2s;--collapsedHeight:7.5rem><div class="transition font-bold before:absolute before:bg-[var(--primary)] before:rounded-md before:h-4 before:left-[-16px] before:top-[5.5px] before:w-1 dark:text-neutral-100 mb-2 ml-8 mt-4 relative text-lg text-neutral-900" data-astro-cid-ucso7hve style=--collapsedHeight:7.5rem>标签</div><div class="px-4 collapse-wrapper collapsed overflow-hidden" id=tags data-astro-cid-ucso7hve style=--collapsedHeight:7.5rem><div class="flex gap-2 flex-wrap"><a href=/archive/tag/ACG/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the ACG tag">ACG </a><a href=/archive/tag/android/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the android tag">android </a><a href=/archive/tag/blog-setup/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the blog-setup tag">blog-setup </a><a href=/archive/tag/cpp/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the cpp tag">cpp </a><a href=/archive/tag/csharp-wpf/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the csharp-wpf tag">csharp-wpf </a><a href=/archive/tag/dev/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the dev tag">dev </a><a href=/archive/tag/figures/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the figures tag">figures </a><a href=/archive/tag/Front-End-Dev/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the Front-End-Dev tag">Front-End-Dev </a><a href=/archive/tag/git/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the git tag">git </a><a href="/archive/tag/HTML CSS/" class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the HTML CSS tag">HTML CSS </a><a href=/archive/tag/java/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the java tag">java </a><a href=/archive/tag/macbook/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the macbook tag">macbook </a><a href=/archive/tag/maintaince/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the maintaince tag">maintaince </a><a href=/archive/tag/Music/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the Music tag">Music </a><a href=/archive/tag/notes/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the notes tag">notes </a><a href=/archive/tag/router-config/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the router-config tag">router-config </a><a href=/archive/tag/self-copy/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the self-copy tag">self-copy </a><a href=/archive/tag/Travel/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the Travel tag">Travel </a><a href=/archive/tag/tricks/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the tricks tag">tricks </a><a href=/archive/tag/works/ class="rounded-lg btn-regular h-8 px-3 text-sm" aria-label="View all posts with the works tag">works</a></div></div><div class="px-4 -mb-2 expand-btn" data-astro-cid-ucso7hve style=--collapsedHeight:7.5rem><button class="rounded-lg btn-plain h-9 w-full" data-astro-cid-ucso7hve style=--collapsedHeight:7.5rem><div class="flex items-center justify-center -translate-x-2 gap-2 text-[var(--primary)]" data-astro-cid-ucso7hve style=--collapsedHeight:7.5rem><svg data-icon=material-symbols:more-horiz height=28 viewBox="0 0 24 24" width=28 data-astro-cid-ucso7hve><symbol id=ai:material-symbols:more-horiz><path d="M6 14q-.825 0-1.412-.587T4 12t.588-1.412T6 10t1.413.588T8 12t-.587 1.413T6 14m6 0q-.825 0-1.412-.587T10 12t.588-1.412T12 10t1.413.588T14 12t-.587 1.413T12 14m6 0q-.825 0-1.412-.587T16 12t.588-1.412T18 10t1.413.588T20 12t-.587 1.413T18 14" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:more-horiz></use></svg> 更多</div></button></div></widget-layout></div></div><div class="onload-animation col-span-2 overflow-hidden row-end-3 row-start-2" id=content-wrapper><main class=transition-fade id=swup><div class="flex w-full mb-4 overflow-hidden relative rounded-[var(--radius-large)]" data-astro-cid-gomhkv4q><div class="relative w-full card-base md:px-9 pb-4 pt-6 px-6 z-10" data-astro-cid-gomhkv4q id=post-container><div class="relative onload-animation" data-astro-cid-gomhkv4q><div class="transition font-bold before:absolute before:bg-[var(--primary)] before:rounded-md before:h-5 before:left-[-1.125rem] before:top-[0.75rem] block dark:text-white/90 mb-3 md:before:w-1 md:text-[2.5rem]/[2.75rem] text-3xl text-black/90 w-full" data-astro-cid-gomhkv4q data-pagefind-body data-pagefind-meta=title data-pagefind-weight=10>CLS とは？ブラウザとNode.jsで CLS を実装してみます</div></div><div class=onload-animation data-astro-cid-gomhkv4q><div class="flex items-center gap-4 dark:text-neutral-400 flex-wrap gap-x-4 mb-5 md:gap-y-2 text-neutral-500" data-astro-cid-qtyrxm4s><div class="flex items-center" data-astro-cid-qtyrxm4s><div class="!hidden md:!flex meta-icon" data-astro-cid-qtyrxm4s><svg data-icon=material-symbols:calendar-today-outline-rounded height=1em viewBox="0 0 24 24" width=1em class="text-xl -mt-[2px]" data-astro-cid-qtyrxm4s><symbol id=ai:material-symbols:calendar-today-outline-rounded><path d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:calendar-today-outline-rounded></use></svg></div><span class="text-sm text-50 font-medium" data-astro-cid-qtyrxm4s>2020-06-29</span></div><div class="flex items-center" data-astro-cid-qtyrxm4s><div class="!hidden md:!flex meta-icon" data-astro-cid-qtyrxm4s><svg data-icon=material-symbols:tag-rounded height=1em viewBox="0 0 24 24" width=1em class=text-xl data-astro-cid-qtyrxm4s><symbol id=ai:material-symbols:tag-rounded><path d="m9 16l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T6.3 18.8L7 16H4.275q-.5 0-.8-.387T3.3 14.75q.075-.35.35-.55t.625-.2H7.5l1-4H5.775q-.5 0-.8-.387T4.8 8.75q.075-.35.35-.55t.625-.2H9l.825-3.275Q9.9 4.4 10.15 4.2t.6-.2q.475 0 .775.375t.175.825L11 8h4l.825-3.275q.075-.325.325-.525t.6-.2q.475 0 .775.375t.175.825L17 8h2.725q.5 0 .8.387t.175.863q-.075.35-.35.55t-.625.2H16.5l-1 4h2.725q.5 0 .8.388t.175.862q-.075.35-.35.55t-.625.2H15l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T12.3 18.8L13 16zm.5-2h4l1-4h-4z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:tag-rounded></use></svg></div><div class="flex items-center flex-row flex-nowrap" data-astro-cid-qtyrxm4s><span class="md:hidden leading-5 mr-2">•</span><div class=with-divider data-astro-cid-qtyrxm4s><a href=/archive/tag/dev/ class="transition whitespace-nowrap font-medium dark:hover:text-[var(--primary)] hover:text-[var(--primary)] link-lg text-50 text-sm" aria-label="View all posts with the dev tag" data-astro-cid-qtyrxm4s>dev</a></div><div class=with-divider data-astro-cid-qtyrxm4s><a href=/archive/tag/Front-End-Dev/ class="transition whitespace-nowrap font-medium dark:hover:text-[var(--primary)] hover:text-[var(--primary)] link-lg text-50 text-sm" aria-label="View all posts with the Front-End-Dev tag" data-astro-cid-qtyrxm4s>Front-End-Dev</a></div></div></div><div class="flex items-center flex-row" data-astro-cid-gomhkv4q><div class="transition items-center !hidden dark:text-white/50 h-8 md:!flex rounded-md text-black/50 w-7" data-astro-cid-gomhkv4q><svg data-icon=material-symbols:notes-rounded height=1em viewBox="0 0 24 24" width=1em data-astro-cid-gomhkv4q><symbol id=ai:material-symbols:notes-rounded><path d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h10q.425 0 .713.288T15 17t-.288.713T14 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:notes-rounded></use></svg></div><span class="md:hidden leading-5 mr-2">•</span><div class=text-sm data-astro-cid-gomhkv4q>1497 文字</div></div><div class="flex items-center flex-row" data-astro-cid-gomhkv4q><div class="transition items-center !hidden dark:text-white/50 h-8 md:!flex rounded-md text-black/50 w-7" data-astro-cid-gomhkv4q><svg data-icon=material-symbols:schedule-outline-rounded height=1em viewBox="0 0 24 24" width=1em data-astro-cid-gomhkv4q><symbol id=ai:material-symbols:schedule-outline-rounded><path d="M13 11.6V8q0-.425-.288-.712T12 7t-.712.288T11 8v3.975q0 .2.075.388t.225.337l3.3 3.3q.275.275.7.275T16 16t.275-.7t-.275-.7zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.325 0 5.663-2.337T20 12t-2.337-5.663T12 4T6.337 6.338T4 12t2.338 5.663T12 20" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:schedule-outline-rounded></use></svg></div><span class="md:hidden leading-5 mr-2">•</span><div class=text-sm data-astro-cid-gomhkv4q>7 分</div></div></div><div class="mb-5 border-[var(--line-divider)] border-b-[1px] border-dashed" data-astro-cid-gomhkv4q></div></div><div class="onload-animation mb-6 custom-md dark:prose-invert markdown-content max-w-none prose prose-base" data-pagefind-body><p>資料を調べる際に、CLS の存在を知りました。エンジニアリングで結構いいデカップリングのやり方と感じまして、シェアしたいと思います。</p><h1 id=シチュエーション>シチュエーション<a href=#シチュエーション class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h1><p>ブラウザか、サーバーのNode.jsか、どっちでもエラーハンドリング、ユーザートラッキングのニーズは日常茶飯事。例えユーザーを特定しなくても、id をつけて、ユーザーの行為を追跡して、エラーの再現にも重要し、プロダクトの改善にも役たちます。</p><p>仮に今エラーハンドリングを書こうと思って、このエラーハンドリングはすべてのエラーを処理しますが、どのリクエストから生み出したエラーを知りたいと</p><pre class="astro-code github-dark" data-language=javascript style=background-color:#24292e;color:#e1e4e8;overflow-x:auto tabindex=0><code><span class=line><span style=color:#e1e4e8>log.</span><span style=color:#b392f0>error</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"Error occured"</span><span style=color:#e1e4e8>, req);</span></span>
+<span class=line></span></code></pre><p>このハンドリングは req と結合しちゃった</p><p>仮に今このエラーどのユーザーから出たエラー、ユーザーが何をやったかを知りたいと</p><pre class="astro-code github-dark" data-language=javascript style=background-color:#24292e;color:#e1e4e8;overflow-x:auto tabindex=0><code><span class=line><span style=color:#e1e4e8>log.</span><span style=color:#b392f0>info</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"User has done xxx"</span><span style=color:#e1e4e8>, user);</span></span>
+<span class=line><span style=color:#e1e4e8>log.</span><span style=color:#b392f0>error</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"Error occured by"</span><span style=color:#e1e4e8>, user);</span></span>
+<span class=line></span></code></pre><p>ユーザーとも結合しちゃった</p><p>この２つの例は一見するとそんなに大きいな問題ではなさそう、ただ２つのパラメータが増えただけじゃ。 だけど、大型サービスを作る時、どんどん増えた機能に対して、関数の引数と関数の長さと共にどんどん伸びちゃって気持ち悪くてリファクタリングしようとしょうもないこと、少なくありませんでしょうか？</p><h1 id=解決してみよう>解決してみよう<a href=#解決してみよう class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h1><p>関数が同期のであれば、グローバルで変数につけたらいいじゃんー</p><pre class="astro-code github-dark" data-language=javascript style=background-color:#24292e;color:#e1e4e8;overflow-x:auto tabindex=0><code><span class=line><span style=color:#f97583>const</span><span style=color:#79b8ff> global</span><span style=color:#f97583> =</span><span style=color:#e1e4e8> {};</span></span>
+<span class=line><span style=color:#b392f0>$</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"button"</span><span style=color:#e1e4e8>).</span><span style=color:#b392f0>click</span><span style=color:#e1e4e8>((</span><span style=color:#ffab70>event</span><span style=color:#e1e4e8>) </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#e1e4e8>  global.event </span><span style=color:#f97583>=</span><span style=color:#e1e4e8> event;</span></span>
+<span class=line><span style=color:#b392f0>  log</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"button clicked"</span><span style=color:#e1e4e8>);</span></span>
+<span class=line><span style=color:#e1e4e8>});</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>function</span><span style=color:#b392f0> log</span><span style=color:#e1e4e8>(</span><span style=color:#f97583>...</span><span style=color:#ffab70>args</span><span style=color:#e1e4e8>) {</span></span>
+<span class=line><span style=color:#e1e4e8>  console.</span><span style=color:#b392f0>log</span><span style=color:#e1e4e8>(global.event, </span><span style=color:#f97583>...</span><span style=color:#e1e4e8>args); </span><span style=color:#6a737d>// { x: xxx, y: xxx, target: xxx } 'button clicked'</span></span>
+<span class=line><span style=color:#6a737d>  // other logic</span></span>
+<span class=line><span style=color:#e1e4e8>}</span></span>
+<span class=line></span></code></pre><p>だが、非同期関数のであれば</p><pre class="astro-code github-dark" data-language=javascript style=background-color:#24292e;color:#e1e4e8;overflow-x:auto tabindex=0><code><span class=line><span style=color:#f97583>const</span><span style=color:#79b8ff> global</span><span style=color:#f97583> =</span><span style=color:#e1e4e8> {};</span></span>
+<span class=line><span style=color:#b392f0>$</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"button"</span><span style=color:#e1e4e8>).</span><span style=color:#b392f0>click</span><span style=color:#e1e4e8>((</span><span style=color:#ffab70>event</span><span style=color:#e1e4e8>) </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#e1e4e8>  global.event </span><span style=color:#f97583>=</span><span style=color:#e1e4e8> event;</span></span>
+<span class=line><span style=color:#b392f0>  setTimeout</span><span style=color:#e1e4e8>(() </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#b392f0>    log</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"button clicked"</span><span style=color:#e1e4e8>);</span></span>
+<span class=line><span style=color:#e1e4e8>  }, </span><span style=color:#79b8ff>1000</span><span style=color:#e1e4e8>);</span></span>
+<span class=line><span style=color:#e1e4e8>});</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>function</span><span style=color:#b392f0> log</span><span style=color:#e1e4e8>(</span><span style=color:#f97583>...</span><span style=color:#ffab70>args</span><span style=color:#e1e4e8>) {</span></span>
+<span class=line><span style=color:#e1e4e8>  console.</span><span style=color:#b392f0>log</span><span style=color:#e1e4e8>(global.event, </span><span style=color:#f97583>...</span><span style=color:#e1e4e8>args);</span></span>
+<span class=line><span style=color:#6a737d>  // other logic</span></span>
+<span class=line><span style=color:#e1e4e8>}</span></span>
+<span class=line></span></code></pre><p>すべての global.event は同じイベントになちゃった(´；ω；｀)！それはだめですね。</p><p>我々必要なのは非同期呼び出しチェーンに最初から最後まで持続的なストレージ、 もしくは今走ってる非同期関数の呼び出しの唯一の識別子。</p><h1 id=cls-が登場>CLS が登場<a href=#cls-が登場 class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h1><p>他の言語では、<a href=https://en.wikipedia.org/wiki/Thread-local_storage>Thread-local storage</a>と呼ばれるものがあります。が JavaScript はマルチスレッドはありません（Web Workerなどはメインと関係ないし、自分でもマルチスレッドしない）。CLS という名前は TLS みたいに関数型プログラミングからの Continuation-passing style 名前をもらって、Continuation-local Storage、そのチェインの呼び出しの中で持続的データストレージをメンテナンスする。</p><h2 id=ブラウザの解決-zonejs>ブラウザの解決 Zone.js<a href=#ブラウザの解決-zonejs class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h2><p>どうのように解決したかちょっと見てみましょう</p><pre class="astro-code github-dark" data-language=javascript style=background-color:#24292e;color:#e1e4e8;overflow-x:auto tabindex=0><code><span class=line><span style=color:#b392f0>$</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>'button'</span><span style=color:#e1e4e8>).</span><span style=color:#b392f0>click</span><span style=color:#e1e4e8>(</span><span style=color:#ffab70>event</span><span style=color:#f97583> =></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#e1e4e8>  Zone.current.</span><span style=color:#b392f0>fork</span><span style=color:#e1e4e8>({</span></span>
+<span class=line><span style=color:#e1e4e8>    name: </span><span style=color:#9ecbff>'clickZone'</span><span style=color:#e1e4e8>,</span></span>
+<span class=line><span style=color:#e1e4e8>    properties: {</span></span>
+<span class=line><span style=color:#e1e4e8>      event</span></span>
+<span class=line><span style=color:#e1e4e8>    }</span></span>
+<span class=line><span style=color:#e1e4e8>  }).</span><span style=color:#b392f0>run</span><span style=color:#e1e4e8>(</span></span>
+<span class=line><span style=color:#b392f0>    setTimeout</span><span style=color:#e1e4e8>(() </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#b392f0>      log</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>'button clicked'</span><span style=color:#e1e4e8>);</span></span>
+<span class=line><span style=color:#e1e4e8>    }, </span><span style=color:#79b8ff>1000</span><span style=color:#e1e4e8>);</span></span>
+<span class=line><span style=color:#e1e4e8>  );</span></span>
+<span class=line><span style=color:#e1e4e8>});</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>function</span><span style=color:#b392f0> log</span><span style=color:#e1e4e8>(</span><span style=color:#f97583>...</span><span style=color:#ffab70>args</span><span style=color:#e1e4e8>) {</span></span>
+<span class=line><span style=color:#e1e4e8>  console.</span><span style=color:#b392f0>log</span><span style=color:#e1e4e8>(global.event, </span><span style=color:#f97583>...</span><span style=color:#e1e4e8>args);</span></span>
+<span class=line><span style=color:#6a737d>  // other logic</span></span>
+<span class=line><span style=color:#e1e4e8>}</span></span>
+<span class=line></span></code></pre><p><a href=https://github.com/angular/angular/tree/master/packages/zone.js><code>Zone.js</code></a> は Angular 2.0 から誕生したもので、もちろん他の機能も持ってる。</p><h3 id=この方法は残念なところがあります>この方法は残念なところがあります<a href=#この方法は残念なところがあります class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h3><p>考えてみましょう、 <code>Zone.js</code> はどうやってこれを実現しました。ブラウザは呼び出しに対して唯一の識別子を提供するAPIがなければ、すべての非同期関数をリライトしかできなく、そうすれば非同期が入る時と出る時 hook できて、この効果が実装できますね。</p><p>自分も書いてみました。</p><script src=https://gist.github.com/xingoxu/58f8f7faa83732ec922fcd38299f3283.js></script><p>また問題なさそうだけど、</p><p><a href=https://github.com/angular/angular/issues/31730>angular with tsconfig target ES2017 async/await will not work with zone.js</a></p><h4 id=ブラウザ今では完璧の解決方法はありません>ブラウザ今では完璧の解決方法はありません<a href=#ブラウザ今では完璧の解決方法はありません class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h4><p>実験をやってみましょう、console で下のコードを打ったら、</p><pre class="astro-code github-dark" data-language=javascript style=background-color:#24292e;color:#e1e4e8;overflow-x:auto tabindex=0><code><span class=line><span style=color:#f97583>const</span><span style=color:#79b8ff> _promise</span><span style=color:#f97583> =</span><span style=color:#79b8ff> Promise</span><span style=color:#e1e4e8>;</span></span>
+<span class=line><span style=color:#79b8ff>Promise</span><span style=color:#f97583> =</span><span style=color:#f97583> function</span><span style=color:#e1e4e8> () { console.</span><span style=color:#b392f0>log</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>'rewrite by ourselves'</span><span style=color:#e1e4e8>) };</span></span>
+<span class=line><span style=color:#f97583>new</span><span style=color:#79b8ff> Promise</span><span style=color:#e1e4e8>(() </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {}) </span><span style=color:#f97583>instanceof</span><span style=color:#b392f0> Promise</span></span>
+<span class=line><span style=color:#6a737d>// rewrite by ourselves</span></span>
+<span class=line><span style=color:#6a737d>// true</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>async</span><span style=color:#f97583> function</span><span style=color:#b392f0> test</span><span style=color:#e1e4e8>() {}</span></span>
+<span class=line><span style=color:#b392f0>test</span><span style=color:#e1e4e8>() </span><span style=color:#f97583>instanceof</span><span style=color:#b392f0> Promise</span></span>
+<span class=line><span style=color:#6a737d>// false</span></span>
+<span class=line><span style=color:#b392f0>test</span><span style=color:#e1e4e8>() </span><span style=color:#f97583>instanceof</span><span style=color:#b392f0> _promise</span></span>
+<span class=line><span style=color:#6a737d>// true</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>async</span><span style=color:#f97583> function</span><span style=color:#b392f0> test</span><span style=color:#e1e4e8>() { </span><span style=color:#f97583>return</span><span style=color:#f97583> new</span><span style=color:#79b8ff> Promise</span><span style=color:#e1e4e8>() }</span></span>
+<span class=line></span>
+<span class=line><span style=color:#b392f0>test</span><span style=color:#e1e4e8>() </span><span style=color:#f97583>instanceof</span><span style=color:#b392f0> Promise</span></span>
+<span class=line><span style=color:#6a737d>// rewrite by ourselves</span></span>
+<span class=line><span style=color:#6a737d>// false</span></span>
+<span class=line><span style=color:#b392f0>test</span><span style=color:#e1e4e8>() </span><span style=color:#f97583>instanceof</span><span style=color:#b392f0> _promise</span></span>
+<span class=line><span style=color:#6a737d>// rewrite by ourselves</span></span>
+<span class=line><span style=color:#6a737d>// true</span></span>
+<span class=line></span></code></pre><p>ブラウザは、async 関数のリターンをネイティブの Promise で再ラッピングします。ネイティブ文法なので、async 関数はリライトできない。 もちろん transpiler で async 関数を generator もしくは Promise にすることは可能ですが、完璧とは言わないでしょう。</p><h2 id=nodejs-の解決-async_hooks>Node.js の解決 <code>async_hooks</code><a href=#nodejs-の解決-async_hooks class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h2><p>Node.js バージョン 8 以降出た <code>async_hook</code> モジュール、バージョン 14 の今でも <code>Experimental</code> ステータスから脱却してない。出たごろ性能に関しての議論もあったが、今はどうなってるかまだわからない状態ですが</p><blockquote><p>Experimental ステータスにしても安定性としては問題なさそう、大量な Node.js のトラッキング / APM が依存していて、問題があったら issue が立てられるはずです。</p></blockquote><p>性能に関する問題はここは展開しない、コードの低結合と少しパフォーマンスの低下を交換するかしないかによりますね。</p><h3 id=使い方>使い方<a href=#使い方 class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h3><p><code>async_hooks</code> は <code>createHook</code> という関数を提供した、これが非同期関数のライフサイクルに hook できます、しかも唯一識別子も提供してくれますので、CLS を簡単に作れます。</p><script src=https://gist.github.com/xingoxu/590e7f99658ea160b1f77cdb4e956637.js></script><h3 id=nodejs-バージョン-13-からオフィシャルの実装も>Node.js バージョン 13 からオフィシャルの実装も<a href=#nodejs-バージョン-13-からオフィシャルの実装も class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h3><p>コミュニティの中でたくさんの CLS ライブラリーがあった上に、Node.js 13.10 から <code>AsyncLocalStorage</code> の API がありました。</p><p><a href=https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage>https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage</a></p><p>実はこれはすでにすぐに使える CLS です。</p><pre class="astro-code github-dark" data-language=javascript style=background-color:#24292e;color:#e1e4e8;overflow-x:auto tabindex=0><code><span class=line><span style=color:#f97583>const</span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#79b8ff>  AsyncLocalStorage</span><span style=color:#e1e4e8>,</span></span>
+<span class=line><span style=color:#e1e4e8>} </span><span style=color:#f97583>=</span><span style=color:#b392f0> require</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"async_hooks"</span><span style=color:#e1e4e8>);</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>const</span><span style=color:#79b8ff> express</span><span style=color:#f97583> =</span><span style=color:#b392f0> require</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"express"</span><span style=color:#e1e4e8>);</span></span>
+<span class=line><span style=color:#f97583>const</span><span style=color:#79b8ff> app</span><span style=color:#f97583> =</span><span style=color:#b392f0> express</span><span style=color:#e1e4e8>();</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>const</span><span style=color:#79b8ff> session</span><span style=color:#f97583> =</span><span style=color:#f97583> new</span><span style=color:#b392f0> AsyncLocalStorage</span><span style=color:#e1e4e8>();</span></span>
+<span class=line></span>
+<span class=line><span style=color:#e1e4e8>app.</span><span style=color:#b392f0>use</span><span style=color:#e1e4e8>((</span><span style=color:#ffab70>_req</span><span style=color:#e1e4e8>, </span><span style=color:#ffab70>_res</span><span style=color:#e1e4e8>, </span><span style=color:#ffab70>next</span><span style=color:#e1e4e8>) </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#f97583>  let</span><span style=color:#e1e4e8> userId </span><span style=color:#f97583>=</span><span style=color:#e1e4e8> Math.</span><span style=color:#b392f0>random</span><span style=color:#e1e4e8>() </span><span style=color:#f97583>*</span><span style=color:#79b8ff> 1000</span><span style=color:#e1e4e8>;</span></span>
+<span class=line><span style=color:#e1e4e8>  console.</span><span style=color:#b392f0>log</span><span style=color:#e1e4e8>(userId);</span></span>
+<span class=line><span style=color:#e1e4e8>  session.</span><span style=color:#b392f0>enterWith</span><span style=color:#e1e4e8>({ userId });</span></span>
+<span class=line><span style=color:#b392f0>  setTimeout</span><span style=color:#e1e4e8>(() </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#b392f0>    next</span><span style=color:#e1e4e8>();</span></span>
+<span class=line><span style=color:#e1e4e8>  }, userId);</span></span>
+<span class=line><span style=color:#e1e4e8>});</span></span>
+<span class=line></span>
+<span class=line><span style=color:#e1e4e8>app.</span><span style=color:#b392f0>use</span><span style=color:#e1e4e8>((</span><span style=color:#ffab70>_req</span><span style=color:#e1e4e8>, </span><span style=color:#ffab70>res</span><span style=color:#e1e4e8>, </span><span style=color:#ffab70>next</span><span style=color:#e1e4e8>) </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#f97583>  const</span><span style=color:#e1e4e8> { </span><span style=color:#79b8ff>userId</span><span style=color:#e1e4e8> } </span><span style=color:#f97583>=</span><span style=color:#e1e4e8> session.</span><span style=color:#b392f0>getStore</span><span style=color:#e1e4e8>();</span></span>
+<span class=line><span style=color:#e1e4e8>  res.</span><span style=color:#b392f0>json</span><span style=color:#e1e4e8>({ userId });</span></span>
+<span class=line><span style=color:#e1e4e8>});</span></span>
+<span class=line></span>
+<span class=line><span style=color:#e1e4e8>app.</span><span style=color:#b392f0>listen</span><span style=color:#e1e4e8>(</span><span style=color:#79b8ff>3000</span><span style=color:#e1e4e8>, () </span><span style=color:#f97583>=></span><span style=color:#e1e4e8> {</span></span>
+<span class=line><span style=color:#e1e4e8>  console.</span><span style=color:#b392f0>log</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>"Listen 3000"</span><span style=color:#e1e4e8>);</span></span>
+<span class=line><span style=color:#e1e4e8>});</span></span>
+<span class=line></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>const</span><span style=color:#79b8ff> fetch</span><span style=color:#f97583> =</span><span style=color:#b392f0> require</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>'node-fetch'</span><span style=color:#e1e4e8>)</span></span>
+<span class=line></span>
+<span class=line><span style=color:#f97583>new</span><span style=color:#b392f0> Array</span><span style=color:#e1e4e8>(</span><span style=color:#79b8ff>10</span><span style=color:#e1e4e8>).</span><span style=color:#b392f0>fill</span><span style=color:#e1e4e8>(</span><span style=color:#79b8ff>0</span><span style=color:#e1e4e8>).</span><span style=color:#b392f0>forEach</span><span style=color:#e1e4e8>((</span><span style=color:#ffab70>_</span><span style=color:#e1e4e8>, </span><span style=color:#ffab70>i</span><span style=color:#e1e4e8>) </span><span style=color:#f97583>=></span><span style=color:#b392f0> fetch</span><span style=color:#e1e4e8>(</span><span style=color:#9ecbff>'http://localhost:3000/test'</span><span style=color:#e1e4e8>, {</span></span>
+<span class=line><span style=color:#e1e4e8>  method: </span><span style=color:#9ecbff>'GET'</span><span style=color:#e1e4e8>,</span></span>
+<span class=line><span style=color:#e1e4e8>}).</span><span style=color:#b392f0>then</span><span style=color:#e1e4e8>(</span><span style=color:#ffab70>res</span><span style=color:#f97583> =></span><span style=color:#e1e4e8> res.</span><span style=color:#b392f0>json</span><span style=color:#e1e4e8>()).</span><span style=color:#b392f0>then</span><span style=color:#e1e4e8>(console.log))</span></span>
+<span class=line></span>
+<span class=line><span style=color:#6a737d>// Output:</span></span>
+<span class=line><span style=color:#6a737d>// Listen 3000</span></span>
+<span class=line><span style=color:#6a737d>// 355.9573987560112</span></span>
+<span class=line><span style=color:#6a737d>// 548.3773445851497</span></span>
+<span class=line><span style=color:#6a737d>// 716.2437886469793</span></span>
+<span class=line><span style=color:#6a737d>// 109.84756385607896</span></span>
+<span class=line><span style=color:#6a737d>// 907.6261832949347</span></span>
+<span class=line><span style=color:#6a737d>// 308.34659685842513</span></span>
+<span class=line><span style=color:#6a737d>// 407.0145853469649</span></span>
+<span class=line><span style=color:#6a737d>// 525.820449114568</span></span>
+<span class=line><span style=color:#6a737d>// 76.91502437038133</span></span>
+<span class=line><span style=color:#6a737d>// 997.8611964598299</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 76.91502437038133 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 109.84756385607896 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 308.34659685842513 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 355.9573987560112 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 407.0145853469649 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 525.820449114568 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 548.3773445851497 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 716.2437886469793 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 907.6261832949347 }</span></span>
+<span class=line><span style=color:#6a737d>// { userId: 997.8611964598299 }</span></span>
+<span class=line></span></code></pre><h1 id=参照>参照<a href=#参照 class=anchor><span class=anchor-icon data-pagefind-ignore="">#</span></a></h1><ul><li><a href=https://juejin.im/post/5e23f89f6fb9a02fcf18e24a>Javascript与CLS（Continuation-local Storage）</a></li><li><a href=https://zhuanlan.zhihu.com/p/50835920>翻阅源码后，我终于理解了Zone.js</a></li><li><a href=https://shanyue.tech/node/cls.html#async-hooks>使用 async_hooks 监听异步资源的生命周期</a></li><li><a href=https://blog.xizhibei.me/2018/04/07/distributed-tracing/ >分布式追踪</a></li></ul><svg data-icon=material-symbols:zoom-in-rounded height=1em viewBox="0 0 24 24" width=1em class=hidden><symbol id=ai:material-symbols:zoom-in-rounded><path d="M8.5 10.5h-1q-.425 0-.712-.288T6.5 9.5t.288-.712T7.5 8.5h1v-1q0-.425.288-.712T9.5 6.5t.713.288t.287.712v1h1q.425 0 .713.288t.287.712t-.288.713t-.712.287h-1v1q0 .425-.288.713T9.5 12.5t-.712-.288T8.5 11.5zm1 5.5q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:zoom-in-rounded></use></svg> <svg data-icon=material-symbols:zoom-out-rounded height=1em viewBox="0 0 24 24" width=1em class=hidden><symbol id=ai:material-symbols:zoom-out-rounded><path d="M8 10.5q-.425 0-.712-.288T7 9.5t.288-.712T8 8.5h3q.425 0 .713.288T12 9.5t-.288.713T11 10.5zM9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:zoom-out-rounded></use></svg> <svg data-icon=material-symbols:arrow-right-alt-rounded height=1em viewBox="0 0 24 24" width=1em class=hidden><symbol id=ai:material-symbols:arrow-right-alt-rounded><path d="M16.15 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:arrow-right-alt-rounded></use></svg> <svg data-icon=material-symbols:arrow-left-alt-rounded height=1em viewBox="0 0 24 24" width=1em class=hidden><symbol id=ai:material-symbols:arrow-left-alt-rounded><path d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:arrow-left-alt-rounded></use></svg> <svg data-icon=material-symbols:close-rounded height=1em viewBox="0 0 24 24" width=1em class=hidden><symbol id=ai:material-symbols:close-rounded><path d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:close-rounded></use></svg></div><div class="transition bg-[var(--license-block-bg)] license-container mb-6 onload-animation overflow-hidden px-6 py-5 relative rounded-xl"><div class="transition dark:text-white/75 text-black/75 font-bold">CLS とは？ブラウザとNode.jsで CLS を実装してみます</div><a href=https://blog.xingoxu.com/ja/2020/06/cls/ class="text-[var(--primary)] link">https://blog.xingoxu.com/ja/2020/06/cls/</a><div class="flex gap-6 mt-2"><div><div class="transition text-sm dark:text-white/30 text-black/30">作者</div><div class="transition whitespace-nowrap dark:text-white/75 text-black/75">xingo</div></div><div><div class="transition text-sm dark:text-white/30 text-black/30">发布于</div><div class="transition whitespace-nowrap dark:text-white/75 text-black/75">2020-06-29</div></div><div><div class="transition text-sm dark:text-white/30 text-black/30">许可协议</div><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/ class="text-[var(--primary)] link whitespace-nowrap" target=_blank>CC BY-NC-SA 4.0</a></div></div><svg data-icon=fa6-brands:creative-commons height=240 viewBox="0 0 496 512" width=240 class="transition absolute pointer-events-none -translate-y-1/2 dark:text-white/5 right-6 text-black/5 top-1/2"><symbol id=ai:fa6-brands:creative-commons><path d="m245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93c-22.13 0-33.22 14.61-33.22 43.84c0 23.57 9.21 43.84 33.22 43.84c14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98c-22.6 0-73.96-10.32-73.96-77.05c0-58.69 43-77.06 72.63-77.06c30.72-.01 52.7 11.95 65.99 35.86m143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93c-22.14 0-33.22 14.61-33.22 43.84c0 23.55 9.23 43.84 33.22 43.84c14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98c-22.69 0-73.96-9.87-73.96-77.05c0-58.67 42.97-77.06 72.63-77.06c30.71-.01 52.58 11.95 65.56 35.86M247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248c129.93 0 248.44-100.87 248.44-248c0-137.87-106.62-248-248.44-248m.87 450.81c-112.54 0-203.7-93.04-203.7-202.81c0-105.42 85.43-203.27 203.72-203.27c112.53 0 202.82 89.46 202.82 203.26c-.01 121.69-99.68 202.82-202.84 202.82" fill=currentColor /></symbol><use xlink:href=#ai:fa6-brands:creative-commons></use></svg></div></div></div><div class="flex w-full gap-4 flex-col mb-4 justify-between md:flex-row overflow-hidden" data-astro-cid-gomhkv4q><a href=/ja/2020/07/macos-node-require-path-case-insensitive/ class="font-bold active:scale-95 group overflow-hidden w-full" data-astro-cid-gomhkv4q><div class="flex items-center w-full justify-start btn-card gap-4 h-[3.75rem] hover:bg-transparent max-w-full px-4 rounded-2xl" data-astro-cid-gomhkv4q><svg data-icon=material-symbols:chevron-left-rounded height=32 viewBox="0 0 24 24" width=32 class="transition text-[var(--primary)] group-hover:translate-x-[0px] group-active:animate-[previous-arrow_.5s_ease_both] group-focus:animate-[previous-arrow_.5s_ease_both] translate-x-2" data-astro-cid-gomhkv4q><symbol id=ai:material-symbols:chevron-left-rounded><path d="m10.8 12l3.9 3.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-4.6-4.6q-.15-.15-.212-.325T8.425 12t.063-.375t.212-.325l4.6-4.6q.275-.275.7-.275t.7.275t.275.7t-.275.7z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:chevron-left-rounded></use></svg><div class="transition whitespace-nowrap dark:text-white/75 text-black/75 max-w-[calc(100%_-_3rem)] overflow-ellipsis overflow-hidden" data-astro-cid-gomhkv4q>Node.js 依存モジュールのファイルはケースセンシティブの件</div></div></a><a href=/ja/2020/06/try-serverless/ class="font-bold active:scale-95 group overflow-hidden w-full" data-astro-cid-gomhkv4q><div class="flex items-center w-full btn-card gap-4 h-[3.75rem] hover:bg-transparent max-w-full px-4 rounded-2xl justify-end" data-astro-cid-gomhkv4q><div class="transition whitespace-nowrap dark:text-white/75 text-black/75 max-w-[calc(100%_-_3rem)] overflow-ellipsis overflow-hidden" data-astro-cid-gomhkv4q>Serverless から見えてきた一体化設計</div><svg data-icon=material-symbols:chevron-right-rounded height=32 viewBox="0 0 24 24" width=32 class="transition text-[var(--primary)] group-hover:translate-x-[0px] -translate-x-2 group-active:animate-[next-arrow_.5s_ease_both] group-focus:animate-[next-arrow_.5s_ease_both]" data-astro-cid-gomhkv4q><symbol id=ai:material-symbols:chevron-right-rounded><path d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:chevron-right-rounded></use></svg></div></a></div><div class="px-4 md:px-0" data-astro-cid-gomhkv4q id=waline-comment lang=ja thread-key=cls></div></main></div><div class="onload-animation col-span-2 grid-rows-3 mt-4" id=footer><div class="flex items-center justify-center card-base max-w-[var(--page-width)] min-h-[4.5rem] mx-auto px-6 rounded-b-none"><div class="transition text-sm text-50 leading-7 text-center">© 2024 xingo. All Rights Reserved.<br>Powered by <a href=https://github.com/saicaca/fuwari class="text-[var(--primary)] link font-medium" target=_blank>Fuwari</a></div></div></div><div class="hidden lg:block back-to-top-wrapper" data-astro-cid-eymb5ayk><div class="transition items-center flex back-to-top-btn hide overflow-hidden rounded-2xl" id=back-to-top-btn data-astro-cid-eymb5ayk onclick=backToTop()><button class="w-[3.75rem] btn-card h-[3.75rem]" aria-label="Back to Top" data-astro-cid-eymb5ayk><svg data-icon=material-symbols:keyboard-arrow-up-rounded height=1em viewBox="0 0 24 24" width=1em class=mx-auto data-astro-cid-eymb5ayk><symbol id=ai:material-symbols:keyboard-arrow-up-rounded><path d="m12 10.8l-3.9 3.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.6-4.6q.3-.3.7-.3t.7.3l4.6 4.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" fill=currentColor /></symbol><use xlink:href=#ai:material-symbols:keyboard-arrow-up-rounded></use></svg></button></div></div><script>function backToTop(){window.scroll({top:0,behavior:"smooth"})}function scrollFunction(){let o=document.getElementById("back-to-top-btn");document.body.scrollTop>600||document.documentElement.scrollTop>600?o.classList.remove("hide"):o.classList.add("hide")}window.addEventListener("scroll",scrollFunction)</script></div></div></body></html>
