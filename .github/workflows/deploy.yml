@@ -44,6 +44,7 @@ jobs:
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
         rm -rf .deploy_git/* && mv dist/* .deploy_git/
+        touch .deploy_git/.nojekyll
         cd .deploy_git && git add . && git commit -m "Site updated: ${{ github.event.repository.updated_at }}"
         git push
 
