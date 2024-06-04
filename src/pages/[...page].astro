@@ -1,0 +1,53 @@
+---
+import { siteConfig } from '@/config';
+import IndexPage from '@components/IndexPage/index.astro';
+import PostPage from '@components/PostPage/index.astro';
+import { getSortedPosts } from '@utils/content-utils';
+import type { GetStaticPaths } from 'astro';
+import { format } from 'date-fns';
+
+export const getStaticPaths = (async ({
+  paginate,
+}) => {
+  const indexPagiPosts = await getSortedPosts(
+    siteConfig.lang,
+  );
+  // biome-ignore lint/style/noNonNullAssertion: <explanation>
+  const indexPage = paginate(indexPagiPosts, {
+    pageSize: 10,
+  }).find(
+    page => page.params.page === undefined,
+  )!;
+
+  return [
+    indexPage,
+    ...indexPagiPosts.map(
+      (entry, index, array) => ({
+        params: {
+          page: `${format(
+            entry.data.published,
+            'yyyy/MM',
+          )}/${entry.slug}`,
+        },
+        props: {
+          entry,
+          prevEntry: array[index - 1],
+          nextEntry: array[index + 1],
+        },
+      }),
+    ),
+  ];
+}) satisfies GetStaticPaths;
+
+const {
+  entry,
+  prevEntry,
+  nextEntry,
+  page: indexPage,
+} = Astro.props;
+---
+
+{indexPage && <IndexPage page={indexPage} />}
+
+{entry && <PostPage entry={entry} prevEntry={prevEntry} nextEntry={nextEntry} />}
+

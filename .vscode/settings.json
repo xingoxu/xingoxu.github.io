@@ -1,4 +1,26 @@
 {
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "biomejs.biome",
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "quickfix.biome": "never",
+    "source.organizeImports.biome": "always"
+  },
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "file:///Users/jp22425/Desktop/xingoxu.github.io/.github/workflows/deploy.yml"
   }

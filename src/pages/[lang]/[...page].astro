@@ -1,0 +1,72 @@
+---
+import { siteConfig } from '@/config';
+import IndexPage from '@components/IndexPage/index.astro';
+import PostPage from '@components/PostPage/index.astro';
+import { PAGE_SIZE } from '@constants/constants';
+import { Languages } from '@i18n/translation';
+import { getSortedPosts } from '@utils/content-utils';
+import { getPostSlugWithoutLang } from '@utils/url-utils';
+import type { GetStaticPaths } from 'astro';
+import { format } from 'date-fns';
+
+export const getStaticPaths = (async ({
+  paginate,
+}) => {
+  const result = await Promise.all(
+    Languages.filter(
+      lang => lang !== siteConfig.lang,
+    ).map(async lang => {
+      const allBlogPosts =
+        await getSortedPosts(lang);
+      if (allBlogPosts.length <= 0) return [];
+
+      const indexPage = paginate(allBlogPosts, {
+        pageSize: PAGE_SIZE,
+        params: {
+          lang,
+        },
+      }).find(
+        page => page.params.page === undefined,
+      );
+
+      return [
+        ...(indexPage ? [indexPage] : []),
+        ...allBlogPosts.map(
+          (entry, index, array) => ({
+            params: {
+              page: `${format(
+                entry.data.published,
+                'yyyy/MM',
+              )}/${
+                getPostSlugWithoutLang(entry).slug
+              }`,
+              lang,
+            },
+            props: {
+              entry,
+              prevEntry: array[index - 1],
+              nextEntry: array[index + 1],
+            },
+          }),
+        ),
+      ];
+    }),
+  );
+  return result.flatMap(r => r);
+}) satisfies GetStaticPaths;
+
+const {
+  entry,
+  prevEntry,
+  nextEntry,
+  page: indexPage,
+} = Astro.props;
+---
+
+{indexPage && <IndexPage page={indexPage} />}
+
+{
+  entry && (
+    <PostPage entry={entry} prevEntry={prevEntry} nextEntry={nextEntry} />
+  )
+}

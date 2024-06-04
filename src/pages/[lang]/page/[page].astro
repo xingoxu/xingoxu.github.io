@@ -1,0 +1,34 @@
+---
+import { siteConfig } from '@/config';
+import IndexPage from '@components/IndexPage/index.astro';
+import { PAGE_SIZE } from '@constants/constants';
+import { Languages } from '@i18n/translation';
+import { getSortedPosts } from '@utils/content-utils';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async ({
+  paginate,
+}) => {
+  const result = await Promise.all(
+    Languages.filter(
+      lang => lang !== siteConfig.lang,
+    ).map(async lang => {
+      const allBlogPosts =
+        await getSortedPosts(lang);
+      if (allBlogPosts.length <= 0) return [];
+
+      return paginate(allBlogPosts, {
+        pageSize: PAGE_SIZE,
+        params: {
+          lang,
+        },
+      });
+    }),
+  );
+  return result.flatMap(r => r);
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<IndexPage page={page}></IndexPage>

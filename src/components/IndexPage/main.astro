@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostCard from '@components/PostCard.astro';
+import { getContentExerpt } from '@utils/content-utils';
+import { getPostUrl } from '@utils/url-utils';
+
+interface Props {
+  posts: CollectionEntry<'posts'>[];
+}
+
+const { posts } = Astro.props;
+
+// biome-ignore lint/style/useConst: see line 38
+let delay = 0;
+const interval = 50;
+---
+
+<div
+  class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4"
+>
+  {
+    posts.map(
+      (entry) => {
+        return (
+          <PostCard
+            entry={entry}
+            title={entry.data.title}
+            tags={entry.data.tags}
+            category={entry.data.category}
+            published={entry.data.published}
+            url={getPostUrl(entry)}
+            image={entry.data.image}
+            description={
+              entry.data.description || getContentExerpt(entry.body) || ""
+            }
+            draft={entry.data.draft}
+            class:list="onload-animation"
+            style={`animation-delay: calc(var(--content-delay) + ${delay++ * interval}ms);`}
+          />
+        );
+      }
+    )
+  }
+</div>

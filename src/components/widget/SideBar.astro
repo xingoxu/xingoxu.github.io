@@ -1,0 +1,28 @@
+---
+import i18nKey from '@i18n/i18nKey';
+import { i18n } from '@i18n/translation';
+import { getCategoryList } from '@utils/content-utils';
+import Categories from './Categories.astro';
+import Profile from './Profile.astro';
+import Tag from './Tags.astro';
+
+const className = Astro.props.class;
+const categories = await getCategoryList();
+let showCategory = categories.length > 0;
+if (
+  categories.length === 1 &&
+  categories[0].name ===
+    i18n(i18nKey.uncategorized)
+) {
+  showCategory = false;
+}
+---
+<div id="sidebar" class:list={[className, "w-full"]}>
+    <div class="flex flex-col w-full gap-4 mb-4">
+        <Profile></Profile>
+    </div>
+    <div class="flex flex-col w-full gap-4 top-4 sticky top-4">
+        {showCategory && <Categories class="onload-animation" style="animation-delay: 150ms"></Categories>}
+        <Tag class="onload-animation" style="animation-delay: 200ms"></Tag>
+    </div>
+</div>

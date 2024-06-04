@@ -1,0 +1,22 @@
+---
+import { siteConfig } from '@/config';
+import IndexPage from '@components/IndexPage/index.astro';
+import { PAGE_SIZE } from '@constants/constants';
+import { getSortedPosts } from '@utils/content-utils';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async ({
+  paginate,
+}) => {
+  const allBlogPosts = await getSortedPosts(
+    siteConfig.lang,
+  );
+  return paginate(allBlogPosts, {
+    pageSize: PAGE_SIZE,
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<IndexPage page={page}></IndexPage>

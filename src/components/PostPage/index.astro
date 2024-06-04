@@ -1,0 +1,318 @@
+---
+import path from 'node:path';
+import type { CollectionEntry } from 'astro:content';
+import { profileConfig } from '@/config';
+import PostMetadata from '@components/PostMeta.astro';
+import MiddleDot from '@components/atom/middle-dot.astro';
+import ImageWrapper from '@components/misc/ImageWrapper.astro';
+import License from '@components/misc/License.astro';
+import Markdown from '@components/misc/Markdown.astro';
+import I18nKey from '@i18n/i18nKey';
+import { i18n as _i18n } from '@i18n/translation';
+import MainGridLayout from '@layouts/MainGridLayout.astro';
+import { formatDateToYYYYMMDD } from '@utils/date-utils';
+import {
+  getDir,
+  getPostSlugWithoutLang,
+  getPostUrl,
+} from '@utils/url-utils';
+import { Icon } from 'astro-icon/components';
+import { licenseConfig } from 'src/config';
+
+interface Props {
+  entry: CollectionEntry<'posts'>;
+  prevEntry?: CollectionEntry<'posts'>;
+  nextEntry?: CollectionEntry<'posts'>;
+}
+
+const { entry, prevEntry, nextEntry } =
+  Astro.props;
+const { Content, remarkPluginFrontmatter } =
+  await entry.render();
+const { lang, slug } =
+  getPostSlugWithoutLang(entry);
+const i18n = (key: I18nKey) => _i18n(key, lang);
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: entry?.data.title,
+  description:
+    entry.data.description || entry.data.title,
+  keywords: entry.data.tags,
+  author: {
+    '@type': 'Person',
+    name: profileConfig.name,
+    url: Astro.site,
+  },
+  datePublished: formatDateToYYYYMMDD(
+    entry.data.published,
+  ),
+  // TODO include cover image here
+});
+---
+
+<MainGridLayout
+  banner={entry.data.image}
+  title={entry.data.title}
+  description={entry.data.description}
+>
+  <script slot="head" type="application/ld+json" set:html={jsonLd} />
+  <div
+    class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-4"
+  >
+    <div
+      id="post-container"
+      class="card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full"
+    >
+
+      <!-- title -->
+      <div class="relative onload-animation">
+        <div
+          data-pagefind-body
+          data-pagefind-weight="10"
+          data-pagefind-meta="title"
+          class="transition w-full block font-bold mb-3
+                    text-3xl md:text-[2.5rem]/[2.75rem]
+                    text-black/90 dark:text-white/90
+                    md:before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+                    before:absolute before:top-[0.75rem] before:left-[-1.125rem]"
+        >
+          {entry.data.title}
+        </div>
+      </div>
+
+      <!-- metadata -->
+      <div class="onload-animation">
+        <PostMetadata
+          class="mb-5"
+          published={entry.data.published}
+          tags={entry.data.tags}
+          category={entry.data.category}
+        >
+          <div class="flex flex-row items-center">
+            <div
+              class="transition h-8 w-7 rounded-md text-black/50 dark:text-white/50 items-center !hidden md:!flex"
+            >
+              <Icon name="material-symbols:notes-rounded" />
+            </div>
+            <MiddleDot />
+            <div class="text-sm">
+              {remarkPluginFrontmatter.words}
+              {" " + i18n(I18nKey.wordsCount)}
+            </div>
+          </div>
+          <div class="flex flex-row items-center">
+            <div
+              class="transition h-8 w-7 rounded-md text-black/50 dark:text-white/50 items-center !hidden md:!flex"
+            >
+              <Icon name="material-symbols:schedule-outline-rounded" />
+            </div>
+            <MiddleDot />
+            <div class="text-sm">
+              {remarkPluginFrontmatter.minutes}
+              {" " + i18n(I18nKey.minutesCount)}
+            </div>
+          </div>
+        </PostMetadata>
+        {
+          !entry.data.image && (
+            <div class="border-[var(--line-divider)] border-dashed border-b-[1px] mb-5" />
+          )
+        }
+      </div>
+
+      <!-- always show cover as long as it has one -->
+
+      {
+        entry.data.image && (
+          <ImageWrapper
+            src={entry.data.image}
+            basePath={path.join("content/posts/", getDir(entry.id))}
+            class="mb-8 rounded-xl banner-container onload-animation"
+          />
+        )
+      }
+
+      <Markdown class="mb-6 markdown-content onload-animation">
+        <Content />
+      </Markdown>
+
+      {
+        licenseConfig.enable && (
+          <License
+            title={entry.data.title}
+            pubDate={entry.data.published}
+            class="mb-6 rounded-xl license-container onload-animation"
+          />
+        )
+      }
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full"
+  >
+    {
+      prevEntry && (
+        <a
+          href={getPostUrl(prevEntry)}
+          class="w-full font-bold overflow-hidden active:scale-95 group"
+        >
+          {entry.data.nextSlug && (
+            <div class="btn-card hover:bg-transparent rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center justify-start gap-4">
+              <Icon
+                name="material-symbols:chevron-left-rounded"
+                size={32}
+                class="text-[var(--primary)] translate-x-2 group-hover:translate-x-[0px] group-focus:animate-[previous-arrow_.5s_ease_both] group-active:animate-[previous-arrow_.5s_ease_both] transition"
+              />
+              <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75">
+                {entry.data.nextTitle}
+              </div>
+            </div>
+          )}
+        </a>
+      )
+    }
+
+    {
+      nextEntry && (
+        <a
+          href={getPostUrl(nextEntry)}
+          class="w-full font-bold overflow-hidden active:scale-95 group"
+        >
+          {entry.data.prevSlug && (
+            <div class="btn-card hover:bg-transparent rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center justify-end gap-4">
+              <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75">
+                {entry.data.prevTitle}
+              </div>
+              <Icon
+                name="material-symbols:chevron-right-rounded"
+                size={32}
+                class="text-[var(--primary)] -translate-x-2 group-hover:translate-x-[0px] group-focus:animate-[next-arrow_.5s_ease_both] group-active:animate-[next-arrow_.5s_ease_both] transition"
+              />
+            </div>
+          )}
+        </a>
+      )
+    }
+  </div>
+  <div id="waline-comment" class="px-4 md:px-0" thread-key={slug} lang={lang}>
+  </div>
+</MainGridLayout>
+
+<!-- waline comment -->
+<script>
+  import { init, type WalineInstance } from "@waline/client";
+  import "@waline/client/style";
+  const langMap = {
+    en: "en",
+    en_us: "en",
+    en_gb: "en",
+    en_au: "en",
+    zh_cn: "zh-CN",
+    zh_tw: "zh-TW",
+    ja: "jp",
+    ja_jp: "jp",
+  };
+  let walineInstance: WalineInstance | null = null;
+
+  function initWalineComment() {
+    const el = document.querySelector("#waline-comment");
+    if (el === null) {
+      return;
+    }
+
+    walineInstance = init({
+      el: (el as HTMLElement) || "waline-comment",
+      serverURL: "https://comments.xingoxu.com/",
+      path: el.getAttribute("thread-key") || undefined,
+      lang:
+        langMap[(el.getAttribute("lang") || "en") as keyof typeof langMap] ||
+        "en",
+      dark: "html.dark",
+      turnstileKey: "0x4AAAAAAAb0G1lXkldTZZkJ",
+      requiredMeta: ["nick", "mail"],
+      imageUploader: false,
+      search: false,
+      emoji: [
+        "//unpkg.com/@waline/emojis@1.2.0/weibo",
+        "//unpkg.com/@waline/emojis@1.2.0/qq",
+        "//unpkg.com/@waline/emojis@1.2.0/tieba",
+      ],
+    });
+  }
+  function unload() {
+    if (walineInstance !== null) {
+      walineInstance.destroy();
+      walineInstance = null;
+    }
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    initWalineComment();
+  });
+  if (window.swup.hooks) {
+    window.swup.hooks.on("page:view", initWalineComment);
+    window.swup.hooks.before("animation:out:start", unload);
+  } else {
+    document.addEventListener("swup:enable", () => {
+      window.swup.hooks.on("page:view", initWalineComment);
+      window.swup.hooks.before("animation:out:start", unload);
+    });
+  }
+</script>
+
+<style>
+  @keyframes previous-arrow {
+    0% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+  }
+  @keyframes next-arrow {
+    0% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+  }
+</style>
+
+<style is:global>
+  #post-container :nth-child(1) {
+    animation-delay: calc(var(--content-delay) + 0ms);
+  }
+  #post-container :nth-child(2) {
+    animation-delay: calc(var(--content-delay) + 50ms);
+  }
+  #post-container :nth-child(3) {
+    animation-delay: calc(var(--content-delay) + 100ms);
+  }
+  #post-container :nth-child(4) {
+    animation-delay: calc(var(--content-delay) + 175ms);
+  }
+  #post-container :nth-child(5) {
+    animation-delay: calc(var(--content-delay) + 250ms);
+  }
+  #post-container :nth-child(6) {
+    animation-delay: calc(var(--content-delay) + 325ms);
+  }
+
+  #waline-comment .wl-count {
+    color: var(--waline-color);
+  }
+  #waline-comment .wl-editor {
+    margin: 0.75em 1.5em;
+    width: calc(100% - 3em);
+  }
+  #waline-comment a.wl-action[href*="markdown"] {
+    display: inline-flex;
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import MiddleDot from '@components/atom/middle-dot.astro';
+import { Icon } from 'astro-icon/components';
+import I18nKey from '../i18n/i18nKey';
+import { i18n } from '../i18n/translation';
+import { formatDateToYYYYMMDD } from '../utils/date-utils';
+import { url } from '../utils/url-utils';
+
+interface Props {
+  class?: string;
+  published: Date;
+  tags?: string[];
+  category?: string;
+}
+const { published, tags, category } = Astro.props;
+const className = Astro.props.class;
+const hideIconWhenMobileClass =
+  '!hidden md:!flex';
+---
+
+<div class:list={["flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 md:gap-y-2", className]}>
+    <!-- publish date -->
+    <div class="flex items-center">
+        <div class={`meta-icon ${hideIconWhenMobileClass}`}
+        >
+            <Icon name="material-symbols:calendar-today-outline-rounded" class="text-xl -mt-[2px]"></Icon>
+        </div>
+        <span class="text-50 text-sm font-medium">{formatDateToYYYYMMDD(published)}</span>
+    </div>
+
+    <!-- categories -->
+    {category && <div class="flex items-center">
+        <div class={`meta-icon ${hideIconWhenMobileClass}`}
+        >
+            <Icon name="material-symbols:menu-rounded" class="text-xl"></Icon>
+        </div>
+        <div class="flex flex-row flex-nowrap items-center">
+            <MiddleDot></MiddleDot>
+            <div><a href={url(`/archive/category/${category || 'uncategorized'}/`)} aria-label={`View all posts in the ${category} category`}
+               class="link-lg transition text-50 text-sm font-medium
+                            hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap">
+                {category || i18n(I18nKey.uncategorized)}
+            </a></div>
+        </div>
+    </div>}
+
+    <!-- tags -->
+    {(tags && tags.length > 0) && <div class:list={["items-center", {"flex": !false, "hidden md:flex": false}]}>
+        <div class={`meta-icon ${hideIconWhenMobileClass}`}
+        >
+            <Icon name="material-symbols:tag-rounded" class="text-xl"></Icon>
+        </div>
+        <div class="flex flex-row flex-nowrap items-center">
+            <MiddleDot></MiddleDot>
+            {tags.map(tag => <div
+                    class="with-divider"
+            >
+                <a href={url(`/archive/tag/${tag}/`)} aria-label=`View all posts with the ${tag} tag`
+                   class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap">
+                    {tag}
+                </a>
+            </div>)}
+            {/* {<div class="transition text-50 text-sm font-medium">{i18n(I18nKey.noTags)}</div>} */}
+        </div>
+    </div>}
+
+    <slot />
+</div>
+
+<style>
+@tailwind components;
+
+@layer components {
+    .meta-icon {
+        @apply w-7 h-8 transition rounded-md flex items-center
+        text-[var(--btn-content)]
+    }
+    .with-divider {
+        @apply before:content-['/'] before:ml-1.5 before:mr-1.5 before:text-[var(--meta-divider)] before:text-sm
+        before:font-medium before:first-of-type:hidden before:transition
+    }
+}
+</style>
