@@ -38,9 +38,6 @@ const oklchToHex = str => {
 export default defineConfig({
   site: 'https://blog.xingoxu.com/',
   base: '/',
-  build: {
-    assets: 'assets'
-  },
   trailingSlash: 'always',
   integrations: [
     tailwind(),
