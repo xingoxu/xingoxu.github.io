@@ -1,12 +1,12 @@
 ---
 
-import { profileConfig } from '../config'
+import { profileConfig } from '../config';
 ---
 
 <div class="card-base max-w-[var(--page-width)] min-h-[4.5rem] rounded-b-none mx-auto flex items-center justify-center px-6">
     <div class="transition text-50 text-sm text-center leading-7">
-        © 2024 {profileConfig.name}. All Rights Reserved.
+        © {new Date().getFullYear()} {profileConfig.name}. All Rights Reserved.
         <br>
-        Powered by <a class="link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
+        Forked from <a class="link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
     </div>
 </div>
