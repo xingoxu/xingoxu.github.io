@@ -1053,6 +1053,8 @@ https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/p&g
 </content:encoded></item><item><title>2024-ana-sfc</title><link>https://blog.xingoxu.com/2024/06/2024-ana-sfc/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/2024-ana-sfc/</guid><description>
 
 </description><pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate><content:encoded/></item><item><title>用 Astro 翻新我的博客</title><link>https://blog.xingoxu.com/2024/06/2024-astro-blog/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/2024-astro-blog/</guid><description>
+好久没有写博客了，为啥不写，博客一直存在的痛点
+
 [Astro](https://astro.build/) 是一个静态网站生成器，不具体介绍，谈一谈之前使用 hexo 的痛点和为什么现在才翻新到 astro，为什么选用 astro 而不选用 hugo 等。
 
 # Hexo
@@ -1063,7 +1065,8 @@ https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/p&g
 从哪里知道的Astro
 ## Astro 的爽点
 
-# 余留课题</description><pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 是一个静态网站生成器，不具体介绍，谈一谈之前使用 hexo 的痛点和为什么现在才翻新到 astro，为什么选用 astro 而不选用 hugo 等。&lt;/p&gt;
+# 余留课题</description><pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;好久没有写博客了，为啥不写，博客一直存在的痛点&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 是一个静态网站生成器，不具体介绍，谈一谈之前使用 hexo 的痛点和为什么现在才翻新到 astro，为什么选用 astro 而不选用 hugo 等。&lt;/p&gt;
 &lt;h1&gt;Hexo&lt;/h1&gt;
 &lt;h2&gt;Hexo 的使用感想&lt;/h2&gt;
 &lt;h2&gt;Hexo 的痛点&lt;/h2&gt;
