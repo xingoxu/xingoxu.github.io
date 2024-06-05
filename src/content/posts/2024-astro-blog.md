@@ -8,6 +8,8 @@ tags: []
 draft: true 
 ---
 
+好久没有写博客了，为啥不写，博客一直存在的痛点
+
 [Astro](https://astro.build/) 是一个静态网站生成器，不具体介绍，谈一谈之前使用 hexo 的痛点和为什么现在才翻新到 astro，为什么选用 astro 而不选用 hugo 等。
 
 # Hexo
