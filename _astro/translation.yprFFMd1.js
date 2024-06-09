@@ -1,1 +1,0 @@
-import{M as n,N as o,O as e,P as t,J as r}from"./zh_TW.CoV6S1r6.js";const i=n,_={en:n,en_us:n,en_gb:n,en_au:n,zh_cn:o,zh_tw:e,ja:t,ja_jp:t};function u(n){return _[n.toLowerCase()]||i}function l(n,t){return u(r.lang)[n]}export{l as i};
