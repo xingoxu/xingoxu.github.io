@@ -31,7 +31,7 @@ const allBlogPosts = await getCollection(
       : true;
   },
 );
-const languages = [siteConfig.lang]
+const menuForLanguageSettings = [siteConfig.lang]
   .concat(
     Languages.filter(lang =>
       allBlogPosts.find(entry =>
@@ -48,6 +48,15 @@ const languages = [siteConfig.lang]
   }));
 const pageLang =
   Astro.params.lang || siteConfig.lang;
+const textForLightDarkSwitch = {
+  lightMode: i18n(I18nKey.lightMode, pageLang),
+  darkMode: i18n(I18nKey.darkMode, pageLang),
+  systemMode: i18n(I18nKey.systemMode, pageLang),
+};
+
+const textForDisplaySettings = {
+  themeColor: i18n(I18nKey.themeColor, pageLang),
+};
 
 const links: NavBarLink[] =
   navBarConfig.links.map(
@@ -61,7 +70,7 @@ const links: NavBarLink[] =
     },
   );
 ---
-<div class:list={[
+<nav class:list={[
     className,
     "card-base sticky top-0 overflow-visible max-w-[var(--page-width)] h-[4.5rem] rounded-t-none mx-auto flex items-center justify-between px-4"]}>
     <a href={url('/')} class="btn-plain h-[3.25rem] px-5 font-bold rounded-lg active:scale-95 md:hidden">
@@ -93,17 +102,17 @@ const links: NavBarLink[] =
                 <Icon name="material-symbols:palette-outline" size={"1.25rem"}></Icon>
             </button>
         )}
-        <LightDarkSwitch client:load></LightDarkSwitch>
-        <LanguageSettings menus={languages} client:load></LanguageSettings>
+        <LightDarkSwitch text={textForLightDarkSwitch} client:load></LightDarkSwitch>
+        <LanguageSettings menus={menuForLanguageSettings} client:load></LanguageSettings>
         <button aria-label="Menu" name="Nav Menu" class="btn-plain w-11 h-11 rounded-lg active:scale-90 md:hidden" id="nav-menu-switch">
             <Icon name="material-symbols:menu-rounded" size={"1.25rem"}></Icon>
         </button>
     </div>
     <NavMenuPanel links={links} client:load/>
-    <DisplaySettings client:only="svelte">
+    <DisplaySettings text={textForDisplaySettings} client:only="svelte">
         <Icon slot="restore-icon" name="fa6-solid:arrow-rotate-left" size={"0.875rem"} class=""></Icon>
     </DisplaySettings>
-</div>
+</nav>
 
 <style lang="stylus">
 </style>

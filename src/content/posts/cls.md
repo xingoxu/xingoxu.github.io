@@ -37,7 +37,7 @@ log.error("Error occured by", user);
 
 函数如果是同步的，那么我们可以直接挂到全局变量（某个对象）下
 
-```javascript
+```js
 const global = {};
 $("button").click((event) => {
   global.event = event;
@@ -52,7 +52,7 @@ function log(...args) {
 
 显然这在异步中行不通
 
-```javascript
+```js
 const global = {};
 $("button").click((event) => {
   global.event = event;

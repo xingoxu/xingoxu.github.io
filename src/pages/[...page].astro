@@ -2,6 +2,7 @@
 import { siteConfig } from '@/config';
 import IndexPage from '@components/IndexPage/index.astro';
 import PostPage from '@components/PostPage/index.astro';
+import { PAGE_SIZE } from '@constants/constants';
 import { getSortedPosts } from '@utils/content-utils';
 import type { GetStaticPaths } from 'astro';
 import { format } from 'date-fns';
@@ -14,7 +15,7 @@ export const getStaticPaths = (async ({
   );
   // biome-ignore lint/style/noNonNullAssertion: <explanation>
   const indexPage = paginate(indexPagiPosts, {
-    pageSize: 10,
+    pageSize: PAGE_SIZE,
   }).find(
     page => page.params.page === undefined,
   )!;

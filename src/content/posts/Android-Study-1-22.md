@@ -128,7 +128,7 @@ http://blog.csdn.net/matrix_xu/article/details/8424038
 Looper这个坑真是深的不行，所有的学习过程中，包括看视频啊，看书啊，看博客啊，都没有提到。
 对于线程之间的通信，使用的是Handler/Message Queue进行相互交流，对于自行new 的线程，我们需要执行以下两步来初始化Looper以保证Handler能处理消息
 
-```Java
+```java
 
 @Override
 public void run() {

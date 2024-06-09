@@ -10,6 +10,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeComponents from 'rehype-components'; /* Render the custom directive content */
 import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
+import remarkCodeTitles from 'remark-code-titles';
 import remarkDirective from 'remark-directive'; /* Handle directives */
 import remarkDirectiveRehype from 'remark-directive-rehype'; /* Pass directives to rehype */
 import remarkMath from 'remark-math';
@@ -44,7 +45,7 @@ export default defineConfig({
     swup({
       theme: false,
       animationClass: 'transition-',
-      containers: ['main'],
+      containers: ['#swup'],
       smoothScrolling: true,
       cache: true,
       preload: true,
@@ -71,6 +72,7 @@ export default defineConfig({
       remarkReadingTime,
       remarkDirective,
       parseDirectiveNode,
+      remarkCodeTitles,
     ],
     rehypePlugins: [
       rehypeKatex,
@@ -131,6 +133,9 @@ export default defineConfig({
     ],
   },
   vite: {
+    esbuild: {
+      drop: ['console', 'debugger'],
+    },
     build: {
       rollupOptions: {
         onwarn(warning, warn) {

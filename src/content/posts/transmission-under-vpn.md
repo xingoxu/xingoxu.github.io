@@ -28,7 +28,7 @@ Wireguard + Transmission
 
 使用 [`linuxserver/wireguard`](https://hub.docker.com/r/linuxserver/wireguard)  镜像启动 wireguard 并在镜像内安装 transmission
 
-```yaml docker-compose.yml
+```yaml:docker-compose.yml
 version: '2.4'
 services:
   transmission-wireguard:
@@ -52,7 +52,7 @@ services:
 
 在 `wg0.conf` 中添加 PostUp / PreDown 脚本启动 Transmission
 
-```conf wg0.conf
+```ini:wg0.conf
 [Interface]
 PrivateKey = PrivateKeyPrivateKeyPrivateKey
 ListenPort = 54321
@@ -71,11 +71,11 @@ Endpoint = [2001:ipv6:public:address:1::1]:54321
 PersistentKeepalive = 20
 ```
 
-```bash start.sh
+```bash:start.sh
 s6-setuidgid abc transmission-daemon -f &
 ```
 
-```bash stop.sh
+```bash:stop.sh
 echo "Stopping transmission..."
 pid=$(pidof transmission-daemon)
 if [ ! -z "$USER" ] && [ ! -z "$PASS" ]; then
@@ -157,7 +157,7 @@ Ubuntu 上 `apt -y install ndppd`
 
 创建
 
-```bash /etc/ndppd.conf
+```bash:/etc/ndppd.conf
 # eno0 is your NIC name like eth0 etc...
 proxy eno0 {
   rule 2001:public:ipv6:address::/64 {
