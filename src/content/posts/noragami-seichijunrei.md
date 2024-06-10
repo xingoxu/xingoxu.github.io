@@ -7,9 +7,9 @@ published: 2017-06-04 13:28:41
 toc: false
 ---
 
-上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在~~忙~~（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下
+上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在~~忙~~（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下
 
-时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
+时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
 <br />
 
 
@@ -46,7 +46,7 @@ toc: false
 ![无印 EP03](https://ooo.0o0.ooo/2017/06/04/5933a7ebb1901.jpg)</div><div class="pull-left img">
 
 ![无印 EP03](https://ooo.0o0.ooo/2017/06/04/5933a7ed97a44.jpg)</div>
-<div class="clear-float img-caption">湯島天満宮</div>
+<div class="clear-float img-caption">湯島天満宮</div>
 
 <br />
 
@@ -55,7 +55,7 @@ toc: false
 ![无印 EP10](https://ooo.0o0.ooo/2017/06/04/5933a91bbabdf.jpg)</div><div class="pull-left img">
 
 ![无印 EP10](https://ooo.0o0.ooo/2017/06/04/5933a91d66d0c.jpg)</div>
-<div class="clear-float img-caption">東京メトロ湯島駅</div>
+<div class="clear-float img-caption">東京メトロ湯島駅</div>
 
 <br />
 
@@ -64,7 +64,7 @@ toc: false
 ![无印 EP10](https://ooo.0o0.ooo/2017/06/04/5933aa0149fc8.jpg)</div><div class="pull-left img">
 
 ![无印 EP10](https://ooo.0o0.ooo/2017/06/04/5933aa02a5912.jpg)</div>
-<div class="clear-float img-caption">湯島天満宮入口</div>
+<div class="clear-float img-caption">湯島天満宮入口</div>
 
 <br />
 
@@ -73,7 +73,7 @@ toc: false
 ![无印 EP10](https://ooo.0o0.ooo/2017/06/04/5933aa3de6da4.jpg)</div><div class="pull-left img">
 
 ![无印 EP10](https://ooo.0o0.ooo/2017/06/04/5933aa3f9776c.jpg)</div>
-<div class="clear-float img-caption">湯島天満宮入口 近距离</div>
+<div class="clear-float img-caption">湯島天満宮入口 近距离</div>
 
 <br />
 
@@ -116,7 +116,7 @@ toc: false
 ![无印 EP03](https://ooo.0o0.ooo/2017/06/04/5933af4346583.jpg)</div><div class="pull-left img">
 
 ![无印 EP03](https://ooo.0o0.ooo/2017/06/04/5933af455f606.jpg)</div>
-<div class="clear-float img-caption">大泉学園駅ホーム</div>
+<div class="clear-float img-caption">大泉学園駅ホーム</div>
 
 <br />
 
@@ -125,7 +125,7 @@ toc: false
 ![无印 EP03](https://ooo.0o0.ooo/2017/06/04/5933af51ea015.jpg)</div><div class="pull-left img">
 
 ![无印 EP03](https://ooo.0o0.ooo/2017/06/04/5933af53b0456.jpg)</div>
-<div class="clear-float img-caption">大泉学園駅ホーム</div>
+<div class="clear-float img-caption">大泉学園駅ホーム</div>
 
 <br />
 
@@ -177,7 +177,7 @@ toc: false
 ![无印 EP02](https://ooo.0o0.ooo/2017/06/04/5933b34dcc77c.jpg)</div><div class="pull-left img">
 
 ![无印 EP02](https://ooo.0o0.ooo/2017/06/04/5933b34ff1170.jpg)</div>
-<div class="clear-float img-caption">石神井公園去駅的散步小路</div>
+<div class="clear-float img-caption">石神井公園去駅的散步小路</div>
 
 
 还有君名的，等七月bd发售了再截图整理吧

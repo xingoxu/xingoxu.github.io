@@ -4,7 +4,7 @@ import rss from '@astrojs/rss';
 import { getPostUrl } from '@utils/url-utils';
 import MarkdownIt from 'markdown-it';
 import sanitizeHtml from 'sanitize-html';
-const parser = new MarkdownIt();
+const parser = new MarkdownIt({ html: true });
 
 export async function GET(context: any) {
   const blog = await getCollection('posts');
@@ -18,7 +18,8 @@ export async function GET(context: any) {
       pubDate: post.data.published,
       description:
         post.data.description ||
-        (post.body.split('<!-- more -->')[0] &&
+        (post.body.split('<!-- more -->')
+          .length >= 2 &&
           sanitizeHtml(
             post.body.split('<!-- more -->')[0],
           )) ||

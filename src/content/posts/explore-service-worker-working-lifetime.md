@@ -78,9 +78,9 @@ console.log('When you see this, we have successfully registered the SW!');
 
 如果你还保留着刚才的那个localhost，你可以发现，在inspect service-worker页面中，我们刚才的sw.js还一直在运行着
 
-# Service Worker 的“生命周期”
+# Service Worker 的“生命周期”
 
-SW 的生命周期与事件可以在MDN上找到，也不再重复贴出，SW的缓存与推送通知就是靠着他的生命周期所发出的这些`event`来驱动的。
+SW 的生命周期与事件可以在MDN上找到，也不再重复贴出，SW的缓存与推送通知就是靠着他的生命周期所发出的这些`event`来驱动的。
 
 我想说的是另一个生命周期，我刚才说到，如果我们第一次进入localhost，并一直保留在那个页面，在inspect service-worker还可以看到service worker还一直运行着
 
@@ -95,7 +95,7 @@ setInterval(() => {
 
 ![5秒打印console.log('test')](https://i.loli.net/2017/08/11/598d4776cc312.png)
 
-然而当我们关闭localhost页面，稍等十几秒后，在两个调试页面上，sw.js都会消失/停止了运行
+然而当我们关闭localhost页面，稍等十几秒后，在两个调试页面上，sw.js都会消失/停止了运行
 
 ![关闭localhost后 sw 停止了运行](https://i.loli.net/2017/08/11/598d45b36a053.png)
 
@@ -138,7 +138,7 @@ self.addEventListener('activate', function (event) {
 
 很明显，SW 的生命周期的事件也只会触发一次，只是相对于他第一次下载后。
 
-更新SW的机制可以在MDN上的 [#更新你的Service Worker](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers#恢复失败的请求) 这章看到，但这仅仅几行文字，而且比较绕口，我认为这其实是SW自身的工作周期，或者说是运行机制
+更新SW的机制可以在MDN上的 [#更新你的Service Worker](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers#恢复失败的请求) 这章看到，但这仅仅几行文字，而且比较绕口，我认为这其实是SW自身的工作周期，或者说是运行机制
 
 
 于是在W3C Working Draft找到了Service Worker的[Lifetime定义](https://www.w3.org/TR/service-workers-1/#service-worker-lifetime)
@@ -157,9 +157,9 @@ A user agent may terminate service workers at any time it:
 
 ![SW 工作周期](https://i.loli.net/2017/08/11/598d4e045ebfe.png)
 
-其实图里有一点不对的是，sw 的第一次运行并不一定是网页关闭才结束的，根据标准来的话，只要 sw 没有 event 需要 handle ，sw 的工作进程都可以结束，只是 Chrome 下是如此运行的。
+其实图里有一点不对的是，sw 的第一次运行并不一定是网页关闭才结束的，根据标准来的话，只要 sw 没有 event 需要 handle ，sw 的工作进程都可以结束，只是 Chrome 下是如此运行的。
 
-另外需要一提的是因为工作线程结束了，因此在外边的变量不一定还保持着之前结束前的状态，所以不要写出如下的代码
+另外需要一提的是因为工作线程结束了，因此在外边的变量不一定还保持着之前结束前的状态，所以不要写出如下的代码
 
 ```javascript
 let count = 0;
@@ -178,8 +178,8 @@ self.addEventListener('fetch', function (event) {
 
 SW 是一个事件驱动型Worker，本质上，它是个Worker，工作在 worker context，所以没有访问 DOM 的权限
 
-如果他要和window进行一些操作的话，与web worker类似，需要使用postMessage这样的方法来传递信息，在window里才能进行DOM操作
+如果他要和window进行一些操作的话，与web worker类似，需要使用postMessage这样的方法来传递信息，在window里才能进行DOM操作
 
-SW 是个Event bus，他的几个运行周期的事件，是专门为缓存与推送量身打造的（install事件和push事件），因此他的扩展性也非常好，以后如果有更多需求只需添加事件即可（比如chrome实现了sync事件是为了弥补离线时从本地到服务器post的不好体验），它将我们对资源拉的需求（对服务器的请求资源，对服务器的轮询），隐形转换为了推（本地缓存资源代码控制缓存，统一服务器推送）
+SW 是个Event bus，他的几个运行周期的事件，是专门为缓存与推送量身打造的（install事件和push事件），因此他的扩展性也非常好，以后如果有更多需求只需添加事件即可（比如chrome实现了sync事件是为了弥补离线时从本地到服务器post的不好体验），它将我们对资源拉的需求（对服务器的请求资源，对服务器的轮询），隐形转换为了推（本地缓存资源代码控制缓存，统一服务器推送）
 
 
