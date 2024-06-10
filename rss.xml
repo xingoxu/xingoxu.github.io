@@ -2,7 +2,7 @@
 很久时间没有写博客了，6月放假在外面忙活打工的事~~（为了还老妈的债）~~ ，9月去了北京和监督面了基，触动很大，便一直在学习与写作业，然后学校作业也是多的醉人，虽然没有任何技术含量然而还是很烦，主要是课程老师看完作品后就说，你再加个功能呗，我![新浪表情-再见](https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif)！终于有空了，然而却发现马上又要寒假了，自己还是什么经验和吹b的资本都没有\_(:3」∠)\_
 
 </description><pubDate>Mon, 21 Dec 2015 22:57:16 GMT</pubDate><content:encoded>&lt;p&gt;很久时间没有写博客了，6月放假在外面忙活打工的事~~（为了还老妈的债）~~ ，9月去了北京和监督面了基，触动很大，便一直在学习与写作业，然后学校作业也是多的醉人，虽然没有任何技术含量然而还是很烦，主要是课程老师看完作品后就说，你再加个功能呗，我&lt;img src=&quot;https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/88_thumb.gif&quot; alt=&quot;新浪表情-再见&quot; /&gt;！终于有空了，然而却发现马上又要寒假了，自己还是什么经验和吹b的资本都没有_(:3」∠)_&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;按时间顺序留一些近况吧：&lt;/p&gt;
 &lt;h2&gt;帝都面基&lt;/h2&gt;
 &lt;p&gt;其实一开始没有什么动力去帝都，因为论展子，论城市化跟魔都差不多，去了没啥意思，然而母上说想去就去吧，车钱我贴你，我就厚颜无耻的去了，反正我又不出钱（。嘛去的那几天人不多，刚好是阅兵结束了，而且除了第二天下雨，其他几天都是很好的天气，很舒服。
@@ -37,8 +37,8 @@
 &lt;li&gt;jQuery与Firefox的一个坑&lt;/li&gt;
 &lt;li&gt;心得&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;
-很久没有写博客啦，其实最近一直都在学习，寒假刚开始的时候在学习Android，学着学着感觉Google给我们埋的坑实在是又多又深，关键是，你根本不知道这些是什么情况，原理是什么，去查，只会告诉你，换兼容包兄弟，太坑了吧！而且我一直认为，既然你推广MD设计，那么至少得给开发一些造好的轮子，好多实现都必须自己去实现，MD设计的一些Button什么的，仅仅是更换个背景颜色，就得自己重头造轮子，是不是要把人往悬崖上推？？？于是，在意识到这坑有点吓人的情况下，又对Android其实并没有特别大的兴趣的情况下，立刻停止了学习。&lt;/p&gt;
+
+&lt;p&gt;很久没有写博客啦，其实最近一直都在学习，寒假刚开始的时候在学习Android，学着学着感觉Google给我们埋的坑实在是又多又深，关键是，你根本不知道这些是什么情况，原理是什么，去查，只会告诉你，换兼容包兄弟，太坑了吧！而且我一直认为，既然你推广MD设计，那么至少得给开发一些造好的轮子，好多实现都必须自己去实现，MD设计的一些Button什么的，仅仅是更换个背景颜色，就得自己重头造轮子，是不是要把人往悬崖上推？？？于是，在意识到这坑有点吓人的情况下，又对Android其实并没有特别大的兴趣的情况下，立刻停止了学习。&lt;/p&gt;
 &lt;h1&gt;重拾HTML/CSS&lt;/h1&gt;
 &lt;p&gt;大一的时候跟着Codecademy在线课程学习过基础HTML/CSS，其实当时是为了玩bilibili的空间的自定义CSS，话说回来，入门真的非常简单。然而这次重新审视自己，想想自己到底喜欢什么，看完了JavaScript的入门后，决定转前端。&lt;/p&gt;
 &lt;p&gt;重新学习HTML/CSS，更多的是在一些理论上的查缺补漏：&lt;/p&gt;
@@ -82,7 +82,7 @@ ejs貌似对switch语句不识别&lt;/p&gt;
 又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践
 
 </description><pubDate>Tue, 19 Apr 2016 00:48:42 GMT</pubDate><content:encoded>&lt;p&gt;又是好久没有写博客啦，最近一段时间学习了Angularjs，Bootstrap，Promise，nodejs，express，其实本来就想学这些，正巧学校老师拜托我帮忙搞个迷你的项目来帮助他们管理一些事务，技术又不限，又考虑到这些事务其实是很简单的最基础的增删改查，就搭着这个顺风车学习了这些，还能实践&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;nodejs&lt;/h1&gt;
 &lt;p&gt;nodejs的学习我是跟着《了不起的Node.js》这本书来入门的，其中书后面的connect，express等部分可能有点过时了（api之类的），但是其实这些框架学习了前面的知识后，稍微看一下这本书讲的理念，完全可以去看文档便能灵活掌握使用方法了，就nodejs这一块我感觉坑其实不多不深。
 另外我觉得这本书不错~~（我不是书商啊大家不要随便轻信我的话）~~，是因为他让我对现在web后端的一些新的概念，新的理念，一些实际应用中的是如何实现有了一点概念，比如session（之前我还读season233），mongodb这些的，总算是感觉自己离这些看起来很高大上的东西其实只有几行代码的距离。在nodejs中，如果需要处理一些复杂的逻辑，回调函数用的多的话，那么Promise就有了用武之地，包括维护代码整洁，代码分层（？）这个样子是非常有帮助的，而且nodejs稳步实现ES6嘛所以Promise是原生对象（奇怪WebStorm为什么没有提示）。&lt;/p&gt;
@@ -142,7 +142,7 @@ https://github.com/xingoxu/crud-with-nodejs-mysql&lt;/p&gt;
 　　突然发现今天是个轴对称的日期233是个写博客的好日子（？），离上一次写博客有两个月，然而这两个月中真是经历了许多许多，不过接下来感觉可以稍微放轻松一点了
 
 </description><pubDate>Thu, 16 Jun 2016 20:47:18 GMT</pubDate><content:encoded>&lt;p&gt;突然发现今天是个轴对称的日期233是个写博客的好日子（？），离上一次写博客有两个月，然而这两个月中真是经历了许多许多，不过接下来感觉可以稍微放轻松一点了&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;还是按时间顺序留一下近况吧：&lt;/p&gt;
 &lt;h2&gt;肉排的上海之行&lt;/h2&gt;
 &lt;p&gt;（听说）肉排来上海看演唱会，也很想不上课，于是主动请缨，开了张事假单陪他一起去疯了一天，爽死了。早上在家一起玩了一会看了集magi &lt;s&gt;（然后入了坑）&lt;/s&gt; （虽然是为了阿里巴巴入了坑，结果却喜欢上了白龙233），中午一起去吃了面之后下午唱了一下午的歌呢，超高兴的是纯K居然有野良神的ed，而且画面有好多雪音呢 &lt;s&gt;（痴汉脸）&lt;/s&gt;
@@ -183,7 +183,7 @@ https://github.com/xingoxu/crud-with-nodejs-mysql&lt;/p&gt;
   即使是找到了实习，然而还是没能闲下来啊\_(:з」∠)\_
 
 </description><pubDate>Sun, 18 Sep 2016 16:53:27 GMT</pubDate><content:encoded>&lt;p&gt;即使是找到了实习，然而还是没能闲下来啊_(:з」∠)_&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h2&gt;浏览器的dom操作合并&lt;/h2&gt;
 &lt;p&gt;刚学js的时候，明白js单线程时间线的模型，知道dom操作是缓慢的，因此明白要做动画最好应该在css中书写，修改dom只修改他的class，在不同的状态间切换，刚开始做一些动画成功了，然而做一个&lt;code&gt;input[type=text]&lt;/code&gt;的错误闪烁框，写了animation，想在两个状态间交换，然而点了却没有反应，无论是用jQ写，还是用原生dom写，在控制台中根本没有变换过，当时很是疑问，最后我&lt;s&gt;异想天开&lt;/s&gt;，试了一下setTimeout，把两个状态间的一个放入其中，结果就顺利的展现出想要的效果了。
 　　当时没有仔细想过，后来当看到优化dom操作，减少重流重绘 博文的时候，猛然想起，浏览器对dom树的操作都是有优化的，同一个时间线中操作dom的操作会被合并成一个，到你下一次读取的时候才会产生变化&lt;/p&gt;
@@ -243,7 +243,7 @@ console.log(domElem.className);
 &lt;li&gt;晒晒最近的怪物猎人物语&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;夹个怪猎物语的私货你们有意见吗【没有】&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;最近两天在做移动端的web开发，总体来说活不算多，页面很简单，全新的页面没有包袱，也有现成的ui库可以用，又是用vue进行开发，一个礼拜就切完了所有5个图，所以大多数时间都花在了适配后端数据以及细节的深究&lt;/p&gt;
 &lt;h1&gt;Android 非常奇怪的字体偏移&lt;/h1&gt;
 &lt;p&gt;上图（左iphone 6/ios 10.0，右Nexus 6p/Android 7.0/Chrome 53.0）&lt;/p&gt;
@@ -267,8 +267,8 @@ console.log(domElem.className);
 &lt;p&gt;我的Nexus 6p使用的是日文语言，渲染的时候用的是Noto Sans CJK JP Regular
 &lt;img src=&quot;https://ooo.0o0.ooo/2016/10/25/580eb1207efbf.png&quot; alt=&quot;normal.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;而他的是中文，渲染就用普通Noto Sans&lt;/p&gt;
-&lt;p&gt;&amp;lt;blockquote&amp;gt;想了想，日文字体中的很多中文字体是不存在的，发现了不存在的中文字体可能去借用了其他字体库，日文的中文字体和普通的中文字体混在了一起，系统没有处理好出了问题，一个猜想，不一定对&amp;lt;/blockquote&amp;gt;
-&amp;lt;blockquote&amp;gt;当我把iphone 6改成日文再测试，发现，还是很棒的渲染效果 （辣鸡Google&amp;lt;/blockquote&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;想了想，日文字体中的很多中文字体是不存在的，发现了不存在的中文字体可能去借用了其他字体库，日文的中文字体和普通的中文字体混在了一起，系统没有处理好出了问题，一个猜想，不一定对&lt;/blockquote&gt;
+&lt;blockquote&gt;当我把iphone 6改成日文再测试，发现，还是很棒的渲染效果 （辣鸡Google&lt;/blockquote&gt;
 &lt;h1&gt;IOS -webkit-box 奇怪的字体偏移&lt;/h1&gt;
 &lt;p&gt;用-webkit-box在做一个省略的两行标题的时候，碰到的一个非常奇怪的问题&lt;/p&gt;
 &lt;p&gt;上图（iphone 6/ios 10.0）&lt;/p&gt;
@@ -306,7 +306,7 @@ where &amp;lt;side-or-corner&amp;gt; = [left | right] || [top | bottom]
 &lt;p&gt;&lt;code&gt;&amp;lt;color-stop&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This value is comprised of a &amp;lt;color&amp;gt; value, followed by an optional stop position (either a percentage or a &amp;lt;length&amp;gt; along the gradient&apos;s axis).
+&lt;p&gt;This value is comprised of a  value, followed by an optional stop position (either a percentage or a  along the gradient&apos;s axis).
 Rendering of color stops in CSS gradients follows the same rules as color stops in SVG gradients.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;followed by an optional stop position ← 原来是停止位置。。。&lt;/p&gt;
@@ -333,53 +333,53 @@ Rendering of color stops in CSS gradients follows the same rules as color stops 
 </content:encoded></item><item><title>Stepping Further - 2016</title><link>https://blog.xingoxu.com/2016/01/2016-stepping-further/</link><guid isPermaLink="true">https://blog.xingoxu.com/2016/01/2016-stepping-further/</guid><description>Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却也是回不去的昨天。
 
 </description><pubDate>Fri, 01 Jan 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Time flies very fast. 一年之中的种种似乎仿佛还在眼前，然而却也是回不去的昨天。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h2&gt;blog的诞生&lt;/h2&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;IMGalignRight&quot; style=&quot;width: 330px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/24/5925478b03d5c.png&quot; alt=&quot;第一篇来自hexo的博客&quot; /&gt;
-&amp;lt;/div&amp;gt;
-域名是2015年年初购买的，购买的原因我似乎自己也快忘了，好像是当时测试用的Azure还没有过期，自己就买了个域名搭着服务器玩玩apache与wordpress，然而才用了一两个月好想Azure就开始关闭测试账户了，真是意想不到，因为这项开支，自己却无意中学习了那么多有趣的知识，比如域名记录A AAAA CNAME NS，比如静态博客生成Hexo框架，比如CSS in YAML Aint Markup Language，认识了很多网页的调试工具。其实自己去年刚学习HTML+CSS的时候感觉非常有趣就有想当前端的想法，然而却又太胆小，不敢去学，那时什么都不知道，今年虽然下定决心要当个dev，&lt;s&gt;但想学js的心仍然没有停止（待我会玩Android就学）&lt;/s&gt; 另外到现在也其实没整明白博客有啥意思，像我这样连高考作文800字憋不出来的人，能憋出这么多字的博客已经是精一杯了，明明自己微博活的更精彩。&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/24/5925478b03d5c.png&quot; alt=&quot;第一篇来自hexo的博客&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+域名是2015年年初购买的，购买的原因我似乎自己也快忘了，好像是当时测试用的Azure还没有过期，自己就买了个域名搭着服务器玩玩apache与wordpress，然而才用了一两个月好想Azure就开始关闭测试账户了，真是意想不到，因为这项开支，自己却无意中学习了那么多有趣的知识，比如域名记录A AAAA CNAME NS，比如静态博客生成Hexo框架，比如CSS in YAML Aint Markup Language，认识了很多网页的调试工具。其实自己去年刚学习HTML+CSS的时候感觉非常有趣就有想当前端的想法，然而却又太胆小，不敢去学，那时什么都不知道，今年虽然下定决心要当个dev，~~但想学js的心仍然没有停止（待我会玩Android就学）~~ 另外到现在也其实没整明白博客有啥意思，像我这样连高考作文800字憋不出来的人，能憋出这么多字的博客已经是精一杯了，明明自己微博活的更精彩。
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://blog.xingoxu.com/2015/04/hello-world/&quot;&gt;第一篇来自hexo的博客&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;h2&gt;20岁&lt;/h2&gt;
 &lt;p&gt;我仍然不敢相信自己居然已经跨入20岁，我似乎一直觉得自己还是15，16，似乎昨天还是高三学生，似乎今天还要背诵默写古诗词，但身边一切的一切都早已变了。20岁的这一年，有了人生许多的第一次，20岁的这一年，明天似乎触手可得。傍晚时分，我给自己买了一块跟去年一样的蛋糕，希望能够重新背起包袱，向人生的最有活力的时段进发。
-&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 &lt;h2&gt;成绩&lt;/h2&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;IMGalignLeft&quot; style=&quot;width: 330px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/24/59252d929d187.png&quot; alt=&quot;今年的作品(?)&quot; /&gt;
-&amp;lt;/div&amp;gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/24/59252d929d187.png&quot; alt=&quot;今年的作品(?)&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 当大家都不怎么学习的时候，你只需稍稍的努力，便能取得一个很不错的成绩。第一次尝到认真学习的甜头，只用了半个学期，就把上半学年不怎么地的绩点拉了上来还能拿奖，但综合这一年，感觉不怎么合算，第二学期还好，大三上的这一个学期，写了很多，做了很多，然而并没有什么卵用，虽然还没出成绩，但感觉得分不会很高。你很认真的在做一个东西，你把他当一个产品来看待，用了很多课外的知识，但老师只看你课内努力的这一部分，那为什么不早点告诉我我随便写点玩具代码就交给你呢？而且想要发展的方向也并不是C#方向，老师连基本的面向对象的概念也不讲，这个年纪，真是耽误人啊！
 下半年把java核心技术这本书好好的读了一遍，还是写的不错，话说几个好友给我推荐的几本书都很好很容易上手也由浅入深，很喜欢很经典，嘛，就是没有时间去实践，虽然在写算法题的时候会用java来写，但还是感觉熟练度啊，熟悉程度啊，完全是比不上连书都没看过的C#，这完全得益于winform/wpf的框架和自动提示，太智能，不得不感叹上手容易，想搜什么也是很快就能定位到目标。
-&amp;lt;br /&amp;gt;
-&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt;
 &lt;h2&gt;第一次的独立远行&lt;/h2&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;IMGalignRight&quot; style=&quot;width: 330px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/5926441199e9c.jpg&quot; alt=&quot;国子监&quot; /&gt;
-&amp;lt;/div&amp;gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/5926441199e9c.jpg&quot; alt=&quot;国子监&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 惭愧的是，这么大了居然才是一个人出门玩（典型的家长的独生乖儿子），出门玩也是各种三叮咛四嘱咐的，到了帝都还时不时打电话来发短消息发QQ发微信给我问我玩的开心不开心，也是醉了！花了小半天做了点有什么好玩的地方的功课就冲动的买下了火车票，也没跟任何人说，然而等我坐上车的时候却被母亲的大嘴巴已经讲的全亲戚朋友都知道了。。。。。也没跟太多人搭过话，所以自认这趟旅行京味还是不够足的，但值回票价就可以啦！逛过巷子，去过景点，吃过包子（跟魔都小笼类似），看过孔夫老爷子，拜过国子监~~（怪不得下半年那么拼原来是上身了）~~，还有什么值得留恋的呢？
-&amp;lt;br /&amp;gt;
-&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt;
 &lt;h2&gt;测试&lt;/h2&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;IMGalignLeft&quot; style=&quot;width: 281px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/592644ff505dc.png&quot; alt=&quot;ccf&quot; /&gt;
-&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/592644ff505dc.png&quot; alt=&quot;ccf&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;作为想要当一名合格的coder的人，深知算法和数据结构是基础内功，然而此内功虽然是万恶之本，但点到即可，不需过多掌握，关键在于应用性技能，但看到身边的一小部分同学有些出没ACM比赛，有些不知道搞起了什么东西胸有成竹，自己的心中总有那么一些不安，想做些什么，另一个自己却总是说“你什么都不会出去丢人？不怕被拒？”，于是自己也报了一些所谓的一个测试标准，成绩下来的时候还是有点意外的，班长说咱学校好久没有300分以上的了，你终于过了，我感觉很莫名其妙，300分算很好嘛。。。。毕竟自己什么练习也没做。。。。稍稍安心了一下，虽然这个测试现在看起来并没有什么卵用。。。。
-&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 &lt;h2&gt;年末的实习&lt;/h2&gt;
 &lt;p&gt;下定决心年末想找份实习实践一下&lt;s&gt;半年&lt;/s&gt;一年所学吧，可以熟练一点，然后也是算是受到了监督前辈的鼓舞吧，再加上自己看着下半年的抢钱计划（长叹一口气），想想自己简历也没什么好写的，斗着胆随便写了点东西就投了，然后有一家要我去面试，感觉还行吧也没问什么特别奇怪的问题，就是数据结构算法和面向对象的问的多了点，关于语言的倒是只问了重载的写法，有点让我意外，却也在情理之中，虽然知道自己大三and一般单位周六周日都不会上班因此基本上是不会被录取的，话也说在前面了，但面试的这个程序员小哥还是把面试面完了，也不知是真是假，他说你要是大四我就要你了（这应该只是安慰吧应该只是安慰吧），反正再学习一下吧，寒假里把安卓再好好学学，写一个算能见人的作品，也通过这次面试知道自己数据结构还有面向对象这些小概念还是不是很清楚需要再深入学习。不算是一个差的结局吧，永远相信努力的人运气不会太差~~（？）~~
-&amp;lt;br /&amp;gt;
-&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 &lt;h2&gt;动画小结&lt;/h2&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;IMGalignRight&quot; style=&quot;width: 533px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/5926452a96a8e.png&quot; alt=&quot;Battle Spirits Sword Eyes&quot; /&gt;
-&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/5926452a96a8e.png&quot; alt=&quot;Battle Spirits Sword Eyes&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;今年感觉会坑很多连载动画，大多看了一部分便又开始兴致冲冲的追了另一部动画片，前一部便一直搁着，还有就是不愿意在闲暇时间看动画，喜欢把大块时间留给动画，然而大块时间都在写作业导致了看番的时间少得可怜（在写这篇文章时离年末还有一个礼拜，不知道这一个礼拜能不能把坑都补掉，这一周作业都解决了基本没事）&lt;/p&gt;
 &lt;h3&gt;年初：&lt;/h3&gt;
 &lt;p&gt;记录的地平线（一）/2014年而来的 四月是你的谎言/战勇/打工吧魔王大人/男子高中生的日常/Hunter X Hunter/流星洛克人 &amp;amp; Tribe/记录的地平线（二）&lt;/p&gt;
@@ -389,13 +389,13 @@ Rendering of color stops in CSS gradients follows the same rules as color stops 
 &lt;p&gt;银之匙（一）（二）/高达创战者（一）/Battle Spirits Season 6(最強銀河究極ゼロ～バトルスピリッツ～)
 最后还完整复习了DA01 DA滚球兽的诞生 DA我们的战争游戏&lt;/p&gt;
 &lt;p&gt;动画小结的最后再甩一下锅，其实也有部分不是我的错！还有汉化组还没出汉化的呢_(:3」∠)_
-&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 &lt;h2&gt;游戏小结&lt;/h2&gt;
 &lt;p&gt;今年可以说在游戏上，在动漫上还是花了比较多的钱的，无论是旧坑闪十一，还是新坑TOZ，还是年末的新坑BS，花钱花精力，真是辣鸡游戏，毁我钱财，败我身心233，psv，ps4，new 3ds全都有了，大概是真·迈向死宅了（。&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;IMGalignLeft&quot; style=&quot;width: 335px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/59264a4a15fb1.jpg&quot; alt=&quot;3DS今年游戏时间&quot; /&gt;
-&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/59264a4a15fb1.jpg&quot; alt=&quot;3DS今年游戏时间&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;h3&gt;PS4&lt;/h3&gt;
 &lt;p&gt;当得知TOZ要出PS4版本时，心中便已按捺不住，偷跑一出便下了单一起把ps4买了，玩了十几个小时，画质实在是太棒了，高清斯雷舔舔舔啊！&lt;/p&gt;
 &lt;h3&gt;3DS&lt;/h3&gt;
@@ -405,12 +405,12 @@ Rendering of color stops in CSS gradients follows the same rules as color stops 
 &lt;h2&gt;音乐&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/5926463e35706.jpg&quot; alt=&quot;7!! - オレンジ&quot; /&gt;
 7!!的オレンジ作为四月是你的谎言的ED，从听到这首歌开始，一直loop到了年末，很喜欢钢琴的那一部分，很动人&lt;/p&gt;
-&lt;p&gt;&amp;lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;https://music.163.com/outchain/player?type=2&amp;amp;id=30496836&amp;amp;auto=0&amp;amp;height=66&quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+
 &lt;h2&gt;Stepping Further - 2016&lt;/h2&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;IMGalignRight&quot; style=&quot;width: 330px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/59264a48c009e.jpg&quot; alt=&quot;今年的伙伴们（误）&quot; /&gt;
-&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/25/59264a48c009e.jpg&quot; alt=&quot;今年的伙伴们（误）&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;一年回顾的最后，自己给自己煲个鸡汤，无论是2015年喜也好，2015年的悲也好，还是错过的遗憾，还是令人感慨的种种，都已是过去的一页，无论喜忧，要好好面对2016的自己，希望能够在新的一年中找到一份像样的实习工作，希望能够快点学会自己想要学会的东西，打起12分的精神，能够像えんどうさん一样继续充满干劲！&lt;/p&gt;
 &lt;h3&gt;2016年初计划&lt;/h3&gt;
 &lt;ul&gt;
@@ -426,8 +426,8 @@ Rendering of color stops in CSS gradients follows the same rules as color stops 
 
 仔细想想还真的是2017年经历了太多太多事情，很多事情甚至自己都没有想到，感觉自己非常幸运，总的来说是一个很开心的一年。
 </description><pubDate>Tue, 10 Apr 2018 12:15:49 GMT</pubDate><content:encoded>&lt;p&gt;忙完这一阵，回过神来已经是2018年的4月了，才有空开始补一些之前没有干完的事情，比如写这一篇2017年的总结。&lt;/p&gt;
-&lt;p&gt;仔细想想还真的是2017年经历了太多太多事情，很多事情甚至自己都没有想到，感觉自己非常幸运，总的来说是一个很开心的一年。
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+&lt;p&gt;仔细想想还真的是2017年经历了太多太多事情，很多事情甚至自己都没有想到，感觉自己非常幸运，总的来说是一个很开心的一年。&lt;/p&gt;
+
 &lt;p&gt;按时间顺序&lt;/p&gt;
 &lt;h1&gt;跳槽到饿了妈&lt;/h1&gt;
 &lt;p&gt;怎么说，年前就有想跳槽的想法，其实在萌购干着也挺好的，老板也承诺说毕业之后的工资多少多少，价格嘛也不低（跟饿了妈差不多），但始终是有那么点没有安全感，终于逮到个机会去了饿了妈面试，虽然自己是个菜鸡，不过面试的问题还算是都自我感觉挺好的答了下来，于是就很顺利的跳槽到了饿了妈。&lt;/p&gt;
@@ -437,8 +437,8 @@ Rendering of color stops in CSS gradients follows the same rules as color stops 
 &lt;p&gt;嘛操着自己零零碎碎平假名和片假名，也没跟太多人说话，现在想起来我当时到底是怎么旅游的都完全不怎么会说日语，顺顺利利的玩了10天，肥肠快乐，嘛钱也用了不少，差不多一共两万左右吧？&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://photos.app.goo.gl/Gh0Qox7rmOz3rRqz2&quot;&gt;Google Photo&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;毕业&lt;/h1&gt;
-&lt;p&gt;&amp;lt;div class=&quot;IMGalignRight&quot; style=&quot;width: 330px;&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/04/10/5acc59ab88143.jpg&quot; alt=&quot;毕业啦&quot; /&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/04/10/5acc59ab88143.jpg&quot; alt=&quot;毕业啦&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;一霎眼毕业了，当时好像没有什么感觉，取了毕业证书，学位证书，回家就往公司的系统上传表示7.1日起就可以拿正式工资了，只有这点才让我感觉到了毕业。不过现在想想，我居然已经是个社会人了，而且已经实习+上班上了一年了，时间的力量还真是强大，把自己给塑造成了什么样只有回头看的时候才能知道。&lt;/p&gt;
 &lt;p&gt;我对学校没什么好感，对周围同学也没什么太多好感，4年自己也不知道自己干了什么，只是埋头学了很多东西，所以这4年，嘛也就这样。&lt;/p&gt;
 &lt;h1&gt;N2合格&lt;/h1&gt;
@@ -457,7 +457,7 @@ Rendering of color stops in CSS gradients follows the same rules as color stops 
 时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感
 
 </description><pubDate>Tue, 03 Jan 2017 19:55:45 GMT</pubDate><content:encoded>&lt;p&gt;时间匆匆流逝，告别2016年，回看2015年，这一年也算是小有成就感&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;技术&lt;/h1&gt;
 &lt;p&gt;狂点技术点的一年&lt;/p&gt;
 &lt;p&gt;年初还在学习Android的我，抵不住朋友的 誘う ，决定学习一下JavaScript，把红书看完之后觉得找到了真爱语言，非常喜欢JavaScript的开放与灵活，于是放弃Android转前端&lt;/p&gt;
@@ -506,7 +506,7 @@ Rendering of color stops in CSS gradients follows the same rules as color stops 
 搭建了这个服务器之后，我们还能实现在手机在电脑实时观看电视直播功能，画质当然与电视台一致。&lt;/p&gt;
 &lt;h1&gt;为什么要放在NAS上&lt;/h1&gt;
 &lt;p&gt;还不是为了拯救我那24小时开机的NAS但却只用来同步文件的电老虎吗&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;需要准备的东西&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;你的一台NAS
@@ -887,7 +887,7 @@ for mediafile in $(find /path/to/record/folder -maxdepth 1 -type f -mmin -&amp;l
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;Web 将来可以使用的新功能 / 新Web API / 新 JavaScript API 等&lt;/h1&gt;
 &lt;h2&gt;Chrome Only (目前为止，没有写入w3c标准)&lt;/h2&gt;
 &lt;ul&gt;
@@ -1043,29 +1043,8 @@ Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O �
 &lt;h1&gt;其他&lt;/h1&gt;
 &lt;p&gt;更多性能其他案例、How to、以及Web内容可参照
 https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- Google 的架构建议&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;为不断发展的Web API而设计程序&lt;/li&gt;
-&lt;li&gt;避免惩罚新浏览器（polyfill等）&lt;/li&gt;
-&lt;li&gt;持续服务器缓存，保持高CDN命中率&lt;/li&gt;
-&lt;li&gt;避免重大修改并增强现有工具 --&amp;gt;&lt;/li&gt;
-&lt;/ol&gt;
-</content:encoded></item><item><title>2024-ana-sfc</title><link>https://blog.xingoxu.com/2024/06/2024-ana-sfc/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/2024-ana-sfc/</guid><description>
 
-</description><pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate><content:encoded/></item><item><title>用 Astro 翻新我的博客</title><link>https://blog.xingoxu.com/2024/06/2024-astro-blog/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/2024-astro-blog/</guid><description>
-好久没有写博客了，为啥不写，博客一直存在的痛点
-
-[Astro](https://astro.build/) 是一个静态网站生成器，不具体介绍，谈一谈之前使用 hexo 的痛点和为什么现在才翻新到 astro，为什么选用 astro 而不选用 hugo 等。
-
-# Hexo
-## Hexo 的使用感想
-## Hexo 的痛点
-
-# Astro
-从哪里知道的Astro
-## Astro 的爽点
-
-# 余留课题</description><pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;好久没有写博客了，为啥不写，博客一直存在的痛点&lt;/p&gt;
+</content:encoded></item><item><title>2024-ana-sfc</title><link>https://blog.xingoxu.com/2024/06/2024-ana-sfc/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/2024-ana-sfc/</guid><pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate><content:encoded/></item><item><title>用 Astro 翻新我的博客</title><link>https://blog.xingoxu.com/2024/06/2024-astro-blog/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/2024-astro-blog/</guid><pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;好久没有写博客了，为啥不写，博客一直存在的痛点&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 是一个静态网站生成器，不具体介绍，谈一谈之前使用 hexo 的痛点和为什么现在才翻新到 astro，为什么选用 astro 而不选用 hugo 等。&lt;/p&gt;
 &lt;h1&gt;Hexo&lt;/h1&gt;
 &lt;h2&gt;Hexo 的使用感想&lt;/h2&gt;
@@ -1091,9 +1070,9 @@ https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/p&g
 &lt;li&gt;AppCompat v7的Toolbar与Contextual ActionBar&lt;/li&gt;
 &lt;li&gt;心得&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h2&gt;最近Loop：&lt;a href=&quot;http://music.163.com/#/song?id=32192451&quot;&gt;シュガーソングとビターステップ&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&amp;lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;https://music.163.com/outchain/player?type=2&amp;amp;id=32192451&amp;amp;auto=0&amp;amp;height=66&quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+
 &lt;h2&gt;Android Studio 库相关的正确使用姿势&lt;/h2&gt;
 &lt;p&gt;Android Studio 1.5.x 更新后很多网上找到的其他教程包括回答基本都是旧版本的，直接lib下添加，然而在编译时总是遇到这样那样的问题，原因在于Gradle会把jar compile了，然而module本身的package(感觉相当于命名空间？)却没有导入，当你导入后，两行命令相互打架编译时能通过却无法生成apk提示错误。提示的错误五花八门，一会是java虚拟机非0退出，一会是Class文件重名。&lt;/p&gt;
 &lt;h3&gt;引用其他人的jar/aar Lib&lt;/h3&gt;
@@ -1236,9 +1215,9 @@ https://www.easydone.cn/2015/10/26/&lt;/p&gt;
 </content:encoded></item><item><title>GSC-535 风来的西林</title><link>https://blog.xingoxu.com/2016/03/gsc-535/</link><guid isPermaLink="true">https://blog.xingoxu.com/2016/03/gsc-535/</guid><description>
 
 终于买了又帅又可爱的西林困，嘻嘻，稍微照几张~
-</description><pubDate>Sun, 20 Mar 2016 23:11:17 GMT</pubDate><content:encoded>&lt;p&gt;终于买了又帅又可爱的西林困，嘻嘻，稍微照几张~
-&amp;lt;!-- more --&amp;gt;
-&lt;img src=&quot;https://ooo.0o0.ooo/2016/03/20/56eec136546c8.jpg&quot; alt=&quot;GSC535-1 (6).jpg&quot; /&gt;
+</description><pubDate>Sun, 20 Mar 2016 23:11:17 GMT</pubDate><content:encoded>&lt;p&gt;终于买了又帅又可爱的西林困，嘻嘻，稍微照几张~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2016/03/20/56eec136546c8.jpg&quot; alt=&quot;GSC535-1 (6).jpg&quot; /&gt;
 &lt;img src=&quot;https://ooo.0o0.ooo/2016/03/20/56eec131cdbca.jpg&quot; alt=&quot;GSC535-1 (1).jpg&quot; /&gt;
 &lt;img src=&quot;https://ooo.0o0.ooo/2016/03/20/56eec133a750e.jpg&quot; alt=&quot;GSC535-1 (2).jpg&quot; /&gt;
 &lt;img src=&quot;https://ooo.0o0.ooo/2016/03/20/56eec1362a8e1.jpg&quot; alt=&quot;GSC535-1 (3).jpg&quot; /&gt;
@@ -1249,7 +1228,7 @@ https://www.easydone.cn/2015/10/26/&lt;/p&gt;
 作为一个花了三个礼拜稍微有那么点心思的~~其实花了很多想法，然而根本看不出这是一个花了心思的作品~~，还是给他开个页面用来发布吧！
 
 </description><pubDate>Mon, 21 Dec 2015 13:42:54 GMT</pubDate><content:encoded>&lt;p&gt;作为一个花了三个礼拜稍微有那么点心思的&lt;s&gt;其实花了很多想法，然而根本看不出这是一个花了心思的作品&lt;/s&gt;，还是给他开个页面用来发布吧！&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/05/24/59252d9256e76.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;需求：&lt;/h2&gt;
 &lt;p&gt;.Net Framework 4.5
@@ -1296,7 +1275,7 @@ What&apos;s new?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;首次发布功能&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;lt;span id=&quot;instruction&quot;&amp;gt;&amp;lt;/span&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;安装使用与说明&lt;/h2&gt;
 &lt;p&gt;本软体无需安装，直接打开pixiv_downloader.exe即可运行&lt;/p&gt;
 &lt;p&gt;windows 7/8用户如您不确定是否拥有.Net Framework 4.5的环境，请您按如下提示检查：
@@ -1312,14 +1291,7 @@ What&apos;s new?&lt;/p&gt;
 进行安装&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;如您有使用的问题，欢迎在下方进行留言，我会回复！&lt;/p&gt;
-</content:encoded></item><item><title>自用WNDR4300搭建ss+chnroute满足需求</title><link>https://blog.xingoxu.com/2015/03/wndr4300-setup-log/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/03/wndr4300-setup-log/</guid><description>dnsmasq仍旧生效，效果很好
- 
-原文章来自：http://bilibi.li/2015/02/22/how-to-setup-shadowsocks-and-chinadns-in-openwrt-on-wndr4300/
-
-https://cokebar.info/archives/664
-
-
-原文已经基本阐述完整，就不再重复书写</description><pubDate>Mon, 02 Mar 2015 03:27:23 GMT</pubDate><content:encoded>&lt;p&gt;dnsmasq仍旧生效，效果很好&lt;/p&gt;
+</content:encoded></item><item><title>自用WNDR4300搭建ss+chnroute满足需求</title><link>https://blog.xingoxu.com/2015/03/wndr4300-setup-log/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/03/wndr4300-setup-log/</guid><pubDate>Mon, 02 Mar 2015 03:27:23 GMT</pubDate><content:encoded>&lt;p&gt;dnsmasq仍旧生效，效果很好&lt;/p&gt;
 &lt;p&gt;原文章来自：http://bilibi.li/2015/02/22/how-to-setup-shadowsocks-and-chinadns-in-openwrt-on-wndr4300/&lt;/p&gt;
 &lt;p&gt;https://cokebar.info/archives/664&lt;/p&gt;
 &lt;p&gt;原文已经基本阐述完整，就不再重复书写&lt;/p&gt;
@@ -1327,8 +1299,8 @@ https://cokebar.info/archives/664
 背景不支持fixed属性
 标题栏沉浸
 </description><pubDate>Wed, 22 Apr 2015 01:49:26 GMT</pubDate><content:encoded>&lt;p&gt;背景不支持fixed属性
-标题栏沉浸
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+标题栏沉浸&lt;/p&gt;
+
 &lt;h1&gt;背景不支持fixed属性&lt;/h1&gt;
 &lt;p&gt;安卓浏览器/安卓Chrome中对于background已经移除了fixed属性&lt;/p&gt;
 &lt;p&gt;解决方法：&lt;/p&gt;
@@ -1365,7 +1337,7 @@ body{
 逼格更高，路由器里显示手机名字2333333
 
 </description><pubDate>Mon, 02 Mar 2015 01:45:17 GMT</pubDate><content:encoded>&lt;p&gt;逼格更高，路由器里显示手机名字2333333&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;ol&gt;
 &lt;li&gt;使用R.E.管理器，找到/system/build.prop文件，使用文本编辑器打开，在最后一行添加下面一行内容：&lt;/li&gt;
 &lt;/ol&gt;
@@ -1381,8 +1353,8 @@ body{
 &lt;p&gt;&lt;strong&gt;注意！中间绝对不能有空格！可以有下划线和中横线&lt;/strong&gt;&lt;/p&gt;
 </content:encoded></item><item><title>安卓4.4以上系统已root设备正确升级</title><link>https://blog.xingoxu.com/2015/09/android-root-ota/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/09/android-root-ota/</guid><description>
 原生root设备要是想要保留数据系统升级，一般都会选择线刷升级(直接刷入高版本system镜像等)，然而上次在逛g+时，却发现有人说这样升级非常不安全，一旦用户数据部分分区发生改变，直接刷入镜像启动后可能会发生假砖，导致最后得全新刷机，同时，这人也给出了一个非常安全的方法，看到后我觉得这样的方法非常可取，分享给大家
-</description><pubDate>Wed, 16 Sep 2015 16:39:38 GMT</pubDate><content:encoded>&lt;p&gt;原生root设备要是想要保留数据系统升级，一般都会选择线刷升级(直接刷入高版本system镜像等)，然而上次在逛g+时，却发现有人说这样升级非常不安全，一旦用户数据部分分区发生改变，直接刷入镜像启动后可能会发生假砖，导致最后得全新刷机，同时，这人也给出了一个非常安全的方法，看到后我觉得这样的方法非常可取，分享给大家
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+</description><pubDate>Wed, 16 Sep 2015 16:39:38 GMT</pubDate><content:encoded>&lt;p&gt;原生root设备要是想要保留数据系统升级，一般都会选择线刷升级(直接刷入高版本system镜像等)，然而上次在逛g+时，却发现有人说这样升级非常不安全，一旦用户数据部分分区发生改变，直接刷入镜像启动后可能会发生假砖，导致最后得全新刷机，同时，这人也给出了一个非常安全的方法，看到后我觉得这样的方法非常可取，分享给大家&lt;/p&gt;
+
 &lt;ol&gt;
 &lt;li&gt;平刷当前版本的镜像，recovery system等，目的是为了去除root，保持system分区签名安全(如果安装了xposed框架，请先卸载在刷)&lt;/li&gt;
 &lt;li&gt;sideload OTA包，如果系统已经有了推送，下载好了ota，也可直接升级&lt;/li&gt;
@@ -1410,174 +1382,174 @@ body{
 </description><pubDate>Sun, 13 May 2018 18:13:03 GMT</pubDate><content:encoded>&lt;p&gt;黄金周里因为自己喜欢的画手太太画了渡瀬青葉，所以又把一年前抛弃的 Buddy Complex 捡起来看了一下，意外的发现还挺好看的。全部看完后昨天圣地巡礼了一下。&lt;/p&gt;
 &lt;p&gt;这个动画也只有第一集是现实中出现的场景，后边都是未来在天上在船上并没有日本的景色。&lt;/p&gt;
 &lt;h1&gt;千葉県習志野市&lt;/h1&gt;
-&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v6ybw31j21hc0u0kjt.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73zuchj21kw0y5kjp.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;通学路のカーブ&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v6ybw31j21hc0u0kjt.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73zuchj21kw0y5kjp.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;通学路のカーブ&lt;/div&gt;
 &lt;p&gt;非常遗憾自行车店好像在翻新，去年在Google Map上貌似还有的样子&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/seichi.css&quot;&amp;gt;&amp;lt;!-- more --&amp;gt;
-&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v74bns8j21hc0u0u15.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73nt2sj21kw121e84.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;滑り台の公園&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v78ihtxj21hc0u07wp.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v71em5qj21kw108npd.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;小高商店信号機&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7hhi18j21hc0u0npl.jpg&quot; alt=&quot;小高商店&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7dvctbj21j515de82.jpg&quot; alt=&quot;小高商店&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;小高商店&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v74bns8j21hc0u0u15.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73nt2sj21kw121e84.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;滑り台の公園&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v78ihtxj21hc0u07wp.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v71em5qj21kw108npd.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;小高商店信号機&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7hhi18j21hc0u0npl.jpg&quot; alt=&quot;小高商店&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7dvctbj21j515de82.jpg&quot; alt=&quot;小高商店&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;小高商店&lt;/div&gt;
 &lt;p&gt;小高商店 2013 年的时候好像因为车站周围改造所以关店了，好遗憾&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvggz6j21hc0u04qx.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcrsid5j21kw0xb7wk.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;津田沼駅5番線&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvggz6j21hc0u04qx.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcrsid5j21kw0xb7wk.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;津田沼駅5番線&lt;/div&gt;
 &lt;p&gt;非常遗憾的是，没有07:12往三鷹的电车与7:15的中野非始发电车，样式也并不是动画的样子。&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcpd680j21kw13fqv5.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;津田沼駅4番線&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcpd680j21kw13fqv5.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;津田沼駅4番線&lt;/div&gt;
 &lt;p&gt;刚才还在5番線的但事实上这里的镜头确实是4番線向5番線方向的景色，但是左边的广告牌却是5番線的广告牌&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/05/13/5af80ae8da67b.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;津田沼駅5番線の広告&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/05/13/5af80ae8da67b.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;津田沼駅5番線の広告&lt;/div&gt;
 &lt;h1&gt;東京都笹塚&lt;/h1&gt;
 &lt;p&gt;接下来就是男主被追的场景，这里大多都一模一样。&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypiy343j21hc0u0e89.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yphw1vrj21kw17pqv9.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;富士見丘高校前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypuq4ilj21hc0u0e89.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yprlci2j21kw0zz4qs.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;電気屋前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yq0qqmdj21hc0u0x6w.jpg&quot; alt=&quot;松屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypt0zd0j21kw15cu0z.jpg&quot; alt=&quot;松屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;松屋前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypym75nj21hc0u0e89.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypwxe3bj21kw0vxb2b.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;みのん歯科医院前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9psyzj21hc0u0kjt.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9386bj21kw1634qr.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;お茶屋前&amp;lt;/div&amp;gt;
-TDK 变成了 alba，也是很久以前就变了的貌似&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrjdl0nj21hc0u0he1.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yres6h2j21kw0x2u11.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;栄湯の脇&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrmijcgj21hc0u0e89.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrlen9dj21kw16ohdw.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号 不動産屋前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vhnh93jj21hc0u0u14.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vid1c5ij23402454qw.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrwh3lyj21hc0u01l5.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrqaqqvj21kw0rz7wk.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vjz73pqj21hc0u07wp.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vkbwy2aj22c00sab2a.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu1hgwgj21hc0u0b2h.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ytgi9rnj21kw16ox6s.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;笹塚交差点 DARUMA前&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypiy343j21hc0u0e89.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yphw1vrj21kw17pqv9.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;富士見丘高校前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypuq4ilj21hc0u0e89.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yprlci2j21kw0zz4qs.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;電気屋前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yq0qqmdj21hc0u0x6w.jpg&quot; alt=&quot;松屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypt0zd0j21kw15cu0z.jpg&quot; alt=&quot;松屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;松屋前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypym75nj21hc0u0e89.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypwxe3bj21kw0vxb2b.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;みのん歯科医院前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9psyzj21hc0u0kjt.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9386bj21kw1634qr.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;お茶屋前&lt;/div&gt;
+TDK 变成了 alba，也是很久以前就变了的貌似
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrjdl0nj21hc0u0he1.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yres6h2j21kw0x2u11.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;栄湯の脇&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrmijcgj21hc0u0e89.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrlen9dj21kw16ohdw.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号 不動産屋前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vhnh93jj21hc0u0u14.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vid1c5ij23402454qw.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrwh3lyj21hc0u01l5.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrqaqqvj21kw0rz7wk.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vjz73pqj21hc0u07wp.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vkbwy2aj22c00sab2a.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu1hgwgj21hc0u0b2h.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ytgi9rnj21kw16ox6s.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;笹塚交差点 DARUMA前&lt;/div&gt;
 &lt;p&gt;だるま 2013 年关店的，不过其他的地方都能对上&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucd8gxj21hc0u04qx.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu0t3xrj21kw151hdv.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;笹塚交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhfjedj21hc0u0e89.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu5ays1j21kw13mnpe.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;笹塚交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhws22j21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucijqmj21kw1umnph.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv6tavtj21hc0u0qvc.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvag3s3j21kw14bx6t.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucd8gxj21hc0u04qx.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu0t3xrj21kw151hdv.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;笹塚交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhfjedj21hc0u0e89.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu5ays1j21kw13mnpe.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;笹塚交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhws22j21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucijqmj21kw1umnph.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv6tavtj21hc0u0qvc.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvag3s3j21kw14bx6t.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;从这里开始难度就变得好高，大家凑合看吧&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvs0kenj21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv3hcd2j21kw23v7wj.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvs0kenj21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv3hcd2j21kw23v7wj.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;高架电车没有地方能拍，就跑的稍微远了一点，不过还是没能拍好&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvuux58j21hc0u0u14.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv73ha9j20o20eudri.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架の鉄道&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvypfwhj21hc0u0he1.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvw28eoj21kw1kunph.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvuux58j21hc0u0u14.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv73ha9j20o20eudri.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架の鉄道&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvypfwhj21hc0u0he1.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvw28eoj21kw1kunph.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;正在制作 valiancer 的中◯屋工厂&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywfvp14j21hc0u0b2h.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywiii13j21kw12tu10.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywfvp14j21hc0u0b2h.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywiii13j21kw12tu10.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;大山交差点这里并没有完全按照现实世界的布景画&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsysjhj21hc0u0e89.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsbvdpj21kw16oqv7.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxg5vp6j21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yx5v5kej21kw16ob2b.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxhyrcfj21hc0u04qx.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yyb62p3j20n00eagv4.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz7327tj21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz1jo80j21kw16o1l0.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsysjhj21hc0u0e89.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsbvdpj21kw16oqv7.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxg5vp6j21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yx5v5kej21kw16ob2b.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxhyrcfj21hc0u04qx.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yyb62p3j20n00eagv4.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz7327tj21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz1jo80j21kw16o1l0.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
 &lt;p&gt;到这里就全部结束啦，顺带一提主人公的家是真实存在的，不过因为私人房屋的原因不会上传到SNS等地方，如果有兴趣的访问的话也请一定不要给对方带来困扰。&lt;/p&gt;
 &lt;p&gt;Google Maps：https://drive.google.com/open?id=1fTiF9I8exv6jFB-86H49elu6EntfaA1q&amp;amp;usp=sharing&lt;/p&gt;
 </content:encoded></item><item><title>什么是 CLS？在浏览器和 Node.js 中实现 CLS</title><link>https://blog.xingoxu.com/2020/06/cls/</link><guid isPermaLink="true">https://blog.xingoxu.com/2020/06/cls/</guid><description>
 在写 Flutter 和 Serverless 查资料的时候，在某个博客里看到了 CLS 的相关内容，感觉其实是个很不错的软件工程的解耦想法，于是保存了下来。今天回过头来仔细研究了一下并决定给自己留下一些记录。
 
 </description><pubDate>Mon, 29 Jun 2020 19:48:05 GMT</pubDate><content:encoded>&lt;p&gt;在写 Flutter 和 Serverless 查资料的时候，在某个博客里看到了 CLS 的相关内容，感觉其实是个很不错的软件工程的解耦想法，于是保存了下来。今天回过头来仔细研究了一下并决定给自己留下一些记录。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;场景&lt;/h1&gt;
 &lt;p&gt;无论是在浏览器，还是在服务端 Node.js，我们经常会碰到打点上报，追踪错误这样的需求，即使不对特定用户进行追踪，我们也会给某个 session 分配唯一 ID 以在 log / analytics 界面能够看到用户的完整行为，对于产品分析与错误再现是十分重要的。&lt;/p&gt;
 &lt;p&gt;假设我们需要写一个 error handling ，这个 error handling 会 hold 住所有的请求的异常，我们如何分辨哪个错误是哪个请求造成的呢？&lt;/p&gt;
@@ -1646,8 +1618,8 @@ function log(...args) {
 &lt;h3&gt;一个并不完美的解决方案&lt;/h3&gt;
 &lt;p&gt;我们试着思考一下， &lt;code&gt;Zone.js&lt;/code&gt; 是如何做到这些的。如果浏览器没有提供异步函数运行环境的唯一标识，那么只剩下唯一的一条路，改写所有会产生异步的函数，包装了一层后也就能加入hook了。&lt;/p&gt;
 &lt;p&gt;我尝试自己写了一下&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- https://gist.github.com/xingoxu/58f8f7faa83732ec922fcd38299f3283 --&amp;gt;
-&amp;lt;script src=&quot;https://gist.github.com/xingoxu/58f8f7faa83732ec922fcd38299f3283.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+
+
 &lt;p&gt;看似好像没什么问题，不过&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/angular/angular/issues/31730&quot;&gt;angular with tsconfig target ES2017 async/await will not work with zone.js&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;浏览器中现在并没有完美的解决方案&lt;/h4&gt;
@@ -1683,8 +1655,8 @@ test() instanceof _promise
 &lt;p&gt;对于性能问题，不展开篇幅讨论，取决于你是否愿意花一点点的性能下降来换取代码的低耦合。&lt;/p&gt;
 &lt;h3&gt;如何使用&lt;/h3&gt;
 &lt;p&gt;async_hooks 提供了一个 createHook 的函数，他可以帮助你监听异步函数的运行时创建以及退出等状态，并且附带了这个运行时的唯一辨识id，我们可以简单地用它来创建一个 CLS。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- https://gist.github.com/xingoxu/590e7f99658ea160b1f77cdb4e956637 --&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;script src=&quot;https://gist.github.com/xingoxu/590e7f99658ea160b1f77cdb4e956637.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+
+
 &lt;h3&gt;Node.js 13 后的官方实现&lt;/h3&gt;
 &lt;p&gt;在社区中已经有了那么多优秀实现的前提下，Node.js 13.10 后新增了一个 &lt;code&gt;AsyncLocalStorage&lt;/code&gt; 的 API&lt;/p&gt;
 &lt;p&gt;https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage&lt;/p&gt;
@@ -1760,7 +1732,7 @@ new Array(10).fill(0).forEach((_, i) =&amp;gt; fetch(&apos;http://localhost:3000
 
 </description><pubDate>Sun, 18 Dec 2016 21:57:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;非Apple显示器字体模糊的终极方案&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;OSX的渲染和输出是分成两部分的，因此，我们可以利用这个机制在普通2K显示器上开启2K HiDPI&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;前言&lt;/h1&gt;
 &lt;p&gt;等了一年半，很早就想入macbook的坑了，然而呢厨师貌似忘记了mbp这条产品线了，当然了，英特尔也是有一部分责任的，因此一年前的这个时候，我买了微软的surface pro 4。&lt;/p&gt;
 &lt;p&gt;结果这玩意非常不好使啊，开发者这边各种吃屎啊，各种没有快捷键啊，起个bash非常烦啊（最快也要右键），终于一个月前入手了macbook，但入手之后的那段时间，非常非常忙，各种事情吧，所以直到最近才有时间去配置各种开发环境。&lt;/p&gt;
@@ -1807,7 +1779,7 @@ new Array(10).fill(0).forEach((_, i) =&amp;gt; fetch(&apos;http://localhost:3000
 继承和组合是C++中比较重要的代码重用方式
 
 </description><pubDate>Tue, 12 May 2015 02:04:37 GMT</pubDate><content:encoded>&lt;p&gt;继承和组合是C++中比较重要的代码重用方式&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;继承与组合&lt;/h1&gt;
 &lt;p&gt;通常，继承被看做是is-a，组合被看做是has-a
 当我们不仅想重用内部实现而且还想重用接口的话，使用继承是最好的。&lt;/p&gt;
@@ -1880,8 +1852,8 @@ Thinking in C++ page 336-361&lt;/p&gt;
 </content:encoded></item><item><title>2015.05.09 C++多态</title><link>https://blog.xingoxu.com/2015/05/cpp-polymorphism/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/05/cpp-polymorphism/</guid><description>“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”
 C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。
 </description><pubDate>Sat, 09 May 2015 02:04:49 GMT</pubDate><content:encoded>&lt;p&gt;“调用’同名函数’却会因上下文不同会有不同的实现的一种机制”
-C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+C++中的多态根据运行时机制的不同分为静态多态与动态多态，下面是静态多态与动态多态的主要实现方式。&lt;/p&gt;
+
 &lt;h1&gt;静态多态&lt;/h1&gt;
 &lt;p&gt;静态多态指的是基于模板的多态，对所有可能出现的情况，把所有代码全部写好，最关键的是，这些关联处理处于编译期而非运行期。
 常见的静态多态：函数多态，模板多态，宏多态。&lt;/p&gt;
@@ -1960,8 +1932,8 @@ void output(father_class &amp;amp;a){
 函数参数传递，类的构造函数，类的可见性，类的继承
 都是一些碎片化的东西，做做笔记防止自己忘记
 </description><pubDate>Fri, 24 Apr 2015 02:05:32 GMT</pubDate><content:encoded>&lt;p&gt;函数参数传递，类的构造函数，类的可见性，类的继承
-都是一些碎片化的东西，做做笔记防止自己忘记
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+都是一些碎片化的东西，做做笔记防止自己忘记&lt;/p&gt;
+
 &lt;h1&gt;函数参数传递&lt;/h1&gt;
 &lt;p&gt;只贴改过的代码了，其实程序和讲解这篇文章写得很棒，我就不当个复制粘贴的了&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2143,7 +2115,7 @@ void main(){
 
 1. ubuntu 16.04
 2. [原版梅林源码](https://github.com/RMerl/asuswrt-merlin)
-3. 55-libev 源码
+3. ss-libev 源码
 
 </description><pubDate>Mon, 07 Aug 2017 14:41:43 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;Forked from &lt;a href=&quot;http://telegra.ph/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%8E%9F%E7%89%88shadowsocks%E4%B8%BAkoolshare%E6%A2%85%E6%9E%97ss%E6%8F%92%E4%BB%B6%E7%BB%AD%E5%91%BD-08-07&quot;&gt;原文 and 非自审查版&lt;/a&gt;&lt;/p&gt;
@@ -2152,18 +2124,18 @@ void main(){
 &lt;ol&gt;
 &lt;li&gt;ubuntu 16.04&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/RMerl/asuswrt-merlin&quot;&gt;原版梅林源码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;55-libev 源码&lt;/li&gt;
+&lt;li&gt;ss-libev 源码&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;原理说明&lt;/h1&gt;
-&lt;p&gt;解包梅林 55 插件发现，基本都是脚本，核心都是调用 55-redir ，因此猜测 55-redir 为原版 55 ，只需要更新原版 55 ，并在前端进行相应修改，便能对其续命&lt;/p&gt;
+&lt;p&gt;解包梅林 SS 插件发现，基本都是脚本，核心都是调用 ss-redir ，因此猜测 ss-redir 为原版 SS ，只需要更新原版 SS ，并在前端进行相应修改，便能对其续命&lt;/p&gt;
 &lt;h2&gt;ubuntu 16.04&lt;/h2&gt;
-&lt;p&gt;不是很了解 linux，但是应该只要能够运行 arm-linux-gcc 的 linux 发行版都可以，但我在 ubuntu 16.04 下实验成功，因此这里写 ubuntu 16.04，当然 docker 是可以的（因为我就是在 macos 下用的 docker）&lt;/p&gt;
+&lt;p&gt;不是很了解 linux，但是应该只要能够运行 arm-linux-gcc 的 linux 发行版都可以，但我在 ubuntu 16.04 下实验成功，因此这里写 ubuntu 16.04，当然 docker 是可以的（因为我就是在 macos 下用的 docker）&lt;/p&gt;
 &lt;h2&gt;原版梅林源码&lt;/h2&gt;
-&lt;p&gt;虽然是 koolshare 改版固件，但其还是合并了梅林的代码，因此可以使用梅林的交叉编译工具链&lt;/p&gt;
+&lt;p&gt;虽然是 koolshare 改版固件，但其还是合并了梅林的代码，因此可以使用梅林的交叉编译工具链&lt;/p&gt;
 &lt;p&gt;下载时，注意对应相对的梅林版本号，可以看一下固件发布时的说明&lt;/p&gt;
 &lt;p&gt;梅林的交叉编译工具链在梅林源码 &lt;code&gt;release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3&lt;/code&gt;，release 下应该是固件版本的不同，但几个固件版本下的 toolchains 均指向这个文件夹，应该是 toolchains 没有改变过&lt;/p&gt;
-&lt;h2&gt;55-libev 源码&lt;/h2&gt;
+&lt;h2&gt;ss-libev 源码&lt;/h2&gt;
 &lt;p&gt;不解释&lt;/p&gt;
 &lt;h1&gt;炼丹编译&lt;/h1&gt;
 &lt;h2&gt;镜像准备与 arm-linux-gcc&lt;/h2&gt;
@@ -2174,20 +2146,20 @@ void main(){
 &lt;p&gt;启动并挂载源码，运行 &lt;code&gt;docker exec -it container-name zsh&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;进入容器后尝试运行 &lt;code&gt;arm-linux-gcc&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果出现 &lt;code&gt;arm-linux-gcc: no input files&lt;/code&gt; 说明正常，进行下一步&lt;/p&gt;
-&lt;p&gt;如果出现 其他，请检查路径，权限，否则等下编译出来的可能是 ubuntu 的 55 （我之前编译时，解压后arm-linux-gcc没有运行权限，于是没法编译，给了权限就可以了）&lt;/p&gt;
-&lt;h2&gt;编译 55 依赖与 55&lt;/h2&gt;
-&lt;p&gt;编译 55 还有一些依赖需要安装，以下过程参阅&lt;/p&gt;
+&lt;p&gt;如果出现 其他，请检查路径，权限，否则等下编译出来的可能是 ubuntu 的 ss （我之前编译时，解压后arm-linux-gcc没有运行权限，于是没法编译，给了权限就可以了）&lt;/p&gt;
+&lt;h2&gt;编译 SS 依赖与 SS&lt;/h2&gt;
+&lt;p&gt;编译 SS 还有一些依赖需要安装，以下过程参阅&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://haoutil.com/topic/cross-compile-shadowsocks-libev&quot;&gt;交叉编译55-libev&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://haoutil.com/topic/cross-compile-shadowsocks-libev&quot;&gt;交叉编译SS-libev&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;需要编译 &lt;code&gt;mbedTLS&lt;/code&gt;、&lt;code&gt;pcre&lt;/code&gt;、&lt;code&gt;libsodium&lt;/code&gt;、&lt;code&gt;libev&lt;/code&gt;、&lt;code&gt;libudns&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;按照原博文的编译后，最后编译 55 时死活没有检测到编译了libudns，怕是编译后文件夹没有添加到 &lt;code&gt;PATH&lt;/code&gt; 中，当然刚才的博文里还提供了一键编译脚本，但那个一键编译脚本中判断参数的部分在ubuntu里报错，于是我就去了，直接写死环境 &lt;code&gt;arm-linux&lt;/code&gt; 即可&lt;/p&gt;
+&lt;p&gt;按照原博文的编译后，最后编译 SS 时死活没有检测到编译了libudns，怕是编译后文件夹没有添加到 &lt;code&gt;PATH&lt;/code&gt; 中，当然刚才的博文里还提供了一键编译脚本，但那个一键编译脚本中判断参数的部分在ubuntu里报错，于是我就去了，直接写死环境 &lt;code&gt;arm-linux&lt;/code&gt; 即可&lt;/p&gt;
 &lt;p&gt;fork了一下&lt;/p&gt;
-&lt;p&gt;&amp;lt;script src=&quot;https://gist.github.com/xingoxu/a9dc40df528c57c792ee72f1409a6ebb.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;编译过程大约需要持续 5-10 分钟&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/07/5987eac266528.png&quot; alt=&quot;编译开始&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/07/5987f6bf102a1.png&quot; alt=&quot;编译成功&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;使用一键脚本编译的话，在 &lt;code&gt;dists/55-libev/bin&lt;/code&gt; 中拿到 &lt;code&gt;ss-redir&lt;/code&gt;，将他scp到路由器上，执行 &lt;code&gt;ss-redir -v&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用一键脚本编译的话，在 &lt;code&gt;dists/ss-libev/bin&lt;/code&gt; 中拿到 &lt;code&gt;ss-redir&lt;/code&gt;，将他scp到路由器上，执行 &lt;code&gt;ss-redir -v&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/07/5987e533d41aa.jpg&quot; alt=&quot;编译成功后运行ss-redir -v&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;出现以上则为成功&lt;/p&gt;
 &lt;h1&gt;替换原插件并自行打包&lt;/h1&gt;
@@ -2195,13 +2167,13 @@ void main(){
 &lt;p&gt;&lt;code&gt;base=shadowsocks&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;./ss/ssconfig.sh&lt;/code&gt; 中将地址更换成自己的repo可以使用自动更新&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;./version&lt;/code&gt; 第一行是版本号  第二行是 tar.gz 的 hash值&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;./bin&lt;/code&gt; 55 的各种二进制执行文件，可以将刚才编译出来的东西都覆盖进来&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;./bin&lt;/code&gt; SS 的各种二进制执行文件，可以将刚才编译出来的东西都覆盖进来&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;./webs/Main_Ss_Content.asp&lt;/code&gt; 前端界面，加加密方式都在这里添加&lt;/p&gt;
 </content:encoded></item><item><title>探索 Service Worker “生命周期”</title><link>https://blog.xingoxu.com/2017/08/explore-service-worker-working-lifetime/</link><guid isPermaLink="true">https://blog.xingoxu.com/2017/08/explore-service-worker-working-lifetime/</guid><description>
 最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft 是 2014 年 5 月 8 日，第一个实现 Service Worker 的是 Chrome 40 （2015 年 1 月 21 日）
 
 </description><pubDate>Fri, 11 Aug 2017 15:05:42 GMT</pubDate><content:encoded>&lt;p&gt;最近讨论 PWA 的好多啊，PWA 中有个非常重要的角色是 Service Worker 。刚写这篇文章的时候粗心一看，把现在发的 Working Draft 的发布时间以为就是 Service Worker 的发布时间，被棕神挑刺啦。spec 仓库的第一个 commit 是 2013 年 2 月 7 日，W3C 发第一个 Service Worker 的 public working draft 是 2014 年 5 月 8 日，第一个实现 Service Worker 的是 Chrome 40 （2015 年 1 月 21 日）&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;以下将Service Worker简称为SW&lt;/p&gt;
 &lt;p&gt;SW的功能略有耳闻，在MDN上它被描述为，“对资源缓存和自定义的网络请求进行控制的一个好的统筹机制”，同时他还具有“访问推送通知和后台同步API”&lt;/p&gt;
 &lt;p&gt;听起来很神奇，事实上看起来也很神奇，Twitter上个月更新了样式，大家都看到了推特变成了圆头像圆角，然而推特还使用了新的 SW，在允许推特使用Notification的情况下，推特可以在你Chrome开启的时候而没有打开网页的时候给你推送你所关注的内容（&lt;a href=&quot;https://twitter.com/settings/web_notifications&quot;&gt;传送门&lt;/a&gt;），有一种javascript在关闭网页后，甚至没有打开网页的情况下，就能在后台运行的感觉。&lt;/p&gt;
@@ -2245,8 +2217,8 @@ void main(){
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/11/598d45ea6be64.png&quot; alt=&quot;chrome://inspect/#service-workers&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;点击inspect，可以在Console中看到SW在控制台中输出的内容，在Source中，对SW进行断点调试&lt;/p&gt;
 &lt;p&gt;如果你还保留着刚才的那个localhost，你可以发现，在inspect service-worker页面中，我们刚才的sw.js还一直在运行着&lt;/p&gt;
-&lt;h1&gt;Service Worker 的“生命周期”&lt;/h1&gt;
-&lt;p&gt;SW 的生命周期与事件可以在MDN上找到，也不再重复贴出，SW的缓存与推送通知就是靠着他的生命周期所发出的这些&lt;code&gt;event&lt;/code&gt;来驱动的。&lt;/p&gt;
+&lt;h1&gt;Service Worker 的“生命周期”&lt;/h1&gt;
+&lt;p&gt;SW 的生命周期与事件可以在MDN上找到，也不再重复贴出，SW的缓存与推送通知就是靠着他的生命周期所发出的这些&lt;code&gt;event&lt;/code&gt;来驱动的。&lt;/p&gt;
 &lt;p&gt;我想说的是另一个生命周期，我刚才说到，如果我们第一次进入localhost，并一直保留在那个页面，在inspect service-worker还可以看到service worker还一直运行着&lt;/p&gt;
 &lt;p&gt;我们可以将 sw.js 改写成如下&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;setInterval(() =&amp;gt; {
@@ -2255,7 +2227,7 @@ void main(){
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;在 chrome://serviceworker-internals/ 取消注册 SW ，并强制刷新 localhost（ mac下 ⌘+shift+R，windows 下 ctrl+shift+R ），我们会发现控制台中，每五秒就打印了一次 test，这也正是说明，SW在第一次进入的时候没有关闭页面的时候，一直在运行，我们也可以在刚才的 chrome://serviceworker-internals/ 看到这个 SW 正在运行。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/11/598d4776cc312.png&quot; alt=&quot;5秒打印console.log(&apos;test&apos;)&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;然而当我们关闭localhost页面，稍等十几秒后，在两个调试页面上，sw.js都会消失/停止了运行&lt;/p&gt;
+&lt;p&gt;然而当我们关闭localhost页面，稍等十几秒后，在两个调试页面上，sw.js都会消失/停止了运行&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/11/598d45b36a053.png&quot; alt=&quot;关闭localhost后 sw 停止了运行&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们再直接打开localhost，打开控制台，发现只有&lt;code&gt;Registration succeeded.&lt;/code&gt;，而没有了test，再看两个调试页面，发现sw.js依然没有运行&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/11/598d498dc090f.png&quot; alt=&quot;重新再次打开页面 sw 没有运行&quot; /&gt;&lt;/p&gt;
@@ -2279,7 +2251,7 @@ self.addEventListener(&apos;activate&apos;, function (event) {
 &lt;p&gt;再次关闭 localhost ，等待 sw 停止运行再打开 localhost ，控制台上只有 registration succeeded&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/11/598d498dc090f.png&quot; alt=&quot;重新再次打开页面 sw 没有运行&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;很明显，SW 的生命周期的事件也只会触发一次，只是相对于他第一次下载后。&lt;/p&gt;
-&lt;p&gt;更新SW的机制可以在MDN上的 &lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers#%E6%81%A2%E5%A4%8D%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%AF%B7%E6%B1%82&quot;&gt;#更新你的Service Worker&lt;/a&gt; 这章看到，但这仅仅几行文字，而且比较绕口，我认为这其实是SW自身的工作周期，或者说是运行机制&lt;/p&gt;
+&lt;p&gt;更新SW的机制可以在MDN上的 &lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers#%E6%81%A2%E5%A4%8D%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%AF%B7%E6%B1%82&quot;&gt;#更新你的Service Worker&lt;/a&gt; 这章看到，但这仅仅几行文字，而且比较绕口，我认为这其实是SW自身的工作周期，或者说是运行机制&lt;/p&gt;
 &lt;p&gt;于是在W3C Working Draft找到了Service Worker的&lt;a href=&quot;https://www.w3.org/TR/service-workers-1/#service-worker-lifetime&quot;&gt;Lifetime定义&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;The lifetime of a service worker is tied to the execution lifetime of events and not references held by service worker clients to the ServiceWorker object.
 
@@ -2290,8 +2262,8 @@ A user agent may terminate service workers at any time it:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;于是我觉得SW的工作周期结合上边的表现可以由下边的图来表示&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/08/11/598d4e045ebfe.png&quot; alt=&quot;SW 工作周期&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;其实图里有一点不对的是，sw 的第一次运行并不一定是网页关闭才结束的，根据标准来的话，只要 sw 没有 event 需要 handle ，sw 的工作进程都可以结束，只是 Chrome 下是如此运行的。&lt;/p&gt;
-&lt;p&gt;另外需要一提的是因为工作线程结束了，因此在外边的变量不一定还保持着之前结束前的状态，所以不要写出如下的代码&lt;/p&gt;
+&lt;p&gt;其实图里有一点不对的是，sw 的第一次运行并不一定是网页关闭才结束的，根据标准来的话，只要 sw 没有 event 需要 handle ，sw 的工作进程都可以结束，只是 Chrome 下是如此运行的。&lt;/p&gt;
+&lt;p&gt;另外需要一提的是因为工作线程结束了，因此在外边的变量不一定还保持着之前结束前的状态，所以不要写出如下的代码&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;let count = 0;
 self.addEventListener(&apos;fetch&apos;, function (event) {
   count++;
@@ -2301,13 +2273,13 @@ self.addEventListener(&apos;fetch&apos;, function (event) {
 &lt;p&gt;可能为1，也可能是2&lt;/p&gt;
 &lt;h1&gt;最后&lt;/h1&gt;
 &lt;p&gt;SW 是一个事件驱动型Worker，本质上，它是个Worker，工作在 worker context，所以没有访问 DOM 的权限&lt;/p&gt;
-&lt;p&gt;如果他要和window进行一些操作的话，与web worker类似，需要使用postMessage这样的方法来传递信息，在window里才能进行DOM操作&lt;/p&gt;
-&lt;p&gt;SW 是个Event bus，他的几个运行周期的事件，是专门为缓存与推送量身打造的（install事件和push事件），因此他的扩展性也非常好，以后如果有更多需求只需添加事件即可（比如chrome实现了sync事件是为了弥补离线时从本地到服务器post的不好体验），它将我们对资源拉的需求（对服务器的请求资源，对服务器的轮询），隐形转换为了推（本地缓存资源代码控制缓存，统一服务器推送）&lt;/p&gt;
+&lt;p&gt;如果他要和window进行一些操作的话，与web worker类似，需要使用postMessage这样的方法来传递信息，在window里才能进行DOM操作&lt;/p&gt;
+&lt;p&gt;SW 是个Event bus，他的几个运行周期的事件，是专门为缓存与推送量身打造的（install事件和push事件），因此他的扩展性也非常好，以后如果有更多需求只需添加事件即可（比如chrome实现了sync事件是为了弥补离线时从本地到服务器post的不好体验），它将我们对资源拉的需求（对服务器的请求资源，对服务器的轮询），隐形转换为了推（本地缓存资源代码控制缓存，统一服务器推送）&lt;/p&gt;
 </content:encoded></item><item><title>初识命令行git</title><link>https://blog.xingoxu.com/2015/12/git-study-1/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/12/git-study-1/</guid><description>
 
 git的教程很多，但很杂，留一篇自用吧
-</description><pubDate>Fri, 25 Dec 2015 21:50:12 GMT</pubDate><content:encoded>&lt;p&gt;git的教程很多，但很杂，留一篇自用吧
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+</description><pubDate>Fri, 25 Dec 2015 21:50:12 GMT</pubDate><content:encoded>&lt;p&gt;git的教程很多，但很杂，留一篇自用吧&lt;/p&gt;
+ 
 &lt;h1&gt;机遇&lt;/h1&gt;
 &lt;p&gt;以前一直使用傻瓜式的SourceTree，然而今天（2015-12-1）升了级之后全部爆炸，完全push不上去，好吧，不得不感叹一下windows平台真的越来越像个定时炸弹（微软再这么玩真的。。。）
 在部署blog的时候也学习了git的一点点概念，所以上手挺快&lt;/p&gt;
@@ -2394,7 +2366,7 @@ github pages已经支持https，可惜不支持自定义证书
 
 </description><pubDate>Fri, 17 Apr 2015 03:01:59 GMT</pubDate><content:encoded>&lt;p&gt;github pages已经支持https，可惜不支持自定义证书
 我们可以用cloudflare cdn加速，顺便还能上他新推出的flexible ssl&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;Getting Started&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Sign up for Cloudflare if you don’t already have an account&lt;/li&gt;
@@ -2437,7 +2409,7 @@ enforce_ssl: www.yoursite.com   # without any protocol
 转眼之间我在LINE已经工作了6年整，期间经历了大大小小，风格不同的产品和项目。5/17号我提了辞职申请，上星期，我走完了离职流程。今天这篇除了想写我和LINE的一些故事，也想留下一些自己对日本和将来的看法，更是为了自己将来的职业生涯中不要犯下同样的错误和正面去思考将来自己需要掌握的技能。
 
 </description><pubDate>Sun, 09 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;转眼之间我在LINE已经工作了6年整，期间经历了大大小小，风格不同的产品和项目。5/17号我提了辞职申请，上星期，我走完了离职流程。今天这篇除了想写我和LINE的一些故事，也想留下一些自己对日本和将来的看法，更是为了自己将来的职业生涯中不要犯下同样的错误和正面去思考将来自己需要掌握的技能。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;7年之前我感觉自己中了头菜&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/ff5efd9f-94c6-4daa-82b9-28aca60fca5b&quot; alt=&quot;7年前我收到的 LINE 的 Offer&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我和LINE的结缘是在7年之前日语N2出成绩的下午，当时我拿到成绩单知道自己合格之后，兴奋之余也幻想着能不能去日本工作，于是投了LINE和square enix，最初，投完简历后的第三天LINE让我再发一遍简历的pdf，我以为是程序的自动回复，毕竟那时我还国内刚毕业，怎么会有人要刚毕业的，于是没有回复，一周后又是一封邮件让我再发一次正式简历，我发过去之后，便是一次笔试加上三次面试，最终神差鬼使的拿到了offer，我至今仍然不知道当时的面试官们究竟是看上了我哪点才招我进去的。&lt;/p&gt;
@@ -2500,7 +2472,7 @@ Google、Indeed、微软这三家，投了简历却始终没有被回复过。
 &lt;li&gt;利用gulp编译stylus，本地预览，自动刷新，自动提升版本并Release&lt;/li&gt;
 &lt;li&gt;心得&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;gulp能做什么&lt;/h1&gt;
 &lt;p&gt;半个月前朋友提醒我说可以开始学习构建了，学习grunt，gulp，当时我对这些一无所知，对于构建的理解，只是处于minify html/css/js，uglify js等，想想这些不都已经有了很多现成的工具吗，然后又去grunt,gulp主页逛了，完全看不懂主页上的getting started要干什么&lt;/p&gt;
 &lt;p&gt;然而最近在尝试使用bootstrap与学习angularjs，想要试试自己搞一个小型的CRUD的app，我发现，我需要一个工具，能帮我处理这些框架中的sass，less，需要一个工具能帮我自动从framework文件夹编译成result并放入dist，而且我也根本无法脱离stylus的语法了（汗），单独编译以及手动整理真是太花费人的时间了，完全不能专注于写代码&lt;/p&gt;
@@ -2581,42 +2553,7 @@ gulp有个坑就是在相对路径时，不要加&apos;./&apos;，以及注意�
 &lt;p&gt;gulp的运行时路径就是你cmd/gitbash的路径，不是相对于js的路径（&lt;strong&gt;使用require-dir的小伙伴们要注意了&lt;/strong&gt;）&lt;/p&gt;
 &lt;p&gt;还有个坑就是自动更新版本并提交的那个中文文档有问题，插件被换掉了，所以按照中文文档写的任务是跑不起来会提示错（好像是fs.end不是一个function）&lt;/p&gt;
 &lt;p&gt;用了gulp之后，感觉真是爽爆了233&lt;/p&gt;
-</content:encoded></item><item><title>Hello World</title><link>https://blog.xingoxu.com/2015/04/hello-world/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/04/hello-world/</guid><description>Welcome to [Hexo](http://hexo.io/)! This is your very first post. Check [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
-
-## Quick Start
-
-### Create a new post
-
-``` bash
-$ hexo new &quot;My New Post&quot;
-```
-
-More info: [Writing](http://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](http://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](http://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](http://hexo.io/docs/deployment.html)
-</description><pubDate>Mon, 06 Apr 2015 09:50:15 GMT</pubDate><content:encoded>&lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;http://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</content:encoded></item><item><title>Hello World</title><link>https://blog.xingoxu.com/2015/04/hello-world/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/04/hello-world/</guid><pubDate>Mon, 06 Apr 2015 09:50:15 GMT</pubDate><content:encoded>&lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;http://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Quick Start&lt;/h2&gt;
 &lt;h3&gt;Create a new post&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;$ hexo new &quot;My New Post&quot;
@@ -2636,9 +2573,9 @@ More info: [Deployment](http://hexo.io/docs/deployment.html)
 &lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/deployment.html&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
 </content:encoded></item><item><title>hexo的备份与迁移</title><link>https://blog.xingoxu.com/2015/12/hexo-backup-and-migrate/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/12/hexo-backup-and-migrate/</guid><description>
 原虚拟机效率太低，决定重新装新的虚拟机只跑node.js+hexo，正好学习如何备份hexo元数据。
-</description><pubDate>Fri, 25 Dec 2015 21:42:48 GMT</pubDate><content:encoded>&lt;p&gt;原虚拟机效率太低，决定重新装新的虚拟机只跑node.js+hexo，正好学习如何备份hexo元数据。
-&amp;lt;!-- more --&amp;gt;
-原则上来说，只需要备份post和主题文件夹，到新的环境下重新部署一下hexo就可以了，然而重新部署的过程中，在生成时发现，居然无法生成index.html了，也不知道是哪里出了问题，也不知道是不是插件出了问题，完全没地方下手啊，直接开搜（。&lt;/p&gt;
+</description><pubDate>Fri, 25 Dec 2015 21:42:48 GMT</pubDate><content:encoded>&lt;p&gt;原虚拟机效率太低，决定重新装新的虚拟机只跑node.js+hexo，正好学习如何备份hexo元数据。&lt;/p&gt;
+
+&lt;p&gt;原则上来说，只需要备份post和主题文件夹，到新的环境下重新部署一下hexo就可以了，然而重新部署的过程中，在生成时发现，居然无法生成index.html了，也不知道是哪里出了问题，也不知道是不是插件出了问题，完全没地方下手啊，直接开搜（。&lt;/p&gt;
 &lt;p&gt;发现一个巨简单的方法，可忙这样的东西难道不是just work就ok的吗，你管他版本号要多新，想要版本号新了用新特性就再重新部署呗&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;原文来自：https://www.zhihu.com/question/21193762/answer/45552939
@@ -2651,7 +2588,7 @@ More info: [Deployment](http://hexo.io/docs/deployment.html)
 hexo+github pages 静态页面 速度杠杠的
 
 </description><pubDate>Fri, 17 Apr 2015 03:02:20 GMT</pubDate><content:encoded>&lt;p&gt;hexo+github pages 静态页面 速度杠杠的&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;#环境&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Node.js
@@ -2841,7 +2778,7 @@ description:
 
 </description><pubDate>Sat, 12 Mar 2016 03:44:46 GMT</pubDate><content:encoded>&lt;p&gt;欢迎有爱自取啦&lt;/p&gt;
 &lt;p&gt;最后更新： 2016.01.09&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;Paper White - A Hexo Theme&lt;/h1&gt;
 &lt;p&gt;================&lt;/p&gt;
 &lt;p&gt;ReadMe 请&lt;a href=&quot;https://github.com/xingoxu/hexo-theme-paper-white&quot;&gt;移步&lt;/a&gt;&lt;/p&gt;
@@ -2863,9 +2800,9 @@ description:
 	}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1&gt;embed gist&lt;/h1&gt;
-&lt;p&gt;&amp;lt;script src=&quot;https://gist.github.com/xingoxu/9ef5d5a262f796daad94.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;jsfiddle&lt;/h1&gt;
-&lt;p&gt;&amp;lt;script async src=&quot;//jsfiddle.net/pq98medb/1/embed/js,html,css,result/dark/&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;table&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2901,7 +2838,7 @@ description:
 &lt;li&gt;增加用户尾巴&lt;/li&gt;
 &lt;li&gt;头像/表情转换成https&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;多说现有问题&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;稳定版不能切换表情&lt;/li&gt;
@@ -2956,8 +2893,8 @@ description:
 所有歌曲的专辑皆以动画发布的歌曲专辑优先，歌手自己的专辑将不包括在这次整理中
 提示输入密码的话，所有密码均为：xingo
 如果无法下载，又或者是因为疏忽编辑错误，又或者是发现了某资源的无损版本，请立刻在微博上&lt;a href=&quot;http://weibo.com/pokemonxu/&quot;&gt;@xingo&lt;/a&gt;
-专辑来源来自互联网，非常感谢各位署名的不署名的分享！如果在这里找到自己的资源需要注明的话请与我联系我会立刻加上！
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+专辑来源来自互联网，非常感谢各位署名的不署名的分享！如果在这里找到自己的资源需要注明的话请与我联系我会立刻加上！&lt;/p&gt;
+
 &lt;h1&gt;主题曲类&lt;/h1&gt;
 &lt;h2&gt;op类&lt;/h2&gt;
 &lt;h3&gt;立ち上がリーヨ（1话 - 26话）（所属专辑：单曲专辑、TV音乐精选集）&lt;/h3&gt;
@@ -3378,7 +3315,7 @@ JAN 4942463622725
 [EAC] [100526] イナズマイレブン テレビアニメ 熱血サントラ! 第2巻 (ape＋cue CDのみ)[100623].rar 430M
 http://tora.to/blog/420397.htm&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;下载地址&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;(115)http://115.com/lb/5lbafbm6zf2j
@@ -3453,7 +3390,7 @@ WEB価格 ：　2300 円（税込）　
 (微盘)http://vdisk.weibo.com/s/APlR9kfn1Vzw
 (360云盘)http://yunpan.cn/Q7fx6CIdf5Pi5 提取码 f438&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ape+cue下载地址（不带BK）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;(115)http://115.com/lb/5lbcmv8laakf
@@ -3511,8 +3448,8 @@ JAN 4942463622978
 所有歌曲的专辑皆以动画发布的歌曲专辑优先，歌手自己的专辑将不包括在这次整理中
 提示输入密码的话，所有密码均为：xingo（只是为了不被各大网盘屏蔽篡改）
 如果无法下载，又或者是因为疏忽编辑错误，又或者是发现了某资源的无损版本，请立刻在微博上&lt;a href=&quot;http://weibo.com/pokemonxu/&quot;&gt;@xingo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;专辑来源来自互联网，非常感谢各位署名的不署名的分享！由于整理时头晕眼花恕不能全部加上来源（基本都附在压缩包的注释内），如果在这里找到自己的资源需要注明的话请与我联系我会立刻加上！
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+&lt;p&gt;专辑来源来自互联网，非常感谢各位署名的不署名的分享！由于整理时头晕眼花恕不能全部加上来源（基本都附在压缩包的注释内），如果在这里找到自己的资源需要注明的话请与我联系我会立刻加上！&lt;/p&gt;
+
 &lt;h1&gt;主题曲类&lt;/h1&gt;
 &lt;h2&gt;op类&lt;/h2&gt;
 &lt;h3&gt;GO1&lt;/h3&gt;
@@ -3579,8 +3516,8 @@ T-Pistonz + KMC&lt;/p&gt;
 (微盘)http://vdisk.weibo.com/s/APlR9kfmR3Bc
 (360云盘)http://yunpan.cn/Q7JcPfwZLRndI  提取码 d6e1&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;lt;span id=&quot;op3-4&quot; /&amp;gt;&lt;/p&gt;
-&lt;h4&gt;おはよう！シャイニング·デイ（第34话~第45话） / 打ち砕ーくっ！（第46话~第47话）（所属专辑：单曲专辑）&lt;/h4&gt;
+&lt;span&gt;
+#### おはよう！シャイニング·デイ（第34话~第45话） / 打ち砕ーくっ！（第46话~第47话）（所属专辑：单曲专辑）
 &lt;p&gt;T-Pistonz+KMC - おはよう！シャイニング デイ／打ち砕ーくっ！
 価格     1050円(税込)
 発売日     2012/02/15
@@ -4621,7 +4558,7 @@ EAN： 4988064550296&lt;/p&gt;
 (微盘)http://vdisk.weibo.com/s/APlR9kfmRq-P
 (360云盘)http://yunpan.cn/Q7HJuJQd38csX  提取码 7b96&lt;/p&gt;
 &lt;/blockquote&gt;
-</content:encoded></item><item><title>Synology NASに自宅で録画サーバーを立てました</title><link>https://blog.xingoxu.com/ja/2019/05/2019-05-16-record-jp-digital-tv-on-nas/</link><guid isPermaLink="true">https://blog.xingoxu.com/ja/2019/05/2019-05-16-record-jp-digital-tv-on-nas/</guid><description>
+&lt;/span&gt;</content:encoded></item><item><title>Synology NASに自宅で録画サーバーを立てました</title><link>https://blog.xingoxu.com/ja/2019/05/2019-05-16-record-jp-digital-tv-on-nas/</link><guid isPermaLink="true">https://blog.xingoxu.com/ja/2019/05/2019-05-16-record-jp-digital-tv-on-nas/</guid><description>
 # なぜNASに
 
 NASを持ってる方多いと思いますし、NASは24時間起動してるので、新しいデバイス買わなく節電できて録画サービスを任せろう。
@@ -4692,7 +4629,7 @@ NASを持ってる方多いと思いますし、NASは24時間起動してるの
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;注意&lt;/h1&gt;
 &lt;p&gt;記事書く時点だけの有効性を保証します、エンドユーザー、コンピュータ初心者向けではない。
 以下の手順は全て自己責任で、何かしらの問題が発生しても自力で対処できる方のみ実行してください。
@@ -4871,7 +4808,7 @@ pm2-runtime processes.json &amp;gt; /dev/null
 &lt;h2&gt;録画後のトランスコード&lt;/h2&gt;
 &lt;p&gt;録画したファイルは大きな生TS、 大体 x86 アーキテクチャの NAS はハードウェアアクセラレーションついてるので、速いスピードでmp4にトランスコードして、どこでも見れるコーデックにしながら、ファイルサイズも小さくさせる。&lt;/p&gt;
 &lt;p&gt;注意するべきのはDockerにvaapi（Intel CPUのハードウェアアクセラレーション）を使うと、rootの権限でアプリを走らないと行けない（&lt;code&gt;/dev/dri/renderD128&lt;/code&gt;をアクセスために）&lt;/p&gt;
-&lt;p&gt;だがこうすると、録画したファイルはrootが所有者になって、他のアプリの編集は出来ないので、録画後、トランスコードした後、chownを走らせましょう。&lt;/p&gt;
+&lt;p&gt;だがこうすると、録画したファイルはrootが所有者になって、他のアプリの編集は出来ないので、録画後、トランスコードした後、chownを走らせましょう。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ chown &amp;lt;uid&amp;gt;:&amp;lt;gid&amp;gt; &amp;lt;/path/to/file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;ffmpegのパラメーターも共有しますが、自分のニーズをあわせて公式ドキュメントを参照して調整できます。&lt;/p&gt;
@@ -5044,7 +4981,7 @@ for mediafile in $(find /path/to/record/folder -maxdepth 1 -type f -mmin -&amp;l
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;Web にもうすぐ使えるもの / 新Web API / 新 JavaScript API など&lt;/h1&gt;
 &lt;h2&gt;Chrome Only (w3cにまだ書いてない)&lt;/h2&gt;
 &lt;ul&gt;
@@ -5200,13 +5137,7 @@ Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O �
 &lt;h1&gt;その他&lt;/h1&gt;
 &lt;p&gt;他のパフォーマンスユースケース、ノウハウ、Web内容はここへ
 https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- Google 的架构建议&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;为不断发展的Web API而设计程序&lt;/li&gt;
-&lt;li&gt;避免惩罚新浏览器（polyfill等）&lt;/li&gt;
-&lt;li&gt;持续服务器缓存，保持高CDN命中率&lt;/li&gt;
-&lt;li&gt;避免重大修改并增强现有工具 --&amp;gt;&lt;/li&gt;
-&lt;/ol&gt;
+
 </content:encoded></item><item><title>2024 ANA SFC 修行</title><link>https://blog.xingoxu.com/ja/2024/06/2024-ana-sfc/</link><guid isPermaLink="true">https://blog.xingoxu.com/ja/2024/06/2024-ana-sfc/</guid><description>
 いろんな都合で 2024 では有給が61日になってきまして、もちろん今年使わず、来年まで伸ばしてくれることもできるが、
 さらにいろんな都合で年始の時に[ANAコイン交換キャンペーン](https://www.ana.co.jp/ja/jp/mycampaign/mile-skycoin24-02/)があって、
@@ -5217,7 +5148,7 @@ https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/p&g
 さらにいろんな都合で年始の時に&lt;a href=&quot;https://www.ana.co.jp/ja/jp/mycampaign/mile-skycoin24-02/&quot;&gt;ANAコイン交換キャンペーン&lt;/a&gt;があって、
 セゾンのdポイントルートがなくなってGポイントルートも開通できてないため、行き先がないポイントたち全部このキャンペーンにぶち込んでまして、
 かつJALの上級会員はもうかなり入りづらくなりましたので、修行を余儀なく実行したいと思います。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;修行の時期&lt;/h1&gt;
 &lt;p&gt;修行はいつ頃かというと年始は一番いいと思いますし、いろんな記事も見かけましたがローシーズンで 7円/PP ができそうが、夏季はみんな出かけたいのでそこそこ高いと気がします。路線ごとも時期違うけど、次だというと6月と9月は台風でベストかと思います。そしても少し見てきまして、確かに9月の沖縄路線は片道 11,000 円台で抑えるできそう。&lt;/p&gt;
 &lt;p&gt;けどもうしょうがなくて、一人一人修行可能の時間も違うし、私自身はなるべく8/31まで修行終わらせたいと思ってますのでその時期に探してました。&lt;/p&gt;
@@ -5288,167 +5219,167 @@ PP単価が10円以下となると一応払わず予約だけでもして、そ�
 &lt;p&gt;1話ラストで未来へ行ってしまって以来、完結編の最後に至っても2014年の東京、千葉の景色が再度登場することはありませんでした
 なお本作品の舞台には高校や閑静な住宅街を含みます。もし訪問される際は現地の方へ最大限配慮して行動されるようお願いしたく思います。&lt;/p&gt;
 &lt;h1&gt;千葉県習志野市&lt;/h1&gt;
-&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v6ybw31j21hc0u0kjt.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73zuchj21kw0y5kjp.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;通学路のカーブ&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v6ybw31j21hc0u0kjt.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73zuchj21kw0y5kjp.jpg&quot; alt=&quot;通学路のカーブ&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;通学路のカーブ&lt;/div&gt;
 &lt;p&gt;津田沼サイクルなくなった、リニューアル中みたいです、グーグルマップによる去年まだあるらしい、残念&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/seichi.css&quot;&amp;gt;&amp;lt;!-- more --&amp;gt;
-&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v74bns8j21hc0u0u15.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73nt2sj21kw121e84.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;滑り台の公園&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v78ihtxj21hc0u07wp.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v71em5qj21kw108npd.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;小高商店信号機&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7hhi18j21hc0u0npl.jpg&quot; alt=&quot;小高商店&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7dvctbj21j515de82.jpg&quot; alt=&quot;小高商店&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;小高商店&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v74bns8j21hc0u0u15.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v73nt2sj21kw121e84.jpg&quot; alt=&quot;滑り台の公園&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;滑り台の公園&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v78ihtxj21hc0u07wp.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v71em5qj21kw108npd.jpg&quot; alt=&quot;小高商店信号機&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;小高商店信号機&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7hhi18j21hc0u0npl.jpg&quot; alt=&quot;小高商店&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8v7dvctbj21j515de82.jpg&quot; alt=&quot;小高商店&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;小高商店&lt;/div&gt;
 &lt;p&gt;小高商店もなくなった、調べたら2013年の時駅周辺改造のため、本当残念&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvggz6j21hc0u04qx.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcrsid5j21kw0xb7wk.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;津田沼駅5番線&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvggz6j21hc0u04qx.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcrsid5j21kw0xb7wk.jpg&quot; alt=&quot;津田沼駅5番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;津田沼駅5番線&lt;/div&gt;
 &lt;p&gt;07:12の三鷹行き電車と07:15の中野行き非津田沼駅始発電車はない、仕様もアニメのものではない。&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcpd680j21kw13fqv5.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;津田沼駅4番線&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcpd680j21kw13fqv5.jpg&quot; alt=&quot;津田沼駅4番線&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;津田沼駅4番線&lt;/div&gt;
 &lt;p&gt;作中では5番線になっているが実際描かれていたのは4番線からの景色。でも左端に写っているユザワヤの広告は５番線の広告。&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/05/13/5af80ae8da67b.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;津田沼駅5番線の広告&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8vcvkz1bj21hc0u0b2h.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/05/13/5af80ae8da67b.jpg&quot; alt=&quot;津田沼駅5番線の広告&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;津田沼駅5番線の広告&lt;/div&gt;
 &lt;h1&gt;東京都笹塚&lt;/h1&gt;
 &lt;p&gt;これからは主人公追われた景色。大体一緒です。&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypiy343j21hc0u0e89.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yphw1vrj21kw17pqv9.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;富士見丘高校前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypuq4ilj21hc0u0e89.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yprlci2j21kw0zz4qs.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;電気屋前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yq0qqmdj21hc0u0x6w.jpg&quot; alt=&quot;松屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypt0zd0j21kw15cu0z.jpg&quot; alt=&quot;松屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;松屋前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypym75nj21hc0u0e89.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypwxe3bj21kw0vxb2b.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;みのん歯科医院前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9psyzj21hc0u0kjt.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9386bj21kw1634qr.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;お茶屋前&amp;lt;/div&amp;gt;
-TDKからalbaになっちゃった、多分も大昔の事&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrjdl0nj21hc0u0he1.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yres6h2j21kw0x2u11.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;栄湯の脇&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrmijcgj21hc0u0e89.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrlen9dj21kw16ohdw.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号 不動産屋前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vhnh93jj21hc0u0u14.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vid1c5ij23402454qw.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrwh3lyj21hc0u01l5.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrqaqqvj21kw0rz7wk.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vjz73pqj21hc0u07wp.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vkbwy2aj22c00sab2a.jpg&quot; alt=&quot;国道20号&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;国道20号&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu1hgwgj21hc0u0b2h.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ytgi9rnj21kw16ox6s.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;笹塚交差点 DARUMA前&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypiy343j21hc0u0e89.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yphw1vrj21kw17pqv9.jpg&quot; alt=&quot;富士見丘高校前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;富士見丘高校前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypuq4ilj21hc0u0e89.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yprlci2j21kw0zz4qs.jpg&quot; alt=&quot;電気屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;電気屋前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8yq0qqmdj21hc0u0x6w.jpg&quot; alt=&quot;松屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypt0zd0j21kw15cu0z.jpg&quot; alt=&quot;松屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;松屋前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypym75nj21hc0u0e89.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr8ypwxe3bj21kw0vxb2b.jpg&quot; alt=&quot;みのん歯科医院前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;みのん歯科医院前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9psyzj21hc0u0kjt.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yr9386bj21kw1634qr.jpg&quot; alt=&quot;お茶屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;お茶屋前&lt;/div&gt;
+TDKからalbaになっちゃった、多分も大昔の事
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrjdl0nj21hc0u0he1.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yres6h2j21kw0x2u11.jpg&quot; alt=&quot;栄湯の脇&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;栄湯の脇&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrmijcgj21hc0u0e89.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrlen9dj21kw16ohdw.jpg&quot; alt=&quot;国道20号 不動産屋前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号 不動産屋前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vhnh93jj21hc0u0u14.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr9vid1c5ij23402454qw.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrwh3lyj21hc0u01l5.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yrqaqqvj21kw0rz7wk.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vjz73pqj21hc0u07wp.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fr9vkbwy2aj22c00sab2a.jpg&quot; alt=&quot;国道20号&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;国道20号&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu1hgwgj21hc0u0b2h.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ytgi9rnj21kw16ox6s.jpg&quot; alt=&quot;笹塚交差点 DARUMA前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;笹塚交差点 DARUMA前&lt;/div&gt;
 &lt;p&gt;だるま 2013 年閉店ですが、他の施設ちゃんと合った。&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucd8gxj21hc0u04qx.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu0t3xrj21kw151hdv.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;笹塚交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhfjedj21hc0u0e89.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu5ays1j21kw13mnpe.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;笹塚交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhws22j21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucijqmj21kw1umnph.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv6tavtj21hc0u0qvc.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvag3s3j21kw14bx6t.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucd8gxj21hc0u04qx.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu0t3xrj21kw151hdv.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;笹塚交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhfjedj21hc0u0e89.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yu5ays1j21kw13mnpe.jpg&quot; alt=&quot;笹塚交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;笹塚交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yuhws22j21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yucijqmj21kw1umnph.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv6tavtj21hc0u0qvc.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvag3s3j21kw14bx6t.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;難易度高くなった&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvs0kenj21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv3hcd2j21kw23v7wj.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvs0kenj21hc0u07wp.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv3hcd2j21kw23v7wj.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;高架の電車はどこでも取れないから、ちょっと遠いから取ったけど、良くないね&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvuux58j21hc0u0u14.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv73ha9j20o20eudri.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架の鉄道&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvypfwhj21hc0u0he1.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvw28eoj21kw1kunph.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvuux58j21hc0u0u14.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yv73ha9j20o20eudri.jpg&quot; alt=&quot;高架の鉄道&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架の鉄道&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvypfwhj21hc0u0he1.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yvw28eoj21kw1kunph.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;ヴァリアンサーを生産している中◯屋工場です&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywfvp14j21hc0u0b2h.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywiii13j21kw12tu10.jpg&quot; alt=&quot;高架下&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;高架下&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywfvp14j21hc0u0b2h.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywiii13j21kw12tu10.jpg&quot; alt=&quot;高架下&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;高架下&lt;/div&gt;
 &lt;p&gt;大山交差点周りは今までと違ってあまり実際の景色に忠実ではない様子。看板や窓の形など、細かいパーツが一致する程度でしかありませんでした。&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsysjhj21hc0u0e89.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsbvdpj21kw16oqv7.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxg5vp6j21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yx5v5kej21kw16ob2b.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxhyrcfj21hc0u04qx.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yyb62p3j20n00eagv4.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz7327tj21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz1jo80j21kw16o1l0.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大山交差点&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsysjhj21hc0u0e89.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8ywsbvdpj21kw16oqv7.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxg5vp6j21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yx5v5kej21kw16ob2b.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yxhyrcfj21hc0u04qx.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yyb62p3j20n00eagv4.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz7327tj21hc0u0b2h.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7ely1fr8yz1jo80j21kw16o1l0.jpg&quot; alt=&quot;大山交差点&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大山交差点&lt;/div&gt;
 &lt;p&gt;ここまで全部終わりました、ちなみに主人公の家は本当に存在している、個人宅なので掲載はしません、興味があれば訪れる時絶対迷惑かけないように&lt;/p&gt;
 &lt;p&gt;最後までご閲覧いただきありがとうございました。&lt;/p&gt;
 &lt;p&gt;Google Maps：https://drive.google.com/open?id=1fTiF9I8exv6jFB-86H49elu6EntfaA1q&amp;amp;usp=sharing&lt;/p&gt;
@@ -5456,7 +5387,7 @@ TDKからalbaになっちゃった、多分も大昔の事&lt;/p&gt;
 資料を調べる際に、CLS の存在を知りました。エンジニアリングで結構いいデカップリングのやり方と感じまして、シェアしたいと思います。
 
 </description><pubDate>Mon, 29 Jun 2020 19:48:05 GMT</pubDate><content:encoded>&lt;p&gt;資料を調べる際に、CLS の存在を知りました。エンジニアリングで結構いいデカップリングのやり方と感じまして、シェアしたいと思います。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;シチュエーション&lt;/h1&gt;
 &lt;p&gt;ブラウザか、サーバーのNode.jsか、どっちでもエラーハンドリング、ユーザートラッキングのニーズは日常茶飯事。例えユーザーを特定しなくても、id をつけて、ユーザーの行為を追跡して、エラーの再現にも重要し、プロダクトの改善にも役たちます。&lt;/p&gt;
 &lt;p&gt;仮に今エラーハンドリングを書こうと思って、このエラーハンドリングはすべてのエラーを処理しますが、どのリクエストから生み出したエラーを知りたいと&lt;/p&gt;
@@ -5526,8 +5457,8 @@ function log(...args) {
 &lt;h3&gt;この方法は残念なところがあります&lt;/h3&gt;
 &lt;p&gt;考えてみましょう、 &lt;code&gt;Zone.js&lt;/code&gt; はどうやってこれを実現しました。ブラウザは呼び出しに対して唯一の識別子を提供するAPIがなければ、すべての非同期関数をリライトしかできなく、そうすれば非同期が入る時と出る時 hook できて、この効果が実装できますね。&lt;/p&gt;
 &lt;p&gt;自分も書いてみました。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- https://gist.github.com/xingoxu/58f8f7faa83732ec922fcd38299f3283 --&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;script src=&quot;https://gist.github.com/xingoxu/58f8f7faa83732ec922fcd38299f3283.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+
+
 &lt;p&gt;また問題なさそうだけど、&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/angular/angular/issues/31730&quot;&gt;angular with tsconfig target ES2017 async/await will not work with zone.js&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;ブラウザ今では完璧の解決方法はありません&lt;/h4&gt;
@@ -5563,8 +5494,8 @@ test() instanceof _promise
 &lt;p&gt;性能に関する問題はここは展開しない、コードの低結合と少しパフォーマンスの低下を交換するかしないかによりますね。&lt;/p&gt;
 &lt;h3&gt;使い方&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;async_hooks&lt;/code&gt; は &lt;code&gt;createHook&lt;/code&gt; という関数を提供した、これが非同期関数のライフサイクルに hook できます、しかも唯一識別子も提供してくれますので、CLS を簡単に作れます。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- https://gist.github.com/xingoxu/590e7f99658ea160b1f77cdb4e956637 --&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;script src=&quot;https://gist.github.com/xingoxu/590e7f99658ea160b1f77cdb4e956637.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+
+
 &lt;h3&gt;Node.js バージョン 13 からオフィシャルの実装も&lt;/h3&gt;
 &lt;p&gt;コミュニティの中でたくさんの CLS ライブラリーがあった上に、Node.js 13.10 から &lt;code&gt;AsyncLocalStorage&lt;/code&gt; の API がありました。&lt;/p&gt;
 &lt;p&gt;https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage&lt;/p&gt;
@@ -5633,22 +5564,7 @@ new Array(10).fill(0).forEach((_, i) =&amp;gt; fetch(&apos;http://localhost:3000
 &lt;li&gt;&lt;a href=&quot;https://shanyue.tech/node/cls.html#async-hooks&quot;&gt;使用 async_hooks 监听异步资源的生命周期&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://blog.xizhibei.me/2018/04/07/distributed-tracing/&quot;&gt;分布式追踪&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>日本語ブログ始動</title><link>https://blog.xingoxu.com/ja/2017/08/hello-jp-world/</link><guid isPermaLink="true">https://blog.xingoxu.com/ja/2017/08/hello-jp-world/</guid><description>
-こんにちわ、はじめまして、こちらは xingo さんの日本語ブログ！
-
-日本語まだ下手です、どうぞ、お気軽いに指導します、よろしくお願いします！
-
-さて、このブログですが、まずはどのようなものかご説明したいと思います。
-
-- xingo さんの技術相関
-- xingo さんの作品
-- xingo さんの日常生活
-- xingo さんの旅行
-
-このような感じで本番までお付き合いいただけたら幸いです
-
-では、また次回
-</description><pubDate>Sat, 26 Aug 2017 16:55:10 GMT</pubDate><content:encoded>&lt;p&gt;こんにちわ、はじめまして、こちらは xingo さんの日本語ブログ！&lt;/p&gt;
+</content:encoded></item><item><title>日本語ブログ始動</title><link>https://blog.xingoxu.com/ja/2017/08/hello-jp-world/</link><guid isPermaLink="true">https://blog.xingoxu.com/ja/2017/08/hello-jp-world/</guid><pubDate>Sat, 26 Aug 2017 16:55:10 GMT</pubDate><content:encoded>&lt;p&gt;こんにちわ、はじめまして、こちらは xingo さんの日本語ブログ！&lt;/p&gt;
 &lt;p&gt;日本語まだ下手です、どうぞ、お気軽いに指導します、よろしくお願いします！&lt;/p&gt;
 &lt;p&gt;さて、このブログですが、まずはどのようなものかご説明したいと思います。&lt;/p&gt;
 &lt;ul&gt;
@@ -5666,7 +5582,7 @@ new Array(10).fill(0).forEach((_, i) =&amp;gt; fetch(&apos;http://localhost:3000
 
 </description><pubDate>Wed, 01 Jul 2020 18:59:40 GMT</pubDate><content:encoded>&lt;p&gt;皆さん開発の時ほとんど macOS を使ってるんでしょうか、だが macOS のファイル名はケースインセンシティブ（大小文字は区別しない）。つまり同じフォルダ下に &lt;code&gt;package.json&lt;/code&gt; と &lt;code&gt;packagE.json&lt;/code&gt; は一緒にいられない。&lt;/p&gt;
 &lt;p&gt;ほとんどの人は知ってるかにもかかわらず、あまりこれに注意を払ってないのではないかなと思って、だってみんなの母語は英語ではないし、インポートの際は intelliSense も結構賢く補足してもらってるので、あんまりここに転んだことはないと思います。転んでもすぐ忘れるんだろう。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;よく会った問題はこれです👇&lt;/p&gt;
 &lt;h1&gt;Linux でデプロイ時にモジュールは見つからない&lt;/h1&gt;
 &lt;p&gt;多分誰がメモ帳で書いたコード&lt;/p&gt;
@@ -5739,8 +5655,8 @@ https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js#L9
 </description><pubDate>Thu, 28 Sep 2017 18:03:55 GMT</pubDate><content:encoded>&lt;h1&gt;Cookie&lt;/h1&gt;
 &lt;p&gt;昔のやり方は、Cookie に直接保存する。サーバーストレージはまだそんな安いの状況下で、たくさんのウェブサイトはユーザーの登録そういうインフォメーションを変化してサインして Cookie に保存する。&lt;/p&gt;
 &lt;p&gt;変化やサインは、md5+salt、または secret を使って双方向の暗号化するとかの方法。&lt;/p&gt;
-&lt;p&gt;ウェブサイトに二回アクセスとしたら、Cookieに指定のkeyのvalueを検証する、それはただしかどうか。
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+&lt;p&gt;ウェブサイトに二回アクセスとしたら、Cookieに指定のkeyのvalueを検証する、それはただしかどうか。&lt;/p&gt;
+
 &lt;p&gt;こうやっていいところは：
 サーバーストレージ占有なし、Cookie はユーザーの情報です&lt;/p&gt;
 &lt;p&gt;こうやって悪いところは：
@@ -5782,7 +5698,7 @@ JWT（JSON Web Token） 情報をクライエントサイドに保存すると�
 最近 Serverless を触ってみましてあるサイトを作ってみました、ってすごく便利で爆速でウェブを作れて、一番なのはNuxt.jsと相性良くてサーバーとフロントエンドが纏まって管理めっちゃ安くなったので紹介したいと思います。
 
 </description><pubDate>Sun, 21 Jun 2020 15:52:35 GMT</pubDate><content:encoded>&lt;p&gt;最近 Serverless を触ってみましてあるサイトを作ってみました、ってすごく便利で爆速でウェブを作れて、一番なのはNuxt.jsと相性良くてサーバーとフロントエンドが纏まって管理めっちゃ安くなったので紹介したいと思います。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;Serverless なにそれ？&lt;/h1&gt;
 &lt;p&gt;一言いうと Cloud Function + Object Storage + Cloud Database + API Gateway and more by Cloud Service Provider. 簡単にいうと Serverless というとある OSS フレームワークが AWS/Azure/GCP などクラウドサービスを一つの設定ファイルにまとめて、バックエンドもいらずサーバーを立てる。&lt;/p&gt;
 &lt;p&gt;メリットとしては：&lt;/p&gt;
@@ -6104,7 +6020,7 @@ Vue.$serverGetCurrency = (context: Context) =&amp;gt; {
 &lt;/blockquote&gt;
 &lt;h2&gt;コスト&lt;/h2&gt;
 &lt;p&gt;さっきまだコストを省けると言ったのに、それなぜまた問題と視されますか？&lt;/p&gt;
-&lt;p&gt;クラウドサービスプラットフォーム、ベーシックサービスを提供しながら、インフラ、自動スケーリング、フレンドリーインターフェイスも提供し、そんなにいいこと無料のわけがない。最初に一年無料、従量制課金の後ろは、他のサービスを同梱して一緒に課金しちゃうと、価格に対して敏感ではない人を「騙す」&lt;/p&gt;
+&lt;p&gt;クラウドサービスプラットフォーム、ベーシックサービスを提供しながら、インフラ、自動スケーリング、フレンドリーインターフェイスも提供し、そんなにいいこと無料のわけがない。最初に一年無料、従量制課金の後ろは、他のサービスを同梱して一緒に課金しちゃうと、価格に対して敏感ではない人を「騙す」&lt;/p&gt;
 &lt;p&gt;Serverless と従来のサーバーを直接で比較することはできない、ただ、AWS の API Gateway 百万回 $3.5の料金は高くない？DDNSを受けたら、お家飛んできそうよ。&lt;/p&gt;
 &lt;p&gt;$5では vultr 買えます、しかも無限トラフィック、安定してるリソース、サービスがでかくなったらコスト的には絶対勝つと思います。&lt;/p&gt;
 &lt;h2&gt;クラウドサービスプラットフォームに対しての依存性&lt;/h2&gt;
@@ -6146,7 +6062,7 @@ Vue.$serverGetCurrency = (context: Context) =&amp;gt; {
 &lt;li&gt;ミュート&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;使う時実際起こった問題を書きました。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;アプリを作ります&lt;/h1&gt;
 &lt;p&gt;まずここで https://apps.twitter.com/ チュートリアルに従ってアプリを作って、アプリの key と secret を取得します。&lt;/p&gt;
 &lt;h1&gt;Account Activity API を申請します&lt;/h1&gt;
@@ -6259,7 +6175,7 @@ module: {
 +   },
     ...
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;.ts のファイルを ts-loader で読み込む
 &lt;code&gt;appendTsSuffixTo&lt;/code&gt;は vue を module として tsc でプロセスして、module not found の問題を解決する（tsc は .vue ファイルが知らない）&lt;/p&gt;
 &lt;h2&gt;.d.ts ファイルを作成する&lt;/h2&gt;
@@ -6408,8 +6324,8 @@ module: {
 &lt;p&gt;最後まで閲覧いただきありがとうございました。&lt;/p&gt;
 </content:encoded></item><item><title>Java学习笔记1</title><link>https://blog.xingoxu.com/2015/09/java-learningnotes-1/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/09/java-learningnotes-1/</guid><description>
 随便记的
-</description><pubDate>Tue, 15 Sep 2015 20:51:16 GMT</pubDate><content:encoded>&lt;p&gt;随便记的
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+</description><pubDate>Tue, 15 Sep 2015 20:51:16 GMT</pubDate><content:encoded>&lt;p&gt;随便记的&lt;/p&gt;
+
 &lt;h1&gt;部署与安装&lt;/h1&gt;
 &lt;h2&gt;三步：&lt;/h2&gt;
 &lt;ol&gt;
@@ -6464,185 +6380,185 @@ BD 出了一个月，略忙再加上 VCB 也没有出 rip，前天 rip 刚出于
 ![瀧去学校路上](https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd1jphpxj21kw23vb2a.jpg)&lt;/div&gt;
 &lt;div&gt;新宿站前路&lt;/div&gt;</description><pubDate>Sat, 26 Aug 2017 13:02:06 GMT</pubDate><content:encoded>&lt;p&gt;BD 出了一个月，略忙再加上 VCB 也没有出 rip，前天 rip 刚出于是赶紧下载了来做整理啦&lt;/p&gt;
 &lt;p&gt;靠着仅有的印象和网上的一些经验攻略，把东京几乎所有的场景都拍到了吧（大概）&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd2euzhtj21hc0u0b2h.jpg&quot; alt=&quot;第一次交换身体瀧去学校查手机地图&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd1sqchgj21kw23vb2b.jpg&quot; alt=&quot;第一次交换身体瀧去学校查手机地图&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿站&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/seichi.css&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd1xbjrpj21hc0u0x6w.jpg&quot; alt=&quot;瀧去学校路上&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd1jphpxj21kw23vb2a.jpg&quot; alt=&quot;瀧去学校路上&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿站前路&amp;lt;/div&amp;gt;&amp;lt;!-- more --&amp;gt;
-&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd2d2vh6j21hc0u0qvc.jpg&quot; alt=&quot;瀧去学校路上（東京や！）&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd23g4dij21kw16oe82.jpg&quot; alt=&quot;瀧去学校路上（東京や！）&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿站前路&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbmz0td8j21hc0u01l6.jpg&quot; alt=&quot;瀧去学校路上后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbm3fz0qj21kw16oqv6.jpg&quot; alt=&quot;瀧去学校路上后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿站全景（可在天桥上拍）&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fix34kkpjyj21hc0u0qvd.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fix34dnb9jj23402c04qr.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;西新宿 新宿警察署 夜晚&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd2mqd8wj21hc0u01l6.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd232dg3j21kw0uvhdt.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;西新宿 新宿警察署 白天&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd2euzhtj21hc0u0b2h.jpg&quot; alt=&quot;第一次交换身体瀧去学校查手机地图&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd1sqchgj21kw23vb2b.jpg&quot; alt=&quot;第一次交换身体瀧去学校查手机地图&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿站&lt;/div&gt;
+&lt;br /&gt;
+
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd1xbjrpj21hc0u0x6w.jpg&quot; alt=&quot;瀧去学校路上&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd1jphpxj21kw23vb2a.jpg&quot; alt=&quot;瀧去学校路上&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿站前路&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd2d2vh6j21hc0u0qvc.jpg&quot; alt=&quot;瀧去学校路上（東京や！）&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd23g4dij21kw16oe82.jpg&quot; alt=&quot;瀧去学校路上（東京や！）&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿站前路&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbmz0td8j21hc0u01l6.jpg&quot; alt=&quot;瀧去学校路上后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbm3fz0qj21kw16oqv6.jpg&quot; alt=&quot;瀧去学校路上后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿站全景（可在天桥上拍）&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fix34kkpjyj21hc0u0qvd.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fix34dnb9jj23402c04qr.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;西新宿 新宿警察署 夜晚&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd2mqd8wj21hc0u01l6.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwd232dg3j21kw0uvhdt.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;西新宿 新宿警察署 白天&lt;/div&gt;
 &lt;p&gt;这里非常丢人的拍错了角度，因为完全没看图😂
-&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf1cckc9j21hc0u0kjt.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf0r611qj21kw16ob2b.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿站 南口与中央东口之间的铁路桥下 白天&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf1e349nj21hc0u0kjt.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf18dalpj21kw23vx6r.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿站 南口与中央东口之间的铁路桥下 夜晚&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1rwwgkj21hc0u07wp.jpg&quot; alt=&quot;三叶代替瀧和前辈发展关系&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg0ubhtbj21kw16o7wj.jpg&quot; alt=&quot;三叶代替瀧和前辈发展关系&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;涉谷站 东急电铁入口 TATSUYA&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbo72i9mj21hc0u07wp.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbnf9sw0j21kw16o4qr.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;四谷站外&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9dm2p8j21hc0u0qvc.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf8koc6oj21950nzaxk.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;四谷站前广场&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwesmfu6rj21hc0u01l5.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwesdqq9gj21kw23vhdu.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;四谷站前广场&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbo03yauj21hc0u04qx.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbnkbx57j21kw23vb2b.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;四谷站前广场&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg21vktbj21hc0u07wp.jpg&quot; alt=&quot;前辈和瀧结束约会的地方 全剧也多次出现&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1rroymj21kw23vqv7.jpg&quot; alt=&quot;前辈和瀧结束约会的地方 全剧也多次出现&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;jr 信濃町站前天桥&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf1cckc9j21hc0u0kjt.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf0r611qj21kw16ob2b.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿站 南口与中央东口之间的铁路桥下 白天&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf1e349nj21hc0u0kjt.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf18dalpj21kw23vx6r.jpg&quot; alt=&quot;一段时间的交换身体&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿站 南口与中央东口之间的铁路桥下 夜晚&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1rwwgkj21hc0u07wp.jpg&quot; alt=&quot;三叶代替瀧和前辈发展关系&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg0ubhtbj21kw16o7wj.jpg&quot; alt=&quot;三叶代替瀧和前辈发展关系&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;涉谷站 东急电铁入口 TATSUYA&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbo72i9mj21hc0u07wp.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbnf9sw0j21kw16o4qr.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;四谷站外&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9dm2p8j21hc0u0qvc.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf8koc6oj21950nzaxk.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;四谷站前广场&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwesmfu6rj21hc0u01l5.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwesdqq9gj21kw23vhdu.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;四谷站前广场&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbo03yauj21hc0u04qx.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbnkbx57j21kw23vb2b.jpg&quot; alt=&quot;瀧第一次和前辈约会&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;四谷站前广场&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg21vktbj21hc0u07wp.jpg&quot; alt=&quot;前辈和瀧结束约会的地方 全剧也多次出现&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1rroymj21kw23vqv7.jpg&quot; alt=&quot;前辈和瀧结束约会的地方 全剧也多次出现&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;jr 信濃町站前天桥&lt;/div&gt;
 &lt;p&gt;桥上的这个路标牌实地并木有，但是却在六本木找到了一模一样的路牌，不是很清楚怎么回事&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbm32i2aj21hc0u04qx.jpg&quot; alt=&quot;瀧被前辈甩了单独在天桥&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwblheotsj21kw16onpe.jpg&quot; alt=&quot;瀧被前辈甩了单独在天桥&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;jr 信濃町站前天桥上&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9nzwjsj21hc0u01l5.jpg&quot; alt=&quot;被甩后的几处镜头 这个镜头全剧出现了两次&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf99pw2bj20nl0ik481.jpg&quot; alt=&quot;被甩后的几处镜头 这个镜头全剧出现了两次&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;jr 信濃町站对面&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwbm32i2aj21hc0u04qx.jpg&quot; alt=&quot;瀧被前辈甩了单独在天桥&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwblheotsj21kw16onpe.jpg&quot; alt=&quot;瀧被前辈甩了单独在天桥&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;jr 信濃町站前天桥上&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9nzwjsj21hc0u01l5.jpg&quot; alt=&quot;被甩后的几处镜头 这个镜头全剧出现了两次&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf99pw2bj20nl0ik481.jpg&quot; alt=&quot;被甩后的几处镜头 这个镜头全剧出现了两次&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;jr 信濃町站对面&lt;/div&gt;
 &lt;p&gt;全图是这样的：&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;center-img img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9he7b3j21kw23vkjm.jpg&quot; alt=&quot;jr 信濃町站对面&quot; /&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1ulinaj21hc0u0npl.jpg&quot; alt=&quot;被甩后的几处镜头&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1a803cj21kw16o1kz.jpg&quot; alt=&quot;被甩后的几处镜头&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;刚才天桥的后边&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9he7b3j21kw23vkjm.jpg&quot; alt=&quot;jr 信濃町站对面&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1ulinaj21hc0u0npl.jpg&quot; alt=&quot;被甩后的几处镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1a803cj21kw16o1kz.jpg&quot; alt=&quot;被甩后的几处镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;刚才天桥的后边&lt;/div&gt;
 &lt;p&gt;这里角度非常刁钻不是很好拍到，只能这样拍一下，全图如下：
-&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;center-img img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1g9v6qj21kw16oe83.jpg&quot; alt=&quot;天桥的后边&quot; /&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwesi9jegj21hc0u0e89.jpg&quot; alt=&quot;瀧画系守镇风景那一段的镜头&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwersryagj21kw16ohdv.jpg&quot; alt=&quot;瀧画系守镇风景那一段的镜头&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;明治神宫前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiweshteg1j21hc0u0e89.jpg&quot; alt=&quot;三叶来东京找瀧&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwerz363lj21kw23vqv6.jpg&quot; alt=&quot;三叶来东京找瀧&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;jr 代々木站&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5q68p6j21hc0u0he1.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg57dk0cj21kw23v7wj.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;赤坂見附駅 至四谷站 路上&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg68bzxuj21hc0u01l6.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5sbgtmj21kw23vu0z.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;赤坂見附駅 地铁出口&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiweslzvu6j21hc0u0he1.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwes8cxcuj21kw16o1kz.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;赤坂見附駅 至四谷站 （靠近四谷） 野球场旁边小路&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9j4x23j21hc0u0e89.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9377mzj21kw16o1kz.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;涉谷站旁天桥&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9iwr8aj21hc0u0b2h.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf8yt1tbj21kw23v7wk.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿中央东口前过天桥 南口过天桥广场 星巴克门口&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf1etfa9j21hc0u07wp.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf0qdlnyj21kw23vu0y.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;四谷三丁目站 四谷站 中间的新宿通路 往须贺神社方向&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1g9v6qj21kw16oe83.jpg&quot; alt=&quot;天桥的后边&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwesi9jegj21hc0u0e89.jpg&quot; alt=&quot;瀧画系守镇风景那一段的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwersryagj21kw16ohdv.jpg&quot; alt=&quot;瀧画系守镇风景那一段的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;明治神宫前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiweshteg1j21hc0u0e89.jpg&quot; alt=&quot;三叶来东京找瀧&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwerz363lj21kw23vqv6.jpg&quot; alt=&quot;三叶来东京找瀧&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;jr 代々木站&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5q68p6j21hc0u0he1.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg57dk0cj21kw23v7wj.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;赤坂見附駅 至四谷站 路上&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg68bzxuj21hc0u01l6.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5sbgtmj21kw23vu0z.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;赤坂見附駅 地铁出口&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiweslzvu6j21hc0u0he1.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwes8cxcuj21kw16o1kz.jpg&quot; alt=&quot;八年后瀧和前辈见面&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;赤坂見附駅 至四谷站 （靠近四谷） 野球场旁边小路&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9j4x23j21hc0u0e89.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9377mzj21kw16o1kz.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;涉谷站旁天桥&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf9iwr8aj21hc0u0b2h.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf8yt1tbj21kw23v7wk.jpg&quot; alt=&quot;八年后 与前辈约会结束后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿中央东口前过天桥 南口过天桥广场 星巴克门口&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf1etfa9j21hc0u07wp.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf0qdlnyj21kw23vu0y.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;四谷三丁目站 四谷站 中间的新宿通路 往须贺神社方向&lt;/div&gt;
 &lt;p&gt;这里标注一下三个标志在哪 😂 间隔非常远
-&amp;lt;br /&amp;gt;
-&amp;lt;div class=&quot;center-img img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf4tbu88j21kw23ux6p.jpg&quot; alt=&quot;动画中的三个标志的位置&quot; /&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1tucs9j21hc0u0x6w.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg128dhwj21kw16okjn.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;四谷四丁目 路口&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg6f7rd1j21hc0u0u14.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5pvutaj21kw23vkjm.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;jr新宿站 南口&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf15din3j21hc0u04qx.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf0g51fij21kw16o4qr.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;jr 信濃町站对面&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg6fhfhnj21hc0u0qvd.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5vl7jxj21kw23vx6q.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿通路 去 须贺神社 的小路&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwgaaomadj21hc0u0he1.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9jlbylj21kw23ve83.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿通路 去 须贺神社 的小路&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwga6n8cxj21hc0u01l6.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9qqr04j21kw23vhdv.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;须贺神社前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwga2gnhnj21hc0u0u15.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9ptj31j21kw23vkjn.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;须贺神社前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwga9mg3dj21hc0u0u15.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9pzc9qj21kw23v7wk.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;须贺神社前&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;
-完结~&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf4tbu88j21kw23ux6p.jpg&quot; alt=&quot;动画中的三个标志的位置&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg1tucs9j21hc0u0x6w.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg128dhwj21kw16okjn.jpg&quot; alt=&quot;jr上发现对方后的镜头&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;四谷四丁目 路口&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg6f7rd1j21hc0u0u14.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5pvutaj21kw23vkjm.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;jr新宿站 南口&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf15din3j21hc0u04qx.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwf0g51fij21kw16o4qr.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;jr 信濃町站对面&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg6fhfhnj21hc0u0qvd.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg5vl7jxj21kw23vx6q.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿通路 去 须贺神社 的小路&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwgaaomadj21hc0u0he1.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9jlbylj21kw23ve83.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿通路 去 须贺神社 的小路&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwga6n8cxj21hc0u01l6.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9qqr04j21kw23vhdv.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;须贺神社前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwga2gnhnj21hc0u0u15.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9ptj31j21kw23vkjn.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;须贺神社前&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwga9mg3dj21hc0u0u15.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1fiwg9pzc9qj21kw23v7wk.jpg&quot; alt=&quot;最后互相寻找对方&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;须贺神社前&lt;/div&gt;
+&lt;br /&gt;
+完结~
 </content:encoded></item><item><title>寿屋 李小狼 1/7</title><link>https://blog.xingoxu.com/2017/04/kotobukiya-syaoran/</link><guid isPermaLink="true">https://blog.xingoxu.com/2017/04/kotobukiya-syaoran/</guid><description>
 &amp;gt; [bgm 人物介绍](https://bgm.tv/character/6527)
 &amp;gt; 
@@ -6662,7 +6578,7 @@ BD 出了一个月，略忙再加上 VCB 也没有出 rip，前天 rip 刚出于
 &lt;/blockquote&gt;
 &lt;p&gt;コトブキヤ ARTFX J カードキャプターさくら 李小狼 1/7 スケール PVC 製 塗装済み完成品フィギュア&lt;/p&gt;
 &lt;p&gt;壽屋&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;「見つけた。『クロウカード』の気配だ。」&lt;/p&gt;
 &lt;p&gt;壽屋『カードキャプターさくら』フィギュアシリーズ第二弾!
 今でも絶大な人気を誇る名作『カードキャプターさくら』より、「李小狼」が ARTFX J シリーズで登場!&lt;/p&gt;
@@ -6699,7 +6615,7 @@ CLAMP のイラストを元に、戦闘用の装束を身にまとった姿を�
 &lt;blockquote&gt;
 &lt;p&gt;web开发，请选择 macOS与macbook pro&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;上两张购买图&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/04/11/58ec53869fecd.png&quot; alt=&quot;apple订单&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/04/11/58ec5386c1a70.png&quot; alt=&quot;微软订单&quot; /&gt;&lt;/p&gt;
@@ -6815,7 +6731,7 @@ mbp 四个type-c&lt;/p&gt;
 
 </description><pubDate>Wed, 01 Jul 2020 18:59:40 GMT</pubDate><content:encoded>&lt;p&gt;大多数前端开发同学都用的是 macOS ，然而 macOS 上文件名不区分大小写，因此你不能在同一个文件夹下同时创建 &lt;code&gt;package.json&lt;/code&gt; 和 &lt;code&gt;packagE.json&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;这个细节很小，因为大家不是英语母语，现在又越来越依靠 intelliSense 补全文件路径，在这个事情上翻跟头会比较少，就算翻了跟头也很容易忘记。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;大多数情况下你在这个上边会跌进的一个坑是&lt;/p&gt;
 &lt;h1&gt;Linux 下部署时找不到 Module&lt;/h1&gt;
 &lt;p&gt;也许是之前哪位高人用记事本写的代码&lt;/p&gt;
@@ -6879,9 +6795,9 @@ mbp 四个type-c&lt;/p&gt;
 &lt;p&gt;所幸不是到部署才发现的问题，也所幸这个只会在调试的时候出现问题。。。。&lt;/p&gt;
 </content:encoded></item><item><title>新的博客，新的自己</title><link>https://blog.xingoxu.com/2015/09/newblog-newlife-2015/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/09/newblog-newlife-2015/</guid><description>
 借着这个上学期期末误删的配置这学期开学重新配置以及同好好友给的力量，希望自己能够在这新的学期，努力多点一些技能树，望自己能成为更好的自己
-</description><pubDate>Wed, 16 Sep 2015 16:46:46 GMT</pubDate><content:encoded>&lt;p&gt;借着这个上学期期末误删的配置这学期开学重新配置以及同好好友给的力量，希望自己能够在这新的学期，努力多点一些技能树，望自己能成为更好的自己
-&amp;lt;!-- more --&amp;gt;
-话又说回来，以前最看不起java了，结果还是得学java，我倒是希望能赶紧自学google的go语言，不过还是先把java精了吧&lt;/p&gt;
+</description><pubDate>Wed, 16 Sep 2015 16:46:46 GMT</pubDate><content:encoded>&lt;p&gt;借着这个上学期期末误删的配置这学期开学重新配置以及同好好友给的力量，希望自己能够在这新的学期，努力多点一些技能树，望自己能成为更好的自己&lt;/p&gt;
+
+&lt;p&gt;话又说回来，以前最看不起java了，结果还是得学java，我倒是希望能赶紧自学google的go语言，不过还是先把java精了吧&lt;/p&gt;
 &lt;p&gt;另外，正如你所见，这里很多地方都正在under construction，所以注意不要点到什么奇怪的地方去了哦（根本没有233&lt;/p&gt;
 &lt;p&gt;重新搭建hexo的过程中，又被自己给笨到了，还是记一下
 部署hexo一定要使用旧版本（1.x）的msysgit，否则怎么deploy都上不去，气死了，老是说我密钥错误，换个git居然全好了，尼玛哦&lt;/p&gt;
@@ -6897,9 +6813,9 @@ http://yunpan.cn/cmherr5u6PsrM （提取码：46e7）&lt;/p&gt;
 &lt;a href=&quot;http://ssk.91txh.com/209&quot;&gt;多说添加useragent&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content:encoded></item><item><title>2017 野良神圣地巡礼</title><link>https://blog.xingoxu.com/2017/06/noragami-seichijunrei/</link><guid isPermaLink="true">https://blog.xingoxu.com/2017/06/noragami-seichijunrei/</guid><description>
-上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在~~忙~~（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下
+上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在~~忙~~（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下
 
-时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
+时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
 &lt;br /&gt;
 
 
@@ -6921,165 +6837,104 @@ http://yunpan.cn/cmherr5u6PsrM （提取码：46e7）&lt;/p&gt;
 ![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/5933a3f92feb9.jpg)&lt;/div&gt;&lt;div&gt;
 
 ![ARAGOTO EP07](https://ooo.0o0.ooo/2017/06/04/5933a3ff26b98.jpg)&lt;/div&gt;
-&lt;div&gt;刚才那张的对面&lt;/div&gt;</description><pubDate>Sun, 04 Jun 2017 13:28:41 GMT</pubDate><content:encoded>&lt;p&gt;上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在&lt;s&gt;忙&lt;/s&gt;（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下&lt;/p&gt;
-&lt;p&gt;时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
-&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/59339ee10d3e0.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/59339ee32e9ad.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;西新宿&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div&gt;刚才那张的对面&lt;/div&gt;</description><pubDate>Sun, 04 Jun 2017 13:28:41 GMT</pubDate><content:encoded>&lt;p&gt;上个月人生的第一次出国以及第一次赴日去了东京，巡了君名和野良神还有一些四月的圣地，回来后一直在&lt;s&gt;忙&lt;/s&gt;（忙着玩塞尔达和p5），当然工作也是挺多的挺烦的，于是今天稍稍有那么点空闲时间整理一下&lt;/p&gt;
+&lt;p&gt;时间还算比较充裕，就把第一季和ARAGOTO那些印象比较深的巡了，另外野良神和其他几个动画搞了个圣地巡礼的app，大多数地点在那个上边也有标注，app的名字叫「舞台めぐり」
+&lt;br /&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/59339ee10d3e0.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/59339ee32e9ad.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;西新宿&lt;/div&gt;
 &lt;p&gt;这边正好在修路，没法搞到很好的角度&lt;/p&gt;
-&lt;p&gt;&amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/seichi.css&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a3f92feb9.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a3ff26b98.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;刚才那张的对面&amp;lt;/div&amp;gt;&amp;lt;!-- more --&amp;gt;
-&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a6f83ad8c.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a6fa247b8.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;新宿駅南改札口后边的通道&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a7ebb1901.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a7ed97a44.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;湯島天満宮&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a91bbabdf.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a91d66d0c.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;東京メトロ湯島駅&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa0149fc8.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa02a5912.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;湯島天満宮入口&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa3de6da4.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa3f9776c.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;湯島天満宮入口 近距离&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ab1c37646.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ab1e204ef.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;上野公园科技馆门口&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aaf4d4ec3.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aaf683a6a.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;上野公园&amp;lt;/div&amp;gt;至此，东京市中心结束&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933acd05887f.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933acd1ef0bf.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大泉学園駅&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ad61024a7.jpg&quot; alt=&quot;无印 EP01&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ad61e63c8.jpg&quot; alt=&quot;无印 EP01&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大泉学園駅&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af4346583.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af455f606.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大泉学園駅ホーム&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af51ea015.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af53b0456.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;大泉学園駅ホーム&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0cd9e364.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0cfc86ed.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;練馬 梨の花公園 附近的通路&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0f56bf05.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0f7ece2c.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;練馬 梨の花公園 附近的通路&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b15a367e6.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b15bb00e7.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;練馬 梨の花公園&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b1ab4d835.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b1ac8c0c3.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;練馬 梨の花公園&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b33ea643d.jpg&quot; alt=&quot;无印 EP04&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b34072305.jpg&quot; alt=&quot;无印 EP04&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;石神井公園内的一家店 小福家的店&amp;lt;/div&amp;gt;因为这家店不让拍照，只能远远拍一张表示来过了&lt;/p&gt;
-&lt;p&gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b34dcc77c.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;pull-left img&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b34ff1170.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&amp;lt;/div&amp;gt;
-&amp;lt;div class=&quot;clear-float img-caption&quot;&amp;gt;石神井公園去駅的散步小路&amp;lt;/div&amp;gt;&lt;/p&gt;
+
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a3f92feb9.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a3ff26b98.jpg&quot; alt=&quot;ARAGOTO EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;刚才那张的对面&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a6f83ad8c.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a6fa247b8.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;新宿駅南改札口后边的通道&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a7ebb1901.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a7ed97a44.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;湯島天満宮&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a91bbabdf.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933a91d66d0c.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;東京メトロ湯島駅&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa0149fc8.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa02a5912.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;湯島天満宮入口&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa3de6da4.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aa3f9776c.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;湯島天満宮入口 近距离&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ab1c37646.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ab1e204ef.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;上野公园科技馆门口&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aaf4d4ec3.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933aaf683a6a.jpg&quot; alt=&quot;无印 EP10&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;上野公园&lt;/div&gt;至此，东京市中心结束
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933acd05887f.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933acd1ef0bf.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大泉学園駅&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ad61024a7.jpg&quot; alt=&quot;无印 EP01&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933ad61e63c8.jpg&quot; alt=&quot;无印 EP01&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大泉学園駅&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af4346583.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af455f606.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大泉学園駅ホーム&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af51ea015.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933af53b0456.jpg&quot; alt=&quot;无印 EP03&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;大泉学園駅ホーム&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0cd9e364.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0cfc86ed.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;練馬 梨の花公園 附近的通路&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0f56bf05.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b0f7ece2c.jpg&quot; alt=&quot;无印 EP05&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;練馬 梨の花公園 附近的通路&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b15a367e6.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b15bb00e7.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;練馬 梨の花公園&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b1ab4d835.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b1ac8c0c3.jpg&quot; alt=&quot;无印 EP07&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;練馬 梨の花公園&lt;/div&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b33ea643d.jpg&quot; alt=&quot;无印 EP04&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b34072305.jpg&quot; alt=&quot;无印 EP04&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;石神井公園内的一家店 小福家的店&lt;/div&gt;因为这家店不让拍照，只能远远拍一张表示来过了
+&lt;div&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b34dcc77c.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/06/04/5933b34ff1170.jpg&quot; alt=&quot;无印 EP02&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;石神井公園去駅的散步小路&lt;/div&gt;
 &lt;p&gt;还有君名的，等七月bd发售了再截图整理吧&lt;/p&gt;
-</content:encoded></item><item><title>openwrt 挂载硬盘以及迅雷下载</title><link>https://blog.xingoxu.com/2015/03/openwrt-mount-harddisk-and-thunder-download/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/03/openwrt-mount-harddisk-and-thunder-download/</guid><description>
-迅雷下载模块：
-http://www.right.com.cn/forum/thread-157967-1-1.html
-
-luci界面：
-http://www.right.com.cn/forum/thread-135833-1-1.html
- 
-samba共享：
- 
-http://www.right.com.cn/forum/thread-151546-1-1.html
- 
-
-opkg update
-opkg install luci-app-samba
-
-修改/etc/config/samba
-增加以下内容：
- 
-config sambashare
-option ‘name’ ‘share’
-option ‘path’ ‘/mnt’
-option ‘read_only’ ‘no’
-option ‘guest_ok’ ‘no’
-option ‘create_mask’ ‘0700’
-option ‘dir_mask’ ‘0700’
-
-
-修改/etc/samba/smb.conf.template
- 
-guest ok = no
-invalid users = root
-
-
-修改后执行命令：
-/etc/init.d/samba start
- 
-samba添加用户： 
-
-smbpasswd -a root
-设置密码
- 
- 
-挂载硬盘：
-
-opkg install以下包
- 
-kmod-usb-storage
-kmod-usb-storage-extras 可选
-block-mount
-kmod-fs-ext4
-kmod-fs-ntfs 只读不可写
- 
-插入记得挂载，putty 命令
-mount /dev/sda(x) /mnt/sda(x)
-卸载umount /dev/sda(x)
- 
- 
- 
-迅雷离线教程：
-http://www.right.com.cn/forum/thread-115029-1-1.html
-https://chrome.google.com/webstore/detail/thunderlixianassistant/eehlmkfpnagoieibahhcghphdbjcdmen
- </description><pubDate>Tue, 03 Mar 2015 03:27:12 GMT</pubDate><content:encoded>&lt;p&gt;迅雷下载模块：
+</content:encoded></item><item><title>openwrt 挂载硬盘以及迅雷下载</title><link>https://blog.xingoxu.com/2015/03/openwrt-mount-harddisk-and-thunder-download/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/03/openwrt-mount-harddisk-and-thunder-download/</guid><pubDate>Tue, 03 Mar 2015 03:27:12 GMT</pubDate><content:encoded>&lt;p&gt;迅雷下载模块：
 http://www.right.com.cn/forum/thread-157967-1-1.html&lt;/p&gt;
 &lt;p&gt;luci界面：
 http://www.right.com.cn/forum/thread-135833-1-1.html&lt;/p&gt;
@@ -7128,8 +6983,8 @@ https://chrome.google.com/webstore/detail/thunderlixianassistant/eehlmkfpnagoiei
 </description><pubDate>Thu, 28 Sep 2017 17:57:15 GMT</pubDate><content:encoded>&lt;h1&gt;Cookie&lt;/h1&gt;
 &lt;p&gt;直接在Cookie中存信息可谓是上古时代的操作了，在服务器还没有那么便宜的情况下，好多网站选择将用户的登录信息存在cookie中，他们把用户名或者用户id转换并签名之后，直接存入Cookie，如果有其他需要的信息，也是如此操作&lt;/p&gt;
 &lt;p&gt;转换或签名可以是加盐md5，也可以是使用secret的双向加密&lt;/p&gt;
-&lt;p&gt;用户第二次访问网站的时候，代码中对这段信息进行验证，看看是否是正确的签名的
-&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+&lt;p&gt;用户第二次访问网站的时候，代码中对这段信息进行验证，看看是否是正确的签名的&lt;/p&gt;
+
 &lt;p&gt;这样做的好处是：
 不会再占用服务器资源，直接就在cookie中读取数据，获得结果&lt;/p&gt;
 &lt;p&gt;坏处是：
@@ -7167,7 +7022,7 @@ Cookie 类的鉴权容易受到 CSRF 的影响&lt;/p&gt;
 记一次作死把路由如何弄砖，又是如何救回来的过程
 
 </description><pubDate>Tue, 15 Sep 2015 20:19:41 GMT</pubDate><content:encoded>&lt;p&gt;记一次作死把路由如何弄砖，又是如何救回来的过程&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;本教程适用于：&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;砖前为openwrt&lt;/li&gt;
@@ -7195,7 +7050,7 @@ Cookie 类的鉴权容易受到 CSRF 的影响&lt;/p&gt;
 &lt;li&gt;等待TFTP软件显示绿色圆点，表示刷机成功。再等待几分钟，就可以看到电源键变绿，4300起来了。&lt;/li&gt;
 &lt;li&gt;此时，局域网已经支持DHCP，并可以通过 http://192.168.1.1 来进入luci管理平台，广域网口插入网线，设置后可以上网。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;lt;br /&amp;gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;p&gt;注：恢复后没有5G的配置项，解决办法：已经正常运行时，把4300断电，然后插电重启。就会看到5G的配置项。&lt;/p&gt;
 &lt;h1&gt;最后再记&lt;/h1&gt;
 &lt;p&gt;恢复后什么都没有了，要重头配置，在配置的过程中还发现了自己以前记录的一些问题&lt;/p&gt;
@@ -7205,7 +7060,7 @@ Cookie 类的鉴权容易受到 CSRF 的影响&lt;/p&gt;
 &lt;li&gt;ss更新过后luci界面开发者就将地址只支持数字ip了，不再支持域名了（明明人家windows客户端优秀的不行&lt;/li&gt;
 &lt;li&gt;尽管是2.3.2，但是新安装的（还是15.05的openwrt上）并没有看到UDP中继，然而ignore.list倒是要自己下载。。。&lt;/li&gt;
 &lt;li&gt;ignore.list下载方式在最下面
-&amp;lt;br /&amp;gt;&lt;/li&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;wget -O- &apos;http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest&apos; | awk -F\| &apos;/CN\|ipv4/ { printf(&quot;%s/%d\n&quot;, $4, 32-log($5)/log(2)) }&apos; &amp;gt; /etc/ignore.list
 &lt;/code&gt;&lt;/pre&gt;
@@ -7215,7 +7070,7 @@ Cookie 类的鉴权容易受到 CSRF 的影响&lt;/p&gt;
 </content:encoded></item><item><title>重配置WNDR4300手记</title><link>https://blog.xingoxu.com/2015/12/router-reconfig-2015/</link><guid isPermaLink="true">https://blog.xingoxu.com/2015/12/router-reconfig-2015/</guid><description>给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）
 
 </description><pubDate>Thu, 31 Dec 2015 18:20:58 GMT</pubDate><content:encoded>&lt;p&gt;给路由器迁移的时候，发现了一个SS的问题，导致自己踩雷又从头配置了一遍。。。（作死小能手前来报到）&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;缘由&lt;/h1&gt;
 &lt;p&gt;今天是美好的12.31号，也是在学校的最后一个学习日（下周起为考试周），心情异常高兴，自然是要把学校那个很好的路由器带回家咯，虽然曾有过一次不同环境配置的经验，但今天居然掉坑了&lt;/p&gt;
 &lt;h2&gt;环境说明&lt;/h2&gt;
@@ -7227,7 +7082,7 @@ Cookie 类的鉴权容易受到 CSRF 的影响&lt;/p&gt;
 &lt;img src=&quot;https://ooo.0o0.ooo/2017/05/24/592546679bdb8.png&quot; alt=&quot;WAN-1&quot; /&gt;
 &lt;img src=&quot;https://ooo.0o0.ooo/2017/05/24/5925467479b82.png&quot; alt=&quot;WAN-2&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;172.168.x.x是很容易想到的除开192的一个地址，虽然属于B类地址，然而现在并没有被卖掉，也被大家广而使用，因此也并没有什么特别的不妥，大不了以后要是有人指向他了，咱就改成192之后的呗&lt;/p&gt;
-&lt;p&gt;改完之后发现网能上了，也能顺利出去了，但踏马的路由器设置进不去了，诶怎么都进不去，把网断了，踏马的还是进不去，断网前不停地转圈圈，一直&amp;lt;code&amp;gt;waiting For 172.168.1.1...&amp;lt;/code&amp;gt;断网后显示&amp;lt;code&amp;gt;Connection Reset&amp;lt;/code&amp;gt;，亲你是在逗我吗！这叫个什么事！什么叫网上的去路由器设置上不去，狗带！&lt;/p&gt;
+&lt;p&gt;改完之后发现网能上了，也能顺利出去了，但踏马的路由器设置进不去了，诶怎么都进不去，把网断了，踏马的还是进不去，断网前不停地转圈圈，一直&lt;code&gt;waiting For 172.168.1.1...&lt;/code&gt;断网后显示&lt;code&gt;Connection Reset&lt;/code&gt;，亲你是在逗我吗！这叫个什么事！什么叫网上的去路由器设置上不去，狗带！&lt;/p&gt;
 &lt;p&gt;仔细想想，想来想去，还是没有想出个啥道理，以为自己哪里设置没改过来，只好重置&lt;/p&gt;
 &lt;h1&gt;重配置&lt;/h1&gt;
 &lt;h2&gt;语言的更改&lt;/h2&gt;
@@ -7262,7 +7117,7 @@ src/gz chaos_calmer_telephony http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15
 src/gz chaos_calmer_management http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/nand/packages/management
 option check_signature 1
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;好噜，上网再搜了一下，luci的最新的中文界面语言包的包名叫做&amp;lt;code&amp;gt;luci-i18n-base-zh-cn&amp;lt;/code&amp;gt;，got后直接&lt;/p&gt;
+&lt;p&gt;好噜，上网再搜了一下，luci的最新的中文界面语言包的包名叫做&lt;code&gt;luci-i18n-base-zh-cn&lt;/code&gt;，got后直接&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;opkg install luci-i18n-base-zh-cn
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;就好啦，安装基本包的时候也使用这几个镜像站，等到我们装完ss后再改回来升级安装包吧&lt;/p&gt;
@@ -7284,7 +7139,7 @@ option check_signature 1
 喜欢请购买正版，仅供试听学习用
 
 </description><pubDate>Tue, 21 Apr 2015 01:13:34 GMT</pubDate><content:encoded>&lt;p&gt;喜欢请购买正版，仅供试听学习用&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;解压密码：xingo&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://img.itc.cn/photo/omNqDKb6sQb&quot; alt=&quot;四张专辑&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://img.itc.cn/photo/omN7cbdwIHH&quot; alt=&quot;勝って泣こうゼッ！&quot; /&gt;
@@ -7339,7 +7194,7 @@ Android 5.0.1-&amp;gt;6.0.1 OTA并root后安装Xposed框架，却提示报错：
 &lt;blockquote&gt;
 &lt;p&gt;cp: write error: No space left on device&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;第一次看见这样的错误提示，觉得很奇怪，明明手机剩余空间还有一半以上，后来爬贴才发现system分区分开来的，/system/App分区的可用空间居然小于20MB了&lt;/p&gt;
 &lt;p&gt;好吧，google也是可以的，只能删除一些谷歌的全家桶了&lt;/p&gt;
 &lt;h1&gt;解决方法&lt;/h1&gt;
@@ -7361,7 +7216,7 @@ Wireguard + Transmission
 &lt;p&gt;寻找技术上既能规避自家网络使用 BT 协议又能利用本地环境的大硬盘的解决方案&lt;/p&gt;
 &lt;h1&gt;采用方案&lt;/h1&gt;
 &lt;p&gt;Wireguard + Transmission&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h2&gt;原因&lt;/h2&gt;
 &lt;p&gt;以前一直使用 &lt;a href=&quot;https://github.com/haugene/docker-transmission-openvpn&quot;&gt;docker-transmission-openvpn&lt;/a&gt; 这个 repo 的 OpenVPN&lt;/p&gt;
 &lt;p&gt;但是&lt;/p&gt;
@@ -7490,7 +7345,7 @@ proxy eno0 {
 Serverless，云原生，年初到现在，我关注的好几个前端公众号和资讯号都在疯狂推这些东西，去年年底就早有耳闻，原来以为是各种活动大会组织联合云厂商在对 devops 卖票整的新技术，但热度越来越强，于是我也跃跃欲试蹭个热度
 
 </description><pubDate>Sun, 21 Jun 2020 15:52:35 GMT</pubDate><content:encoded>&lt;p&gt;Serverless，云原生，年初到现在，我关注的好几个前端公众号和资讯号都在疯狂推这些东西，去年年底就早有耳闻，原来以为是各种活动大会组织联合云厂商在对 devops 卖票整的新技术，但热度越来越强，于是我也跃跃欲试蹭个热度&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;Serverless 到底是什么¿&lt;/h1&gt;
 &lt;p&gt;一句话概括就是 Cloud Function + Object Storage + Cloud Database + API Gateway and more by Cloud Service Provider. 简单来说就是有个叫 serverless 的开源框架把云厂商提供的这些服务整合成了一个配置文件，后端运维统统都不要了。好处显而易见，服务弹性伸缩，价格按量收费，大多数的运维问题，你的云服务提供商统统帮你兜了，小学生也能写网站。&lt;/p&gt;
 &lt;p&gt;这么牛逼，前端可得好好学学，让后端和运维统统下岗咯？&lt;/p&gt;
@@ -7845,7 +7700,7 @@ Vue.$serverGetCurrency = (context: Context) =&amp;gt; {
 &lt;li&gt;阅读回执&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在试用的过程中，碰到了一些问题，做一个整理。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;应用中心创建应用&lt;/h1&gt;
 &lt;p&gt;首先需要到 https://apps.twitter.com/ 在这里按提示创建应用，获得应用的 key 与 Secret。&lt;/p&gt;
 &lt;h1&gt;申请 Account Activity API 试用权限&lt;/h1&gt;
@@ -7931,7 +7786,7 @@ mensHdge technical statue No.21 終わりのセラフ 百夜優一郎 ノンス�
 &lt;/blockquote&gt;
 &lt;p&gt;mensHdge technical statue No.21 終わりのセラフ 百夜優一郎 ノンスケール ATBC-PVC 製 塗装済みフィギュア&lt;/p&gt;
 &lt;p&gt;ユニオンクリエイティブ&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;p&gt;「その人間の醜さに怯えながら死ね 吸血鬼」&lt;/p&gt;
 &lt;p&gt;『終わりのセラフ』より百夜優一郎が立体化! ・マントは着脱可能!&lt;/p&gt;
 &lt;p&gt;[セット内容] ・本体 ・台座&lt;/p&gt;
@@ -7974,7 +7829,7 @@ mensHdge technical statue No.21 終わりのセラフ 百夜優一郎 ノンス�
 前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d呢
 
 </description><pubDate>Fri, 23 Dec 2016 15:51:13 GMT</pubDate><content:encoded>&lt;p&gt;前两天偶然看见v2ex上有人说使用travis ci做hexo的持续集成，想起对哦，何必需要每次写完博客再进行手动的hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d呢&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;为什么选择travis ci&lt;/h1&gt;
 &lt;p&gt;因为他和github配合的很好，如果是github的开源项目，travis ci 永久免费&lt;/p&gt;
 &lt;p&gt;言下之意，如果你是使用github pages来托管你的博客的话，那travis ci简直就是最好的搭档&lt;/p&gt;
@@ -8080,7 +7935,7 @@ cat log.txt | sed &quot;s~${GH_TOKEN}~TOKEN~g&quot;
 &lt;/blockquote&gt;
 &lt;p&gt;其实我个人一开始很讨厌 TypeScript 这个东西，就是因为讨厌 Java 的啰里巴嗦，突然在我眼前出现了 Javascript，便爱上了这门语言。&lt;/p&gt;
 &lt;p&gt;但现在的我稍稍又觉得这样的东西其实还行，只使用类型系统也并没有完全限制 Javascript 本身的灵活性，并且他帮助我不会犯一些低级错误，而且还能配合 Visual Studio Code 的提示，我觉得这个还是很不错的，最近忙起来的时候，甚至经常把两个输入框的 value 直接进行比较了，于是就想尝试一下 TypeScript。&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;官方做法&lt;/h1&gt;
 &lt;p&gt;Vue 2.2 以上之后，官方给 Vue已经添加了很多类型声明，那么我们就来实践一下在单文件 Vue 中使用 TypeScript。&lt;/p&gt;
 &lt;h2&gt;webpack rules 中添加 ts-loader 相关（这里使用 webpack 2）&lt;/h2&gt;
@@ -8248,7 +8103,7 @@ cat log.txt | sed &quot;s~${GH_TOKEN}~TOKEN~g&quot;
 &lt;p&gt;&lt;img src=&quot;https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/09/pcmoren_tanshou_thumb.png&quot; alt=&quot;摊手&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;那么试试吧？先试试改造一下blog？&lt;/p&gt;
 &lt;p&gt;我擦？怎么用requirejs？&lt;/p&gt;
-&lt;p&gt;&amp;lt;!-- more --&amp;gt;&lt;/p&gt;
+
 &lt;h1&gt;前情提要&lt;/h1&gt;
 &lt;p&gt;也不算熟悉webpack吧，1的时候用vue-cli bootstrap了萌购的几个手机页面，虽说其实完全不用关心构建这一块，只需要改改路径就可以了，但闲下来的时候好奇心也是会驱动自己看看别人是怎么写的构建文件的，不过看别人写的构建文件，又稍微看了点其他网站的webpack的有关教程，自己倒也是没有想到AMD这件事情，也对webpack并不怎么熟悉，而且1的文档也实在是狗屎的可以，就停留在会用，会模仿着套路写&lt;/p&gt;
 &lt;p&gt;前两天2出了，看看这新的文档站，手边又正好不怎么忙，那么看看&lt;/p&gt;
@@ -8259,8 +8114,8 @@ cat log.txt | sed &quot;s~${GH_TOKEN}~TOKEN~g&quot;
 &lt;p&gt;直觉告诉我，import requirejs from &apos;requirejs&apos;;&lt;/p&gt;
 &lt;p&gt;好吧，在写下这行代码前，我去requirejs的官网看了&lt;a href=&quot;http://requirejs.org/docs/node.html#3&quot;&gt;文档&lt;/a&gt;
 看了，也没讲到构建工具，但就写法来说，都是一样的，那么试试&lt;/p&gt;
-&lt;p&gt;哦对了，忘记贴我的构建文件了，不过也没东西，就指定了入口和出口
-&amp;lt;script src=&quot;https://gist.github.com/xingoxu/9c73872db5fce038b939ce0cce1e7c01.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;哦对了，忘记贴我的构建文件了，不过也没东西，就指定了入口和出口&lt;/p&gt;
+
 &lt;p&gt;然后 &lt;code&gt;npm install webpack --save-dev &amp;amp;&amp;amp; npm install requirejs --save&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;然后入口点app.js&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;import requirejs from &apos;requirejs&apos;;
