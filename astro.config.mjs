@@ -34,6 +34,7 @@ const oklchToHex = str => {
       format: 'hex',
     });
 };
+process.env.TZ = 'UTC';
 
 // https://astro.build/config
 export default defineConfig({
