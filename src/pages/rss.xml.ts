@@ -1,13 +1,14 @@
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import rss from '@astrojs/rss';
+import { getSortedPosts } from '@utils/content-utils';
 import { getPostUrl } from '@utils/url-utils';
 import MarkdownIt from 'markdown-it';
 import sanitizeHtml from 'sanitize-html';
 const parser = new MarkdownIt({ html: true });
 
 export async function GET(context: any) {
-  const blog = await getCollection('posts');
+  const blog = await getSortedPosts();
   return rss({
     title: siteConfig.title,
     description:
