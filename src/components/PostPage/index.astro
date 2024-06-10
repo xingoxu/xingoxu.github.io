@@ -65,7 +65,6 @@ const jsonLd = JSON.stringify({
       id="post-container"
       class="card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full"
     >
-
       <!-- title -->
       <div class="relative onload-animation">
         <div
@@ -159,18 +158,16 @@ const jsonLd = JSON.stringify({
           href={getPostUrl(prevEntry)}
           class="w-full font-bold overflow-hidden active:scale-95 group"
         >
-          {entry.data.nextSlug && (
-            <div class="btn-card hover:bg-transparent rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center justify-start gap-4">
-              <Icon
-                name="material-symbols:chevron-left-rounded"
-                size={32}
-                class="text-[var(--primary)] translate-x-2 group-hover:translate-x-[0px] group-focus:animate-[previous-arrow_.5s_ease_both] group-active:animate-[previous-arrow_.5s_ease_both] transition"
-              />
-              <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75">
-                {entry.data.nextTitle}
-              </div>
+          <div class="btn-card hover:bg-transparent rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center justify-start gap-4">
+            <Icon
+              name="material-symbols:chevron-left-rounded"
+              size={32}
+              class="text-[var(--primary)] translate-x-2 group-hover:translate-x-[0px] group-focus:animate-[previous-arrow_.5s_ease_both] group-active:animate-[previous-arrow_.5s_ease_both] transition"
+            />
+            <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75">
+              {prevEntry.data.title}
             </div>
-          )}
+          </div>
         </a>
       )
     }
@@ -181,18 +178,16 @@ const jsonLd = JSON.stringify({
           href={getPostUrl(nextEntry)}
           class="w-full font-bold overflow-hidden active:scale-95 group"
         >
-          {entry.data.prevSlug && (
-            <div class="btn-card hover:bg-transparent rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center justify-end gap-4">
-              <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75">
-                {entry.data.prevTitle}
-              </div>
-              <Icon
-                name="material-symbols:chevron-right-rounded"
-                size={32}
-                class="text-[var(--primary)] -translate-x-2 group-hover:translate-x-[0px] group-focus:animate-[next-arrow_.5s_ease_both] group-active:animate-[next-arrow_.5s_ease_both] transition"
-              />
+          <div class="btn-card hover:bg-transparent rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center justify-end gap-4">
+            <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75">
+              {nextEntry.data.title}
             </div>
-          )}
+            <Icon
+              name="material-symbols:chevron-right-rounded"
+              size={32}
+              class="text-[var(--primary)] -translate-x-2 group-hover:translate-x-[0px] group-focus:animate-[next-arrow_.5s_ease_both] group-active:animate-[next-arrow_.5s_ease_both] transition"
+            />
+          </div>
         </a>
       )
     }
