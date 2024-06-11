@@ -115,7 +115,7 @@ Google 中搜索过后大多数的解决方案是添加一行 `precedence ::ffff
 这才醒悟到根本原因很有可能是 transmission 汇报的ip地址为网卡地址，种子服务器接收后不认可私网IPv4地址，于是开始屏蔽汇报服务器的AAAA地址
 
 `custom-cont-init.d` 下新建安装启动 bind9 脚本
-```bash start-bind9.sh
+```bash:start-bind9.sh
 #!/bin/bash
 
 DEBIAN_FRONTEND="noninteractive"
@@ -129,7 +129,7 @@ echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
 创建 `named.conf` 挂载进容器喂给 bind9
 
-```bash named.conf
+```ini:named.conf
 plugin query "/usr/lib/x86_64-linux-gnu/bind/filter-aaaa.so" {
   filter-aaaa-on-v4 yes;
   filter-aaaa-on-v6 yes;
@@ -138,7 +138,7 @@ plugin query "/usr/lib/x86_64-linux-gnu/bind/filter-aaaa.so" {
 
 容器挂载
 
-```yaml docker-compose.yml
+```yaml:docker-compose.yml
 # ...前略
   volumes:
     - named.conf:/etc/bind/named.conf:ro
@@ -157,7 +157,7 @@ Ubuntu 上 `apt -y install ndppd`
 
 创建
 
-```bash:/etc/ndppd.conf
+```ini:/etc/ndppd.conf
 # eno0 is your NIC name like eth0 etc...
 proxy eno0 {
   rule 2001:public:ipv6:address::/64 {
