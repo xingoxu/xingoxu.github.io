@@ -91,8 +91,10 @@ Google、Indeed、微软这三家，投了简历却始终没有被回复过。
 &lt;/ul&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/shikijs/shiki/issues/3&quot;&gt;Astro &amp;amp; Shiki line number issue&lt;/a&gt;
-&lt;a href=&quot;https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering&quot;&gt;.nojekyll&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/shikijs/shiki/issues/3&quot;&gt;Astro &amp;amp; Shiki line number issue&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering&quot;&gt;.nojekyll&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content:encoded></item><item><title>VPN双栈环境下构建 Transmission PT 做种客户端</title><link>https://blog.xingoxu.com/2024/01/transmission-under-vpn/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/01/transmission-under-vpn/</guid><description>
 # 背景
