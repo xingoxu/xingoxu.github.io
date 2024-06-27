@@ -17,6 +17,8 @@ draft: false
 
 [前文](/2024/01/transmission-under-vpn/)提到了客户端使用 Wireguard 在 Docker 中连接 VPN 后将整个做种使用服务器网络的过程。但很不幸，这台 Kimsufi 的杜甫在上上个礼拜莫名其妙的失联了。期初我以为是网络问题或者可能死机了暂时性无法访问，一开始还能 ping 通于是在面板上操作了重启，重启过后无论是在中国大陆这边去 ping 还是在日本这边去 ping 都没有办法通，而且没有任何可 ping 通的迹象，遂重装。
 
+<!-- more -->
+
 # 问题1 ip6tables 报错
 
 ```yaml:docker-compose.yml
