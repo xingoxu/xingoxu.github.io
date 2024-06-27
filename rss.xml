@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>解决在 Ubuntu 24 中用 Docker 安装服务器端 Wireguard 的一个问题</title><link>https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</guid><pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;背景&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>解决在 Ubuntu 24 中用 Docker 安装服务器端 Wireguard 的一个问题</title><link>https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</guid><description>
+# 背景
+
+[前文](/2024/01/transmission-under-vpn/)提到了客户端使用 Wireguard 在 Docker 中连接 VPN 后将整个做种使用服务器网络的过程。但很不幸，这台 Kimsufi 的杜甫在上上个礼拜莫名其妙的失联了。期初我以为是网络问题或者可能死机了暂时性无法访问，一开始还能 ping 通于是在面板上操作了重启，重启过后无论是在中国大陆这边去 ping 还是在日本这边去 ping 都没有办法通，而且没有任何可 ping 通的迹象，遂重装。
+
+</description><pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;背景&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/2024/01/transmission-under-vpn/&quot;&gt;前文&lt;/a&gt;提到了客户端使用 Wireguard 在 Docker 中连接 VPN 后将整个做种使用服务器网络的过程。但很不幸，这台 Kimsufi 的杜甫在上上个礼拜莫名其妙的失联了。期初我以为是网络问题或者可能死机了暂时性无法访问，一开始还能 ping 通于是在面板上操作了重启，重启过后无论是在中国大陆这边去 ping 还是在日本这边去 ping 都没有办法通，而且没有任何可 ping 通的迹象，遂重装。&lt;/p&gt;
+
 &lt;h1&gt;问题1 ip6tables 报错&lt;/h1&gt;
 &lt;pre&gt;&lt;code&gt;services:
   wireguard:
