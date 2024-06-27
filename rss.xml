@@ -96,7 +96,7 @@ Google、Indeed、微软这三家，投了简历却始终没有被回复过。
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering&quot;&gt;.nojekyll&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-</content:encoded></item><item><title>VPN双栈环境下构建 Transmission PT 做种客户端</title><link>https://blog.xingoxu.com/2024/01/transmission-under-vpn/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/01/transmission-under-vpn/</guid><description>
+</content:encoded></item><item><title>Docker + wireguard + IPv4 / IPv6 双栈环境下构建 Transmission PT 做种客户端</title><link>https://blog.xingoxu.com/2024/01/transmission-under-vpn/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/01/transmission-under-vpn/</guid><description>
 # 背景
 
 寻找技术上既能规避自家网络使用 BT 协议又能利用本地环境的大硬盘的解决方案
@@ -112,11 +112,12 @@ Wireguard + Transmission
 
 &lt;h2&gt;原因&lt;/h2&gt;
 &lt;p&gt;以前一直使用 &lt;a href=&quot;https://github.com/haugene/docker-transmission-openvpn&quot;&gt;docker-transmission-openvpn&lt;/a&gt; 这个 repo 的 OpenVPN&lt;/p&gt;
-&lt;p&gt;但是&lt;/p&gt;
+&lt;p&gt;但是因为如下原因&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;wireguard 配置简单、现代化&lt;/li&gt;
 &lt;li&gt;想上 IPv6&lt;/li&gt;
-&lt;li&gt;可以自己控制 Transmission 的自由化&lt;/li&gt;
+&lt;li&gt;可以自己控制 Transmission 的自由化
+决定更换方案&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;在 Docker 中安装 Transmission&lt;/h1&gt;
 &lt;p&gt;使用 &lt;a href=&quot;https://hub.docker.com/r/linuxserver/wireguard&quot;&gt;&lt;code&gt;linuxserver/wireguard&lt;/code&gt;&lt;/a&gt;  镜像启动 wireguard 并在镜像内安装 transmission&lt;/p&gt;
@@ -173,11 +174,10 @@ echo &quot;Transmission exited.&quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1&gt;问题 - 发现 PT 显示只有 IPv6 权限&lt;/h1&gt;
 &lt;p&gt;启动做种之后在各大 PT 站发现自己只有 IPv6 权限，然而在容器内可以 ping 通 IPv4 地址（从延迟上来看也确实走了 VPN）&lt;/p&gt;
-&lt;p&gt;而在VPN服务器上同样也安装了 Transmission 客户端，但是却正常显示双栈权限&lt;/p&gt;
 &lt;h1&gt;解决&lt;/h1&gt;
 &lt;h2&gt;调整优先级让 IPv4 优先 IPv6&lt;/h2&gt;
 &lt;p&gt;Google 中搜索过后大多数的解决方案是添加一行 &lt;code&gt;precedence ::ffff:0:0/96 100&lt;/code&gt; 到 &lt;code&gt;/etc/gai.conf&lt;/code&gt; 文件中&lt;/p&gt;
-&lt;p&gt;但尝试之后并没有起到有效作用，于是常识在 &lt;code&gt;wg0.conf&lt;/code&gt; 中不分配 IPv6 地址后拥有 IPv4 权限，一度尝试放弃准备起两个容器一个走 v4 一个走 v6&lt;/p&gt;
+&lt;p&gt;这个方案我之前在宿主服务器上试过是有效果的，但在容器中尝试之后并没有起到有效作用，原因有可能是因为容器的网络顺序很有可能并不遵从文件，于是尝试在 &lt;code&gt;wg0.conf&lt;/code&gt; 中不分配 IPv6 地址后发现站点显示拥有 IPv4 权限，一度尝试放弃准备起两个容器一个走 v4 一个走 v6&lt;/p&gt;
 &lt;h2&gt;屏蔽做种服务器的 IPv6 DNS 响应&lt;/h2&gt;
 &lt;p&gt;再次更换搜索词为 “双栈 transmission” 后，出现了一些结果，发现写到&lt;/p&gt;
 &lt;blockquote&gt;
