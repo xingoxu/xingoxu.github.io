@@ -1,7 +1,11 @@
 ---
-title: Docker + wireguard + IPv4 / IPv6 双栈环境下构建 Transmission PT 做种客户端
+title: wireguard + v6 双栈环境下构建 Transmission PT 做种客户端
 tags:
   - dev
+  - docker
+  - wireguard
+  - IPv6
+  - Transmission
 published: 2024-01-21 10:07:32
 ---
 
@@ -29,6 +33,8 @@ Wireguard + Transmission
 
 使用 [`linuxserver/wireguard`](https://hub.docker.com/r/linuxserver/wireguard)  镜像启动 wireguard 并在镜像内安装 transmission
 
+注意查看 Docker 中配 IPv6 的方式，直接指定公网IPv6地址即可，如果外网无法 PING 通，宿主机上可以尝试安装 ndppd
+
 ```yaml:docker-compose.yml
 version: '2.4'
 services:
@@ -49,6 +55,13 @@ services:
       - transmission
     ports:
       - 127.0.0.1:9091:9091
+
+networks:
+  transmission:
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: 240f:10c:bcfb:1:4:1::/96
 ```
 
 在 `wg0.conf` 中添加 PostUp / PreDown 脚本启动 Transmission
