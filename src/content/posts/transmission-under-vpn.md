@@ -1,5 +1,5 @@
 ---
-title: VPN双栈环境下构建 Transmission PT 做种客户端
+title: Docker + wireguard + IPv4 / IPv6 双栈环境下构建 Transmission PT 做种客户端
 tags:
   - dev
 published: 2024-01-21 10:07:32
@@ -19,10 +19,11 @@ Wireguard + Transmission
 
 以前一直使用 [docker-transmission-openvpn](https://github.com/haugene/docker-transmission-openvpn) 这个 repo 的 OpenVPN
 
-但是
+但是因为如下原因
 - wireguard 配置简单、现代化
 - 想上 IPv6
 - 可以自己控制 Transmission 的自由化
+决定更换方案
 
 # 在 Docker 中安装 Transmission
 
@@ -92,15 +93,13 @@ echo "Transmission exited."
 
 启动做种之后在各大 PT 站发现自己只有 IPv6 权限，然而在容器内可以 ping 通 IPv4 地址（从延迟上来看也确实走了 VPN）
 
-而在VPN服务器上同样也安装了 Transmission 客户端，但是却正常显示双栈权限
-
 # 解决
 
 ## 调整优先级让 IPv4 优先 IPv6
 
 Google 中搜索过后大多数的解决方案是添加一行 `precedence ::ffff:0:0/96 100` 到 `/etc/gai.conf` 文件中
 
-但尝试之后并没有起到有效作用，于是常识在 `wg0.conf` 中不分配 IPv6 地址后拥有 IPv4 权限，一度尝试放弃准备起两个容器一个走 v4 一个走 v6
+这个方案我之前在宿主服务器上试过是有效果的，但在容器中尝试之后并没有起到有效作用，原因有可能是因为容器的网络顺序很有可能并不遵从文件，于是尝试在 `wg0.conf` 中不分配 IPv6 地址后发现站点显示拥有 IPv4 权限，一度尝试放弃准备起两个容器一个走 v4 一个走 v6
 
 ## 屏蔽做种服务器的 IPv6 DNS 响应
 
