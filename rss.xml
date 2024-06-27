@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>工作第7年，我从日本微信辞职了</title><link>https://blog.xingoxu.com/2024/06/good-bye-line-corporation/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/good-bye-line-corporation/</guid><description>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>解决在 Ubuntu 24 中用 Docker 安装服务器端 Wireguard 的一个问题</title><link>https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</guid><pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;背景&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/2024/01/transmission-under-vpn/&quot;&gt;前文&lt;/a&gt;提到了客户端使用 Wireguard 在 Docker 中连接 VPN 后将整个做种使用服务器网络的过程。但很不幸，这台 Kimsufi 的杜甫在上上个礼拜莫名其妙的失联了。期初我以为是网络问题或者可能死机了暂时性无法访问，一开始还能 ping 通于是在面板上操作了重启，重启过后无论是在中国大陆这边去 ping 还是在日本这边去 ping 都没有办法通，而且没有任何可 ping 通的迹象，遂重装。&lt;/p&gt;
+&lt;h1&gt;问题1 ip6tables 报错&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;services:
+  wireguard:
+    image: linuxserver/wireguard:1.0.20210914
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      # - SYS_MODULE
+    environment:
+      - TZ=Asia/Tokyo
+      - SERVERPORT= #optional
+      - PEERS= #optional
+      - SERVERURL= #Wireguard VPN server address
+      - ALLOWEDIPS=
+    volumes:
+      - ./wireguard-server/config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /usr/src:/usr/src # location of kernel headers
+      # - /lib/modules:/lib/modules
+    network_mode: &quot;host&quot;
+    restart: unless-stopped
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;因为之前就已经容器化过了，所以直接敲&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker compose up -d &amp;amp;&amp;amp; docker-compose logs -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;结果启动后出现如下报错，而且宿主机的 IPv4 还没办法从外面 ping 通了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ip6tables v1.8.7 (legacy): can&apos;t initialize ip6tables table `filter&apos;: Table does not exist (do you need to insmod?)
+Perhaps ip6tables or your kernel needs to be upgraded.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;很明显是 ip6tables 的有点问题，搜了一些文档进行自查后有可能是 ip6_tables 模块没有载入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;modprobe ip6_tables
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;开机载入后启动容器便能成功启动&lt;/p&gt;
+&lt;h1&gt;问题2 客户端只能访问 IPv6 地址但无法访问 IPv4&lt;/h1&gt;
+&lt;p&gt;客户端没有办法访问公网 IPv4 地址，但是能 ping 通并访问宿主机的服务，真是让人头大，怎么会有这么奇怪的问题。&lt;/p&gt;
+&lt;p&gt;能够 ping 通宿主机说明客户端和宿主机的连接成功建立， Wireguard 端应该是没有问题，那么问题应该是出在宿主机的内部包转发上，宿主机的 &lt;code&gt;wg0.conf&lt;/code&gt; 一动也没动过，网卡名也设置成通用的，怎么会不通也是很不明白。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Interface]
+...
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eno+ -j MASQUERADE
+PostUp = ip6tables -A FORWARD -i eno+ -o %i -j ACCEPT; ip6tables -A FORWARD -i %i -j ACCEPT;
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eno+ -j MASQUERADE
+PostDown = ip6tables -D FORWARD -i eno+ -o %i -j ACCEPT; ip6tables -D FORWARD -i %i -j ACCEPT;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一句是允许 wg0（建立的nic）上进出包，后面那句是开启NAT转发，一切看起来都没有什么问题，在互联网上搜搜索索也没搜出来什么结果，于是问了新出的 Claude 3.5，也是来回问了好几回，最后给了的几个方案中有了这个解决方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;iptables -I DOCKER-USER -i eno0 -o wg0 -j ACCEPT
+iptables -I DOCKER-USER -i wg0 -o eno0 -j ACCEPT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在宿主机的 bash 中敲入后客户端就马上能 ping 通 v4 地址了，于是上网搜索后发现 &lt;a href=&quot;https://www.reddit.com/r/WireGuard/comments/g7puj0/why_i_could_not_connect_via_wireguard_to_internet/&quot;&gt;reddit 的这个帖子&lt;/a&gt; 并稍微瞄了一眼 Docker 官方文档，看来是某个升级后导入的措施，可能是容器中建立的网卡怕影响到宿主机的网络所做的改动吧。&lt;/p&gt;
+&lt;h1&gt;太长不看&lt;/h1&gt;
+&lt;p&gt;首先第一个问题感觉不太像是 Ubuntu 会有的问题，因此怀疑是不是 kimsufi 修改的镜像问题（因为网络部分确实是有被修改），上述两个问题合在一起，有了以下解决方案。&lt;/p&gt;
+&lt;p&gt;首先编写 iptables.rules&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*filter
+
+-I DOCKER-USER -o wg0 -j ACCEPT
+-I DOCKER-USER -i wg0 -j ACCEPT
+
+COMMIT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其次编写启动脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+modprobe ip6_tables
+iptables-restore -v -n /root/iptables/iptables.rules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后给这个脚本上个服务保证开机启动 &amp;amp; 出错再运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Unit]
+Description=My Startup Script
+Before=network-online.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/startup.sh
+ExecReload=/root/startup.sh
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;ip6_tables&lt;/code&gt; 模块需要在 docker 容器启动前便加载因此选择在&lt;code&gt;network-online.target&lt;/code&gt; 前这个时间点运行脚本，但此时 docker 服务本身并不一定已经启动，因此如果才还原 iptables 的时候如果报错则让脚本自动再运行&lt;/p&gt;
+&lt;p&gt;Ubuntu 24 默认内核允许 10s 内运行 5 次因此注意 &lt;code&gt;RestartSec&lt;/code&gt; 不要小于 2s 。&lt;/p&gt;
+&lt;p&gt;最后让服务开机启动&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl enable myscript.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;余谈&lt;/h1&gt;
+&lt;p&gt;这台机器第一次重装过后刚安装好 docker 和 zsh，还在操作 ssh 呢，结果唐突失联，再次面板操作重装后又被告知硬件出现了问题。待 kimsufi 那边检查过后重新安装完成后发现 500G 的硬盘变成了 1.8T 真是受宠若惊，本以为是主机坏了给我开了台新的但 CPU 和内存大小也没变 &lt;s&gt;不管反正给了就要用满&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;另外每次重装机器，虽然已经做了容器化，但还要配 ssh 和安装 docker 这件事让我很是心烦，即使弄好也会出现像上面的奇怪问题 &lt;s&gt;也怪自己从 Ubuntu 22 改成了 24&lt;/s&gt;，不知道有没有什么解决方案适合自己&lt;/p&gt;
+</content:encoded></item><item><title>工作第7年，我从日本微信辞职了</title><link>https://blog.xingoxu.com/2024/06/good-bye-line-corporation/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/good-bye-line-corporation/</guid><description>
 
 转眼之间我在LINE已经工作了6年整，期间经历了大大小小，风格不同的产品和项目。5/17号我提了辞职申请，上星期，我走完了离职流程。今天这篇除了想写我和LINE的一些故事，也想留下一些自己对日本和将来的看法，更是为了自己将来的职业生涯中不要犯下同样的错误和正面去思考将来自己需要掌握的技能。
 
@@ -96,7 +187,7 @@ Google、Indeed、微软这三家，投了简历却始终没有被回复过。
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering&quot;&gt;.nojekyll&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-</content:encoded></item><item><title>Docker + wireguard + IPv4 / IPv6 双栈环境下构建 Transmission PT 做种客户端</title><link>https://blog.xingoxu.com/2024/01/transmission-under-vpn/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/01/transmission-under-vpn/</guid><description>
+</content:encoded></item><item><title>wireguard + v6 双栈环境下构建 Transmission PT 做种客户端</title><link>https://blog.xingoxu.com/2024/01/transmission-under-vpn/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/01/transmission-under-vpn/</guid><description>
 # 背景
 
 寻找技术上既能规避自家网络使用 BT 协议又能利用本地环境的大硬盘的解决方案
@@ -121,6 +212,7 @@ Wireguard + Transmission
 &lt;/ul&gt;
 &lt;h1&gt;在 Docker 中安装 Transmission&lt;/h1&gt;
 &lt;p&gt;使用 &lt;a href=&quot;https://hub.docker.com/r/linuxserver/wireguard&quot;&gt;&lt;code&gt;linuxserver/wireguard&lt;/code&gt;&lt;/a&gt;  镜像启动 wireguard 并在镜像内安装 transmission&lt;/p&gt;
+&lt;p&gt;注意查看 Docker 中配 IPv6 的方式，直接指定公网IPv6地址即可，如果外网无法 PING 通，宿主机上可以尝试安装 ndppd&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;version: &apos;2.4&apos;
 services:
   transmission-wireguard:
@@ -140,6 +232,13 @@ services:
       - transmission
     ports:
       - 127.0.0.1:9091:9091
+
+networks:
+  transmission:
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: 240f:10c:bcfb:1:4:1::/96
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;在 &lt;code&gt;wg0.conf&lt;/code&gt; 中添加 PostUp / PreDown 脚本启动 Transmission&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[Interface]
