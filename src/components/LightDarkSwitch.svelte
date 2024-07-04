@@ -30,11 +30,24 @@
       applyThemeToDocument(mode);
     };
     darkModePreference.addEventListener("change", changeThemeWhenSchemeChanged);
+
+    if (window.swup.hooks) {
+      window.swup.hooks.before("content:replace", changeLanguage);
+    } else {
+      document.addEventListener("swup:enable", () => {
+        window.swup.hooks.before("content:replace", changeLanguage);
+      });
+    }
+
     return () => {
       darkModePreference.removeEventListener(
         "change",
         changeThemeWhenSchemeChanged
       );
+
+      if (window.swup.hooks) {
+        window.swup.hooks.off("content:replace", changeLanguage);
+      }
     };
   });
 
@@ -55,12 +68,57 @@
 
   function showPanel() {
     const panel = document.querySelector("#light-dark-panel");
-    panel.classList.remove("float-panel-closed");
+    panel?.classList.remove("float-panel-closed");
   }
 
   function hidePanel() {
     const panel = document.querySelector("#light-dark-panel");
     panel.classList.add("float-panel-closed");
+  }
+
+  // TODO: simplfiy this
+  function changeLanguage() {
+    const replacedHTML = window.swup.cache.get(location.pathname)?.html;
+    if (replacedHTML === undefined) {
+      return;
+    }
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(replacedHTML, "text/html");
+    const newComponentPropText = doc
+      .querySelector(`astro-island[component-url*="/LightDarkSwitch."]`)
+      ?.getAttribute("props");
+    if (typeof newComponentPropText !== "string") {
+      return;
+    }
+
+    const propObject = parseAstroProps<{ text: typeof text }>(
+      newComponentPropText
+    );
+    text = propObject.text || text;
+  }
+  function parseAstroProps<T>(text: string): T {
+    const propObject = JSON.parse(text);
+    const travelProperty = (array: any[]) => {
+      if (!Array.isArray(array)) {
+        return array;
+      }
+      if (array[0] === 0) {
+        if (typeof array[1] !== "object") {
+          return array[1];
+        }
+        const result = {};
+        for (const key in array[1]) {
+          result[key] = travelProperty(array[1][key]);
+        }
+        return result;
+      } else {
+        return array[1].map((value) => travelProperty(value));
+      }
+    };
+    for (const key in propObject) {
+      propObject[key] = travelProperty(propObject[key]);
+    }
+    return propObject;
   }
 </script>
 
