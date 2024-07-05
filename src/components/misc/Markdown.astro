@@ -2,7 +2,7 @@
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/jetbrains-mono/wght-italic.css';
 import { Icon } from 'astro-icon/components';
-import 'photoswipe/style.css';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
 interface Props {
   class: string;
@@ -24,94 +24,36 @@ const className = Astro.props.class;
   <Icon name="material-symbols:close-rounded" class="hidden" />
 </div>
 
-<!-- photoswipe -->
+<!-- Fancybox -->
 <script>
-  import PhotoSwipeLightbox from "photoswipe/lightbox";
-  let lightbox: PhotoSwipeLightbox | undefined = undefined;
+  import { Fancybox } from "@fancyapps/ui";
 
-  function initPhotoSwipe() {
-    console.log("initPhotoSwipe");
-    const $swipeImages = document.querySelectorAll(".custom-md img");
-    const dataSource = ([] as Element[]).slice
-      .call($swipeImages)
-      .map((img, index) => ({
-        id: index,
-        el: img,
-        src: (img as HTMLImageElement).src,
-        width:
-          (img as HTMLImageElement).naturalWidth ||
-          (img as HTMLImageElement).width,
-        height:
-          (img as HTMLImageElement).naturalHeight ||
-          (img as HTMLImageElement).height,
-      }));
-    if(dataSource.length <= 0) {
-      return;
-    }
-    lightbox = new PhotoSwipeLightbox({
-      dataSource,
-      pswpModule: () => import("photoswipe"),
-      zoomSVG:
-        '<svg aria-hidden="true" class="pswp__icn zoom" width="24" height="24" viewBox="0 0 24 24"><use href="#ai:material-symbols:zoom-in-rounded"></use><use href="#ai:material-symbols:zoom-out-rounded"></use></svg>',
-      arrowNextSVG:
-        '<svg aria-hidden="true" class="pswp__icn arrow" width="24" height="24" viewBox="0 0 24 24"><use href="#ai:material-symbols:arrow-right-alt-rounded"></use></svg>',
-      arrowPrevSVG:
-        '<svg aria-hidden="true" class="pswp__icn arrow" width="24" height="24" viewBox="0 0 24 24"><use href="#ai:material-symbols:arrow-left-alt-rounded"></use></svg>',
-      closeSVG:
-        '<svg aria-hidden="true" class="pswp__icn close" width="24" height="24" viewBox="0 0 24 24"><use href="#ai:material-symbols:close-rounded"></use></svg>',
-      bgClickAction: "close",
-      tapAction: "close",
-    });
-    lightbox.addFilter("thumbEl", (thumbEl, data, index) => {
-      if (dataSource[data.id]) {
-        return dataSource[data.id].el as HTMLElement;
+  function initFancybox() {
+    Fancybox.bind(".custom-md img", { 
+      groupAll: true, 
+      wheel: "slide",
+      Slideshow: false,
+      Thumbs: false,
+      Toolbar: {
+        display: {
+          left: ['infobar'],
+          middle: [],
+          right: [
+            "iterateZoom",
+            "fullscreen",
+            "close",
+          ],
+        }
       }
-      return thumbEl as HTMLElement;
-    });
-    lightbox.addFilter("placeholderSrc", (placeholderSrc, slide) => {
-      if (dataSource[slide.data.id]) {
-        return dataSource[slide.data.id].src;
-      }
-      return placeholderSrc;
-    });
-    dataSource.forEach(({ el }, index, array) => {
-      el.addEventListener("click", () => {
-        lightbox?.loadAndOpen(index);
-      });
-      el.addEventListener("load", () => {
-        array[index].width =
-          (el as HTMLImageElement).naturalWidth ||
-          (el as HTMLImageElement).width;
-        array[index].height =
-          (el as HTMLImageElement).naturalHeight ||
-          (el as HTMLImageElement).height;
-      });
-    });
+     });
+  }
 
-    lightbox.init();
-  }
-  function unload() {
-    console.log("unload");
-    if (lightbox) {
-      lightbox.destroy();
-      lightbox = undefined;
-    }
-  }
+
   document.addEventListener("DOMContentLoaded", () => {
-    initPhotoSwipe();
+    initFancybox();
   });
-  if (window.swup.hooks) {
-    window.swup.hooks.on("page:view", initPhotoSwipe);
-    window.swup.hooks.before("content:replace", unload);
-  } else {
-    document.addEventListener("swup:enable", () => {
-      window.swup.hooks.on("page:view", initPhotoSwipe);
-      window.swup.hooks.before("content:replace", unload);
-    });
-  }
+
 </script>
-
-
 
 <style lang="stylus" is:global>
   :root 
@@ -533,20 +475,5 @@ const className = Astro.props.class;
       word-break: break-all;
     }
   }
-  .pswp__icn {
-    color: #fff !important;
-    transform: scale(0.7) !important;
-  }
-  .pswp__icn.zoom use[href*="zoom-out"] {
-    display: none;
-  }
-  .pswp--zoomed-in .pswp__icn.zoom use[href*="zoom-in"] {
-    display: none;
-  }
-  .pswp--zoomed-in .pswp__icn.zoom use[href*="zoom-out"] {
-    display: block;
-  }
-  .pswp__button--arrow .pswp__icn.arrow {
-    transform: scale(0.5) !important;
-  }
+
 </style>
