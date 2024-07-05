@@ -132,6 +132,9 @@ export default defineConfig({
         },
       ],
     ],
+    shikiConfig: {
+      wrap: true,
+    },
   },
   vite: {
     esbuild: {

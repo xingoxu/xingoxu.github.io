@@ -1,26 +1,45 @@
 <script lang="ts">
   import { siteConfig } from "@/config";
   import Icon from "@iconify/svelte";
+  import { getNewProps } from "@utils/change-language";
   import { url } from "@utils/url-utils";
+  import { onMount } from "svelte";
 
   // biome-ignore lint/style/useConst: props
   export let menus: {
     lang: string;
     text: string;
     url: string;
+    isCurrentLanguage?: boolean;
   }[] = [];
 
   let isPanelOpen = false;
 
   function showPanel() {
-    console.log("showPanel");
+    console.log("LanguageSettings - showPanel");
     isPanelOpen = true;
   }
 
   function hidePanel() {
-    console.log("hidePanel");
+    console.log("LanguageSettings - hidePanel");
     isPanelOpen = false;
   }
+
+  function changeLanguage() {
+    getNewProps<{ menus: typeof menus }>("LanguageSettings", (newProps) => {
+      menus = newProps.menus || menus;
+    });
+  }
+  onMount(() => {
+    if (window.swup.hooks) {
+      window.swup.hooks.on("content:replace", changeLanguage);
+    }
+    return () => {
+      if (window.swup.hooks) {
+        window.swup.hooks.off("content:replace", changeLanguage);
+      }
+    };
+  });
 </script>
 
 <!-- z-50 make the panel higher than other float panels -->
@@ -60,6 +79,7 @@
             class="whitespace-nowrap group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
                 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
             "
+            class:current-language={menu.isCurrentLanguage}
           >
             <div
               class=" whitespace-nowrap transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"
@@ -79,3 +99,10 @@
     </div>
   </div>
 {/if}
+
+<style>
+  .current-language {
+    background: var(--btn-plain-bg-hover);
+    color: var(--primary);
+  }
+</style>

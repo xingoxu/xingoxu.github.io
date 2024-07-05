@@ -31,7 +31,12 @@ const allBlogPosts = await getCollection(
       : true;
   },
 );
-const menuForLanguageSettings = [siteConfig.lang]
+const pageLang =
+  Astro.params.lang || siteConfig.lang;
+
+const menuForLanguageSettings: Parameters<
+  typeof LanguageSettings
+>[0]['menus'] = [siteConfig.lang]
   .concat(
     Languages.filter(lang =>
       allBlogPosts.find(entry =>
@@ -45,9 +50,9 @@ const menuForLanguageSettings = [siteConfig.lang]
     url: url(
       lang === siteConfig.lang ? '/' : `${lang}/`,
     ),
+    isCurrentLanguage: pageLang === lang,
   }));
-const pageLang =
-  Astro.params.lang || siteConfig.lang;
+
 const textForLightDarkSwitch = {
   lightMode: i18n(I18nKey.lightMode, pageLang),
   darkMode: i18n(I18nKey.darkMode, pageLang),

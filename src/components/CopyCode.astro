@@ -1,0 +1,74 @@
+<div class="wrapper hidden relative" id="copy-code-template">
+  <button class="copy-code"> Copy Code </button>
+</div>
+<script>
+  let copyButtonLabel = "Copy Code";
+  function initCopyCode() {
+    let codeBlocks = Array.from(document.querySelectorAll("pre.astro-code"));
+
+    const template = document.querySelector("#copy-code-template");
+    if (template === null) {
+      return;
+    }
+    for (let codeBlock of codeBlocks) {
+      const clonedWrapper = template.cloneNode(true) as HTMLElement;
+      clonedWrapper.removeAttribute("id");
+      clonedWrapper.classList.remove('hidden');
+      clonedWrapper
+        .querySelector("button.copy-code")
+        ?.addEventListener("click", async (e) => {
+          //TODO: replace
+          await copyCode(codeBlock, e.target);
+        });
+      codeBlock.parentNode?.insertBefore(clonedWrapper, codeBlock);
+      clonedWrapper.appendChild(codeBlock);
+    }
+  }
+
+  async function copyCode(block: Element, button: HTMLButtonElement) {
+    let code = block.querySelector("code");
+    let text = code?.innerText;
+
+    if (text) {
+      await navigator.clipboard.writeText(text);
+    }
+
+    // visual feedback that task is completed
+    button.innerText = "Code Copied";
+
+    setTimeout(() => {
+      button.innerText = copyButtonLabel;
+    }, 700);
+  }
+
+  document.addEventListener("DOMContentLoaded", initCopyCode);
+  if (window.swup.hooks) {
+    window.swup.hooks.on("page:view", initCopyCode);
+  } else {
+    document.addEventListener("swup:enable", () => {
+      window.swup.hooks.on("page:view", initCopyCode);
+    });
+  }
+</script>
+<style >
+  .copy-code {
+    position: absolute;
+    width: fit-content;
+    transform: translateY(-100%);
+    top: 0;
+    right: 0;
+    padding: 0.5em 0.75em;
+    font-size: 0.75em;
+    line-height: 1rem;
+    font-family: var(--code-font-family);
+    border-top-left-radius: var(--code-border-radius);
+    border-top-right-radius: var(--code-border-radius);
+    background-color: var(--enter-btn-bg);
+    color: var(--inline-code-color);
+    transition: background-color 0.3s ease;
+  }
+
+  .copy-code:hover {
+    background-color: var(--enter-btn-bg-hover);
+  }
+</style>

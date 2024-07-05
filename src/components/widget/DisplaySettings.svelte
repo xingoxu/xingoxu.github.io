@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { getNewProps } from "@utils/change-language";
   import { getDefaultHue, getHue, setHue } from "@utils/setting-utils";
+  import { onMount } from "svelte";
 
   let hue = getHue();
   const defaultHue = getDefaultHue();
@@ -16,6 +18,21 @@
   $: if (hue || hue === 0) {
     setHue(hue);
   }
+  function changeLanguage() {
+    getNewProps<{ text: typeof text }>("DisplaySettings", (newProps) => {
+      text = newProps.text || text;
+    });
+  }
+  onMount(() => {
+    if (window.swup.hooks) {
+      window.swup.hooks.on("content:replace", changeLanguage);
+    }
+    return () => {
+      if (window.swup.hooks) {
+        window.swup.hooks.off("content:replace", changeLanguage);
+      }
+    };
+  });
 </script>
 
 <div

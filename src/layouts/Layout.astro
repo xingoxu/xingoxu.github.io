@@ -332,7 +332,7 @@ const siteLang = (
       // docs say that a initialization to the body element would affect native functionality like window.scrollTo
       // but just leave it here for now
       {
-        target: document.querySelector("body"),
+        target: document.querySelector("body")!,
         cancel: {
           nativeScrollbarsOverlaid: true, // don't initialize the overlay scrollbar if there is a native one
         },
@@ -346,16 +346,6 @@ const siteLang = (
         },
       }
     );
-    document.querySelectorAll("pre").forEach((ele) => {
-      OverlayScrollbars(ele, {
-        scrollbars: {
-          theme: "scrollbar-base scrollbar-dark px-2",
-          autoHide: "leave",
-          autoHideDelay: 500,
-          autoHideSuspend: false,
-        },
-      });
-    });
   }
 
   function init() {

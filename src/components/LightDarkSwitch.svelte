@@ -2,6 +2,7 @@
   import type { LIGHT_DARK_MODE } from "@/types/config.ts";
   import { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants.ts";
   import Icon from "@iconify/svelte";
+  import { getNewProps } from "@utils/change-language";
   import {
     applyThemeToDocument,
     getStoredTheme,
@@ -76,49 +77,10 @@
     panel.classList.add("float-panel-closed");
   }
 
-  // TODO: simplfiy this
   function changeLanguage() {
-    const replacedHTML = window.swup.cache.get(location.pathname)?.html;
-    if (replacedHTML === undefined) {
-      return;
-    }
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(replacedHTML, "text/html");
-    const newComponentPropText = doc
-      .querySelector(`astro-island[component-url*="/LightDarkSwitch."]`)
-      ?.getAttribute("props");
-    if (typeof newComponentPropText !== "string") {
-      return;
-    }
-
-    const propObject = parseAstroProps<{ text: typeof text }>(
-      newComponentPropText
-    );
-    text = propObject.text || text;
-  }
-  function parseAstroProps<T>(text: string): T {
-    const propObject = JSON.parse(text);
-    const travelProperty = (array: any[]) => {
-      if (!Array.isArray(array)) {
-        return array;
-      }
-      if (array[0] === 0) {
-        if (typeof array[1] !== "object") {
-          return array[1];
-        }
-        const result = {};
-        for (const key in array[1]) {
-          result[key] = travelProperty(array[1][key]);
-        }
-        return result;
-      } else {
-        return array[1].map((value) => travelProperty(value));
-      }
-    };
-    for (const key in propObject) {
-      propObject[key] = travelProperty(propObject[key]);
-    }
-    return propObject;
+    getNewProps<{ text: typeof text }>("LightDarkSwitch", (newProps) => {
+      text = newProps.text || text;
+    });
   }
 </script>
 

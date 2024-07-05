@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '@/config';
+import CopyCode from '@components/CopyCode.astro';
 import Footer from '@components/Footer.astro';
 import Navbar from '@components/Navbar.astro';
 import BackToTop from '@components/control/BackToTop.astro';
@@ -51,6 +52,7 @@ const enableBanner = siteConfig.banner.enable;
     <div id="footer" class="grid-rows-3 col-span-2 mt-4 onload-animation">
       <Footer />
     </div>
+    <CopyCode />
     <BackToTop />
   </div>
 </Layout>
