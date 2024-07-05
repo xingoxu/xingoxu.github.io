@@ -143,7 +143,9 @@ export default defineConfig({
   },
   vite: {
     esbuild: {
-      drop: isProd ? ['console', 'debugger'] : [],
+      drop: import.meta.env.PROD
+        ? ['console', 'debugger']
+        : [],
     },
     build: {
       rollupOptions: {
