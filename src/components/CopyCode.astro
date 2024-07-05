@@ -1,33 +1,22 @@
 ---
-import I18nKey from '@i18n/i18nKey';
-const pageLang =
-  Astro.params.lang || siteConfig.lang;
-import { siteConfig } from '@/config';
-import { i18n } from '@i18n/translation';
-const text = {
-  [I18nKey.copyCode]: i18n(
-    I18nKey.copyCode,
-    pageLang,
-  ),
-  [I18nKey.codeCopied]: i18n(
-    I18nKey.codeCopied,
-    pageLang,
-  ),
-};
+import { Icon } from 'astro-icon/components';
 ---
 
 <div class="wrapper hidden relative" id="copy-code-template">
-  <button class="copy-code">{text[I18nKey.copyCode]}</button>
-  <template class="hidden">{JSON.stringify(text)}</template>
+  <button class="copy-code text-sm relative">
+    <Icon
+      name="material-symbols:content-copy-outline"
+      class="copy transition-opacity duration-300 ease"
+    />
+    <Icon
+      name="material-symbols:check"
+      class="copied absolute transition-opacity duration-300 ease opacity-0 top-[.5em] left-[.75em]"
+    />
+  </button>
 </div>
 
 <script>
-  import I18nKey from "@i18n/i18nKey";
   import { addSwupHook } from "@utils/dom-utils";
-  let multiLanguageText = {
-    [I18nKey.copyCode]: I18nKey.copyCode,
-    [I18nKey.codeCopied]: I18nKey.codeCopied,
-  };
 
   function initCopyCode() {
     let codeBlocks = Array.from(document.querySelectorAll("pre.astro-code"));
@@ -37,20 +26,12 @@ const text = {
       return;
     }
 
-    console.log("CopyCode - multiLanguageText", multiLanguageText);
-
     for (let codeBlock of codeBlocks) {
       const clonedWrapper = template.cloneNode(true) as HTMLElement;
 
       // remove id & "hidden" class
       clonedWrapper.removeAttribute("id");
       clonedWrapper.classList.remove("hidden");
-
-      // remove multiLanguage text
-      const multiLanguageTemplateNode =
-        clonedWrapper.querySelector("template")!;
-      multiLanguageText = JSON.parse(multiLanguageTemplateNode.innerHTML);
-      multiLanguageTemplateNode.remove();
 
       clonedWrapper
         .querySelector("button.copy-code" as "button")
@@ -71,10 +52,12 @@ const text = {
     }
 
     // visual feedback that task is completed
-    button.innerText = multiLanguageText[I18nKey.codeCopied];
+    button.querySelector(".copy")?.classList.add("opacity-0");
+    button.querySelector(".copied")?.classList.remove("opacity-0");
 
     setTimeout(() => {
-      button.innerText = multiLanguageText[I18nKey.copyCode];
+      button.querySelector(".copy")?.classList.remove("opacity-0");
+      button.querySelector(".copied")?.classList.add("opacity-0");
     }, 700);
   }
 
@@ -90,8 +73,6 @@ const text = {
     top: 0;
     right: 0;
     padding: 0.5em 0.75em;
-    font-size: 0.75em;
-    line-height: 1rem;
     font-family: var(--code-font-family);
     border-top-left-radius: var(--code-border-radius);
     border-top-right-radius: var(--code-border-radius);

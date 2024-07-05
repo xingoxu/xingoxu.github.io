@@ -65,9 +65,9 @@ Hexo 在我的观测下是内容和主题做到了分离，而且主题可以使
 # 余留课题
 
 - [ ] Google Analytics & Google AD ***能恰的话还是想恰口饭的嘛（谁不想呢）***
-- [ ] photoswiper →　fancybox ***我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？***
+- [x] photoswiper →　fancybox ***我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？***
 - [ ] 分类显示不同语言的post ***自己给自己挖了个大坑吧，routing 搞的自己头都大。。。***
-- [ ] 代码片段支持复制 ***真的很需要，但好像得写插件 / 纯 JS 添加***
+- [x] 代码片段支持复制 ***真的很需要，但好像得写插件 / 纯 JS 添加***
 
 
 # Reference
