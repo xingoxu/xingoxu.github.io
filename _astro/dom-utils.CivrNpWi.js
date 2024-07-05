@@ -1,0 +1,1 @@
+function s(n,e){const o={unregister:void 0};return window.swup.hooks?o.unregister=window.swup.hooks.on(n,e):document.addEventListener("swup:enable",()=>{o.unregister=window.swup.hooks.on(n,e)}),o}export{s as a};
