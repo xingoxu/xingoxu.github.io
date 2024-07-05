@@ -35,6 +35,8 @@ const oklchToHex = str => {
     });
 };
 process.env.TZ = 'UTC';
+console.log('env.MODE', import.meta.env.MODE);
+console.log('isProd', import.meta.env.PROD);
 
 // https://astro.build/config
 export default defineConfig({
@@ -141,10 +143,7 @@ export default defineConfig({
   },
   vite: {
     esbuild: {
-      drop:
-        import.meta.env.MODE === 'development'
-          ? []
-          : ['console', 'debugger'],
+      drop: isProd ? ['console', 'debugger'] : [],
     },
     build: {
       rollupOptions: {
