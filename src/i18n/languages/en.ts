@@ -36,4 +36,6 @@ export const en: Translation = {
   [Key.license]: 'License',
 
   [Key.language]: 'English',
+  [Key.copyCode]: 'Copy',
+  [Key.codeCopied]: 'Copied',
 };

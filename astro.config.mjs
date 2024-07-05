@@ -46,7 +46,10 @@ export default defineConfig({
     swup({
       theme: false,
       animationClass: 'transition-',
-      containers: ['#swup'],
+      containers: [
+        '#swup',
+        '#copy-code-template',
+      ],
       smoothScrolling: true,
       cache: true,
       preload: true,
@@ -138,7 +141,10 @@ export default defineConfig({
   },
   vite: {
     esbuild: {
-      drop: ['console', 'debugger'],
+      drop:
+        import.meta.env.MODE === 'development'
+          ? []
+          : ['console', 'debugger'],
     },
     build: {
       rollupOptions: {

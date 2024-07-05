@@ -1,8 +1,34 @@
+---
+import I18nKey from '@i18n/i18nKey';
+const pageLang =
+  Astro.params.lang || siteConfig.lang;
+import { siteConfig } from '@/config';
+import { i18n } from '@i18n/translation';
+const text = {
+  [I18nKey.copyCode]: i18n(
+    I18nKey.copyCode,
+    pageLang,
+  ),
+  [I18nKey.codeCopied]: i18n(
+    I18nKey.codeCopied,
+    pageLang,
+  ),
+};
+---
+
 <div class="wrapper hidden relative" id="copy-code-template">
-  <button class="copy-code"> Copy Code </button>
+  <button class="copy-code">{text[I18nKey.copyCode]}</button>
+  <template class="hidden">{JSON.stringify(text)}</template>
 </div>
+
 <script>
-  let copyButtonLabel = "Copy Code";
+  import I18nKey from "@i18n/i18nKey";
+  import { addSwupHook } from "@utils/dom-utils";
+  let multiLanguageText = {
+    [I18nKey.copyCode]: I18nKey.copyCode,
+    [I18nKey.codeCopied]: I18nKey.codeCopied,
+  };
+
   function initCopyCode() {
     let codeBlocks = Array.from(document.querySelectorAll("pre.astro-code"));
 
@@ -10,15 +36,26 @@
     if (template === null) {
       return;
     }
+
+    console.log("CopyCode - multiLanguageText", multiLanguageText);
+
     for (let codeBlock of codeBlocks) {
       const clonedWrapper = template.cloneNode(true) as HTMLElement;
+
+      // remove id & "hidden" class
       clonedWrapper.removeAttribute("id");
-      clonedWrapper.classList.remove('hidden');
+      clonedWrapper.classList.remove("hidden");
+
+      // remove multiLanguage text
+      const multiLanguageTemplateNode =
+        clonedWrapper.querySelector("template")!;
+      multiLanguageText = JSON.parse(multiLanguageTemplateNode.innerHTML);
+      multiLanguageTemplateNode.remove();
+
       clonedWrapper
-        .querySelector("button.copy-code")
-        ?.addEventListener("click", async (e) => {
-          //TODO: replace
-          await copyCode(codeBlock, e.target);
+        .querySelector("button.copy-code" as "button")
+        ?.addEventListener("click", async function (e) {
+          await copyCode(codeBlock, this);
         });
       codeBlock.parentNode?.insertBefore(clonedWrapper, codeBlock);
       clonedWrapper.appendChild(codeBlock);
@@ -34,23 +71,18 @@
     }
 
     // visual feedback that task is completed
-    button.innerText = "Code Copied";
+    button.innerText = multiLanguageText[I18nKey.codeCopied];
 
     setTimeout(() => {
-      button.innerText = copyButtonLabel;
+      button.innerText = multiLanguageText[I18nKey.copyCode];
     }, 700);
   }
 
   document.addEventListener("DOMContentLoaded", initCopyCode);
-  if (window.swup.hooks) {
-    window.swup.hooks.on("page:view", initCopyCode);
-  } else {
-    document.addEventListener("swup:enable", () => {
-      window.swup.hooks.on("page:view", initCopyCode);
-    });
-  }
+  addSwupHook("page:view", initCopyCode);
 </script>
-<style >
+
+<style>
   .copy-code {
     position: absolute;
     width: fit-content;

@@ -36,4 +36,6 @@ export const ja: Translation = {
   [Key.license]: 'ライセンス',
 
   [Key.language]: '日本語',
+  [Key.copyCode]: 'コピー',
+  [Key.codeCopied]: 'コピー済み',
 };

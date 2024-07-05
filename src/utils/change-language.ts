@@ -18,6 +18,10 @@ export function getNewProps<T>(
       `astro-island[component-url*="/${moduleName}."]`,
     )
     ?.getAttribute('props');
+  console.log(
+    'newComponentPropText',
+    newComponentPropText,
+  );
   if (typeof newComponentPropText !== 'string') {
     return;
   }

@@ -3,6 +3,7 @@
   import { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants.ts";
   import Icon from "@iconify/svelte";
   import { getNewProps } from "@utils/change-language";
+  import { addSwupHook } from "@utils/dom-utils";
   import {
     applyThemeToDocument,
     getStoredTheme,
@@ -32,23 +33,14 @@
     };
     darkModePreference.addEventListener("change", changeThemeWhenSchemeChanged);
 
-    if (window.swup.hooks) {
-      window.swup.hooks.before("content:replace", changeLanguage);
-    } else {
-      document.addEventListener("swup:enable", () => {
-        window.swup.hooks.before("content:replace", changeLanguage);
-      });
-    }
-
+    const hook = addSwupHook("content:replace", changeLanguage);
     return () => {
       darkModePreference.removeEventListener(
         "change",
         changeThemeWhenSchemeChanged
       );
 
-      if (window.swup.hooks) {
-        window.swup.hooks.off("content:replace", changeLanguage);
-      }
+      hook.unregister?.();
     };
   });
 

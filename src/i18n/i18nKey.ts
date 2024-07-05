@@ -33,6 +33,9 @@ enum I18nKey {
   license = 'license',
 
   language = 'language',
+
+  copyCode = 'copyCode',
+  codeCopied = 'codeCopied',
 }
 
 export default I18nKey;

@@ -2,6 +2,7 @@
   import { siteConfig } from "@/config";
   import Icon from "@iconify/svelte";
   import { getNewProps } from "@utils/change-language";
+  import { addSwupHook } from "@utils/dom-utils";
   import { url } from "@utils/url-utils";
   import { onMount } from "svelte";
 
@@ -31,13 +32,10 @@
     });
   }
   onMount(() => {
-    if (window.swup.hooks) {
-      window.swup.hooks.on("content:replace", changeLanguage);
-    }
+    const hook = addSwupHook("content:replace", changeLanguage);
+
     return () => {
-      if (window.swup.hooks) {
-        window.swup.hooks.off("content:replace", changeLanguage);
-      }
+      hook.unregister?.();
     };
   });
 </script>
