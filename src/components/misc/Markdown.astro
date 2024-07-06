@@ -1,7 +1,6 @@
 ---
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/jetbrains-mono/wght-italic.css';
-import { Icon } from 'astro-icon/components';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
 interface Props {
@@ -29,6 +28,7 @@ const className = Astro.props.class;
       wheel: "slide",
       Slideshow: false,
       Thumbs: false,
+      caption: (_fancybox, slide) => slide.triggerEl?.getAttribute('alt') || false,
       Toolbar: {
         display: {
           left: ['infobar'],
