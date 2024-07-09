@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>聊聊管理番剧动画片这件事</title><link>https://blog.xingoxu.com/2024/07/2024-managing-anime-series/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/07/2024-managing-anime-series/</guid><description>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>2024 年如何中间人 Android 网络请求</title><link>https://blog.xingoxu.com/2024/07/2024-android-debugging-ssl/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/07/2024-android-debugging-ssl/</guid><description>
+不像 iOS，在 Android 下，设置完了代理并安装与信任了自签证书后并不能让 Apps 信任被中间人了的网络请求。这篇文章是记录了 2023 ~ 2024 年我是如何中间人 Android 的网络请求的。
+
+
+</description><pubDate>Tue, 09 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;不像 iOS，在 Android 下，设置完了代理并安装与信任了自签证书后并不能让 Apps 信任被中间人了的网络请求。这篇文章是记录了 2023 ~ 2024 年我是如何中间人 Android 的网络请求的。&lt;/p&gt;
+
+&lt;h1&gt;背景&lt;/h1&gt;
+&lt;p&gt;Android 从6版本开始，系统就会默认所有 Apps 的 https 网络请求都变成了只信任系统区证书，而不相信用户自己安装的证书。这提升了 Android 设备的安全性，但也让我们无法再简单的窥探 Apps 的请求内容。&lt;/p&gt;
+&lt;p&gt;以前我会使用 Xposed Framework，但 Xposed 好久不更新，后继的 LSPosed 等等也是风波不停，只是为了中间人 app 的请求，是否有更优雅的方式。&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;https://github.com/shroudedcode/apk-mitm&quot;&gt;apk-mitm&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;这是唯一非 root 也能使用的工具，原理是反向apk后植入hook并动态信任 https 请求。&lt;/p&gt;
+&lt;p&gt;好处&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不需要 root&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;坏处&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;webview 的内容无法被中间人&lt;/li&gt;
+&lt;li&gt;App 可能并不会按预期的工作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;&lt;a href=&quot;https://frida.re/docs/android/&quot;&gt;Frida&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;专为反向而生的 Frida 在运行时hook内存并强行信任证书。&lt;/p&gt;
+&lt;h1&gt;手机端准备工作&lt;/h1&gt;
+&lt;p&gt;下载对应的 binary 推送到手机&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 16.1.8 改成对应版本
+adb push ./frida-server-16.1.8-android-arm64 /data/local/tmp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;切到 root 权限进入 adb shell&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb root &amp;amp;&amp;amp; adb shell &quot;chmod 755 /data/local/tmp/frida-server*&quot; &amp;amp;&amp;amp; adb shell &quot;/data/local/tmp/frida-server-16.1.8-android-arm64 &amp;amp;&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;要注意 Pixel 等手机有时可能在 adb root 时报错&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adbd cannot run as root in production builds
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用 su -c 或者一行一行手动敲命令↓&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb shell
+# 进入 Android shell后切换超级用户模式
+su
+# 付与 frida server 执行权限
+chmod 755 /data/local/tmp/frida-server*
+# 启动 frida server
+/data/local/tmp/frida-server-16.1.8-android-arm64 &amp;amp;
+
+# 按 Control + C退出
+# 敲两次 exit 退出 shell
+exit
+exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此手机端的准备工作就完成了&lt;/p&gt;
+&lt;h1&gt;电脑端准备工作&lt;/h1&gt;
+&lt;p&gt;电脑端也要安装命令行，首先安装 Python 3后，执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install frida-tools
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;结束&lt;/p&gt;
+&lt;h1&gt;启动脚本&lt;/h1&gt;
+&lt;p&gt;Frida 服务器只是监听内存并劫持，在启动时也需要指定动作，
+我搜到的一个比较全的脚本是 &lt;a href=&quot;https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/&quot;&gt;frida-multiple-unpinning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;启动命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# apk.packagename是包名
+frida -U -f apk.packagename --codeshare akabe1/frida-multiple-unpinning
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同时，Frida 也支持 Work Profile或多用户，添加&lt;code&gt;--aux=&quot;uid=(int)10&quot;&lt;/code&gt;参数来启动&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;frida -U --aux=&quot;uid=(int)10&quot; -f apk.packagename --codeshare akabe1/frida-multiple-unpinning
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;10 代表 Work Profile，多用户的情况下可以查看用户 uid 后打开即可。&lt;/p&gt;
+&lt;p&gt;执行命令后应用自动启动，此时 SSL 已经被绕过并可以使用 Charles 等分析请求内容。&lt;/p&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://kishorbalan.medium.com/its-all-about-android-ssl-pinning-bypass-and-intercepting-proxy-unaware-applications-91689c0763d8&quot;&gt;It&apos;s all about Bypassing Android SSL Pinning and Intercepting Proxy Unaware applications.&lt;/a&gt;
+&lt;a href=&quot;https://frida.re/docs/android/&quot;&gt;Android | Frida&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>聊聊管理番剧动画片这件事</title><link>https://blog.xingoxu.com/2024/07/2024-managing-anime-series/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/07/2024-managing-anime-series/</guid><description>
 
 我刚开始看动画的时候也是B站或者优酷这些流媒体看的，最开始从国外录电视，翻译添加字幕重新压制再上传各个视频网站然后被我们所观看到。之后就各种政策变化，以及有了一些版权意识之后，一些没有引入版权，又或是动画本身有一些镜头并不符合国内情势被剪辑的事情发生之后，我看动画的方式就从在线变成了找资源下载看了。而后又对DVD，高清，蓝光等事情产生了兴趣，以及喜欢的动画如果想再回去看看的话又不想每次再翻回去看这一点之后开始研究 PT 等等的事情。
 
@@ -96,6 +166,7 @@ sh -c &quot;python3 -m pip install -r requirements.txt --user &amp;amp;&amp;amp;
 &lt;p&gt;Kodi 20 + 10.8.3 的时候我配置好看了，也没什么问题， 但最近 Kodi 升级成了 21 之后，官方插件可能也升级了吧，有些动画没有了声音，在界面里开启强制转码也不行，我怀疑是音频部分并没有写进判断语句导致音频流不转码。。。所以暂时这个作罢。&lt;/p&gt;
 &lt;h2&gt;Findroid&lt;/h2&gt;
 &lt;p&gt;是最近新出的 Android 第三方 jellyfin 客户端，尝试了一下使用 Native 的播放器的话，画质给转的好多马赛克，开启了 mpv 播放器之后，画质是有了但卡的不行，卡帧。那只好冷藏起来咯。&lt;/p&gt;
+&lt;p&gt;另外要注意如果下载 apk 推送到 Chromecast With Google TV 的话，要下载 &lt;code&gt;armeabi-v7a&lt;/code&gt; 架构的。&lt;/p&gt;
 &lt;h1&gt;参考&lt;/h1&gt;
 &lt;p&gt;本文鸣谢如下先辈提供情报&lt;/p&gt;
 &lt;blockquote&gt;
