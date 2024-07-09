@@ -2,7 +2,7 @@
 title: 聊聊管理番剧动画片这件事
 published: 2024-07-08
 # description: ''
-image: 'https://staticimg.xingoxu.com/i/4078851e-1b0b-49d0-94b6-6420b3353faa.jpg'
+# image: ''
 tags: 
   - notes
 # category: ''
@@ -25,6 +25,8 @@ draft: false
 # jellyfin 
 
 大数据果然没有让人失望，在组装 NAS 的时候就给我推送了很多有关这方面的文章，而我让我了解到了 jellyfin 这样东西。
+
+![jellyfin 海报墙](https://staticimg.xingoxu.com/i/4078851e-1b0b-49d0-94b6-6420b3353faa.jpg)
 
 关于 jellyfin 是什么，大家 Google 一搜就能搜出来了，他对我的好处无非就是
 - 实时推流
