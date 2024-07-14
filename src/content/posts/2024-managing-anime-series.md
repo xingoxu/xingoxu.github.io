@@ -153,7 +153,7 @@ Kodi 20 + 10.8.3 的时候我配置好看了，也没什么问题， 但最近 K
 
 本文鸣谢如下先辈提供情报
 
-> [理想影音库构建之路（二）：关于老番管理这件事](https://blog.kaaass.net/archives/1607)
-> [安卓TV端Kodi部署Jellyfin，使用Jellyfin打造最强媒体中心（篇二）](https://post.smzdm.com/p/a99vlpmp/#cl_3)
-> [py-rename](https://github.com/jinalharia/py_rename)
-> [Episode-ReName](https://github.com/Nriver/Episode-ReName)
+> [理想影音库构建之路（二）：关于老番管理这件事](https://blog.kaaass.net/archives/1607)  
+> [安卓TV端Kodi部署Jellyfin，使用Jellyfin打造最强媒体中心（篇二）](https://post.smzdm.com/p/a99vlpmp/#cl_3)  
+> [py-rename](https://github.com/jinalharia/py_rename)   
+> [Episode-ReName](https://github.com/Nriver/Episode-ReName)  
