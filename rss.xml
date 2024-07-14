@@ -170,9 +170,9 @@ sh -c &quot;python3 -m pip install -r requirements.txt --user &amp;amp;&amp;amp;
 &lt;h1&gt;参考&lt;/h1&gt;
 &lt;p&gt;本文鸣谢如下先辈提供情报&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.kaaass.net/archives/1607&quot;&gt;理想影音库构建之路（二）：关于老番管理这件事&lt;/a&gt;
-&lt;a href=&quot;https://post.smzdm.com/p/a99vlpmp/#cl_3&quot;&gt;安卓TV端Kodi部署Jellyfin，使用Jellyfin打造最强媒体中心（篇二）&lt;/a&gt;
-&lt;a href=&quot;https://github.com/jinalharia/py_rename&quot;&gt;py-rename&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.kaaass.net/archives/1607&quot;&gt;理想影音库构建之路（二）：关于老番管理这件事&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://post.smzdm.com/p/a99vlpmp/#cl_3&quot;&gt;安卓TV端Kodi部署Jellyfin，使用Jellyfin打造最强媒体中心（篇二）&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/jinalharia/py_rename&quot;&gt;py-rename&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://github.com/Nriver/Episode-ReName&quot;&gt;Episode-ReName&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content:encoded></item><item><title>解决在 Ubuntu 24 中用 Docker 安装服务器端 Wireguard 的一个问题</title><link>https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/06/kimsufi-docker-wireguard/</guid><description>
@@ -5182,16 +5182,16 @@ console.log(domElem.className);
 &lt;h2&gt;controller与directive&lt;/h2&gt;
 &lt;p&gt;刚学习Angularjs的时候我对controller和directive很懊恼，玛德，怎么前面这个东西是个controller，后面这个东西怎么也有controller，后面这个东西还能依赖啊，那么多config项，什么compile啊什么link啊，然后当写了一点，体验了一些过后，controller这个东西，就是mvc中的controller，你可以在controller范围内的节点上声明ngClick调用controller，那就是mvc的结构咯，v-&amp;gt;c,c-&amp;gt;m,m-&amp;gt;v，而directive这个东西其实是angularjs最后偏向的mvw的what，因为他什么都可以当，我现在比较喜欢拿directive当presenter，当我一直在考虑如何将代码的逻辑理顺，把代码结构分清，而且各司其职，我发现原来我更倾向于mvp这个模式。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;按需加载 AngularJS 的 Controller
-http://www.cnblogs.com/zhrj000/p/3383898.html
+&lt;p&gt;按需加载 AngularJS 的 Controller&lt;br /&gt;
+http://www.cnblogs.com/zhrj000/p/3383898.html&lt;br /&gt;
 http://beginor.github.io/2014/12/20/angularjs-controller-load-on-demand.html&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;angularjs controller之间如何通信
+&lt;p&gt;angularjs controller之间如何通信&lt;br /&gt;
 https://segmentfault.com/a/1190000000639592&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;angularjs手动触发dirty check
+&lt;p&gt;angularjs手动触发dirty check&lt;br /&gt;
 https://segmentfault.com/q/1010000003796580&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;angularjs的一些坑（？）&lt;/h2&gt;
@@ -5344,19 +5344,19 @@ gulp有个坑就是在相对路径时，不要加&apos;./&apos;，以及注意�
 &lt;p&gt;其实学习HTML/CSS入门很快，但我经常发处女病（这边怎么会多1px？/这边怎么看上去不像是10px？/这边间距是不是多了4px？），但幸好不是坏事，了解了许多许多之前并没有了解的事情。&lt;/p&gt;
 &lt;p&gt;好多都有了现有的文章啦，也就不再多阐述了。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/?p=2427&quot;&gt;transform的matrix&lt;/a&gt;
-&lt;a href=&quot;http://www.w3school.com.cn/css/css_margin_collapsing.asp&quot;&gt;CSS 外边距合并&lt;/a&gt;
-&lt;a href=&quot;http://www.hicss.net/do-not-tell-me-you-understand-margin/&quot;&gt;垂直外边距合并问题&lt;/a&gt;
-&lt;a href=&quot;http://www.cnblogs.com/myqianlan/p/4255346.html&quot;&gt;a img 高度多4px&lt;/a&gt;
-&lt;a href=&quot;http://blog.csdn.net/chen_zw/article/details/8741365&quot;&gt;position属性&lt;/a&gt;
-&lt;a href=&quot;http://zihua.li/2013/12/keep-height-relevant-to-width-using-css/&quot;&gt;宽高成比例&lt;/a&gt; 《- 没想到padding的height百分比是以width作参照的
-&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/?p=2357&quot;&gt;inline-block 4px（间距）问题&lt;/a&gt;
-&lt;a href=&quot;http://www.w3chtml.com/css3/properties/user-interface/box-sizing.html&quot;&gt;box-sizing&lt;/a&gt;
-&lt;a href=&quot;http://www.cnblogs.com/mofish/archive/2012/05/14/2499400.html&quot;&gt;clearfix&lt;/a&gt;
-&lt;a href=&quot;http://www.cnblogs.com/KeithWang/p/3139517.html&quot;&gt;block inline inline-block&lt;/a&gt;
-&lt;a href=&quot;https://segmentfault.com/a/1190000003038583&quot;&gt;line-height&lt;/a&gt;
-&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/?p=4925&quot;&gt;vertical align line-height&lt;/a&gt;
-内联元素对齐与基线对齐，块级元素与边框对齐
+&lt;p&gt;&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/?p=2427&quot;&gt;transform的matrix&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.w3school.com.cn/css/css_margin_collapsing.asp&quot;&gt;CSS 外边距合并&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.hicss.net/do-not-tell-me-you-understand-margin/&quot;&gt;垂直外边距合并问题&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.cnblogs.com/myqianlan/p/4255346.html&quot;&gt;a img 高度多4px&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://blog.csdn.net/chen_zw/article/details/8741365&quot;&gt;position属性&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://zihua.li/2013/12/keep-height-relevant-to-width-using-css/&quot;&gt;宽高成比例&lt;/a&gt; 《- 没想到padding的height百分比是以width作参照的&lt;br /&gt;
+&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/?p=2357&quot;&gt;inline-block 4px（间距）问题&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.w3chtml.com/css3/properties/user-interface/box-sizing.html&quot;&gt;box-sizing&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.cnblogs.com/mofish/archive/2012/05/14/2499400.html&quot;&gt;clearfix&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.cnblogs.com/KeithWang/p/3139517.html&quot;&gt;block inline inline-block&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://segmentfault.com/a/1190000003038583&quot;&gt;line-height&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/?p=4925&quot;&gt;vertical align line-height&lt;/a&gt;&lt;br /&gt;
+内联元素对齐与基线对齐，块级元素与边框对齐&lt;br /&gt;
 行高是整行的高度，并不是盒子的高度，你可以理解为盒子浮在行上，行拉开了，但是盒子还是那么高&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1&gt;jQuery与Firefox的一个坑&lt;/h1&gt;
