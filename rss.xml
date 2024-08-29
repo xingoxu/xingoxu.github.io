@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>2023 你的名字 飛騨高山 圣地巡礼</title><link>https://blog.xingoxu.com/2024/08/2023-kiminonawa-hida-seichijunrei/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/08/2023-kiminonawa-hida-seichijunrei/</guid><description>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xingo&apos;s private plot</title><description>大龄萌二 失踪人口</description><link>https://blog.xingoxu.com/</link><language>zh_cn</language><item><title>2024-jellyfin-10.9-update</title><link>https://blog.xingoxu.com/2024/08/2024-jellyfin-109-update/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/08/2024-jellyfin-109-update/</guid><description>
+
+前两天刚谈到用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin/) 的镜像做的 Jellyfin，但是 Jellyfin 的 Android TV 版本升级到最新之后只支持 10.9+ 以上版本的服务端，虽然也能把 Android TV 版本的 Jellyfin 降级到 10.8 兼容版本，但 Jellyfin 更新勤快，降级 TV 版本只是最后保底之策，将来如果有其他新特性，那么长痛不如短痛赶快升级到最新版本才是上策。
+
+</description><pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;前两天刚谈到用 &lt;a href=&quot;https://hub.docker.com/r/nyanmisaka/jellyfin/&quot;&gt;nyanmisaka/jellyfin&lt;/a&gt; 的镜像做的 Jellyfin，但是 Jellyfin 的 Android TV 版本升级到最新之后只支持 10.9+ 以上版本的服务端，虽然也能把 Android TV 版本的 Jellyfin 降级到 10.8 兼容版本，但 Jellyfin 更新勤快，降级 TV 版本只是最后保底之策，将来如果有其他新特性，那么长痛不如短痛赶快升级到最新版本才是上策。&lt;/p&gt;
+
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;从零重新根据向导起环境 + 设置库才能获得最正常的体验&lt;/p&gt;
+&lt;h2&gt;尝试直接升级到 &lt;a href=&quot;https://hub.docker.com/r/jellyfin/jellyfin&quot;&gt;jellyfin/jellyfin&lt;/a&gt; 镜像&lt;/h2&gt;
+&lt;p&gt;nyanmisaka 镜像是在官方镜像上进行的修改因此数据目录和官方镜像一致，可以直接升级，docker-compose 修改 image 值，compose up 一下就完成了。&lt;/p&gt;
+&lt;p&gt;但是发生了以下问题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;播放时不调用 GPU 加速，CPU 100%&lt;/li&gt;
+&lt;li&gt;只有 Android TV 客户端在播放时中文字幕乱码，表现为 口口口&lt;/li&gt;
+&lt;li&gt;部分番剧的 Extra 消失，或者上层文件夹并不是 Season X 的标准文件夹也会被吸收进正片一个文件夹并被刮削成标准集&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;播放时不调用 GPU 加速，CPU 100%&lt;/h3&gt;
+&lt;p&gt;我的 CPU 是 10代 UHD 630，在查看 &lt;a href=&quot;https://www.intel.com/content/www/us/en/docs/onevpl/developer-reference-media-intel-hardware/1-1/overview.html#CODECS-ENCODE-SUPPORT-FOR-10TH-GENERATION-INTEL-CORE&quot;&gt;Intel 支持&lt;/a&gt; 后发现并不支持 AV1 的解码和编码，因此要将硬件加速部分的 AV1 的解码和编码部分的对钩去掉。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/0bf96fe2-3107-4b20-a446-e8131fe1998c.jpg&quot; alt=&quot;硬件加速设置&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;客户端再次播放时服务端调用了GPU，CPU的占用也得到了改善&lt;/p&gt;
+&lt;h3&gt;中文字幕乱码&lt;/h3&gt;
+&lt;p&gt;在 &lt;a href=&quot;https://hub.docker.com/r/nyanmisaka/jellyfin/&quot;&gt;nyanmisaka/jellyfin&lt;/a&gt; 的镜像的&lt;a href=&quot;https://www.chiphell.com/thread-2375777-1-1.html&quot;&gt;说明&lt;/a&gt;中，已经添加了中文支持，而且我也为了部分字幕的效果有设置了备用字体。&lt;/p&gt;
+&lt;p&gt;但在原版镜像下，即使我启用了备用字体，字幕还是乱码。&lt;/p&gt;
+&lt;p&gt;然而在网页端和在官方 Android App 以及第三方 Findroid 播放时没有乱码。&lt;/p&gt;
+&lt;p&gt;反复查看&lt;a href=&quot;https://jellyfin.org/docs/general/administration/troubleshooting/#text-not-rendering-properly&quot;&gt;官方文档&lt;/a&gt;也表示，字幕依赖客户端字体，乱码在开启备用字体后就能解决。&lt;/p&gt;
+&lt;p&gt;最后抱着尝试性的心态在容器内安装了 CJK 系统字体，重新启动 jellyfin 服务端后，Android TV 客户端已可正常渲染字幕。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install fonts-noto-cjk-extra
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Extra 文件夹不显示&lt;/h3&gt;
+&lt;p&gt;没找到解决方案，没有人提 Issue 也很奇怪&lt;/p&gt;
+&lt;h2&gt;更换为 &lt;a href=&quot;https://hub.docker.com/r/linuxserver/jellyfin&quot;&gt;linuxserver/jellyfin&lt;/a&gt; 镜像&lt;/h2&gt;
+&lt;p&gt;因为用户权限问题，最后还是更换为了 linuxserver 的镜像&lt;/p&gt;
+&lt;p&gt;但是数据文件夹结构不同，首先参照&lt;a href=&quot;https://github.com/jellyfin/jellyfin/issues/3717&quot;&gt;此 issue&lt;/a&gt; 手动调整目录结构&lt;/p&gt;
+&lt;p&gt;然后修改 &lt;code&gt;docker-compose.yml&lt;/code&gt;，添加安装字体包&lt;/p&gt;
+&lt;h2&gt;最后&lt;/h2&gt;
+&lt;p&gt;正常启动后发现无法修改库的任何配置，最后删除了数据文件夹重新扫描重建了库（寄）&lt;/p&gt;
+</content:encoded></item><item><title>2023 你的名字 飛騨高山 圣地巡礼</title><link>https://blog.xingoxu.com/2024/08/2023-kiminonawa-hida-seichijunrei/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/08/2023-kiminonawa-hida-seichijunrei/</guid><description>
 一直很想把君名的山里的部分也巡礼一下，总算在2023年8月和朋友一起去了飛騨，把照片都拍了，住了一晚但第一天坐的夜巴所以实际上走了玩了两天。
 
 年初的时候已经在微博上整理了几张，今天把对比都都好好整理一下。
