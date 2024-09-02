@@ -1,5 +1,5 @@
 ---
-title: 2024-jellyfin-10.9-update
+title: 升级 Jellyfin 到 10.9
 published: 2024-08-28
 # description: ''
 # image: ''
