@@ -1,7 +1,7 @@
 ---
 title: About Me
 published: 2015-10-02 15:46:52
-slug: about-me
+slug: about
 ---
 
 # Name

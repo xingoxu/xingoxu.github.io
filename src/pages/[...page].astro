@@ -5,6 +5,7 @@ import PostPage from '@components/PostPage/index.astro';
 import { PAGE_SIZE } from '@constants/constants';
 import { getSortedPosts } from '@utils/content-utils';
 import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
 import { format } from 'date-fns';
 
 export const getStaticPaths = (async ({
@@ -20,6 +21,8 @@ export const getStaticPaths = (async ({
     page => page.params.page === undefined,
   )!;
 
+  const specPages = await getCollection('spec');
+
   return [
     indexPage,
     ...indexPagiPosts.map(
@@ -34,6 +37,16 @@ export const getStaticPaths = (async ({
           entry,
           prevEntry: array[index - 1],
           nextEntry: array[index + 1],
+        },
+      }),
+    ),
+    ...specPages.map(
+      (entry) => ({
+        params: {
+          page: entry.slug,
+        },
+        props: {
+          entry,
         },
       }),
     ),
