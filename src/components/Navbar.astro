@@ -40,7 +40,7 @@ const menuForLanguageSettings: Parameters<
   .concat(
     Languages.filter(lang =>
       allBlogPosts.find(entry =>
-        entry.slug.startsWith(`${lang}/`),
+        entry.id.startsWith(`${lang}/`),
       ),
     ),
   )

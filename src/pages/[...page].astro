@@ -1,67 +1,52 @@
 ---
-import { siteConfig } from '@/config';
-import IndexPage from '@components/IndexPage/index.astro';
-import PostPage from '@components/PostPage/index.astro';
-import { PAGE_SIZE } from '@constants/constants';
-import { getSortedPosts } from '@utils/content-utils';
-import type { GetStaticPaths } from 'astro';
-import { getCollection } from 'astro:content';
-import { format } from 'date-fns';
+import { siteConfig } from "@/config";
+import IndexPage from "@components/IndexPage/index.astro";
+import PostPage from "@components/PostPage/index.astro";
+import { PAGE_SIZE } from "@constants/constants";
+import { getSortedPosts } from "@utils/content-utils";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
 
-export const getStaticPaths = (async ({
-  paginate,
-}) => {
-  const indexPagiPosts = await getSortedPosts(
-    siteConfig.lang,
-  );
+export const getStaticPaths = (async ({ paginate }) => {
+  const indexPagiPosts = await getSortedPosts(siteConfig.lang);
   // biome-ignore lint/style/noNonNullAssertion: <explanation>
   const indexPage = paginate(indexPagiPosts, {
     pageSize: PAGE_SIZE,
-  }).find(
-    page => page.params.page === undefined,
-  )!;
+  }).find((page) => page.params.page === undefined)!;
 
-  const specPages = await getCollection('spec');
+  const specPages = await getCollection("spec");
 
   return [
     indexPage,
-    ...indexPagiPosts.map(
-      (entry, index, array) => ({
-        params: {
-          page: `${format(
-            entry.data.published,
-            'yyyy/MM',
-          )}/${entry.slug}`,
-        },
-        props: {
-          entry,
-          prevEntry: array[index - 1],
-          nextEntry: array[index + 1],
-        },
-      }),
-    ),
-    ...specPages.map(
-      (entry) => ({
-        params: {
-          page: entry.slug,
-        },
-        props: {
-          entry,
-        },
-      }),
-    ),
+    ...indexPagiPosts.map((entry, index, array) => ({
+      params: {
+        page: `${format(entry.data.published, "yyyy/MM")}/${entry.id}`,
+      },
+      props: {
+        entry,
+        prevEntry: array[index - 1],
+        nextEntry: array[index + 1],
+      },
+    })),
+    ...specPages.map((entry) => ({
+      params: {
+        page: entry.id,
+      },
+      props: {
+        entry,
+      },
+    })),
   ];
 }) satisfies GetStaticPaths;
 
-const {
-  entry,
-  prevEntry,
-  nextEntry,
-  page: indexPage,
-} = Astro.props;
+const { entry, prevEntry, nextEntry, page: indexPage } = Astro.props;
 ---
 
 {indexPage && <IndexPage page={indexPage} />}
 
-{entry && <PostPage entry={entry} prevEntry={prevEntry} nextEntry={nextEntry} />}
-
+{
+  entry && (
+    <PostPage entry={entry} prevEntry={prevEntry} nextEntry={nextEntry} />
+  )
+}

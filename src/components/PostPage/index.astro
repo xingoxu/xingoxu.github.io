@@ -1,53 +1,44 @@
 ---
-import path from 'node:path';
-import type { CollectionEntry } from 'astro:content';
-import { profileConfig } from '@/config';
-import PostMetadata from '@components/PostMeta.astro';
-import MiddleDot from '@components/atom/middle-dot.astro';
-import ImageWrapper from '@components/misc/ImageWrapper.astro';
-import License from '@components/misc/License.astro';
-import Markdown from '@components/misc/Markdown.astro';
-import I18nKey from '@i18n/i18nKey';
-import { i18n as _i18n } from '@i18n/translation';
-import MainGridLayout from '@layouts/MainGridLayout.astro';
-import { formatDateToYYYYMMDD } from '@utils/date-utils';
-import {
-  getDir,
-  getPostSlugWithoutLang,
-  getPostUrl,
-} from '@utils/url-utils';
-import { Icon } from 'astro-icon/components';
-import { licenseConfig } from 'src/config';
+import path from "node:path";
+import type { CollectionEntry } from "astro:content";
+import { profileConfig } from "@/config";
+import PostMetadata from "@components/PostMeta.astro";
+import MiddleDot from "@components/atom/middle-dot.astro";
+import ImageWrapper from "@components/misc/ImageWrapper.astro";
+import License from "@components/misc/License.astro";
+import Markdown from "@components/misc/Markdown.astro";
+import I18nKey from "@i18n/i18nKey";
+import { i18n as _i18n } from "@i18n/translation";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { formatDateToYYYYMMDD } from "@utils/date-utils";
+import { getDir, getPostSlugWithoutLang, getPostUrl } from "@utils/url-utils";
+import { Icon } from "astro-icon/components";
+import { licenseConfig } from "src/config";
+import { render } from "astro:content";
 
 interface Props {
-  entry: CollectionEntry<'posts'>;
-  prevEntry?: CollectionEntry<'posts'>;
-  nextEntry?: CollectionEntry<'posts'>;
+  entry: CollectionEntry<"posts">;
+  prevEntry?: CollectionEntry<"posts">;
+  nextEntry?: CollectionEntry<"posts">;
 }
 
-const { entry, prevEntry, nextEntry } =
-  Astro.props;
-const { Content, remarkPluginFrontmatter } =
-  await entry.render();
-const { lang, slug } =
-  getPostSlugWithoutLang(entry);
+const { entry, prevEntry, nextEntry } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(entry);
+const { lang, id: slug } = getPostSlugWithoutLang(entry);
 const i18n = (key: I18nKey) => _i18n(key, lang);
 
 const jsonLd = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
   headline: entry?.data.title,
-  description:
-    entry.data.description || entry.data.title,
+  description: entry.data.description || entry.data.title,
   keywords: entry.data.tags,
   author: {
-    '@type': 'Person',
+    "@type": "Person",
     name: profileConfig.name,
     url: Astro.site,
   },
-  datePublished: formatDateToYYYYMMDD(
-    entry.data.published,
-  ),
+  datePublished: formatDateToYYYYMMDD(entry.data.published),
   // TODO include cover image here
 });
 ---
