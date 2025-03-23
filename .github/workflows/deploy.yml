@@ -31,7 +31,7 @@ jobs:
     # Set the date time
     - name: Retrieve current Date Time in Singapore TimeZone
       shell: bash
-      run: echo "START_TIME=$(TZ=":Asia/Tokyo" date -R|sed 's/.....$//')" >> $GITHUB_ENV
+      run: echo "START_TIME=$(date -R)" >> $GITHUB_ENV
 
     # clone 现在的线上以延续tree
     - name: Clone Github Pages Site folder
