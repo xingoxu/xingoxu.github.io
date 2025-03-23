@@ -17,7 +17,7 @@ jobs:
       uses: szenius/set-timezone@v1.2
       with:
         # Desired timezone for Linux
-        timezoneLinux: Asia/Shanghai
+        timezoneLinux: Asia/Tokyo
     # Checkout Repository
     - uses: actions/checkout@v3
     - name: Setup Node.js environment
@@ -27,6 +27,12 @@ jobs:
         node-version: 20
     - run: npm i
     - run: npm run build
+
+    # Set the date time
+    - name: Retrieve current Date Time in Singapore TimeZone
+      shell: bash
+      run: echo "START_TIME=$(TZ=":Asia/Tokyo" date -R|sed 's/.....$//')" >> $GITHUB_ENV
+
     # clone 现在的线上以延续tree
     - name: Clone Github Pages Site folder
       uses: actions/checkout@v3
@@ -39,6 +45,6 @@ jobs:
         git config --global user.name "GitHub Actions"
         rm -rf .deploy_git/* && mv dist/* .deploy_git/
         touch .deploy_git/.nojekyll
-        cd .deploy_git && git add . && git commit -m "Site updated: ${{ github.event.repository.updated_at }}"
+        cd .deploy_git && git add . && git commit -m "Site updated: ${{ env.START_TIME }}"
         git push
 
