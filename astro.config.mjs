@@ -68,6 +68,7 @@ export default defineConfig({
     }),
     Compress({
       Image: false,
+      CSS: false,
     }),
     svelte(),
     sitemap(),
@@ -81,7 +82,13 @@ export default defineConfig({
       remarkCodeTitles,
     ],
     rehypePlugins: [
-      rehypeKatex,
+      [
+        rehypeKatex,
+        {
+          strict: false,
+          throwOnError: false,
+        },
+      ],
       rehypeSlug,
       [
         rehypeComponents,

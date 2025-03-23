@@ -7,16 +7,19 @@ import PostPage from '@components/PostPage/index.astro';
 import Markdown from '@components/misc/Markdown.astro';
 import I18nKey from '../i18n/i18nKey';
 import { i18n } from '../i18n/translation';
+import { render } from 'astro:content';
 
 const notFoundPage = await getEntry(
   'spec',
   '404',
 );
 
-const { Content } = await notFoundPage.render();
+const { Content } = await render(notFoundPage!);
 ---
 
-<PostPage entry={notFoundPage as unknown as CollectionEntry<'posts'>}></PostPage>
+<PostPage
+  entry={notFoundPage as unknown as CollectionEntry<'posts'>}
+/>
 <!-- <MainGridLayout title={notFoundPage.data.title} description={notFoundPage.data.title}>
   <div
     class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32"

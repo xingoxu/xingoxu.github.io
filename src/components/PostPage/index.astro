@@ -18,6 +18,7 @@ import {
 } from '@utils/url-utils';
 import { Icon } from 'astro-icon/components';
 import { licenseConfig } from 'src/config';
+import { render } from 'astro:content';
 
 interface Props {
   entry: CollectionEntry<'posts'>;
@@ -28,8 +29,8 @@ interface Props {
 const { entry, prevEntry, nextEntry } =
   Astro.props;
 const { Content, remarkPluginFrontmatter } =
-  await entry.render();
-const { lang, slug } =
+  await render(entry);
+const { lang, id: slug } =
   getPostSlugWithoutLang(entry);
 const i18n = (key: I18nKey) => _i18n(key, lang);
 
@@ -57,7 +58,11 @@ const jsonLd = JSON.stringify({
   title={entry.data.title}
   description={entry.data.description}
 >
-  <script slot="head" type="application/ld+json" set:html={jsonLd} />
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={jsonLd}
+  />
   <div
     class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-4"
   >
@@ -93,24 +98,28 @@ const jsonLd = JSON.stringify({
             <div
               class="transition h-8 w-7 rounded-md text-black/50 dark:text-white/50 items-center !hidden md:!flex"
             >
-              <Icon name="material-symbols:notes-rounded" />
+              <Icon
+                name="material-symbols:notes-rounded"
+              />
             </div>
             <MiddleDot />
             <div class="text-sm">
               {remarkPluginFrontmatter.words}
-              {" " + i18n(I18nKey.wordsCount)}
+              {' ' + i18n(I18nKey.wordsCount)}
             </div>
           </div>
           <div class="flex flex-row items-center">
             <div
               class="transition h-8 w-7 rounded-md text-black/50 dark:text-white/50 items-center !hidden md:!flex"
             >
-              <Icon name="material-symbols:schedule-outline-rounded" />
+              <Icon
+                name="material-symbols:schedule-outline-rounded"
+              />
             </div>
             <MiddleDot />
             <div class="text-sm">
               {remarkPluginFrontmatter.minutes}
-              {" " + i18n(I18nKey.minutesCount)}
+              {' ' + i18n(I18nKey.minutesCount)}
             </div>
           </div>
         </PostMetadata>
@@ -127,13 +136,18 @@ const jsonLd = JSON.stringify({
         entry.data.image && (
           <ImageWrapper
             src={entry.data.image}
-            basePath={path.join("content/posts/", getDir(entry.id))}
+            basePath={path.join(
+              'content/posts/',
+              getDir(entry.id),
+            )}
             class="mb-8 rounded-xl banner-container onload-animation"
           />
         )
       }
 
-      <Markdown class="mb-6 markdown-content onload-animation">
+      <Markdown
+        class="mb-6 markdown-content onload-animation"
+      >
         <Content />
       </Markdown>
 
@@ -192,48 +206,63 @@ const jsonLd = JSON.stringify({
       )
     }
   </div>
-  <div id="waline-comment" class="px-4 md:px-0" thread-key={slug} lang={lang}>
+  <div
+    id="waline-comment"
+    class="px-4 md:px-0"
+    thread-key={slug}
+    lang={lang}
+  >
   </div>
 </MainGridLayout>
 
 <!-- waline comment -->
 <script>
-  import { init, type WalineInstance } from "@waline/client";
-  import "@waline/client/style";
+  import {
+    init,
+    type WalineInstance,
+  } from '@waline/client';
+  import '@waline/client/style';
   const langMap = {
-    en: "en",
-    en_us: "en",
-    en_gb: "en",
-    en_au: "en",
-    zh_cn: "zh-CN",
-    zh_tw: "zh-TW",
-    ja: "jp",
-    ja_jp: "jp",
+    en: 'en',
+    en_us: 'en',
+    en_gb: 'en',
+    en_au: 'en',
+    zh_cn: 'zh-CN',
+    zh_tw: 'zh-TW',
+    ja: 'jp',
+    ja_jp: 'jp',
   };
-  let walineInstance: WalineInstance | null = null;
+  let walineInstance: WalineInstance | null =
+    null;
 
   function initWalineComment() {
-    const el = document.querySelector("#waline-comment");
+    const el = document.querySelector(
+      '#waline-comment',
+    );
     if (el === null) {
       return;
     }
 
     walineInstance = init({
-      el: (el as HTMLElement) || "waline-comment",
-      serverURL: "https://comments.xingoxu.com/",
-      path: el.getAttribute("thread-key") || undefined,
+      el: (el as HTMLElement) || 'waline-comment',
+      serverURL: 'https://comments.xingoxu.com/',
+      path:
+        el.getAttribute('thread-key') ||
+        undefined,
       lang:
-        langMap[(el.getAttribute("lang") || "en") as keyof typeof langMap] ||
-        "en",
-      dark: "html.dark",
-      turnstileKey: "0x4AAAAAAAb0G1lXkldTZZkJ",
-      requiredMeta: ["nick", "mail"],
+        langMap[
+          (el.getAttribute('lang') ||
+            'en') as keyof typeof langMap
+        ] || 'en',
+      dark: 'html.dark',
+      turnstileKey: '0x4AAAAAAAb0G1lXkldTZZkJ',
+      requiredMeta: ['nick', 'mail'],
       imageUploader: false,
       search: false,
       emoji: [
-        "//unpkg.com/@waline/emojis@1.2.0/weibo",
-        "//unpkg.com/@waline/emojis@1.2.0/qq",
-        "//unpkg.com/@waline/emojis@1.2.0/tieba",
+        '//unpkg.com/@waline/emojis@1.2.0/weibo',
+        '//unpkg.com/@waline/emojis@1.2.0/qq',
+        '//unpkg.com/@waline/emojis@1.2.0/tieba',
       ],
     });
   }
@@ -243,17 +272,35 @@ const jsonLd = JSON.stringify({
       walineInstance = null;
     }
   }
-  document.addEventListener("DOMContentLoaded", () => {
-    initWalineComment();
-  });
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      initWalineComment();
+    },
+  );
   if (window.swup.hooks) {
-    window.swup.hooks.on("page:view", initWalineComment);
-    window.swup.hooks.before("animation:out:start", unload);
+    window.swup.hooks.on(
+      'page:view',
+      initWalineComment,
+    );
+    window.swup.hooks.before(
+      'animation:out:start',
+      unload,
+    );
   } else {
-    document.addEventListener("swup:enable", () => {
-      window.swup.hooks.on("page:view", initWalineComment);
-      window.swup.hooks.before("animation:out:start", unload);
-    });
+    document.addEventListener(
+      'swup:enable',
+      () => {
+        window.swup.hooks.on(
+          'page:view',
+          initWalineComment,
+        );
+        window.swup.hooks.before(
+          'animation:out:start',
+          unload,
+        );
+      },
+    );
   }
 </script>
 
@@ -282,22 +329,34 @@ const jsonLd = JSON.stringify({
 
 <style is:global>
   #post-container :nth-child(1) {
-    animation-delay: calc(var(--content-delay) + 0ms);
+    animation-delay: calc(
+      var(--content-delay) + 0ms
+    );
   }
   #post-container :nth-child(2) {
-    animation-delay: calc(var(--content-delay) + 50ms);
+    animation-delay: calc(
+      var(--content-delay) + 50ms
+    );
   }
   #post-container :nth-child(3) {
-    animation-delay: calc(var(--content-delay) + 100ms);
+    animation-delay: calc(
+      var(--content-delay) + 100ms
+    );
   }
   #post-container :nth-child(4) {
-    animation-delay: calc(var(--content-delay) + 175ms);
+    animation-delay: calc(
+      var(--content-delay) + 175ms
+    );
   }
   #post-container :nth-child(5) {
-    animation-delay: calc(var(--content-delay) + 250ms);
+    animation-delay: calc(
+      var(--content-delay) + 250ms
+    );
   }
   #post-container :nth-child(6) {
-    animation-delay: calc(var(--content-delay) + 325ms);
+    animation-delay: calc(
+      var(--content-delay) + 325ms
+    );
   }
 
   #waline-comment .wl-count {
@@ -307,7 +366,7 @@ const jsonLd = JSON.stringify({
     margin: 0.75em 1.5em;
     width: calc(100% - 3em);
   }
-  #waline-comment a.wl-action[href*="markdown"] {
+  #waline-comment a.wl-action[href*='markdown'] {
     display: inline-flex;
   }
 </style>

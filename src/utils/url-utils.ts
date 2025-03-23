@@ -28,24 +28,25 @@ function joinUrl(...parts: string[]): string {
 export function getPostSlugWithoutLang(
   post: CollectionEntry<'posts'>,
 ) {
-  const [lang, ...slug] = post.slug.split('/');
+  const [lang, ...slug] = post.id.split('/');
   const isForeignPost =
     slug.length > 0 &&
     (Languages as string[]).includes(lang);
   return {
     isForeignPost,
     lang: isForeignPost ? lang : siteConfig.lang,
-    slug: isForeignPost
-      ? slug.join('/')
-      : post.slug,
+    id: isForeignPost ? slug.join('/') : post.id,
   };
 }
 
 export function getPostUrl(
   post: CollectionEntry<'posts'>,
 ) {
-  const { isForeignPost, slug, lang } =
-    getPostSlugWithoutLang(post);
+  const {
+    isForeignPost,
+    id: slug,
+    lang,
+  } = getPostSlugWithoutLang(post);
 
   return url(
     `/${isForeignPost ? `${lang}/` : ''}${format(

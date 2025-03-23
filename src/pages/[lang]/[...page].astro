@@ -34,11 +34,8 @@ export const getStaticPaths = (async ({
         ...allBlogPosts.map(
           (entry, index, array) => ({
             params: {
-              page: `${format(
-                entry.data.published,
-                'yyyy/MM',
-              )}/${
-                getPostSlugWithoutLang(entry).slug
+              page: `${format(entry.data.published, 'yyyy/MM')}/${
+                getPostSlugWithoutLang(entry).id
               }`,
               lang,
             },
@@ -67,6 +64,10 @@ const {
 
 {
   entry && (
-    <PostPage entry={entry} prevEntry={prevEntry} nextEntry={nextEntry} />
+    <PostPage
+      entry={entry}
+      prevEntry={prevEntry}
+      nextEntry={nextEntry}
+    />
   )
 }

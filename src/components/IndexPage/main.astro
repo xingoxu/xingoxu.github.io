@@ -19,26 +19,26 @@ const interval = 50;
   class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4"
 >
   {
-    posts.map(
-      (entry) => {
-        return (
-          <PostCard
-            entry={entry}
-            title={entry.data.title}
-            tags={entry.data.tags}
-            category={entry.data.category}
-            published={entry.data.published}
-            url={getPostUrl(entry)}
-            image={entry.data.image}
-            description={
-              entry.data.description || getContentExerpt(entry.body) || ""
-            }
-            draft={entry.data.draft}
-            class:list="onload-animation"
-            style={`animation-delay: calc(var(--content-delay) + ${delay++ * interval}ms);`}
-          />
-        );
-      }
-    )
+    posts.map(entry => {
+      return (
+        <PostCard
+          entry={entry}
+          title={entry.data.title}
+          tags={entry.data.tags}
+          category={entry.data.category}
+          published={entry.data.published}
+          url={getPostUrl(entry)}
+          image={entry.data.image}
+          description={
+            entry.data.description ||
+            getContentExerpt(entry.body) ||
+            ''
+          }
+          draft={entry.data.draft}
+          class:list="onload-animation"
+          style={`animation-delay: calc(var(--content-delay) + ${delay++ * interval}ms);`}
+        />
+      );
+    })
   }
 </div>

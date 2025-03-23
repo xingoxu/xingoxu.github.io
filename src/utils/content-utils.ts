@@ -24,7 +24,7 @@ export async function getSortedPosts(
     });
   } else if (lang) {
     allBlogPosts = allBlogPosts.filter(post =>
-      post.slug.startsWith(`${lang}/`),
+      post.id.startsWith(`${lang}/`),
     );
   }
 
@@ -36,12 +36,12 @@ export async function getSortedPosts(
 
   // TODO: deprecate below
   for (let i = 1; i < sorted.length; i++) {
-    sorted[i].data.nextSlug = sorted[i - 1].slug;
+    sorted[i].data.nextSlug = sorted[i - 1].id;
     sorted[i].data.nextTitle =
       sorted[i - 1].data.title;
   }
   for (let i = 0; i < sorted.length - 1; i++) {
-    sorted[i].data.prevSlug = sorted[i + 1].slug;
+    sorted[i].data.prevSlug = sorted[i + 1].id;
     sorted[i].data.prevTitle =
       sorted[i + 1].data.title;
   }
@@ -138,8 +138,10 @@ const parser = new MarkdownIt({ html: true });
 // return exerpt if there's <!-- more -->
 // or return null
 export function getContentExerpt(
-  content: string,
+  content: string | undefined,
 ) {
+  // undefined when content is empty (maybe it's draft)
+  if (!content) return null;
   const splittedContent = content.split(
     '<!-- more -->',
   );
