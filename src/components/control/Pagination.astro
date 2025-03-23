@@ -1,10 +1,10 @@
 ---
-import type { Page } from "astro";
-import { Icon } from "astro-icon/components";
-import { url } from "../../utils/url-utils";
-import type { CollectionEntry } from "astro:content";
+import type { Page } from 'astro';
+import { Icon } from 'astro-icon/components';
+import { url } from '../../utils/url-utils';
+import type { CollectionEntry } from 'astro:content';
 interface Props {
-  page: Page<CollectionEntry<"posts">>;
+  page: Page<CollectionEntry<'posts'>>;
   class?: string;
   style?: string;
 }
@@ -27,7 +27,11 @@ const VISIBLE = ADJ_DIST * 2 + 1;
 let count = 1;
 let l = page.currentPage;
 let r = page.currentPage;
-while (0 < l - 1 && r + 1 <= page.lastPage && count + 2 <= VISIBLE) {
+while (
+  0 < l - 1 &&
+  r + 1 <= page.lastPage &&
+  count + 2 <= VISIBLE
+) {
   count += 2;
   l--;
   r++;
@@ -36,7 +40,10 @@ while (0 < l - 1 && count < VISIBLE) {
   count++;
   l--;
 }
-while (r + 1 <= page.lastPage && count < VISIBLE) {
+while (
+  r + 1 <= page.lastPage &&
+  count < VISIBLE
+) {
   count++;
   r++;
 }
@@ -47,37 +54,53 @@ if (l === 3) pages.push(2);
 if (l > 3) pages.push(HIDDEN);
 for (let i = l; i <= r; i++) pages.push(i);
 if (r < page.lastPage - 2) pages.push(HIDDEN);
-if (r === page.lastPage - 2) pages.push(page.lastPage - 1);
+if (r === page.lastPage - 2)
+  pages.push(page.lastPage - 1);
 if (r < page.lastPage) pages.push(page.lastPage);
 
 const getPageUrl = (p: number) => {
-  const PAGINATION_BASE = "/page/";
-  if (lang) return `/${lang}${PAGINATION_BASE}${p}/`;
+  const PAGINATION_BASE = '/page/';
+  if (lang)
+    return `/${lang}${PAGINATION_BASE}${p}/`;
   return `${PAGINATION_BASE}${p}/`;
 };
 ---
 
 <div
-  class:list={[className, "flex flex-row gap-3 justify-center"]}
+  class:list={[
+    className,
+    'flex flex-row gap-3 justify-center',
+  ]}
   style={style}
 >
   <a
-    href={page.url.prev && url(getPageUrl(page.currentPage - 1))}
-    aria-label={page.url.prev ? "Previous Page" : null}
+    href={page.url.prev &&
+      url(getPageUrl(page.currentPage - 1))}
+    aria-label={page.url.prev
+      ? 'Previous Page'
+      : null}
     class:list={[
-      "btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11",
+      'btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11',
       { disabled: page.url.prev == undefined },
     ]}
   >
-    <Icon name="material-symbols:chevron-left-rounded" size="1.75rem" />
+    <Icon
+      name="material-symbols:chevron-left-rounded"
+      size="1.75rem"
+    />
   </a>
   <div
     class="bg-[var(--card-bg)] flex flex-row rounded-lg items-center text-neutral-700 dark:text-neutral-300 font-bold"
   >
     {
-      pages.map((p) => {
+      pages.map(p => {
         if (p == HIDDEN)
-          return <Icon name="material-symbols:more-horiz" class="mx-1" />;
+          return (
+            <Icon
+              name="material-symbols:more-horiz"
+              class="mx-1"
+            />
+          );
         if (p == page.currentPage)
           return (
             <div
@@ -100,13 +123,19 @@ const getPageUrl = (p: number) => {
     }
   </div>
   <a
-    href={page.url.next && url(getPageUrl(page.currentPage + 1))}
-    aria-label={page.url.next ? "Next Page" : null}
+    href={page.url.next &&
+      url(getPageUrl(page.currentPage + 1))}
+    aria-label={page.url.next
+      ? 'Next Page'
+      : null}
     class:list={[
-      "btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11",
+      'btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11',
       { disabled: page.url.next == undefined },
     ]}
   >
-    <Icon name="material-symbols:chevron-right-rounded" size="1.75rem" />
+    <Icon
+      name="material-symbols:chevron-right-rounded"
+      size="1.75rem"
+    />
   </a>
 </div>

@@ -1,7 +1,7 @@
 ---
-import { Icon } from "astro-icon/components";
-import { i18n } from "../../i18n/translation";
-import I18nKey from "../../i18n/i18nKey";
+import { Icon } from 'astro-icon/components';
+import { i18n } from '../../i18n/translation';
+import I18nKey from '../../i18n/i18nKey';
 interface Props {
   id: string;
   name?: string;
@@ -14,10 +14,20 @@ interface Params {
 }
 
 const { lang } = Astro.params as Params;
-const { id, name, collapsedHeight, style, class: className } = Astro.props;
+const {
+  id,
+  name,
+  collapsedHeight,
+  style,
+  class: className,
+} = Astro.props;
 ---
 
-<widget-layout data-id={id} class={"pb-4 card-base " + className} style={style}>
+<widget-layout
+  data-id={id}
+  class={'pb-4 card-base ' + className}
+  style={style}
+>
   <div
     class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
         before:w-1 before:h-4 before:rounded-md before:bg-[var(--primary)]
@@ -25,15 +35,23 @@ const { id, name, collapsedHeight, style, class: className } = Astro.props;
   >
     {name}
   </div>
-  <div id={id} class="collapse-wrapper px-4 overflow-hidden collapsed">
+  <div
+    id={id}
+    class="collapse-wrapper px-4 overflow-hidden collapsed"
+  >
     <slot />
   </div>
   <div class="expand-btn px-4 -mb-2">
-    <button class="btn-plain w-full h-9 rounded-lg">
+    <button
+      class="btn-plain w-full h-9 rounded-lg"
+    >
       <div
         class="text-[var(--primary)] flex items-center justify-center gap-2 -translate-x-2"
       >
-        <Icon name="material-symbols:more-horiz" size={28} />{" "}
+        <Icon
+          name="material-symbols:more-horiz"
+          size={28}
+        />{' '}
         {i18n(I18nKey.more, lang)}
       </div>
     </button>
@@ -52,22 +70,30 @@ const { id, name, collapsedHeight, style, class: className } = Astro.props;
     constructor() {
       super();
       const id = this.dataset.id;
-      const wrapper = this.querySelector(`#${id}`);
+      const wrapper = this.querySelector(
+        `#${id}`,
+      );
       const isCollapsed =
-        (wrapper?.scrollHeight || 0) > (wrapper?.clientHeight || 0);
+        (wrapper?.scrollHeight || 0) >
+        (wrapper?.clientHeight || 0);
 
-      const btn = this.querySelector(".expand-btn");
+      const btn = this.querySelector(
+        '.expand-btn',
+      );
       if (!isCollapsed) {
         btn?.remove();
         return;
       }
 
-      btn?.addEventListener("click", () => {
-        wrapper?.classList.remove("collapsed");
-        btn.classList.add("hidden");
+      btn?.addEventListener('click', () => {
+        wrapper?.classList.remove('collapsed');
+        btn.classList.add('hidden');
       });
     }
   }
 
-  customElements.define("widget-layout", WidgetLayout);
+  customElements.define(
+    'widget-layout',
+    WidgetLayout,
+  );
 </script>

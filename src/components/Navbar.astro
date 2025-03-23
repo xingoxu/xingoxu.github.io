@@ -75,85 +75,177 @@ const links: NavBarLink[] =
     },
   );
 ---
-<nav class:list={[
+
+<nav
+  class:list={[
     className,
-    "card-base sticky top-0 overflow-visible max-w-[var(--page-width)] h-[4.5rem] rounded-t-none mx-auto flex items-center justify-between px-4"]}>
-    <a href={url('/')} class="btn-plain h-[3.25rem] px-5 font-bold rounded-lg active:scale-95 md:hidden">
-        <div class="flex flex-row text-[var(--primary)] items-center text-md">
-            <Icon name="material-symbols:home-outline-rounded" size={"1.75rem"} />
-        </div>
-    </a>
-    <div class="hidden md:flex">
-        {links.map((l) => {
-            return <a aria-label={l.name} href={l.external ? l.url : url(l.url)} target={l.external ? "_blank" : null}
-                      class="btn-plain h-11 font-bold px-5 rounded-lg active:scale-95"
-            >
-                <div class="flex items-center">
-                    {l.name}
-                    {l.external && <Icon size="14" name="fa6-solid:arrow-up-right-from-square" class="transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]"></Icon>}
-                </div>
-            </a>;
-        })}
+    'card-base sticky top-0 overflow-visible max-w-[var(--page-width)] h-[4.5rem] rounded-t-none mx-auto flex items-center justify-between px-4',
+  ]}
+>
+  <a
+    href={url('/')}
+    class="btn-plain h-[3.25rem] px-5 font-bold rounded-lg active:scale-95 md:hidden"
+  >
+    <div
+      class="flex flex-row text-[var(--primary)] items-center text-md"
+    >
+      <Icon
+        name="material-symbols:home-outline-rounded"
+        size={'1.75rem'}
+      />
     </div>
-    <div class="flex">
-        <Search client:load>
-            <Icon slot="search-icon" name="material-symbols:search" size={"1.25rem"} class="absolute pointer-events-none ml-3 transition my-auto text-black/30 dark:text-white/30"></Icon>
-            <!--<Icon slot="arrow-icon" name="material-symbols:chevron-right-rounded" size={"1.25rem"} class="transition my-auto text-[var(&#45;&#45;primary)]"></Icon>-->
-            <Icon slot="arrow-icon" name="fa6-solid:chevron-right" size={"0.75rem"} class="transition translate-x-0.5 my-auto text-[var(--primary)]"></Icon>
-            <Icon slot="search-switch" name="material-symbols:search" size={"1.25rem"}></Icon>
-        </Search>
-        {!siteConfig.themeColor.fixed && (
-            <button aria-label="Display Settings" class="btn-plain h-11 w-11 rounded-lg active:scale-90" id="display-settings-switch">
-                <Icon name="material-symbols:palette-outline" size={"1.25rem"}></Icon>
-            </button>
-        )}
-        <LightDarkSwitch text={textForLightDarkSwitch} client:load></LightDarkSwitch>
-        <LanguageSettings menus={menuForLanguageSettings} client:load></LanguageSettings>
-        <button aria-label="Menu" name="Nav Menu" class="btn-plain w-11 h-11 rounded-lg active:scale-90 md:hidden" id="nav-menu-switch">
-            <Icon name="material-symbols:menu-rounded" size={"1.25rem"}></Icon>
+  </a>
+  <div class="hidden md:flex">
+    {
+      links.map(l => {
+        return (
+          <a
+            aria-label={l.name}
+            href={l.external ? l.url : url(l.url)}
+            target={l.external ? '_blank' : null}
+            class="btn-plain h-11 font-bold px-5 rounded-lg active:scale-95"
+          >
+            <div class="flex items-center">
+              {l.name}
+              {l.external && (
+                <Icon
+                  size="14"
+                  name="fa6-solid:arrow-up-right-from-square"
+                  class="transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]"
+                />
+              )}
+            </div>
+          </a>
+        );
+      })
+    }
+  </div>
+  <div class="flex">
+    <Search client:load>
+      <Icon
+        slot="search-icon"
+        name="material-symbols:search"
+        size={'1.25rem'}
+        class="absolute pointer-events-none ml-3 transition my-auto text-black/30 dark:text-white/30"
+      />
+      <!--<Icon slot="arrow-icon" name="material-symbols:chevron-right-rounded" size={"1.25rem"} class="transition my-auto text-[var(&#45;&#45;primary)]"></Icon>-->
+      <Icon
+        slot="arrow-icon"
+        name="fa6-solid:chevron-right"
+        size={'0.75rem'}
+        class="transition translate-x-0.5 my-auto text-[var(--primary)]"
+      />
+      <Icon
+        slot="search-switch"
+        name="material-symbols:search"
+        size={'1.25rem'}
+      />
+    </Search>
+    {
+      !siteConfig.themeColor.fixed && (
+        <button
+          aria-label="Display Settings"
+          class="btn-plain h-11 w-11 rounded-lg active:scale-90"
+          id="display-settings-switch"
+        >
+          <Icon
+            name="material-symbols:palette-outline"
+            size={'1.25rem'}
+          />
         </button>
-    </div>
-    <NavMenuPanel links={links} client:load/>
-    <DisplaySettings text={textForDisplaySettings} client:only="svelte">
-        <Icon slot="restore-icon" name="fa6-solid:arrow-rotate-left" size={"0.875rem"} class=""></Icon>
-    </DisplaySettings>
+      )
+    }
+    <LightDarkSwitch
+      text={textForLightDarkSwitch}
+      client:load
+    />
+    <LanguageSettings
+      menus={menuForLanguageSettings}
+      client:load
+    />
+    <button
+      aria-label="Menu"
+      name="Nav Menu"
+      class="btn-plain w-11 h-11 rounded-lg active:scale-90 md:hidden"
+      id="nav-menu-switch"
+    >
+      <Icon
+        name="material-symbols:menu-rounded"
+        size={'1.25rem'}
+      />
+    </button>
+  </div>
+  <NavMenuPanel links={links} client:load />
+  <DisplaySettings
+    text={textForDisplaySettings}
+    client:only="svelte"
+  >
+    <Icon
+      slot="restore-icon"
+      name="fa6-solid:arrow-rotate-left"
+      size={'0.875rem'}
+      class=""
+    />
+  </DisplaySettings>
 </nav>
 
 <style lang="stylus">
 </style>
 
 <script>
-
-function loadButtonScript() {
-
-    let settingBtn = document.getElementById("display-settings-switch");
+  function loadButtonScript() {
+    let settingBtn = document.getElementById(
+      'display-settings-switch',
+    );
     if (settingBtn) {
-        settingBtn.addEventListener("click", function () {
-            let settingPanel = document.getElementById("display-setting");
-            settingPanel?.classList.toggle("float-panel-closed");
-        });
+      settingBtn.addEventListener(
+        'click',
+        function () {
+          let settingPanel =
+            document.getElementById(
+              'display-setting',
+            );
+          settingPanel?.classList.toggle(
+            'float-panel-closed',
+          );
+        },
+      );
     }
 
-    let menuBtn = document.getElementById("nav-menu-switch");
-    menuBtn?.addEventListener("click", function () {
-        let menuPanel = document.getElementById("nav-menu-panel");
-        menuPanel?.classList.toggle("float-panel-closed");
-    });
-}
+    let menuBtn = document.getElementById(
+      'nav-menu-switch',
+    );
+    menuBtn?.addEventListener(
+      'click',
+      function () {
+        let menuPanel = document.getElementById(
+          'nav-menu-panel',
+        );
+        menuPanel?.classList.toggle(
+          'float-panel-closed',
+        );
+      },
+    );
+  }
 
-loadButtonScript();
-
+  loadButtonScript();
 </script>
 
-{import.meta.env.PROD && <script is:inline define:vars={{scriptUrl: url('/pagefind/pagefind.js')}}>
-async function loadPagefind() {
-    const pagefind = await import(scriptUrl)
+<script
+  is:inline
+  define:vars={{
+    scriptUrl: url('/pagefind/pagefind.js'),
+    isProd: import.meta.env.PROD,
+  }}
+>
+  async function loadPagefind() {
+    const pagefind = await import(scriptUrl);
     await pagefind.options({
-        'excerptLength': 20
-    })
-    pagefind.init()
-    window.pagefind = pagefind
-    pagefind.search('')     // speed up the first search
-}
-loadPagefind()
-</script>}
+      excerptLength: 20,
+    });
+    pagefind.init();
+    window.pagefind = pagefind;
+    pagefind.search(''); // speed up the first search
+  }
+  isProd && loadPagefind();
+</script>
