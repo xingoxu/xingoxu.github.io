@@ -124,21 +124,7 @@ const links: NavBarLink[] =
 
 <script>
 
-function switchTheme() {
-    if (localStorage.theme === 'dark') {
-        document.documentElement.classList.remove('dark');
-        localStorage.theme = 'light';
-    } else {
-        document.documentElement.classList.add('dark');
-        localStorage.theme = 'dark';
-    }
-}
-
 function loadButtonScript() {
-    let switchBtn = document.getElementById("scheme-switch");
-    switchBtn?.addEventListener("click", function () {
-        switchTheme()
-    });
 
     let settingBtn = document.getElementById("display-settings-switch");
     if (settingBtn) {
@@ -157,9 +143,6 @@ function loadButtonScript() {
 
 loadButtonScript();
 
-document.addEventListener('astro:after-swap', () => {
-    loadButtonScript();
-}, { once: false });
 </script>
 
 {import.meta.env.PROD && <script is:inline define:vars={{scriptUrl: url('/pagefind/pagefind.js')}}>

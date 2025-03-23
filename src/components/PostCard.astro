@@ -11,17 +11,16 @@ import Markdown from "./misc/Markdown.astro";
 import { render } from "astro:content";
 
 interface Props {
-  class: string;
+  class?: string;
   entry: CollectionEntry<"posts">;
   title: string;
   url: string;
   published: Date;
-  tags: string[];
-  category: string;
-  image: string;
+  tags?: string[];
+  category?: string;
+  image?: string;
   description: string;
-  words: number;
-  draft: boolean;
+  draft?: boolean;
   style: string;
 }
 const {
@@ -33,7 +32,7 @@ const {
   category,
   image,
   description,
-  words,
+  // words,
   style,
 } = Astro.props;
 const className = Astro.props.class;

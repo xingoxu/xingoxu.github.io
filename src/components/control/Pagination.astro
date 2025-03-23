@@ -1,12 +1,18 @@
 ---
-import type { Page } from 'astro';
-import { Icon } from 'astro-icon/components';
-import { url } from '../../utils/url-utils';
+import type { Page } from "astro";
+import { Icon } from "astro-icon/components";
+import { url } from "../../utils/url-utils";
+import type { CollectionEntry } from "astro:content";
 interface Props {
-  page: Page;
+  page: Page<CollectionEntry<"posts">>;
   class?: string;
   style?: string;
 }
+interface Params {
+  lang?: string;
+  page: string;
+}
+const { lang } = Astro.params;
 
 const { page, style } = Astro.props;
 
@@ -21,11 +27,7 @@ const VISIBLE = ADJ_DIST * 2 + 1;
 let count = 1;
 let l = page.currentPage;
 let r = page.currentPage;
-while (
-  0 < l - 1 &&
-  r + 1 <= page.lastPage &&
-  count + 2 <= VISIBLE
-) {
+while (0 < l - 1 && r + 1 <= page.lastPage && count + 2 <= VISIBLE) {
   count += 2;
   l--;
   r++;
@@ -34,10 +36,7 @@ while (0 < l - 1 && count < VISIBLE) {
   count++;
   l--;
 }
-while (
-  r + 1 <= page.lastPage &&
-  count < VISIBLE
-) {
+while (r + 1 <= page.lastPage && count < VISIBLE) {
   count++;
   r++;
 }
@@ -48,13 +47,12 @@ if (l === 3) pages.push(2);
 if (l > 3) pages.push(HIDDEN);
 for (let i = l; i <= r; i++) pages.push(i);
 if (r < page.lastPage - 2) pages.push(HIDDEN);
-if (r === page.lastPage - 2)
-  pages.push(page.lastPage - 1);
+if (r === page.lastPage - 2) pages.push(page.lastPage - 1);
 if (r < page.lastPage) pages.push(page.lastPage);
 
 const getPageUrl = (p: number) => {
-  const PAGINATION_BASE = '/page/';
-  // if (p == 1) return PAGINATION_BASE;
+  const PAGINATION_BASE = "/page/";
+  if (lang) return `/${lang}${PAGINATION_BASE}${p}/`;
   return `${PAGINATION_BASE}${p}/`;
 };
 ---
