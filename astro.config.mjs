@@ -68,6 +68,7 @@ export default defineConfig({
     }),
     Compress({
       Image: false,
+      CSS: false,
     }),
     svelte(),
     sitemap(),
