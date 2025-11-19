@@ -23,7 +23,7 @@
     "@fontsource/roboto": "^5.0.12",
     "@swup/astro": "^1.4.0",
     "@waline/client": "^3.2.1",
-    "astro": "^5.5.4",
+    "astro": "^5.15.9",
     "astro-compress": "^2.2.15",
     "astro-icon": "^1.1.1",
     "colorjs.io": "^0.5.0",
