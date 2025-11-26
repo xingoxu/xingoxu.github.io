@@ -135,7 +135,6 @@
 &lt;p&gt;巡礼的时候电影已经上映了快10年，但去到偏远乡下的圣地当地还是张贴了当年的海报，以及很欢迎别人来参观和打卡，&lt;a href=&quot;https://weibo.com/1804320382/NdlEK6u6f&quot;&gt;还特地放了留言本等等&lt;/a&gt;，还是很有意思的一次巡礼。&lt;/p&gt;
 </content:encoded></item><item><title>2024 年如何中间人 Android 网络请求</title><link>https://blog.xingoxu.com/2024/07/2024-android-debugging-ssl/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/07/2024-android-debugging-ssl/</guid><description>不像 iOS，在 Android 下，设置完了代理并安装与信任了自签证书后并不能让 Apps 信任被中间人了的网络请求。这篇文章是记录了 2023 ~ 2024 年我是如何中间人 Android 的网络请求的。
 
-
 </description><pubDate>Tue, 09 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;不像 iOS，在 Android 下，设置完了代理并安装与信任了自签证书后并不能让 Apps 信任被中间人了的网络请求。这篇文章是记录了 2023 ~ 2024 年我是如何中间人 Android 的网络请求的。&lt;/p&gt;
 
 &lt;h1&gt;背景&lt;/h1&gt;
@@ -199,7 +198,7 @@ frida -U -f apk.packagename --codeshare akabe1/frida-multiple-unpinning
 &lt;p&gt;执行命令后应用自动启动，此时 SSL 已经被绕过并可以使用 Charles 等分析请求内容。&lt;/p&gt;
 &lt;h1&gt;References&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://kishorbalan.medium.com/its-all-about-android-ssl-pinning-bypass-and-intercepting-proxy-unaware-applications-91689c0763d8&quot;&gt;It&apos;s all about Bypassing Android SSL Pinning and Intercepting Proxy Unaware applications.&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://kishorbalan.medium.com/its-all-about-android-ssl-pinning-bypass-and-intercepting-proxy-unaware-applications-91689c0763d8&quot;&gt;It&apos;s all about Bypassing Android SSL Pinning and Intercepting Proxy Unaware applications.&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://frida.re/docs/android/&quot;&gt;Android | Frida&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content:encoded></item><item><title>聊聊管理番剧动画片这件事</title><link>https://blog.xingoxu.com/2024/07/2024-managing-anime-series/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/07/2024-managing-anime-series/</guid><description>我刚开始看动画的时候也是B站或者优酷这些流媒体看的，最开始从国外录电视，翻译添加字幕重新压制再上传各个视频网站然后被我们所观看到。之后就各种政策变化，以及有了一些版权意识之后，一些没有引入版权，又或是动画本身有一些镜头并不符合国内情势被剪辑的事情发生之后，我看动画的方式就从在线变成了找资源下载看了。而后又对DVD，高清，蓝光等事情产生了兴趣，以及喜欢的动画如果想再回去看看的话又不想每次再翻回去看这一点之后开始研究 PT 等等的事情。
