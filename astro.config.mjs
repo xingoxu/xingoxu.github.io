@@ -57,6 +57,9 @@ export default defineConfig({
       preload: true,
       accessibility: true,
       globalInstance: true,
+      // default true
+      // if change to true / listen to swup event and removeEvents
+      reloadScripts: false
     }),
     icon({
       include: {

@@ -13,17 +13,17 @@
     "lint": "biome check --apply ./src"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.3.0",
-    "@astrojs/svelte": "^7.0.7",
-    "@astrojs/tailwind": "^6.0.1",
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/svelte": "^7.2.2",
+    "@astrojs/tailwind": "^6.0.2",
     "@fancyapps/ui": "^5.0.36",
     "@fontsource-variable/jetbrains-mono": "^5.0.20",
     "@fontsource/roboto": "^5.0.12",
     "@swup/astro": "^1.4.0",
     "@waline/client": "^3.2.1",
-    "astro": "^5.5.4",
+    "astro": "^5.16.0",
     "astro-compress": "^2.2.15",
     "astro-icon": "^1.1.1",
     "colorjs.io": "^0.5.0",
@@ -50,7 +50,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.10.4",
+    "@astrojs/ts-plugin": "^1.10.5",
     "@biomejs/biome": "^1.8.0",
     "@iconify-json/fa6-brands": "^1.1.18",
     "@iconify-json/fa6-regular": "^1.1.18",
@@ -66,5 +66,8 @@
     "prettier-plugin-astro": "0.14.1",
     "stylus": "^0.63.0",
     "swup": "^4.6.1"
+  },
+  "volta": {
+    "node": "24.11.1"
   }
 }

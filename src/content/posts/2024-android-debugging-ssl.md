@@ -3,15 +3,14 @@ title: 2024 年如何中间人 Android 网络请求
 published: 2024-07-09
 # description: ''
 # image: ''
-tags: 
+tags:
   - dev
   - android
 # category: ''
-draft: false 
+draft: false
 ---
 
 不像 iOS，在 Android 下，设置完了代理并安装与信任了自签证书后并不能让 Apps 信任被中间人了的网络请求。这篇文章是记录了 2023 ~ 2024 年我是如何中间人 Android 的网络请求的。
-
 
 <!-- more -->
 
@@ -21,15 +20,16 @@ Android 从6版本开始，系统就会默认所有 Apps 的 https 网络请求�
 
 以前我会使用 Xposed Framework，但 Xposed 好久不更新，后继的 LSPosed 等等也是风波不停，只是为了中间人 app 的请求，是否有更优雅的方式。
 
-
 # [apk-mitm](https://github.com/shroudedcode/apk-mitm)
 
 这是唯一非 root 也能使用的工具，原理是反向apk后植入hook并动态信任 https 请求。
 
 好处
+
 - 不需要 root
 
 坏处
+
 - webview 的内容无法被中间人
 - App 可能并不会按预期的工作
 
@@ -59,6 +59,7 @@ adbd cannot run as root in production builds
 ```
 
 使用 su -c 或者一行一行手动敲命令↓
+
 ```bash
 adb shell
 # 进入 Android shell后切换超级用户模式
@@ -83,8 +84,8 @@ exit
 ```bash
 pip install frida-tools
 ```
-结束
 
+结束
 
 # 启动脚本
 
@@ -108,8 +109,7 @@ frida -U --aux="uid=(int)10" -f apk.packagename --codeshare akabe1/frida-multipl
 
 执行命令后应用自动启动，此时 SSL 已经被绕过并可以使用 Charles 等分析请求内容。
 
-
 # References
 
-> [It's all about Bypassing Android SSL Pinning and Intercepting Proxy Unaware applications.](https://kishorbalan.medium.com/its-all-about-android-ssl-pinning-bypass-and-intercepting-proxy-unaware-applications-91689c0763d8)
+> [It's all about Bypassing Android SSL Pinning and Intercepting Proxy Unaware applications.](https://kishorbalan.medium.com/its-all-about-android-ssl-pinning-bypass-and-intercepting-proxy-unaware-applications-91689c0763d8)  
 > [Android | Frida](https://frida.re/docs/android/)
