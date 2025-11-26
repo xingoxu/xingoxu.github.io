@@ -29,7 +29,7 @@ jobs:
     - run: npm run build
 
     # Set the date time
-    - name: Retrieve current Date Time in Singapore TimeZone
+    - name: Retrieve current Date Time in Tokyo TimeZone
       shell: bash
       run: echo "START_TIME=$(date -R)" >> $GITHUB_ENV
 
