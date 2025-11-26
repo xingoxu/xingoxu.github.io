@@ -81,7 +81,7 @@ const {
         '.expand-btn',
       );
       if (!isCollapsed) {
-        btn?.remove();
+        btn?.classList.add('hidden');
         return;
       }
 
