@@ -103,16 +103,32 @@ const siteLang = (
     <title>{pageTitle}</title>
 
     <meta charset="UTF-8" />
-    <meta name="description" content={description || pageTitle} />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content={description || pageTitle}
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
     {
-      favicons.map((favicon) => (
+      favicons.map(favicon => (
         <link
           rel="icon"
-          href={favicon.src.startsWith("/") ? url(favicon.src) : favicon.src}
+          href={
+            favicon.src.startsWith('/')
+              ? url(favicon.src)
+              : favicon.src
+          }
           sizes={favicon.sizes}
-          media={favicon.theme && `(prefers-color-scheme: ${favicon.theme})`}
+          media={
+            favicon.theme &&
+            `(prefers-color-scheme: ${favicon.theme})`
+          }
         />
       ))
     }
@@ -126,19 +142,33 @@ const siteLang = (
         AUTO_MODE: AUTO_MODE,
       }}
     >
-      const theme = localStorage.getItem("theme") || DEFAULT_THEME;
+      const theme =
+        localStorage.getItem('theme') ||
+        DEFAULT_THEME;
       switch (theme) {
         case LIGHT_MODE:
-          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.remove(
+            'dark',
+          );
           break;
         case DARK_MODE:
-          document.documentElement.classList.add("dark");
+          document.documentElement.classList.add(
+            'dark',
+          );
           break;
         case AUTO_MODE:
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.documentElement.classList.add("dark");
+          if (
+            window.matchMedia(
+              '(prefers-color-scheme: dark)',
+            ).matches
+          ) {
+            document.documentElement.classList.add(
+              'dark',
+            );
           } else {
-            document.documentElement.classList.remove("dark");
+            document.documentElement.classList.remove(
+              'dark',
+            );
           }
       }
     </script>
@@ -148,7 +178,8 @@ const siteLang = (
     <link
       rel="stylesheet"
       href="https://cdn.staticfile.net/KaTeX/0.16.9/katex.min.css"
-      media="print" onload="this.media='all'"
+      media="print"
+      onload="this.media='all'"
       integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
       crossorigin="anonymous"
     />
@@ -165,19 +196,30 @@ const siteLang = (
   </head>
   <body
     class="min-h-screen transition"
-    class:list={[{ "is-home": isHomePage, "enable-banner": enableBanner }]}
+    class:list={[
+      {
+        'is-home': isHomePage,
+        'enable-banner': enableBanner,
+      },
+    ]}
   >
     <ConfigCarrier />
     <GlobalStyles>
       {
         enableBanner && (
-          <div id="banner-wrapper" class="absolute w-full">
+          <div
+            id="banner-wrapper"
+            class="absolute w-full"
+          >
             <ImageWrapper
               id="boxtest"
               alt="Banner image of the blog"
               class:list={[
-                "object-center object-cover h-full",
-                { hidden: !siteConfig.banner.enable },
+                'object-center object-cover h-full',
+                {
+                  hidden:
+                    !siteConfig.banner.enable,
+                },
               ]}
               src={siteConfig.banner.src}
             />
@@ -223,19 +265,19 @@ const siteLang = (
   }
 </style>
 <script>
-  import "overlayscrollbars/overlayscrollbars.css";
+  import 'overlayscrollbars/overlayscrollbars.css';
   import {
     OverlayScrollbars,
     ScrollbarsHidingPlugin,
     SizeObserverPlugin,
     ClickScrollPlugin,
-  } from "overlayscrollbars";
+  } from 'overlayscrollbars';
   import {
     getHue,
     getStoredTheme,
     setHue,
     setTheme,
-  } from "../utils/setting-utils";
+  } from '../utils/setting-utils';
 
   /* Preload fonts */
   // (async function() {
@@ -254,7 +296,7 @@ const siteLang = (
   /* issue link: https://github.com/withastro/astro/issues/8711, the solution get from here too */
   /* update: fixed in Astro 3.2.4 */
   function disableAnimation() {
-    const css = document.createElement("style");
+    const css = document.createElement('style');
     css.appendChild(
       document.createTextNode(
         `*{
@@ -263,14 +305,15 @@ const siteLang = (
               -o-transition:none!important;
               -ms-transition:none!important;
               transition:none!important
-              }`
-      )
+              }`,
+      ),
     );
     document.head.appendChild(css);
 
     return () => {
       // Force restyle
-      (() => window.getComputedStyle(document.body))();
+      (() =>
+        window.getComputedStyle(document.body))();
 
       // Wait for next tick before removing
       setTimeout(() => {
@@ -279,9 +322,13 @@ const siteLang = (
     };
   }
 
-  function setClickOutsideToClose(panel: string, ignores: string[]) {
-    document.addEventListener("click", (event) => {
-      let panelDom = document.getElementById(panel);
+  function setClickOutsideToClose(
+    panel: string,
+    ignores: string[],
+  ) {
+    document.addEventListener('click', event => {
+      let panelDom =
+        document.getElementById(panel);
       let tDom = event.target;
       for (let ig of ignores) {
         let ie = document.getElementById(ig);
@@ -289,21 +336,23 @@ const siteLang = (
           return;
         }
       }
-      panelDom.classList.add("float-panel-closed");
+      panelDom.classList.add(
+        'float-panel-closed',
+      );
     });
   }
-  setClickOutsideToClose("display-setting", [
-    "display-setting",
-    "display-settings-switch",
+  setClickOutsideToClose('display-setting', [
+    'display-setting',
+    'display-settings-switch',
   ]);
-  setClickOutsideToClose("nav-menu-panel", [
-    "nav-menu-panel",
-    "nav-menu-switch",
+  setClickOutsideToClose('nav-menu-panel', [
+    'nav-menu-panel',
+    'nav-menu-switch',
   ]);
-  setClickOutsideToClose("search-panel", [
-    "search-panel",
-    "search-bar",
-    "search-switch",
+  setClickOutsideToClose('search-panel', [
+    'search-panel',
+    'search-bar',
+    'search-switch',
   ]);
 
   function loadTheme() {
@@ -316,14 +365,18 @@ const siteLang = (
   }
 
   function setBannerHeight() {
-    const banner = document.getElementById("banner-wrapper");
+    const banner = document.getElementById(
+      'banner-wrapper',
+    );
     if (banner === null) return;
-    if (document.body.classList.contains("is-home")) {
-      banner.classList.remove("banner-else");
-      banner.classList.add("banner-home");
+    if (
+      document.body.classList.contains('is-home')
+    ) {
+      banner.classList.remove('banner-else');
+      banner.classList.add('banner-home');
     } else {
-      banner.classList.remove("banner-home");
-      banner.classList.add("banner-else");
+      banner.classList.remove('banner-home');
+      banner.classList.add('banner-else');
     }
   }
 
@@ -332,19 +385,20 @@ const siteLang = (
       // docs say that a initialization to the body element would affect native functionality like window.scrollTo
       // but just leave it here for now
       {
-        target: document.querySelector("body")!,
+        target: document.querySelector('body')!,
         cancel: {
           nativeScrollbarsOverlaid: true, // don't initialize the overlay scrollbar if there is a native one
         },
       },
       {
         scrollbars: {
-          theme: "scrollbar-base scrollbar-auto py-1",
-          autoHide: "move",
+          theme:
+            'scrollbar-base scrollbar-auto py-1',
+          autoHide: 'move',
           autoHideDelay: 500,
           autoHideSuspend: false,
         },
-      }
+      },
     );
   }
 
@@ -361,7 +415,10 @@ const siteLang = (
 
   /* Load settings before swapping */
   /* astro:after-swap event happened before swap animation */
-  document.addEventListener("astro:after-swap", init);
+  document.addEventListener(
+    'astro:after-swap',
+    init,
+  );
 
   const setup = () => {
     // TODO: temp solution to change the height of the banner
@@ -377,14 +434,109 @@ const siteLang = (
 	})
 */
     // Remove the delay for the first time page load
-    window.swup.hooks.on("link:click", () => {
-      document.documentElement.style.setProperty("--content-delay", "0ms");
+    window.swup.hooks.on('link:click', () => {
+      document.documentElement.style.setProperty(
+        '--content-delay',
+        '0ms',
+      );
     });
   };
   if (window.swup.hooks) {
     setup();
   } else {
-    document.addEventListener("swup:enable", setup);
+    document.addEventListener(
+      'swup:enable',
+      setup,
+    );
+  }
+</script>
+
+<!-- waline comment -->
+<script>
+  import {
+    init,
+    type WalineInstance,
+  } from '@waline/client';
+  import '@waline/client/style';
+  const langMap = {
+    en: 'en',
+    en_us: 'en',
+    en_gb: 'en',
+    en_au: 'en',
+    zh_cn: 'zh-CN',
+    zh_tw: 'zh-TW',
+    ja: 'jp',
+    ja_jp: 'jp',
+  };
+  let walineInstance: WalineInstance | null =
+    null;
+
+  function initWalineComment() {
+    const el = document.querySelector(
+      '#waline-comment',
+    );
+    if (el === null) {
+      return;
+    }
+
+    walineInstance = init({
+      el: (el as HTMLElement) || 'waline-comment',
+      serverURL: 'https://comments.xingoxu.com/',
+      path:
+        el.getAttribute('thread-key') ||
+        undefined,
+      lang:
+        langMap[
+          (el.getAttribute('lang') ||
+            'en') as keyof typeof langMap
+        ] || 'en',
+      dark: 'html.dark',
+      turnstileKey: '0x4AAAAAAAb0G1lXkldTZZkJ',
+      requiredMeta: ['nick', 'mail'],
+      imageUploader: false,
+      search: false,
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.2.0/weibo',
+        '//unpkg.com/@waline/emojis@1.2.0/qq',
+        '//unpkg.com/@waline/emojis@1.2.0/tieba',
+      ],
+    });
+  }
+  function unload() {
+    if (walineInstance !== null) {
+      walineInstance.destroy();
+      walineInstance = null;
+    }
+  }
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      initWalineComment();
+    },
+  );
+  if (window.swup.hooks) {
+    window.swup.hooks.on(
+      'page:view',
+      initWalineComment,
+    );
+    window.swup.hooks.before(
+      'animation:out:start',
+      unload,
+    );
+  } else {
+    document.addEventListener(
+      'swup:enable',
+      () => {
+        window.swup.hooks.on(
+          'page:view',
+          initWalineComment,
+        );
+        window.swup.hooks.before(
+          'animation:out:start',
+          unload,
+        );
+      },
+    );
   }
 </script>
 

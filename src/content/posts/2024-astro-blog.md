@@ -5,7 +5,7 @@ published: 2024-06-04
 image: https://cdn.buttercms.com/xrVbfdR5TBy4iTaY4xl7
 tags: ['notes', 'dev']
 # category: ''
-draft: false 
+draft: false
 ---
 
 好久没有写博客了，忙是比较大的一个因素以外，事实上这几年也感觉确实没有什么积累，一方面前端虽然还是变化很快，但翻来覆去其实就那几个花样，我会觉得这也要写一篇文章水吗？另一方面博客本身也是各种长草，另外把想法组织成语言很难是因为当写成文章时就必须要归纳和整理，提升了整个难度。今天这篇文章主打一个想到哪里写哪里，希望能够降下自己写文章的门槛，聊一聊 2024 我用 Astro 翻新了我的博客。
@@ -37,14 +37,13 @@ Hexo 在我的观测下是内容和主题做到了分离，而且主题可以使
 
 # Astro
 
-[Astro](https://astro.build/) 也是一个静态网站生成器，但他与其说静态网站，其实也在服务器上运行，并有处理类似 cookie 这种和 db 交互的能力（SSR模式）。具体就不介绍了 ~~（我自己也会去摸透）~~  。
+[Astro](https://astro.build/) 也是一个静态网站生成器，但他与其说静态网站，其实也在服务器上运行，并有处理类似 cookie 这种和 db 交互的能力（SSR模式）。具体就不介绍了 ~~（我自己也会去摸透）~~ 。
 
 谈一下 Astro 的优点，首先是卖点全新 Markdown 格式 MDX，Markdown里可以插组件，导入包等等。大概挺好用的吧，~~我暂时没这个需求让我怎么评价~~，这个格式暂时观望吧，因为如果有其他框架，其他 CMS 支持的话，那我也许会使用，但我更倾向于在 layout 也就是主题上做文章，我觉得对张鑫旭这些写 sample 教学文章的大佬可能会有用，同样一个 component 可以直接展示出来。
 
 其次是框架混用，Astro 自己的 layout 里边可以使用你喜欢的框架比如 svelte，Vue，React等等，但内容本身都是在静态生成命令执行的时候产生的，所以传统的 onMount、useEffect 等等都不会如你所想的在客户端进行绑定事件监听。需要在调用框架组件的时候加入以 `client:` 为首的 directive。但无论加入哪个指令，script中的内容将会完整的被打包系统吐出来最后写进脚本里，因此做多语言的时候你的语言 Map 有可能会被单独打包成一个chunk，有人可能会在乎，有人可能不会，而对于我来说，HTML中既然已经存在了这样的语言，是不是就不应该再写一遍进 JavaScript，那么我就会用 props 传进去之后，调用直接渲染模板，就不会被打包了。但这样进而会导致写法冗长，不利于代码的可读性，不过这也是仁者见仁，或者说是全看写代码的人如何协调了。
 
-以及还有一些小问题吧，比如我需要format时间，Astro 经过 parse 后给到我的时间是一个 UTC 时间，我理解 Astro 支持多时区，文章的DateTime可以有时区信息，但现有的文章全都是没有时区的，因此我必须把 Node.js 的市区也得默认改成 UTC，然而官方的推荐做法是根目录添加`.env`使用 `import.meta.env`，进而避免对 `process.env` 的污染？但现有的框架比如 date-fns 都没有使用 import.meta.env 就导致了我还得手动去想在哪里安排设置这个环境变量。
-
+以及还有一些小问题吧，比如我需要format时间，Astro 经过 parse 后给到我的时间是一个 UTC 时间，我理解 Astro 支持多时区，文章的DateTime可以有时区信息，但现有的文章全都是没有时区的，因此我必须把 Node.js 的时区也得默认改成 UTC，然而官方的推荐做法是根目录添加`.env`使用 `import.meta.env`，进而避免对 `process.env` 的污染？但现有的框架比如 date-fns 都没有使用 import.meta.env 就导致了我还得手动去想在哪里安排设置这个环境变量。
 
 另外每个“框架组件”都会生成一个 chunk，即使我在 vite 中配置成合并一个，但仍然产生了 1kb 的 import chunk，这我就觉得很奇怪了，但也不知道该怎么去搜和提 issue。以及在 src 下的图片引入一定经过 processor，就算把 astro-compress 的图片选项关掉，也还是被进行了一次转换。我就觉得很不能忍受。
 
@@ -61,18 +60,15 @@ Hexo 在我的观测下是内容和主题做到了分离，而且主题可以使
 
 最后还是选择了星星数和开发状态最活跃的 Waline。数据库用的 PostgreSQL，改了一下mySQL导出的语句三下五除二就复原了原来的数据并现在展示了出来。
 
-
 # 余留课题
 
-- [ ] Google Analytics & Google AD ***能恰的话还是想恰口饭的嘛（谁不想呢）***
-- [x] photoswiper →　fancybox ***我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？***
-- [ ] 分类显示不同语言的post ***自己给自己挖了个大坑吧，routing 搞的自己头都大。。。***
-- [x] 代码片段支持复制 ***真的很需要，但好像得写插件 / 纯 JS 添加***
-
+- [ ] Google Analytics & Google AD **_能恰的话还是想恰口饭的嘛（谁不想呢）_**
+- [x] photoswiper →　fancybox **_我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？_**
+- [ ] 分类显示不同语言的post **_自己给自己挖了个大坑吧，routing 搞的自己头都大。。。_**
+- [x] 代码片段支持复制 **_真的很需要，但好像得写插件 / 纯 JS 添加_**
 
 # Reference
 
 > [Astro & Shiki line number issue](https://github.com/shikijs/shiki/issues/3)
 
 > [.nojekyll](https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering)
-
