@@ -3,12 +3,11 @@ title: 升级 Jellyfin 到 10.9
 published: 2024-08-28
 # description: ''
 # image: ''
-tags: 
+tags:
   - notes
 # category: ''
-draft: false 
+draft: false
 ---
-
 
 前两天刚谈到用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin/) 的镜像做的 Jellyfin，但是 Jellyfin 的 Android TV 版本升级到最新之后只支持 10.9+ 以上版本的服务端，虽然也能把 Android TV 版本的 Jellyfin 降级到 10.8 兼容版本，但 Jellyfin 更新勤快，降级 TV 版本只是最后保底之策，将来如果有其他新特性，那么长痛不如短痛赶快升级到最新版本才是上策。
 
@@ -32,7 +31,7 @@ nyanmisaka 镜像是在官方镜像上进行的修改因此数据目录和官方
 
 我的 CPU 是 10代 UHD 630，在查看 [Intel 支持](https://www.intel.com/content/www/us/en/docs/onevpl/developer-reference-media-intel-hardware/1-1/overview.html#CODECS-ENCODE-SUPPORT-FOR-10TH-GENERATION-INTEL-CORE) 后发现并不支持 AV1 的解码和编码，因此要将硬件加速部分的 AV1 的解码和编码部分的对钩去掉。
 
-![硬件加速设置](https://staticimg.xingoxu.com/i/0bf96fe2-3107-4b20-a446-e8131fe1998c.jpg)
+![硬件加速设置](https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1i7rpw5hxs0j21bu1hm12k.jpg)
 
 客户端再次播放时服务端调用了GPU，CPU的占用也得到了改善
 
@@ -45,7 +44,6 @@ nyanmisaka 镜像是在官方镜像上进行的修改因此数据目录和官方
 然而在网页端和在官方 Android App 以及第三方 Findroid 播放时没有乱码。
 
 反复查看[官方文档](https://jellyfin.org/docs/general/administration/troubleshooting/#text-not-rendering-properly)也表示，字幕依赖客户端字体，乱码在开启备用字体后就能解决。
-
 
 最后抱着尝试性的心态在容器内安装了 CJK 系统字体，重新启动 jellyfin 服务端后，Android TV 客户端已可正常渲染字幕。
 
@@ -65,9 +63,6 @@ apt-get install fonts-noto-cjk-extra
 
 然后修改 `docker-compose.yml`，添加安装字体包
 
-
 ## 最后
 
 正常启动后发现无法修改库的任何配置，最后删除了数据文件夹重新扫描重建了库（寄）
-
-

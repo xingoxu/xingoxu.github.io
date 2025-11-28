@@ -3,12 +3,11 @@ title: 聊聊管理番剧动画片这件事
 published: 2024-07-08
 # description: ''
 # image: ''
-tags: 
+tags:
   - notes
 # category: ''
-draft: false 
+draft: false
 ---
-
 
 我刚开始看动画的时候也是B站或者优酷这些流媒体看的，最开始从国外录电视，翻译添加字幕重新压制再上传各个视频网站然后被我们所观看到。之后就各种政策变化，以及有了一些版权意识之后，一些没有引入版权，又或是动画本身有一些镜头并不符合国内情势被剪辑的事情发生之后，我看动画的方式就从在线变成了找资源下载看了。而后又对DVD，高清，蓝光等事情产生了兴趣，以及喜欢的动画如果想再回去看看的话又不想每次再翻回去看这一点之后开始研究 PT 等等的事情。
 
@@ -22,13 +21,14 @@ draft: false
 
 <!-- more -->
 
-# jellyfin 
+# jellyfin
 
 大数据果然没有让人失望，在组装 NAS 的时候就给我推送了很多有关这方面的文章，而我让我了解到了 jellyfin 这样东西。
 
-![jellyfin 海报墙](https://staticimg.xingoxu.com/i/4078851e-1b0b-49d0-94b6-6420b3353faa.jpg)
+![jellyfin 海报墙](https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1i7rpyfixgij22i61jenpi.jpg)
 
 关于 jellyfin 是什么，大家 Google 一搜就能搜出来了，他对我的好处无非就是
+
 - 实时推流
 - 支持外挂字幕
 - 喂影片数据简单
@@ -55,7 +55,6 @@ jellyfin 如何搭建这个应该没有什么问题吧，最简单的 docker com
 那么最妥当的办法是，硬链一个出来之后把那些不要的文件删除，只留下推流的东西就可以了，如果识别不出来再把文件名改一改就可以了。
 
 首先是硬链，我现在用的工具是 [hlink](https://github.com/likun7981/hlink)，配置好源文件夹和目标文件夹后点一下启动几秒钟就做好了几千几万个文件的硬链，同时默认配置已经是符合jellyfin的那些文件了，其次这个工具可以配置缓存，硬链过一次之后，源文件不改的情况下，下次启动任务后都不会再硬链过去，也就是不会把你整理过了的文件再让他们重头多来一次。
-
 
 # 重命名
 
@@ -148,12 +147,11 @@ Kodi 20 + 10.8.3 的时候我配置好看了，也没什么问题， 但最近 K
 
 另外要注意如果下载 apk 推送到 Chromecast With Google TV 的话，要下载 `armeabi-v7a` 架构的。
 
-
 # 参考
 
 本文鸣谢如下先辈提供情报
 
 > [理想影音库构建之路（二）：关于老番管理这件事](https://blog.kaaass.net/archives/1607)  
 > [安卓TV端Kodi部署Jellyfin，使用Jellyfin打造最强媒体中心（篇二）](https://post.smzdm.com/p/a99vlpmp/#cl_3)  
-> [py-rename](https://github.com/jinalharia/py_rename)   
-> [Episode-ReName](https://github.com/Nriver/Episode-ReName)  
+> [py-rename](https://github.com/jinalharia/py_rename)  
+> [Episode-ReName](https://github.com/Nriver/Episode-ReName)
