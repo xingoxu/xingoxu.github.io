@@ -487,16 +487,15 @@ Google、Indeed、微软这三家，投了简历却始终没有被回复过。
 &lt;h1&gt;余留课题&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;[ ] Google Analytics &amp;amp; Google AD &lt;strong&gt;&lt;em&gt;能恰的话还是想恰口饭的嘛（谁不想呢）&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;[x] photoswiper →　fancybox &lt;strong&gt;&lt;em&gt;我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;[x] photoswiper → fancybox &lt;strong&gt;&lt;em&gt;我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;[ ] 分类显示不同语言的post &lt;strong&gt;&lt;em&gt;自己给自己挖了个大坑吧，routing 搞的自己头都大。。。&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;[x] 代码片段支持复制 &lt;strong&gt;&lt;em&gt;真的很需要，但好像得写插件 / 纯 JS 添加&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;[ ] waline 后台 post 重定向到各个博文正确的地址 &lt;strong&gt;&lt;em&gt;后台看评论但没法直接点到哪篇post的感觉很不爽&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/shikijs/shiki/issues/3&quot;&gt;Astro &amp;amp; Shiki line number issue&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering&quot;&gt;.nojekyll&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/shikijs/shiki/issues/3&quot;&gt;Astro &amp;amp; Shiki line number issue&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering&quot;&gt;.nojekyll&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content:encoded></item><item><title>wireguard + v6 双栈环境下构建 Transmission PT 做种客户端</title><link>https://blog.xingoxu.com/2024/01/transmission-under-vpn/</link><guid isPermaLink="true">https://blog.xingoxu.com/2024/01/transmission-under-vpn/</guid><description># 背景
 
