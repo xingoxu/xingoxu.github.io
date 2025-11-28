@@ -14,7 +14,7 @@
 &lt;/ol&gt;
 &lt;h3&gt;播放时不调用 GPU 加速，CPU 100%&lt;/h3&gt;
 &lt;p&gt;我的 CPU 是 10代 UHD 630，在查看 &lt;a href=&quot;https://www.intel.com/content/www/us/en/docs/onevpl/developer-reference-media-intel-hardware/1-1/overview.html#CODECS-ENCODE-SUPPORT-FOR-10TH-GENERATION-INTEL-CORE&quot;&gt;Intel 支持&lt;/a&gt; 后发现并不支持 AV1 的解码和编码，因此要将硬件加速部分的 AV1 的解码和编码部分的对钩去掉。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/0bf96fe2-3107-4b20-a446-e8131fe1998c.jpg&quot; alt=&quot;硬件加速设置&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1i7rpw5hxs0j21bu1hm12k.jpg&quot; alt=&quot;硬件加速设置&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;客户端再次播放时服务端调用了GPU，CPU的占用也得到了改善&lt;/p&gt;
 &lt;h3&gt;中文字幕乱码&lt;/h3&gt;
 &lt;p&gt;在 &lt;a href=&quot;https://hub.docker.com/r/nyanmisaka/jellyfin/&quot;&gt;nyanmisaka/jellyfin&lt;/a&gt; 的镜像的&lt;a href=&quot;https://www.chiphell.com/thread-2375777-1-1.html&quot;&gt;说明&lt;/a&gt;中，已经添加了中文支持，而且我也为了部分字幕的效果有设置了备用字体。&lt;/p&gt;
@@ -38,25 +38,24 @@
 
 
 
+&lt;div&gt;
+
+![飛騨古川駅后边的天桥上](https://staticimg-v2.xingoxu.com/image/9ebbee47-b69e-4d32-a052-bb032c0b10f7.png)&lt;/div&gt;&lt;div&gt;
+
+![飛騨古川駅后边的天桥上](https://staticimg-v2.xingoxu.com/image/ccd726b7-4916-4df2-9308-9d958d3fe379.jpg)&lt;/div&gt;
 
 &lt;div&gt;
 
-![飛騨古川駅后边的天桥上](https://staticimg.xingoxu.com/i/bd28493e-366a-4350-9b3d-abfcdecd650b.jpg?quality=50)&lt;/div&gt;&lt;div&gt;
+[飛騨古川駅后边的天桥上](https://maps.app.goo.gl/V4TgZDVrpVq67Qij8)
 
-![飛騨古川駅后边的天桥上](https://staticimg.xingoxu.com/i/de54c581-1df1-4c19-8765-2c7bfdb94ff2.jpg?quality=50)&lt;/div&gt;
-
-&lt;div&gt;
-
-   [飛騨古川駅后边的天桥上](https://maps.app.goo.gl/V4TgZDVrpVq67Qij8)
 &lt;/div&gt;
-
 
 </description><pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;一直很想把君名的山里的部分也巡礼一下，总算在2023年8月和朋友一起去了飛騨，把照片都拍了，住了一晚但第一天坐的夜巴所以实际上走了玩了两天。&lt;/p&gt;
 &lt;p&gt;年初的时候已经在微博上整理了几张，今天把对比都都好好整理一下。&lt;/p&gt;
 
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/bd28493e-366a-4350-9b3d-abfcdecd650b.jpg?quality=50&quot; alt=&quot;飛騨古川駅后边的天桥上&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/de54c581-1df1-4c19-8765-2c7bfdb94ff2.jpg?quality=50&quot; alt=&quot;飛騨古川駅后边的天桥上&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/9ebbee47-b69e-4d32-a052-bb032c0b10f7.png&quot; alt=&quot;飛騨古川駅后边的天桥上&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/ccd726b7-4916-4df2-9308-9d958d3fe379.jpg&quot; alt=&quot;飛騨古川駅后边的天桥上&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
 &lt;div&gt;
 &lt;p&gt;&lt;a href=&quot;https://maps.app.goo.gl/V4TgZDVrpVq67Qij8&quot;&gt;飛騨古川駅后边的天桥上&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -65,49 +64,49 @@
 &lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1hlegklw48jj21zy12akjm.jpg&quot; alt=&quot;飛騨古川駅&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;然后是立花泷出车站&lt;/p&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/1cc75ad4-6f56-4ba3-afa3-c6c1943da5e0.jpg?quality=50&quot; alt=&quot;飛騨古川駅内&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/92fe37da-a0df-491c-987c-379d44cb66a9.jpg?quality=50&quot; alt=&quot;飛騨古川駅内&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/def142ac-5991-4a90-91fc-559da3da92aa.png&quot; alt=&quot;飛騨古川駅内&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/daf073c9-4a31-4186-8df8-1881bb104eb6.jpg&quot; alt=&quot;飛騨古川駅内&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1hlegkmvge4j23402c07wj.jpg&quot; alt=&quot;飛騨古川駅内&quot; /&gt;&lt;/p&gt;
 &lt;div&gt;
 &lt;p&gt;&lt;a href=&quot;https://maps.app.goo.gl/V4TgZDVrpVq67Qij8&quot;&gt;飛騨古川駅内&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;车站前&lt;/p&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/0a5bef60-5951-4953-bea7-91d423a5e0e8.jpg?quality=50&quot; alt=&quot;飛騨古川駅前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/fe19a215-1eda-4b49-b4e1-33dcd1fa2bf3.jpg?quality=50&quot; alt=&quot;飛騨古川駅前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/68a8b540-a1f1-4ee1-a791-79f23e4f81cb.png&quot; alt=&quot;飛騨古川駅前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/80cb5c79-90ce-4e6e-8502-315fdf24beb0.jpg&quot; alt=&quot;飛騨古川駅前&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1hlegklxyyij220011ub2a.jpg&quot; alt=&quot;飛騨古川駅前&quot; /&gt;&lt;/p&gt;
 &lt;div&gt;
 &lt;p&gt;&lt;a href=&quot;https://maps.app.goo.gl/V4TgZDVrpVq67Qij8&quot;&gt;飛騨古川駅前&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/4e7264d9-6f52-414d-8bc9-4e0673df54c8.jpg?quality=50&quot; alt=&quot;巴士站内&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/e4cf18b9-9648-4778-9370-df5e64a45f7a.png&quot; alt=&quot;巴士站内&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/1f8d2c0d-4b88-4ab4-bcf7-c09f95eb9910.jpg?quality=50&quot; alt=&quot;巴士站内&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/4d984d65-f13c-41fa-b829-8fa1d5efe2ce.jpg&quot; alt=&quot;巴士站内&quot; /&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1hlegkpshlmj23402c0hdx.jpg&quot; alt=&quot;巴士站内&quot; /&gt;&lt;/p&gt;
 &lt;div&gt;
 &lt;p&gt;&lt;a href=&quot;https://maps.app.goo.gl/5qwHx3kiwgq5Dr6E7&quot;&gt;落合巴士站&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/a0aca4a0-9d08-45d2-86d5-bb0c9b1f6a03.jpg?quality=50&quot; alt=&quot;问路的后边场景的台阶&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/d48679bd-5402-4cc1-a9f7-92b9a9dfb58e.png&quot; alt=&quot;问路的后边场景的台阶&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/f44afa75-08b2-4dfe-98f2-b831d9df0ada.jpg?quality=50&quot; alt=&quot;问路的后边场景的台阶&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/4c92e232-cb10-4f46-86f5-ff018096ea8d.jpg&quot; alt=&quot;问路的后边场景的台阶&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div&gt;
 &lt;p&gt;&lt;a href=&quot;https://maps.app.goo.gl/Tvsg8jTrDWXjtATM8&quot;&gt;気多若宮神社&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;剧中的图书馆其实是飛騨市图书馆&lt;/p&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/1cf6dac8-eaec-4bb5-9fbf-6a3d2d6847d8.jpg?quality=50&quot; alt=&quot;图书馆外部&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/4419fd7f-f98c-404e-8b49-dafc9dd42a86.png&quot; alt=&quot;图书馆外部&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/86367643-f0ec-48a5-9c18-42404850c0ab.jpg?quality=50&quot; alt=&quot;图书馆外部&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/61ef89d9-384a-4a44-84f1-89231c14d890.jpg&quot; alt=&quot;图书馆外部&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div&gt;
 &lt;p&gt;&lt;a href=&quot;https://maps.app.goo.gl/hZwhRjVS3R3PwVPa7&quot;&gt;飛騨市図書館&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/23f9b072-e9fb-4488-bda1-4fd10b9a9bc0.jpg?quality=50&quot; alt=&quot;图书馆内&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/7819f1be-c982-43d2-aa26-b34864955d33.png&quot; alt=&quot;图书馆内&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/1022c997-4680-4cfd-9ff1-bc461b98a46b.jpg?quality=50&quot; alt=&quot;图书馆内&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/0df21aab-6c8b-4a94-9bde-bc1d2f071717.jpg&quot; alt=&quot;图书馆内&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1hlegknx0mjj23402c0qv7.jpg&quot; alt=&quot;图书馆内&quot; /&gt;&lt;/p&gt;
 &lt;div&gt;
@@ -116,17 +115,17 @@
 &lt;p&gt;电影一开始的宮水的部分&lt;/p&gt;
 &lt;p&gt;这边最开始镇上回家的聊天，道口这边不能进铁路线拍，所以应该差不多是横过去看的感觉，可能也不一定是这个道口。&lt;/p&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/643f9c9d-be25-4ce9-ab94-7845b299b7ae.jpg?quality=50&quot; alt=&quot;最开始开头的镇上散步&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/d5652ce2-772d-4038-b148-304e79d8eee1.png&quot; alt=&quot;最开始开头的镇上散步&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/a4b3d329-8c50-4963-93d8-e89483fac94e.jpg?quality=50&quot; alt=&quot;最开始开头的镇上散步&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/6e8a199e-60a3-4243-bb72-7208f02eb008.jpg&quot; alt=&quot;最开始开头的镇上散步&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div&gt;
 &lt;p&gt;&lt;a href=&quot;https://maps.app.goo.gl/MREQC79gj51Sqtqf8&quot;&gt;飛騨古川駅隣&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/3d870136-8f07-4151-8b57-39ea2c47f886.jpg?quality=50&quot; alt=&quot;飛驒市立古川西小学校&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/a9e3e68d-6c10-4cf9-9547-86543e76599c.png&quot; alt=&quot;飛驒市立古川西小学校&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/f0e32c48-1d33-44e3-b2f0-b1370792f160.jpg?quality=50&quot; alt=&quot;飛驒市立古川西小学校&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://staticimg-v2.xingoxu.com/image/b52ac678-7d57-48fa-808a-21633d2a5b44.jpg&quot; alt=&quot;飛驒市立古川西小学校&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1hlegkmxksqj22ci1rex6r.jpg&quot; alt=&quot;飛驒市立古川西小学校&quot; /&gt;&lt;/p&gt;
 &lt;div&gt;
@@ -219,7 +218,7 @@ frida -U -f apk.packagename --codeshare akabe1/frida-multiple-unpinning
 
 &lt;h1&gt;jellyfin&lt;/h1&gt;
 &lt;p&gt;大数据果然没有让人失望，在组装 NAS 的时候就给我推送了很多有关这方面的文章，而我让我了解到了 jellyfin 这样东西。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://staticimg.xingoxu.com/i/4078851e-1b0b-49d0-94b6-6420b3353faa.jpg&quot; alt=&quot;jellyfin 海报墙&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static.xingoxu.com/blog/sinaimg/6b8bbe7egy1i7rpyfixgij22i61jenpi.jpg&quot; alt=&quot;jellyfin 海报墙&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;关于 jellyfin 是什么，大家 Google 一搜就能搜出来了，他对我的好处无非就是&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;实时推流&lt;/li&gt;
