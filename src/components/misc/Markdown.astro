@@ -20,34 +20,37 @@ const className = Astro.props.class;
 
 <!-- Fancybox -->
 <script>
-  import { Fancybox } from "@fancyapps/ui";
+  import { Fancybox } from '@fancyapps/ui';
 
   function initFancybox() {
-    Fancybox.bind(".custom-md img", { 
-      groupAll: true, 
-      wheel: "slide",
+    Fancybox.bind('.custom-md img', {
+      groupAll: true,
+      wheel: 'slide',
       Slideshow: false,
       Thumbs: false,
-      caption: (_fancybox, slide) => slide.triggerEl?.getAttribute('alt') || false,
+      caption: (_fancybox, slide) =>
+        slide.triggerEl?.getAttribute('alt') ||
+        false,
       Toolbar: {
         display: {
           left: ['infobar'],
           middle: [],
           right: [
-            "iterateZoom",
-            "fullscreen",
-            "close",
+            'iterateZoom',
+            'fullscreen',
+            'close',
           ],
-        }
-      }
-     });
+        },
+      },
+    });
   }
 
-
-  document.addEventListener("DOMContentLoaded", () => {
-    initFancybox();
-  });
-
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      initFancybox();
+    },
+  );
 </script>
 
 <style lang="stylus" is:global>
@@ -58,8 +61,38 @@ const className = Astro.props.class;
 
   .custom-md
     input[type="checkbox"]
-      vertical-align: -.1em;
-      margin-right: .5em;
+      vertical-align: -.2em;
+      margin-right: .4em;
+      &:disabled
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: inline-flex;
+        &:before
+          box-sizing: border-box;
+          content: "";
+          // display: inline-block;
+          // vertical-align: top;
+          height: 1.15em;
+          width: 1.15em;
+          color: rgba(0, 0, 0, 0.275);
+          border: solid 0.06em;
+          box-shadow: 0 0 0.04em, 0 0.06em 0.16em -0.03em inset, 0 0 0 0.07em transparent inset;
+          border-radius: 0.2em;
+          background: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20version%3D%221.1%22%20xml%3Aspace%3D%22preserve%22%20fill%3D%22white%22%20viewBox%3D%220%200%209%209%22%3E%3Crect%20x%3D%220%22%20y%3D%224.3%22%20transform%3D%22matrix%28-0.707%20-0.7072%200.7072%20-0.707%200.5891%2010.4702%29%22%20width%3D%224.3%22%20height%3D%221.6%22%20/%3E%3Crect%20x%3D%222.2%22%20y%3D%222.9%22%20transform%3D%22matrix%28-0.7071%200.7071%20-0.7071%20-0.7071%2012.1877%202.9833%29%22%20width%3D%226.1%22%20height%3D%221.7%22%20/%3E%3C/svg%3E") no-repeat center, var(--btn-regular-bg);
+
+          background-size: 0;
+          will-change: color, border, background, background-size, box-shadow;
+          transform: translate3d(0, 0, 0);
+          transition: color 0.1s, border 0.1s, background 0.15s, box-shadow 0.1s;
+
+        &:checked
+          &:before
+            background-color: var(--primary);
+            background-size: 0.75em;
+            color: rgba(0, 0, 0, 0.075);
+
+
     h1, h2, h3, h4, h5, h6
       .anchor
         margin: -0.125rem !important
@@ -470,5 +503,4 @@ const className = Astro.props.class;
       word-break: break-all;
     }
   }
-
 </style>

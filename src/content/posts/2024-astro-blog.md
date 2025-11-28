@@ -63,12 +63,12 @@ Hexo 在我的观测下是内容和主题做到了分离，而且主题可以使
 # 余留课题
 
 - [ ] Google Analytics & Google AD **_能恰的话还是想恰口饭的嘛（谁不想呢）_**
-- [x] photoswiper →　fancybox **_我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？_**
+- [x] photoswiper → fancybox **_我靠 2024 年的 photoswiper 居然可定制化程度还没2014年的高？_**
 - [ ] 分类显示不同语言的post **_自己给自己挖了个大坑吧，routing 搞的自己头都大。。。_**
 - [x] 代码片段支持复制 **_真的很需要，但好像得写插件 / 纯 JS 添加_**
+- [ ] waline 后台 post 重定向到各个博文正确的地址 **_后台看评论但没法直接点到哪篇post的感觉很不爽_**
 
 # Reference
 
-> [Astro & Shiki line number issue](https://github.com/shikijs/shiki/issues/3)
-
+> [Astro & Shiki line number issue](https://github.com/shikijs/shiki/issues/3)  
 > [.nojekyll](https://stackoverflow.com/questions/74489844/astro-js-deployment-media-files-not-rendering)

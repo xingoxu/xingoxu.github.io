@@ -12,7 +12,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 import remarkCodeTitles from 'remark-code-titles';
 import remarkDirective from 'remark-directive'; /* Handle directives */
-import remarkDirectiveRehype from 'remark-directive-rehype'; /* Pass directives to rehype */
+// import remarkDirectiveRehype from 'remark-directive-rehype'; /* Pass directives to rehype */
 import remarkMath from 'remark-math';
 import { AdmonitionComponent } from './src/plugins/rehype-component-admonition.mjs';
 import { GithubCardComponent } from './src/plugins/rehype-component-github-card.mjs';
