@@ -50,11 +50,16 @@ export const profileConfig: ProfileConfig = {
   bio: '大龄萌二 失踪人口',
   links: [
     {
+      name: 'Instagram',
+      icon: 'fa6-brands:instagram',
+      url: 'https://instagram.com/xingo.xu',
+    },
+    {
       name: 'X-Twitter',
       icon: 'fa6-brands:x-twitter', // Visit https://icones.js.org/ for icon codes
       // You will need to install the corresponding icon set if it's not already included
       // `pnpm add @iconify-json/<icon-set-name>`
-      url: 'https://twitter.com/xingoxu',
+      url: 'https://x.com/xingoxu',
     },
     {
       name: '微博',

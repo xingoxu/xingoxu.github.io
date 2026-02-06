@@ -14,28 +14,31 @@ export async function GET(context: any) {
     description:
       siteConfig.subtitle || 'No description',
     site: context.site,
-    items: blog.map(post => ({
-      title: post.data.title,
-      pubDate: post.data.published,
-      description:
-        post.data.description ||
-        (post.body.split('<!-- more -->')
-          .length >= 2 &&
-          sanitizeHtml(
-            post.body.split('<!-- more -->')[0],
-          )) ||
-        '',
-      link: getPostUrl(post),
-      content: sanitizeHtml(
-        parser.render(post.body),
-        {
-          allowedTags:
-            sanitizeHtml.defaults.allowedTags.concat(
-              ['img'],
-            ),
-        },
-      ),
-    })),
+    items: blog.map(post => {
+      const body = post.body ?? '';
+      return {
+        title: post.data.title,
+        pubDate: post.data.published,
+        description:
+          post.data.description ||
+          (body.split('<!-- more -->').length >=
+            2 &&
+            sanitizeHtml(
+              body.split('<!-- more -->')[0],
+            )) ||
+          '',
+        link: getPostUrl(post),
+        content: sanitizeHtml(
+          parser.render(body),
+          {
+            allowedTags:
+              sanitizeHtml.defaults.allowedTags.concat(
+                ['img'],
+              ),
+          },
+        ),
+      };
+    }),
     customData: `<language>${siteConfig.lang}</language>`,
   });
 }
