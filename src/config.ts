@@ -72,6 +72,11 @@ export const profileConfig: ProfileConfig = {
       url: 'https://github.com/xingoxu',
     },
     {
+      name: 'Bangumi',
+      icon: 'fa6-solid:display',
+      url: 'https://bgm.tv/user/xingo',
+    },
+    {
       name: 'rss',
       icon: 'fa6-solid:square-rss',
       url: '/rss.xml',
