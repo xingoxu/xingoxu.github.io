@@ -161,6 +161,8 @@ CPU: EPYC 7D12
 
 ## 附赠 算力机方案
 
+https://claude.ai/share/675ea345-7acd-478f-b69b-8fcd779c65b0
+
 ## 一些实用小链接
 
 > [CPU Benchmarks](https://www.cpubenchmark.net/CPU_mega_page.html) 用来查 CPU 评分 TDP等

@@ -24,14 +24,15 @@ Wireguard + Transmission
 以前一直使用 [docker-transmission-openvpn](https://github.com/haugene/docker-transmission-openvpn) 这个 repo 的 OpenVPN
 
 但是因为如下原因
+
 - wireguard 配置简单、现代化
 - 想上 IPv6
 - 可以自己控制 Transmission 的自由化
-决定更换方案
+  决定更换方案
 
 # 在 Docker 中安装 Transmission
 
-使用 [`linuxserver/wireguard`](https://hub.docker.com/r/linuxserver/wireguard)  镜像启动 wireguard 并在镜像内安装 transmission
+使用 [`linuxserver/wireguard`](https://hub.docker.com/r/linuxserver/wireguard) 镜像启动 wireguard 并在镜像内安装 transmission
 
 注意查看 Docker 中配 IPv6 的方式，直接指定公网IPv6地址即可，如果外网无法 PING 通，宿主机上可以尝试安装 ndppd
 
@@ -120,13 +121,12 @@ Google 中搜索过后大多数的解决方案是添加一行 `precedence ::ffff
 
 > 需要通过更改 host 或者调整系统前缀策略让 BT 客户端通过 v4 连接 tracker
 
-
 > 设置双栈做种时，先在本机网络适配器中关闭IPV6协议，然后ping一下tracker服务器，得到一个IPV4地址，将这个IPV4地址和tracker服务器域名写进系统的hosts文件，再开启IPV6协议即可。
-
 
 这才醒悟到根本原因很有可能是 transmission 汇报的ip地址为网卡地址，种子服务器接收后不认可私网IPv4地址，于是开始屏蔽汇报服务器的AAAA地址
 
 `custom-cont-init.d` 下新建安装启动 bind9 脚本
+
 ```bash:start-bind9.sh
 #!/bin/bash
 
@@ -180,11 +180,10 @@ proxy eno0 {
 
 运行 `service ndppd restart` 就可以了。
 
-
 # 参考
 
-> [双栈做种](https://blog.lfalive.top/2021/06/17/PT/#%E5%8F%8C%E6%A0%88%E5%81%9A%E7%A7%8D)
-> [双栈环境挂 PT 需注意](https://www.v2ex.com/t/497336)
+> [双栈做种](https://blog.lfalive.top/2021/06/17/PT/#%E5%8F%8C%E6%A0%88%E5%81%9A%E7%A7%8D)  
+> [双栈环境挂 PT 需注意](https://www.v2ex.com/t/497336)  
 > [关于IPv6的常识科普，以及VPS通过ndppd向母鸡广播小鸡内网IPv6邻居的方法教程](https://www.nodeseek.com/post-9473-1)
 
 # 回顾
