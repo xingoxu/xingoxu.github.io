@@ -539,7 +539,7 @@ Wireguard + Transmission
 决定更换方案&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;在 Docker 中安装 Transmission&lt;/h1&gt;
-&lt;p&gt;使用 &lt;a href=&quot;https://hub.docker.com/r/linuxserver/wireguard&quot;&gt;&lt;code&gt;linuxserver/wireguard&lt;/code&gt;&lt;/a&gt;  镜像启动 wireguard 并在镜像内安装 transmission&lt;/p&gt;
+&lt;p&gt;使用 &lt;a href=&quot;https://hub.docker.com/r/linuxserver/wireguard&quot;&gt;&lt;code&gt;linuxserver/wireguard&lt;/code&gt;&lt;/a&gt; 镜像启动 wireguard 并在镜像内安装 transmission&lt;/p&gt;
 &lt;p&gt;注意查看 Docker 中配 IPv6 的方式，直接指定公网IPv6地址即可，如果外网无法 PING 通，宿主机上可以尝试安装 ndppd&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;version: &apos;2.4&apos;
 services:
@@ -653,8 +653,8 @@ proxy eno0 {
 &lt;p&gt;运行 &lt;code&gt;service ndppd restart&lt;/code&gt; 就可以了。&lt;/p&gt;
 &lt;h1&gt;参考&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.lfalive.top/2021/06/17/PT/#%E5%8F%8C%E6%A0%88%E5%81%9A%E7%A7%8D&quot;&gt;双栈做种&lt;/a&gt;
-&lt;a href=&quot;https://www.v2ex.com/t/497336&quot;&gt;双栈环境挂 PT 需注意&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.lfalive.top/2021/06/17/PT/#%E5%8F%8C%E6%A0%88%E5%81%9A%E7%A7%8D&quot;&gt;双栈做种&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.v2ex.com/t/497336&quot;&gt;双栈环境挂 PT 需注意&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://www.nodeseek.com/post-9473-1&quot;&gt;关于IPv6的常识科普，以及VPS通过ndppd向母鸡广播小鸡内网IPv6邻居的方法教程&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1&gt;回顾&lt;/h1&gt;
