@@ -7,7 +7,7 @@ import type {
 import { LinkPreset } from './types/config';
 
 export const siteConfig: SiteConfig = {
-  title: "xingo's private plot",
+  title: 'xingo',
   subtitle: '大龄萌二 失踪人口',
   lang: 'zh_cn', // key in src/i18n/translation.ts:map
   themeColor: {
