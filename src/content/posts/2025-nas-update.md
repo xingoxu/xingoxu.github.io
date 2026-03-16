@@ -325,7 +325,9 @@ CPU：10400T ES QSRL
 
 ```
 
-ROG的这块板子就是好啊，有5条PCIe的插槽，SAS卡，10Gbe网卡，加三张显卡，一整个满满当当，Wifi模块还被我用来转接了NVMe。太酷啦。
+300不到的板子，收到手之后打算装机，掀开nvme装甲一看，哇靠一块500G的三星970 EVO？开盖有奖了啊哈哈哈哈哈哈哈哈😂直接回本。
+
+而且ROG的这块板子就是好啊，有5条PCIe的插槽，SAS卡，10Gbe网卡，加三张显卡，一整个满满当当，Wifi模块还被我用来转接了NVMe。太酷啦。
 
 <div style="overflow-x:auto; white-space:nowrap; padding:10px 0; height: 220px;">
   <img src="https://staticimg-v2.xingoxu.com/i/AryrMRE8" style="display:inline-block; height: 100%; margin:0 12px 0; border-radius:10px;">
