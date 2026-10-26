@@ -22,7 +22,7 @@
     "@fontsource-variable/jetbrains-mono": "^5.0.20",
     "@fontsource/roboto": "^5.0.12",
     "@swup/astro": "^1.4.0",
-    "@waline/client": "^3.2.1",
+    "@waline/client": "3.16.1",
     "astro": "^5.17.1",
     "astro-compress": "^2.2.15",
     "astro-icon": "^1.1.5",

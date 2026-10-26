@@ -350,6 +350,9 @@ CPU：10400T ES QSRL
 > PVE使用Windows的话，鼠标和键盘如果直通给Windows，使用一会儿休眠就没反应的话，记得去硬件里边把休眠给关上，节能设置里也要关掉。
 
 那么想想算了，这种都是道高一尺魔高一丈的猫捉老鼠游戏，于是考虑WinServer为底层，用Hyper-V去开omv。
+
+> [是否可以将 Windows Server 当作普通桌面系统使用，体验如何？](https://www.zhihu.com/question/607707542)
+
 但是我都已经研究到了怎么直通HyperV的过程了，发现有个蓝牙的手柄驱动怎么都安装不上。趁还没完全开始装其他软件，重装到了Win11看，发现，没这个驱动装不上的问题。这可又让我心凉了一大截，好吧还是老实Win11 Pro梭哈到底了。
 
 > [【Windows使用】之--Hyper-V网卡、显卡直通等PCIe硬件直通](https://blog.vlinyu.com/archives/windows-hyper-v-discrete-device-assignment-dda)  
